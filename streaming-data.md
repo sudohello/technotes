@@ -1,0 +1,16 @@
+/*
+Title: Streaming Data Technologies
+Decription: Streaming Data Technologies
+Author: Bhaskar Mangal
+Date: 
+Tags: Streaming Data Technologies
+*/
+
+# Streaming Data Technologies
+
+https://github.com/DisyInformationssysteme/biggis-streaming-vector-data
+
+Apache Kafka
+Apache Flink
+
+http://www.isprs.org/proceedings/XXXVII/congress/2_pdf/9_ThS-4/02.pdf

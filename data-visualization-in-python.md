@@ -1,0 +1,1 @@
+/home/bhaskar/Documents/content/tech/python/chapter-2/data-visualization-in-python.md
