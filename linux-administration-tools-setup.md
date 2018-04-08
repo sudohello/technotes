@@ -670,3 +670,18 @@ https://www.howtogeek.com/56958/htg-explains-how-uefi-will-replace-the-bios/
 Make the change permanent:
 In Ubuntu, open terminal from the dash or press Ctrl+Alt+T, execute this to edit grub: gksudo gedit /etc/default/grub.
 Find the line starting with GRUB_CMDLINE_LINUX_DEFAULT and append acpi=off to its end, make it look like: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=off"
+
+## wget
+https://stackoverflow.com/questions/1078524/how-to-specify-the-location-with-wget
+
+-O is the option to specify the path of the file you want to download to.
+
+wget <file.ext> -O /path/to/folder/file.ext
+-P is prefix where it will download the file in the directory
+
+wget <file.ext> -P /path/to/folder
+
+## compress, uncompress
+https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-another-directory
+
+tar -xzf bar.tar.gz -C foo
