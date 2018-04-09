@@ -685,3 +685,27 @@ wget <file.ext> -P /path/to/folder
 https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-another-directory
 
 tar -xzf bar.tar.gz -C foo
+
+
+**Check installed library version**
+https://askubuntu.com/questions/434154/how-to-get-the-list-of-installed-library-packages-only
+/sbin/ldconfig -p
+The -v option will show the libraries version.
+
+**/usr/bin/ld: final link failed: No space left on device**
+http://www.ubuntu-forum.de/artikel/61799/final-link-failed-no-space-left-on-device.html
+
+<!-- /usr/bin/ld: final link failed: No space left on device
+collect2: error: ld returned 1 exit status
+features/CMakeFiles/pcl_features.dir/build.make:1107: recipe for target 'lib/libpcl_features.so.1.8.1.99' failed
+make[2]: *** [lib/libpcl_features.so.1.8.1.99] Error 1
+CMakeFiles/Makefile2:1438: recipe for target 'features/CMakeFiles/pcl_features.dir/all' failed
+make[1]: *** [features/CMakeFiles/pcl_features.dir/all] Error 2
+Makefile:160: recipe for target 'all' failed
+make: *** [all] Error 2 -->
+
+
+df -i 
+free -m
+grep tmpfs /etc/fstab
+mount |grep \/tmp

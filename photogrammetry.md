@@ -987,3 +987,7 @@ https://www.cadlinecommunity.co.uk/hc/en-us/articles/115000978749-How-to-Geo-Ref
 http://www.cloudcompare.org/forum/viewtopic.php?t=728
 http://www.cloudcompare.org/doc/wiki/index.php?title=Global_Shift_and_Scale 
 http://www.cloudcompare.org/doc/wiki/index.php?title=Rasterize
+
+
+## OpenSfM
+https://github.com/mapillary/OpenSfM
