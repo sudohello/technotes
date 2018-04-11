@@ -709,3 +709,7 @@ df -i
 free -m
 grep tmpfs /etc/fstab
 mount |grep \/tmp
+
+
+# Directory Space
+du -h --max-depth=1 | sort -hr
