@@ -6,6 +6,10 @@ Date:
 Tags: Deep Learning
 */
 
+**Table of Contents**
+
+[TOC]
+
 1. https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/
 2. http://cv-tricks.com/tensorflow-tutorial/training-convolutional-neural-network-for-image-classification/
 3. http://scs.ryerson.ca/~aharley/vis/conv/flat.html
@@ -175,17 +179,23 @@ https://github.com/ml4a/ml4a.github.io/blob/master/_chapters/neural_networks.md
 
 ### Tensorflow
 * http://cv-tricks.com/artificial-intelligence/deep-learning/deep-learning-frameworks/tensorflow-tutorial/
+* http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html
+* https://stackoverflow.com/questions/26575587/cant-install-scipy-through-pip
+* https://github.com/duguyue100/cs231n-practice/blob/master/cs231nlib/utils.py
+* https://github.com/cs231n/cs231n.github.io
+* http://vision.stanford.edu/teaching/cs231n/
+* http://karpathy.github.io/2015/03/30/breaking-convnets/
+* http://ccsubs.com/video/yt:GUtlrDbHhJM/cs231n-winter-2016-lecture-5-neural-networks-part-2-jhuz800c650-mp4/subtitles?lang=en
+* https://devhub.io/repos/xiaohu2015-cs231n-assignment
+* http://planetmath.org/vectorpnorm
+* http://cs231n.github.io/convolutional-networks/
 
-http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html
-https://stackoverflow.com/questions/26575587/cant-install-scipy-through-pip
-https://github.com/duguyue100/cs231n-practice/blob/master/cs231nlib/utils.py
-https://github.com/cs231n/cs231n.github.io
-http://vision.stanford.edu/teaching/cs231n/
-http://karpathy.github.io/2015/03/30/breaking-convnets/
-http://ccsubs.com/video/yt:GUtlrDbHhJM/cs231n-winter-2016-lecture-5-neural-networks-part-2-jhuz800c650-mp4/subtitles?lang=en
-https://devhub.io/repos/xiaohu2015-cs231n-assignment
-http://planetmath.org/vectorpnorm
-http://cs231n.github.io/convolutional-networks/
+#### Installation
+* Compilation from source
+	* http://www.python36.com/install-tensorflow141-gpu/
+	* https://www.tensorflow.org/install/install_sources
+
+
 
 Split your training set into training set and a validation set. Use validation set to tune all hyperparameters. At the end run a single time on the test set and report performance.
 

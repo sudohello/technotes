@@ -8,6 +8,21 @@ Tags: Github
 
 # Git, GitHub, bitbucket, gitbook
 
+## Git
+https://try.github.io/levels/1/challenges/1
+https://php.earth/docs/interop/git
+https://git-scm.com/doc
+https://git-scm.com/
+
+**Git Ignore Templates**
+https://github.com/github/gitignore
+
+**difference-between-git-and-cvs**
+https://stackoverflow.com/questions/802573/difference-between-git-and-cvs
+
+### Git Installation on Ubuntu
+- https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04
+
 ## Setup your new Code Repo
 - https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad
 - https://gist.github.com/c0ldlimit/4089101
