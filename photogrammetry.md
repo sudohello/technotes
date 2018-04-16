@@ -991,3 +991,49 @@ http://www.cloudcompare.org/doc/wiki/index.php?title=Rasterize
 
 ## OpenSfM
 https://github.com/mapillary/OpenSfM
+
+### Installation
+**Building from source**
+
+  Found existing installation: networkx 2.1
+    Uninstalling networkx-2.1:
+      Successfully uninstalled networkx-2.1
+  Found existing installation: python-dateutil 2.7.2
+    Uninstalling python-dateutil-2.7.2:
+      Successfully uninstalled python-dateutil-2.7.2
+Successfully installed cloudpickle-0.4.0 exifread-2.1.2 gpxpy-1.1.2 loky-1.2.1 networkx-1.11 py-1.5.3 pyproj-1.9.5.1 pytest-3.0.7 python-dateutil-2.6.0 xmltodict-0.10.2
+
+python setup.py build
+bin/opensfm_run_all data/berlin
+
+
+https://github.com/mapillary/OpenSfM/issues/184
+cmake .. -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
+
+
+I also encountered this problem (Ubuntu 16.04). What happened in my case was that I had updated to the newest version of ceres-solver and then I started getting the error. So, I reverted back to ceres-solver-1.10.0 and it fixed the problem. Hope that helps someone!
+
+
+**Boost.Python**
+https://github.com/boostorg/python/tree/master
+http://boostorg.github.io/python/doc/html/index.html
+git clone https://github.com/boostorg/python.git boost-python
+
+**faber**
+https://github.com/stefanseefeld/faber
+
+git clone https://github.com/stefanseefeld/faber.git
+cd faber
+python setup.py build
+
+**boost**
+https://theboostcpplibraries.com/introduction-installation
+https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/
+
+sudo ./bootstrap.sh --prefix=/usr/local --with-libraries=all
+sudo ./b2 install
+sudo ./b2 install -j 8
+
+$ sudo ./bootstrap.sh --prefix=/usr/local
+
+$ export PATH=$PATH:/usr/local/include/:/usr/local/lib/
