@@ -686,6 +686,7 @@ https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-anoth
 
 tar -xzf bar.tar.gz -C foo
 
+<<<<<<< HEAD
 ## Terminal Multiplexers
 - Screens, byobu, Gauake,
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server
@@ -695,3 +696,32 @@ https://www.linuxlinks.com/terminalmultiplexers/
 https://linuxconfig.org/an-introduction-to-terminal-multiplexers
 
 I guess you all know this: you are connected to your server with SSH and in the middle of compiling some software (e.g. a new kernel) or doing some other task which takes lots of time, and suddenly your connection drops for some reason, and you lose your labour. This can be very annoying, but fortunately there is a small utility called screen which lets you reattach to a previous session so that you can finish your task. This short tutorial shows how to use screen for just this purpose.
+=======
+
+**Check installed library version**
+https://askubuntu.com/questions/434154/how-to-get-the-list-of-installed-library-packages-only
+/sbin/ldconfig -p
+The -v option will show the libraries version.
+
+**/usr/bin/ld: final link failed: No space left on device**
+http://www.ubuntu-forum.de/artikel/61799/final-link-failed-no-space-left-on-device.html
+
+<!-- /usr/bin/ld: final link failed: No space left on device
+collect2: error: ld returned 1 exit status
+features/CMakeFiles/pcl_features.dir/build.make:1107: recipe for target 'lib/libpcl_features.so.1.8.1.99' failed
+make[2]: *** [lib/libpcl_features.so.1.8.1.99] Error 1
+CMakeFiles/Makefile2:1438: recipe for target 'features/CMakeFiles/pcl_features.dir/all' failed
+make[1]: *** [features/CMakeFiles/pcl_features.dir/all] Error 2
+Makefile:160: recipe for target 'all' failed
+make: *** [all] Error 2 -->
+
+
+df -i 
+free -m
+grep tmpfs /etc/fstab
+mount |grep \/tmp
+
+
+# Directory Space
+du -h --max-depth=1 | sort -hr
+>>>>>>> acec9b14d9022a2f23c0798d98c98f025edc32ca
