@@ -686,6 +686,17 @@ https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-anoth
 
 tar -xzf bar.tar.gz -C foo
 
+<<<<<<< HEAD
+## Terminal Multiplexers
+- Screens, byobu, Gauake,
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server
+https://askubuntu.com/questions/449597/is-there-any-user-friendly-alternative-to-screen
+https://www.slant.co/topics/4018/~terminal-multiplexers
+https://www.linuxlinks.com/terminalmultiplexers/
+https://linuxconfig.org/an-introduction-to-terminal-multiplexers
+
+I guess you all know this: you are connected to your server with SSH and in the middle of compiling some software (e.g. a new kernel) or doing some other task which takes lots of time, and suddenly your connection drops for some reason, and you lose your labour. This can be very annoying, but fortunately there is a small utility called screen which lets you reattach to a previous session so that you can finish your task. This short tutorial shows how to use screen for just this purpose.
+=======
 
 **Check installed library version**
 https://askubuntu.com/questions/434154/how-to-get-the-list-of-installed-library-packages-only
@@ -713,3 +724,4 @@ mount |grep \/tmp
 
 # Directory Space
 du -h --max-depth=1 | sort -hr
+>>>>>>> acec9b14d9022a2f23c0798d98c98f025edc32ca

@@ -529,3 +529,7 @@ https://weather.com/en-IN/weather/interactive/l/INKA0310:1:IN?layer=clouds
                 !(key === 'paint' && !Object.keys(value).length);
         });
     };
+
+    ## Mapbox GL Different Eye Poping Stlye Examples
+    - [Medieval Melbourne](https://bl.ocks.org/stevage/eef4001fe752c7c6b82af3237a102b8c)
+        - blog: https://stevebennett.me/tag/mapbox/
