@@ -961,3 +961,12 @@ https://wiki.tiker.net/CudaVsOpenCL
 
 https://ai.google 
 http://www.nvidia.com/object/imaging_comp_vision.html
+
+## Getting started - build Image Processing based website
+[Ref: 1](https://www.quora.com/How-can-I-build-a-website-using-Python-to-do-image-processing-and-machine-learning)
+For the problem of using an X-ray dataset to identify a disease, and build a website around it, here are the technologies and skills you’ll want to start with.
+
+1. [Python programming with OpenCV](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html) : This will allow you to do things like read in image files, manipulate them, and read images into your code (as matrices of RGB values).
+2. Basic machine learning — Check out this beginner course on machine learning algorithms : [Machine Learning | Coursera](https://www.coursera.org/learn/machine-learning). This will allow you to learn how to extract features from the X-ray images and train a classifier using these features and labels for each of the images
+3. Once you have some of the basics, you can move on to using libraries to do the actual machine learning work such as [Scikit-learn](http://scikit-learn.org/stable/tutorial/index.html) — you can extract your features and port them into one of the classifiers that are pre-built, and obtain a trained model you can then use to predict classes for future data.
+4. Python web programming via [Django](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) or [Flask](http://flask.pocoo.org/docs/0.12/tutorial/) to create a web server and a frontend HTML page to upload images, transform them to a matrix, extract features, and predict a class using the classifier built in 3) . The result can then be shown to the user.

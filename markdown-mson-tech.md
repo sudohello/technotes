@@ -8,3 +8,6 @@ Tags: Markdown MSON
 
 # Markdown-MSON
 https://github.com/apiaryio/mson/blob/master/Tutorial.md
+
+## Flat CMS
+https://www.hongkiat.com/blog/flat-cms/
