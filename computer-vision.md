@@ -970,3 +970,23 @@ For the problem of using an X-ray dataset to identify a disease, and build a web
 2. Basic machine learning — Check out this beginner course on machine learning algorithms : [Machine Learning | Coursera](https://www.coursera.org/learn/machine-learning). This will allow you to learn how to extract features from the X-ray images and train a classifier using these features and labels for each of the images
 3. Once you have some of the basics, you can move on to using libraries to do the actual machine learning work such as [Scikit-learn](http://scikit-learn.org/stable/tutorial/index.html) — you can extract your features and port them into one of the classifiers that are pre-built, and obtain a trained model you can then use to predict classes for future data.
 4. Python web programming via [Django](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) or [Flask](http://flask.pocoo.org/docs/0.12/tutorial/) to create a web server and a frontend HTML page to upload images, transform them to a matrix, extract features, and predict a class using the classifier built in 3) . The result can then be shown to the user.
+
+## Tutorial in Web application development
+https://towardsdatascience.com/how-to-build-a-machine-learning-as-a-rails-developer-739cc57ea01c
+
+Rather than having a complicated machine learning application that did some complicated neural network-deep learning-artificial intelligence-stochastic gradient descent-linear regression-bayesian machine learning magic
+
+
+## Blog posts
+https://towardsdatascience.com/my-next-two-years-de448d3141a
+
+## Open Courses
+https://web.stanford.edu/class/cs377s/syllabus.htm
+
+## Computer Vision in browser
+https://docs.opencv.org/trunk/df/d0a/tutorial_js_intro.html
+
+Web Virtual Reality (WebVR) and Augmented Reality (WebAR)
+
+
+Emscripten is an LLVM-to-JavaScript compiler. It takes LLVM bitcode - which can be generated from C/C++ using clang, and compiles that into asm.js or WebAssembly that can execute directly inside the web browsers. . Asm.js is a highly optimizable, low-level subset of JavaScript. Asm.js enables ahead-of-time compilation and optimization in JavaScript engine that provide near-to-native execution speed. WebAssembly is a new portable, size- and load-time-efficient binary format suitable for compilation to the web. WebAssembly aims to execute at native speed. WebAssembly is currently being designed as an open standard by W3C.

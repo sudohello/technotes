@@ -30,3 +30,12 @@ Whenever medical data, especially medical image data, is generated in a clinical
 Digital Imaging and Communications in Medicine (DICOM) is a standard that governs this capability by specifying handling, storing, printing, and transmitting information in medical imaging.
 
 Grassroots DICOM (GDCM) is an implementation of the DICOM standard designed to be open source so that researchers may access clinical data directly. GDCM includes a file format definition and a network communications protocol, both of which should be extended to provide a full set of tools for a researcher or small medical imaging vendor to interface with an existing medical database.
+
+## Installation
+https://github.com/rememberlenny/Flask-Person-Detector
+https://github.com/jayrambhia/Install-OpenCV
+
+## OpenCV.js
+https://docs.opencv.org/trunk/df/d0a/tutorial_js_intro.html
+
+OpenCV.js leverages Emscripten to compile OpenCV functions into asm.js or WebAssembly targets, and provides a JavaScript APIs for web application to access them.

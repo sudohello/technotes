@@ -1,1 +1,1 @@
-/home/bhaskar/Documents/content/tech/python/chapter-1/python-in-nutshell.md
+/home/game/Documents/content/pragmatic-approach-4-learning-data-visualisation/chapter-1/python-in-nutshell.md

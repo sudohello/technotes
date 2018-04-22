@@ -1,1 +1,1 @@
-/home/bhaskar/Documents/content/tech/python/chapter-2/data-visualization-in-python.md
+/home/game/Documents/content/pragmatic-approach-4-learning-data-visualisation/chapter-2/data-visualization-in-python.md

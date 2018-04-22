@@ -74,6 +74,35 @@ echo '<?php phpinfo(); ?>' > ~/public_html/info.php
 sudo vi /etc/apache2/mods-available/php5.conf
 Now you need to comment out a line php_admin_value engine Off
 
+* [Enable .htaccess under userdir](https://stackoverflow.com/questions/4289382/proper-userdir-conf-for-this-htaccess)
+Edit: /etc/apache2/mods-enabled/userdir.conf then, restart apache
+use option as illustrated:
+AllowOverride All
+```
+vi /etc/apache2/mods-enabled/userdir.conf
+#
+<IfModule mod_userdir.c>
+        UserDir public_html
+        UserDir disabled root
+
+        <Directory /home/*/public_html>
+#               AllowOverride FileInfo AuthConfig Limit Indexes
+                AllowOverride All
+                Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+#                Options Indexes FollowSymLinks
+                <Limit GET POST OPTIONS>
+                        Require all granted
+                </Limit>
+                <LimitExcept GET POST OPTIONS>
+                        Require all denied
+                </LimitExcept>
+        </Directory>
+</IfModule>
+#
+# restart apache:
+sudo service apache2 restart
+```
+
 ## Python with Apache
 - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04
 
@@ -96,7 +125,7 @@ Add the following right after the first line, which reads <VirtualHost *:80\>.
 #
 sudo a2enmod cgi
 #
-sudo vi sudo vi /etc/apache2/mods-available/php7.0.conf
+sudo vi /etc/apache2/mods-available/php7.0.conf
 #
 <Directory /home/*/public_html/*/cgi-bin>
     Options +ExecCGI
@@ -106,4 +135,59 @@ sudo vi sudo vi /etc/apache2/mods-available/php7.0.conf
 #
 sudo service apache2 restart
 ```
+### WSGI: modwsgi
+- https://code.google.com/archive/p/modwsgi/wikis/QuickConfigurationGuide.wiki
 
+**WSGI Application Script File**
+WSGI is a specification of a generic API for mapping between an underlying web server and a Python web application. WSGI itself is described by Python PEP 0333. The purpose of the WSGI specification is to provide a common mechanism for hosting a Python web application on a range of different web servers supporting the Python programming language.
+
+**Mounting The WSGI Application**
+There are a number of ways that a WSGI application hosted by mod_wsgi can be mounted against a specific URL. These methods are similar to how one would configure traditional CGI applications.
+
+Require **WSGI module**
+```bash
+sudo apt-get install libapache2-mod-wsgi python-dev
+#
+sudo a2enmod wsgi
+```
+-http://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIScriptAlias.html
+```bash
+<IfModule mod_userdir.c>
+    <Directory /home/*/public_html>
+        #php_admin_flag engine Off
+    </Directory>
+    <Directory /home/*/public_html/*/cgi-bin>
+        Options +ExecCGI
+        SetHandler cgi-script
+        AddHandler cgi-script .py 
+    </Directory>
+    <Directory /home/*/public_html/*/wsgi-bin>
+        Options +ExecCGI
+        SetHandler wsgi-script
+        AddHandler wsgi-script .wsgi
+    </Directory>
+</IfModule>
+```
+
+**Configuration files**
+sudo vi /etc/apache2/sites-available/000-default.conf
+sudo vi /etc/apache2/mods-enabled/userdir.conf
+#
+sudo vi /etc/apache2/mods-available/php7.0.conf
+```bash
+<IfModule mod_userdir.c>
+    <Directory /home/*/public_html>
+       # php_admin_flag engine Off
+    </Directory>
+    <Directory /home/*/public_html/wsgi-bin>
+        Options +ExecCGI
+#        SetHandler cgi-script
+#        SetHandler wsgi-script
+        AddHandler cgi-script .py
+        AddHandler wsgi-script .wsgi
+        WSGIScriptReloading On
+        Order deny,allow
+        Allow from all
+    </Directory>
+</IfModule>
+```
