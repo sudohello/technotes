@@ -18,47 +18,6 @@ https://github.com/okeeffed/cheat-sheets/blob/master/twig-cheat-sheet.md
 http://willthemoor.github.io/Twig-Cheat-Sheet/
 https://twig.symfony.com/doc/2.x/templates.html
 
-## SLIM Framework
-https://www.slimframework.com
-https://scotch.io/tutorials/getting-started-with-slim-3-a-php-microframework
-https://phpocean.com/tutorials/back-end/workouts-with-slim-3-create-a-simple-website/48
-http://www.kode-blog.com/slim-framework-twig-template-tutorial
-
-```bash
-#Install slim
-composer require slim/slim "^3.0"
-#Install Twig
-composer require slim/twig-view
-```
-**Routing**
-https://discourse.slimframework.com/t/slim-3-routing-best-practices-and-organization/93/4
-
-**slim-config-yaml**
-https://github.com/techsterx/slim-config-yaml
-```bash
-composer require techsterx/slim-config-yaml
-```
-**SLIM: Blade template**
-https://github.com/clickcoder/slim-blade
-```bash
-composer require clickcoder/slim-blade
-```
-
-**slim 3 skeleton project**
-- https://github.com/aurmil/slim3-skeleton
-
-**Zero to Hero - Virtual Env**
-- http://jeremykendall.net/2014/07/28/from-zero-to-slim-framework-getting-your-first-project-off-the-ground/
-
-**Rest API with Slim**
-- https://www.phpflow.com/php/create-simple-rest-api-using-slim-framework/
-
-https://www.sitepoint.com/writing-a-restful-web-service-with-slim/
-http://ryanszrama.com/blog/06-28-2015/hello-you-slim-framework-3x
-
-**SLIM, Twig, Angular**
-https://medium.com/@rachitmishra/configuring-slim-twig-angular-js-13aba6116bfe
-
 ## Laravel Framework
 https://scotch.io/tutorials/understanding-laravel-middleware
 
@@ -96,3 +55,12 @@ https://webflow.com/designer
 
 ## Bluma CSS Framework Tutorial
 https://github.com/ovrdc/gis-tutorials
+
+## PSR-7: What is PSR-7 and How to use it
+- https://www.dotkernel.com/dotkernel3/what-is-psr-7-and-how-to-use-it/
+PSR-7 is a set of common interfaces defined by PHP Framework Interop Group. These interfaces are representing HTTP messages, and URIs for use when communicating trough HTTP.
+
+Any web application using this set of interfaces is a PSR-7 application.
+
+## Log in Apache Ubuntu
+tail -f /var/log/apache2/error.log

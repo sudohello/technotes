@@ -81,6 +81,10 @@ Snake case (or snake_case) is the practice of writing compound words or phrases 
 Camel case (stylized as camelCase or CamelCase; also known as camel caps or more formally as medial capitals) is the practice of writing 
 
 
+**Mixins**
+- https://en.wikipedia.org/wiki/Mixin
+* In object-oriented programming languages, a Mixin is a class that contains methods for use by other classes without having to be the parent class of those other classes.
+* Mixins encourage code reuse and can be used to avoid the inheritance ambiguity that multiple inheritance can cause or to work around lack of support for multiple inheritance in a language.
 
 ## Reactive Programming
 - https://en.wikipedia.org/wiki/Reactive_programming

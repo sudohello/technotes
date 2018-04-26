@@ -91,6 +91,9 @@ https://bl.ocks.org/danswick/083a0b48c2cc78c4a08d
 https://github.com/mapbox/mapbox-gl-draw
 https://github.com/mapbox/mapbox-gl-draw/blob/master/docs/MODES.md#available-custom-modes
 
+**Drag and drop Geojson Files**
+https://bl.ocks.org/fxi/b7f1af5981432296bfafec70a95fd9b6
+
 **Custom Control**
 https://codepen.io/sergei-zelinsky/pen/gGOZjE
 
@@ -533,3 +536,71 @@ https://weather.com/en-IN/weather/interactive/l/INKA0310:1:IN?layer=clouds
     ## Mapbox GL Different Eye Poping Stlye Examples
     - [Medieval Melbourne](https://bl.ocks.org/stevage/eef4001fe752c7c6b82af3237a102b8c)
         - blog: https://stevebennett.me/tag/mapbox/
+
+
+## Time based mapbox gl examples
+- https://www.mapbox.com/help/show-changes-over-time/
+http://bl.ocks.org/ryanbaumann/04c442906638e27db9da243f29195592
+
+## Conditions
+- https://blog.mapbox.com/announcing-expressions-in-gl-js-a72b55d0a6af
+- https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-variable-binding
+
+["has", string]
+
+
+["case",
+    condition: boolean, output: OutputType, condition: boolean, output: OutputType, ...,
+    default: OutputType
+]: OutputType
+
+[
+    "case",
+    ["has", maxHeight], output:number,
+    default:5
+]:number
+
+https://help.github.com/articles/basic-writing-and-formatting-syntax/
+
+https://bl.ocks.org/DoctorBud/23aca14dcfde5f680870d77f39569e73
+
+setGeoJSONSourceData
+
+https://github.com/mapbox/mapbox-gl-js/issues/929
+https://github.com/mapbox/mapbox-gl-js/issues/1399
+
+to convert the tile coordinate to geographic coordinate i found a solution : SphericalMercator.bbox
+https://github.com/mapbox/mapbox-studio-classic/blob/5ac2ead1e523b24c8b8ad8655babb66389166e87/ext/sphericalmercator.js
+
+map.showTileBoundaries =true;
+map.on('dataloading', function (e) {
+    if(!e.tile)return;
+    var coord = e.tile.coord;
+    var mec = new SphericalMercator({size : 512});
+    var test = mec.bbox(coord.x, coord.y, coord.z);
+    console.log(coord.z + '/' + coord.x + '/' + coord.y + ' : ' + test.toString()); 
+})
+
+
+https://github.com/gbif/maps
+
+Wind Data
+https://github.com/mapbox/mapbox-gl-js/issues/4045
+https://www.mapbox.com/bites/00319/wind.html
+https://blog.mapbox.com/mapping-wind-barbs-to-show-speed-and-direction-4d3078add03d
+
+
+**toppojson support**
+https://github.com/mapbox/mapbox-gl-js/issues/2920
+
+https://github.com/developmentseed/mapbox-gl-topojson
+
+**CSV**
+https://github.com/thadk/mapbox-gl-csv
+http://thadk.net/mapbox-gl-csv/?access_token=pk.eyJ1IjoidW5lcGdyaWQiLCJhIjoiY2lzZnowenUwMDAzdjJubzZyZ3R1bjIzZyJ9.uyP-RWjY-94qCVajU0u8KA
+
+
+**Mapillary with Mapbox GL JS**
+https://porter.io/github.com/mapillary/mapillary-js
+
+https://bl.ocks.org/oscarlorentzon/0b7c5763225029268fce0324af2b2b3a

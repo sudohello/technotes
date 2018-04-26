@@ -26,6 +26,11 @@ Object.keys(obj).forEach(function(key,index) {
   // index: the ordinal position of the key within the object
 })
 
+**Random number between max and min**
+```javascript
+Math.floor(Math.random() * (15 - 5) + 5)
+```
+
 ## PHP: SLIM 3
 * **Get Base URL**
 https://stackoverflow.com/questions/6782895/php-remove-filename-from-path

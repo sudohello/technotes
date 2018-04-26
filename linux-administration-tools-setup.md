@@ -633,6 +633,7 @@ https://github.com/reactphp
 
 ## Wifi troubleshooting
 sudo lshw -C network
+sudo lshw -class network
 lspci -nnk | grep 0280 -A2
 
 07:00.0 Network controller [0280]: Broadcom Corporation BCM43142 802.11b/g/n [14e4:4365] (rev 01)
@@ -642,11 +643,44 @@ lspci -nnk | grep 0280 -A2
 sudo modprobe wl && dmesg | grep wl
 modprobe: ERROR: could not insert 'wl': Exec format error
 
+dmesg | grep wl
+dkms status -m broadcom-wl
 
 sudo apt-get purge bcmwl-kernel-source
 sudo apt-get update
 sudo apt-get install bcmwl-kernel-source
 
+https://unix.stackexchange.com/questions/69199/wireless-not-working-after-update-network-unclaimed
+
+https://askubuntu.com/questions/770490/broadcom-wireless-drivers-unclaimed-after-installing-update-16-04
+```bash
+sudo apt-get install --reinstall bcmwl-kernel-source
+```
+
+
+/etc/modprobe.d/iwlwifi.conf
+
+  1 # /etc/modprobe.d/iwlwifi.conf
+  2 # iwlwifi will dyamically load either iwldvm or iwlmvm depending on the
+  3 # microcode file installed on the system.  When removing iwlwifi, first
+  4 # remove the iwl?vm module and then iwlwifi.
+  5 remove iwlwifi \
+  6 (/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
+  7 && /sbin/modprobe -r mac80211
+
+sudo lshw -C network
+
+product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+
+https://askubuntu.com/questions/840772/how-to-create-this-etc-pm-config-d-config
+https://askubuntu.com/questions/413663/whats-the-purpose-of-etc-pm-config-d-and-power-d/413684
+
+
+https://ubuntuforums.org/archive/index.php/t-2004690.html
+
+
+sudo gedit /etc/pm/config.d/configAdd one line:
+SUSPEND_MODULES="iwlwifi"
 
 ==========
 https://askubuntu.com/questions/139157/booting-ubuntu-with-acpi-off-grub-parameter?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
@@ -725,3 +759,12 @@ mount |grep \/tmp
 # Directory Space
 du -h --max-depth=1 | sort -hr
 >>>>>>> acec9b14d9022a2f23c0798d98c98f025edc32ca
+
+
+## Change Hostname/Computer name
+http://ubuntuhandbook.org/index.php/2014/04/change-hostname-ubuntu1404/
+```bash
+hostname NEW_NAME_HERE
+sudo vi /etc/hostname
+sudo vi /etc/hosts
+```
