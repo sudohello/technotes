@@ -310,3 +310,6 @@ sudo pip install dill
 
 ## Paid Courses
 https://www.udemy.com/machine-learning-course-with-python/?couponCode=CODESTARS&siteID=rjqiUzH_Hec-2IXJ8GHGJe3fyubxBjnbnw&LSNPUBID=rjqiUzH%2FHec
+
+## Example Apps
+* https://github.com/delsner/flask-angular-data-science

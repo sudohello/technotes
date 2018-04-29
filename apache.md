@@ -74,6 +74,11 @@ echo '<?php phpinfo(); ?>' > ~/public_html/info.php
 sudo vi /etc/apache2/mods-available/php5.conf
 Now you need to comment out a line php_admin_value engine Off
 
+
+* [how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04)
+```bash
+sudo a2enmod rewrite && sudo service apache2 restart
+```
 * [Enable .htaccess under userdir](https://stackoverflow.com/questions/4289382/proper-userdir-conf-for-this-htaccess)
 Edit: /etc/apache2/mods-enabled/userdir.conf then, restart apache
 use option as illustrated:

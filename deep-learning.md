@@ -769,3 +769,8 @@ http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
 
 ## MOOC Courses
 https://www.coursera.org/learn/neural-networks
+
+## References
+http://www.deeplearningbook.org/
+
+
