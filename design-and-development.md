@@ -22,3 +22,14 @@ sudo apt-get install nodejs
 
 **tinypng**
 https://tinypng.com/
+
+**Minimum Viable Product (MVP) of this product**
+- https://www.smashingmagazine.com/2018/04/vuejs-firebase-firestore/
+Minimum Viable Product (MVP) of this product
+
+* When building an MVP, you’ll need tooling that gives you the power to quickly implement the key features as well as the flexibility to quickly add and change features later on.
+*  Vue.js as it’s a Javascript-rendering framework, backed by the Firebase suite (by Google) and its new real-time database called Firestore.
+
+
+**rise-intelligent-conversational-ui**
+https://www.smashingmagazine.com/2018/04/rise-intelligent-conversational-ui/

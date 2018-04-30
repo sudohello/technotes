@@ -12,3 +12,5 @@ Tags: HTTP
 - http://zacstewart.com/2012/04/14/http-options-method.html
 
 * Note: mapillary.com uses it, check it out.
+
+https://keybase.io/askd

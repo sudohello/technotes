@@ -129,3 +129,33 @@ sudo deluser git
 #
 git clone git@maze:/home/bhaskar/public_html/3Dmap/mapboxgl/smartcity
 ```
+
+## Git multiple remote repository
+- https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations/12795747#12795747
+```bash
+#
+git remote -v
+#
+git remote add alt <remoteURL>
+#git remote add alt https://github.com/mangalbhaskar/linuxscript-2.git
+git remote -v
+#
+git push alt
+#
+git config -e
+git config -help
+#
+git remote remove alt
+git remote -help
+#
+git remote set-url origin --push --add https://github.com/mangalbhaskar/linuxscript-2.git
+git remote set-url origin --push --delete https://github.com/mangalbhaskar/linuxscript-2.git
+#
+```
+## FAQs
+**what-is-the-difference-between-git-pull-and-git-fetch**
+- https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
+
+
+The take away is to keep in mind that there are often at least three copies of a project on your workstation. One copy is your own repository with your own commit history. The second copy is your working copy where you are editing and building. The third copy is your local "cached" copy of a remote repository.
+

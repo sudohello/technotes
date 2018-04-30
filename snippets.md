@@ -115,3 +115,12 @@ hoverPopup._content.parentNode.insertBefore((function() {
 
 
 https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+
+## MMI
+"<a href=\"https://osmbuildings.org/copyright\">&copy; OSM Buildings</a>
+<a href=\"https://www.openstreetmap.org/about/\">&copy; OpenStreetMap contributors</a>"
+
+
+https://maps.mapmyindia.com/images/watermark.png
+
+<a href=\"https://mapmyindia.com\">&copy;<img src=\"https://maps.mapmyindia.com/images/watermark.png\" alt=\"MapmyIndia.com\" title=\"MapmyIndia.com\" id=\"watermark_logo\"></a>

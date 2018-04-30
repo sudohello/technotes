@@ -89,3 +89,6 @@ Camel case (stylized as camelCase or CamelCase; also known as camel caps or more
 ## Reactive Programming
 - https://en.wikipedia.org/wiki/Reactive_programming
 - https://medium.com/@kevalpatel2106/what-is-reactive-programming-da37c1611382
+
+
+https://bootstrap-vue.js.org/docs/components/navbar/

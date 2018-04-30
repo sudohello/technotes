@@ -604,3 +604,107 @@ http://thadk.net/mapbox-gl-csv/?access_token=pk.eyJ1IjoidW5lcGdyaWQiLCJhIjoiY2lz
 https://porter.io/github.com/mapillary/mapillary-js
 
 https://bl.ocks.org/oscarlorentzon/0b7c5763225029268fce0324af2b2b3a
+
+**UI Layer tools**
+https://bl.ocks.org/danswick/7f76b15f7ef80391e933
+
+
+# GIS
+
+**Sun and Moon Position phases**
+https://github.com/mourner/suncalc
+
+**maptalks**
+http://maptalks.org/examples/en/3d/polygon-altitude/
+
+**GTFS**
+https://medium.com/@Scarysize/gently-gutting-gtfs-part-1-7a7f54a36ba0
+
+https://developers.route360.net/guide/gl-polygons
+
+// get bounds for fiiting view
+var bbox = turf.bbox(geojsonPolygons);
+map.fitBounds(bbox, {padding: 20});
+https://parallel.co.uk/
+
+## Princings
+https://developers.route360.net/pricing/
+
+
+## Vector Tile Self Hosting
+https://gis.stackexchange.com/questions/188141/mapbox-sdk-is-it-free-if-you-host-your-own-vector-tiles
+
+https://geovation.github.io/build-your-own-static-vector-tile-pipeline
+https://openmaptiles.org/docs/host/tileserver-gl/
+
+
+## 3D Tilings
+https://cesium.com/blog/2017/07/12/the-next-generation-of-3d-tiles/
+
+
+Using glTF for streaming CityGML 3D City Models
+https://www.slideshare.net/planetarnie/using-gltf-for-streaming-citygml-3d-city-models-64486544?next_slideshow=1
+https://cesium.com/blog/2017/07/26/aerometrex-melbourne/
+https://cesium.com/blog/2017/05/26/arcade-game-results/
+
+
+https://govhack-toolkit.readthedocs.io/technical/making-maps/
+https://www.toptal.com/web/the-roadmap-to-roadmaps-a-survey-of-the-best-online-mapping-tools
+
+
+https://www.toptal.com/web/the-roadmap-to-roadmaps-a-survey-of-the-best-online-mapping-tools
+https://tutel.me/c/gis/questions/136995/wfs+to+vector+tiles
+
+https://github.com/mapbox/vt2geojson
+https://github.com/mapbox/geojson-vt
+
+https://gis.stackexchange.com/questions/180182/how-to-tile-geojson-data
+http://tilestache.org/doc/
+
+https://www.sitepoint.com/3d-maps-with-eegeo-and-leaflet/
+
+https://www.mapbox.com/bites/00093/
+
+http://bl.ocks.org/lxbarth/4019660
+
+https://www.ryanbaumann.com/blog/2017/5/29/big-data-vector-heatmaps-with-mapbox-gl
+
+
+http://commons.pelagios.org/2017/11/building-the-roman-empire-vector-tile-map/
+
+
+**CSV to Geojson mapbox gl**
+https://bl.ocks.org/danswick/effa94375f9ed24cea9f
+**custom source layers**
+https://github.com/mapbox/mapbox-gl-js/issues/2920
+
+**Geojson Tile server**
+https://gis.stackexchange.com/questions/193095/generating-and-hosting-vector-tiles-from-geojson-no-errors-but-no-data
+
+https://www.npmjs.com/package/geojson-tile-server
+https://github.com/TNOCS/geojson-tile-server.git
+```bash
+git clone https://github.com/TNOCS/geojson-tile-server.git
+cd geojson-tile-server
+yarn
+yarn build
+```
+
+https://github.com/mapbox/mapbox-gl-js/issues/2120
+
+Tiled GeoJSON isn't supported. If you want to use tiled data, you need to provide it in vector tile format.
+
+
+
+
+https://www.arden.nl/getting-started-with-mapbox-gl-js/
+
+https://hvv.live/
+
+**Vector Tile 3rd Parties Business Models**
+https://www.jawg.io/en/
+http://maptalks.org/examples/en/3d/polygon-altitude/
+
+
+**Animations mapbox gl**
+https://medium.com/@Scarysize/the-moving-city-visualizing-public-transport-877f581ca96e
