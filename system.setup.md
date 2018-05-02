@@ -62,7 +62,7 @@ sudo umount -a
 sudo vi /etc/fstab
 ```
 * Sample working fstab entry
----
+```
 # /etc/fstab: static file system information.
 #
 # Use 'blkid' to print the universally unique identifier for a
@@ -82,7 +82,7 @@ UUID=98083c67-4779-4603-85ac-fd5bb2f6ef37       /mnt/datadrive                  
 /mnt/datadrive/thanos/Music                     /home/thanos/Music              none    bind                            0       0
 /mnt/datadrive/thanos/Videos                    /home/thanos/Videos             none    bind                            0       0
 /mnt/datadrive/thanos/softwares                 /home/thanos/softwares          none    bind                            0       0
----
+```
 
 ## Software Stack setup begins
 
