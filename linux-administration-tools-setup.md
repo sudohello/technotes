@@ -3,6 +3,7 @@ Title: Linux Administration, Tools setup
 Decription: nitty gritty of Linux
 Author: Bhaskar Mangal
 Date: 20 Jan 2017
+Updated: 02 May 2018
 Tags: Linux, Administration, Tools, Softwares
 */
 
@@ -768,3 +769,72 @@ hostname NEW_NAME_HERE
 sudo vi /etc/hostname
 sudo vi /etc/hosts
 ```
+
+## Get the UUID of the block device
+https://help.ubuntu.com/community/UsingUUID
+```bash
+ sudo blkid
+ls -l /dev/disk/by-uuid/
+```
+
+## System Setup
+
+### Move Home folder
+- https://www.maketecheasier.com/move-home-folder-ubuntu/
+
+### Mouting
+https://askubuntu.com/questions/607149/change-permissions-to-a-specific-user-in-ubuntu-12-04
+```
+cat /etc/mtab
+sudo vi /etc/fstab
+```
+
+### Safe mounting
+- https://askubuntu.com/questions/14365/mount-an-external-drive-at-boot-time-only-if-it-is-plugged-in
+- http://techmonks.net/nofail-and-nobootwait-mount-options-in-fstab-prevent-boot-problems/
+```
+LABEL=Series  /mnt/filer/Series  xfs  auto,nofail,nodev,noexec,nouser,noatime  0  2
+UUID=XXXXXXXXXXXXXXX    /myhdd ntfs  auto,nofail,noatime,rw,user    0   0
+```
+
+### Running the script on bootup
+- https://stackoverflow.com/questions/2062543/running-a-script-with-the-help-of-grub-and-menu-lst
+
+### Remote and Local File transfer
+
+#### rsync
+rsync -aXS
+
+#### scp
+- https://stackoverflow.com/questions/11304895/how-to-scp-a-folder-from-remote-to-local
+
+
+To copy all from Local Location to Remote Location (Upload)
+
+scp -r /path/from/destination username@hostname:/path/to/destination
+
+To copy all from Remote Location to Local Location (Download)
+
+scp -r username@hostname:/path/from/destination /path/to/destination
+
+Custom Port where xxxx is custom port number
+
+ scp -r -P xxxx username@hostname:/path/from/destination /path/to/destination
+
+Copy on current directory from Remote to Local
+
+scp -r username@hostname:/path/from/file .
+
+Help:
+
+    -r Recursively copy all directories and files
+    Always use full location from /, Get full location by pwd
+    scp will replace all existing files
+    hostname will be hostname or IP address
+    if custom port is needed (besides port 22) use -P portnumber
+    . (dot) - it means current working directory, So download/copy from server and paste here only.
+
+Note: Sometimes the custom port will not work due to the port not being allowed in the firewall, so make sure that custom port is allowed in the firewall for incoming and outgoing connection
+
+### User and Group details
+- http://geek-university.com/linux/uid-user-identifier-gid-group-identifier/

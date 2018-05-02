@@ -14,6 +14,9 @@ https://php.earth/docs/interop/git
 https://git-scm.com/doc
 https://git-scm.com/
 
+**Basic Concetps**
+https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone
+
 **Git Ignore Templates**
 https://github.com/github/gitignore
 
