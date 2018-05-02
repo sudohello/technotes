@@ -3,12 +3,16 @@ Title: 3D City
 Decription: 3D City
 Author: Bhaskar Mangal
 Date: 29th Nov 2017
+Updated: 30th Apr 2018
 Tags: 3D City
 */
 
 ** Table of Contents**
 
 [TOC]
+
+## 3D Cities Market Research
+* [3D Cities Market Research](3d-cities-competitors-landscape.html)
 
 ## 3D Map Libraries
 * [3d-map-library-roundup](https://blog.webkid.io/3d-map-library-roundup/)
@@ -356,7 +360,7 @@ We are building the commercial Cesium Composer platform to provide 3D tiling for
 * potree
 	* [Potree_Rendering_Large_Point_Clouds_in_Web_Browsers](https://www.researchgate.net/publication/309358171_Potree_Rendering_Large_Point_Clouds_in_Web_Browsers)
 * plas.io
-* [itowns] (itowns-project.org)
+* [itowns](http://www.itowns-project.org/)
 * [Entwine](http://potree.entwine.io/)
 * [Greyhound](https://github.com/hobu/greyhound)
 
@@ -582,6 +586,7 @@ http://10.4.71.121/local/jayashree/maze/cesium/Apps/
 
 **Commercial: Cesium Composer**
 * [3d-tiles-pioneers](https://cesium.com/3d-tiles-pioneers/)
+* https://cesium.com/collaborate-with-us/#data-services
 
 ## Keywords & Definitions
 
@@ -787,8 +792,6 @@ http://geojson.io/#map=18/12.98056/77.72202
 https://gis.stackexchange.com/questions/115433/online-wkt-and-geojson-viewer
 http://mapshaper.org/
 
-amount payable 6044/-
-
 https://gis.stackexchange.com/questions/230939/cesium-load-geometry-as-geojson
 
 
@@ -925,10 +928,6 @@ http://www.senchalabs.org/philogl/demos.html
 http://www.glge.org/
 https://github.com/evanw/lightgl.js
 
-## Commercials, Business Models
-* [ArcGIS REST API](https://developers.arcgis.com/pricing/)
-* [osmbuildings](https://osmbuildings.org/data/)
 
-
-## 3D Maps
-https://www.ordnancesurvey.co.uk/blog/tag/3d/
+* http://www.ceinsys.com/blog/3d-city-planning/
+* https://wiki.openstreetmap.org/wiki/3D
