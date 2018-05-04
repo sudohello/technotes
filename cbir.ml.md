@@ -87,3 +87,43 @@ dir(sklearn)
 * What are HOG descriptors used to describe?
 HOG descriptors are mainly used to describe the structural shape and appearance of an object in an image, making them excellent descriptors for object classification. However, since HOG captures local intensity gradients and edge directions, it also makes for a good texture descriptor.
 - https://gurus.pyimagesearch.com/lesson-sample-histogram-of-oriented-gradients-and-car-logo-recognition/
+
+## Problem statements
+1. image analysis: image classification, object detection and object segmentation
+2. automatically analyse the semantic contents of images and videos as it is just the content that determines the relevance in most of the potential uses
+3.  image similarity assessment
+
+- The problem is formulated as a supervised learning problem in which a training set of labelled images is provided.
+
+One important aspect of image content is the object composition: the identities and positions of the objects the images contain.
+
+* Our approach for the classification task is based on fused classifications by numerous global image features, including histograms of local features.
+* The object detection combines similar classification of automatically extracted image segments and the previously obtained scene type lassifications
+* The object segmentations are obtained in a straightforward fashion from the detection results.
+
+
+**Datasets Availability**
+https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
+
+- Facial recognition
+- Action recognition
+- Object detection and recognition
+- Handwriting and character recognition
+- Aerial images
+- Text data
+- News articles
+- Messages
+- Twitter and tweets
+- Sound data
+- Music
+- Signal data
+- Motion-tracking
+- Animal
+- Plant
+
+## Image Annotation Tools
+* https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
+* https://github.com/wkentaro/labelme
+* https://github.com/CSAILVision/LabelMeAnnotationTool
+* https://en.wikipedia.org/wiki/LabelMe
+

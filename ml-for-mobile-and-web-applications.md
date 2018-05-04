@@ -313,3 +313,6 @@ https://www.udemy.com/machine-learning-course-with-python/?couponCode=CODESTARS&
 
 ## Example Apps
 * https://github.com/delsner/flask-angular-data-science
+
+## Dataset / Data source/ Datasource for ML
+https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
