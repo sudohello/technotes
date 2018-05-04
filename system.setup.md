@@ -8,10 +8,17 @@ Tags: Ubuntu System Setup
 */
 
 # System Setup
-Machine buildup for: GIS + ComputerVision + ML + 3D + DeepLearning
+Assembling decent system for Multi purpose:
+* Computer Vision and Image Processing
+* Machine Learning
+* Deep Learning
+* 3D GIS - Photogrammetry, Point Cloud, LiDAR, 3D Modelling
+* Data Analysis, Data Visualization
+* VR,AR
+* VFX
 
 ## Hardware/PC configuration
-TBD - add the file Hardware and PC config file references
+* [System Configuration Research - What & Why](hardwares-configs.md)
 
 ## OS Installation and setting up directories
 **Install git, gparted, vim-gtk and sublime editor**
@@ -97,26 +104,66 @@ git config --global user.name "Your Name"
 ```
 
 ### Sequence of Software Installed
-* Nvidia Driver -> 390.1
-* vim-gtk, sublime editor, vlc
-* php - 7.0,7.1
-* apache2 -> this installed latest PHP version (currently, version=7.2)
-* nodejs -> nodejs=9.11.1, npm=5.6.0
+* [Nvidia Driver -> 390.1](nvidia.driver.install.sh)
+```
+Manual Driver Installation
+```
+* [vim-gtk](vim.install.sh)
+* [SublimeText 3 editor](sublimetexteditor.install.sh)
+* [vlc](vim.install.sh)
+* [utils.install.sh](utils.install.sh)
+* [php, composer and php extensions](php.install.sh)
+* [apache2 -> this installed latest PHP version (currently, version=7.2)](apache2.install)
+* [nodejs -> nodejs=9.11.1, npm=5.6.0](nodejs.install.sh)
 * opencv pre-requisites for computer vision and deep learning
-* java -> JDK:1.8
-* python -> 2.7+
+* [java -> JDK:1.8](java.install.sh)
+```bash
+source java.install.sh
+```
+* [python -> 2.7+](python.install.sh)
+* [postgres](postgres.install.sh)
+* [Cuda -> 9.1](cuda.install.sh)
+```bash
+source cuda.install.sh
+```
+* [Inkscape - graphics](inkscape.graphics.install.sh)
+* [gimp - graphics](gimp.graphics.install.sh)
+* [Ceres Solver -> 1.14.0](ceres-solver.install.sh)
+* [proj -> VER="4.9.3"](proj.install.sh)
+* [tiff -> VER="4.0.8"](tiff.install.sh)
+* [geotiff -> VER="1.4.2"](geotiff.install.sh)
+* [lasZip -> git clone](laszip.install.sh)
+* [geoos -> VER="3.6.1"](geos.install.sh)
+* boost
+libkml
+gdal
+libLAS
+zlib
+QT 5.10+
+CloudCompare
+meshlab
+
+* Boost Python
+* OpenCV
+* QT -> 5.10+ [skipped, be careful if unsuccessul can mess up your system]
 * VTK
-* QT5.10+
-* GIS stack
-* Python stack
-* Postgres stack
-* postgres
-* Cuda -> 9.1
-* Inkscape
-* gimp
 
+**TIPs**
+* Follow the above `Software Installation sequence` to avoid grief and have maximum features supports
+* Always check the pre-requisites and proper recommedned versions are installed.
+```bash
+#
+# for apt/apt-get installation
+apt-cache policy <packageName>
+#
+# for python/pip
+pip list
+#
+```
 
-
+**References**
+1. GIS Software Setup
+* [howto-install-latest-geospatial-software-on-linux](http://scigeo.org/articles/howto-install-latest-geospatial-software-on-linux.html#environment_vars)
 
 https://blackbricksoftware.com/bit-on-bytes/169-scikit-image-installation-for-ubuntu-16-04
 https://www.udacity.com/wiki/creating-network-graphs-with-python#how-to-install-networkx
