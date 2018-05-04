@@ -37,3 +37,9 @@ npm install --save deck.gl
 npm install --save mapbox-gl
 
 ```
+
+## Tutorials
+https://designhammer.com/blog/reusable-vuejs-components-part-1-introduction
+
+## Resources
+https://github.com/vuejs/awesome-vue

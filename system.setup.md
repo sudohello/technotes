@@ -94,10 +94,16 @@ git clone https://github.com/mangalbhaskar/technotes.git $HOME/Documents/content
 #
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-# example
-git config --global user.email "mangalbhaskar@gmail.com"
-git config --global user.name "mangalbhaskar"
 ```
+
+* vim-gtk, sublime editor, vlc
+* php
+* apache2 -> this installed latest PHP version (currently, version=7.2)
+* nodejs -> nodejs=9.11.1, npm=5.6.0
+* opencv pre-requisites for computer vision and deep learning
+* JDK -> 1.8
+* python
+
 
 * VTK
 * QT5.10+
@@ -105,3 +111,12 @@ git config --global user.name "mangalbhaskar"
 * Python stack
 * LAMP
 * Postgres stack
+
+
+----
+
+##
+
+https://www.zdnet.com/article/what-are-the-best-raspberry-pi-alternatives-everything-you-need-to-know-about-pi-rivals
+
+https://www.nds-association.org/

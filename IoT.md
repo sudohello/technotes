@@ -19,3 +19,4 @@ https://www.zdnet.com/article/m2m-and-the-internet-of-things-a-guide/
 https://en.wikibooks.org/wiki/I_Dream_of_IoT/Chapter_6_:_IoT_and_Machine-to-Machine_(M2M)
 
 ## References
+
