@@ -96,23 +96,44 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
 
+### Sequence of Software Installed
+* Nvidia Driver -> 390.1
 * vim-gtk, sublime editor, vlc
-* php
+* php - 7.0,7.1
 * apache2 -> this installed latest PHP version (currently, version=7.2)
 * nodejs -> nodejs=9.11.1, npm=5.6.0
 * opencv pre-requisites for computer vision and deep learning
-* JDK -> 1.8
-* python
-
-
+* java -> JDK:1.8
+* python -> 2.7+
 * VTK
 * QT5.10+
 * GIS stack
 * Python stack
-* LAMP
 * Postgres stack
+* postgres
+* Cuda -> 9.1
+* Inkscape
+* gimp
 
 
+
+
+https://blackbricksoftware.com/bit-on-bytes/169-scikit-image-installation-for-ubuntu-16-04
+https://www.udacity.com/wiki/creating-network-graphs-with-python#how-to-install-networkx
+- numpy, pandas, matplotlib, scipy, sklearn, skimage
+
+ sudo apt install python-networkx
+ sudo pip install -U scikit-image
+- before opencv
+
+
+
+#Flask                         0.12.2     
+#matplotlib                    2.2.2      
+#numpy                         1.14.2     
+#pandas                        0.22.0     
+#scikit-learn                  0.19.1     
+#scipy                         1.0.1
 ----
 
 ##
