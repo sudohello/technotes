@@ -8,4 +8,5 @@ sympy
 scikit-image
 statsmodels
 seaborn
+vtk
 Mayavi

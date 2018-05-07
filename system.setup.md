@@ -121,6 +121,37 @@ Manual Driver Installation
 source java.install.sh
 ```
 * [python -> 2.7+](python.install.sh)
+```bash
+sudo pip install pip -U
+sudo apt remove python-pip
+sudo apt remove python-scipy
+#
+python --version
+#Python 2.7.12
+#
+pip --version
+#pip 10.0.1 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7)
+#
+```
+
+```bash
+sudo pip install -r requirements.py.md -U
+sudo pip list | grep -iE "numpy|scipy|matplotlib|scikit-learn|Flask|pandas|sympy|scikit-image|statsmodels|seaborn|vtk|Mayavi"
+#
+#Flask                         1.0.2                 
+#matplotlib                    2.2.2                 
+#mayavi                        4.5.0                 
+#umpy                         1.14.3                
+#pandas                        0.22.0                
+#scikit-image                  0.13.1                
+#scikit-learn                  0.19.1                
+#scipy                         1.1.0                 
+#seaborn                       0.8.1                 
+#statsmodels                   0.8.0                 
+#sympy                         1.1.1                 
+#vtk                           8.1.0
+```
+
 * [postgres](postgres.install.sh)
 * [Cuda -> 9.1](cuda.install.sh)
 ```bash
@@ -134,8 +165,12 @@ source cuda.install.sh
 * [geotiff -> VER="1.4.2"](geotiff.install.sh)
 * [lasZip -> git clone](laszip.install.sh)
 * [geoos -> VER="3.6.1"](geos.install.sh)
-* boost
-libkml
+* boost -> 1.64.0
+* libkml -> compilation errors
+* cmake, ccmake upgrade to 3.11.0
+* install android SDK
+* install android studio (optional)
+* VTK -> 8.1.0
 gdal
 libLAS
 zlib
@@ -146,7 +181,6 @@ meshlab
 * Boost Python
 * OpenCV
 * QT -> 5.10+ [skipped, be careful if unsuccessul can mess up your system]
-* VTK
 
 **TIPs**
 * Follow the above `Software Installation sequence` to avoid grief and have maximum features supports
