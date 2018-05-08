@@ -169,14 +169,19 @@ source cuda.install.sh
 * libkml -> compilation errors
 * cmake, ccmake upgrade to 3.11.0
 * install android SDK
+* install android NDK
 * install android studio (optional)
-* VTK -> 8.1.0
-gdal
+* gdal
+* MySQL
+* VTK -> 8.1.0 (python wrapper and group images, group web)
 libLAS
 zlib
 QT 5.10+
 CloudCompare
 meshlab
+
+
+
 
 * Boost Python
 * OpenCV
