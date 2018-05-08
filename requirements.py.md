@@ -10,3 +10,4 @@ statsmodels
 seaborn
 vtk
 Mayavi
+pylint
