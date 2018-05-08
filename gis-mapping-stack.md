@@ -350,3 +350,14 @@ Configure completed: run `make` to build or `make install`
 
 ## Mapping
 https://www.mapbox.com/mapping/
+
+## GIS Software For Ubuntu
+http://scigeo.org/articles/howto-install-latest-geospatial-software-on-linux.html#geos
+
+
+Misc Tools & Libraries
+These are other miscellaneous libraries/tools that are often needed as dependencies for other geospatial/scientific software described above.
+MPI
+MPI is a parallel computing standard that allows programs to take advantage of multiple processors. There are two competing MPI implementations available on most Linux distributions: mpich and openmpi. Generally, mpich is older and more compatible, particularly on CentOS, but both implementations have their own advantages.
+Here I will describe how to install the mpich or openmpi MPI implementations from standard repositories on CentOS and Ubuntu. These libraries can then be used by boost, hdf5, flann, VTK, PCL, and other software.
+Note: There also exists the openmp multiprocessing API, which is installed by default on CentOS and Ubuntu through the libgomp and libgomp1 packages, respectively. 

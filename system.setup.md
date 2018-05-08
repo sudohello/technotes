@@ -173,15 +173,52 @@ source cuda.install.sh
 * install android studio (optional)
 * gdal
 * MySQL
+* lzma, jsoncpp, libarchive, libhash
 * VTK -> 8.1.0 (python wrapper and group images, group web)
-libLAS
+* lasperf
+* grassgis
+* pgpointcloud
+* geowave - not installed
+* pdal with compressin and las-perf, python fails, without python installed
+* entwine - manual fix openssl1.1 api changes
+* greyhound -failed
+openscenegraph
+hexbin
+pcl
+#* pdal
 zlib
 QT 5.10+
 CloudCompare
 meshlab
 
+##
+* MPI is a parallel computing standard that allows programs to take advantage of multiple processors. There are two competing MPI implementations available on most Linux distributions: mpich and openmpi. 
+
+```
+sudo apt-get install libmpich-dev
+```
 
 
+# CUnit - Automation test suite for C
+# https://mysnippets443.wordpress.com/2015/03/07/ubuntu-install-cunit/
+#sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
+```
+sudo apt install libcunit1 libcunit1-dev
+```
+
+* The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry.
+```
+sudo apt-get install libcgal-dev # install the CGAL library
+sudo apt-get install libcgal-demo # install the CGAL demos
+```
+sudo apt-get install libxerces-c-dev
+sudo apt install libjsoncpp-dev
+
+sudo apt-get install libqt5x11extras5-dev
+sudo apt-get install qttools5-dev
+
+ sudo apt install libsuitesparseconfig4.4.6 libsuitesparse-dev
+ sudo apt install metis libmetis-dev
 
 * Boost Python
 * OpenCV
