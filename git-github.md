@@ -13,6 +13,7 @@ https://try.github.io/levels/1/challenges/1
 https://php.earth/docs/interop/git
 https://git-scm.com/doc
 https://git-scm.com/
+https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control
 
 **Basic Concetps**
 https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone
