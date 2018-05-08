@@ -121,6 +121,37 @@ Manual Driver Installation
 source java.install.sh
 ```
 * [python -> 2.7+](python.install.sh)
+```bash
+sudo pip install pip -U
+sudo apt remove python-pip
+sudo apt remove python-scipy
+#
+python --version
+#Python 2.7.12
+#
+pip --version
+#pip 10.0.1 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7)
+#
+```
+
+```bash
+sudo pip install -r requirements.py.md -U
+sudo pip list | grep -iE "numpy|scipy|matplotlib|scikit-learn|Flask|pandas|sympy|scikit-image|statsmodels|seaborn|vtk|Mayavi"
+#
+#Flask                         1.0.2                 
+#matplotlib                    2.2.2                 
+#mayavi                        4.5.0                 
+#umpy                         1.14.3                
+#pandas                        0.22.0                
+#scikit-image                  0.13.1                
+#scikit-learn                  0.19.1                
+#scipy                         1.1.0                 
+#seaborn                       0.8.1                 
+#statsmodels                   0.8.0                 
+#sympy                         1.1.1                 
+#vtk                           8.1.0
+```
+
 * [postgres](postgres.install.sh)
 * [Cuda -> 9.1](cuda.install.sh)
 ```bash
@@ -134,19 +165,64 @@ source cuda.install.sh
 * [geotiff -> VER="1.4.2"](geotiff.install.sh)
 * [lasZip -> git clone](laszip.install.sh)
 * [geoos -> VER="3.6.1"](geos.install.sh)
-* boost
-libkml
-gdal
-libLAS
+* boost -> 1.64.0
+* libkml -> compilation errors
+* cmake, ccmake upgrade to 3.11.0
+* install android SDK
+* install android NDK
+* install android studio (optional)
+* gdal
+* MySQL
+* lzma, jsoncpp, libarchive, libhash
+* VTK -> 8.1.0 (python wrapper and group images, group web)
+* lasperf
+* grassgis
+* pgpointcloud
+* geowave - not installed
+* pdal with compressin and las-perf, python fails, without python installed
+* entwine - manual fix openssl1.1 api changes
+* greyhound -failed
+openscenegraph
+hexbin
+pcl
+#* pdal
 zlib
 QT 5.10+
 CloudCompare
 meshlab
 
+##
+* MPI is a parallel computing standard that allows programs to take advantage of multiple processors. There are two competing MPI implementations available on most Linux distributions: mpich and openmpi. 
+
+```
+sudo apt-get install libmpich-dev
+```
+
+
+# CUnit - Automation test suite for C
+# https://mysnippets443.wordpress.com/2015/03/07/ubuntu-install-cunit/
+#sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
+```
+sudo apt install libcunit1 libcunit1-dev
+```
+
+* The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry.
+```
+sudo apt-get install libcgal-dev # install the CGAL library
+sudo apt-get install libcgal-demo # install the CGAL demos
+```
+sudo apt-get install libxerces-c-dev
+sudo apt install libjsoncpp-dev
+
+sudo apt-get install libqt5x11extras5-dev
+sudo apt-get install qttools5-dev
+
+ sudo apt install libsuitesparseconfig4.4.6 libsuitesparse-dev
+ sudo apt install metis libmetis-dev
+
 * Boost Python
 * OpenCV
 * QT -> 5.10+ [skipped, be careful if unsuccessul can mess up your system]
-* VTK
 
 **TIPs**
 * Follow the above `Software Installation sequence` to avoid grief and have maximum features supports
