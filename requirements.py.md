@@ -11,3 +11,5 @@ seaborn
 vtk
 Mayavi
 pylint
+exifread
+PyYAML
