@@ -127,3 +127,14 @@ https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
 * https://github.com/CSAILVision/LabelMeAnnotationTool
 * https://en.wikipedia.org/wiki/LabelMe
 
+## Drone Data Solutions
+http://huviair.com/
+https://geospoc.com/
+https://www.dronedeploy.com/
+https://flylitchi.com/
+https://pix4d.com/
+
+
+1. Master the complete workflow using DroneDeploy, Litchi and Pix4D. Start your own UAV mapping business right away!
+2. Learn to work with Pix4D & DroneDeploy outputs on QGIS, AutoCAD & Google Earth. Start your own UAV mapping business now!
+3. Master the use of Ground Control Points (GCPs) to make your UAV mapping projects absolutely survey grade!!
