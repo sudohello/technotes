@@ -13,3 +13,5 @@ Mayavi
 pylint
 exifread
 PyYAML
+six
+wheel

@@ -157,6 +157,7 @@ sudo pip list | grep -iE "numpy|scipy|matplotlib|scikit-learn|Flask|pandas|sympy
 ```bash
 source cuda.install.sh
 ```
+* cuDNN -> 7.1+
 * [Inkscape - graphics](inkscape.graphics.install.sh)
 * [gimp - graphics](gimp.graphics.install.sh)
 * [Ceres Solver -> 1.14.0](ceres-solver.install.sh)
@@ -182,10 +183,10 @@ source cuda.install.sh
 * pdal with compressin and las-perf, python fails, without python installed
 * entwine - manual fix openssl1.1 api changes
 * greyhound -failed
+* pcl
+* opencv
 openscenegraph
 hexbin
-pcl
-#* pdal
 zlib
 QT 5.10+
 CloudCompare

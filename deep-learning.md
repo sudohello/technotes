@@ -766,6 +766,11 @@ http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/
 ** Hardware Guides for Deep Learning
 http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
 
+## AI Frameworks
+https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
+https://cloud.google.com/automl/
+https://aws.amazon.com/sagemaker/
+
 
 ## MOOC Courses
 https://www.coursera.org/learn/neural-networks
