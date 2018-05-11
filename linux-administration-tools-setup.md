@@ -838,3 +838,17 @@ Note: Sometimes the custom port will not work due to the port not being allowed 
 
 ### User and Group details
 - http://geek-university.com/linux/uid-user-identifier-gid-group-identifier/
+
+**Enabling Intel Onboard Graphics**
+https://askubuntu.com/questions/989946/cannot-change-resolution-with-8th-gen-intel-cpu-in-ubuntu-16-04/1002662#1002662
+```bash
+sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.alpha_support=1"
+sudo update-grub
+sudo reboot
+```
+
+**System Information**
+sudo lshw -short
+
+efibootmg1 -v

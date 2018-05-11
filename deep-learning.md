@@ -766,6 +766,28 @@ http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/
 ** Hardware Guides for Deep Learning
 http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
 
+## AI Frameworks
+https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
+https://cloud.google.com/automl/
+https://aws.amazon.com/sagemaker/
+
+## Object Detection
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/blob/master/README.md
+
+
+## Street View Image Segmentation
+**Segmentation**
+https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
+
+https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef
+
+
+https://blog.goodaudience.com/using-convolutional-neural-networks-for-image-segmentation-a-quick-intro-75bd68779225
+https://github.com/subodh-malgonde/semantic-segmentation
+
+http://www.cvlibs.net/datasets/kitti/eval_road.php
+
+https://github.com/udacity/CarND-Semantic-Segmentation/
 
 ## MOOC Courses
 https://www.coursera.org/learn/neural-networks
@@ -773,4 +795,34 @@ https://www.coursera.org/learn/neural-networks
 ## References
 http://www.deeplearningbook.org/
 
+https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
+https://in.udacity.com/course/how-to-use-git-and-github--ud775
 
+## Python2 or Python3
+https://www.quora.com/Which-version-of-Python-is-more-often-used-in-machine-learning-Python-2-7-or-Python-3-0+
+
+My best advice is to install the Anaconda distribution of Python[1] with the newest Python version. If you need to use 2.7 for some strange reason, you can easily do that with Anaconda. It’s really simple to switch between different environments with different versions of Python if you use the Conda package manager.[2]
+
+(New update on 5/2017) Go for Python 3.0+ as now most of the machine learning and relative computing packages are supported in Python 3.0+ (sklearn, xgboost, pandas, numpy, etc.).
+
+## Python2 vs Python3
+http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
+https://www.activestate.com/blog/2017/01/python-3-vs-python-2-its-different-time
+
+
+## Image Labeling Tools
+https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
+https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
+https://github.com/tzutalin/labelImg
+http://sloth.readthedocs.io/en/latest/
+https://github.com/yuyu2172/image-labelling-tool
+https://blog.playment.io/training-data-for-computer-vision/
+https://alpslabel.wordpress.com/
+https://github.com/commaai/commacoloring
+https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
+https://github.com/Labelbox/Labelbox/blob/master/LICENSE
+
+
+git clone https://github.com/tzutalin/labelImg.git
+
+https://oclavi.com/

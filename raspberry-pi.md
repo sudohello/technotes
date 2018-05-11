@@ -12,3 +12,4 @@ A Raspberry Pi is a general-purpose computer, usually with a Linux operating sys
 
 https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
 
+https://www.zdnet.com/article/what-are-the-best-raspberry-pi-alternatives-everything-you-need-to-know-about-pi-rivals
