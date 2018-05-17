@@ -307,7 +307,6 @@ sudo pip install dill
 - https://www.analyticsvidhya.com/blog/2017/09/machine-learning-models-as-apis-using-flask/
 - [Machine Learning models as APIs using Flask](https://render.githubusercontent.com/view/ipynb?commit=dac6eb737b58b73f9b9b323a9a39c0d1fe8cbfee&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f707261746f732f666c61736b5f6170692f646163366562373337623538623733663962396233323361396133396330643166653863626665652f6e6f7465626f6f6b732f4d4c2532304d6f64656c732532306173253230415049732532307573696e67253230466c61736b2e6970796e62&nwo=pratos%2Fflask_api&path=notebooks%2FML+Models+as+APIs+using+Flask.ipynb&repository_id=103313016&repository_type=Repository#no1)
 
-
 ## Paid Courses
 https://www.udemy.com/machine-learning-course-with-python/?couponCode=CODESTARS&siteID=rjqiUzH_Hec-2IXJ8GHGJe3fyubxBjnbnw&LSNPUBID=rjqiUzH%2FHec
 
@@ -316,3 +315,16 @@ https://www.udemy.com/machine-learning-course-with-python/?couponCode=CODESTARS&
 
 ## Dataset / Data source/ Datasource for ML
 https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
+
+## References
+https://www.superdatascience.com/machine-learning/
+https://www.freetutorials.us/
+
+## Object Detections
+https://www.pyimagesearch.com/2018/05/14/a-gentle-guide-to-deep-learning-object-detection/
+https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
+https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/
+https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/
+
+## Map Views
+https://elections.indianexpress.com/karnataka-elections-result-overview/

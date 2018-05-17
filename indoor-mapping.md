@@ -218,6 +218,22 @@ https://wego.here.com/?map=12.92078,77.68891,19,satellite
 **Maze Map**
 https://www.mazemap.com/pricing
 
+**steerpath**
+https://steerpath.com/
+
+**wayfindingpro**
+https://www.wayfindingpro.com/sdk/
+
+**indoorway**
+https://www.indoorway.com/developers/
+
+**mapsindoors**
+https://www.mapspeople.com/become-a-partner/
+https://mapsindoors.github.io/
+https://mapsindoors.github.io/web/
+
+**proximi**
+https://proximi.io/
 
 **wrld3d**
 Coverage:
@@ -352,3 +368,16 @@ http://www.sarahmakesmaps.com/blog/
 
 ## Indoor Mapping Tech Companies and Technologies
 http://www.kaarta.com/
+
+## Indoormaps Examples
+https://www.mapspeople.com/mapsindoors/
+http://3dcampus.arcgis.com/EsriCampusViewer2017/
+
+## OSM Indoor Mapping
+https://agile-online.org/conference_paper/cds/agile_2014/agile2014_82.pdf
+https://www.gim-international.com/content/article/mapping-the-indoor-world
+http://wiki.openstreetmap.org/wiki/IndoorOSM - Dont Use this, defunct
+https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging - current spec
+
+https://www.youtube.com/watch?v=60Ab7f8YZ7w
+http://europe.foss4g.org/2015/Mapping%20parties

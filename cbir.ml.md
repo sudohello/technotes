@@ -138,3 +138,8 @@ https://pix4d.com/
 1. Master the complete workflow using DroneDeploy, Litchi and Pix4D. Start your own UAV mapping business right away!
 2. Learn to work with Pix4D & DroneDeploy outputs on QGIS, AutoCAD & Google Earth. Start your own UAV mapping business now!
 3. Master the use of Ground Control Points (GCPs) to make your UAV mapping projects absolutely survey grade!!
+
+**opencv compilation failed for the following modules**
+- sfm
+- dnn
+- js(depends on dnn)

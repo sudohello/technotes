@@ -3,9 +3,42 @@ Title: Maths
 Decription: Maths
 Author: Bhaskar Mangal
 Date: 
+Updated: 16th May 2018
 Tags: Maths
 */
 
+## Mathematics
+
+### Singular-Value Decomposition (SVD)
+- https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254
+- examples and applications
+	* Useful in machine learning and in both descriptive and predictive statistics
+	* psychology and sociology, climate and atmospheric science, and astronomy
+- Other terms include:
+	* factor analysis
+	* principal component (PC) decomposition
+	* empirical orthogonal function (EOF)
+
+**Technical introduction**
+- Singular value decomposition is a method of decomposing a matrix into three other matrices
+
+### Matrix Algebra
+- orthogonal matrix
+- diagonal matrix
+- square matrix
+- transpose
+- Identity matrix
+- eigenvalues
+- determinant of a square matrix
+- inverse of a square matrix
+- sigular matrix: A square matrix that does not have a matrix inverse. A matrix is singular if its determinant is 0.
+	- mathworld.wolfram.com/SingularMatrix.html
+
+
+### Vector Algebra and Vector Calculus
+http://farside.ph.utexas.edu/teaching/336k/Newtonhtml/node148.html
+
+## Misc
 enhancing the Euclidean plane by the addition of these points at infinity where parallel lines meet, and resolving the difficulty with infinity by calling them “ideal points.” By adding these points at infinity, the familiar Euclidean space is transformed into a new type of geometric object, projective space.
 
 projective space – it is just an extension of Euclidean space in which two lines always meet in a point, though sometimes at mysterious points at infinity.

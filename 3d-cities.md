@@ -931,3 +931,57 @@ https://github.com/evanw/lightgl.js
 
 * http://www.ceinsys.com/blog/3d-city-planning/
 * https://wiki.openstreetmap.org/wiki/3D
+
+
+## 3D GIS, gltf References
+https://wikivividly.com/wiki/GlTF
+https://github.com/KhronosGroup/glTF#converters
+https://www.slideshare.net/endofcap/mago3d-a-brand-new-geobim-platform-on-top-of-cesium-world-wind
+
+https://github.com/KhronosGroup/glTF-Blender-Exporter
+https://github.com/KhronosGroup/glTF-Validator
+https://cesiumjs.org/tutorials/3D-Models-Tutorial/
+http://geospatial-solutions.com/nightmare-on-gis-street-accuracy-datums-and-geospatial-data/
+
+http://www.mago3d.com/homepage/about.do
+
+https://www.virtualgis.io/gltfviewer/
+https://github.com/KhronosGroup/glTF/issues/401
+
+https://www.wrld3d.com/wrld.js/latest/docs/examples/finding-a-route-in-an-indoor-map/
+https://wiki.openstreetmap.org/wiki/Indoor_Mapping
+
+**Tutorial 3D toolchain**
+http://apprize.info/html5/3d/8.html
+http://apprize.info/html5/3d/index.html
+
+**3D Sample Data**
+https://github.com/assimp/assimp/tree/master/test/models
+https://stackoverflow.com/questions/1028848/sample-collada-files-for-development-of-an-importer
+
+## 3D Outdoors to Indoor
+http://3dcampus.arcgis.com/EsriCampusViewer2017/
+
+## Terrain Data services
+**Mapzen Terrain**
+- https://mapzen.com/documentation/terrain-tiles/
+- https://mapzen.com/blog/terrain-tile-service/
+- https://mapzen.com/documentation/terrain-tiles/data-sources/
+- tiles provide basemap elevation coverage of the world in a raster tile format
+- raster tiles are square-shaped grids of geographic data that contain elevation data in a raw or processed format
+- Tiles are available for zooms 0 through 15 and are available in several spatial data formats including processed PNG images, which are optimized for mobile and web display, and raw elevation GeoTIFFs for desktop analytical use
+- Data is available in both projected Web Mercator (EPSG:3857) and non-projected geographic coordinate system WGS84 (EPSG:4326) formats.
+- digital elevation models (DEMs) or digital terrain models (DTMs)
+- With terrain tiles you have the power to customize the content and visual appearance of the map and perform analysis on the desktop
+- Terrain Tiles provide worldwide basemap coverage sourced from SRTM and other open data projects with several different data formats and varying levels of processing
+- terrarium with extension png in Web Mercator projection, 256x256, 260x260, 512x512, and 516x516 tiles
+normal with extension png in Web Mercator projection, 256x256, 260x260, 512x512, and 516x516 tiles
+geotiff with extension tif in Web Mercator projection, 512x512 tiles
+skadi with extension hgt in unprojected latlng, 1°x1° tiles
+
+### Terrain Analysis
+https://docs.qgis.org/2.2/en/docs/training_manual/rasters/terrain_analysis.html
+http://www.qgistutorials.com/en/docs/working_with_terrain.html
+
+- https://www.scribd.com/document/122736351/Intro-DTM
+
