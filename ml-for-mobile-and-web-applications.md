@@ -268,6 +268,12 @@ sudo a2enmod wsgi
     </Directory>
 </IfModule>
 ```
+**Getting Started:mod_wsgi**
+http://modwsgi.readthedocs.io/en/develop/getting-started.html
+
+**Sample Application with Flask**
+http://www.bogotobogo.com/python/Flask/Python_Flask_HelloWorld_App_with_Apache_WSGI_Ubuntu14.php
+
 ## Errors
 
 **Template Not Found**

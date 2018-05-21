@@ -125,6 +125,7 @@ sudo a2enmod mpm_prefork cgi
 sudo vi /etc/apache2/sites-enabled/000-default.conf
 ```
 
+### CGI
 Add the following right after the first line, which reads <VirtualHost *:80\>.
 ```bash
 #
@@ -140,7 +141,8 @@ sudo vi /etc/apache2/mods-available/php7.0.conf
 #
 sudo service apache2 restart
 ```
-### WSGI: modwsgi
+
+### WSGI: mod_wsgi
 - https://code.google.com/archive/p/modwsgi/wikis/QuickConfigurationGuide.wiki
 
 **WSGI Application Script File**
@@ -178,21 +180,50 @@ sudo a2enmod wsgi
 sudo vi /etc/apache2/sites-available/000-default.conf
 sudo vi /etc/apache2/mods-enabled/userdir.conf
 #
-sudo vi /etc/apache2/mods-available/php7.0.conf
+sudo vi /etc/apache2/mods-available/userdir.conf
 ```bash
 <IfModule mod_userdir.c>
-    <Directory /home/*/public_html>
-       # php_admin_flag engine Off
-    </Directory>
-    <Directory /home/*/public_html/wsgi-bin>
-        Options +ExecCGI
-#        SetHandler cgi-script
-#        SetHandler wsgi-script
-        AddHandler cgi-script .py
-        AddHandler wsgi-script .wsgi
-        WSGIScriptReloading On
-        Order deny,allow
-        Allow from all
-    </Directory>
+        UserDir public_html
+        UserDir disabled root
+
+        <Directory /home/*/public_html>
+                #AllowOverride FileInfo AuthConfig Limit Indexes
+                AllowOverride All
+                Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+                <Limit GET POST OPTIONS>
+                        Require all granted
+                </Limit>
+                <LimitExcept GET POST OPTIONS>
+                        Require all denied
+                </LimitExcept>
+        </Directory>
+        <Directory /home/*/public_html/*/cgi-bin>
+                Options +ExecCGI
+                SetHandler cgi-script
+                AddHandler cgi-script .py
+        </Directory>
+        <Directory /home/*/public_html/*/wsgi-bin>
+                #Order allow,deny
+                #Allow from all
+                Options +ExecCGI
+                DirectoryIndex index.wsgi
+                SetHandler wsgi-script
+                AddHandler wsgi-script .wsgi
+                WSGIScriptReloading On
+        </Directory>
 </IfModule>
+
 ```
+- restart the server
+```bash
+sudo service apache2 restart
+```
+**Getting Started:mod_wsgi**
+http://modwsgi.readthedocs.io/en/develop/getting-started.html
+
+* **Note that mod_wsgi requires that the WSGI application entry point be called ‘application’**
+* If you want to call it something else then you would need to configure mod_wsgi explicitly to use the other name. Thus, don’t go arbitrarily changing the name of the function. If you do, even if you set up everything else correctly the application will not be found.
+* Both Python 2 and 3 are supported. The minimum recommended versions of each being Python 2.6 and 3.3 respectively.
+
+**Sample Application with Flask**
+http://www.bogotobogo.com/python/Flask/Python_Flask_HelloWorld_App_with_Apache_WSGI_Ubuntu14.php
