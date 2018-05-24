@@ -54,6 +54,10 @@ ii) 360 degree view with depth perception and multiple points of panorama in sho
 2. Google's Streetview for indoors - (ii)
 3. NavVis's Indoor Mapping - (ii)
 
+* On the same line we have some more examples. Like check these couple of links:-
+	- http://www.narayanahealth.org/contact-us (click on virtual tour)
+* Indoor map for NH on google maps
+
 **B. Indoor Maps**
 - vector maps, can see the indoor floor plan
 - 2D/3D vector maps, CAD drawings integrated on google maps or open streetmap
@@ -81,21 +85,14 @@ ii) 360 degree view with depth perception and multiple points of panorama in sho
 ### [Situm](https://situm.es/en)
 - https://situm.es/en
 
-### NavVis
-
-On the same line we have some more examples. Like check these couple of links:-
-http://www.narayanahealth.org/contact-us (click on virtual tour)
-Indoor map for NH on google maps
-
-Different verticals for Indoor Mapping:-
-https://www.wrld3d.com/3d-maps/indoor-mapping/
+### [NavVis](http://click2viewmap.com/indoormaps/navvis-poc-ppt.html)
 
 Also, review these NavVis based implementations:-
 panorama-digital  - Retail
 deutsches-museum  - Museum
 munich-airport  - Airport
 
-### `Blue-Dot`
+### [Blue-Dot](https://slaminfo.indoo.rs/technology/blue-dot/)
 * https://slaminfo.indoo.rs/technology/blue-dot/
 * https://slaminfo.indoo.rs/slam-revolution/
 * http://www.esa.int/Our_Activities/Navigation/Galileo/What_is_Galileo
@@ -129,10 +126,10 @@ Product Bundle
 We have a BASIC bundle, and an ENTERPRISE package with extended platform possibilities.
 Compare, and see which one is best for you, and consult us if you are in doubt.
 
-### Eyedog Wayfinding
+### [Eyedog Wayfinding](http://www.eyedog.mobi/blue-dot-navigation/)
 - http://www.eyedog.mobi/blue-dot-navigation/
 
-### indooratlas
+### [indooratlas](http://www.indooratlas.com)
 - http://www.indooratlas.com/pricing/
 - https://app.indooratlas.com/locations/add
 
@@ -160,10 +157,11 @@ What Are Indoor Positioning Systems (IPS)Indoor positioning systems (IPS) locate
 ### [indoorway](https://www.indoorway.com/)
 - https://www.indoorway.com/developers/
 
-### [mapsindoors](https://www.mapspeople.com/become-a-partner/)
+### [mapsindoors](https://www.mapspeople.com/mapsindoors/)
 - https://www.mapspeople.com/become-a-partner/
 - https://mapsindoors.github.io/
 - https://mapsindoors.github.io/web/
+- https://www.mapspeople.com/become-a-partner/
 
 ### [proximi](https://proximi.io/)
 - https://proximi.io/
@@ -173,6 +171,9 @@ What Are Indoor Positioning Systems (IPS)Indoor positioning systems (IPS) locate
 - https://www.wrld3d.com/wrld.js/latest/docs/leaflet/L.Map/
 - https://github.com/wrld3d/wrld.js/tree/master
 - https://github.com/topics/leafletjs?l=javascript&o=desc&s=forks
+
+Different verticals for Indoor Mapping:-
+https://www.wrld3d.com/3d-maps/indoor-mapping/
 
 Coverage:
 - United States, Canada, UK & Ireland, Scandinavia, the Arabian Peninsula, Japan, Australia, Brazil, France, Spain and Thailand
@@ -218,6 +219,12 @@ On-premise requirements
 - http://www.eyedog.mobi/blue-dot-navigation/
 - http://www.eyedog.mobi/indoor-navigation-system
 When choosing for the Eyedog IPS Module on top of the regular mobile wayfinding service, Eyedog offers by default the most advanced indoor positioning system available in the market today. It can operate indoors and outdoors without relying on infrastructure such as WiFi Access Points, Bluetooth Beacons or even GPS. So, no external hardware required! And it works without having ever visited the facility before, meaning that no finger-printing is required and no internet connection is required when operational! The IPS uses advanced pedestrian dead-reackoning and is totally software based. It processes data from the accelerometers and gyroscopes built into mobile devices, applying Machine Learning and Artificial Intelligence (AI) techniques to achieve unrivalled accuracy. The accuracy range is 0,1m - 3,0 meters, the refresh rate is 10 times per second and no maintenance is required. 
+
+### [kaarta](http://www.kaarta.com/)
+- http://www.kaarta.com/
+
+### ESRI Arcgis
+- http://3dcampus.arcgis.com/EsriCampusViewer2017/
 
 ## [Physical Web](https://github.com/google/physical-web)
 * https://github.com/google/physical-web
@@ -285,13 +292,6 @@ Google Web Mercator, which can be referenced by the code 'EPSG:3857'.
 **Along with zoning information**
 - http://www.sarahmakesmaps.com/blog/
 
-## Indoor Mapping Tech Companies and Technologies
-- http://www.kaarta.com/
-
-## Indoormaps Examples
-- https://www.mapspeople.com/mapsindoors/
-- http://3dcampus.arcgis.com/EsriCampusViewer2017/
-
 ## OSM Indoor Mapping
 
 **Open Street Map - OSM for IndoorMap**
@@ -315,6 +315,9 @@ Google Web Mercator, which can be referenced by the code 'EPSG:3857'.
 
 * **[advanced pedestrian dead-reackoning](https://en.wikipedia.org/wiki/Dead_reckoning)**
 In navigation, dead reckoning is the process of calculating one's current position by using a previously determined position, or fix, and advancing that position based upon known or estimated speeds over elapsed time and course.
+
+## IndoorMap Examples
+- http://3dcampus.arcgis.com/EsriCampusViewer2017/
 
 ## References
 * https://www.wrld3d.com/3d-maps/indoor-mapping-pricing/
