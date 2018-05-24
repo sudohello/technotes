@@ -470,6 +470,11 @@ alpha = 30
 //y = mx + c
 sharpened = alpha * (blurred_f - filter_blurred_f) +  blurred_f
 ```
+Your FD 674610018453 has been opened on 17-05-2018.
+https://blog.ndustrial.io/temperature-gradient-maps-with-mapbox-gl-9f97fb44d5f2
+https://blog.ndustrial.io/digital-twins-or-digital-doppelgangers-cd04957252af
+https://github.com/dismedia/gradient2d
+https://medium.com/vizzuality-blog/saving-the-with-how-we-used-webgl-and-pixi-js-for-temporal-mapping-2cffaed60b91
 
 ### c. Create Noise and Denoising
 - A Gaussian filter smoothes the noise out. . . and the edges as well
@@ -496,7 +501,26 @@ med_denoised = ndimage.median_filter(noisy, 3)
 
 ### d. Mathematical morphology
 - https://en.wikipedia.org/wiki/Mathematical_morphology
+- http://cmm.ensmp.fr/~serra/cours/index.htm
+Mathematical morphology (MM) is a theory and technique for the analysis and processing of geometrical structures, based on set theory, lattice theory, topology, and random functions. MM is most commonly applied to digital images, but it can be employed as well on graphs, surface meshes, solids, and many other spatial structures.
+
 ```python
+```
+
+## 4. Image segmentation: labeling pixels corresponding to different objects
+
+## 5. Classification
+
+## 6. Feature Extraction
+
+### a. Edge detection
+- Use a gradient operator (Sobel) to find high intensity variations:
+- `sx = ndimage.sobel(im, axis=0, mode='constant')`
+
+### b. Segmentation
+- Histogram-based segmentation (no spatial information)
+```python
+hist, bin_edges = np.histogram(img, bins=60)
 ```
 
 ## Exercises
@@ -511,3 +535,6 @@ med_denoised = ndimage.median_filter(noisy, 3)
 - https://www.quora.com/in/What-is-the-best-way-to-learn-image-processing-using-Python
 - http://effbot.org/imagingbook/pil-index.htm
 - https://www.datasciencecentral.com/profiles/blogs/deep-learning-amp-art-neural-style-transfer-an-implementation
+
+### git
+https://github.com/jacobrosenthal/drop-analysis

@@ -3,7 +3,7 @@
 >[![Alt Blog, forum, k-bank](logos/blogger-logo-2.png "Blog, Forum, knowledge-bank"  "width:65px;margin-right:20px")](http://hdmapforselfdrivingcar.blogspot.in/) [![Alt Scripts](logos/git-hub-2.png "Scripts"  "width:23px;")](https://github.com/mangalbhaskar/linuxscripts)
 >
 > 3D-Map, Leaflet, MMI API, Cesium, Tangram, MapboxGL, GIS
-> Updated: 30th Apr-2018
+> Updated: 18th May 2018
 
 **Table of Contents**
 
@@ -24,6 +24,7 @@
 	* [weather](mapboxgl/smartcity/weather?q=tirupati)
 * [Chennai - infrastructure](mapboxgl/smartcity/infrastructure?q=chennai)
 * [Bangalore: Whitefield - infrastructure](mapboxgl/smartcity/infrastructure?q=bangalore)
+* [Delhi: Indoor - MMI Office](mapboxgl/smartcity/indoor?q=delhi) - **NEW**
 
 ## Market Research & Technology Landscape
 * [3D Cities Market Research](3d-cities-competitors-landscape.html)

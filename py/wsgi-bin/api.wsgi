@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append("/home/thanos/public_html/py/wsgi-bin")
+sys.path.append("/home/bhaskar/public_html/py/wsgi-bin")
 from api import app as application
 
 from flask import Flask

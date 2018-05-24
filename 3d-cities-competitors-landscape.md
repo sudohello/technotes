@@ -3,7 +3,7 @@ Title: 3D Cities Market Research
 Decription: 3D Cities Market Research
 Author: Bhaskar Mangal
 Date: 30th Apr 2018
-Updated: 30th Apr 2018
+Updated: 21st May 2018
 Tags: 3D Cities Market Research
 */
 
@@ -103,6 +103,108 @@ https://www.ordnancesurvey.co.uk/blog/tag/3d/
 * http://www.f4map.com/
 * [demo.f4map](http://demo.f4map.com/#lat=48.8533648&lon=2.3589490&zoom=21&camera.theta=72.502&camera.phi=80.787)
 
+### Others
+* http://www.cityzenith.com/
+Cityzenith
+Cityzenith provides data visualization platform software and applications for IoT and Smart Cities.
+Chicago, Illinois, United States
+Greater Chicago Area, Great Lakes, Midwestern US
+
+Total Funding Amount 
+$6M
+Categories 
+GovTech, Information Services, Information Technology, Software
+Founded Date 
+May 19, 2009
+Founders 
+Michael Jansen
+Operating Status 
+Active
+Funding Status 
+Seed
+Last Funding Type 
+Seed
+Number of Employees 
+11-50
+
+
+Cityzenith provides data visualization platform software and applications for IoT and Smart Cities. Cityzenith's 5D platform technology empowers users with a simple way to make sense of the torrent of data in cities, campuses, and buildings, revolutionizing the way people access, understand, and use spatial information.
+
+The company is headquartered in Chicago and has an existing office in London.
+
+https://vimeo.com/111787315
+
+https://www.prnewswire.com/news-releases/cityzenith-launches-smart-world-pro-for-architects-and-property-owners-300624962.html
+
+
+For the first time, users can aggregate BIM, CAD, CRE, and GIS tools, spreadsheets, documents, IoT and BMS sensor feeds, social media posts, etc., all in one universal 3D data platform that anyone can easily use. Just "drag and drop" your BIM and GIS files right into Smart World to get started on your journey into a new world of data and advanced analytics. 
+
+
+* [siradel](https://www.siradel.com/)
+	- https://www.siradel.com/portfolio-item/epa-bordeaux-euratlantiques-france/
+* [n3n](http://www.n3n.io/)
+* http://civicconnect.com/civic-ar/
+* http://www.tenqyu.com/#
+* http://www.cityzenith.com/
+* https://ifwe.3ds.com/architecture-engineering-construction/cities
+	- https://www.digitalnewsasia.com/digital-economy/building-singapores-digital-twin
+	- https://industrial-iot.com/2017/05/smart-cities-digital-twin-visualization-platforms/
+
 ## Indian Solutions/Services
 ### 1. [mapversa](http://www.mapversa.com/3dmaps/)
 * http://www.mapversa.com/3dmaps/
+
+## Global Standards for Smart Cities
+ISO, C40 cities, global city indicators, city protocol society
+
+## Key Marketing Terms
+- Digital Footprint, Digital DNA, Digital Twins
+- Visual way to interpret any type of city data
+- Interactive 3D Model of the city
+- Lack of general information in the intelligent format
+- Briding the gap between machines and sensors and produces intelligent data for human beings
+- Information and communication technology (ICT) 
+- Internet of things (IoT) 
+- Architecture, Engineering and Construction (AEC)
+- BIM (Building Information Modeling)
+
+## Technical Items
+For the first time, users can aggregate BIM, CAD, CRE, and GIS tools, spreadsheets, documents, IoT and BMS sensor feeds, social media posts, etc.
+
+https://spatiallyadjusted.com/2017/10/30/thoughts-on-cesium-js/
+
+ rooftop solar analysis, LEED-ND analysis and traffic analysis,
+
+ https://pjcozzi.github.io/
+
+ http://www.grasshopper3d.com/
+
+ https://spatiallyadjusted.com/planetgs/
+
+ https://spatiallyadjusted.com/2018/05/14/shadow-analysis-using-mapbox-unity-and-openstreetmap/
+
+ IFC - Industry Foundation Classes
+
+ One of the biggest requests from the AEC industry is Shadow/Solar analysis.
+
+ https://github.com/mourner/suncalc
+
+
+ https://github.com/mapbox/mapbox-gl-style-spec/issues/456
+https://github.com/mapbox/mapbox-gl-js/issues/3450
+
+
+Increasing use cases for 3d maps (navigation, gaming) definitely present use cases for
+
+extruding geometries
+extruding fills (buildings ++)
+extruding circles (data viz)
+extruding lines
+levitating geometries
+	levitating lines
+
+
+https://github.com/mrholek/coreui-free-vue-admin-template
+https://www.youtube.com/watch?v=8YP_nOCO-4Q&feature=youtu.be
+
+https://electronjs.org/

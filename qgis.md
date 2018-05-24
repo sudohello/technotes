@@ -180,3 +180,39 @@ http://www.sensum-project.eu/remote-sensing-tool
 ## Mapbox Vector Tiles in qGIS
 https://gis.stackexchange.com/questions/138512/add-vector-tile-sources-to-qgis
 
+
+## qGIS Plugin
+* ImportPhotos
+
+Import Photos
+
+This tool can be used to import Geo-Tagged photos (jpg or jpeg) as points to QGIS. The user is able to select a folder with photos and only the geo-tagged photos will be taken. Then a geoJSON point file will be created which will contain the name of the picture, its directory, the date and time taken, altitude, longitude, latitude, azimuth, north and camera maker and model. The plug-in doesn’t need any third party applications to work. It has two buttons; the one is to import geotagged photos, and the other one is to be able to click on a point and display the photo along with information regarding the date time and altitude. Mac users please refer to the Read Me file for further guidance.
+
+* Instagram2qgis
+
+Search and downloading Instagram images.
+
+Search and downloading Instagram images and create a point shapefile with them.You need install some additional Python libraries:instagram,httplib2,requests,simplejson,six
+
+* MagicWand
+
+MagicWand
+
+This plugin adds tools that help with photo-interpretation. For more details: https://github.com/GianlucaSilvestri/MagicWa
+
+
+Open Aerial Map (OAM)
+
+Open Aerial Map (OAM) client to upload, search, and download imagery and metadata
+
+OpenAerialMap QGIS plugin allows QGIS users to communicate with various OAM services, acting as a desktop client for OAM. Through this plugin, users can upload, search, and download imagery, as well as create and edit OIN-conformed metadata in a simple way. It also supports some raster image processing such as reprojection and file format conversion, as well as triggering the creation of tile services.
+
+
+## Setting up OSM
+https://gis.stackexchange.com/questions/89503/collaborative-map-editing-using-local-openstreetmap-server
+https://ircama.github.io/osm-carto-tutorials/tile-server-ubuntu/
+
+## Editors
+* geojson.io
+https://www.datavizforall.org/transform/geojsonio/
+https://github.com/mapbox/geojson.io
