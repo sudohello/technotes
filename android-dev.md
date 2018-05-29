@@ -617,8 +617,12 @@ http://iv.columbus-interactive.net/kunsthalle/#?image=1&core.init.lon=-2.08&core
 https://www.youtube.com/watch?v=1hIznGqq8S0
 https://www.youtube.com/watch?v=nxC2wynlnIQ
 
+## Kotlin V/s Java
+https://arctouch.com/blog/kotlin-vs-java/
 
 ## Sublime Text Configurations
 
 https://packagecontrol.io/packages/PackageResourceViewer
 
+## Best References for Android
+https://github.com/aritraroy/UltimateAndroidReference

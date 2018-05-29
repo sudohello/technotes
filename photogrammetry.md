@@ -1037,3 +1037,35 @@ sudo ./b2 install -j 8
 $ sudo ./bootstrap.sh --prefix=/usr/local
 
 $ export PATH=$PATH:/usr/local/include/:/usr/local/lib/
+
+## References
+- International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives
+
+## Opensource Photogrammetry
+https://link.springer.com/article/10.1186/s40965-017-0027-2
+http://3dom.fbk.eu/projects/graphos
+
+http://3dom.fbk.eu/projects/spherical-photogrammetry
+https://volta.fbk.eu/
+
+## MicMac
+https://github.com/micmacIGN/micmac
+https://micmac.ensg.eu/index.php/Install
+https://github.com/micmacIGN/InterfaceCEREMA/tree/master/InterfaceCEREMA
+
+## GRAPHOS - C/C++
+https://github.com/itos3d/GRAPHOS
+
+## nframes
+https://www.nframes.com/
+
+## Spherical Photogrammetry
+http://3dom.fbk.eu/projects/spherical-photogrammetry
+http://3dom.fbk.eu/sites/3dom.fbk.eu/files/pdf/barazzetti_etal_VAST2010.pdf
+
+- Images are then stitched together and eventually the derived panorama is projected on a virtual sphere.
+- Several commercial packages are also available to perform this task (Realviz Stitcher, PTgui, Autopano, etc.)
+- Generally, the radial image distortion can be also compensated during the stitching process
+- The projection sphere of these panoramic images is mapped in the cartographic plane with the so-called longitude-latitude representation (or equi-rectangular projection) [Sny87] from which the angular directions can be drawn
+- If multiple panoramas of the same scene, acquired from different point of view, are available, the 3D reconstruction of the scene can be achieved
+- The high resolution content of the panoramas allows for highly detailed 3D reconstructions while their large field-of-view limits the number of acquisitions.

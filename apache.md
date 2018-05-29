@@ -48,12 +48,25 @@ ls /var/log/apache2/
 tail -f /var/log/apache2/error.log
 ```
 
-* Configuration
-```
-gvim /etc/apache2/sites-available/000-default.conf
+* Configuration files
+```bash
+sudo vi /etc/apache2/sites-available/000-default.conf
+sudo vi /etc/apache2/apache2.conf
 ```
 
-* [How to Enable and Configure Apache2 Userdir Module in Ubuntu Server?](http://ubuntuserverguide.com/2012/10/how-to-enable-and-configure-apache2-userdir-module-in-ubuntu-server-12-04.html)
+* **How to Enable `.htaccess` Configuration for your document root: `/var/www/`**
+Change to `AllowOverride All`
+```bash
+sudo vi /etc/apache2/apache2.conf
+<Directory /var/www/>
+  Options Indexes FollowSymLinks
+  #AllowOverride None
+  AllowOverride All
+  Require all granted
+</Directory>
+```
+
+* **[How to Enable and Configure Apache2 Userdir Module in Ubuntu Server?](http://ubuntuserverguide.com/2012/10/how-to-enable-and-configure-apache2-userdir-module-in-ubuntu-server-12-04.html)**
   - Apache2 userdir module is used to create a webroot in the user’s home directory
   - By using userdir module each user that is in the system will have the Apache2 root directory with the folder name public_html  in the home directory
   - If you using any web browser to access the webroot folder in the user directory you should use the “~” afterwards username. So, the url address to be http://[hostname]/~username/
@@ -74,7 +87,6 @@ echo '<?php phpinfo(); ?>' > ~/public_html/info.php
 sudo vi /etc/apache2/mods-available/php5.conf
 Now you need to comment out a line php_admin_value engine Off
 
-
 * [how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04)
 ```bash
 sudo a2enmod rewrite && sudo service apache2 restart
@@ -84,7 +96,7 @@ Edit: /etc/apache2/mods-enabled/userdir.conf then, restart apache
 use option as illustrated:
 AllowOverride All
 ```
-vi /etc/apache2/mods-enabled/userdir.conf
+sudo vi /etc/apache2/mods-enabled/userdir.conf
 #
 <IfModule mod_userdir.c>
         UserDir public_html

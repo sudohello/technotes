@@ -789,6 +789,8 @@ cat /etc/mtab
 sudo vi /etc/fstab
 ```
 
+- `sudo apt install exfat-utils`
+
 ### Safe mounting
 - https://askubuntu.com/questions/14365/mount-an-external-drive-at-boot-time-only-if-it-is-plugged-in
 - http://techmonks.net/nofail-and-nobootwait-mount-options-in-fstab-prevent-boot-problems/
@@ -852,3 +854,9 @@ sudo reboot
 sudo lshw -short
 
 efibootmg1 -v
+
+**xorg crashed with SIGABRT in OSAbort**
+- update/re-install following:
+```bash
+sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 libapt-inst2.0 libapt-pkg5.0 libaudit-common libaudit1 libblkid1 libgcrypt20 libmount1 libpam-modules libpam-modules-bin libpam-systemd libpam0g libprocps4 libsmartcols1 libsystemd0 mount procps systemd util-linux uuid-runtime
+```

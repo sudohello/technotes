@@ -1,3 +1,4 @@
+numexpr
 numpy
 scipy
 matplotlib

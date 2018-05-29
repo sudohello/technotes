@@ -52,3 +52,24 @@ different measures of location and dispersion are often compared on the basis of
 ## Euclidean Space
 **References**
 - https://en.wikipedia.org/wiki/Euclidean_space
+
+
+## Hypothesis testing
+- comparing two groups
+- t-test: the simplest statistical tes
+- 2 sample test
+- “paired test”, or “repeated measures test”
+- T-tests assume Gaussian errors.
+- Wilcoxon signed-rank test - it that relaxes this Gaussian errors assumption
+- non paired case is the Mann–Whitney U test
+- Given two set of observations, x and y, we want to test the hypothesis that y is a linear function of x
+
+**[ordinary least squares (OLS) or linear least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)**
+- In statistics, ordinary least squares (OLS) or linear least squares is a method for estimating the unknown parameters in a linear regression model.
+
+- Post-hoc hypothesis testing: analysis of variance (ANOVA)
+
+## Types of Disctributions
+- Gaussian distributions
+- Normal distributions
+

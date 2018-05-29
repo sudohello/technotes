@@ -103,9 +103,56 @@ https://www.ordnancesurvey.co.uk/blog/tag/3d/
 * http://www.f4map.com/
 * [demo.f4map](http://demo.f4map.com/#lat=48.8533648&lon=2.3589490&zoom=21&camera.theta=72.502&camera.phi=80.787)
 
-### Others
+### [realitymaps](http://www.realitymaps.de/en)
+* http://www.realitymaps.de/en
+
+### [blomasa](http://blomasa.com/)
+* http://blomasa.com/
+* http://blomasa.com/main-menu/products-services/mapping-modelling/3d-city-models-en.html
+
+**models can be created from:**
+- photogrammetry information
+- aerial LiDAR
+- oblique imagery
+
+**Applications**
+* ARCHITECTURE & CITY DESIGN
+	- Highly accurate models produced for planning consultations to raise the profile of the city development schemes.
+* ENVIRONMENTAL STUDIES
+	- 3D models are currently playing a large role in a range of environmental studies, creating valuable information for noise mapping and flood mapping.
+* BIM MODELLING
+	- Customised 3D models provide the foundations for BIM by creating a spatial reference in which to allow a wealth of non-spatial data to be attached and analysis and rapid prototyping to be completed.
+* TOURISM
+	- Various forms of 3D models and landmark creations are currently being used for tourism visualisations, as illustrations in brochures, on road signs, advertisements and within tourism videos.
+	- VIRTUAL CITIES & TOURISM GUIDES
+* NAVIGATION
+* TELECOMS INFRASTRUCTURE
+	- LOD 1 & LOD 2 provides high resolution city models that can be used for radio planning design in urban environments.
+* Others
+- Traditional uses currently involves Blom3D being used for planning purposes, new applications for the models has seen them become invaluable in gaming and interactive multimedia guides
+
+**CAD Vector Maps**
+planning, engineering, construction, environmental applications, business solutions, forestry, farming as well as supporting additional data needs and services.
+
+- Positional Accuracy Improvements (PAI)
+**LoD**
+http://blomasa.com/main-menu/products-services/mapping-modelling/3d-city-models-en.html#/main-menu/products-services/data-models-blomurbex/blom3dtrade.html
+
+- Blom currently has in excess of 340 detailed urban models, covering more than 12,000 km² and detailing more than 20 million buildings
+
+The Blom3D models have four different LODs (level of detail), ranging from simple wire frames to fully textured models. This flexible range of LOD allows Blom’s clients to choose which level of detail they require for their specific purposes.
+
+The Blom3D™ product family contains the following layers/components:
+
+BlomLOD1 - Building blocks minus roof detail
+BlomLOD2- Building blocks with large scale roof detail with approximation of colour derived from the LOD4 textures.
+BlomLOD3- Building blocks with large scale roof detail plus standard format library textures based on  colour and representation of real features
+BlomLOD4 - Building blocks with large scale roof detail plus Photo-realistic textures from aerial imagery
+BlomLANDMARKS - High resolution 3D representations of specific landmarks completed with Photo-realistic textures
+BlomNAVIGATION - Dataset of road features and other elements generated for routing, navigation and representation purposes.
+
+### Cityzenith
 * http://www.cityzenith.com/
-Cityzenith
 Cityzenith provides data visualization platform software and applications for IoT and Smart Cities.
 Chicago, Illinois, United States
 Greater Chicago Area, Great Lakes, Midwestern US
@@ -208,3 +255,13 @@ https://github.com/mrholek/coreui-free-vue-admin-template
 https://www.youtube.com/watch?v=8YP_nOCO-4Q&feature=youtu.be
 
 https://electronjs.org/
+
+## Digitization
+http://www.terraloupe.com/
+http://www.terraloupe.com/buildings/
+
+## 3D Cities on Mobiles
+https://www.tandfonline.com/doi/full/10.1080/17538947.2017.1404150
+https://3d.bk.tudelft.nl/3dtalks/
+http://3dom.fbk.eu/taxonomy/term/1?page=1
+https://www.citygml.org/

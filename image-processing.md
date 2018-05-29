@@ -281,6 +281,8 @@ https://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm
 **Human Eye**
 - The human eye is more sensitive to green light than both red and blue light
 - The human eye can only discern about 10 million different colors
+- Human vision perception has twice the acuity in luminance vs. color
+- Human eye is equivalent to 576 megapixel camera
 
 **OPTICAL vs. DIGITAL ZOOM**
 - A camera performs an optical zoom by moving the zoom lens so that it increases the magnification of light before it even reaches the digital sensor.
@@ -506,6 +508,9 @@ Mathematical morphology (MM) is a theory and technique for the analysis and proc
 
 ```python
 ```
+- Granulometry (morphology)
+	- https://en.wikipedia.org/wiki/Granulometry_%28morphology%29
+	- In mathematical morphology, granulometry is an approach to compute a size distribution of grains in binary images, using a series of morphological opening operations.
 
 ## 4. Image segmentation: labeling pixels corresponding to different objects
 
@@ -522,6 +527,12 @@ Mathematical morphology (MM) is a theory and technique for the analysis and proc
 ```python
 hist, bin_edges = np.histogram(img, bins=60)
 ```
+- spectral clustering function of the scikit-learn in order to segment glued objects.
+- Measuring objects properties
+	* mean
+	* Analysis of connected components
+	* Find region of interest enclosing object
+	* Other spatial measures: ndimage.center_of_mass , ndimage.maximum_position , etc.
 
 ## Exercises
 - https://code.tutsplus.com/tutorials/image-processing-using-python--cms-25772
@@ -538,3 +549,232 @@ hist, bin_edges = np.histogram(img, bins=60)
 
 ### git
 https://github.com/jacobrosenthal/drop-analysis
+
+## Image Processing for Computer Vision
+- International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives
+
+**Image-processing:**
+Scikit-image
+* Other, more powerful and complete modules:
+	- OpenCV (Python bindings)
+	- CellProfiler
+	- ITK with Python bindings
+
+### Radiometrically improve the image quality
+https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XL-5-W4/315/2015/isprsarchives-XL-5-W4-315-2015.pdf
+Motion blur, sensor noise, jpeg artifacts, wrong depth of field are just some of the possible problems that are negatively affecting automated 3D reconstruction methods.
+
+how the radiometric pre-processing of image datasets (particularly in RAW format) can help in improving the performances of state-of-the-art automated image processing tools. Beside a review of common pre-processing methods, an efficient pipeline based on color enhancement, imageenoising, RGB to Gray conversion and image content enrichment is presented.
+
+to minimize typical failure causes by SIFT-like algorithms (Apollonio et al., 2014) due to changes in the illumination conditions or low contrast blobs areas
+
+Propossed Image pre-processing pipeline:-
+1. Color balancing and Exposure equalization
+The aim is essentially to have radiometrically-calibrated images ensuring the consistency of surface colors along all the images (i.e. as much similar as possible RGB values for homologous pixels).
+
+Starting from captured RAW images our workflow includes:
+- exposure compensation
+- optical correction
+- sharpen
+- color balance
+
+converting all images to the camera’s native linear color space
+features (i.e., orientation, exposure and framed surfaces)
+using an appropriate color space from the beginning of the image processing.
+
+2. Enhancement: Image denoising
+Image noise is defined in the ISO 15739 standard as “unwanted variations in the response of an imaging system” (ISO 15739, 2003). It is formed when incoming light is converted from photons to an electrical signal and originates from the camera sensor, its sensitivity and the exposure time as well as by digital processing (or all these factors together). Noise type includes:-
+
+* **Fixed pattern noise (‘hot’ and ‘cold’ pixels):** it is due to sensor defects or long time exposure, especially with high temperatures. Fixed pattern noise always appears in the same position.
+* **Random noise:** it includes intensity and color fluctuations above and below the actual image intensity. They are always random at any exposure and more influenced by ISO speed.
+* **Banding noise:** it is caused by unstable voltage power and is characterized by the straight band in frequency on the image. It is highly camera-dependent and more visible at high ISO speed and in dark image. Brightening the image or white balancing can increase the problem
+
+In real-world photographs, the highest spatial-frequency detail consists mostly of variations in brightness (‘luminance detail’) rather than variations in hue (‘chroma detail’):
+
+* **Luminance noise** is composed of noisy bright pixels that give the image a grainy appearance. High-frequency noise is prevalent in the luminance channel, which can range from fine grain to more distinct speckle noise. This type of noise does not significantly affect the image quality and can be left untreated or only minimally treated if needed.
+
+* **Chrominance noise** appears as clusters of colored pixels, usually green and magenta. It occurs when the luminance is low due to the inability of the sensor to differentiate color in low light levels. As a result, errors in the way color is recorded are visible and hence the appearance of color artifacts in the demosaicked image.
+
+
+Under all these considerations, the noise model can be approximated with two components:
+* a) A signal-independent **Gaussian noise modeling** the fixed pattern noise (FPN)
+	- Anscombe transform by Makitalo & Foi (2011) and Foi (2011), argue that, when combined with suitable forward and inverse variance-stabilizing transformations (VST), algorithms designed for homoscedastic Gaussian noise work just as well as ad-hoc algorithms based on signal-dependent noise models
+	- This explains why the noise is assumed to be uniform, white and Gaussian, having previously applied a VST to the noisy image to take into account the Poisson component.
+* b) A signal-dependent **Poisson noise modeling** the temporal (random) noise, called Shot Noise.
+	- Wavelet-based denoising methods (Nowak & Baraniuk, 1997; Kolaczyk, 1999) propose adaptation of the transform threshold to the local noise level of the Poisson process
+
+- A patch-based algorithm denoises each pixel by using knowledge of (a) the patch surrounding it and (b) the probability density of all existing patches
+- Typical noise reduction software reduces the visibility of noise by smoothing the image, while preserving its details. The classic methods estimate white homoscedastic noise only, but they can be adapted easily to estimate signal- and scale-dependent noise
+
+**The main goals of image denoising algorithms are:**
+* Perceptually flat regions should be as smooth as possible and noise should be completely removed from these regions;
+* Image boundaries should be well preserved and not blurred;
+* Texture detail should not be lost;
+* The global contrast should be preserved (i.e. the low-frequencies of denoised and input images should be equal);
+* No artifacts should appear in the denoised image.
+
+Numerous methods have been developed to meet these goals, **but they all rely on the same basic method to eliminate noise: averaging**
+- The concept of averaging is simple, but determining which pixels to average is not
+- To meet this challenge, four denoising principles are normally considered:
+	* Transform thresholding (sparsity of patches in a fixed basis)
+	* Sparse coding (sparsity on a learned dictionary)
+	* Pixel averaging and block averaging (image self-similarity)
+	* Bayesian patch-based methods (Gaussian patch model)
+
+The current state-of-the-art denoising recipes are in fact a smart combination of all these ingredients.
+
+**denoise algorithms**
+	* Imagenomic Noiseware
+	* Adobe Camera RAW denoise
+	* Non-Local Bayesian filter
+	* Noise Clinic
+	* Color Block Matching 3D (CBM3D) filter
+
+3. Enhancement: RGB to gray conversion
+	* Most image-based 3D reconstruction algorithms are conceptually designed to work on grayscale images instead of the RGB triple
+	* **Color to grayscale conversion can be seen as a dimensionality reduction problem**. This operation should not be underestimated, since there are many different properties that need to be preserved
+	* In most of the cases isoluminant color changes are usually not preserved during the RGB to Gray conversion.
+	* In general, RGB to Gray conversion method mainly focus on the reproduction of color images with grayscale mediums, with the goal of a perceptual accuracy in terms of the fidelity of the converted image. **These kinds of approaches are not designed to fulfill the needs of image matching algorithms where local contrast preservation is crucial during the matching process.** This was observed also in Lowe (2004) where the candidate keypoints with low contrast are rejected in order to decrease the ambiguity of the matching process.
+
+**RGB to Gray conversion can be done in:**
+* **Color Space (linear or non-linear):** the CIE Y method is a widely used conversion, based on the CIE 1931 XYZ color space. It takes the XYZ representation of the image and uses Y as the grayscale value
+* **Image Space (called functional):** following Benedetti et al. (2012), they can be divided in three groups:
+	1. a) **trivial methods**
+				- they are the most basic and simple ones
+				- they do not take into account the power distribution of the color channels
+				- They lose a lot of image information
+				- as for every pixel they discard two of the three color values, or discard one value averaging the remaining ones, not taking into account any color properties
+				- Despite this loss, they are commonly used for their simplicity
+				- A typical trivial method is the RGB Channel Filter that selects a channel between R, G or B and uses this channel as the grayscale value (afterwards called **GREEN2GRAY**)
+	2. b) **direct methods**
+				- the conversion is a linear function of the pixel’s color values
+				- Typically, this class of functions takes into account the spectrum of different colors
+				- The Naive Mean direct method takes the mean of the color channels
+				- The advantage, compared to the other trivial ones, is that it takes information from every channel, though it does not consider the relative spectral power distribution of the RGB channels
+				- The most popular of these methods is **RGBtoGRAY** that uses the NTSC CCIR 601 luma weights, with the formula `Y′= 0.2989R+0.5870G+0.1140B`
+	3. c) **chrominance direct methods**
+				- they are based on more advanced color spaces,trying to mitigate the problem related to isoluminant colors
+				- they are local functions of the image pixels
+				- they assign different grayscale values to isoluminant colors, altering the luminance information using the chrominance information
+				- Chrominance direct methods can be performed either locally (Smith et al., 2008; Kim et al., 2009) or globally (Grundland & Dodgson, 2007).
+				- Local methods make pixels in the color image not processed in the same way and usually rely on the local chrominance edges for enhancement.
+				- Global methods strive to produce one mapping function for the whole image thus producing same luminance for the same RGB triplets and high-speed conversion
+
+**Algorithims**
+* GREEN2GRAY;
+* Matlab RGB2GRAY;
+* GRUNDLAND-DODGSON
+* REALTIME
+* **Bruteforce Isoluminants Decrease (BID)**
+	The aim was to preserve the consistency between the images considering the following matching requirements
+	- Feature discriminability:
+	- Chrominance awareness:
+	- Global mapping
+	- Color consistency
+	- Grayscale preservation
+	- Unsupervised algorithm
+	BID computes the statistical properties of the input dataset with the help of a representative collection of image patches
+	It takes in input and analyses simultaneously the whole set of images that need to be matched Differently from other similar solutions as the Multi-Image Decolorize method
+	BID has its foundation in the statistics of extreme-value distributions of the considered images and presents a more flexible strategy, adapting dynamically channel weights depending on specific input images, in order to find the most appropriate weights for a given color image
+
+4. Enhancement: Image content enhancement - Adaptive Median Filter
+- Low-texture surface such as plaster causes difficulties for feature detection
+- such as the **Difference-of-Gaussian (DoG)** function, which extracts features in pixel level and compares them with adjacent ones and in stereo-matching algorithms
+- The **Wallis filter** (Wallis, 1976), is a digital image processing function
+	- that enhances the contrast levels and flattens the different exposure to achieve similar brightness in the images.
+  - The filter is normally applied in order to optimize image datasets for subsequent image-matching procedures
+  - Wallis uses two parameters to control the enhancement’s amount,
+  	- the contrast expansion factor A
+  	- and the brightness forcing factor B
+	- The algorithm is adaptive and adjusts pixel brightness values in local areas only, contrary to a global contrast filter, which applies the same level of contrast throughout an entire image
+	- The resulting image contains 	greater detail in both low and high-level contrast regions concurrently, ensuring that good local enhancement is achieved throughout the entire image
+	- The Wallis filter requires the user to accurately set a target mean and standard deviation in order to locally adjusts areas and match the user-specified target values.
+	- Firstly the filter divides the input image into neighboring square blocks with a user-defined size (‘window size’) in order to calculate local statistics. Then mean (M) and standard deviation (S) of the unfiltered image are calculated for each individual block based on the grey values of the pixels and the resulting value is assigned to the central cell of each block.
+	- The mean and standard deviation values of all other cells in the block are calculated from this central cell by bilinear interpolation.
+	- In this way, each individual pixel gets its own initial local mean and standard deviation based on surrounding pixel values.
+
+## Performance, Quality
+The performances of the pre-processing strategies previously described are reported using:
+- The statistical output of the bundle adjustment (reprojection error)
+- The number of points in the dense point cloud
+- An accuracy evaluation of the dense matching results
+
+## Tips
+- blur fights noise at the cost of image detail
+- Noise is a by-product of sharpness
+
+## Keywords
+* ICC profile
+* luminance, luma - Luminance refers to brightness
+* chrominance, chroma, chromatic (noise) - chrominance refers to color
+
+## Search Phrases
+* what is luminance and chrominance in image processing
+	- https://www.quora.com/What-is-the-difference-between-luminance-and-chrominance-as-far-as-image-editing-is-concerned
+	- https://wolfcrow.com/blog/understanding-luminance-and-chrominance/
+
+With respect to noise reduction, luma and chroma have different characteristics due to how they are captured and how we perceive them. First, a little background info.
+
+**Sensor and mosaic:**
+- In a typical sensor, white lights are filtered into RGB components and captured by individual sensor cells. Each cell captures only one of the 3 primary light colors. A typical grid pattern contains 50% green, 25% red and 25% blue cells with green occupying two diagonal spots in a 2x2 group.
+
+**Color space:**
+- We all know about the RGB channels, you are probably familiar with hus, sat, value (HSV) color space. The fact is, the color space can be transformed into any number of orientation given 3 relatively orthogonal axis. One interesting color space is YCbCr used in TV transmission. Similar to lab color, the color space is specified in luminance, blue and red components. The interesting thing is, human vision perception has twice the acuity in luminance vs. color. TV transmission takes advantage of this characteristic and pack twice the luma resolution than chroma.
+
+**Why are there more green than red and blue in a sensor?**
+- Because green is most representative (closest to the orientation) of luma, it serves as a stand-in for luma channel. In fact, luma is a mix of about 60% green, 30% red and 10% blue.
+
+**How do we make use of this information?**
+- We know luminance contain twice the spatial resolution.
+- Luminance is the main contributor to sharpness.
+- We know chrominance is lower resolution
+- Chrominance can tolerate more low pass filtering (read blurring).
+- We also know blue sensors is less dense, and must be boosted because it has the lowest input level. Therefore blue channel tend to be the noisiest.
+
+One way to tackle noise is to isolate the noise source and filter only the necessary channel with the appropriate amount. Examine individual RGB channels, and see if blue channel contributes most of the noise. Convert to lab color and see if luma channel is noisy. Perhaps filter more aggressively in chroma instead of luma channels. That’s the underlying approach, but in practice, lightroom color noise slider does a decent job.
+
+
+* what-is-the-difference-between-cie-lab-cie-rgb-cie-xyy-and-cie-xyz
+	- https://wolfcrow.com/blog/what-is-the-difference-between-cie-lab-cie-rgb-cie-xyy-and-cie-xyz/
+
+
+## [Mathematical optimization: finding minima of functions](https://en.wikipedia.org/wiki/Mathematical_optimization)
+- ScipyLectures-simple.pdf Notes
+
+* Mathematical optimization deals with the problem of finding numerically minimums (or maximums or zeros)
+of a function. In this context, the function is called **cost function**, or **objective function**, or **energy**.
+* Here, we are interested in using scipy.optimize for black-box optimization: we do not rely on the mathe-
+matical expression of the function that we are optimizing.
+
+**Knowing your problem**
+- The scale of an optimization problem is pretty much set by the **dimensionality of the problem**, i.e. the number of scalar variables on which the search is performed.
+- how to determine dimensionality of the problem
+	* https://disco.ethz.ch/courses/fs11/seminar/paper/samuel-1.pdf
+-  What are the dimensionality estimation methods of a data set
+- Convex vs Concave function
+- `scipy.optimize.minimize_scalar()` uses **Brent’s method** to find the minimum of a function
+- gradient descent
+- conjugate gradient descent, `optimize.minimize(f, [2, -1], method="CG")`
+- Gradient methods need the Jacobian (gradient) of the function. They can compute it numerically, but will perform better if you can pass them the gradient: `optimize.minimize(f, [2, 1], method="CG", jac=jacobian)`
+- Newton and quasi-newton methods
+- Newton method `optimize.minimize(f, [2,-1], method="Newton-CG", jac=jacobian)`
+- Let’s compute the Hessian, `optimize.minimize(f, [2,-1], method="Newton-CG", jac=jacobian, hess=hessian)
+- At very high-dimension, the inversion of the Hessian can be costly and unstable (large scale > 250).`
+- Newton optimizers should not to be confused with Newton’s root finding method, based on the same principles, scipy.optimize.newton()
+- Quasi-Newton methods: approximating the Hessian on the fly
+- BFGS: BFGS (Broyden-Fletcher-Goldfarb-Shanno algorithm) refines at each step an approximation of the Hessian
+- A gradient descent algorithm do not use: its a toy, use scipy’s optimize.fmin_cg
+
+### References
+- http://www.stanford.edu/~boyd/cvxbook/
+
+
+## Definitions
+
+### Luminance (Y)
+* In scientific terms, the brightness of light is measured in terms of Luminance
+
+
+## References
+* The best workflows and tips for cinematographers and filmmakers:
+	- https://wolfcrow.com/

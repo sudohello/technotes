@@ -7,9 +7,45 @@ Updated: 16th May 2018
 Tags: Maths
 */
 
-## Mathematics
+# Mathematics
 
-### Singular-Value Decomposition (SVD)
+## [Mathematical optimization: finding minima of functions](https://en.wikipedia.org/wiki/Mathematical_optimization)
+- ScipyLectures-simple.pdf
+
+Mathematical optimization deals with the problem of finding numerically minimums (or maximums or zeros)
+of a function. In this context, the function is called **cost function**, or **objective function**, or **energy**.
+
+- https://en.wikipedia.org/wiki/Convex_function
+
+**Scalar Function, Vector Function, Scalr Field, Vector Field**
+http://web.mit.edu/wwmath/vectorc/scalar/intro.html
+- A scalar valued function is a function that takes one or more values but returns a single value.
+- A n-variable scalar valued function acts as a map from the space Rn to the real number line. 
+- http://www.solitaryroad.com/c251.html
+
+### Gradient_descent
+- http://en.wikipedia.org/wiki/Gradient_descent
+- https://en.wikipedia.org/wiki/Preconditioner
+- Gradient descent basically consists in taking small steps in the direction of the gradient, that is the direction of the steepest descent.
+- We can see that very anisotropic (ill-conditioned) functions are harder to optimize.
+- The more a function looks like a quadratic function (elliptic iso-curves), the easier it is to optimize.
+- one of the problems of the simple gradient descent algorithms, is that it tends to oscillate across a valley, each time following the direction of the gradient, that makes it cross the valley
+
+### Conjugate gradient descent
+The conjugate gradient solves this problem by adding a friction term: each step depends on the two last values of the gradient and sharp turns are reduced.
+
+### Newton and quasi-newton methods
+- https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization
+- https://en.wikipedia.org/wiki/Hessian_matrix
+
+## Linear Programming
+https://en.wikipedia.org/wiki/Linear_programming
+
+Linear programming (LP, also called linear optimization) is a method to achieve the best outcome (such as maximum profit or lowest cost) in a mathematical model whose requirements are represented by linear relationships. Linear programming is a special case of mathematical programming (mathematical optimization).
+
+More formally, linear programming is a technique for the optimization of a linear objective function, subject to linear equality and linear inequality constraints.
+
+## Singular-Value Decomposition (SVD)
 - https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254
 - examples and applications
 	* Useful in machine learning and in both descriptive and predictive statistics
@@ -22,7 +58,7 @@ Tags: Maths
 **Technical introduction**
 - Singular value decomposition is a method of decomposing a matrix into three other matrices
 
-### Matrix Algebra
+## Matrix Algebra
 - orthogonal matrix
 - diagonal matrix
 - square matrix
@@ -35,8 +71,11 @@ Tags: Maths
 	- mathworld.wolfram.com/SingularMatrix.html
 
 
-### Vector Algebra and Vector Calculus
+## Vector Algebra and Vector Calculus
 http://farside.ph.utexas.edu/teaching/336k/Newtonhtml/node148.html
+
+## Vector Calculus
+http://web.mit.edu/wwmath/vectorc/index.html
 
 ## Misc
 enhancing the Euclidean plane by the addition of these points at infinity where parallel lines meet, and resolving the difficulty with infinity by calling them “ideal points.” By adding these points at infinity, the familiar Euclidean space is transformed into a new type of geometric object, projective space.

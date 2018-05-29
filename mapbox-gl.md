@@ -708,3 +708,14 @@ http://maptalks.org/examples/en/3d/polygon-altitude/
 
 **Animations mapbox gl**
 https://medium.com/@Scarysize/the-moving-city-visualizing-public-transport-877f581ca96e
+
+## Mapbox GL SVG Layer
+https://github.com/mapbox/mapbox-gl-js/issues/5390
+https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
+
+
+## some references
+https://www.npmjs.com/package/geojson2mvt
+https://capitalplanning.nyc.gov/facilities
+https://connect.boundlessgeo.com/docs/suite/enterprise/latest/dataadmin/vectortiles/tutorial.html
+http://schwanksta.com/blog/vector-tiles-introduction-pt1

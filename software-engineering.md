@@ -92,3 +92,4 @@ Camel case (stylized as camelCase or CamelCase; also known as camel caps or more
 
 
 https://bootstrap-vue.js.org/docs/components/navbar/
+https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0
