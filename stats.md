@@ -72,4 +72,30 @@ different measures of location and dispersion are often compared on the basis of
 ## Types of Disctributions
 - Gaussian distributions
 - Normal distributions
+- Probability distributions
 
+
+## Robust_statistics
+- https://en.wikipedia.org/wiki/Robust_statistics
+- To compute a regression that is less sentive to outliers, one must use a robust model.
+
+
+## Misc
+* Multilinear regression model, calculating fit, P-values, confidence intervals etc.
+	- if required, first flatten the data
+	- conver data into dataframes
+	- fit the model
+	- perform ANOVA - Analysis of Variance on the fitted (linear) model
+	- plot the fitted model
+	- retrieve the parameter estimates
+	- inference, interpretations
+	- calculate total run time of the script
+* Multiple Regression
+
+
+## Problem Statements
+* Air fares before and after 9/11
+	- This is a business-intelligence (BI) like application.
+	- What is interesting here is that we may want to study fares as a function of the year, paired accordingly to the trips, or forgetting the year, only as a function of the trip endpoints.
+	* Using statsmodels’ linear models, we find that both with an OLS (ordinary least square) and a robust fit
+	* Make a dataframe whith the year as an attribute, instead of separate columns

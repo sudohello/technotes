@@ -294,13 +294,47 @@ https://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm
 	- https://ni.neatvideo.com/download
 	- https://www.picturecode.com/download.php
 
+## Digital Image Processing
+- https://en.wikipedia.org/wiki/Digital_image_processing
+
+**Digital image processing is the only practical technology for:**
+* Classification
+* Feature extraction
+* Multi-scale signal analysis
+* Pattern recognition
+* Projection
+
+**Some techniques which are used in digital image processing include:**
+* Anisotropic diffusion
+* Hidden Markov models
+* Image editing
+* Image restoration
+* Independent component analysis
+* Linear filtering
+* Neural networks
+* Partial differential equations
+* Pixelation
+* Principal components analysis
+* Self-organizing maps
+* Wavelets
+
+**Digital image transformations**
+* Filtering
+	- Digital filters are used to blur and sharpen digital images.
+	- Filtering can be performed in the spatial domain by convolution with specifically designed kernels (filter array), or in the frequency (Fourier) domain by masking specific frequency regions.
+
 ## Image Processing in Python
 
 - OpenSource Computer Vision, more commonly known as OpenCV, is a more advanced image manipulation and processing software than PIL, Pillow
 - In Python, image processing using OpenCV is implemented using the `cv2` and `NumPy` modules
-- [Image Processing using Pillow](https://pillow.readthedocs.io/en/3.0.x/handbook/tutorial.html)
-- [Image Processing using OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)
-- ScipyLectures-simple.pdf
+- [Image Processing using **Pillow**](https://pillow.readthedocs.io/en/3.0.x/handbook/tutorial.html)
+- [**OpenCV** (computer vision)](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)
+- **scipy.ndimage** : for nd-arrays. Basic filtering, mathematical morphology, regions properties
+	- ScipyLectures-simple.pdf
+- **mahotas**
+	- http://luispedro.org/software/mahotas/
+- **ITK** (3D images and registration)
+- http://pythoninformer.com/python-libraries/numpy/numpy-and-images/
 
 **Some Common tasks in image processing:**
 1. Input/Output, displaying images
@@ -533,6 +567,62 @@ hist, bin_edges = np.histogram(img, bins=60)
 	* Analysis of connected components
 	* Find region of interest enclosing object
 	* Other spatial measures: ndimage.center_of_mass , ndimage.maximum_position , etc.
+
+## [scikit-image / skimage](http://scikit-image.org/)
+- **Scikit-image is an image processing toolbox for SciPy**
+- 0.13.x documentation: http://scikit-image.org/docs/0.13.x/
+- 0.13.x User Guide: http://scikit-image.org/docs/0.13.x/user_guide/getting_started.html
+- scikit-image is a Python package dedicated to image processing, and using natively NumPy arrays as image objects
+- basic operations such as masking and labeling are a prerequisite
+- **image** np.ndarray
+- **pixels** array values: a[2, 3]
+- **channels** array dimensions
+- **image encoding** dtype ( np.uint8 , np.uint16 , np.float )
+- **filters** functions ( numpy , skimage , scipy )
+```python
+import skimage
+from skimage import data
+from skimage import filters
+#
+camera = data.camera()
+filters.gaussian(camera,1)
+```
+- most functions are in subpackages
+- Most scikit-image functions take NumPy ndarrays as arguments
+- http://scikit-image.org/docs/stable/auto_examples/
+
+**Input/output, data types and colorspaces**
+- `skimage.data_dir` = `/usr/local/lib/python2.7/dist-packages/skimage/data`
+- imsave also uses an external plugin such as PIL
+```python
+from skimage import io
+import os
+filename = os.path.join(skimage.data_dir, 'camera.png')
+# reading image files
+camera = io.imread(filename)
+logo = io.imread('http://scikit-image.org/_static/img/logo.png')
+io.imsave('local_logo.png', logo)
+```
+- Image ndarrays can be represented either by integers (signed or unsigned) or floats
+- Different integer sizes are possible: 8-, 16- or 32-bytes, signed or unsigned.
+- Careful with overflows with integer data types
+```python
+camera_multiply = 3 * camera
+```
+- An important (if questionable) skimage convention: float images are supposed to lie in [-1, 1] (in order to have comparable contrast for all float images)
+```python
+from skimage import img_as_float
+camera_float = img_as_float(camera)
+camera.max(), camera_float.max()
+```
+- Some image processing routines need to work with float arrays, and may hence output an array with a different type and the data range from the input array
+- Utility functions are provided in skimage to convert both the dtype and the data range, following skimage’s conventions: 'util.img_as_float`, `util.img_as_ubyte` , etc.
+- http://scikit-image.org/docs/stable/user_guide/data_types.html
+```python
+from skimage import filters
+camera_sobel = filters.sobel(camera)
+camera_sobel.max()
+```
 
 ## Exercises
 - https://code.tutsplus.com/tutorials/image-processing-using-python--cms-25772
@@ -774,7 +864,130 @@ matical expression of the function that we are optimizing.
 ### Luminance (Y)
 * In scientific terms, the brightness of light is measured in terms of Luminance
 
+## Colorspaces
+- Color images are of shape (N, M, 3) or (N, M, 4) (when an alpha channel encodes transparency)
+- Routines converting between different colorspaces (RGB, HSV, LAB etc.) are available in `skimage.color` : `color.rgb2hsv , color.lab2rgb` etc.
 
-## References
-* The best workflows and tips for cinematographers and filmmakers:
-	- https://wolfcrow.com/
+## 3D images
+- 3D images (for example MRI or CT images)
+
+## skimage
+
+### Image preprocessing / enhancement
+Goals: denoising, feature (edges) extraction, . . .
+
+**Local filters**
+- Local filters replace the value of pixels by a function of the values of neighboring pixels. The function can be linear or non-linear.
+- Neighbourhood: square (choose size), disk, or more complicated structuring element.
+```python
+from skimage import filters
+from skimage import data
+text = data.text()
+hsobel_text = filters.sobehl_h(text)
+```
+
+**Non-local filters**
+- Non-local filters use a large region of the image (or all the image) to transform the value of one pixel
+```python
+from skimage import exposure
+from skimage import data
+camera = data.camera()
+camera_equalized = exposure.equalize_hist(camera)
+```
+
+### Mathematical Morphology
+- `from skimage import morphology`
+- Erosion = minimum filter. Replace the value of a pixel by the minimal value covered by the structuring element.
+- `np.zeros((7,7), dtype=np.uint8)`
+
+* Mathematical Morphology seems to be the crucial aspect in image processing
+- Grayscale mathematical morphology
+	Mathematical morphology operations are also available for (non-binary) grayscale images (int or float type).Erosion and dilation correspond to minimum (resp. maximum) filters.
+- Higher-level mathematical morphology are available: tophat, skeletonization, etc.
+- Basic mathematical morphology is also implemented in `scipy.ndimage.morphology`. The `scipy.ndimage` implementation works on arbitrary-dimensional arrays
+```python
+from skimage.morphology import disk
+filters.median(coins_zoom, disk(1))
+#
+from skimage import restoration
+restoration.denoise_tv_chambolle(coins_zoom, weight=0.1)
+#
+filters.gaussian(coins, sigma=2)
+```
+
+### Image segmentation
+* `skimage` provides several utility functions that can be used on label images (ie images where different discrete values identify different regions).
+* Functions names are often self-explaining: `skimage.segmentation.clear_border() , skimage.segmentation.relabel_from_one() , skimage. morphology.remove_small_objects()`, etc.
+
+**Binary segmentation: foreground + background**
+* Histogram-based method: [Otsu thresholding](https://en.wikipedia.org/wiki/Otsu%27s_method)
+- The Otsu method is a simple heuristic to find a threshold to separate the foreground from the background
+```python
+val = filters.threshold_otsu(camera)
+#
+import nummpy as np
+from skimage import data, exposure, img_as_float
+image = img_as_float(data.camera())
+np.histogram(image,bins=2)
+exposure.histogram(image, nbins=2)
+```
+- Once you have separated foreground objects, it is use to separate them from each other. For this, we can assign a different integer labels to each one.
+
+**Watershed segmentation**
+- Marker based methods
+- If you have markers inside a set of regions, you can use these to segment the regions.
+	- https://en.wikipedia.org/wiki/Watershed_(image_processing)
+	* `skimage.morphology.watershed()`
+	* The Watershed is a region-growing approach that fills “basins” in the image
+	```python
+	from skimage.morphology import watershed
+	from skimage.feature import peak_local_max
+	```
+
+**Random Walker Segmentation**
+- `skimage.segmentation.random_walker()`
+- similar to the Watershed
+- with a more “probabilistic” approach
+- based on the idea of the diffusion of labels in the image
+
+### Measuring regions’ properties
+* compute the size and perimeter of the two segmented regions
+* `from skimage import measure` and `scipy.ndimage.measurements`
+
+### Data visualization and interaction
+- Meaningful visualizations are useful when testing a given processing pipeline.
+	* Visualize binary result
+	* Visualize contour
+
+### Feature extraction for computer vision
+Geometric or textural descriptor can be extracted from images for:
+* classify parts of the image (e.g. sky vs. buildings)
+* match parts of different images (e.g. for object detection)
+* many other applications in [Computer Vision](https://en.wikipedia.org/wiki/Computer_vision)
+
+#### Corner_detection
+	- https://en.wikipedia.org/wiki/Corner_detection
+	- Corner detection is an approach used within computer vision systems to extract certain kinds of features and infer the contents of an image. Corner detection is frequently used in:
+		* **motion detection**
+		* **image registration**
+		* **video tracking**
+		* **image mosaicing**
+		* **panorama stitching**
+		* **3D modelling**
+		* **object recognition**
+	- Corner detection overlaps with the topic of [interest point detection](https://en.wikipedia.org/wiki/Interest_point_detection)
+		* Interest point detection is a recent terminology in computer vision that refers to the detection of interest points for subsequent processing.		
+	- In practice, however, most corner detectors are sensitive not specifically to corners, but to local image regions which have a high degree of variation in all directions.
+
+**detecting corners using Harris detector**
+
+```python
+from skimage.transform import warp, AffineTransform
+```
+* `skimage.transform.wrap`
+	- Warp an image according to a given coordinate transformation.
+	- `wrap(image, inverse_map, map_args={}, output_shape=None, order=1, mode='constant', cval=0.0, clip=True, preserve_range=False)`
+* `skimage.transform.AffineTransform`
+
+http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_matching.html
+http://scikit-image.org/docs/dev/auto_examples/transform/plot_matching.html

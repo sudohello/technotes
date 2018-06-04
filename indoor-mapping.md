@@ -380,3 +380,87 @@ https://steerpath.com/android-indoor-positioning-sdk/
 
 ## Indoor Positionoing
 https://github.com/Tensing/IndoorPositioning
+
+
+## Literature Review
+
+**indoormaps-thesisi-juhani_lavonen.pdf**
+- Indoor maps represent a detailed cartography of the building containing key elements such as walls, floor, rooms, and other Points of Interest (POI)
+- outdoor maps are more focused on showcasing larger scale objects such as cities, road, rivers and oceans indoor maps are focused on the map data inside the buildings
+- Indoor map data tends to change more often, and it is more critical to businesses than outdoor map data when integrated into their systems and services
+- Indoor map data is also more dense and detailed and is visualized in deeper zoom levels
+- Steerpath, which specializes in delivering both indoor location and indoor map services
+- indoor map maintenance and update services
+
+- Part of Steerpath indoor map creation is extracting data from existing digitalised drawings of the maps
+- CAD to vector map format
+- make the editing process more efficient and user friendly
+- Indoor Map Editor
+- The concept of coupling spatial data with contextual attributes can also be used in indoor maps
+- Steerpath indoor map data follows the GIS practises by having contextual attributes stored in addition to geometric data
+- Steerpath indoor map vector data is encoded in GeoJSON
+- The source of Steerpath indoor maps are digitalised drawings of the customers buildings which are presented in CAD format
+- CADs can be existing digitalised drawings, or they can be drawn from the scratch by using relevant drawing software
+	- Typically, there is one CAD file for each of floor of the building
+	- While having separate CAD file for each of the building’s floor keeps them organized it also makes map maintenance work harder
+	- Data exists in CAD drawings in different data layers	
+	- Steerpath’s indoor maps are created by assigning essential data into **designated CAD layers** which are then processed through the Steerpath map server
+	- This essential indoor map data can be physical or abstract
+	- Physical features include building outline, walls, floor layout and furniture whereas abstract features can include departments, rooms, POIs and wings
+	- Abstract features may also be given tags and other contextual data attributes
+	- **A way to define how data should be presented in the final map is done by assigning attribute: “css_class” which is later interpreted by the map’s style object**
+	- When indoor map data layers are selected from the CAD it will be uploaded to the Steerpath map processor
+	- The result of the process is a GeoJSON file which will be stored in the database
+	- Based on this GeoJSON file vector tiles are generated and encoded into mbtile file format
+
+**Steerpath Indoor Map Data Models**
+The extracted data from the generated GeoJSON are divided into four following categories:
+Structures are physical features of the building such as walls and floor.
+Structures don’t typically have contextual attributes assigned to them.
+• Visuals are also physical features and they represent visual elements of
+the buildings such as furniture and stairs.
+• POIs are more abstract features and they contain more contextual
+attributes such as tags, titles and identifiers.
+• Assets include the beacon locations encoded as feature collection of
+GeoJSON points.
+
+- Steerpath Web SDK is a library which enables utilization of Steerpath indoor maps on top of Mapbox GL JavaScript library
+- The SDK keeps track of the buildings that user is viewing, and fires events based on interactions.
+- On each map movement, the SDK will query the map view for Steerpath building data and store it. If there is a building in the view, the SDK will make it active by activating a floor switcher and selecting either the latest floor index or default layer index to be shown.
+- When a building becomes active a floor switcher control panel will be created for the map. The SDK is needed in the Indoor Map Editor in order to show the indoor maps and floor switcher but also when creating a new POI on the map the editor needs to know to which building and floor it will belong to
+- This building data can be accessed through the Steerpath Web SDK’s APIs.
+
+**GeoJSON**
+There are seven types of geometries that GeoJSON supports:
+• Points are the simplest type geometry and they represent a single position.
+• LineStrings represent a line which requires starting and end point.
+• Polygons have the same first and end coordinate.
+• Multipoints are used to represent a collection of single points.
+• MultiLineStrings contain collection of single lines.
+• MultiPolygons represent collection of polygons.
+
+- In addition to geometric data GeoJSON objects may contain contextual attributes. Objects that contain both spatial data and contextual attributes are referred as Features and collection of Features is called FeatureCollection.
+- GeoJSON features are not bound to represent a physical structure which means that
+any geographical space can be a GeoJSON feature.
+- While GeoJSON format can be used with indoor maps there exists some concepts that are not natively supported by GeoJSON.
+- For example, the concept of building’s floor and how they can be layered on top of each other is not natively supported in GeoJSON.
+
+**TopoJSON**
+- TopoJSON is a geospatial data format created based on GeoJSON to tackle its complexity
+- Instead of listing geometric features TopoJSON uses topology for storing data
+- Topology means that coordinates have indexes to which features refer to
+- Topological encoding eliminates redundancy since geometries can be shared and utilised by multiple features. For instance, coordinates of polygon object can be used for both fill and outline representation
+- TopoJSON is more compact compared to GeoJSON encoding
+- While TopoJSON has advantages over GeoJSON due to its compactness it is not as widely supported by existing geographical tools and libraries as GeoJSON
+
+## Story Map
+https://storymap.knightlab.com/#make
+
+## Editors
+https://maputnik.github.io/editor/#0.08/0/0
+https://github.com/maputnik/editor
+
+OpenStreetMap iD
+## qGIS 3.0 - 3D
+https://www.lutraconsulting.co.uk/blog/2018/03/01/working-with-qgis-3d-part-1/
+https://scholarworks.umass.edu/foss4g/vol15/iss1/26/

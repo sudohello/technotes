@@ -927,12 +927,12 @@ and Ponce 2003).
 * http://www.navvis.com/markets/overview/
 
 ## SfM vs SLAM
-http://www.computervisionblog.com/2016/01/why-slam-matters-future-of-real-time.html
-http://www.cs.cmu.edu/~hebert/geom.html
+* http://www.computervisionblog.com/2016/01/why-slam-matters-future-of-real-time.html
+* http://www.cs.cmu.edu/~hebert/geom.html
 
 
 ## Hardware Configuration
-https://www.quora.com/Ill-be-using-my-computer-for-heavy-computation-computer-vision-algorithms-training-and-neural-nets-What-would-be-a-good-configuration-for-a-PC-laptop
+* https://www.quora.com/Ill-be-using-my-computer-for-heavy-computation-computer-vision-algorithms-training-and-neural-nets-What-would-be-a-good-configuration-for-a-PC-laptop
 
 I use to work with 13Mpx to 6K, 16b raw images or video sequences. Here are the specifications I recommend for such work:
 * > 16Gb RAM: it will be really important in order to be able to process a lot of data simultaneously
@@ -941,7 +941,6 @@ I use to work with 13Mpx to 6K, 16b raw images or video sequences. Here are the 
 * The GPU is not really important. You just have to pick a chipset that support your favorite parallel computing platform (CUDA, OpenCL...).
 
 That seem to be the minimum requirements in order to work with a lot of images. Sometimes, when I need to process a lot of images with very complex algorithm destined to be hard coded on an ASIC chip, I need more power. Therefore I send jobs on about ten computers all night and get the resulting images the next morning.
-
 
 https://www.quora.com/What-laptop-computer-should-I-purchase-for-deep-learning-How-much-will-it-cost
 
@@ -954,15 +953,16 @@ These have decent GPUs, and give you good performance for training small network
 This is more convenient than setting up an external GPU on another laptop.
 
 
-https://cloud.google.com/blog/big-data/2017/05/an-in-depth-look-at-googles-first-tensor-processing-unit-tpu
+**TPU - Tensor Processing Unit**
+* https://cloud.google.com/blog/big-data/2017/05/an-in-depth-look-at-googles-first-tensor-processing-unit-tpu
 
 **CudaVsOpenCL**
-https://wiki.tiker.net/CudaVsOpenCL
-
-https://ai.google 
-http://www.nvidia.com/object/imaging_comp_vision.html
+* https://wiki.tiker.net/CudaVsOpenCL
+* https://ai.google 
+* http://www.nvidia.com/object/imaging_comp_vision.html
 
 ## Getting started - build Image Processing based website
+
 [Ref: 1](https://www.quora.com/How-can-I-build-a-website-using-Python-to-do-image-processing-and-machine-learning)
 For the problem of using an X-ray dataset to identify a disease, and build a website around it, here are the technologies and skills you’ll want to start with.
 
@@ -972,21 +972,40 @@ For the problem of using an X-ray dataset to identify a disease, and build a web
 4. Python web programming via [Django](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) or [Flask](http://flask.pocoo.org/docs/0.12/tutorial/) to create a web server and a frontend HTML page to upload images, transform them to a matrix, extract features, and predict a class using the classifier built in 3) . The result can then be shown to the user.
 
 ## Tutorial in Web application development
-https://towardsdatascience.com/how-to-build-a-machine-learning-as-a-rails-developer-739cc57ea01c
-
-Rather than having a complicated machine learning application that did some complicated neural network-deep learning-artificial intelligence-stochastic gradient descent-linear regression-bayesian machine learning magic
-
+* https://towardsdatascience.com/how-to-build-a-machine-learning-as-a-rails-developer-739cc57ea01c
+* Rather than having a complicated machine learning application that did some complicated neural network-deep learning-artificial intelligence-stochastic gradient descent-linear regression-bayesian machine learning magic
 
 ## Blog posts
-https://towardsdatascience.com/my-next-two-years-de448d3141a
+* https://towardsdatascience.com/my-next-two-years-de448d3141a
 
 ## Open Courses
-https://web.stanford.edu/class/cs377s/syllabus.htm
+* https://web.stanford.edu/class/cs377s/syllabus.htm
 
 ## Computer Vision in browser
-https://docs.opencv.org/trunk/df/d0a/tutorial_js_intro.html
+* https://docs.opencv.org/trunk/df/d0a/tutorial_js_intro.html
+* **Web Virtual Reality (WebVR) and Augmented Reality (WebAR)**
+* **Emscripten** is an LLVM-to-JavaScript compiler. It takes LLVM bitcode - which can be generated from C/C++ using clang, and compiles that into asm.js or WebAssembly that can execute directly inside the web browsers. . Asm.js is a highly optimizable, low-level subset of JavaScript. Asm.js enables ahead-of-time compilation and optimization in JavaScript engine that provide near-to-native execution speed.
+* **WebAssembly** is a new portable, size- and load-time-efficient binary format suitable for compilation to the web. WebAssembly aims to execute at native speed. WebAssembly is currently being designed as an open standard by W3C.
 
-Web Virtual Reality (WebVR) and Augmented Reality (WebAR)
+# Computer Vision
+* [Interest_point_detection](https://en.wikipedia.org/wiki/Interest_point_detection)
+* [Blob detection](https://en.wikipedia.org/wiki/Blob_detection)
 
+## Calibarations
 
-Emscripten is an LLVM-to-JavaScript compiler. It takes LLVM bitcode - which can be generated from C/C++ using clang, and compiles that into asm.js or WebAssembly that can execute directly inside the web browsers. . Asm.js is a highly optimizable, low-level subset of JavaScript. Asm.js enables ahead-of-time compilation and optimization in JavaScript engine that provide near-to-native execution speed. WebAssembly is a new portable, size- and load-time-efficient binary format suitable for compilation to the web. WebAssembly aims to execute at native speed. WebAssembly is currently being designed as an open standard by W3C.
+* http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/example5.html
+* https://github.com/gaowenliang/camera_model
+* https://github.com/hengli/camodocal
+* https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+* https://github.com/willdzeng/zed_cpu_ros
+* http://www.cvlibs.net/software/calibration/
+* https://github.com/ankitdhall/lidar_camera_calibration
+* https://arxiv.org/abs/1705.09785
+* https://www.youtube.com/watch?v=Om1SFPAZ5Lc&feature=youtu.be
+* https://www.youtube.com/watch?v=SiPGPwNKE-Q
+* http://wiki.ros.org/industrial_extrinsic_cal/Tutorials/Camera%20to%20Target
+* http://wiki.ros.org/industrial_extrinsic_cal/Tutorials/Multi_camera_calibration
+* http://wiki.ros.org/openni_launch/Tutorials/ExtrinsicCalibration
+* https://github.com/ros-naoqi/extrinsic_calibration
+* https://gist.github.com/AminaKeldibek/fcd9234c116ad036d655
+* https://github.com/ethz-asl/kalibr/wiki/multiple-camera-calibration

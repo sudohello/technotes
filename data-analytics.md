@@ -10,4 +10,5 @@ Tags: Data Analytics
 
 ## Types of Grpahs
 * Boxplot
+	- Boxplot of the difference
 * Scatter plot

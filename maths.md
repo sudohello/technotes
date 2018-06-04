@@ -77,6 +77,142 @@ http://farside.ph.utexas.edu/teaching/336k/Newtonhtml/node148.html
 ## Vector Calculus
 http://web.mit.edu/wwmath/vectorc/index.html
 
+
+## Concepts crucial for Image Processing
+
+Different types of transformations:
+
+**Affine Transformation**
+- https://en.wikipedia.org/wiki/Affine_transformation
+- Examples of affine transformations include translation, scaling, homothety, similarity transformation, reflection, rotation, shear mapping, and compositions of them in any combination and sequence.
+- Projective Transformation
+- Geometric Transformation
+
+- [Real Coordinate Space]
+	- https://en.wikipedia.org/wiki/Real_coordinate_space#Matrix_notation
+	- With component-wise addition and scalar multiplication, it is the prototypical real vector space and is a frequently used representation of Euclidean n-space
+	- any n-dimensional real vector space is isomorphic to the vector space Rn.
+	- **Matrix Notation**
+		- In standard matrix notation, each element of Rn is typically written as a column vector or row vector
+		- The coordinate space Rn may then be interpreted as the space of all n × 1 column vectors, or all 1 × n row vectors with the ordinary matrix operations of addition and scalar multiplication
+		- Linear transformations from Rn to Rm may then be written as m × n matrices which act on the elements of Rn via left multiplication (when the elements of Rn are column vectors) and on elements of Rm via right multiplication when they are row vectors)
+		- Any linear transformation is a continuous function
+		- In mathematics, the **standard basis** (also called natural basis) for a Euclidean space is the set of unit vectors pointing in the direction of the axes of a Cartesian coordinate system.
+- [vector space]
+	- https://en.wikipedia.org/wiki/Vector_space
+	- https://en.wikipedia.org/wiki/Euclidean_vector
+	- https://en.wikipedia.org/wiki/Zero_element
+	- Any vector space may be considered as an affine space
+	- also called a **linear space**
+	- It is a collection of objects called vectors, which may be added together and multiplied ("scaled") by numbers, called scalars
+	- Scalars are often taken to be real numbers, but there are also vector spaces with scalar multiplication by complex numbers, rational numbers, or generally any field
+	- Euclidean vectors are an example of a vector space
+- [Affine Space]
+	- https://en.wikipedia.org/wiki/Affine_space
+	- In mathematics, an affine space is a geometric structure that generalizes the properties of Euclidean spaces in such a way that these are independent of the concepts of distance and measure of angles, keeping only the properties related to parallelism and ratio of lengths for parallel line segments.
+	- **In an affine space, there is no distinguished point that serves as an origin. Hence, no vector has a fixed origin and no vector can be uniquely associated to a point.**
+	- In an affine space, there are instead displacement vectors, also called translation vectors or simply translations, between two points of the space.[1] Thus it makes sense to subtract two points of the space, giving a translation vector, but it does not make sense to add two points of the space. Likewise, it makes sense to add a displacement vector to a point of an affine space, resulting in a new point translated from the starting point by that vector.
+	- Adding a fixed vector to the elements of a linear subspace of a vector space produces an affine subspace. One commonly says that this affine subspace has been obtained by translating (away from the origin) the linear subspace by the translation vector.
+	- ** In finite dimensions, such an affine subspace is the solution set of an inhomogeneous linear system.**
+- [Euclidean Space]
+	- https://en.wikipedia.org/wiki/Euclidean_space
+	- points of the space are specified with collections of real numbers, and geometric shapes are defined as equations and inequalities
+	- This approach brings the tools of algebra and calculus to bear on questions of geometry and has the advantage that it generalizes easily to Euclidean spaces of more than three dimensions
+	- Euclidean spaces have finite dimension
+	-  One of the basic tenets of Euclidean geometry is that two figures (usually considered as subsets) of the plane should be considered equivalent (congruent) if one can be transformed into the other by some sequence of translations, rotations and reflections
+	- clearly define the notions of distance, angle, translation, and rotation for a mathematically described space
+	- https://en.wikipedia.org/wiki/Frame_of_reference
+	- https://en.wikipedia.org/wiki/Abstraction
+	- Euclidean space is an abstraction detached from actual physical locations, specific reference frames, measurement instruments, and so on
+	- A purely mathematical definition of Euclidean space also ignores questions of units of length and other physical dimensions
+	- the distance in a "mathematical" space is a number, not something expressed in inches or metres
+	- The reason for working with arbitrary vector spaces instead of Rn is that it is often preferable to work in a coordinate-free manner (that is, without choosing a preferred basis). For then:
+		* the vectors in the vector space correspond to the points of the Euclidean plane
+		* the addition operation in the vector space corresponds to translation, and
+		* the inner product implies notions of angle and distance, which can be used to define rotation.
+	- A Euclidean space is not technically a vector space but rather an affine space, on which a vector space acts by translations, or, conversely, a Euclidean vector is the difference (displacement) in an ordered pair of points, not a single point
+	- standard inner product (also known as the dot product) on Rn
+	- Usually, the angle is considered a dimensionless quantity, but there are different units of measurement, such as radian (preferred in pure mathematics and theoretical physics) and degree (°) (preferred in most applications)
+- [Dimensions]
+	- https://en.wikipedia.org/wiki/Dimension#High-dimensional_space
+- [Quaternion]
+	- https://en.wikipedia.org/wiki/Quaternion
+	- Used in three-dimensional computer graphics, computer vision
+	- In practical applications, they can be used alongside other methods, such as Euler angles and rotation matrices, or as an alternative to them, depending on the application
+- [Geometry]
+	- https://en.wikipedia.org/wiki/Geometry
+- [System_of_linear_equations]
+	- https://en.wikipedia.org/wiki/System_of_linear_equations
+	- In mathematics, a system of linear equations (or linear system) is a collection of two or more linear equations involving the same set of variables
+	- the theory of linear systems is the basis and a fundamental part of linear algebra
+	- A system of linear equations is homogeneous if all of the constant terms are zero
+	- where {\displaystyle x_{1},x_{2},\ldots ,x_{n}} x_{1},x_{2},\ldots ,x_{n} are the unknowns, {\displaystyle a_{11},a_{12},\ldots ,a_{mn}} a_{11},a_{12},\ldots ,a_{mn} are the coefficients of the system, and {\displaystyle b_{1},b_{2},\ldots ,b_{m}} b_{1},b_{2},\ldots ,b_{m} are the constant terms.
+	- **Vector Equation**
+		- One extremely helpful view is that each unknown is a weight for a column vector in a linear combination.
+	- **Matrix Equation**
+		- The vector equation is equivalent to a matrix equation of the form
+- [Nonlinear_system]
+	- https://en.wikipedia.org/wiki/Nonlinear_system
+	- In mathematics and physical sciences, a nonlinear system is a system in which the change of the output is not proportional to the change of the input
+	- most systems are inherently nonlinear in nature
+	-  the behavior of a nonlinear system is described in mathematics by a nonlinear system of equations, which is a set of simultaneous equations in which the unknowns (or the unknown functions in the case of differential equations) appear as variables of a polynomial of degree higher than one or in the argument of a function which is not a polynomial of degree one
+	-  in a nonlinear system of equations, the equation(s) to be solved cannot be written as a linear combination of the unknown variables or functions that appear in them
+- [Linear Map]
+	- https://en.wikipedia.org/wiki/Linear_map
+	- Linear maps can often be represented as matrices, and simple examples include rotation and reflection linear transformations
+	- **a linear map is a mapping V → W between two modules (including vector spaces) that preserves the operations of addition and scalar multiplication**
+
+- **[Affine transformation]**
+	- vector algebra uses matrix multiplication to represent linear maps
+	- vector addition to represent translations
+	- Using an augmented matrix and an augmented vector, it is possible to represent both the translation and the linear map using a single matrix multiplication.
+	- **Ordinary matrix-vector multiplication always maps the origin to the origin, and could therefore never represent a translation, in which the origin must necessarily be mapped to some other point. By appending the additional coordinate "1" to every vector, one essentially considers the space to be mapped as a subset of a space with an additional dimension.**  In that space, the original space occupies the subset in which the additional coordinate is 1. Thus the origin of the original space can be found at {\displaystyle (0,0,\dotsc ,0,1)} {\displaystyle (0,0,\dotsc ,0,1)}
+	- A translation within the original space by means of a linear transformation of the higher-dimensional space is then possible (specifically, a shear transformation). The coordinates in the higher-dimensional space are an example of homogeneous coordinates. If the original space is Euclidean, the higher dimensional space is a real projective space.
+	- **The advantage of using homogeneous coordinates is that one can combine any number of affine transformations into one by multiplying the respective matrices. This property is used extensively in computer graphics, computer vision and robotics.**
+	* Properties preserved - 	An affine transformation preserves:
+	* collinearity between points: three or more points which lie on the same line (called collinear points)continue to be collinear after the transformation.
+	* parallelism: two or more lines which are parallel, continue to be parallel after the transformation.
+	* convexity of sets: a convex set continues to be convex after the transformation. Moreover, the extreme * points of the original set are mapped to the extreme points of the transformed set.[3]
+	* ratios of lengths along a line: for distinct collinear points {\displaystyle p_{1}} p_{1}, {\displaystyle p_{2}} p_{2}, {\displaystyle p_{3}} p_{3}, the ratio of {\displaystyle {\overrightarrow {p_{1}p_{2}}}} {\overrightarrow {p_{1}p_{2}}} and {\displaystyle {\overrightarrow {p_{2}p_{3}}}} {\overrightarrow {p_{2}p_{3}}} is the same as that of {\displaystyle {\overrightarrow {f(p_{1})f(p_{2})}}} {\overrightarrow {f(p_{1})f(p_{2})}} and {\displaystyle {\overrightarrow {f(p_{2})f(p_{3})}}} {\overrightarrow {f(p_{2})f(p_{3})}}.
+	* barycenters of weighted collections of points.
+	- If there is a fixed point, we can take that as the origin, and the affine transformation reduces to a linear transformation. This may make it easier to classify and understand the transformation
+	- describing a transformation as a rotation by a certain angle with respect to a certain axis may give a clearer idea of the overall behavior of the transformation than describing it as a combination of a translation and a rotation. However, this depends on application and context.
+	- **Affine transformations scale, rotate, translate, mirror and sheer images**
+	- The Affine transforms are applicable to the registration process where two or more images are aligned (registered), an example of image registration is the generation of panoramic images that are the product of multiple images stitched together.
+	- **affine transformations do not facilitate projection onto a curved surface or radial distortions**
+
+- **[Projective transformation]**
+	- https://en.wikipedia.org/wiki/Projective_transformation
+
+### Distortions
+https://en.wikipedia.org/wiki/Distortion_(optics)
+http://cctvcad.com/videocad_help/index.html?about_distortion.htm
+http://www.cctvcad.com/cctv_design_software.html
+
+### Mathematical Terms and Definitions
+* **Isomorphism**
+	- https://www.britannica.com/science/isomorphism-mathematics
+	- https://en.wikipedia.org/wiki/Isomorphism
+* **Axiom**
+	- https://en.wikipedia.org/wiki/Axiom
+	- An axiom or postulate is a statement that is taken to be true, to serve as a premise or starting point for further reasoning and arguments
+* **Barycenter**
+	- https://en.wikipedia.org/wiki/Barycenter
+	- The barycenter (or barycentre; from the Ancient Greek βαρύς heavy + κέντρον centre[1]) is the center of mass of two or more bodies that are orbiting each other, which is the point around which they both orbit.
+* **Augmented Matrix**
+	- https://en.wikipedia.org/wiki/Augmented_matrix
+	- an augmented matrix is a matrix obtained by appending the columns of two given matrices, usually for the purpose of performing the same elementary row operations on each of the given matrices.
+* **basis**
+	- https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+	- In mathematics, a set of elements (vectors) in a vector space V is called a basis, or a set of basis vectors, if the vectors are linearly independent and every vector in the vector space is a linear combination of this set
+* **Linear_independence**
+	- https://en.wikipedia.org/wiki/Linear_independence
+	- In the theory of vector spaces, a set of vectors is said to be linearly dependent if one of the vectors in the set can be defined as a linear combination of the others; if no vector in the set can be written in this way, then the vectors are said to be linearly independent. These concepts are central to the definition of dimension.[
+* **Linear Combination**
+	- https://en.wikipedia.org/wiki/Linear_combination
+	- In mathematics, a linear combination is an expression constructed from a set of terms by multiplying each term by a constant and adding the results (e.g. a linear combination of x and y would be any expression of the form ax + by, where a and b are constants).[1][2][3] The concept of linear combinations is central to linear algebra and related fields of mathematics
+
+
 ## Misc
 enhancing the Euclidean plane by the addition of these points at infinity where parallel lines meet, and resolving the difficulty with infinity by calling them “ideal points.” By adding these points at infinity, the familiar Euclidean space is transformed into a new type of geometric object, projective space.
 

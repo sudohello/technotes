@@ -224,6 +224,60 @@ A Thunderbolt controller consists of two bidirectional data channels, with each 
 
 so the maximum theoretical throughput of a single Thunderbolt channel is 1GB/s in each direction. 
 
+## PCIe Lanes
+
+Your m.2 drive will use the chipset lanes and will not be handicapped at all.  Your GPU can run at 16x.  Even if for some reason it couldn't (which it can) 8x is more than enough for your GPU.  There is no way a 1070 can saturate 8x PCIe 3.0.
+
+**Intel 8700**
+* You get 16 full-speed PCIe lanes from the CPU:
+* Paired with a Z370 board, you also get a further 24 PCIe lanes from the chipset
+* Note that the chipset lanes all share a higher latency ~x4 PCIe 3.0 link to the CPU. So although it's great for things like networking and one or two high speed NVMe drives, those chipset lanes aren't optimal for anything ultra-performance sensitive like GPUs.
+
+**Intel 8700K**
+* PCI Express Revision 3.0
+* PCI Express Configurations ‡ Up to 1x16, 2x8, 1x8+2x4
+* Max # of PCI Express Lanes 16
+
+**Maximum Theoritical PCIe x.x lane throughput**
+
+A single PCIe 1.0 (or 1.1) lane can carry up to 2.5 (GT/s) in each direction simultaneously.
+For PCIe 2.0, that increases to 5GT/s
+A single PCIe 3.0 lane can carry 8GT/s.
+
+
+**After overhead, the maximum per-lane data rate**
+
+PCIe 1.0 is eighty percent of 2.5GT/s. That gives us two gigabits per second, or 250MB/s (remember, eight bits to a byte). The PCIe interface is bidirectional, so that's 250MB/s in each direction, per lane.
+PCIe 2.0 doubles the per-lane throughput to 5GT/s, which gives us 500MB/s of actual data transfer per lane.
+PCIe 3.0 lane, at 8GT/s, can send 985MB/s. That's not quite twice 500MB/s, but it's close enough for marketing purposes.
+
+**[What-is-the-difference-between-the-PCIe-lanes-from-the-CPU-and-the-ones-from-the-motherboard-Is-there-a-performance-difference](https://www.quora.com/What-is-the-difference-between-the-PCIe-lanes-from-the-CPU-and-the-ones-from-the-motherboard-Is-there-a-performance-difference)**
+- The pcie lanes for the cpu are the maximum amount of pcie lanes supported on the motherboard. The long pcie slots on the motherboard are x16, and the only pcie devices (with exceptions) that use this amount of bandwidth are gpu’s. So a single gpu takes up 16 lanes, if your cpu is a 28 lane then you now have 12 lanes left.
+
+* **Have you heard of m.2, u.2, and esata?**
+	- They all use x4 pcie 3.0 lanes
+	- So if you then have two m.2 drives and one u.2 drive on top of your graphics card you are now using 28 pcie lanes, which is the max the cpu can handle.
+
+* **Well what if you add more pcie devices?**
+	- The motherboard will automatically restrict the bandwidth for some devices (in the motherboard manual it will tell you which ports will be effected and when).
+	- This means that if you have two graphics cards with a 28 lane cpu, since this takes up 32 lanes, the motherboard will only allow x8 bandwidth to both cards.
+	- This is a problem with newer cards since they need the full x16 bandwidth, and is partly the reason people are saying “sli is dying”. It doesn’t effect performance a lot, but enough that if you’re doing sli you want to make sure you have a 40 lane cpu.
+
+* the pcie lanes for the chipset are for lower bandwidth devices, such as usb ports and audio cards
+* This shows how the chipset pcie lanes get 8gbs and 6gbs
+* while, the cpu pcie x16 lanes get 15gbps. This is because everything using cpu pcie lanes are devices that interact directly with the cpu no matter what. 
+* The chipset lanes are all devices that can interact with the cpu sometimes, but also interact with the storage and external devices.
+* So yes there is a perfomance difference, the cpu lanes get more priority and bandwidth, and the chipset lanes are lower bandwidth.
+* Chipset lanes are typically used for things like M.2 storage, capture cards, or other peripherals that use pcie lanes
+* For the DMI ( Direct Media Interface ), with 3 version the chipset will support DDR4, more pcie lanes, and more USB3.0 etc. more info https://en.wikipedia.org/wiki/Direct_Media_Interface
+
+
+**If we add single GPU, does it use PCI E lanes from the chipset or from the processor?**
+- the GPU, which can only be plugged in your motherboard's single PCIe x16 slot, uses the x16 lanes coming from the processor.
+
+https://www.bit-tech.net/reviews/tech/cpus/intel-core-i7-8700k-coffee-lake-and-z370-chipset-review/2/
+
+
 ## GPU/Graphics Card
 Zotac Nvidia GTX 1080 Ti 11GB
 http://www.pc-specs.com/gpu/Nvidia/1000_Series/GeForce_GTX_1080_Ti_Zotac_AMP!/3874/Compatible_Motherboards
@@ -466,11 +520,18 @@ In order to get the best audio quality, I chose a bit more expensive ASUS Maximu
 http://www.tomshardware.com/answers/id-3359396/opinion-build-7700k-1080.html
 
 ## Keywords
-- Founder Edition
-- After market - means, over clocking
-- OC - Over clocking
-- Mobos - Motherboard
-- siliconlottery - https://siliconlottery.com/
+* Founder Edition
+* After market - means, over clocking
+* OC - Over clocking
+* Mobos - Motherboard
+* siliconlottery - https://siliconlottery.com/
+* HEDT - High End Desktop
+* DMI - direct media interface
+	- DMI is the communication lane between the CPU and the Chipset/PCH.
+* FSB - Front Side Bus
+* QPI - Quick Path Interconnect
+* TDP - Thermal Design Power
+* HSIO - high-speed input-output
 
 ## other references
 - http://cpu.userbenchmark.com/Compare/Intel-Core-i7-7700-vs-Intel-Core-i3-7100/3887vs3891
