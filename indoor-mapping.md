@@ -453,6 +453,81 @@ any geographical space can be a GeoJSON feature.
 - TopoJSON is more compact compared to GeoJSON encoding
 - While TopoJSON has advantages over GeoJSON due to its compactness it is not as widely supported by existing geographical tools and libraries as GeoJSON
 
+### Steerpath Datastructure
+```json
+"properties": {
+  "_dbid": "5a17e2999276cb49693aa575",
+  "buildingRef": "69",
+  "css_class": "furniture",
+  "layerIndex": 0,
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "furniture"
+}
+"properties": {
+  "_dbid": "5a17e2a19276cb49693aa5ad",
+  "buildingRef": "69",
+  "css_class": "furniture_large",
+  "layerIndex": 0,
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "furniture"
+}
+ "properties": {
+  "_dbid": "5a0c18052da312460d48f417",
+  "area": "{\"coordinates\":[[[24.9356160100,60.2036848300],[24.9355335200,60.2038670200],[24.9352801800,60.2038386000],[24.9353626800,60.2036564100],[24.9356160100,60.2036848300]]],\"type\":\"Polygon\"}",
+  "buildingRef": "69",
+  "center": "{\"coordinates\":[24.9354480971,60.2037617157],\"type\":\"Point\"}",
+  "css_class": "service_cloakroom",
+  "layerIndex": 0,
+  "localRef": "CLOAKROOM_NORTH",
+  "point": "{\"coordinates\":[24.9354838500,60.2036710800],\"type\":\"Point\"}",
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "poi",
+  "tags": "[\"service_cloakroom\",\"CLOAKROOM_NORTH\"]",
+  "tags.service_cloakroom": 1,
+  "title": "Cloakroom"
+}
+"properties": {
+  "_dbid": "5a0c18052da312460d48f413",
+  "buildingRef": "69",
+  "css_class": "infrastructure_entrance",
+  "layerIndex": 0,
+  "localRef": "",
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "poi",
+  "tags": "[\"infrastructure_entrance\",\"\"]",
+  "title": "Northern Entrance"
+}
+"properties": {
+  "_dbid": "5a17e2549276cb49693a6507",
+  "buildingRef": "69",
+  "css_class": "wall",
+  "layerIndex": 0,
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "wall"
+}
+"properties": {
+  "_dbid": "5a171343f58c377b3774636d",
+  "buildingRef": "69",
+  "css_class": "service_toilet_men",
+  "layerIndex": 0,
+  "localRef": "TOILET5",
+  "sources": "[\"base\",\"slush_static\",\"slush_dynamic\"]",
+  "subType": "poi",
+  "tags": "[\"\",\"TOILET5\"]",
+  "tags.": 1,
+  "title": "Men"
+}
+```
+- wall
+- building_outline
+- wall_exterior
+- infrastructure_stairs_big
+- PLACEHOLDER
+- ["in", "css_class", "service_quiet_booth", "service_recycling", "service_vending_machine"],
+["!in", "localRef", "FR1", "FR2", "FR3", "FR4", "FR5", "FR6", "FR7", "FR8", "FR9", "FR10", "FR11", "FR12", "FR13", "FR14", "FR15", "FR16", "FR17", "FR18", "FR19", "FR21", "FR22", "FR23", "FR24", "FR25", "FR26", "FR27", "FR28", "FR29", "FR30"]
+- "text-field": "{desc}",
+- "text-field": "{localRef}",
+
 ## Story Map
 https://storymap.knightlab.com/#make
 

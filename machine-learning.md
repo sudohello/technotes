@@ -3,10 +3,308 @@ Title: ML - Machine Learning
 Decription: Machine Learning
 Author: Bhaskar Mangal
 Date: 
-Tags: Machine Leaning, ML
+Last Updates: 04th Jun 2018
+Tags: Machine Leaning, ML, Machine Learning in Python
 */
 
 # Machine Learning
+
+## scikit-learn: machine learning in Python: `sklearn` python package
+> scikit-learn: machine learning in Python
+
+**References**
+* ScipyLectures-simple.pdf
+* [Check the Refresher in Python and related packages](https://github.com/mangalbhaskar/pragmatic-approach-4-learning-data-visualisation/blob/master/chapter-1/python-in-nutshell.md)
+* [islr-book-notes (Introduction to Statistical Learning Using R)](https://github.com/mangalbhaskar/technotes/blob/master/islr-book-notes.md)
+
+**Documentation**
+http://scikit-learn.org
+
+**Tutorials**
+https://www.youtube.com/watch?v=r4bRUvvlaBw
+https://github.com/jakevdp/sklearn_tutorial
+
+**What is machine learning?**
+- Machine Learning is about building programs with tunable parameters that are adjusted automatically so as to improve their behavior by adapting to previously seen data.
+- Machine Learning can be considered a subfield of Artificial Intelligence since those algorithms can be seen as building blocks to make computers learn to behave more intelligently by somehow generalizing rather that just storing and retrieving data items like a database system would do.
+
+**Two very simple machine learning tasks:**
+1. First is a **classification** task
+	- A classification algorithm may be used to draw a dividing boundary between the two clusters of points
+2. Second is **regression** task
+	- a simple best-fit line to a set of data
+	- this is an example of fitting a model to data, but our focus here is that the model can make generalizations about new data
+
+**data matrix**
+- Machine learning algorithms implemented in scikit-learn expect data to be stored in a two-dimensional array or matrix
+- arrays can be either numpy arrays, or in some cases `scipy.sparse` matrices
+- The size of the array is expected to be `[n_samples, n_features]`
+	* **n_samples**: The number of samples
+		- each sample is an item to process (e.g. classify)
+		- A sample can be a document
+		- a picture
+		- a sound
+		- a video
+		- an astronomical object
+		- a row in database or CSV file
+		- or whatever you can describe with a fixed set of quantitative traits
+	* **n_features**: The number of features or distinct traits that can be used to describe each item in a quantitative manner
+		- Features are generally real-valued
+		- but may be boolean or discrete-valued in some cases
+		- The number of features must be fixed in advance
+		- there must be a fixed number of features for each sample
+		- feature number `i` must be a similar kind of quantity for each sample
+		- However it can be very high dimensional (e.g. millions of features) with most of them being zeros for a given sample. This is a case where scipy.sparse matrices can be useful, in that they are much more memory-efficient than numpy arrays
+- `scikit-learn` is imported as `sklearn`
+- http://www.scipy-lectures.org/packages/scikit-learn/auto_examples/plot_iris_scatter.html
+```python
+from sklearn.datasets import load_iris
+iris = load_iris()
+iris.feature_names
+n_samples, n_features = iris.data.shape
+#
+# The information about the class of each sample is stored in the target attribute of the dataset:
+iris.target
+#
+# The names of the classes are stored in the last attribute, namely target_names
+iris.target_names
+#
+# This data is four-dimensional, but we can visualize two of the dimensions at a time using a scatter plot:
+```
+* scikit-learn already support multiclass classification by default via the One-vs.-Rest (OvR) method
+* The Iris dataset contains the measurements of 150 iris flowers from three different species: Setosa, Versicolor, and Virginica
+* Iris dataset, consisting of 150 samples and 4 features, can then be written as a 150 × 4 matrix $x \epsilon  R^{150*4}$
+```python
+from sklearn import datasets
+datasets.load_iris()
+
+from sklearn.model_selection import train_test_split
+train_test_split(X, y, test_size=0.3, random_state=0)
+
+from sklearn.preprocessing import StandardScaler
+StandardScaler()
+
+from sklearn.metrics import accuracy_score
+accuracy_score(y_test, y_pred)
+```
+
+**Basic principles of machine learning with scikit-learn**
+- Every algorithm is exposed in scikit-learn via an **Estimator** object
+- linear regression is: `sklearn.linear_model.LinearRegression`
+- Estimator parameters: All the parameters of an estimator can be set when it is instantiated
+```python
+from sklearn.linear_model.LinearRegression import LinearRegression
+import numpy as np
+model = LinearRegression(normalize=True)
+# LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=True)
+x,y = np.array([0,1,2]), np.array([0,1,2])
+X = x[:,np.newaxis]
+model.fit(X,y)
+model.coef_
+```
+- Fitting on data
+- Estimated parameters: When data is fitted with an estimator, parameters are estimated from the data at hand. All the estimated parameters are attributes of the estimator object ending by an underscore
+
+**Supervised Learning: Classification and regression**
+- In Supervised Learning, we have a dataset consisting of both features and labels
+- The task is to construct an estimator which is able to predict the label of an object given the set of features.
+- there is one or more unknown quantities associated with the object which needs to be determined from other observed quantities
+- Supervised learning is further broken down into two categories:
+	* **classification**
+		- In classification, the **label is discrete**
+		- K nearest neighbors (kNN) is one of the simplest learning strategies
+			* given a new, unknown observation, look up in your reference database which ones have the closest features and assign the predominant class
+```python
+from sklearn.linear_model.LinearRegression import LinearRegression
+model = LinearRegression(normalize=True)
+model.fit
+model.predict
+#
+from sklearn import neighbors
+knn = neighbors.KNeighborsClassifier(n_neoghbors=1)
+knn.fit
+knn.predict
+```
+	* **regression**
+		- In regression, the **label is continuous**
+
+- **Scikit-learn strives to have a uniform interface across all methods.**
+	- Given a scikit-learn estimator object named model , the following methods are available:
+		* `model.fit`: fit training data
+		* **For supervised learning** applications, this accepts two arguments: the **data** `X` and the **labels** `y`
+		* **For unsupervised learning** applications, this accepts only a single argument, the **data** `X`
+	```python
+	model.fit(X,y)
+	model.fit(X)
+	```
+	- In supervised estimators:
+		* `model.predict`
+			- given a trained model, predict the label of a new set of data
+			- This method accepts one argument, the new data and returns the learned label for each object in the array
+		* `model.predict_proba`
+			- For classification problems, some estimators also provide this method
+			- returns the probability that a new observation has each categorical label
+		* `model.score`
+			- For classification or regression problems
+			- Scores are between 0 and 1
+			- with a larger score indicating a better fit
+	- In unsupervised estimators:
+		* `model.transform`
+			- given an unsupervised model, transform new data into the new basis
+		* `model.fit_transform`
+			- more efficiently performs a fit and a transform on the same input data
+
+**Regularization: what it is and why it is necessary**
+The core idea behind regularization is that we are going to **prefer models that are simpler**, for a certain definition of "simpler", even if they lead to more errors on the train set
+* Train errors Suppose you are using a 1-nearest neighbor estimator. How many errors do you expect on your train set?
+	- Train set error is not a good measurement of prediction performance. You need to leave out a test set
+	- In general, we should accept errors on the train set
+* Regularization is ubiquitous in machine learning
+* Most scikit-learn estimators have a parameter to tune the amount of regularization
+	- For instance, with k-NN, it is ‘k’, the number of nearest neighbors used to make the decision
+	- k=1 amounts to no regularization: 0 error on the training set, whereas large k will push toward smoother decision boundaries in the feature space
+* For classification models (linear separation, non-linear separation), the decision boundary, that separates the class expresses the complexity of the model. For instance, a linear model, that makes a decision based on a linear combination of features, is more complex than a non-linear one.
+
+**FAQs**
+* [how-to-list-all-attributes-of-sklearn-datasets-object](https://stackoverflow.com/questions/35105474/how-to-list-all-attributes-of-sklearn-datasets-object)
+```python
+from sklearn.datasets load_iris, load_digits
+iris = load_iris()
+iris.keys()
+## ['target_names', 'data', 'target', 'DESCR', 'feature_names']
+#
+digits = load_digits()
+digits.keys()
+## ['images', 'data', 'target_names', 'DESCR', 'target']
+```
+
+**Case Studies**
+
+1. [Netflix_Prize](https://en.wikipedia.org/wiki/Netflix_Prize)
+2. **Iris: What kind of iris has 3cm x 5cm sepal and 4cm x 2cm petal?**
+```python
+from sklearn.datasets load_iris
+iris = load_iris()
+iris.feature_names
+n_samples, n_features = iris.data.shape
+iris.target
+iris.target_names
+#
+from sklearn import neighbors
+X,y = iris.data, iris.target
+knn = neighbors.KNeighborsClassifier(n_neoghbors=1)
+knn.fit(X,y)
+iris.target_names[knn.predict([[3,5,4,2]])]
+#
+# KNN - plot the decision boundaries for each class
+```
+3. **[Supervised Learning: Classification of Handwritten Digits](http://www.scipy-lectures.org/packages/scikit-learn/auto_examples/plot_digits_simple_classif.html)**
+* Plot the first few samples of the digits dataset and a 2D representation built using PCA, then do a simple classification
+* **Plot the data: images of digits**
+```python
+from sklearn.datasets import load_digits
+digits = load_digits()
+#
+from matplotlib import pyplot as plt
+fig = plt.figure(figsize=(6, 6))  # figure size in inches
+fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
+
+for i in range(64):
+  ax = fig.add_subplot(8, 8, i + 1, xticks=[], yticks=[])
+  ax.imshow(digits.images[i], cmap=plt.cm.binary, interpolation='nearest')
+  # label the image with the target value
+  ax.text(0, 7, str(digits.target[i]))
+plt.imshow()
+```
+*  **Visualizing the Data on its principal components**
+	- A good first-step for many problems is to visualize the data using a **Dimensionality Reduction technique**
+	- [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis)
+	- PCA seeks orthogonal linear combinations of the features which show the greatest variance, and as such, can help give you a good idea of the structure of the data set
+	- Plot a projection on the 2 first principal axis
+```python
+plt.figure()
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+proj = pca.fit_transform(digits.data)
+plt.scatter(proj[:, 0], proj[:, 1], c=digits.target, cmap="Paired")
+plt.colorbar()
+```
+* **Classification**
+	- For most classification problems, it’s nice to have a **simple**, **fast** method to provide a **quick baseline classification**
+	- If the simple and fast method is sufficient, then we don’t have to waste CPU cycles on more complex models
+	- If not, we can use the results of the simple method to give us clues about our data
+	- One good method to keep in mind is Gaussian Naive Bayes: `sklearn.naive_bayes.GaussianNB`
+		* Gaussian Naive Bayes fits a Gaussian distribution to each training label independantly on each feature, and uses this to quickly give a rough classification.
+		* It is generally not sufficiently accurate for real-world data, but can perform surprisingly well, for instance on text data
+	- **STEPS:**
+		* split the data into training and validation sets
+			- Why did we split the data into training and validation sets?
+		* train the model
+		* use the model to predict the labels of the test data
+```python
+from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
+
+# split the data into training and validation sets
+X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target)
+
+# train the model
+clf = GaussianNB()
+clf.fit(X_train, y_train)
+
+# use the model to predict the labels of the test data
+predicted = clf.predict(X_test)
+expected = y_test
+
+# Plot the prediction
+fig = plt.figure(figsize=(6, 6))  # figure size in inches
+fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
+
+# plot the digits: each image is 8x8 pixels
+for i in range(64):
+    ax = fig.add_subplot(8, 8, i + 1, xticks=[], yticks=[])
+    ax.imshow(X_test.reshape(-1, 8, 8)[i], cmap=plt.cm.binary,
+              interpolation='nearest')
+
+    # label the image with the target value
+    if predicted[i] == expected[i]:
+        ax.text(0, 7, str(predicted[i]), color='green')
+    else:
+        ax.text(0, 7, str(predicted[i]), color='red')
+```
+* **Quantitative Measurement of Performance**
+	- We’d like to measure the performance of our estimator without having to resort to plotting examples.
+	- A simple method might be to simply compare the number of matches
+	- there are other more sophisticated metrics that can be used to judge the performance of a classifier: several are available in the `sklearn.metrics` submodule
+		* **classification_report**
+			- One of the most useful metrics is the `sklearn.metrics.classification_report`
+			- Which combines several measures and prints a table with the results
+		* **confusion matrix**
+			- Another enlightening metric **for this sort of multi-label classification** is a `sklearn.metrics.confusion_matrix`
+			- It helps us visualize which labels are being interchanged in the classification errors
+	- **STEPS:**	
+		1. First print the number of correct matches
+		2. The total number of data points
+		3. And now, the ration of correct predictions
+		4. Print the classification report
+		5. Print the confusion matrix
+```python
+# 1
+matches = (predicted == expected)
+print(matches.sum())
+# 2
+print(len(matches))
+# 3
+matches.sum() / float(len(matches))
+#
+# 4
+from sklearn import metrics
+print(metrics.classification_report(expected, predicted))
+# 5
+print(metrics.confusion_matrix(expected, predicted))
+#
+plt.show()
+```
 
 ## Supervised Learning
 > Making predictions about the future
@@ -220,17 +518,6 @@ print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 - plot the decision regions of our newly trained perceptron model and visualize how well it separates the different samples.
 - the perceptron algorithm never converges on datasets that aren't perfectly linearly separable, which is why the use of the perceptron algorithm is typically not recommended in practice
 
-## scikit-learn
-* scikit-learn already support multiclass classification by default via the One-vs.-Rest (OvR) method
-
-## Datasets for Machine Learning
-
-### Iris dataset
-* The Iris dataset contains the measurements of 150 iris flowers from three different species: Setosa, Versicolor, and Virginica
-
-Iris dataset, consisting of 150 samples and 4 features, can then be written as a
-150 × 4 matrix $x \epsilon  R^{150*4}$
-
 ## Keywords
 * Adaline - **ADA**ptive **LI**near **NE**uron
 * number of epochs - number of passes over the training set
@@ -281,21 +568,4 @@ plt.legend
 plt.contourf
 plt.scatter
 plt.show
-```
-
-
-## sklearn
-```python
-from sklearn import datasets
-datasets.load_iris()
-
-from sklearn.model_selection import train_test_split
-train_test_split(X, y, test_size=0.3, random_state=0)
-
-from sklearn.preprocessing import StandardScaler
-StandardScaler()
-
-from sklearn.metrics import accuracy_score
-accuracy_score(y_test, y_pred)
-
 ```
