@@ -704,7 +704,9 @@ https://hvv.live/
 **Vector Tile 3rd Parties Business Models**
 https://www.jawg.io/en/
 http://maptalks.org/examples/en/3d/polygon-altitude/
-
+http://maptalks.org/examples/en/style/line-arrow/
+http://maptalks.org/examples/en/3d/line-draw-altitude/#3d_line-draw-altitude
+https://github.com/maptalks/maptalks.js
 
 **Animations mapbox gl**
 https://medium.com/@Scarysize/the-moving-city-visualizing-public-transport-877f581ca96e
@@ -719,3 +721,31 @@ https://www.npmjs.com/package/geojson2mvt
 https://capitalplanning.nyc.gov/facilities
 https://connect.boundlessgeo.com/docs/suite/enterprise/latest/dataadmin/vectortiles/tutorial.html
 http://schwanksta.com/blog/vector-tiles-introduction-pt1
+
+## 3D Line, 3D Roads, 3D Plane, 3D Curves, Extrusions
+https://stackoverflow.com/questions/47283304/mapbox-extruding-lines
+https://github.com/peterqliu/threebox
+
+https://github.com/cheeaun/3d-earth
+
+https://bl.ocks.org/mpmckenna8
+http://waplam.loan/list/openstreetmap-3d
+
+http://alteredqualia.com/three/examples/webgl_road.html
+https://stackoverflow.com/questions/45506426/convert-bezier-into-a-plane-road-in-three-js
+
+https://whsjs.readme.io/docs/extrude
+https://mattdesl.svbtle.com/drawing-lines-is-hard
+http://codeflow.org/entries/2012/aug/05/webgl-rendering-of-solid-trails/
+
+
+https://discourse.libcinder.org/t/smooth-efficient-perfect-curves/925
+https://www.shadertoy.com/view/lts3Df
+
+https://github.com/spite/THREE.MeshLine
+
+## FAQs
+https://gis.stackexchange.com/questions/tagged/mapbox-gl-js?sort=unanswered&pageSize=50
+
+## LiDAR to mapbox GL
+https://blog.mapbox.com/add-lidar-to-mapbox-43f7e3912424

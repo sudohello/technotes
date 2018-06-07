@@ -870,3 +870,80 @@ efibootmg1 -v
 ```bash
 sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 libapt-inst2.0 libapt-pkg5.0 libaudit-common libaudit1 libblkid1 libgcrypt20 libmount1 libpam-modules libpam-modules-bin libpam-systemd libpam0g libprocps4 libsmartcols1 libsystemd0 mount procps systemd util-linux uuid-runtime
 ```
+
+## Interesting Terminologies and Command in Linux
+https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
+https://www.lopezferrando.com/30-interesting-shell-commands/
+
+* Shebang - The #! syntax used in scripts
+	- https://bash.cyberciti.biz/guide/Shebang
+	- The #! syntax used in scripts to indicate an interpreter for execution under UNIX / Linux operating systems
+* man - The man command is used to format and display the man pages
+	- www.linfo.org/man.html
+	- The man pages are a user manual that is by default built into most Linux
+* finger - user information lookup program
+	- https://www.systutorials.com/docs/linux/man/1-finger/	
+* yes - output a string repeatedly until killed
+* date
+* flock - manage locks from shell scripts
+* xkill - kill a client by its X resource
+* touch - change file timestamps
+* nice - run a program with modified scheduling priority
+* make - GNU make utility to maintain groups of programs
+* whereis - locate the binary, source, and manual page files for a command
+* unzip - list, test and extract compressed files in a ZIP archive
+* mount - mount a filesystem
+* umount - unmount file systems
+* strip - Discard symbols from object files
+* sleep - delay for a specified amount of time
+* uptime - Tell how long the system has been running
+* watch - execute a program periodically, showing output fullscreen
+* cat
+	- Copy to clipboard: `cat file.txt | xclip -selection clipboard`
+* tac  - cat backwards (starting from the end)
+	- `tac file`
+* nohup - run a command immune to hangups, with output to a non-tty
+	- `nohup ./script.sh &`
+	- Keep program running after leaving SSH session
+* split - Split long file in files with same number of lines
+	- `split -l LINES -d file.txt output_prefix`
+* timeout - Run a command for a limited time
+	- `timeout 10s ./script.sh`
+* time - Check resources' usage of command
+	- `/usr/bin/time -v ls`
+* comm - Combine lines from two sorted files
+	- `comm file1 file2`
+* shuf - Randomize lines in file
+```
+cat file.txt | sort -R
+cat file.txt | sort -R | head  # Pick a random msambple
+
+# Even better (suggested by xearl in Hacker news):
+shuf file.txt
+```
+* namei - Check permissions of each directory to a file
+	- `namei -l /path/to/file.txt`
+* ls
+	- Prepend line number: `ls | nl`
+	- List file by size: `ls -lS`
+* w - Who is logged in?
+	- `w`
+* find
+```
+find . -size 20c             # By file size (20 bytes)
+find . -name "*.gz" -delete  # Delete files
+find . -exec echo {} \;      # One file by line
+./file1
+./file2
+./file3
+find . -exec echo {} \+      # All in the same line
+./file1 ./file2 ./file3
+```
+* mtr - nice traceroute
+	- `mtr google.com`
+* readlink
+	- Get full path of file: `readlink -f file.txt`
+* rename
+	- Rename selected files using a regular expression: `rename 's/\.bak$/.txt/' *.bak`
+* rev - reverse lines characterwise
+	- `rev file`

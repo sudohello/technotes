@@ -76,3 +76,8 @@ http://www.xyht.com/pressreleases/gd3d-signs-innovative-data-agreement-cybercity
 
 https://medium.com/@pablopcb/facebook-3d-posts-sketchup-7b14d228c592
 https://hackernoon.com/behold-the-next-generation-vr-technology-part-3-avatars-a761239f6b2d
+
+## OpenBuildingModels2
+https://wiki.openstreetmap.org/wiki/OpenBuildingModels2
+
+https://wiki.openstreetmap.org/wiki/3D_development

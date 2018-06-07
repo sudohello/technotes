@@ -133,6 +133,17 @@ The limitations of raster tiles become apparent for users who are interested in 
 **Indoor 3D Map**
 https://122e4e-mapbox.global.ssl.fastly.net/mapbox-gl-js/example/3d-extrusion-floorplan/
 
+### [Maptalks](http://maptalks.org)
+* http://maptalks.org/examples/en/3d/polygon-altitude/
+* http://maptalks.org/examples/en/style/line-arrow/
+* http://maptalks.org/examples/en/3d/line-draw-altitude/#3d_line-draw-altitude
+* https://github.com/maptalks/maptalks.js
+
+### F4Map
+* http://wiki.map.f4-group.com/render
+* http://demo.f4map.com/#lat=42.1405936&lon=-0.4082753&zoom=18&camera.theta=64.244&camera.phi=-35.982
+* [Domlur Flyover, Bangalore](http://demo.f4map.com/#lat=12.9604400&lon=77.6414259&zoom=17)
+
 ### WebGL for 3D Terrain
 * **Large scale Terrain:** - very interesting
 	* https://github.com/felixpalmer/lod-terrain
@@ -271,6 +282,13 @@ For software around vector tiles see https://github.com/mapbox/awesome-vector-ti
 * http://suite.opengeo.org/docs/latest/dataadmin/vectortiles/install.html
 * https://maps3d.io/
 * http://bl.ocks.org/letmaik/e71eae5b3ae9e09f8aeb288c3b95230b
+
+## Vector Tile 3rd Parties Business Models
+* https://www.jawg.io/en/
+* http://maptalks.org/examples/en/3d/polygon-altitude/
+* http://maptalks.org/examples/en/style/line-arrow/
+* http://maptalks.org/examples/en/3d/line-draw-altitude/#3d_line-draw-altitude
+* https://github.com/maptalks/maptalks.js
 
 ### Raster V/s Vector
 * http://vector-conversions.com/vectorizing/raster_vs_vector.html
@@ -903,8 +921,6 @@ https://blog.mapbox.com/global-elevation-data-6689f1d0ba65
 
 
   https://blender.stackexchange.com/questions/62619/how-to-import-3d-buildings-from-openstreetmap-to-blender
-
-http://demo.f4map.com/#lat=42.1405936&lon=-0.4082753&zoom=18&camera.theta=64.244&camera.phi=-35.982
 
 ## Forums
 https://github.com/iTowns/itowns/issues/183
