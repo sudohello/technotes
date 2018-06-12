@@ -30,3 +30,8 @@ https://arstechnica.com/gadgets/2013/10/googles-iron-grip-on-android-controlling
 ## Forums
 - https://groups.google.com/forum/?fromgroups#!forum/android-building
 
+
+
+## Rooting Android
+
+Vivo Y51L

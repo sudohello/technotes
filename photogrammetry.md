@@ -1048,6 +1048,13 @@ http://3dom.fbk.eu/projects/graphos
 http://3dom.fbk.eu/projects/spherical-photogrammetry
 https://volta.fbk.eu/
 
+## alicevision
+https://alicevision.github.io/
+https://github.com/alicevision/meshroom
+https://sketchfab.com/AliceVision
+
+
+
 ## MicMac
 https://github.com/micmacIGN/micmac
 https://micmac.ensg.eu/index.php/Install
@@ -1069,3 +1076,12 @@ http://3dom.fbk.eu/sites/3dom.fbk.eu/files/pdf/barazzetti_etal_VAST2010.pdf
 - The projection sphere of these panoramic images is mapped in the cartographic plane with the so-called longitude-latitude representation (or equi-rectangular projection) [Sny87] from which the angular directions can be drawn
 - If multiple panoramas of the same scene, acquired from different point of view, are available, the 3D reconstruction of the scene can be achieved
 - The high resolution content of the panoramas allows for highly detailed 3D reconstructions while their large field-of-view limits the number of acquisitions.
+
+## 3d-scan-exterior-environments
+https://lesterbanks.com/2018/01/photoscan-3d-scan-exterior-environments/
+
+## De-baking, de-lighting
+https://www.unrealengine.com/en-US/blog/imperfection-for-perfection-part-2
+
+
+

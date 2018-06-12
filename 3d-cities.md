@@ -11,6 +11,24 @@ Tags: 3D City
 
 [TOC]
 
+```bash
+___________________________________________________
+
+===================================================
+ 	     ______
+    __/      \_____|___
+  [|	 ___	    ___   ||]
+@@=|__/ .	\____/ . \__||	 
+	    (   )    (   )
+	  ~~~~~~~~~~~~~~~~~	
+---------------------------------------------------
+
+
+===================================================
+___________________________________________________
+```
+
+
 ## 3D Cities Market Research
 * [3D Cities Market Research](3d-cities-competitors-landscape.html)
 
@@ -1084,3 +1102,71 @@ For long we have 'Video Routes' and Image based visualisations of outdoors, toda
 	1. Leverage VideoMap Technology, Gaze and Realview to collect data
 	2. Partnership up with them for Indian market - revenue sharing
 	3. Develop our 'Road Quality' Data model and using labour to extract data from Videos and Images, later using AI/ML for automation.
+
+ 
+## 3D Datasets & Research
+https://www.gis.bgu.tum.de/projekte/new-york-city-3d/
+https://www.citygml.org/3dcities/
+https://www.citygml.org/software/#generators-of-3d-city-models-in-citygml
+
+**BEST & LATEST 3D City Research**
+https://3d.bk.tudelft.nl/education/msctopics/
+https://3d.bk.tudelft.nl/3dtalks/
+http://3dom.fbk.eu/
+https://3d.bk.tudelft.nl/projects/
+https://www.slideshare.net/SafeSoftware/deep-dive-into-fme-desktop-2018
+https://archive.ics.uci.edu/ml/datasets/3D+Road+Network+%28North+Jutland%2C+Denmark%29
+https://3d.bk.tudelft.nl/opendata/
+
+
+
+http://cml.ics.uci.edu/
+https://archive.ics.uci.edu/ml/index.php
+https://archive.ics.uci.edu/ml/datasets.html
+
+https://tomholderness.wordpress.com/tag/python/
+
+https://3d.bk.tudelft.nl/open-gis-software/
+
+Open Cascade
+https://dev.opencascade.org/doc/overview/html/occt_dev_guides__git_guide.html
+
+## 3D City DB
+wget -c https://www.3dcitydb.org/3dcitydb/fileadmin/downloaddata/3DCityDB-Importer-Exporter-3.3.2-Setup.jar
+wget -c https://www.3dcitydb.org/3dcitydb/fileadmin/downloaddata/3DCityDB_Documentation_v3.3.pdf
+wget -c https://www.3dcitydb.org/3dcitydb/fileadmin/downloaddata/3dcitydb-web-map-1.4.0.zip
+
+1. **[d3ddatabase](https://www.3dcitydb.org/3dcitydb/d3ddatabase/)**
+- The package below contains the SQL scripts needed to create an instance of the 3D City Database on either Oracle Spatial / Locator or PostgreSQL/PostGIS
+- Besides the scripts, the package contains the 3DCityDB documentation and the relation diagrams as Oracle JDeveloper version 12 project and PostgreSQL pgModeler project respectively.
+- The JDeveloper relation diagrams were also used to create the database figures in the documentation
+
+2. **[d3dwebclient](https://www.3dcitydb.org/3dcitydb/d3dwebclient/)**
+The 3DCityDB-Web-Map-Client is a static web application purely written in HTML and JavaScript and can therefore be easily deployed by uploading all its source files to a simple web server.
+
+https://github.com/citygml4j/citygml4j
+
+## Quality Tools
+http://geovalidation.bk.tudelft.nl/val3dity/docs/
+
+## Standards
+ISO 19107:2003
+- https://www.iso.org/standard/26012.html
+- http://www.gwg.nga.mil/documents/asfe/ISO_19107_2003.pdf
+- Geographic information -- Spatial schema
+
+**ISO 19107:2003**
+- Specifies conceptual schemas for describing the spatial characteristics of geographic features, and a set of spatial operations consistent with these schemas. It treats vector geometry and topology up to three dimensions. It defines standard spatial operations for use in access, query, management, processing, and data exchange of geographic information for spatial (geometric and topological) objects of up to three topological dimensions embedded in coordinate spaces of up to three axes.
+- https://wiki.icaci.org/index.php?title=ISO_19107:2003_Geographic_information_-_Spatial_schema
+- https://www.iso.org/obp/ui/#iso:std:iso:19107:ed-1:v1:en
+- http://www.isprs.org/proceedings/XXXVIII/4-W15/Paper_ISPRS/Poster/7_3DGeoInfo2010_171_Francois_ISO_19107_Case_Study.pdf
+
+The concept of an object in ISO 19107 is defined by three parts strongly linked. The first two allow a description of objects defined hierarchically according to their spatial dimensions (point, curve, surface, volume) and their topologies (node, edge, face, solid) as CAD industries already use it. Geometric objects have however a third necessary characteristic: they are linked to geo-referencement coordinates (e.g. coordinate references on a sphere, a plane, a geode, ... with vector basis and mathematical projection). Each geometry is related to a CRS (Coordinate Reference System) and an ISO 19107 object using the WGS84/World Mercator (World Geodetic System 1984) CRS is processed differently than the same object using the ETRS89- LAEA (European Terrestrial Reference System 1989 - Lambert Azimuthal Equal Area) CRS, because of different mathematical space properties (distance, dimension). The peculiarity of this standard is to define a single object in many coordinates system, requiring a specific processing mechanism, while CAD objects are described in a global common Euclidean basis. These objects in different CRS must be projected (if available) into a common reference system to allow their analysis or their visualization.
+
+
+## Keywords
+* NURBS: Non-Uniform Rational B-Spline.
+* ISO: International Standards Organization, non-governmental organization representing a network of national institutes of 158 countries, according to the principle of one member per country.
+* OGC: Non-profit organization created to address the problem of interoperability between systems that process geospatial data
+* http://www.geoapi.org/
+* https://www.geomatys.com/en/home/
