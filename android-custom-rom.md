@@ -33,5 +33,7 @@ https://arstechnica.com/gadgets/2013/10/googles-iron-grip-on-android-controlling
 
 
 ## Rooting Android
-
-Vivo Y51L
+* https://twrp.me/about/
+* https://www.androidpit.com/android-without-google-apps
+* Phones:
+	- Vivo Y51L
