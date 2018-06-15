@@ -199,3 +199,7 @@ http://www.discovermeteor.com/blog/understanding-javascript-map/
 ## ES5
 * isNaN()
 * isFinite()
+
+## TBD
+- FileReader
+- Worker

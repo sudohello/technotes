@@ -605,11 +605,58 @@ https://porter.io/github.com/mapillary/mapillary-js
 
 https://bl.ocks.org/oscarlorentzon/0b7c5763225029268fce0324af2b2b3a
 
+http://mapillary.github.io/mapillary-js/
+https://github.com/mapillary/mapillary-js/issues
+https://www.gislounge.com/the-future-of-street-level-photos-in-mapping/
+https://porter.io/github.com/mapillary/mapillary-js
+
+**Mapillary Vista Dataset**
+https://techcrunch.com/2017/05/03/mapillary-open-sources-25k-street-level-images-to-train-automotive-ai-systems/
+
+https://www.mapillary.com/pricing
+
 **UI Layer tools**
 https://bl.ocks.org/danswick/7f76b15f7ef80391e933
 
+# Image Zooming
+https://en.wikipedia.org/wiki/Photosynth
+https://en.wikipedia.org/wiki/Deep_Zoom
+
+https://openseadragon.github.io/
+https://github.com/openseadragon/openseadragon
+wget https://github.com/openseadragon/openseadragon/releases/download/v2.3.1/openseadragon-bin-2.3.1.tar.gz
+
+
+http://openseadragon.github.io/#examples-and-features
+
+https://github.com/lovasoa/dezoomify
+http://ophir.alwaysdata.net/dezoomify/dezoomify.html
+
+# OSM
+https://wiki.openstreetmap.org/wiki/OSMTracker_(Android)
+http://learnosm.org/
+
+# Cloud Platforms
+https://www.heroku.com/
+
 
 # GIS
+
+**TMS**
+http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification
+http://www.osgeo.org/
+
+**Traffic Signs**
+https://www.citylab.com/transportation/2017/02/how-to-teach-a-car-a-traffic-sign/516030/
+
+## Editors
+https://mapcreator.here.com/mapcreator/12.974842709373405,77.64419906004497,18,0,0
+https://blog.mapillary.com/update/2018/05/18/editing-in-map-creator-with-mapillary-imagery.html
+https://www.openstreetmap.org/user/Nighto/diary/37313
+
+
+## Imagery in GIS
+https://www.gislounge.com/imagery-use-gis/
 
 **Sun and Moon Position phases**
 https://github.com/mourner/suncalc
