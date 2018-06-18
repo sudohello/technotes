@@ -827,6 +827,11 @@ git clone https://github.com/tzutalin/labelImg.git
 
 https://oclavi.com/
 
+## Mapillary
+https://github.com/Oslandia/deeposlandia
+https://www.mapillary.com/dataset/vistas?pKey=q0GhQpk20wJm1ba1mfwJmw
+https://github.com/mapillary/mapillary_vistas/tree/master/mapillary_vistas
+https://research.mapillary.com/img/publications/ICCV17a.pdf
 
 ## Research Paper reviews
 **Visual scene understanding**

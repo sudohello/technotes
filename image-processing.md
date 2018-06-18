@@ -991,3 +991,99 @@ from skimage.transform import warp, AffineTransform
 
 http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_matching.html
 http://scikit-image.org/docs/dev/auto_examples/transform/plot_matching.html
+
+## Concepts
+
+### Edge detection
+- Edges are caused by 'DISC' discontunity. D-Depth, I-Illumination, S-Surface Normal, C-color
+- An edge is a place of rapid change in the image intensity function
+- Identify sudden changes (discontinuities) in changes (discontinuities) in an image
+- Image gradient, gradient direction
+- Gradient points in the direction of most rapid increase in intensity
+- edge strength is given by the gradient magnitude
+
+* Concept of Limits is fundamental to understand
+	* https://brilliant.org/wiki/limits-of-functions/
+* Directional Derivative & Gradient
+	* http://homepage.divms.uiowa.edu/~jsimon/COURSES/M028Spring07/HANDOUTS/DirectionalDerivative_v2.pdf
+	* http://homepage.divms.uiowa.edu/~jsimon/COURSES/M028Spring07/HANDOUTS/
+	* http://homepage.divms.uiowa.edu/~jsimon/COURSES/M028Spring07/M28Sp07CourseDescr.pdf
+	* https://math.stackexchange.com/questions/2678655/the-gradient-as-a-limit-of-a-difference-quotient
+
+Math Software	
+* https://www.maplesoft.com/whatismaple.aspx
+* http://www.sagemath.org/
+* https://cocalc.com/help?session=default
+* https://mathics.github.io/
+* https://github.com/mathics/Mathics/wiki/Installing
+
+Calculus II
+https://qmplus.qmul.ac.uk/course/view.php?id=3107
+
+uiowa jsimon calculas II
+
+
+http://homepage.divms.uiowa.edu/~dstewart/classes/22m026/index.xhtml
+
+http://www.sfu.ca/outlines.html?2015/spring/math/152/d100
+
+
+ "software is only free if your time is worthless".
+ a spokesperson from SAS once said, "You'd never fly in an airplane designed by open source software" to which Boeing responded "we use open source software to design our airplanes"
+
+The advantage of free software is that it never dies; someone can always, if they want/need, pick it up and use/extend it
+
+if you want to you could stick with the old versions, or make changes yourself, or pay someone to. These avenues just aren't open with closed source software.
+
+Mathics is a general-purpose computer algebra system (CAS). It is meant to be a free, lightweight alternative to Mathematica.
+
+All Raspberry Pi's have Mathematica licenses, so there's one cheap way in.
+
+Symbolic manipulation. That's the only reason Mathematica is used in academia. If you're in the academia and want to do numeric computations you would use something like R or Matlab.
+
+
+
+* Mathematica equivalents:
+	- Sage
+	- Mathics
+	- symbolic computation: Rymbolic + sympy 
+* Matlab equivalents
+	- Octave
+	- R
+	- Pandas
+
+https://github.com/mathics/IMathics
+https://www.open.wolframcloud.com/
+
+
+
+## Edge Detection
+https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/
+https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/segbench/
+
+
+## Convolution
+https://en.wikipedia.org/wiki/Convolution
+
+In mathematics (and, in particular, functional analysis) convolution is a mathematical operation on two functions (f and g) to produce a third function, that is typically viewed as a modified version of one of the original functions, giving the integral of the pointwise multiplication of the two functions as a function of the amount that one of the original functions is translated
+
+It has applications that include probability, statistics, computer vision, natural language processing, image and signal processing, engineering, and differential equations[
+
+Visual comparison of convolution, cross-correlation and autocorrelation.
+
+https://math.stackexchange.com/questions/255929/can-someone-intuitively-explain-what-the-convolution-integral-is
+
+https://colah.github.io/posts/2014-07-Understanding-Convolutions/
+
+## Courses
+http://www.cs.cmu.edu/~ph/869/www/869.html
+http://www.cs.cmu.edu/~ph/869/www/notes/notes.html
+http://www.cs.cmu.edu/~seitz/course/3DPhoto.html
+
+S. Seitz edge detections
+
+
+https://esrimedia.maps.arcgis.com/apps/MapTour/index.html?appid=badd7a119a4143869c560a3e90ff3993
+https://storymaps.arcgis.com/en/
+
+https://www.geospatialworld.net/blogs/bim-vs-gis-or-bim-and-gis/
