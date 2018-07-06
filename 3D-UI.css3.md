@@ -26,6 +26,8 @@ https://keithclark.co.uk/articles/creating-3d-worlds-with-html-and-css/
 - https://2050.earth
 - http://www.campoallecomete.it/#!/en/vermentino	
 - http://demo.themewagon.com/preview/sparrow
+- very interesting 3D presentation using 3D css
+	* https://www.emaze.com/presentations/
 
 ### Shortlisted
 - https://codemyui.com/wavey-ribbon-navigation-menu/

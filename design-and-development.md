@@ -33,3 +33,10 @@ Minimum Viable Product (MVP) of this product
 
 **rise-intelligent-conversational-ui**
 https://www.smashingmagazine.com/2018/04/rise-intelligent-conversational-ui/
+
+
+```css
+transform: scale(1.04);
+transition: all 0.3s ease 0s;
+box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.12);
+```

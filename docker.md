@@ -16,6 +16,9 @@ Tags: Docker
 **Why Docker is darn Popular**
 - https://www.zdnet.com/article/what-is-docker-and-why-is-it-so-darn-popular/
 
+**What is Docker**
+- https://github.com/floydhub/dl-docker#what-is-docker
+- https://www.docker.com/what-docker
 
 ## Moby
 - https://mobyproject.org/

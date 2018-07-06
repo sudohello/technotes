@@ -554,9 +554,6 @@ The **Softmax function** takes a vector of arbitrary real-valued scores and squa
 ### Putting it all together – Training using Backpropagation
 - Convolution + Pooling layers act as Feature Extractors from the input image while Fully Connected layer acts as a classifier.
 
-
-
-
 ### References
 * http://cs.nyu.edu/~fergus/tutorials/deep_learning_cvpr12/
 * https://ujjwalkarn.me/2016/08/09/quick-intro-neural-networks/
@@ -587,7 +584,6 @@ The role of a sigmoid function is to output a value between 0 and 1, we use it t
 * http://nghiaho.com/?p=1765
 * https://devblogs.nvidia.com/parallelforall/exploring-spacenet-dataset-using-digits/
 * https://aws.amazon.com/public-datasets/spacenet/
-
 * http://nicolovaligi.com/converting-deep-learning-model-caffe-keras.html
 
 **companies Involved**
@@ -605,23 +601,16 @@ The dilated convolution operator has been referred to in the past as “convolut
 ### Road Segmentation
 * http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html
 
-SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation 
+**SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation**
+* https://www.youtube.com/watch?v=G15Dg2QoI_M
 
-https://www.youtube.com/watch?v=G15Dg2QoI_M
-
-How to Simulate a Self-Driving Car
-https://www.youtube.com/watch?v=EaY5QiZwSP4
-
-
-https://medium.com/self-driving-cars/term-1-in-depth-on-udacitys-self-driving-car-curriculum-ffcf46af0c08
-
-https://github.com/udacity/self-driving-car-sim
-
-https://hackernoon.com/five-skills-self-driving-companies-need-8546d2aba7c1
-
-https://developers.google.com/edu/c++/getting-started
-
-https://github.com/CPFL/Autoware
+**How to Simulate a Self-Driving Car**
+* https://www.youtube.com/watch?v=EaY5QiZwSP4
+* https://medium.com/self-driving-cars/term-1-in-depth-on-udacitys-self-driving-car-curriculum-ffcf46af0c08
+* https://github.com/udacity/self-driving-car-sim
+* https://hackernoon.com/five-skills-self-driving-companies-need-8546d2aba7c1
+* https://developers.google.com/edu/c++/getting-started
+* https://github.com/CPFL/Autoware
 
 #### News/Articles
 * http://www.dailymail.co.uk/sciencetech/article-3371075/See-world-eyes-driverless-car-town-Interactive-tool-reveals-autonomous-vehicles-navigate-streets.html
@@ -724,12 +713,10 @@ Aborted (core dumped)
 
 **protobuff**
 * https://github.com/google/protobuf/blob/master/src/README.md
-* https://github.com/google/protobuf                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+* https://github.com/google/protobuf
 
-
-
-
-
+## Snippets
+```
 python convert.py \
   --caffemodel=~/Documents/ml/dilation/pretrained/dilation8_pascal_voc.caffemodel \
   --code-output-path=./pascal_voc_tf/dil8_net.py \
@@ -738,94 +725,84 @@ python convert.py \
 
 
 python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_deploy.prototxt --caffemodel=~/Documents/ml/dilation/pretrained/dilation8_pascal_voc.caffemodel --code-output-path=./pascal_voc_tf/dil8_net.py --data-output-path=./pascal_voc_tf/
+```
 
 ## Pre-training, Transfer Learning
 * https://www.analyticsvidhya.com/blog/2017/06/transfer-learning-the-art-of-fine-tuning-a-pre-trained-model/
 * https://www.analyticsvidhya.com/blog/2017/05/neural-network-from-scratch-in-python-and-r/
-
-https://github.com/alexgkendall/caffe-segnet/issues/3
+* https://github.com/alexgkendall/caffe-segnet/issues/3
 
 ## Tutorials
+
 ## Machine Learning
-https://elitedatascience.com/learn-machine-learning
-https://www.datacamp.com/community/tutorials/deep-learning-python#gs.ny4aO4s
+* https://elitedatascience.com/learn-machine-learning
+* https://www.datacamp.com/community/tutorials/deep-learning-python#gs.ny4aO4s
 
 ## Python
-https://elitedatascience.com/learn-python-for-data-science
+* https://elitedatascience.com/learn-python-for-data-science
 
 
 ## WebGL GPU based deep learning in browser
 * https://github.com/transcranial/keras-js
 * https://news.ycombinator.com/item?id=12302932
 * https://erkaman.github.io/regl-cnn/src/demo.html
-
-https://github.com/uber/horovod
-http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/
-
+* https://github.com/uber/horovod
+* http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/
 
 ** Hardware Guides for Deep Learning
-http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
+* http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
 
 ## AI Frameworks
-https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
-https://cloud.google.com/automl/
-https://aws.amazon.com/sagemaker/
+* https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
+* https://cloud.google.com/automl/
+* https://aws.amazon.com/sagemaker/
 
 ## Object Detection
-https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/blob/master/README.md
+* https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/blob/master/README.md
 
 
 ## Street View Image Segmentation
 **Segmentation**
-https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
-
-https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef
-
-
-https://blog.goodaudience.com/using-convolutional-neural-networks-for-image-segmentation-a-quick-intro-75bd68779225
-https://github.com/subodh-malgonde/semantic-segmentation
-
-http://www.cvlibs.net/datasets/kitti/eval_road.php
-
-https://github.com/udacity/CarND-Semantic-Segmentation/
+* https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
+* https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef
+* https://blog.goodaudience.com/using-convolutional-neural-networks-for-image-segmentation-a-quick-intro-75bd68779225
+* https://github.com/subodh-malgonde/semantic-segmentation
+* http://www.cvlibs.net/datasets/kitti/eval_road.php
+* https://github.com/udacity/CarND-Semantic-Segmentation/
 
 ## MOOC Courses
-https://www.coursera.org/learn/neural-networks
+* https://www.coursera.org/learn/neural-networks
 
 ## References
-http://www.deeplearningbook.org/
-
-https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
-https://in.udacity.com/course/how-to-use-git-and-github--ud775
+* http://www.deeplearningbook.org/
+* https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
+* https://in.udacity.com/course/how-to-use-git-and-github--ud775
 
 ## Python2 or Python3
-https://www.quora.com/Which-version-of-Python-is-more-often-used-in-machine-learning-Python-2-7-or-Python-3-0+
+* https://www.quora.com/Which-version-of-Python-is-more-often-used-in-machine-learning-Python-2-7-or-Python-3-0+
 
 My best advice is to install the Anaconda distribution of Python[1] with the newest Python version. If you need to use 2.7 for some strange reason, you can easily do that with Anaconda. It’s really simple to switch between different environments with different versions of Python if you use the Conda package manager.[2]
 
 (New update on 5/2017) Go for Python 3.0+ as now most of the machine learning and relative computing packages are supported in Python 3.0+ (sklearn, xgboost, pandas, numpy, etc.).
 
 ## Python2 vs Python3
-http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
-https://www.activestate.com/blog/2017/01/python-3-vs-python-2-its-different-time
-
+* http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
+* https://www.activestate.com/blog/2017/01/python-3-vs-python-2-its-different-time
 
 ## Image Labeling Tools
-https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
-https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
-https://github.com/tzutalin/labelImg
-http://sloth.readthedocs.io/en/latest/
-https://github.com/yuyu2172/image-labelling-tool
-https://blog.playment.io/training-data-for-computer-vision/
-https://alpslabel.wordpress.com/
-https://github.com/commaai/commacoloring
-https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
-https://github.com/Labelbox/Labelbox/blob/master/LICENSE
+* https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
+* https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
+* https://github.com/tzutalin/labelImg
+* http://sloth.readthedocs.io/en/latest/
+* https://github.com/yuyu2172/image-labelling-tool
+* https://blog.playment.io/training-data-for-computer-vision/
+* https://alpslabel.wordpress.com/
+* https://github.com/commaai/commacoloring
+* https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
+* https://github.com/Labelbox/Labelbox/blob/master/LICENSE
+* `git clone https://github.com/tzutalin/labelImg.git`
 
-
-git clone https://github.com/tzutalin/labelImg.git
-
-https://oclavi.com/
+* https://oclavi.com/
 
 ## Mapillary
 https://github.com/Oslandia/deeposlandia
@@ -841,7 +818,7 @@ https://research.mapillary.com/img/publications/ICCV17a.pdf
 * Semantic segmentation emphasizes on providing a finer-grained prediction of the semantic category each pixels belongs to
 * Instance-specific semantic segmentation adds the difficulty of identifying the pixels that compose each object instance, thus integrating semantic segmentation with fine-grained object detection
 
-Challanges & Opportunities
+**Challanges & Opportunities**
 - Visual scene understanding belongs to the most fundamental and challenging goals in computer vision
 - Top-performing algorithms for visual scene understanding are nowadays developed using deep learning
 - Training of deep learning models requires a substantial amount of (annotated) data and computational resources
@@ -849,12 +826,12 @@ Challanges & Opportunities
 - Integrating synthetically-rendered data from sources like the Grand Theft Auto V engine [45], Synthia [46] or semantic instance labeling via 3D to 2D label transfer [56]
 - To gain deeper understanding of the complex interactions between e.g. traffic participants in street-level images, a lot of research efforts and investments have recently gone into designing and creating datasets which were used to train deep models for this specific task, such as CamVid [3], the KITTI Vision Benchmark Suite [12], Leuven [23], Daimler Urban Segmentation [49] and Cityscapes [6]
 
-Characterstics of such datasets:
+**Characterstics of such datasets:**
 - Total number of fine-grained annotated images
 - The overall number of object categories, are restricted to specific capturing areas, or urban scenes, thus strongly biasing the appearance of the elements to be analysed.
 - In addition, such datasets may suffer from a bias towards specific capturing modalities due to the usage of a sole imaging sensor and therefore not properly covering the spectrum of available sensor noise or overly strict specifications on camera mounting.
 
-Mapillary datasets
+**Mapillary datasets**
 - new dataset for semantic segmentation of urban, countryside and off-road scenes comprising
 - The proposed dataset is designed to capture the broad range of outdoor scenes available around the world
 - 25 000 densely-annotated street level images into 66 object categories
@@ -894,11 +871,75 @@ Categories.
 - categorization, process inspired by cityscape - annotating the images with object categories from back to front, i.e. annotation is typically started with sky (the most distant category to the camera center) and gradually works closer to the camera. In this way, a z-ordering for individual object layers can be imposed, allowing to rasterize the final label images.
 - a second (and therefore different) annotation provider revisits selected images and is incentivized to spot errors measured by the weighted intersection over union criterion as typically used to assess the performance for instance-specific semantic segmentation
 
-https://github.com/mapillary/mapillary_tools
-
-
-
+* https://github.com/mapillary/mapillary_tools
 The criteria to add categories to the annotation process were driven by several factors. Inspired by earlier works like Cityscapes [6] and SIFT Flow [31], we used the street-level and nature categories therein. In addition, taking a closer look at open map initiatives like www.openstreetmap.org inspired many of class selections in root- and macro-categories object, barrier and flat. To help with recognition tasks in research for autonomous driving, special emphasis was put on properly annotating different classes within macro-groups vehicle or traffic sign.
 
-https://playment.io/image-annotation/
-https://blog.playment.io/training-data-for-computer-vision/
+* https://playment.io/image-annotation/
+* https://blog.playment.io/training-data-for-computer-vision/
+
+## Deep Learning Key Terms
+
+1. Select Dataset
+	* Dataset Summary:
+		- Image Size: 256x256
+		- Image Type: COLOR
+		- DB backend: lmdb
+		- Create DB (train): 4501 images
+		- Create DB (val): 1499 images
+2. Solver Options
+	* Training epochs - How many passes through the training data?
+	* Shuffle Train Data - For every epoch, shuffle the data before training
+	* Snapshot interval (in epochs)
+		- How many epochs of training between taking a snapshot?
+	* Validation interval (in epochs)
+		- How many epochs of training between running through one pass of the validation data?
+	* Random seed
+		- If you provide a random seed, then back-to-back runs with the same model and dataset should give identical results.
+	* Batch size
+		- How many images to process at once. If blank, values are used from the network definition. (accepts comma separated list)
+	* Batch Accumulation
+		- Accumulate gradients over multiple batches (useful when you need a bigger batch size for training but it doesn't fit in memory).
+	* Solver type
+		- What type of solver will be used?
+		- NESTEROV: Nesterov's accelerated gradient (NAG)
+		- ADAGRAD: Adaptive gradient (AdaGrad)
+		- RMSPROP">RMSprop
+		- ADADELTA">AdaDelta
+		- ADAM">Adam
+	* RMS decay value
+		- If the gradient updates results in oscillations the gradient is reduced by times 1-rms_decay. Otherwise it will be increased by rms_decay.
+	* Base Learning Rate
+		- Affects how quickly the network learns. If you are getting NaN for your loss, you probably need to lower this value. (accepts comma separated list)
+3. Data Transformations
+	* Subtract Mean
+		- Subtract the mean file or mean pixel for this dataset from each image.
+		- None, Image, Pixel
+	* Crop Size
+		- If specified, during training a random square crop will be taken from the input image before using as input for the network.
+	* Data Augmentations
+		- Flipping: Randomly flips each image during batch preprocessing.
+			* None, Horizontal, Vertical, Horizontal and/or Vertical
+		- Quadrilateral Rotation - Randomly rotates (90 degree steps) each image during batch preprocessing.
+			* None; 0, 90 or 270 degrees; 0 or 180 degrees; 0, 90, 180 or 270 degrees
+		- Rotation (+- deg) (ARBITRARY_ROTATION) - "The uniform-random rotation angle that will be performed during batch preprocessing.
+		- SCALING: Rescale (stddev) - Retaining image size, the image is rescaled with a +-stddev of this parameter. Suggested value is 0.07.
+		- NOISE: Noise (stddev) - Adds AWGN (Additive White Gaussian Noise) during batch preprocessing, assuming [0 1] pixel-value range. Suggested value is 0.03.
+		- HSV Shifting - Augmentation by normal-distributed random shifts in HSV color space, assuming [0 1] pixel-value range.
+			* Hue: 0.02, Saturation: 0.04, Value: 0.06
+4. Networks
+	* Standard Networks
+	* Previous Networks
+	* Pretrained Networks
+	* Custom Network
+5. Framework
+	* Caffe
+	* Torch
+
+* https://www.pyimagesearch.com/2018/07/02/an-interview-with-francois-chollet/
+People gravitate towards incremental architecture tricks that kinda seem to work if you don’t test them adversarially. They use weak baselines, they overfit to the validation set of their benchmarks. Few people do ablation studies (attempting to verify that your empirical results are actually linked to the idea you’re advancing), do rigorous validation of their models (instead of using the validation set as a training set for hyperparameters), or do significance testing.
+
+We should remember that the purpose of research is to create knowledge. It’s not to get media coverage, nor is it to publish papers to get a promotion.
+
+Mathematical notation can be a huge accessibility barrier, and it isn’t at all a requirement to understand deep learning clearly. Code can be in many cases a very intuitive medium to work with mathematical ideas.
+
+* http://deeplearning.net/tutorial/

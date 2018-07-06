@@ -73,17 +73,17 @@ Azure Machine Learning. It doesn’t take any parameters and there is no respons
 * **On-demand predictions**: Predictions are being made in real-time using the input data that is available at the time of the request, which typically comes in the form of a REST call.
 
 
-Forecast
-The most common way to practice machine learning is offline batch predictions. This is how Kaggle competitions are run, for instance. You get your input data as a file, train a model, and make a forecast. This is more like an experiment than actually putting something into production, although this paradigm is also common in business intelligence.
+**Forecast**
+- The most common way to practice machine learning is offline batch predictions. This is how Kaggle competitions are run, for instance. You get your input data as a file, train a model, and make a forecast. This is more like an experiment than actually putting something into production, although this paradigm is also common in business intelligence.
 
-Web service
-A more common way to embed machine learning into applications, is through a web service. Again, the model is trained on historical data, but it uses fresh data to make predictions. It seems strange to call a web service model offline, but it’s only the actual training that’s performed offline. The service always uses the latest data available to make predictions, but the model remains constant.
+**Web service**
+- A more common way to embed machine learning into applications, is through a web service. Again, the model is trained on historical data, but it uses fresh data to make predictions. It seems strange to call a web service model offline, but it’s only the actual training that’s performed offline. The service always uses the latest data available to make predictions, but the model remains constant.
 
-Automated machine learning
-A very hot topic these days is automated machine learning. That includes automating the entire training, cross-validation and model selection process. By doing that, you can have an algorithm that retrains itself and makes repeated batch predictions in intervals, using the latest data available to both train the model and generate predictions. This methodology can’t be used in real-time, though, because it takes time to train the model(s). It’s probably the least utilized method out of the four.
+**Automated machine learning**
+- A very hot topic these days is automated machine learning. That includes automating the entire training, cross-validation and model selection process. By doing that, you can have an algorithm that retrains itself and makes repeated batch predictions in intervals, using the latest data available to both train the model and generate predictions. This methodology can’t be used in real-time, though, because it takes time to train the model(s). It’s probably the least utilized method out of the four.
 
-Online learning
-This is the most dynamic way to productionalize machine learning. The learning algorithm is hooked to a (big) data stream and continuously trains itself as new data comes in. A constantly updated model is immediately accessible as a web service. Technically, this is the most challenging setup to achieve, and it has mostly been used by the big players so far.
+**Online learning**
+- This is the most dynamic way to productionalize machine learning. The learning algorithm is hooked to a (big) data stream and continuously trains itself as new data comes in. A constantly updated model is immediately accessible as a web service. Technically, this is the most challenging setup to achieve, and it has mostly been used by the big players so far.
 
 - https://www.quora.com/What-is-the-easiest-way-to-deploy-a-machine-learning-model-say-a-regression-for-production
 
@@ -319,8 +319,6 @@ https://www.udemy.com/machine-learning-course-with-python/?couponCode=CODESTARS&
 ## Example Apps
 * https://github.com/delsner/flask-angular-data-science
 
-## Dataset / Data source/ Datasource for ML
-https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
 
 ## References
 https://www.superdatascience.com/machine-learning/
@@ -334,3 +332,458 @@ https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/
 
 ## Map Views
 https://elections.indianexpress.com/karnataka-elections-result-overview/
+
+
+## Deep Learning
+
+### What framework(s) are you currently using to train deep learning models?
+**caffe**
+http://caffe.berkeleyvision.org/
+- Caffe (with DIGITS interface) 
+
+**chainer**
+https://chainer.org/
+
+**Deeplearning4j: Open-source, Distributed Deep Learning for the JVM**
+https://deeplearning4j.org/
+Eclipse Deeplearning4j is a deep learning programming library written for Java and the Java virtual machine and a computing framework with wide support for deep learning algorithms.
+
+**paddlepaddle**
+http://paddlepaddle.org/
+
+**MXNet**
+https://mxnet.apache.org/
+Apache MXNet is a modern open-source deep learning framework used to train, and deploy deep neural networks
+
+**MatConvNet**
+www.vlfeat.org/matconvnet/
+MatConvNet is a MATLAB toolbox implementing Convolutional Neural Networks (CNNs) for computer vision applications
+
+**PyTorch**
+https://pytorch.org/
+PyTorch is an open source machine learning library for Python, based on Torch, used for applications such as natural language processing.
+
+**Theano**
+Theano is a numerical computation library for Python. In Theano, computations are expressed using a NumPy-esque syntax and compiled to run efficiently on either CPU or GPU architectures.
+
+**keras**
+https://keras.io/
+Keras is an open source neural network library written in Python. It is capable of running on top of TensorFlow, Microsoft Cognitive Toolkit, Theano, or MXNet.
+
+
+**TensorRT 4.0**
+NVIDIA TensorRT is a high-performance deep learning inference optimizer and runtime for deep learning applications.
+
+TensorRT works across all NVIDIA GPUs using the CUDA platform. The following files are for use for Linux servers and workstations running NVIDIA Quadro, GeForce, and Tesla GPUs. NVIDIA recommends Tesla V100, P100, P4, and P40 GPUs for production deployment.
+
+* Support for Text Translation and Natural Language Processing use cases (OpenNMT, GNMT)
+* Support for Speech use cases (Deep Speech 2)
+
+**digits**
+https://developer.nvidia.com/digits
+The NVIDIA Deep Learning GPU Training System (DIGITS) puts the power of deep learning into the hands of engineers and data scientists. DIGITS can be used to rapidly train the highly accurate deep neural network (DNNs) for image classification, segmentation and object detection tasks.
+
+DIGITS simplifies common deep learning tasks such as managing data, designing and training neural networks on multi-GPU systems, monitoring performance in real time with advanced visualizations, and selecting the best performing model from the results browser for deployment. DIGITS is completely interactive so that data scientists can focus on designing and training networks rather than programming and debugging.
+
+
+### What network architectures most closely resemble ones you use now?
+* Alexnet
+* GoogLeNet/Inception (v1, v2, v3, v4, v5, other variations)
+* Resnet (18/50/101/152, other variations)
+* VGG (16, 19, other variations)
+* BigLSTM, OpenNMT
+* DeepSpeach
+* Faster RCNN variations
+* YOLO/SSD variations
+* SqueezeNet
+* GAN
+
+
+### Which of the following best describes your application area (choose one)? *
+* Image and Video applications
+* Signal and Speech applications
+* Text and Document applications
+* Multimodal (combination of the above)
+
+### Which of the following would you say is the main bottleneck for deployment? *
+* Throughput
+* Latency
+* Ease of deployment
+* Ease of updating model
+* Maintainability
+
+### Nvidia Education
+
+https://www.nvidia.com/en-us/deep-learning-ai/education/
+
+
+deep learning courses
+ - you’ll learn how to train, optimize, and deploy neural networks
+accelerated computing courses,
+  - you’ll learn how to assess, parallelize, optimize, and deploy GPU-accelerated computing applications
+
+INSTRUCTOR-LED WORKSHOPS
+ONLINE COURSES
+ONLINE MINI COURSES
+
+
+* Explore the fundamentals of deep learning for Computer Vision.
+  - Explore the fundamentals of deep learning by training neural networks and using results to improve performance and capabilities.
+  - Learn how to start solving problems with deep learning.
+  - Learn how to train a deep neural network to recognize handwritten digits.
+  - Explore how deep learning works and how it will change the future of computing.
+  - Learn how to detect objects using computer vision and deep learning by identifying a purpose-built network and using end-to-end labeled data.
+  - Implement common deep learning workflows such as Image Classification and Object Detection.
+  - Experiment with data, training parameters, network structure, and other strategies to increase performance and capability.
+  - Deploy your networks to start solving real-world problems
+* Explore Fundamentals of Deep Learning for Multiple Data Types
+* Explore how convolutional and recurrent neural networks can be combined to generate effective descriptions of content within images and video clips. 
+* Learn to deploy deep learning to applications that recognize and detect images in real time.
+* Learn how to design, train, and deploy deep neural networks for autonomous vehicles.
+* Learn how to train a generative adversarial network (GAN) to generate images, explore techniques to make video style transfer, and train a denoiser for rendered images.
+* Learn how to combine computer vision and natural language processing to describe scenes using deep learning.
+* Learn how to make predictions from structured data.
+* Learn how to classify both image and image-like data using deep learning by converting radio frequency (RF) signals into images to detect a weak signal corrupted by noise.
+
+
+1. Fundamentals of Deep Learning for Computer Vision
+  - Implement common deep learning workflows such as Image Classification and Object Detection.
+  - Experiment with data, training parameters, network structure, and other strategies to increase performance and capability.
+  - Deploy your networks to start solving real-world problems
+  - On completion of this course, you will be able to start solving your own problems with deep learning
+  * Learning Objectives: What You'll Learn
+    - Identify the ingredients required to start a Deep Learning project.
+    - Train a deep neural network to correctly classify images it has never seen before.
+    - Deploy deep neural networks into applications.
+    - Identify techniques for improving the performance of deep learning applications.
+    - Assess the types of problems that are candidates for deep learning.
+    - Modify neural networks to change their behavior.
+2. Learn how to train a network using TensorFlow and the MSCOCO dataset to generate captions from images and video by:
+  - Implementing deep learning workflows like image segmentation and text generation
+  - Comparing and contrasting data types, workflows, and frameworks
+  - Combining computer vision and natural language processing
+  * Upon completion, you’ll be able to solve deep learning problems that require multiple types of data inputs
+3. Deep Learning for Digital Content Creation Using GANs and Autoencoders
+Learn techniques for designing, training, and deploying neural networks for digital content creation.
+  - Train a Generative Adversarial Network (GAN) to generate images
+  - Explore the architectural innovations and training techniques used to make arbitrary video style transfer
+  - Train your own denoiser for rendered images
+  - Upon completion of this course, you’ll be able to start creating digital assets using deep learning approaches
+4. Deep Learning for Finance Trading Strategy
+Linear techniques like principal component analysis (PCA) are the workhorses of creating ‘eigenportfolios’ for use in statistical arbitrage strategies. Other techniques using time series financial data are also prevalent. But now, trading strategies can be advanced with the power of deep neural networks.
+  - Prepare time series data and test network performance using training and test datasets
+  - Structure and train a LSTM network to accept vector inputs and make predictions
+  - Use the Autoencoder as anomaly detector to create an arbitrage strategy
+  - Upon completion, you’ll be able to use time series financial data to make predictions and exploit arbitrage using neural networks.
+
+
+
+* AUTONOMOUS VEHICLES
+* GAME DEVELOPMENT AND DIGITAL CONTENT
+  - Deep Learning for Digital Content Creation Using GANs and Autoencoders Explore the latest techniques for designing, training, and deploying neural networks for digital content creation.
+
+
+## Labs
+https://nvidia.qwiklab.com/focuses/40?parent=catalog
+
+* Free datasets are available from places like Kaggle.com and UCI. 
+  - https://www.kaggle.com/datasets
+  - https://archive.ics.uci.edu/ml/datasets.html
+* Crowdsourced datasets are built through creative approaches - e.g. Facebook asking users to "tag" friends in their photos to create labeled facial recognition datasets
+* More complex datasets are generated manually by experts - e.g. asking radiologists to label specific parts of the heart.
+
+**Training vs. programming**
+- The fundamental difference between artificial intelligence (AI) and traditional programing is that AI learns while traditional algorithms are programmed. 
+- Artificial intelligence takes a different approach. Instead of providing instructions, we provide examples.
+- We could show our robot thousands of labeled images of bread and thousands of labeled images of other objects and ask our robot to learn the difference. Our robot could then build its own program to identify new groups of pixels (images) as bread.
+
+The "deep" in deep learning refers to many layers of artificial neurons, each of which contribute to the network's performance.
+Processing huge datasets through deep networks is made possible by parallel processing, a task tailor made for the GPU.
+
+
+**how do we expose artificial neural networks to data?**
+**how to load data into a deep neural network to create a trained model that is capable of solving problems with what it learned, not what a programmer told it to do.**
+
+
+Since a computer "sees" images as collections of pixel values, it can't do anything with visual data unless it learns what those pixels represent.
+
+
+What if we could easily convert handwritten digits to the digital numbers they represent?
+
+We could help the post office sort piles of mail by post code. This is the problem that motivated Yann LeCun. He and his team put together the dataset and neural network that we'll use today and painstakingly pioneered much of what we know now about deep learning.
+We could help teachers by automatically grading math homework. This the problem that motivated the team at answer.ky, who used Yann's work to easily solve a real world problem using a workflow like what we'll work through now.
+We could solve countless other challenges. What will you build?
+
+
+http://yann.lecun.com/
+http://answer.ky/
+
+We're going to train a deep neural network to recognize handwritten digits 0-9. This challenge is called "image classification," where our network will be able to decide which image belongs to which class, or group.
+
+
+It's important to note that this workflow is common to most image classification tasks, and is a great entry point to learning how to solve problems with Deep Learning.
+
+
+Inside the folder train_small there were 10 subfolders, one for each class (0, 1, 2, 3, ..., 9). All of the handwritten training images of '0's are in the '0' folder, '1's are in the '1' folder, etc.
+- This data is labeled. Each image in the dataset is paired with a label that informs the computer what number the image represents, 0-9. We're basically providing a question with its answer, or, as our network will see it, a desired output with each input. These are the "examples" that our network will learn from.
+- Each image is simply a digit on a plain background. Image classification is the task of identifying the predominant object in an image. For a first attempt, we're using images that only contain one object. We'll build skills to deal with messier data in subsequent labs.
+- http://yann.lecun.com/exdb/mnist/
+- This data comes from the MNIST dataset which was created by Yann LeCun. It's largely considered the "Hello World," or introduction, to deep learning.
+
+Also like the brain, these "networks" only become capable of solving problems with experience, in this case, interacting with data. 
+
+Throughout this lab, we'll refer to "networks" as untrained artificial neural networks and "models" as what networks become once they are trained (through exposure to data).
+
+For image classification (and some other tasks), DIGITS comes pre-loaded with award-winning networks.
+
+However, to start, weighing the merits of different networks would be like arguing about the performance of different cars before driving for the first time. 
+
+Building a network from scratch would be like building your own car. Let's drive first. We'll get there.
+
+Creating a new model in DIGITS is a lot like creating a new dataset.
+
+
+- Classification
+- Segmentation
+- Object Detection
+- Processing
+- Other
+
+**epoch**
+We need to tell the network how long we want it to train. An epoch is one trip through the entire training dataset. Set the number of Training Epochs to 5 to give our network enough time to learn something, but not take all day. This is a great setting to experiment with.
+
+We need to define which network will learn from our data. Since we stuck with default settings in creating our dataset, our database is full of 256x256 color images. Select the network AlexNet, if only because it expects 256x256 color images.
+
+* LeNet  Original paper [1998] 28x28 (gray)
+  - http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf
+* AlexNet  Original paper [2012] 256x256 
+  - http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional
+* GoogLeNet  Original paper [2014] 256x256
+  - http://arxiv.org/abs/1409.4842
+
+We'll dig into this graph as a tool for improvement, but the bottom line is that after 5 minutes of training, we have built a model that can map images of handwritten digits to the number they represent with an accuracy of about 87%!
+
+
+Inference
+Now that our neural network has learned something, inference is the process of making decisions based on what was learned. The power of our trained model is that it can now classify unlabeled images.
+
+test our trained model. 
+- you can test a single image or a list of images.
+
+It worked! (Try again if it didn't). You took an untrained neural network, exposed it to thousands of labeled images, and it now has the ability to accurately predict the class of unlabeled images. Congratulations!
+
+Note that that same workflow would work with almost any image classification task. You could train AlexNet to classify images of dogs from images of cats, images of you from images of me, etc. If you have extra time at the end of this lab, theres another dataset with 101 different classes of images where you can experiment.
+
+
+* https://jorditorres.org/research-teaching/tensorflow/first-contact-with-tensorflow-book/first-contact-with-tensorflow/
+* http://deeplearning.net/tutorial/
+* http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf
+
+# Deep Learning Starting
+**Provide APIs in Computer Vision using Deep Learning for Geospatial Industry**
+
+## Dataset / Data source/ Datasource for ML
+
+### Computer Vision Datasets
+- https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
+- https://handong1587.github.io/computer_vision/2015/09/24/datasets.html
+
+#### Traffic Sign
+**Datasets**
+* German
+  - http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
+* LISA: Laboratory for Intelligent Safe Automobiles
+  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
+* Belgium
+  - https://btsd.ethz.ch/shareddata/
+  - The images in this dataset are in an old .ppm format
+  - Images are square-ish, but have different aspect ratios
+  - The image quality is great, and there are a variety of angles and lighting conditions
+  - The traffic signs occupy most of the area of each image, which allows to focus on object classification and not have to worry about finding the location of the traffic sign in the image (object detection).
+  - Generally, neural network will take a fixed-size input, so some preprocessing is required.
+  - Dataset considers all speed limit signs to be of the same class, regardless of the numbers on them. That’s fine, as long as we know about it beforehand and know what to expect.
+  - Labels 26 and 27 are interesting to check
+  - What are the sizes of the images? - The sizes seem to hover around 128x128.
+  - This tells me that the image colors are the standard range of 0–255.
+
+**self-driving-car-datasets-semantic-segmentation**
+- https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/
+* [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)
+  - http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/
+* [KITTI - Karlsruhe Institute of Technology and Toyota Technological Institute](http://www.cvlibs.net/datasets/kitti/)
+  - http://www.cvlibs.net/datasets/kitti/
+  - http://www.cvlibs.net/datasets/kitti/eval_road.php
+* [DUS - Daimler Urban Segmentation](http://www.6d-vision.com/scene-labeling)
+  - http://www.6d-vision.com/scene-labeling
+  - http://www.6d-vision.com/home
+* [CityScapes](https://www.cityscapes-dataset.com/)
+  - https://www.cityscapes-dataset.com/
+  - https://www.cityscapes-dataset.com/benchmarks/
+* [Mapillary Vista](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)
+  - https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html
+  - https://www.mapillary.com/dataset/vistas
+* [Synthia](http://synthia-dataset.com/download-2/)
+  - http://synthia-dataset.net/ 
+
+### Others
+- https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
+* Free datasets are available from places like Kaggle.com and UCI. 
+  - https://www.kaggle.com/datasets
+  - https://archive.ics.uci.edu/ml/datasets.html
+
+## Traffic Light
+* https://medium.freecodecamp.org/recognizing-traffic-lights-with-deep-learning-23dae23287cc
+  - https://github.com/davidbrai/deep-learning-traffic-lights
+  - https://challenge.getnexar.com/challenge-1
+  - https://arxiv.org/abs/1602.07360
+
+## Traffic Sign
+* https://arxiv.org/pdf/1712.04391.pdf
+* https://hackernoon.com/traffic-signs-classification-with-deep-learning-b0cb03e23efb
+* http://www.deeplearningbook.org/
+* https://towardsdatascience.com/recognizing-traffic-signs-with-over-98-accuracy-using-deep-learning-86737aedc2ab
+* https://github.com/chandansaha2014/Real-time-Traffic-Sign-Recognition
+* https://becominghuman.ai/build-a-neural-network-based-traffic-sign-classification-system-with-98-5-ed42a9273a20
+* https://ip.cadence.com/uploads/901/cnn_wp-pdf
+* https://mc.ai/resnet-for-traffic-sign-classification-with-pytorch/
+**Traffic Sign Recognition with TensorFlow**
+* https://medium.com/@waleedka/traffic-sign-recognition-with-tensorflow-629dffc391a6
+* https://github.com/waleedka/traffic-signs-tensorflow
+
+**Details**
+* Detect and recognize iconic symbol and text strings contained in road panels
+* Different types of traffic signs as Information signs, Warning signs, Mandatory signs and prohibited signs are used and these signs helps driver to achieve efficient navigation and safe driving.
+* The major problem are changing lighting conditions in outdoor environments, the obstructions of objects between the cameras and the traffic panels [5], partially damaged traffic signs, long exposure of sunlights lead to faded color. 
+* computer vision technique is carried out frequently The road sign can be categorized to three properties by color (blue, red, green and brown), shape (circular, square, triangular and octagonal) and the inner part of the sign [4], which plays a major role in the detection stage in traffic sign detection and recognisation.
+* The speed and efficiency of the detection and recognisation of the traffic sign plays the important role in the system.
+
+**techniques in detection and recognisation of Traffic Signs**
+- overview of the system
+- Detection stage used to extract the traffic sign based on the
+  - hape and color features,
+- Recognisaton stage to classify the traffic sign
+
+**concludes**
+* It is normally based on color or shape segmentation algorithms
+  - The color segmentation is usually a binary mask to separate the interested target objects from the background.
+  - The region of interest is determined by the connected components
+  - The shape features are extracted in the binary image to detect the sign by verifying the hypothesis of the sign. The recognisation stage determines the type of traffic sign 
+
+**Goal**
+1. Classify traffic signs using a simple convolutional neural network.
+
+**Tips**
+- do Exploratory Data analysis. Knowing data well from the start saves a lot of time later.
+- Pre-process and Handling Images of Different Sizes
+- In early development use a smaller size because it leads to faster training, which allows to iterate faster
+- Experiment with 16x16 and 20x20, but if they were too small that pick 32x32 which is easy to recognize and reduces the size of the model and training data by a factor of 16 compared to 128x128
+- Get and print the min() and max() values. It’s a simple way to verify the range of the data and catch bugs early.
+- Activation function: ReLU, sigmoid, tanh, fully connected layer, logits vector
+- convert logits to probabilities using the softmax function if needed. If not needed, get the index of the largest value, which corresponds to the id of the label. The `argmax` op does that.
+  - https://www.quora.com/What-are-the-benefits-of-using-rectified-linear-units-vs-the-typical-sigmoid-activation-function
+  - http://cs231n.github.io/neural-networks-1/
+- `cross-entropy` is the most common function for classification tasks.
+- **Cross-entropy is a measure of difference between two vectors of probabilities**
+  - https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/
+  - http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function
+- Convert labels and the logits to probability vectors. The function `sparse_softmax_cross_entropy_with_logits()` simplifies that
+  - It takes the input as generated logits and the groundtruth labels
+  - It does three things:
+    * converts the label indexes of shape [None] to logits of shape [None, 62] (one-hot vectors)
+    * then it runs softmax to convert both prediction logits and label logits to probabilities
+    * and finally calculates the cross-entropy between the two
+- This generates a loss vector of shape `[None]` (1D of length = batch size), which we pass through `reduce_mean()` to get one single number that represents the loss value.
+```bash
+loss = tf.reduce_mean(
+        tf.nn.sparse_softmax_cross_entropy_with_logits(logits, labels_ph)
+      )
+```
+- Choosing the optimization algorithm is another decision to make.
+  - ADAM optimizer has shown to converge faster than simple gradient descent
+  - http://sebastianruder.com/optimizing-gradient-descent/index.html
+```bash
+train = tf.train.AdamOptimizer(learning_rate=0.001).minimize(loss)
+```
+- The last node in the graph is the initialization op, which simply sets the values of all variables to zeros (or to random values or whatever the variables are set to initialize to).
+```bash
+init = tf.initialize_all_variables()
+```
+- Notice that the code above doesn’t execute any of the ops yet. It’s just building the graph and describing its inputs. The variables we defined above, such as init, loss, predicted_labels don’t contain numerical values. They are references to ops that we’ll execute next.
+- "Training Loop" is where we iteratively train the model to minimize the loss function. Before we start training, though, we need to create a **Session** object
+
+**Pre-processing**
+**Handling Images of Different Sizes**
+- Most image classification networks expect images of a fixed size. So we need to resize all the images to the same size.
+- our first model will do as well.
+- If the images have different aspect ratios, then some of them will be stretched vertically or horizontally.
+  - Is that a problem? May not be in some cases, because when the differences in aspect ratios are not that large and a person can recognize the images when they’re stretched then the model should be able to do so as well.
+
+**Minimum Viable Model**
+- start with the simplest possible model
+- A one layer network that consists of one neuron per label.
+- This network has `62` neurons and each neuron takes the RGB values of all pixels as input.
+- Effectively, each neuron receives `32*32*3=3072` inputs. This is a fully-connected layer because every neuron connects to every input value
+- Once this works end to end, expanding on it is much easier than building something complex from the start.
+
+**Building the TensorFlow Graph**
+- TensorFlow encapsulates the architecture of a neural network in an execution graph.
+- The graph consists of operations (Ops for short) such as Add, Multiply, Reshape, …etc.
+- These ops perform actions on data in tensors (multidimensional arrays).
+- First, Graph object. TensorFlow has a default global graph, but I don’t recommend using it. Global variables are bad in general because they make it too easy to introduce bugs. Hence, create the graph explicitly.
+```
+graph = tf.Graph()
+```
+- define Placeholders for the images and labels. The placeholders are TensorFlow’s way of receiving input from the main program
+- The shape of the images_ph placeholder is `[None, 32, 32, 3]`. It stands for [batch size, height, width, channels] (often shortened as NHWC) . The None for batch size means that the batch size is flexible, which means that we can feed different batch sizes to the model without having to change the code.
+- Pay attention to the order of your inputs because some models and frameworks might use a different arrangement, such as NCHW.
+- If layer expects input as a one-dimensional vector, flatten the images first.
+```
+# Flatten input from: [None, height, width, channels]
+# To: [None, height * width * channels] == [None, 3072]
+images_flat = tf.contrib.layers.flatten(images_ph)
+```
+
+**Loss Function and Gradient Descent**
+
+### Potential Applications
+- Intelligent Transportation Systems (ITS)
+- Traffic Surveillance System
+- ADAS
+
+### Paper Reviews
+1. TRAFFIC-SIGN RECOGNITION FOR AN INTELLIGENT VEHICLE/DRIVER ASSISTANT SYSTEM USING HOG 
+- http://aircconline.com/cseij/V6N1/6116cseij02.pdf
+- To recognize the traffic sign, the system has been proposed with three phases. They are Traffic board Detection, Feature extraction and Recognition. The detection phase consists of RGBbased colour thresholding and shape analysis, which offers robustness to differences in lighting situations. A Histogram of Oriented Gradients (HOG) technique was adopted to extract the features from the segmented output. Finally, traffic signs recognition is done by k-Nearest Neighbors (k-NN) classifiers. It achieves an classification accuracy upto 63%. 
+
+2. AUTOMATED TRAFFIC SIGN BOARD CLASSIFICATION SYSTEM
+- https://wireilla.com/papers/ijcsa/V5N1/5115ijcsa06.pdf
+- Intelligent sign board classification method based on blob analysis in traffic surveillance
+- A Sign board is modelled as a rectangular patch and classified via blob analysis. By processing the blob of sign boards, the meaningful features are extracted. Tracking moving targets is achieved by comparing the extracted features with training data. After classifying the sign boards the system will intimate to user in the form of alarms, sound waves. The experimental results show that the proposed system can provide real-time and useful information for traffic surveillance. 
+
+3. SURVEY-AN EXPLORATION OF VARIOUS TECHNIQUES FOR SIGN DETECTION IN TRAFFIC PANELS
+- http://www.arpnjournals.com/jeas/research_papers/rp_2015/jeas_0515_2045.pdf
+- a survey of the traffic sign detection and recognition, to detail the system for driver assistance to ensure safe journey
+
+4. Indian Traffic Sign Detection and Classification Using Neural Networks
+- http://ijoes.vidyapublications.com/paper/Vol19/03-Vol19.pdf
+
+5. ROAD AND TRAFFIC SIGN DETECTION AND RECOGNITION 
+- http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.2523&rep=rep1&type=pdf
+
+6. Real Time Detection and Recognition of Indian Traffic Signs using Matlab
+- https://www.ijser.org/researchpaper/real-time-detection-and-recognition-of-indian-traffic-signs-using-matlab.pdf
+
+## Docker Containers for ML
+- https://hub.docker.com/r/waleedka/modern-deep-learning/
+- https://github.com/floydhub/dl-docker
+- https://github.com/floydhub/dl-setup
+
+## Mapillary
+* https://github.com/lopuhin/mapillary-vistas-2017
+* https://github.com/mapillary/mapillary_vistas
+* https://arxiv.org/pdf/1803.05675.pdf
+* http://cs231n.stanford.edu/reports/2017/pdfs/633.pdf
+
+**Training on Mapillary dataset**
+- https://oslandia.com/en/2018/05/07/deeposlandia-0-4-has-been-released/
+- https://github.com/Oslandia/deeposlandia

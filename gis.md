@@ -3,6 +3,7 @@ Title: GIS
 Decription: GIS
 Author: Bhaskar Mangal
 Date: 
+Last Updated: 06-Jul-2018
 Tags: GIS
 */
 
@@ -12,10 +13,15 @@ Tags: GIS
 ## Online Data Converter
 * https://mygeodata.cloud/result
 > best online convertor so far
-
 * https://geoconverter.hsr.ch/
 
-## Online viewers
+## Online viewers, tools, apis
+* http://www.geoapi.org/
+* https://www.geomatys.com/en/home/
+* http://geojsonlint.com/
+* http://mapshaper.org/
+* http://geojsonlint.com/
+
 
 ### Mapbox GL Viewer
 https://bl.ocks.org/fxi/b7f1af5981432296bfafec70a95fd9b6
@@ -518,17 +524,11 @@ They may be constrained for example to leave or arrive at a certain time, to avo
 
 A single journey may use a sequence of several modes of transport, meaning that the system may know about public transport services as well as transport networks for private transportation.
 
-
-
-
-
-
 ## Weather API
 https://wxtiles.com/pricing/
 https://api.weather.com/v3/TileServer/tile/cloudsFcst?ts=1522297800&xyz=11722:7597:14&apiKey=8191cad7cb99410f91cad7cb99110fc6
 http://openweathermap.org/api
 https://www.weatherbug.com
-
 
 ### Pricing
 http://openweathermap.org/price
@@ -539,7 +539,3 @@ https://www.mapbox.com/blog/tags/weather/
 
 ## AR - Augmented Reality with location based applications
 https://blog.mapbox.com/mapbox-ar-2f065374eacb
-
-
-
-bhaskar@maze:/run/user/1000/gvfs/mtp:host=%5Busb%3A001%2C038%5D/Internal storage/DCIM/Camera$ ls -a

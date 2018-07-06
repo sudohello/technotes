@@ -539,3 +539,15 @@ OpenStreetMap iD
 ## qGIS 3.0 - 3D
 https://www.lutraconsulting.co.uk/blog/2018/03/01/working-with-qgis-3d-part-1/
 https://scholarworks.umass.edu/foss4g/vol15/iss1/26/
+
+## Indoor Standards
+http://www.indoorgml.net/
+
+- IndoorGML is an OGC standard for an open data model and XML schema for indoor spatial information.
+- It aims to provide a common framework of representation and exchange of indoor spatial information. It is defined as an application schema of OGC Geographic Markup Language (GML) 3.2.1.
+
+
+## All about GeoJSON
+https://macwright.org/2015/03/23/geojson-second-bite.html
+
+https://www.pinterest.com/pin/209135976419720012/

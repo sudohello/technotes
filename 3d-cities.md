@@ -1168,5 +1168,3 @@ The concept of an object in ISO 19107 is defined by three parts strongly linked.
 * NURBS: Non-Uniform Rational B-Spline.
 * ISO: International Standards Organization, non-governmental organization representing a network of national institutes of 158 countries, according to the principle of one member per country.
 * OGC: Non-profit organization created to address the problem of interoperability between systems that process geospatial data
-* http://www.geoapi.org/
-* https://www.geomatys.com/en/home/

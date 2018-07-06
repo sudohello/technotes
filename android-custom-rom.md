@@ -53,8 +53,24 @@ https://itechacking.wordpress.com/2017/10/21/twrp-recovery-for-vivo-y51l/
 
 
 
+https://lifehacker.com/how-to-flash-a-rom-to-your-android-phone-30885281
+https://itechacking.wordpress.com/2017/10/21/twrp-recovery-for-vivo-y51l/
+https://www.quora.com/Which-is-the-best-ROM-for-a-Vivo-Y51L
+
+
+
 PD1510F_EX_A_1.19.0
+
+
+4860 434 649
+
+3357 986 909
 
 https://github.com/Naveen3Singh/vivo_fastboot	
 
 https://www.youtube.com/watch?v=cA8QrAXsINc
+
+
+
+
+First, let's clear up some confusion: Contrary to popular belief, you do not actually need to root your phone to flash a ROM—you just need to unlock your bootloader and flash a custom recovery. However, this process usually goes hand-in-hand with rooting—and most custom ROMs come with root access—so what you think of as "rooting your phone" is probably what you're going to have to do first.
