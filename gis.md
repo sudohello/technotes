@@ -9,6 +9,8 @@ Tags: GIS
 
 # GIS
 
+## GIS Foundations
+* [Open Source Geospatial Foundation](https://www.osgeo.org/)
 
 ## Online Data Converter
 * https://mygeodata.cloud/result

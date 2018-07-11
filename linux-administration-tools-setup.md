@@ -310,13 +310,52 @@ sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils
 ```
 ### Find number of cores in Linux
 [how-to-know-number-of-cores-of-a-system-in-linux](http://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
-```
+```bash
+cat /proc/cpuinfo
+#
 cat /proc/cpuinfo | grep "cpu cores"
+grep -m 1 'cpu cores' /proc/cpuinfo
+# Another useful utility is dmidecode which outputs per socket information.
+sudo dmidecode -t 4 | grep -E 'Socket Designation|Count'
+sudo dmidecode -t 4 | egrep -i "Designation|Intel|core|thread"
 ```
 
 * http://www.tutorialspoint.com/articles/how-to-install-doxygen-on-ubuntu
 * http://stackoverflow.com/questions/16963579/generate-graphs-and-diagrams-with-doxygen
 * http://askubuntu.com/questions/315646/update-java-alternatives-vs-update-alternatives-config-java
+
+* https://askubuntu.com/questions/668538/cores-vs-threads-how-many-threads-should-i-run-on-this-machine
+
+- You will find how many threads you can run on your machine by running htop or ps command that returns number of process on your machine.
+- If you want to calculate number of all users process, you can use one of these commands:
+```bash
+ps -aux| wc -l
+ps -eLf | wc -l
+#Calculating number of an user process:
+ps --User root | wc -l
+#
+# lscpu
+# CPU(s):              4
+# On-line CPU(s) list: 0-3
+# Thread(s) per core:  1
+# Core(s) per socket:  4
+# Socket(s):           1 ## physical CPU (socket) 
+#
+```
+- To get a complete picture you need to look at the number of threads per core, cores per socket and sockets. If you multiply these numbers you will get the number of CPUs on your system.
+```bash
+CPUs = Threads per core X cores per socket X sockets
+```
+- CPUs are what you see when you run `htop` (these do not equate to physical CPUs).
+- The output of `nproc` corresponds to the CPU count from `lscpu`
+- The cpu cores reported by `/proc/cpuinfo` corresponds to the Core(s) per socket reported by `lscpu`
+```bash
+nproc -all
+top
+htop
+#
+lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+```
 
 ### Updating libpng
 Updating to libpng 1.6.28
@@ -947,3 +986,30 @@ find . -exec echo {} \+      # All in the same line
 	- Rename selected files using a regular expression: `rename 's/\.bak$/.txt/' *.bak`
 * rev - reverse lines characterwise
 	- `rev file`
+
+* **bash-script-to-replace-char-in-variable**
+	- https://www.linuxquestions.org/questions/programming-9/bash-script-to-replace-char-in-variable-251992/
+```bash
+VER="1.64.0"
+DIR="boost_"$(echo $VER | sed -e 's/\./_/g')
+echo $DIR ## boost_1_64_0
+```
+
+* lib linking
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------
