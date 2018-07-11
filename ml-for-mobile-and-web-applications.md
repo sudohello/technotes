@@ -581,6 +581,21 @@ Note that that same workflow would work with almost any image classification tas
 
 # Deep Learning Starting
 **Provide APIs in Computer Vision using Deep Learning for Geospatial Industry**
+- Face detection 
+- Removing motion blur
+- Assisted Driving
+  * Pedistrian and Car Detection
+  * Lane Detection
+    - Collision warning systems with adaptive cruise control
+    - Lane departure warning systems
+    - Rear object detection systems
+- Iris recogni@on
+- Visually defined search
+- Object search in video
+- Visual descrip@on – visual words
+- Image representa@on using visual words
+- Organizing photo collections
+- Visual dictionary
 
 ## Dataset / Data source/ Datasource for ML
 
@@ -773,6 +788,36 @@ images_flat = tf.contrib.layers.flatten(images_ph)
 6. Real Time Detection and Recognition of Indian Traffic Signs using Matlab
 - https://www.ijser.org/researchpaper/real-time-detection-and-recognition-of-indian-traffic-signs-using-matlab.pdf
 
+## Face Detection
+- https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/
+- https://www.pyimagesearch.com/2018/07/09/face-clustering-with-python/
+
+**Face recognition with OpenCV, Python, and deep learning**
+* with deep learning you know that we typically train a network to:
+  - Accept a single input image
+  - And output a classification/label for that image
+* deep metric learning
+  - Instead, of trying to output a single label (or even the coordinates/bounding box of objects in an image), we are instead outputting a real-valued feature vector
+* For the dlib facial recognition network, the output feature vector is 128-d (i.e., a list of 128 real-valued numbers) that is used to quantify the face. Training the network is done using triplets
+*  Facial recognition via deep metric learning involves a “triplet training step.” The triplet consists of 3 unique face images — 2 of the 3 are the same person. The NN generates a 128-d vector for each of the 3 face images. For the 2 face images of the same person, we tweak the neural network weights to make the vector closer via distance metric.
+* Here we provide three images to the network:
+  - Two of these images are example faces of the same person.
+  - The third image is a random face from our dataset and is not the same person as the other two images.
+* Our network architecture for face recognition is based on **ResNet-34** from the **Deep Residual Learning for Image Recognition** paper by He et al., but with fewer layers and the number of filters reduced by half.
+* The network itself was trained by Davis King on a dataset of ~3 million images. On the **Labeled Faces in the Wild (LFW)** dataset the network compares to other state-of-the-art methods, reaching 99.38% accuracy.
+- Davis King (the creator of dlib)
+- Adam Geitgey (the author of the face_recognition module we’ll be using shortly)
+- [face_recognition](https://github.com/ageitgey/face_recognition)
+- [dlib](http://dlib.net/)
+```bash
+sudo pip install dlib
+# OR, compile from: git clone https://github.com/davisking/dlib.git # preferred for GPU, CUDA support
+#
+sudo pip install face_recognition
+#pyimagesearch utility
+sudo pip install imutils
+```
+
 ## Docker Containers for ML
 - https://hub.docker.com/r/waleedka/modern-deep-learning/
 - https://github.com/floydhub/dl-docker
@@ -787,3 +832,10 @@ images_flat = tf.contrib.layers.flatten(images_ph)
 **Training on Mapillary dataset**
 - https://oslandia.com/en/2018/05/07/deeposlandia-0-4-has-been-released/
 - https://github.com/Oslandia/deeposlandia
+
+## ML/DL libraries
+* dlib — a toolkit for real-world machine learning, computer vision, and data analysis in C++ (with Python bindings included, when appropriate).
+
+## ML/DL Laptop
+* Dell Latitude 5590 CTO
+- i7 8th generation, 6 cores, 8/16 GB RAM, Nvidia GTX 1050 Ti 4GB
