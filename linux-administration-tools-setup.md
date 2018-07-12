@@ -3,7 +3,7 @@ Title: Linux Administration, Tools setup
 Decription: nitty gritty of Linux
 Author: Bhaskar Mangal
 Date: 20 Jan 2017
-Updated: 02 May 2018
+Updated: 12 Jul 2018
 Tags: Linux, Administration, Tools, Softwares
 */
 
@@ -21,8 +21,8 @@ Tags: Linux, Administration, Tools, Softwares
 //finding printer
 lpoptions  -p <printer_name> | awk '{for (i=1; i<=NF; i++) {if ($i ~ /device-uri/) {print $i}}}'
 //example
-lpoptions  -p TOSHIBA_e-STUDIO2330C | awk '{for (i=1; i<=NF; i++) {if ($i ~ /device-uri/) {print $i}}}' device-uri=socket://192.168.20.43
-lpoptions  -p HL2240D | awk '{for (i=1; i<=NF; i++) {if ($i ~ /device-uri/) {print $i}}}' device-uri=socket://10.4.71.140
+lpoptions  -p TOSHIBA_e-STUDIO2330C | awk '{for (i=1; i<=NF; i++) {if ($i ~ /device-uri/) {print $i}}}' device-uri=socket://<IP_ADDRESS>
+lpoptions  -p HL2240D | awk '{for (i=1; i<=NF; i++) {if ($i ~ /device-uri/) {print $i}}}' device-uri=socket://<IP_ADDRESS>
 //To get an overview lpinfo
 lpinfo -v | grep -P '://'
 //
@@ -462,7 +462,7 @@ cvs login
 
 ## Apache2 Installation
 
-Refer: [apache guide](apache.html)
+Refer: [apache guide](apache.md)
 
 ## Exports & Aliases
 
@@ -480,21 +480,12 @@ export MALLOC_CHECK_=0
 export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib/libflycapture-c.so:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib/libflycapture.so:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/home/gaze/Documents/vidteq/software/gazeRecord/myDll:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/home/gaze/Documents/flyCapture:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/home/gaze/Downloads/gps/lib:$LD_LIBRARY_PATH
 
 export LD_LIBRARY_PATH=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/amd64/server:$LD_LIBRARY_PATH
 
-alias huawai="echo gaze | sudo -kS touch /etc/usb_modeswitch.d/12d1:1f01; echo gaze | sudo -kS usb_modeswitch -J -v 0x12d1 -p 0x1f01;"
-alias vpn="echo gaze | sudo -kS openvpn --config ~/Downloads/fw-udp-1194-gaze-config.ovpn;"
-alias gazerecord="cd /home/gaze-in/Documents/vidteq/software/gazeRecord"
-alias gazehtml="cd /home/gaze-in/Documents/vidteq/software/gazeRecord/www"
-alias gazecpp="cd /home/gaze-in/Documents/vidteq/software/gazeRecord/service"
-alias gaze="cd /home/gaze-in/Documents/vidteq/software/gazeRecord/service/bin; echo gaze | sudo -kS ./gaze"
+alias huawai="echo <userName> | sudo -kS touch /etc/usb_modeswitch.d/12d1:1f01; echo <userName> | sudo -kS usb_modeswitch -J -v 0x12d1 -p 0x1f01;"
+alias vpn="echo <userName> | sudo -kS openvpn --config ~/Downloads/fw-udp-1194-<userName>-config.ovpn;"
 ```
-
-
 
 * **Mount samba as dir**
 sudo apt install nfs-common 
