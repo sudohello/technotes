@@ -834,8 +834,13 @@ sudo pip install imutils
 - https://github.com/Oslandia/deeposlandia
 
 ## ML/DL libraries
-* dlib — a toolkit for real-world machine learning, computer vision, and data analysis in C++ (with Python bindings included, when appropriate).
+* [dlib](http://dlib.net/) — a toolkit for real-world machine learning, computer vision, and data analysis in C++ (with Python bindings included, when appropriate).
 
 ## ML/DL Laptop
 * Dell Latitude 5590 CTO
 - i7 8th generation, 6 cores, 8/16 GB RAM, Nvidia GTX 1050 Ti 4GB
+
+
+https://vimeo.com/245073446
+https://oslandia.com/en/2016/03/16/osgeo-cs-2016-report-point-clouds/
+https://oslandia.com/en/2016/11/08/py3dtiles/
