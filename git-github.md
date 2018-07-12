@@ -156,10 +156,19 @@ git remote set-url origin --push --add https://github.com/mangalbhaskar/linuxscr
 git remote set-url origin --push --delete https://github.com/mangalbhaskar/linuxscript-2.git
 #
 ```
+
 ## FAQs
-**what-is-the-difference-between-git-pull-and-git-fetch**
-- https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
-
-
-The take away is to keep in mind that there are often at least three copies of a project on your workstation. One copy is your own repository with your own commit history. The second copy is your working copy where you are editing and building. The third copy is your local "cached" copy of a remote repository.
-
+* **what-is-the-difference-between-git-pull-and-git-fetch**
+  - https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
+  - The take away is to keep in mind that there are often at least three copies of a project on your workstation. One copy is your own repository with your own commit history. The second copy is your working copy where you are editing and building. The third copy is your local "cached" copy of a remote repository.
+* **what does git recursive and no-recursive options and what they do?**
+  - `--recursive` and `--no-recursive`
+  - https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules
+    - With `version 2.13` of Git and later, `--recursive` has been deprecated and `--recurse-submodules` should be used instead
+    - `-j8` is an optional performance optimization that became available in `version 2.8`, and fetches up to 8 submodules at a time in parallel — `see man git-clone`. Example:
+    - `git clone --recurse-submodules -j8 git://github.com/foo/bar.git`
+  - https://github.com/git-lfs/git-lfs/issues/1309
+  - https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407
+* **What are Git submodules?**
+  - https://git-scm.com/docs/git-submodule
+  - **Submodules**, like subtrees, aim to reuse code from another repo somewhere inside your own repo’s tree. The goal is usually to benefit from central maintenance of the reused code across a number of container repos, without having to resort to clumsy, unreliable copy-pasting.
