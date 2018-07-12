@@ -3,7 +3,7 @@ Title: 3D City
 Decription: 3D City
 Author: Bhaskar Mangal
 Date: 29th Nov 2017
-Updated: 30th Apr 2018
+Last Updated: 12th Jul 2018
 Tags: 3D City
 */
 
@@ -15,12 +15,12 @@ Tags: 3D City
 ___________________________________________________
 
 ===================================================
- 	     ______
-    __/      \_____|___
-  [|	 ___	    ___   ||]
-@@=|__/ .	\____/ . \__||	 
-	    (   )    (   )
-	  ~~~~~~~~~~~~~~~~~	
+ 	   ____
+    __/      \_____|_______
+  [|    _____       ___    ||]
+@@=|__/   .	\____/ . \__||
+	    (    )      (   )
+	  ~~~~~~~~~~~~~~~~~
 ---------------------------------------------------
 
 
@@ -215,22 +215,85 @@ The new version has many breaking changes from the original, the most visual bei
 
 **[Laytest glTF Specifications here](https://github.com/KhronosGroup/glTF)**
 
+## LoD Concept - Level of Details and Positional Errors
+* http://www.tandfonline.com/doi/full/10.1080/15230406.2017.1279986
 
-## Tiling for 3D City
-* https://openmaptiles.org/docs/
-* http://bl.ocks.org/Sumbera/ba554bb5cc8dfe4d7866
-* https://github.com/mapbox/mapbox-gl-js/issues/4296
+**LoD (Level of Details) concept in 3D city specification:**
+* https://github.com/tudelft3d/Random3Dcity
+* http://www.gdmc.nl/publications/reports/GISt62.pdf
+* http://filipbiljecki.com/publications/2014_ceus_lod_formalisation.pdf
 
-**Types:**
-- Raster Tile
-- Vector Tiles
-	* **Mabbox**
-	* **Tangaram**
-	* **OSM**
-	* **ESRI vector tiling**
-		* http://esri.maps.arcgis.com/home/item.html?id=f0b44a7e86b84109920e23e1e09d38a8
-- 3D Tiles
-	* **Cesium**
+two considered qualities of geographical data – LOD and accuracy.
+While there is an association between the two (representations at finer scales tend to be of higher quality (Heuvelink, 1998 Heuvelink, G. B. M. (1998). Uncertainty analysis in environmental modelling under a change of spatial scale. Nutrient Cycling in Agroecosystems, 50(1), 255–264. doi:10.1023/A:1009700614041
+[Crossref], [Web of Science ®], [Google Scholar]
+)), these are two independent concepts (Chrisman, 1991 Chrisman, N. (1991). The error component in spatial data. In P. A. Longley, M. F. Goodchild, D. J. Maguire, & D. W. Rhind (Eds.), Geographical information systems: Principles and applications (pp. 165–174). Harlow, UK: Longmans.
+ [Google Scholar]
+). For instance, a national government may produce a GIS dataset in which buildings are modeled in a coarse but accurately derived representation, and a municipality may produce a dataset of a city in finer detail but with less accuracy due to an inferior acquisition technique (e.g. automatic reconstruction from lidar instead of terrestrial measurements).
+
+
+### Errors
+https://www.iso.org/standard/32575.html
+http://inspire-regadmin.jrc.ec.europa.eu/dataspecification/themes/lu/Chapter7.pdf
+
+3D geoinformation at fine LODs may in fact be too complex for certain spatial analyses. Hence, the data are occasionally generalized to reduce complexity while attempting to preserve usability. By generalizing the models to a point at which their complexity is sufficiently reduced but at the same time their usability is not compromised by the reduced LOD.
+
+For instance, the standard ISO 19157 on geographic data quality defines several types of errors, for example:
+completeness
+topological
+positional
+thematic (attribute)
+and temporal errors
+Geographic information – Data quality. Geneva: International Organization for Standardization.
+Analysis-induced error
+there will usually be error induced by the imperfection of the empirical models and other factors behind a spatial analysis. 
+
+
+investigate the propagation of positional error in point clouds to the calculation of various topographic attributes, such as slope, aspect, and watershed area.
+
+propagation of positional error from terrestrial laser scanning to the measurement of snow volume.
+
+Positional errors are omnipresent in GIS and they have been much discussed in the literature
+
+
+
+The concept of LOD in 3D GIS is somewhat different from the one in cartography and imagery
+
+ In rasters, detail is simply quantified as the size of pixels (spatial resolution). Hence it is straightforward to line up different representations (e.g. orthophotos with pixel sizes of 10, 20, and 50 cm). 
+
+In maps, the LOD is tied to scale: each scale series (e.g. 1:10k, 1:20k, and 1:50k) contains a certain amount of detail that ought to be mapped. However, in 3D city modeling the distinction is not as straightforward, due to the digital environment and involvement of different features, which results in different understandings of measuring detail.
+
+LOD1 is a block model
+  - LOD1 is usually produced by extruding footprints 
+LOD2 is a generalized model containing basic roof shapes
+  - LOD2 can be acquired automatically from lidar data
+LOD3 is an architecturally detailed model containing openings and facade detail
+  - LOD3 usually involves substantial manual work or is obtained after conversion from architectural sources
+
+These LODs roughly reflect the different outcomes of different acquisition techniques. 
+
+Moreover, LOD3 models are rarely used in spatial analyses and we are not aware of any LOD3 model produced on a large spatial scale due to excessive costs of acquisition. Hence LOD3 is a good choice as ground truth reference data.
+
+Hence, it is important to investigate different magnitudes of positional error (standard deviation ).
+
+Our approach assumes that there is no correlation in the errors in different dimensions.
+
+We follow the assumption of uncorrelated errors in coordinates.
+3D city models are often acquired in different acquisition campaigns
+* footprints
+  - acquired with a geodetic survey
+  - from ground measurements
+* the elevation of the building
+  - acquired with airborne laser scanning
+  - guessed from the number of storeys
+
+Comparing errors (%) of two datasets with opposite qualities:
+a fine detailed (LOD2) model acquired with poor accuracy, and a coarse model (LOD1) acquired with higher accuracy.
+
+- LOD1 acquired with higher accuracy is a much better choice than the finer LOD2 acquired with poorer accuracy
+- For all analyses, planar error has a larger effect than error in the vertical coordinates. However, the degree of such influence differs, and this behavior is mostly exhibited in the estimation of solar irradiation.
+
+projection errors
+together with the errors caused by ignoring terrain elevation – affect the building footprint dimensions
 
 ### LOD for Tiles for 3D Map
 * http://sampleserver6.arcgisonline.com/arcgis/rest/services/Toronto/ImageServer
@@ -250,6 +313,22 @@ The new version has many breaking changes from the original, the most visual bei
 * https://stackoverflow.com/questions/35069753/mapbox-gl-js-vs-mapbox-js
 * https://en.wikipedia.org/wiki/Protocol_Buffers
 * https://stackoverflow.com/questions/16830824/google-maps-using-three-js-and-webgl
+
+## Tiling for 3D City
+* https://openmaptiles.org/docs/
+* http://bl.ocks.org/Sumbera/ba554bb5cc8dfe4d7866
+* https://github.com/mapbox/mapbox-gl-js/issues/4296
+
+**Types:**
+- Raster Tile
+- Vector Tiles
+	* **Mabbox**
+	* **Tangaram**
+	* **OSM**
+	* **ESRI vector tiling**
+		* http://esri.maps.arcgis.com/home/item.html?id=f0b44a7e86b84109920e23e1e09d38a8
+- 3D Tiles
+	* **Cesium**
 
 ### Vector Tiles
 * https://en.wikipedia.org/wiki/Vector_tiles
@@ -441,86 +520,6 @@ keywords in context of PCD processing/rendering:-
 * https://vimeo.com/245073446
 * https://vimeo.com/189285883
 
-## LoD Concept - Level of Details and Positional Errors
-* http://www.tandfonline.com/doi/full/10.1080/15230406.2017.1279986
-
-**LoD (Level of Details) concept in 3D city specification:**
-* https://github.com/tudelft3d/Random3Dcity
-* http://www.gdmc.nl/publications/reports/GISt62.pdf
-* http://filipbiljecki.com/publications/2014_ceus_lod_formalisation.pdf
-
-two considered qualities of geographical data – LOD and accuracy.
-While there is an association between the two (representations at finer scales tend to be of higher quality (Heuvelink, 1998 Heuvelink, G. B. M. (1998). Uncertainty analysis in environmental modelling under a change of spatial scale. Nutrient Cycling in Agroecosystems, 50(1), 255–264. doi:10.1023/A:1009700614041
-[Crossref], [Web of Science ®], [Google Scholar]
-)), these are two independent concepts (Chrisman, 1991 Chrisman, N. (1991). The error component in spatial data. In P. A. Longley, M. F. Goodchild, D. J. Maguire, & D. W. Rhind (Eds.), Geographical information systems: Principles and applications (pp. 165–174). Harlow, UK: Longmans.
- [Google Scholar]
-). For instance, a national government may produce a GIS dataset in which buildings are modeled in a coarse but accurately derived representation, and a municipality may produce a dataset of a city in finer detail but with less accuracy due to an inferior acquisition technique (e.g. automatic reconstruction from lidar instead of terrestrial measurements).
-
-
-### Errors
-https://www.iso.org/standard/32575.html
-http://inspire-regadmin.jrc.ec.europa.eu/dataspecification/themes/lu/Chapter7.pdf
-
-3D geoinformation at fine LODs may in fact be too complex for certain spatial analyses. Hence, the data are occasionally generalized to reduce complexity while attempting to preserve usability. By generalizing the models to a point at which their complexity is sufficiently reduced but at the same time their usability is not compromised by the reduced LOD.
-
-For instance, the standard ISO 19157 on geographic data quality defines several types of errors, for example:
-completeness
-topological
-positional
-thematic (attribute)
-and temporal errors
-Geographic information – Data quality. Geneva: International Organization for Standardization.
-Analysis-induced error
-there will usually be error induced by the imperfection of the empirical models and other factors behind a spatial analysis. 
-
-
-investigate the propagation of positional error in point clouds to the calculation of various topographic attributes, such as slope, aspect, and watershed area.
-
-propagation of positional error from terrestrial laser scanning to the measurement of snow volume.
-
-Positional errors are omnipresent in GIS and they have been much discussed in the literature
-
-
-
-The concept of LOD in 3D GIS is somewhat different from the one in cartography and imagery
-
- In rasters, detail is simply quantified as the size of pixels (spatial resolution). Hence it is straightforward to line up different representations (e.g. orthophotos with pixel sizes of 10, 20, and 50 cm). 
-
-In maps, the LOD is tied to scale: each scale series (e.g. 1:10k, 1:20k, and 1:50k) contains a certain amount of detail that ought to be mapped. However, in 3D city modeling the distinction is not as straightforward, due to the digital environment and involvement of different features, which results in different understandings of measuring detail.
-
-LOD1 is a block model
-  - LOD1 is usually produced by extruding footprints 
-LOD2 is a generalized model containing basic roof shapes
-  - LOD2 can be acquired automatically from lidar data
-LOD3 is an architecturally detailed model containing openings and facade detail
-  - LOD3 usually involves substantial manual work or is obtained after conversion from architectural sources
-
-These LODs roughly reflect the different outcomes of different acquisition techniques. 
-
-Moreover, LOD3 models are rarely used in spatial analyses and we are not aware of any LOD3 model produced on a large spatial scale due to excessive costs of acquisition. Hence LOD3 is a good choice as ground truth reference data.
-
-Hence, it is important to investigate different magnitudes of positional error (standard deviation ).
-
-Our approach assumes that there is no correlation in the errors in different dimensions.
-
-We follow the assumption of uncorrelated errors in coordinates.
-3D city models are often acquired in different acquisition campaigns
-* footprints
-  - acquired with a geodetic survey
-  - from ground measurements
-* the elevation of the building
-  - acquired with airborne laser scanning
-  - guessed from the number of storeys
-
-Comparing errors (%) of two datasets with opposite qualities:
-a fine detailed (LOD2) model acquired with poor accuracy, and a coarse model (LOD1) acquired with higher accuracy.
-
-- LOD1 acquired with higher accuracy is a much better choice than the finer LOD2 acquired with poorer accuracy
-- For all analyses, planar error has a larger effect than error in the vertical coordinates. However, the degree of such influence differs, and this behavior is mostly exhibited in the estimation of solar irradiation.
-
-projection errors
-together with the errors caused by ignoring terrain elevation – affect the building footprint dimensions
-
 ## 3D Spatial Analysis
 * Geographic information may be used to predict the energy demand of households based on the morphology of a building
 * 3D city models are frequently used to estimate the solar irradiation of building rooftops for determining the suitability of installing photovoltaic panels
@@ -615,18 +614,18 @@ JOSM is an extensible editor for ​OpenStreetMap (OSM) for ​Java 8
 
 ## Projections
 
-### [Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator)**
+### [Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator)
 - It is a variant of the Mercator projection and is the de facto standard for Web mapping applications.
 - It is used by virtually all major online map providers, including Google Maps, Bing Maps, OpenStreetMap, Mapquest, Esri, Mapbox, and many others
-- Its official EPSG identifier is EPSG:3857
+- Its official EPSG identifier is **EPSG:3857**
 - Web Mercator - Google Web Mercator, Spherical Mercator, WGS 84 Web Mercator or WGS 84/Pseudo-Mercator
 - the Web Mercator uses the spherical formulas at all scales whereas large-scale Mercator maps normally use the ellipsoidal form of the projection.
 - The discrepancy is imperceptible at the global scale but causes maps of local areas to deviate slightly from true ellipsoidal Mercator maps at the same scale. This deviation becomes more pronounced further from the equator, and can reach as much as 35 km on the ground
 - While the Web Mercator's formulas are for the spherical form of the Mercator, geographical coordinates are required to be in the WGS 84 ellipsoidal datum
 - The benefit is that the spherical form is much simpler to calculate, saving many computing cycles
-- Due to slow adoption by standards body European Petroleum Survey Group (EPSG), the Web Mercator is represented by a confusing series of standard names and ids, including OpenLayers:900913, EPSG:3785 and EPSG:3857.
+- Due to slow adoption by standards body European Petroleum Survey Group (EPSG), the Web Mercator is represented by a confusing series of standard names and ids, including **OpenLayers:900913, EPSG:3785 and EPSG:3857.**
 
-### [Mercator](https://en.wikipedia.org/wiki/Mercator_projection)**
+### [Mercator](https://en.wikipedia.org/wiki/Mercator_projection)
 
 **Visualizing-Spatial-Data**
 * https://cesiumjs.org/tutorials/Visualizing-Spatial-Data/
@@ -641,11 +640,6 @@ JOSM is an extensible editor for ​OpenStreetMap (OSM) for ​Java 8
 **Cesium Development - using Sandcastle**
 * https://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Imagery%20Layers.html&label=Showcases
 * https://mapsapidocs.digitalglobe.com/docs/maps-api-cesiumjs-3d-globe
-
-**Internal Development Assets**
-http://10.4.71.121/local/jayashree/maze/mazeTpcd.php
-http://10.4.71.121/local/jayashree/maze/mazeDeck.php
-http://10.4.71.121/local/jayashree/maze/cesium/Apps/
 
 **Commercial: Cesium Composer**
 * [3d-tiles-pioneers](https://cesium.com/3d-tiles-pioneers/)
@@ -715,9 +709,9 @@ Founded in 1997, we are an International, non-profit, member-funded, industry st
 - The Khronos Group is an industry consortium creating open standards to enable the authoring and acceleration of parallel computing, graphics, vision and neural nets on a wide variety of platforms and devices. Khronos standards include Vulkan®, OpenGL®, OpenGL® ES, OpenGL® SC, WebGL™, SPIR-V™, OpenCL™, SYCL™, OpenVX™, NNEF™, COLLADA™, OpenXR™ and glTF™. Khronos members are enabled to contribute to the development of Khronos specifications, are empowered to vote at various stages before public deployment, and are able to accelerate the delivery of their cutting-edge accelerated platforms and applications through early access to specification drafts and conformance tests.
 
 
-# Misc
-http://www.indiageospatialforum.org/2015/ppt/Vinod_Bothale.pdf
-https://bim-international.com/wp-content/uploads/2016/03/LOD-Specification-2015.pdf
+## Misc
+* http://www.indiageospatialforum.org/2015/ppt/Vinod_Bothale.pdf
+* https://bim-international.com/wp-content/uploads/2016/03/LOD-Specification-2015.pdf
 
 Similarly as traditional 2D geo-datasets, 3D city models are an approximation of the real world: features are modelled at a particular grade and certain elements are simplified or omitted.
 The quantity and mixture of content is driven by the intended use of the 3D city model, provenance of the base data, acquisition technique, invested funds, and spatial scale.
@@ -828,7 +822,7 @@ https://bocoup.com/blog/exploring-new-technologies-for-making-maps-vector-tiles-
 * **sublime text editor shortcut**
 	* https://gist.github.com/eteanga/1736542
 
-# Showcase
+## Showcase
 https://eng.uber.com/deck-gl-framework/
 
 **Deck GL**
@@ -899,7 +893,7 @@ https://www.mapbox.com/bites/00273
 https://gis.stackexchange.com/questions/20404/assign-multiple-colors-to-features-within-a-single-vector-layer
 
 
-# mapboxgl
+## mapboxgl
 https://www.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/
 https://www.mapbox.com/help/analysis-with-turf/
 https://bl.ocks.org/danswick/83a8ddff7fb9193176a975a02a896792
@@ -941,8 +935,6 @@ https://gis.stackexchange.com/questions/173862/how-to-determine-when-mapbox-gl-j
 ## Mapbox + Digital Globe Maps
 https://mapsapidocs.digitalglobe.com/docs/maps-api-mapbox-gl
 
-
-
 **WMS tiles with vecotr tiles on MapboxGL**
 http://bl.ocks.org/Sumbera/ba554bb5cc8dfe4d7866
 * Image Overlay
@@ -961,11 +953,11 @@ https://blog.mapbox.com/global-elevation-data-6689f1d0ba65
 
 
 
-  glyphs:"mapbox://fonts/mapbox/{fontstack}/{range}.pbf"
-  https://api.mapbox.com/fonts/v1/mapbox/DIN%20Offc%20Pro%20Medium,Arial%20Unicode%20MS%20Regular/0-255.pbf?access_token=pk.eyJ1IjoidW5lcGdyaWQiLCJhIjoiY2lzZnowenUwMDAzdjJubzZyZ3R1bjIzZyJ9.uyP-RWjY-94qCVajU0u8KA
+glyphs:"mapbox://fonts/mapbox/{fontstack}/{range}.pbf"
+https://api.mapbox.com/fonts/v1/mapbox/DIN%20Offc%20Pro%20Medium,Arial%20Unicode%20MS%20Regular/0-255.pbf?access_token=pk.eyJ1IjoidW5lcGdyaWQiLCJhIjoiY2lzZnowenUwMDAzdjJubzZyZ3R1bjIzZyJ9.uyP-RWjY-94qCVajU0u8KA
 
 
-  https://blender.stackexchange.com/questions/62619/how-to-import-3d-buildings-from-openstreetmap-to-blender
+https://blender.stackexchange.com/questions/62619/how-to-import-3d-buildings-from-openstreetmap-to-blender
 
 ## Forums
 https://github.com/iTowns/itowns/issues/183
