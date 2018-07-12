@@ -425,6 +425,9 @@ keywords in context of PCD processing/rendering:-
 * **[LOPoCS](https://github.com/Oslandia/lopocs)**
 	- https://github.com/Oslandia/lopocs
 	- LOPoCS is a point cloud server written in Python, allowing to load Point Cloud from a PostgreSQL database thanks to the pgpointcloud extension.
+	- The current version of LOPoCS provides a way to load Point Cloud from PostgreSQL to the following viewers:
+		* Cesium thanks to the 3DTiles format
+		* Potree viewer : viewer with LAZ compressed data.
 * **PgPointCloud**
 	- https://github.com/pgpointcloud/pointcloud
 	- A PostgreSQL extension for storing point cloud (LIDAR) data

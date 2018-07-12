@@ -16,6 +16,10 @@ Assembling decent system for Multi purpose:
 * VR/AR
 * VFX
 
+## Computer Vision/ML/DL Laptop
+* Dell Latitude 5590 CTO
+- i7 8th generation, 6 cores, 8/16 GB RAM, Nvidia GTX 1050 Ti 4GB
+
 ## Building System Summary
 * Final build requirements
 	- understanding and selection of different PC components requried
