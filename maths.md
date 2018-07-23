@@ -332,3 +332,34 @@ existing mobile mapping systems either solely operates in stop-and-go or in full
 system that can operate in both modes has not yet been developed; specifically one that can capture higher density, stability and accuracy data when it is parked and lower quality but continuous data while it is moving.
 
 Monocular cameras are passive sensors that can capture a 2D array of light intensity information instantaneously. Although they are sensitive to the ambient illumination and the information they encapsulate for SLAM is dependent on the scene’s texture, being a bearing-only sensor [19] it is largely independent of the object’s reflectance properties and can observe details as far as their pixel resolution allows. Stereo cameras can further perceive depth from a single exposure station based on triangulation, a process similar to how human vision operates [20]. LiDAR systems on the other hand are active sensors that acquire 2D scan lines by measuring distance (based on the time-of-flight principle) and bearing information point-by-point at high speed. The third dimension is obtained either by the platform’s trajectory (for 2D scanners) or by a rotating head/mirror (for 3D scanners). They can observe dense geometric information over homogeneous surfaces under any illumination conditions.
+
+
+## Radians
+* https://betterexplained.com/articles/intuitive-guide-to-angles-degrees-and-radians/
+* https://en.wikipedia.org/wiki/Radian#Reasons_why_radians_are_preferred_in_mathematics
+
+"Much of physics (and life!) involves leaving your reference frame and seeing things from another’s viewpoint."
+
+Degrees measure angles by how far we tilted our heads. Radians measure angles by distance traveled.
+Radians are the empathetic way to do math — a shift from away from head tilting and towards the mover’s perspective.
+Radians are a count of distance in terms of “radius units”, and I think of “radian” as shorthand for that concept.
+it helps to think of radians as “distance” traveled on a unit circle.
+
+we encounter the concept of “mover’s distance” quite a bit
+* We use “rotations per minute” not “degrees per second” when measuring certain rotational speeds.
+* When a satellite orbits the Earth, we understand its speed in “miles per hour”, not “degrees per hour”. Now divide by the distance to the satellite and you get the orbital speed in radians per hour.
+
+https://instacalc.com
+https://www2.clarku.edu/~djoyce/trig/tangents.html
+
+
+Degrees have their place: in our own lives, we’re the focal point and want to see how things affect us. How much do I tilt my telescope, spin my snowboard, or turn my steering wheel?
+
+With natural laws, we’re an observer describing the motion of others. Radians are about them, not us.
+Because radians are in terms of the mover, equations “click into place”. Converting rotational to linear speed is easy, and ideas like sin(x)/x make sense.
+
+http://canvas.projekti.info/ebooks/Math%20-%20Better%20Explained.pdf
+
+## Sensors - calculate things like orientation, position, and velocity.
+* https://www.sparkfun.com/pages/accel_gyro_guide
+* http://www.unmannedsystemstechnology.com/company/inertial-labs/

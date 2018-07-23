@@ -12,24 +12,30 @@ Tags: Computer Vision ML, DL Applications
 * [Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
 
 ## Problem Statements
+- computer vision, natural language, and recommendation systems.
+
 1. Signage Layer Extraction for Map
   * a. Trees, Signage, Road Signs,Traffic
   Signals, Poles
   * b. In combination with photogrammetry
   (point clouds) to get higher accurate
   geolocation
+
 2. Number Plate Recognition
   **Potential use cases:**
   * a. In traffic camera feeds for traffic
   rules violation detection
   * b. Toll both automation
+
 3. Vehicle Detection & Recognition
+
 **Potential use cases:**
 * a. In traffic camera feeds
    ­ - Vehicle counts
    ­ - Traffic density estimation
 * b. Parking lots vacancy detection
 * c. Accident / collision detection
+
 4. Pedestrian Detection & Face Recognition
 **Potential use cases:**
 * a. Surveillance & security like ATM,
@@ -169,6 +175,8 @@ geolocation
 **Traffic Sign Recognition with TensorFlow**
 * https://medium.com/@waleedka/traffic-sign-recognition-with-tensorflow-629dffc391a6
 * https://github.com/waleedka/traffic-signs-tensorflow
+* https://mc.ai/the-traffic-sign-classifier-project/
+* http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf
 
 **Details**
 * Detect and recognize iconic symbol and text strings contained in road panels

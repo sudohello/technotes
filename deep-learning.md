@@ -772,6 +772,10 @@ python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_d
 
 ## MOOC Courses
 * https://www.coursera.org/learn/neural-networks
+* http://cs231n.github.io/
+* http://deeplearning.net/tutorial/
+* http://www.fast.ai/2017/09/08/introducing-pytorch-for-fastai/
+* http://course.fast.ai/
 
 ## References
 * http://www.deeplearningbook.org/
@@ -942,4 +946,86 @@ We should remember that the purpose of research is to create knowledge. It’s n
 
 Mathematical notation can be a huge accessibility barrier, and it isn’t at all a requirement to understand deep learning clearly. Code can be in many cases a very intuitive medium to work with mathematical ideas.
 
-* http://deeplearning.net/tutorial/
+## AL-ML-DL blogs
+- http://www.fast.ai/2018/07/12/auto-ml-1/
+- http://www.fast.ai/2018/04/30/dawnbench-fastai/
+
+### Hardware
+- https://aws.amazon.com/education/awseducate/
+
+### **AutoML and Neural Architecture Search**
+- As it’s name suggests, AutoML is one field in particular that has focused on automating machine learning, and a subfield of AutoML called neural architecture search is currently receiving a ton of attention.
+- https://www.youtube.com/watch?v=kSa3UObNS6o
+- The term AutoML has traditionally been used to describe automated methods for model selection and/or hyperparameter optimization.
+- https://www.automl.org/automl/
+- AutoML provides a way to select models and optimize hyper-parameters. It can also be useful in getting a baseline to know what level of performance is possible for a problem.
+- What Pichai refers to as using **“neural nets to design neural nets”** is known as **neural architecture search**; typically **reinforcement learning** or **evolutionary algorithms** are used to design the **new neural net architectures**.
+	- NASNet:1800 GPU days (the equivalent of almost 5 years for 1 GPU) 
+	- AmoebaNet: 3150 GPU days (the equivalent of almost 9 years for 1 GPU)
+	- Efficient Neural Architecture Search (ENAS): 16hrs, 1 GPU
+	- DARTS - Differentiable architecture search (DARTS)
+		- To learn a network for Cifar-10, DARTS takes just 4 GPU days, compared to 1800 GPU days for NASNet and 3150 GPU days for AmoebaNet (all learned to the same accuracy). This is a huge gain in efficiency! 
+- how can humans and computers work together to make machine learning more effective?
+
+
+### Industry Experts in Top positions
+* Google’s
+	- CEO: Sundar Pichai 
+	- Head of AI: Jeff Dean
+
+### What do machine learning practitioners do?
+
+The processes of appropriately framing a business problem, collecting and cleaning the data, building the model, implementing the result, and then monitoring for changes are interconnected in many ways that often make it hard to silo off just a single piece (without at least being aware of what the other pieces entail)
+
+http://www.fast.ai/2016/12/08/org-structure/
+While it’s common to have machine learning, engineering, and data/pipeline/infrastructure engineering all as separate roles, try to avoid this as much as possible. This leads to a lot of duplicate or unused work, particularly when these roles are on separate teams. You want people who have some of all these skills: can build the pipelines for the data they need, create models with that data, and put those models in production.
+You’re not going to be able to hire many people who can do all of this. So you’ll need to provide them with training. 
+
+Tech companies waste their employees’ potential by not offering enough opportunities for on-the-job learning, training, and mentoring. Your people are smart and eager to learn. Be prepared to offer training, pair-programming, or seminars to help your data scientists fill in skills gaps. 
+
+Even when you have people who are both data scientists and engineers (that is, they can create machine learning models and put those models into production), you still need to have them embedded in other teams and not cordoned off together. Otherwise, there won’t be enough institutional understanding and buy-in of what they’re doing, and their work won’t be as integrated as it needs to be with other systems.
+
+**what do machine learning practitioners do?**
+- Understanding the context:
+- Data:
+- Modeling:
+- Productionize:
+- Monitor:
+
+### Transfer Learning
+* http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html#transfer
+
+## Model Architectures
+* **VGG**
+	- https://arxiv.org/abs/1409.1556
+* **AlexNet**
+* **LeNet**
+	- one of the canonical network architectures for image classification
+	-  how to implement LeNet in TensorFlow, highlighting data preparation, training and testing, and configuring convolutional, pooling, and fully-connected layers.
+* **SqueezeNet**
+	- https://arxiv.org/abs/1602.07360
+	- https://github.com/DeepScale/SqueezeNet
+	- a small CNN architecture called “SqueezeNet” that achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters
+	- https://gab41.lab41.org/lab41-reading-group-squeezenet-9b9d1d754c75
+	- making a network smaller by starting with a smarter design versus using a clever compression scheme
+	- Strategy 1. Make the network smaller by replacing 3x3 filters with 1x1 filters
+		- https://iamaaditya.github.io/2016/03/one-by-one-convolution/
+	- Strategy 2. Reduce the number of inputs for the remaining 3x3 filters
+		- “squeeze” layers are convolution layers that are made up of only 1x1 filters
+		-  “expand” layers are convolution layers with a mix of 1x1 and 3x3 filters.
+		- By reducing the number of filters in the “squeeze” layer feeding into the “expand” layer, they are reducing the number of connections entering these 3x3 filters thus reducing the total number of parameters
+		-  paper call this specific architecture the “fire module” and it serves as the basic building block for the SqueezeNet architecture.
+	- Strategy 3. Downsample late in the network so that convolution layers have large activation maps.
+		- The authors believe that by decreasing the stride with later convolution layers and thus creating a larger activation/feature map later in the network, classification accuracy actually increases
+		- Having larger activation maps near the end of the network is in stark contrast to networks like VGG where activation maps get smaller as you get closer to the end of a network.
+		- https://arxiv.org/abs/1412.1710
+		- a delayed down sampling that leads to higher classification accuracy.
+		- One of the surprising things I found with this architecture is the lack of fully-connected layers. What’s crazy about this is that typically in a network like VGG, the later fully connected layers learn the relationships between the earlier higher level features of a CNN and the classes the network is trying to identify. That is, the fully connected layers are the ones that learn that noses and ears make up a face, and wheels and lights indicate cars. However, in this architecture that extra learning step seems to be embedded within the transformations between various “fire modules”.
+* **SqueezeNext: Hardware-Aware Neural Network Design**
+	- https://arxiv.org/abs/1803.10615
+* **NiN - Network In Network**
+	- https://arxiv.org/abs/1312.4400
+* **ResNet**
+	- ResNet-18,ResNet-34
+	- https://arxiv.org/abs/1512.03385
+	- https://mc.ai/resnet-for-traffic-sign-classification-with-pytorch/
