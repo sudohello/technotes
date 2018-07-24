@@ -21,9 +21,9 @@ Tags: Computer Vision ML, DL Applications
 * [Deep Learning Applications](deep-learning-applications.md)
 * Installation and System Setup
   * [System Setup - start here](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md#start-here---the-big-bang-theory)
-    * https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/
+  * [Installing Deep Learning Frameworks on Ubuntu with CUDA Support][https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/]
 * [Datasets and Data Creation for Training Machines](deep-learning-datasets-and-creation.md)
-* [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
+* [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](https://github.com/mangalbhaskar/technotes#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
 * [Deep Learning](deep-learning.md)
 * [Mechanics of Self Driving Car](mechanics-of-self-driving-car.md)
 
@@ -77,8 +77,7 @@ Tags: Computer Vision ML, DL Applications
 - Visual dictionary
 - computer vision, natural language, and recommendation systems
 
-## Study Materials
-* [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](https://github.com/mangalbhaskar/technotes#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
+## Additional Study Materials
 
 ### **Image processing, Computer Vision**
 * [Computer Vision](computer-vision.md)
