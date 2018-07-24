@@ -7,6 +7,13 @@ Updated: 12 Jul 2018
 Tags: Linux, Administration, Tools, Softwares
 */
 
+
+
+https://www.bankbazaar.com/tax/self-assessment-tax.html?ck=Y%2BziX71XnZjIM9ZwEflsyDYlRL7gaN4W0xhuJSr9Iq7aMYwRm2IPACTQB2XBBtGG&rc=1
+https://www.bankbazaar.com/tax/use-challan-280-to-pay-your-income-tax-online.html?ck=Y%2BziX71XnZjIM9ZwEflsyDYlRL7gaN4W0xhuJSr9Iq7aMYwRm2IPACTQB2XBBtGG&rc=1
+
+
+
 # Software & Tools Setup Help
 
 ## Linux Administration
@@ -597,6 +604,11 @@ printf \"BOOTDISK\" | dd bs=1 count=8 seek=0x40 conv=notrunc of=/dev/disk"
 
 diskutil list
 
+**fdisk**
+https://gist.github.com/keithmorris/b2aeec1ea947d4176a14c1c6a58bfc36
+
+**mount**
+`sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sdb1 /media/windows`
 
 ## Tools
 * **Bulk Rename**

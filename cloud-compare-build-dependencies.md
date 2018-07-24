@@ -15,6 +15,24 @@ Tags: CloudCompare
 
 ## cloud-compare-build-dependencies
 
+sudo apt-get install git build-essential cmake qt5-default qtscript5-dev libssl-dev qttools5-dev qttools5-dev-tools qtmultimedia5-dev libqt5svg5-dev libqt5webkit5-dev libsdl2-dev libasound2 libxmu-dev libxi-dev freeglut3-dev libasound2-dev libjack-jackd2-dev libxrandr-dev libqt5xmlpatterns5-dev libqt5xmlpatterns5 libqt5xmlpatterns5-private-dev
+
+https://github.com/CloudCompare/CloudCompare
+
+git clone https://github.com/CloudCompare/CloudCompare.git
+cd CloudCompare
+mkdir build
+cd build 
+cmake ..
+cmake-gui ..
+then select PCL
+configure
+generate
+close 
+make
+sudo make install
+
+
 INSTALL_QFACETS_PLUGIN
  CMake Error at plugins/qFacets/CMakeLists.txt:8 (message):
    ShapeLib is required to compile this plugin (enable OPTION_USE_SHAPE_LIB)

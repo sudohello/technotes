@@ -1,5 +1,5 @@
 /*
-Title: Computer Vision ML, DL Applications
+Title: Deep Learning in Computer Vision and its Applications
 Decription: Computer Vision ML, DL Applications
 Author: Bhaskar Mangal
 Date: 30 Jun 2018
@@ -7,46 +7,53 @@ Last Updated: 12 Jul 2018
 Tags: Computer Vision ML, DL Applications
 */
 
-# Computer Vision
-**Provide APIs in Computer Vision using Deep Learning for Geospatial Industry**
-* [Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
+
+**Table of Contents**
+
+[TOC]
+
+# Deep Learning in Computer Vision and its Applications
+> Provide APIs in Computer Vision using Deep Learning for Geospatial Industry
+
+* [AI Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
+* [Select / Building Deep Learning Machine for Computer Vision](hardwares-configs.md)
+* [Deep Learning Frameworks](deep-learning-frameworks.md)
+* [Deep Learning Applications](deep-learning-applications.md)
+* Installation and System Setup
+  * [System Setup - start here](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md#start-here---the-big-bang-theory)
+    * https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/
+* [Datasets and Data Creation for Training Machines](deep-learning-datasets-and-creation.md)
+* [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
+* [Deep Learning](deep-learning.md)
+* [Mechanics of Self Driving Car](mechanics-of-self-driving-car.md)
 
 ## Problem Statements
-- computer vision, natural language, and recommendation systems.
+* [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
 
 1. Signage Layer Extraction for Map
-  * a. Trees, Signage, Road Signs,Traffic
-  Signals, Poles
+  * a. Trees, Signage, Road Signs,Traffic Signals, Poles
+  * b. In combination with photogrammetry (point clouds  to get higher accurate geolocation
+2. Number Plate Recognition
+  **Potential use cases:**
+  * a. In traffic camera feeds for traffic rules violation detection
+  * b. Toll both automation
+3. Vehicle Detection & Recognition
+  **Potential use cases:**
+  * a. In traffic camera feeds
+     ­ - Vehicle counts
+     ­ - Traffic density estimation
+  * b. Parking lots vacancy detection
+  * c. Accident / collision detection
+4. Pedestrian Detection & Face Recognition
+  **Potential use cases:**
+  * a. Surveillance & security like ATM, Malls, Real Estate
+5. Road Profile Extraction for Map
+  **Potential use cases:**
+  * a. Edge detection ­ road, footpath,
+  road markings
   * b. In combination with photogrammetry
   (point clouds) to get higher accurate
   geolocation
-
-2. Number Plate Recognition
-  **Potential use cases:**
-  * a. In traffic camera feeds for traffic
-  rules violation detection
-  * b. Toll both automation
-
-3. Vehicle Detection & Recognition
-
-**Potential use cases:**
-* a. In traffic camera feeds
-   ­ - Vehicle counts
-   ­ - Traffic density estimation
-* b. Parking lots vacancy detection
-* c. Accident / collision detection
-
-4. Pedestrian Detection & Face Recognition
-**Potential use cases:**
-* a. Surveillance & security like ATM,
-Malls, Real Estate
-5. Road Profile Extraction for Map
-**Potential use cases:**
-* a. Edge detection ­ road, footpath,
-road markings
-* b. In combination with photogrammetry
-(point clouds) to get higher accurate
-geolocation
 6. Cross­road / Junction Identification
 7. Text Extraction for Signage Layer
 8. Complete Urban scene Classification & Segmentation
@@ -68,102 +75,44 @@ geolocation
 - Image representa@on using visual words
 - Organizing photo collections
 - Visual dictionary
-
-## Setup
-* [System Setup - start here](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md#start-here---the-big-bang-theory)
-* [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](https://github.com/mangalbhaskar/technotes#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
+- computer vision, natural language, and recommendation systems
 
 ## Study Materials
 * [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](https://github.com/mangalbhaskar/technotes#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
 
 ### **Image processing, Computer Vision**
-* [Computer Vision](https://github.com/mangalbhaskar/technotes/blob/master/computer-vision.md)
-* [Image Processing](https://github.com/mangalbhaskar/technotes/blob/master/image-processing.md)
-* [OpenCV with Python](https://github.com/mangalbhaskar/technotes/blob/master/opencv-with-python.md)
-* [Photogrammetry](https://github.com/mangalbhaskar/technotes/blob/master/photogrammetry.md)
-* [visualSfM](https://github.com/mangalbhaskar/technotes/blob/master/visualSfM.md)
-* [SLAM](https://github.com/mangalbhaskar/technotes/blob/master/slam.md)
-* [Image based Navigation](https://github.com/mangalbhaskar/technotes/blob/master/image-based-navigation.md)
-
-### **Deep Learning**
-* [AI Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
-* [AI ML DL Problem Statements](https://github.com/mangalbhaskar/technotes/blob/master/ai-ml-dl-problem-statements.md)
-* [Deep Learning](https://github.com/mangalbhaskar/technotes/blob/master/deep-learning.md)
-* [Deep Learning Applications](https://github.com/mangalbhaskar/technotes/blob/master/deep-learning-applications.md)
-* [Tensorflow](https://github.com/mangalbhaskar/technotes/blob/master/tensorflow.md)
-* [mechanics-of-self-driving-car](https://github.com/mangalbhaskar/technotes/blob/master/mechanics-of-self-driving-car.md)
+* [Computer Vision](computer-vision.md)
+* [Image Processing](image-processing.md)
+* [OpenCV with Python](opencv-with-python.md)
+* [Photogrammetry](photogrammetry.md)
+* [visualSfM](visualSfM.md)
+* [SLAM](slam.md)
+* [Image based Navigation](image-based-navigation.md)
 
 ### **Machine Learning**
-* [Machine Learning](https://github.com/mangalbhaskar/technotes/blob/master/machine-learning.md)
-* [ML for Mobile and Web Applications](https://github.com/mangalbhaskar/technotes/blob/master/ml-for-mobile-and-web-applications.md)
-* [CBIR](https://github.com/mangalbhaskar/technotes/blob/master/cbir.ml.md)
+* [Machine Learning](machine-learning.md)
+* [ML for Mobile and Web Applications](ml-for-mobile-and-web-applications.md)
+* [CBIR](cbir.ml.md)
 
 ### **Mathematics, Statistics and Statistical Learning**
-* [Statistics](https://github.com/mangalbhaskar/technotes/blob/master/stats.md)
-* [Introduction to Statistical Learning Using R - ISLR (Book notes)](https://github.com/mangalbhaskar/technotes/blob/master/islr-book-notes.md)
-* [Mathematics](https://github.com/mangalbhaskar/technotes/blob/master/maths.md)
+* [Statistics](stats.md)
+* [Introduction to Statistical Learning Using R - ISLR (Book notes)](islr-book-notes.md)
+* [Mathematics](maths.md)
 
 ### **Data Analytics and Visualization**
-* [D3.js](https://github.com/mangalbhaskar/technotes/blob/master/d3.js.md)
-* [Data Analytics](https://github.com/mangalbhaskar/technotes/blob/master/data-analytics.md)
-* [Data Visualization in Web](https://github.com/mangalbhaskar/technotes/blob/master/data-visualization-in-web.md)
+* [D3.js](d3.js.md)
+* [Data Analytics](data-analytics.md)
+* [Data Visualization in Web](data-visualization-in-web.md)
 
-## Dataset / Data source/ Datasource for ML
+## Case Studies specific to Problem Statements
 
-### Computer Vision Datasets
-- https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
-- https://handong1587.github.io/computer_vision/2015/09/24/datasets.html
-
-#### Traffic Sign
-**Datasets**
-* German
-  - http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
-* LISA: Laboratory for Intelligent Safe Automobiles
-  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
-* Belgium
-  - https://btsd.ethz.ch/shareddata/
-  - The images in this dataset are in an old .ppm format
-  - Images are square-ish, but have different aspect ratios
-  - The image quality is great, and there are a variety of angles and lighting conditions
-  - The traffic signs occupy most of the area of each image, which allows to focus on object classification and not have to worry about finding the location of the traffic sign in the image (object detection).
-  - Generally, neural network will take a fixed-size input, so some preprocessing is required.
-  - Dataset considers all speed limit signs to be of the same class, regardless of the numbers on them. That’s fine, as long as we know about it beforehand and know what to expect.
-  - Labels 26 and 27 are interesting to check
-  - What are the sizes of the images? - The sizes seem to hover around 128x128.
-  - This tells me that the image colors are the standard range of 0–255.
-
-**self-driving-car-datasets-semantic-segmentation**
-- https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/
-* [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)
-  - http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/
-* [KITTI - Karlsruhe Institute of Technology and Toyota Technological Institute](http://www.cvlibs.net/datasets/kitti/)
-  - http://www.cvlibs.net/datasets/kitti/
-  - http://www.cvlibs.net/datasets/kitti/eval_road.php
-* [DUS - Daimler Urban Segmentation](http://www.6d-vision.com/scene-labeling)
-  - http://www.6d-vision.com/scene-labeling
-  - http://www.6d-vision.com/home
-* [CityScapes](https://www.cityscapes-dataset.com/)
-  - https://www.cityscapes-dataset.com/
-  - https://www.cityscapes-dataset.com/benchmarks/
-* [Mapillary Vista](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)
-  - https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html
-  - https://www.mapillary.com/dataset/vistas
-* [Synthia](http://synthia-dataset.com/download-2/)
-  - http://synthia-dataset.net/ 
-
-### Others
-- https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
-* Free datasets are available from places like Kaggle.com and UCI. 
-  - https://www.kaggle.com/datasets
-  - https://archive.ics.uci.edu/ml/datasets.html
-
-## Traffic Light
+### Traffic Light
 * https://medium.freecodecamp.org/recognizing-traffic-lights-with-deep-learning-23dae23287cc
   - https://github.com/davidbrai/deep-learning-traffic-lights
   - https://challenge.getnexar.com/challenge-1
   - https://arxiv.org/abs/1602.07360
 
-## Traffic Sign
+### Traffic Sign
 * https://arxiv.org/pdf/1712.04391.pdf
 * https://hackernoon.com/traffic-signs-classification-with-deep-learning-b0cb03e23efb
 * http://www.deeplearningbook.org/
@@ -273,12 +222,12 @@ images_flat = tf.contrib.layers.flatten(images_ph)
 
 **Loss Function and Gradient Descent**
 
-### Potential Applications
+#### Potential Applications
 - Intelligent Transportation Systems (ITS)
 - Traffic Surveillance System
 - ADAS
 
-### Paper Reviews
+#### Paper Reviews
 1. TRAFFIC-SIGN RECOGNITION FOR AN INTELLIGENT VEHICLE/DRIVER ASSISTANT SYSTEM USING HOG 
 - http://aircconline.com/cseij/V6N1/6116cseij02.pdf
 - To recognize the traffic sign, the system has been proposed with three phases. They are Traffic board Detection, Feature extraction and Recognition. The detection phase consists of RGBbased colour thresholding and shape analysis, which offers robustness to differences in lighting situations. A Histogram of Oriented Gradients (HOG) technique was adopted to extract the features from the segmented output. Finally, traffic signs recognition is done by k-Nearest Neighbors (k-NN) classifiers. It achieves an classification accuracy upto 63%. 
@@ -301,7 +250,7 @@ images_flat = tf.contrib.layers.flatten(images_ph)
 6. Real Time Detection and Recognition of Indian Traffic Signs using Matlab
 - https://www.ijser.org/researchpaper/real-time-detection-and-recognition-of-indian-traffic-signs-using-matlab.pdf
 
-## Face Detection
+### Face Detection
 - https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/
 - https://www.pyimagesearch.com/2018/07/09/face-clustering-with-python/
 
@@ -331,16 +280,11 @@ sudo pip install face_recognition
 sudo pip install imutils
 ```
 
-## Semantic Segmentation
+### Semantic Segmentation
 - https://github.com/tensorflow/models/tree/master/research/deeplab
 - https://ai.googleblog.com/2018/03/semantic-image-segmentation-with.html
 
-## Docker Containers for ML
-- https://hub.docker.com/r/waleedka/modern-deep-learning/
-- https://github.com/floydhub/dl-docker
-- https://github.com/floydhub/dl-setup
-
-## Mapillary
+**Mapillary**
 * https://github.com/lopuhin/mapillary-vistas-2017
 * https://github.com/mapillary/mapillary_vistas
 * https://arxiv.org/pdf/1803.05675.pdf
@@ -349,6 +293,3 @@ sudo pip install imutils
 **Training on Mapillary dataset**
 - https://oslandia.com/en/2018/05/07/deeposlandia-0-4-has-been-released/
 - https://github.com/Oslandia/deeposlandia
-
-## ML/DL libraries
-* [dlib](http://dlib.net/) — a toolkit for real-world machine learning, computer vision, and data analysis in C++ (with Python bindings included, when appropriate).

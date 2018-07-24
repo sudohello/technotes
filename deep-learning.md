@@ -11,6 +11,12 @@ Tags: Deep Learning
 
 [TOC]
 
+## Deep Learning Frameworks, Toolchain, Libraries
+* [Refer: Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
+
+## Datasets and Data Creation for Training Machines
+* [Refer: Datasets and Data Creation for Deep Learning](deep-learning-datasets-and-creation.md)
+
 ## What do Machine Learning practitioners do?
 * http://www.fast.ai/2016/12/08/org-structure/
 
@@ -29,9 +35,6 @@ Even when you have people who are both data scientists and engineers (that is, t
 - Modeling:
 - Productionize:
 - Monitor:
-
-### Hardware
-- https://aws.amazon.com/education/awseducate/
 
 ### **AutoML and Neural Architecture Search**
 - As it’s name suggests, AutoML is one field in particular that has focused on automating machine learning, and a subfield of AutoML called neural architecture search is currently receiving a ton of attention.
@@ -131,84 +134,6 @@ We should remember that the purpose of research is to create knowledge. It’s n
 
 Mathematical notation can be a huge accessibility barrier, and it isn’t at all a requirement to understand deep learning clearly. Code can be in many cases a very intuitive medium to work with mathematical ideas.
 
-## AI Frameworks
-* https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
-* https://cloud.google.com/automl/
-* https://aws.amazon.com/sagemaker/
-
-## Deep Learning Toolchain, Libraries
-* https://www.pyimagesearch.com/2016/06/27/my-top-9-favorite-python-deep-learning-libraries/
-
-### Theano
-Theano is a Python library for fast numerical computation to aid in the development of deep learning models. At it’s heart Theano is a compiler for mathematical expressions in Python. It knows how to take your structures and turn them into very efficient code that uses NumPy and efficient native libraries to run as fast as possible on CPUs or GPUs.
-
-### TensorFlow
-TensorFlow is a Python library for fast numerical computing created and released by Google. Like Theano, TensorFlow is intended to be used to develop deep learning models. With the backing of Google, perhaps used in some of it’s production systems and used by the Google DeepMind research group, it is a platform that we cannot ignore. Unlike Theano, TensorFlow does have more of a production focus with a capability to run on CPUs, GPUs and even very large clusters.
-
-### [Keras](https://keras.io/)
-* https://keras.io/
-* https://github.com/fchollet/keras
-A difficulty of both Theano and TensorFlow is that it can take a lot of code to create even very simple neural network models. These libraries were designed primarily as a platform for research and development more than for the practical concerns of applied deep learning. The Keras library addresses these concerns by providing a wrapper for both Theano and TensorFlow. It provides a clean and simple API that allows you to define and evaluate deep learning models in just a few lines of code.
-
-- It’s a minimalist, modular neural network library that can use either Theano or TensorFlow as a backend.
-- Keras is a high-level neural networks API, written in Python and capable of running on top of either TensorFlow or Theano. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
-```bash
-sudo apt-get install python-numpy python-scipy -y
-sudo apt-get install python-yaml -y
-sudo apt-get install libhdf5-serial-dev -y
-sudo pip install keras==1.0.8
-```
-
-### [scikit-learn](http://scikit-learn.org/stable/)
-The scikit-learn library is a general purpose machine learning framework in Python built on top of SciPy. Scikit-learn excels at tasks such as evaluating model performance and optimizing model hyperparameters in just a few lines of code. Keras provides a wrapper class that allows you to use your deep learning models with scikit-learn.
-
-```bash
-sudo -H pip install -U scikit-learn
-```
-
-**Image processing in Python**
-* http://scikit-image.org/
-* https://scikits.appspot.com/scikit-image
-	- scikit-image is a collection of algorithms for image processing
-```bash
-sudo -H pip install scikit-image
-```
-
-## Setting up the Deep Learning Machine
-* https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/
-
-**Virtual Machine, Docker Containers**
-> Using **pre-configured** and **building your own** VM and Containers
-
-Once you have mastered and created your arsenal of tools and softwares creating VM, containers is a good idea for quick replica.
-- IT provides for quick start
-- Saves lot of time in fixing for broken dependencies due to incompatibility across different updates across different dependent software components.
-- It's an addon valued skill gives you an edge
-
-**Pre-configured**
-* https://www.pyimagesearch.com/2017/09/22/deep-learning-python-ubuntu-virtual-machine/
-
-**References**
-* https://www.pyimagesearch.com/2017/09/25/configuring-ubuntu-for-deep-learning-with-python/
-
-
-## Tensorflow
-* http://cv-tricks.com/artificial-intelligence/deep-learning/deep-learning-frameworks/tensorflow-tutorial/
-* http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html
-* https://stackoverflow.com/questions/26575587/cant-install-scipy-through-pip
-* https://github.com/duguyue100/cs231n-practice/blob/master/cs231nlib/utils.py
-* https://github.com/cs231n/cs231n.github.io
-* http://vision.stanford.edu/teaching/cs231n/
-* http://karpathy.github.io/2015/03/30/breaking-convnets/
-* http://ccsubs.com/video/yt:GUtlrDbHhJM/cs231n-winter-2016-lecture-5-neural-networks-part-2-jhuz800c650-mp4/subtitles?lang=en
-* https://devhub.io/repos/xiaohu2015-cs231n-assignment
-* http://planetmath.org/vectorpnorm
-* http://cs231n.github.io/convolutional-networks/
-
-### Installation
-* Compilation from source
-	* http://www.python36.com/install-tensorflow141-gpu/
-	* https://www.tensorflow.org/install/install_sources
 
 ## References
 * http://lvdmaaten.github.io/tsne/
@@ -256,9 +181,6 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 * Google’s
   - CEO: Sundar Pichai 
   - Head of AI: Jeff Dean
-
-## Datasets References and Creating Data for Training Machines
-* [Refer: Data Creation for Deep Learning](deep-learning-data-creation.md)
 
 ## Deep Learning, CCN Terms and Concepts
 * https://github.com/ml4a/ml4a.github.io/blob/master/_chapters/neural_networks.md
@@ -541,6 +463,11 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 
 ## Object Detection
 * https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/blob/master/README.md
+* https://www.pyimagesearch.com/2018/05/14/a-gentle-guide-to-deep-learning-object-detection/
+* https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
+* https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/
+* https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/
+
 
 ## Street View Image Segmentation
 **Segmentation**
@@ -734,137 +661,198 @@ python convert.py \
 python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_deploy.prototxt --caffemodel=~/Documents/ml/dilation/pretrained/dilation8_pascal_voc.caffemodel --code-output-path=./pascal_voc_tf/dil8_net.py --data-output-path=./pascal_voc_tf/
 ```
 
-## Python
-* https://elitedatascience.com/learn-python-for-data-science
 
-Recap of ways to create a 1-d array
-array(a):
-Creates an array from the list a.
-linspace(start, stop, num):
-Returns num evenly spaced numbers over an interval from start to stop inclusive. [num=50 if omitted.]
-logspace(start, stop, num):
-Returns num logarithmically spaced numbers over an interval from 10^{\mathrm{start}} to 10^{\mathrm{stop}} inclusive. [num=50 if omitted.]
-arange([start,] stop[, step,], dtype=None):
-Returns data points from start to end, exclusive, evenly spaced by step. [step=1 if omitted. start=0 and step=1 if both are omitted.]
-zeros(num, dtype=float):
-Returns an an array of 0s with num elements. Optional dtype argument can be used to set data type; left unspecified, a float array is made.
-ones(num, dtype=float):
-Returns an an array of 1s with num elements. Optional dtype argument can be used to set data type; left unspecified, a float array is made.
+## Nvidia Deep Learning
+
+### What network architectures most closely resemble ones you use now?
+* Alexnet
+* GoogLeNet/Inception (v1, v2, v3, v4, v5, other variations)
+* Resnet (18/50/101/152, other variations)
+* VGG (16, 19, other variations)
+* BigLSTM, OpenNMT
+* DeepSpeach
+* Faster RCNN variations
+* YOLO/SSD variations
+* SqueezeNet
+* GAN
 
 
-We see that NumPy calculates the logarithm where it can, and returns nan (not a number) for an illegal operation, taking the logarithm of a negative number, and -inf, or -\infty for the logarithm of zero.We see that NumPy calculates the logarithm where it can, and returns nan (not a number) for an illegal operation, taking the logarithm of a negative number, and -inf, or -\infty for the logarithm of zero.
+### Which of the following best describes your application area (choose one)? *
+* Image and Video applications
+* Signal and Speech applications
+* Text and Document applications
+* Multimodal (combination of the above)
 
-These kinds of operations with arrays are called vectorized operations because the entire array, or “vector”, is processed as a unit. Vectorized operations are much faster than processing each element of arrays one by one.
+### Which of the following would you say is the main bottleneck for deployment? *
+* Throughput
+* Latency
+* Ease of deployment
+* Ease of updating model
+* Maintainability
 
-**NumPy - Numerical Python**
-> NumPy is an acronym for "Numeric Python" or "Numerical Python"
+### Nvidia Education
 
-* http://www.python-course.eu/matrix_arithmetic.php
-
-**Scalars**
-* It's possible to create multidimensional arrays in numpy. Scalars are zero dimensional.
-```python
-x = np.array(42) #scalar```
-
-## Vectors
-## 1-demensional Arrays
-* 1-dimenional array - better known to some as **vectors**
-```python
-F = np.array([1, 1, 2, 3, 5, 8, 13, 21])
-```
-
-**Two- and Multidimensional Arrays**
-* 2-dimensional array
-```python
-A = np.array([ [3.4, 8.7, 9.9], 
-               [1.1, -7.8, -0.7],
-               [4.1, 12.3, 4.8]])
-```
-
-**Shape of an Array**
-* The "shape" of an array is a tuple with the number of elements per axis (dimension).
-```python
-import numpy as np
-A=np.array([[1,2,3],[4,5,6]])
-A.ndim
-np.shape(A)
-A.shape #outputs (2,3)
-type(A)
-A.shape=(3,2) #change the shape
-```
-
-**Indexing and Slicing**
-```python
-S = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-print(S[2:5])
-print(S[:4])
-print(S[6:])
-print(S[:])
-
-A = np.array([
-[11,12,13,14,15],
-[21,22,23,24,25],
-[31,32,33,34,35],
-[41,42,43,44,45],
-[51,52,53,54,55]])
-
-# The reshape function is used to construct the two-dimensional array. 
-X = np.arange(28).reshape(4,7)
-print(X)
-
-#A[start:stop:step]
-print(X[::2, ::3])
-
-E = np.ones((2,3))
-Z = np.zeros((2,4)
+https://www.nvidia.com/en-us/deep-learning-ai/education/
 
 
-# We can create identity arrays with the function identity:
-# identity(n, dtype=None)
-np.identity(4)
+deep learning courses
+ - you’ll learn how to train, optimize, and deploy neural networks
+accelerated computing courses,
+  - you’ll learn how to assess, parallelize, optimize, and deploy GPU-accelerated computing applications
 
-# Another way to create identity arrays provides the function eye. It returns a 2-D array with ones on the diagonal and zeros elsewhere.
-# eye(N, M=None, k=0, dtype=float)
-np.eye(5, 8, k=1, dtype=int)
-
-# Array concatination
-x = np.array([11,22])
-y = np.array([18,7,6])
-z = np.array([1,3,5])
-c = np.concatenate((x,y,z))
-```
->Attention: Whereas slicings on lists and tuples create new objects, a slicing operation on an array creates a view on the original array. So we get an another possibility to access the array, or better a part of the array. From this follows that if we modify a view, the original array will be modified as well.
-
-**Arrays v/s Lists**
-* http://pythoncentral.io/the-difference-between-a-list-and-an-array/
-* https://stackoverflow.com/questions/1514553/how-to-declare-an-array-in-python
-```
-from array import array
-```
-
-**SciPy - Scientific Python**
-> SciPy extends the capabilities of NumPy with further useful functions for minimization, regression, Fourier-transformation and many others.
-
-* http://www.scipy-lectures.org/index.html
+INSTRUCTOR-LED WORKSHOPS
+ONLINE COURSES
+ONLINE MINI COURSES
 
 
-**Matplotlib**
-Python in combination with Numpy, Scipy and Matplotlib can be used as a replacement for MATLAB.
+* Explore the fundamentals of deep learning for Computer Vision.
+  - Explore the fundamentals of deep learning by training neural networks and using results to improve performance and capabilities.
+  - Learn how to start solving problems with deep learning.
+  - Learn how to train a deep neural network to recognize handwritten digits.
+  - Explore how deep learning works and how it will change the future of computing.
+  - Learn how to detect objects using computer vision and deep learning by identifying a purpose-built network and using end-to-end labeled data.
+  - Implement common deep learning workflows such as Image Classification and Object Detection.
+  - Experiment with data, training parameters, network structure, and other strategies to increase performance and capability.
+  - Deploy your networks to start solving real-world problems
+* Explore Fundamentals of Deep Learning for Multiple Data Types
+* Explore how convolutional and recurrent neural networks can be combined to generate effective descriptions of content within images and video clips. 
+* Learn to deploy deep learning to applications that recognize and detect images in real time.
+* Learn how to design, train, and deploy deep neural networks for autonomous vehicles.
+* Learn how to train a generative adversarial network (GAN) to generate images, explore techniques to make video style transfer, and train a denoiser for rendered images.
+* Learn how to combine computer vision and natural language processing to describe scenes using deep learning.
+* Learn how to make predictions from structured data.
+* Learn how to classify both image and image-like data using deep learning by converting radio frequency (RF) signals into images to detect a weak signal corrupted by noise.
 
-### Python2 or Python3
-* https://www.quora.com/Which-version-of-Python-is-more-often-used-in-machine-learning-Python-2-7-or-Python-3-0+
 
-My best advice is to install the Anaconda distribution of Python[1] with the newest Python version. If you need to use 2.7 for some strange reason, you can easily do that with Anaconda. It’s really simple to switch between different environments with different versions of Python if you use the Conda package manager.[2]
+1. Fundamentals of Deep Learning for Computer Vision
+  - Implement common deep learning workflows such as Image Classification and Object Detection.
+  - Experiment with data, training parameters, network structure, and other strategies to increase performance and capability.
+  - Deploy your networks to start solving real-world problems
+  - On completion of this course, you will be able to start solving your own problems with deep learning
+  * Learning Objectives: What You'll Learn
+    - Identify the ingredients required to start a Deep Learning project.
+    - Train a deep neural network to correctly classify images it has never seen before.
+    - Deploy deep neural networks into applications.
+    - Identify techniques for improving the performance of deep learning applications.
+    - Assess the types of problems that are candidates for deep learning.
+    - Modify neural networks to change their behavior.
+2. Learn how to train a network using TensorFlow and the MSCOCO dataset to generate captions from images and video by:
+  - Implementing deep learning workflows like image segmentation and text generation
+  - Comparing and contrasting data types, workflows, and frameworks
+  - Combining computer vision and natural language processing
+  * Upon completion, you’ll be able to solve deep learning problems that require multiple types of data inputs
+3. Deep Learning for Digital Content Creation Using GANs and Autoencoders
+Learn techniques for designing, training, and deploying neural networks for digital content creation.
+  - Train a Generative Adversarial Network (GAN) to generate images
+  - Explore the architectural innovations and training techniques used to make arbitrary video style transfer
+  - Train your own denoiser for rendered images
+  - Upon completion of this course, you’ll be able to start creating digital assets using deep learning approaches
+4. Deep Learning for Finance Trading Strategy
+Linear techniques like principal component analysis (PCA) are the workhorses of creating ‘eigenportfolios’ for use in statistical arbitrage strategies. Other techniques using time series financial data are also prevalent. But now, trading strategies can be advanced with the power of deep neural networks.
+  - Prepare time series data and test network performance using training and test datasets
+  - Structure and train a LSTM network to accept vector inputs and make predictions
+  - Use the Autoencoder as anomaly detector to create an arbitrage strategy
+  - Upon completion, you’ll be able to use time series financial data to make predictions and exploit arbitrage using neural networks.
 
-(New update on 5/2017) Go for Python 3.0+ as now most of the machine learning and relative computing packages are supported in Python 3.0+ (sklearn, xgboost, pandas, numpy, etc.).
 
-### Python2 vs Python3
-* http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
-* https://www.activestate.com/blog/2017/01/python-3-vs-python-2-its-different-time
 
-### SfM
-* http://nghiaho.com/?p=2379
+* AUTONOMOUS VEHICLES
+* GAME DEVELOPMENT AND DIGITAL CONTENT
+  - Deep Learning for Digital Content Creation Using GANs and Autoencoders Explore the latest techniques for designing, training, and deploying neural networks for digital content creation.
 
-## Misc
-* http://www.ee.co.za/article/anatomy-mobile-mapping-system.html
-* http://www.pointcloudviz.com/
+
+## Labs
+https://nvidia.qwiklab.com/focuses/40?parent=catalog
+
+* Free datasets are available from places like Kaggle.com and UCI. 
+  - https://www.kaggle.com/datasets
+  - https://archive.ics.uci.edu/ml/datasets.html
+* Crowdsourced datasets are built through creative approaches - e.g. Facebook asking users to "tag" friends in their photos to create labeled facial recognition datasets
+* More complex datasets are generated manually by experts - e.g. asking radiologists to label specific parts of the heart.
+
+**Training vs. programming**
+- The fundamental difference between artificial intelligence (AI) and traditional programing is that AI learns while traditional algorithms are programmed. 
+- Artificial intelligence takes a different approach. Instead of providing instructions, we provide examples.
+- We could show our robot thousands of labeled images of bread and thousands of labeled images of other objects and ask our robot to learn the difference. Our robot could then build its own program to identify new groups of pixels (images) as bread.
+
+The "deep" in deep learning refers to many layers of artificial neurons, each of which contribute to the network's performance.
+Processing huge datasets through deep networks is made possible by parallel processing, a task tailor made for the GPU.
+
+
+**how do we expose artificial neural networks to data?**
+**how to load data into a deep neural network to create a trained model that is capable of solving problems with what it learned, not what a programmer told it to do.**
+
+
+Since a computer "sees" images as collections of pixel values, it can't do anything with visual data unless it learns what those pixels represent.
+
+
+What if we could easily convert handwritten digits to the digital numbers they represent?
+
+We could help the post office sort piles of mail by post code. This is the problem that motivated Yann LeCun. He and his team put together the dataset and neural network that we'll use today and painstakingly pioneered much of what we know now about deep learning.
+We could help teachers by automatically grading math homework. This the problem that motivated the team at answer.ky, who used Yann's work to easily solve a real world problem using a workflow like what we'll work through now.
+We could solve countless other challenges. What will you build?
+
+
+http://yann.lecun.com/
+http://answer.ky/
+
+We're going to train a deep neural network to recognize handwritten digits 0-9. This challenge is called "image classification," where our network will be able to decide which image belongs to which class, or group.
+
+
+It's important to note that this workflow is common to most image classification tasks, and is a great entry point to learning how to solve problems with Deep Learning.
+
+
+Inside the folder train_small there were 10 subfolders, one for each class (0, 1, 2, 3, ..., 9). All of the handwritten training images of '0's are in the '0' folder, '1's are in the '1' folder, etc.
+- This data is labeled. Each image in the dataset is paired with a label that informs the computer what number the image represents, 0-9. We're basically providing a question with its answer, or, as our network will see it, a desired output with each input. These are the "examples" that our network will learn from.
+- Each image is simply a digit on a plain background. Image classification is the task of identifying the predominant object in an image. For a first attempt, we're using images that only contain one object. We'll build skills to deal with messier data in subsequent labs.
+- http://yann.lecun.com/exdb/mnist/
+- This data comes from the MNIST dataset which was created by Yann LeCun. It's largely considered the "Hello World," or introduction, to deep learning.
+
+Also like the brain, these "networks" only become capable of solving problems with experience, in this case, interacting with data. 
+
+Throughout this lab, we'll refer to "networks" as untrained artificial neural networks and "models" as what networks become once they are trained (through exposure to data).
+
+For image classification (and some other tasks), DIGITS comes pre-loaded with award-winning networks.
+
+However, to start, weighing the merits of different networks would be like arguing about the performance of different cars before driving for the first time. 
+
+Building a network from scratch would be like building your own car. Let's drive first. We'll get there.
+
+Creating a new model in DIGITS is a lot like creating a new dataset.
+
+
+- Classification
+- Segmentation
+- Object Detection
+- Processing
+- Other
+
+**epoch**
+We need to tell the network how long we want it to train. An epoch is one trip through the entire training dataset. Set the number of Training Epochs to 5 to give our network enough time to learn something, but not take all day. This is a great setting to experiment with.
+
+We need to define which network will learn from our data. Since we stuck with default settings in creating our dataset, our database is full of 256x256 color images. Select the network AlexNet, if only because it expects 256x256 color images.
+
+* LeNet  Original paper [1998] 28x28 (gray)
+  - http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf
+* AlexNet  Original paper [2012] 256x256 
+  - http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional
+* GoogLeNet  Original paper [2014] 256x256
+  - http://arxiv.org/abs/1409.4842
+
+We'll dig into this graph as a tool for improvement, but the bottom line is that after 5 minutes of training, we have built a model that can map images of handwritten digits to the number they represent with an accuracy of about 87%!
+
+
+Inference
+Now that our neural network has learned something, inference is the process of making decisions based on what was learned. The power of our trained model is that it can now classify unlabeled images.
+
+test our trained model. 
+- you can test a single image or a list of images.
+
+It worked! (Try again if it didn't). You took an untrained neural network, exposed it to thousands of labeled images, and it now has the ability to accurately predict the class of unlabeled images. Congratulations!
+
+Note that that same workflow would work with almost any image classification task. You could train AlexNet to classify images of dogs from images of cats, images of you from images of me, etc. If you have extra time at the end of this lab, theres another dataset with 101 different classes of images where you can experiment.
+
+
+* https://jorditorres.org/research-teaching/tensorflow/first-contact-with-tensorflow-book/first-contact-with-tensorflow/
+* http://deeplearning.net/tutorial/
+* http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf

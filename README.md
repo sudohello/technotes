@@ -26,18 +26,13 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 * [SLAM](slam.md)
 * [Image based Navigation](image-based-navigation.md)
 
-### **Deep Learning**
-* [AI Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
-* [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
-* [Deep Learning](deep-learning.md)
-* [Deep Learning Applications](deep-learning-applications.md)
-* [Tensorflow](tensorflow.md)
-* [mechanics-of-self-driving-car](mechanics-of-self-driving-car.md)
-
 ### **Machine Learning**
 * [Machine Learning](machine-learning.md)
 * [ML for Mobile and Web Applications](ml-for-mobile-and-web-applications.md)
 * [CBIR](cbir.ml.md)
+
+### **Deep Learning**
+* [Deep Learning in Computer Vision and its Applications](deep-learning-in-computer-vision-and-its-applications.md)
 
 ### **Mathematics, Statistics and Statistical Learning**
 * [Statistics](stats.md)
