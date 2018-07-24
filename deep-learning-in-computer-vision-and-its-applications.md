@@ -29,41 +29,48 @@ Tags: Computer Vision ML, DL Applications
 
 ## Problem Statements
 
-1. **Signage Layer Extraction for Map**
-  * a. Trees, Signage, Road Signs,Traffic Signals, Poles
-  * b. In combination with photogrammetry (point clouds  to get higher accurate geolocation
+### 1. **Signage Layer Extraction for Map**
 
-2. **Number Plate Recognition. Potential use cases:**
-  * a. In traffic camera feeds for traffic rules violation detection
-  * b. Toll both automation
+* a. Trees, Signage, Road Signs,Traffic Signals, Poles
+* b. In combination with photogrammetry (point clouds  to get higher accurate geolocation
 
-3. **Vehicle Detection & Recognition. Potential use cases:**
-	* a. In traffic camera feeds
-	 ­ - Vehicle counts
-	 ­ - Traffic density estimation
-	* b. Parking lots vacancy detection
-	* c. Accident / collision detection
+### 2. Number Plate Recognition
 
-4. **Pedestrian Detection & Face Recognition. Potential use cases:**
-  * a. Surveillance & security like ATM, Malls, Real Estate
+**Potential use cases:**
+* a. In traffic camera feeds for traffic rules violation detection
+* b. Toll both automation
 
-5. **Road Profile Extraction for Map. Potential use cases:**
-  * a. Edge detection ­ road, footpath,
-  road markings
-  * b. In combination with photogrammetry
-  (point clouds) to get higher accurate
-  geolocation
+###	3. Vehicle Detection & Recognition
 
-6. **Cross­road / Junction Identification**
+**Potential use cases:**
+* a. In traffic camera feeds
+	­ - Vehicle counts
+	­ - Traffic density estimation
+* b. Parking lots vacancy detection
+* c. Accident / collision detection
 
-7. **Text Extraction for Signage Layer**
+### 4. Pedestrian Detection & Face Recognition
 
-8. **Complete Urban scene Classification & Segmentation**
+**Potential use cases:**
+* a. Surveillance & security like ATM, Malls, Real Estate
 
-9. **Content retrieval based on above**
+### 5. Road Profile Extraction for Map
 
-**Other problem statements**
-- Face detection 
+**Potential use cases:**
+* a. Edge detection ­ road, footpath, road markings
+* b. In combination with photogrammetry (point clouds) to get higher accurate geolocation
+
+### 6. **Cross Road / Junction Identification**
+
+### 7. **Text Extraction for Signage Layer**
+
+### 8. **Complete Urban scene Classification & Segmentation**
+
+### 9. **Content retrieval based on above**
+
+### 10. **Other problem statements**
+
+- Face Detection
 - Removing motion blur
 - Assisted Driving
   * Pedistrian and Car Detection
@@ -80,6 +87,7 @@ Tags: Computer Vision ML, DL Applications
 - Visual dictionary
 - computer vision, natural language, and recommendation systems
 - [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
+
 
 ## Additional Study Materials
 
