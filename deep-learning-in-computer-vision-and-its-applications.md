@@ -32,26 +32,34 @@ Tags: Computer Vision ML, DL Applications
 1. **Signage Layer Extraction for Map**
   * a. Trees, Signage, Road Signs,Traffic Signals, Poles
   * b. In combination with photogrammetry (point clouds  to get higher accurate geolocation
+
 2. **Number Plate Recognition. Potential use cases:**
   * a. In traffic camera feeds for traffic rules violation detection
   * b. Toll both automation
+
 3. **Vehicle Detection & Recognition. Potential use cases:**
 	* a. In traffic camera feeds
 	 ­ - Vehicle counts
 	 ­ - Traffic density estimation
 	* b. Parking lots vacancy detection
 	* c. Accident / collision detection
+
 4. **Pedestrian Detection & Face Recognition. Potential use cases:**
   * a. Surveillance & security like ATM, Malls, Real Estate
+
 5. **Road Profile Extraction for Map. Potential use cases:**
   * a. Edge detection ­ road, footpath,
   road markings
   * b. In combination with photogrammetry
   (point clouds) to get higher accurate
   geolocation
+
 6. **Cross­road / Junction Identification**
+
 7. **Text Extraction for Signage Layer**
+
 8. **Complete Urban scene Classification & Segmentation**
+
 9. **Content retrieval based on above**
 
 **Other problem statements**
