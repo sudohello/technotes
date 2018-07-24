@@ -18,7 +18,6 @@ Tags: Computer Vision ML, DL Applications
 * [AI Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)
 * [Select / Building Deep Learning Machine for Computer Vision](hardwares-configs.md)
 * [Deep Learning Frameworks](deep-learning-frameworks.md)
-* [Deep Learning Applications](deep-learning-applications.md)
 * Installation and System Setup
   * [System Setup - start here](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md#start-here---the-big-bang-theory)
   * [Installing Deep Learning Frameworks on Ubuntu with CUDA Support](https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/)
@@ -87,9 +86,9 @@ Tags: Computer Vision ML, DL Applications
 - Visual dictionary
 - computer vision, natural language, and recommendation systems
 - [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
+- [Deep Learning Applications](deep-learning-applications.md)
 
-
-## Additional Study Materials
+## Concepts
 
 ### **Image processing, Computer Vision**
 * [Computer Vision](computer-vision.md)
@@ -115,7 +114,7 @@ Tags: Computer Vision ML, DL Applications
 * [Data Analytics](data-analytics.md)
 * [Data Visualization in Web](data-visualization-in-web.md)
 
-## Case Studies specific to Problem Statements
+## Case Studies Specific to Problem Statements
 
 ### Traffic Light
 * https://medium.freecodecamp.org/recognizing-traffic-lights-with-deep-learning-23dae23287cc
