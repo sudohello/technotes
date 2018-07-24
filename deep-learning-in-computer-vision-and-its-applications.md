@@ -21,43 +21,38 @@ Tags: Computer Vision ML, DL Applications
 * [Deep Learning Applications](deep-learning-applications.md)
 * Installation and System Setup
   * [System Setup - start here](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md#start-here---the-big-bang-theory)
-  * [Installing Deep Learning Frameworks on Ubuntu with CUDA Support][https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/]
+  * [Installing Deep Learning Frameworks on Ubuntu with CUDA Support](https://www.learnopencv.com/installing-deep-learning-frameworks-on-ubuntu-with-cuda-support/)
 * [Datasets and Data Creation for Training Machines](deep-learning-datasets-and-creation.md)
 * [Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS](https://github.com/mangalbhaskar/technotes#getting-started-for-image-processing-computer-vision-machine-learning-and-deep-learning-for-gis)
-* [Deep Learning](deep-learning.md)
+* [Deep Learning Concepts](deep-learning.md)
 * [Mechanics of Self Driving Car](mechanics-of-self-driving-car.md)
 
 ## Problem Statements
-* [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
 
-1. Signage Layer Extraction for Map
+1. **Signage Layer Extraction for Map**
   * a. Trees, Signage, Road Signs,Traffic Signals, Poles
   * b. In combination with photogrammetry (point clouds  to get higher accurate geolocation
-2. Number Plate Recognition
-  **Potential use cases:**
+2. **Number Plate Recognition. Potential use cases:**
   * a. In traffic camera feeds for traffic rules violation detection
   * b. Toll both automation
-3. Vehicle Detection & Recognition
-  **Potential use cases:**
-  * a. In traffic camera feeds
-     ­ - Vehicle counts
-     ­ - Traffic density estimation
-  * b. Parking lots vacancy detection
-  * c. Accident / collision detection
-4. Pedestrian Detection & Face Recognition
-  **Potential use cases:**
+3. **Vehicle Detection & Recognition. Potential use cases:**
+	* a. In traffic camera feeds
+	 ­ - Vehicle counts
+	 ­ - Traffic density estimation
+	* b. Parking lots vacancy detection
+	* c. Accident / collision detection
+4. **Pedestrian Detection & Face Recognition. Potential use cases:**
   * a. Surveillance & security like ATM, Malls, Real Estate
-5. Road Profile Extraction for Map
-  **Potential use cases:**
+5. **Road Profile Extraction for Map. Potential use cases:**
   * a. Edge detection ­ road, footpath,
   road markings
   * b. In combination with photogrammetry
   (point clouds) to get higher accurate
   geolocation
-6. Cross­road / Junction Identification
-7. Text Extraction for Signage Layer
-8. Complete Urban scene Classification & Segmentation
-9. Content retrieval based on above 
+6. **Cross­road / Junction Identification**
+7. **Text Extraction for Signage Layer**
+8. **Complete Urban scene Classification & Segmentation**
+9. **Content retrieval based on above**
 
 **Other problem statements**
 - Face detection 
@@ -76,6 +71,7 @@ Tags: Computer Vision ML, DL Applications
 - Organizing photo collections
 - Visual dictionary
 - computer vision, natural language, and recommendation systems
+- [AI ML DL Problem Statements](ai-ml-dl-problem-statements.md)
 
 ## Additional Study Materials
 
@@ -120,6 +116,7 @@ Tags: Computer Vision ML, DL Applications
 * https://becominghuman.ai/build-a-neural-network-based-traffic-sign-classification-system-with-98-5-ed42a9273a20
 * https://ip.cadence.com/uploads/901/cnn_wp-pdf
 * https://mc.ai/resnet-for-traffic-sign-classification-with-pytorch/
+
 **Traffic Sign Recognition with TensorFlow**
 * https://medium.com/@waleedka/traffic-sign-recognition-with-tensorflow-629dffc391a6
 * https://github.com/waleedka/traffic-signs-tensorflow
@@ -133,13 +130,13 @@ Tags: Computer Vision ML, DL Applications
 * computer vision technique is carried out frequently The road sign can be categorized to three properties by color (blue, red, green and brown), shape (circular, square, triangular and octagonal) and the inner part of the sign [4], which plays a major role in the detection stage in traffic sign detection and recognisation.
 * The speed and efficiency of the detection and recognisation of the traffic sign plays the important role in the system.
 
-**techniques in detection and recognisation of Traffic Signs**
+**Techniques in detection and recognisation of Traffic Signs**
 - overview of the system
 - Detection stage used to extract the traffic sign based on the
   - hape and color features,
 - Recognisaton stage to classify the traffic sign
 
-**concludes**
+**Concludes**
 * It is normally based on color or shape segmentation algorithms
   - The color segmentation is usually a binary mask to separate the interested target objects from the background.
   - The region of interest is determined by the connected components
