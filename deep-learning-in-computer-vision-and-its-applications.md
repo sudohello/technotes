@@ -160,6 +160,27 @@ Tags: Computer Vision ML, DL Applications
 **Goal**
 1. Classify traffic signs using a simple convolutional neural network.
 
+**Data Exploration**
+- Most image classification networks expect images of a fixed size
+- But since the images have different aspect ratios, then some of them will be stretched vertically or horizontally. Is that a problem? I think it’s not in this case, because the differences in aspect ratios are not that large. My own criteria is that if a person can recognize the images when they’re stretched then the model should be able to do so as well.
+- Some stats about the data
+  * How many images and labels available?
+  * How many unique labels are there?
+  * What are the sizes of the images?
+  * What is the aspect ratio for each image - min, max, median, standard deviation? Is this aspect ratio variation is too huge to cause distortion such that images are not even recognizable by human themself?
+  * How the aspect ratio, number of images varies within each label group? Illustrate with the graphs and plot.
+
+**Developing Intution**
+1. Get the stats on width, height and Aspect ratio of the dataset
+  - In early development, use a smaller size because it leads to faster training, which allows me to iterate faster
+  - Generally, 16x16 and 20x20, are too small.
+  - 28x28 and 32x32 are better choice and which is easy to recognize
+2. Verify the range of the data and catch bugs early
+  - Printing the `min()` and `max()` values. This tells that the image colors are the standard range of `0–255`
+
+**Start Simple**
+- Start with the simplest possible model: A one layer network that consists of one neuron per label.
+
 **Tips**
 - do Exploratory Data analysis. Knowing data well from the start saves a lot of time later.
 - Pre-process and Handling Images of Different Sizes
@@ -238,6 +259,10 @@ images_flat = tf.contrib.layers.flatten(images_ph)
 - Traffic Surveillance System
 - ADAS
 
+#### Corner cases - Potential pitfalls
+1. Road signs with text written
+- for example, a Road sign for 'No Entry for HTV', but an exception of School Buses. This type exists at 13th Main Road, Indranagar next to MMI office in bangalore.
+
 #### Paper Reviews
 1. TRAFFIC-SIGN RECOGNITION FOR AN INTELLIGENT VEHICLE/DRIVER ASSISTANT SYSTEM USING HOG 
 - http://aircconline.com/cseij/V6N1/6116cseij02.pdf
@@ -291,6 +316,23 @@ sudo pip install face_recognition
 sudo pip install imutils
 ```
 
+#### OpenCV Face Detection
+- https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/
+- OpenCV ships out-of-the-box with pre-trained Haar cascades that can be used for face detection
+- “hidden” deep learning-based face detector that has been part of OpenCV since OpenCV 3.3
+
+**Objectives**
+- How you can perform face detection in images using OpenCV and deep learning
+- How you can perform face detection in video using OpenCV and deep learning
+
+**DNN Face Detector**
+- The Caffe-based face detector can be found in the face_detector sub-directory of the dnn samples:
+- https://github.com/opencv/opencv/tree/master/samples/dnn/face_detector
+- When using OpenCV’s deep neural network module with Caffe models, you’ll need two sets of files:
+  * The .prototxt file(s) which define the model architecture (i.e., the layers themselves)
+  * The .caffemodel file which contains the weights for the actual layers
+- OpenCV’s deep learning face detector is based on the Single Shot Detector (SSD) framework with a ResNet base network (unlike other OpenCV SSDs that you may have seen which typically use MobileNet as the base network).
+
 ### Semantic Segmentation
 - https://github.com/tensorflow/models/tree/master/research/deeplab
 - https://ai.googleblog.com/2018/03/semantic-image-segmentation-with.html
@@ -304,3 +346,43 @@ sudo pip install imutils
 **Training on Mapillary dataset**
 - https://oslandia.com/en/2018/05/07/deeposlandia-0-4-has-been-released/
 - https://github.com/Oslandia/deeposlandia
+
+
+
+- https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/
+- https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/
+
+### Optical Mark Recognition (OMR)
+* https://www.pyimagesearch.com/2016/10/03/bubble-sheet-multiple-choice-scanner-and-test-grader-using-omr-python-and-opencv/
+
+**Possible use cases**
+- Automatic Data digitigation of Field Survey Data, for example information collected of a point of interest and recorded in an OMR sheet
+- Simple Hand written digit (single) recognition from the survey data
+
+
+## Generative Networks
+- https://github.com/hardmaru/cppn-tensorflow
+
+## CPPNs - Compositional pattern-producing networks
+- https://en.wikipedia.org/wiki/Compositional_pattern-producing_network
+
+- Compositional pattern-producing networks (CPPNs) are a variation of artificial neural networks (ANNs) that have an architecture whose evolution is guided by genetic algorithms.
+- The architect of a CPPN-based genetic art system can bias the types of patterns it generates by deciding the set of canonical functions to include.
+- Since they are compositions of functions, CPPNs in effect encode images at infinite resolution and can be sampled for a particular display at whatever resolution is optimal.
+
+**Usage of different canonical functions patterns:**
+- periodic functions such as sine produce segmented patterns with repetitions,
+- symmetric functions such as Gaussian produce symmetric patterns
+- Linear functions can be employed to produce linear or fractal-like patterns.
+
+
+## Neuroevolution
+Neuroevolution, or neuro-evolution, is a form of artificial intelligence that uses evolutionary algorithms to generate artificial neural networks (ANN), parameters, topology and rules.
+- It is most commonly applied in artificial life, general game playing[2] and evolutionary robotics.
+
+* TWEANNs -  Topology and Weight Evolving Artificial Neural Networks
+
+**References**
+- https://en.wikipedia.org/wiki/Neuroevolution
+- https://en.wikipedia.org/wiki/Memetic_algorithm
+

@@ -1016,3 +1016,6 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------
+
+## `sed` command
+* https://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files

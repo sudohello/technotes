@@ -3,8 +3,15 @@ Title: Open CV with Python
 Decription: Open CV with Python
 Author: Bhaskar Mangal
 Date: 
+Last Updated: 25th-Jul-2018
 Tags: Open CV with Python
 */
+
+
+## Intro
+* https://github.com/arrybn/opencv_intro
+* https://docs.google.com/presentation/d/1BAnB-vFKhyoCQB8D7WyudHWu96ceJl08p18EkRcnWvY/edit#slide=id.g35928e288c_0_334
+
 
 https://stackoverflow.com/questions/13685771/opencv-python-calcopticalflowfarneback
 
@@ -21,10 +28,9 @@ https://www.quora.com/What-is-the-reason-Lena-S%C3%B6derbergs-photo-is-used-wide
   - The third index (if applicable) represents a color channel.
 
 
-# http://gdcm.sourceforge.net/wiki/index.php/Main_Page
+* http://gdcm.sourceforge.net/wiki/index.php/Main_Page
 
-GDCM : Grassroots DICOM library
-
+* **GDCM : Grassroots DICOM library**
 Whenever medical data, especially medical image data, is generated in a clinical environment, that data must be stored such that it can be retrieved by the same hospital either immediately, or after several years to determine the effectiveness of a course of treatment and to allow comparisons of multiple images for the same patient.
 
 Digital Imaging and Communications in Medicine (DICOM) is a standard that governs this capability by specifying handling, storing, printing, and transmitting information in medical imaging.

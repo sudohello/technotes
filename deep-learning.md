@@ -177,11 +177,6 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 - http://www.fast.ai/2018/07/12/auto-ml-1/
 - http://www.fast.ai/2018/04/30/dawnbench-fastai/
 
-## Industry Experts in Top positions
-* Google’s
-  - CEO: Sundar Pichai 
-  - Head of AI: Jeff Dean
-
 ## Deep Learning, CCN Terms and Concepts
 * https://github.com/ml4a/ml4a.github.io/blob/master/_chapters/neural_networks.md
 
@@ -856,3 +851,7 @@ Note that that same workflow would work with almost any image classification tas
 * https://jorditorres.org/research-teaching/tensorflow/first-contact-with-tensorflow-book/first-contact-with-tensorflow/
 * http://deeplearning.net/tutorial/
 * http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf
+
+## PyImageSearch
+* https://www.pyimagesearch.com/static/cv_dl_resource_guide.pdf
+* https://www.pyimagesearch.com/2014/10/13/deep-learning-amazon-ec2-gpu-python-nolearn/

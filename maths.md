@@ -363,3 +363,15 @@ http://canvas.projekti.info/ebooks/Math%20-%20Better%20Explained.pdf
 ## Sensors - calculate things like orientation, position, and velocity.
 * https://www.sparkfun.com/pages/accel_gyro_guide
 * http://www.unmannedsystemstechnology.com/company/inertial-labs/
+
+## Better Explained Math
+Takeaway: What an Aha! moment feels like
+If I did my job, one of the approaches above (line-up, making a square, taking the average) clicked. Aha! That's why the formula works!
+
+The goal of learning is to experience the concept firsthand. Then, the formula becomes a shorthand description of what you know. It's like reading sheet music: it's a description of a song, but not the same as experiencing it yourself.
+
+Our goal is to find analogies, diagrams, examples, and plain-English descriptions that help bring concepts to life.
+
+Happy math,
+
+-Kalid

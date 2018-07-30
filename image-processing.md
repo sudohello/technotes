@@ -1087,3 +1087,6 @@ https://esrimedia.maps.arcgis.com/apps/MapTour/index.html?appid=badd7a119a414386
 https://storymaps.arcgis.com/en/
 
 https://www.geospatialworld.net/blogs/bim-vs-gis-or-bim-and-gis/
+
+## Tutorials
+http://corochann.com/basic-image-processing-tutorial-1220.html

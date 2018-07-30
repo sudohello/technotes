@@ -1,10 +1,17 @@
 /*
 Title: Citiyscape Database Overview
-Placing: 8
+Decription: Citiyscape Database Overview
+Author: Bhaskar Mangal
+Date:
+Last updated: 30th-Jul-2018
+Tags: Citiyscape Database Overview
 */
 
+**Table of Contents**
 
-## Citiyscape Database, Scripts, Calibration Overview
+[TOC]
+
+## Citiyscape Databset, Scripts, Calibration Overview
 This document mainly covers the details and content from these two documents regarding cityscape dataset, "Main PDF document" and "Supplement Reading for cityscape".
 
 ### References
@@ -17,25 +24,30 @@ This document mainly covers the details and content from these two documents reg
 * [coarse annotations](https://www.cityscapes-dataset.com/examples/#coarse-annotations)
 * [Infactory calibration of multiocular camera systems](https://pdfs.semanticscholar.org/2938/6b5153b653a5246b9bdeaa4e05c758a92174.pdf)
 
-#### Tools
+
+### Tools
 * [LabelMe: A database and web-based tool for image annotation](https://www.cs.ubc.ca/~murphyk/Papers/labelmeIJCV08.pdf)
 * [Label Me: Web Annotation Tool](http://labelme.csail.mit.edu/Release3.0/)
 
-#### Other datasets & Image Parsing
+### Other datasets & Image Parsing
 * [MIT scene parsing challenge 2016](http://sceneparsing.csail.mit.edu/index_challenge.html)
 
-#### Other approaches & references
+### Other approaches & references
 * [Semantic Instance Annotation of Street Scenes by 3D to 2D Label Transfer](http://www.cvlibs.net/publications/Xie2016CVPR.pdf)
 * [Annotations of 3D Point Cloud](http://gfx.cs.princeton.edu/pubs/_2015_EIF/index.php)
  
 ### Summary
-Cityscape dataset is large-scale dataset tailored for autonomous driving in an urban environment. Autonomous cars implements different types of deep neural networks (DNNs) for decision making. DNNs require training; they are data hungry algorithms and thus require large and varied datasets for training to be more effective and accurate. Cityscape in the public domain plugs this gap along with others, but boosts to excel in terms of dataset size, annotation richness, scene variability, and complexity compared with other publicly available datasets like CamVid, Leuven, DUS, KITTI.
+* Cityscape dataset is large-scale dataset tailored for autonomous driving in an urban environment. Autonomous cars implements different types of deep neural networks (DNNs) for decision making. DNNs require training; they are data hungry algorithms and thus require large and varied datasets for training to be more effective and accurate. Cityscape in the public domain plugs this gap along with others, but boosts to excel in terms of dataset size, annotation richness, scene variability, and complexity compared with other publicly available datasets like CamVid, Leuven, DUS, KITTI.
+
+
 ### Conclusion
 People behind Cityscape dataset have documented details of their approach and process in concise manner. Looking into it has provided us with an insight on the annotation process & tools, effort-cost estimation, benchmark process and other details like annotation groups, classes, labeling policy, annotation tools, and data acquisition setup.
 1. If we plan to publish part of our work to add to Cityscape or as a parallel project, it's advisable to extend their groups-classes definitions as they are carefully crafted to be compatible with other datasets.
 2. To start the annotation process we need to focus on 'Road survey items' by extending their list with ours.
 3. Further annotation tools used by them needs to be explored and to find commercial and open-source alternatives for the same.
 4. Research on how the PCD annotations are carried, cost-effort estimation, tools available, storage and delivery options, projection of 3D annotations back to 2D etc.
+
+
 ### Notes
 - Annotation classes, labeling policy may not be good enough for Indian Urban scene for instance challenges in particular for semantic modeling and labeling Indian road condition depends on consistency and availability of road markings, service roads, fragile boundaries between roads and curbs, sidewalks.
 - In my view point we can look into cityscape dataset for inspiration, but evolve our own set of rules, conventions, annotation classifications, labeling policies.
@@ -47,18 +59,24 @@ People behind Cityscape dataset have documented details of their approach and pr
 - pixelwise annotation of images at very large scale is labor-intensive and only little labeled data is available.
 - It takes ~1.5hrs on average for a single image for pixelwise annotation & quality control
 - Algorithms need to take a larger range of scales and object sizes into account to score well in our benchmark.
+
+
 ### Discussion minutes
 Output of annotations needs to be delivered separately and specifically for 4 different targets, and are as given below:-
 1. For Autonomous Car
 2. For ADAS
 3. For Web (WebGL)
 4. For DNN ( Deep Neural Networks)
+
+
 ### Keywords
-DNN - Deep Neural Netowrks
-CNN - Convolutional Neural Network
-CRFs - Conditional Random Fields
-RNNs - Recurrent Neural Networks
-MCG - Multiscale Combinatorial Grouping
+* DNN - Deep Neural Netowrks
+* CNN - Convolutional Neural Network
+* CRFs - Conditional Random Fields
+* RNNs - Recurrent Neural Networks
+* MCG - Multiscale Combinatorial Grouping
+
+
 ### What is Cityscape Dataset?
 - It's a dataset for training Deep Neural Networks (DNN)
 - It is a large-scale dataset to train and test approaches for pixel-level and instance-level semantic labeling, like object detection and deep learning approaches.
@@ -67,12 +85,15 @@ MCG - Multiscale Combinatorial Grouping
 - Provides performance evaluation of several state-of-the-art approaches based on their benchmark.
 - Dataset size, annotation richness, scene variability, and complexity
 
+
 ### What are the other large-scale public datasets for DNN?
 Following datasets allow deep neural networks to develop their full potential:-
 - ImageNet
 - PASCAL VOC
 - PASCAL-Context
 - Microsoft COCO
+
+
 ### What are the similar datasets like cityscape?
 To develop understanding complex traffic scenes and driving scenarios, research can be linked to following datasets:-
 - KITTI Vision Benchmark Suite
@@ -86,6 +107,8 @@ To develop understanding complex traffic scenes and driving scenarios, research 
 - More general settings
 - do not fully capture the variability and complexity of real-world inner-city traffic scenes.
 - Whereas, cityscape dataset is tailored for autonomous driving in an urban environment.
+
+
 ### What are the characteristics of cityscape dataset?
 - Provides both pixel-level semantic labeling and instance-level semantic labeling in both annotations and evaluation metrics
 - Provides depth information through stereo vision
@@ -93,8 +116,11 @@ To develop understanding complex traffic scenes and driving scenarios, research 
 - Data recording and annotation methodology was designed to capture the high variability of outdoor street scenes
 - Dataset over span of several months, covering spring, summer, and fall in 50 cities
 - Mainly in Germany but also in neighboring countries
+
+
 ### Do we need to develop Internal Tools?
 - We can look into cityscape annotation scripts for reference
+
 
 ### What needs to be annotated from the PCD and reference Images?
 * We need to measure, analyze & geo-tag various assets of interest
@@ -133,6 +159,7 @@ Following are the existing road survey items identified:-
 - Speed Breaker
 - Person / Animal / Birds
 
+
 ### Cityscape - Data Acquisition & Data Specifications
 - Images were recorded with an automotive-grade 22 cm baseline stereo camera using 1/3 in CMOS 2 MP sensors (OnSemiAR0331) with rolling shutters at a frame-rate of 17 Hz.
 - The sensors were mounted behind the windshield and yield high dynamic-range (HDR) images with 16 bits linear color depth.
@@ -152,6 +179,7 @@ Following are the existing road survey items identified:-
 4. outside temperature
 5. GPS tracks
 
+
 ### Classes and annotations
 * [LabelMe: A database and web-based tool for image annotation](https://www.cs.ubc.ca/~murphyk/Papers/labelmeIJCV08.pdf)
 - 5000 fine pixel-level annotations consist of layered polygons using Label Me web annotation tool.
@@ -162,18 +190,23 @@ Following are the existing road survey items identified:-
 - 20 000 coarse pixel-level annotations, accuracy on object boundaries was traded off for annotation speed.
 - Coarse annotation aim is to correctly annotate as many pixels as possible within a given span of less than 7 min of annotation time per image. This was achieved by labeling coarse polygons under the sole constraint that each polygon must only include pixels belonging to a single object class.
 - 30 visual classes for annotation were defined, which are grouped into eight categories: flat, construction, nature, vehicle, sky, object, human, and void.
-Classes were selected:
+
+**Classes were selected:**
 * based on their frequency
 * Relevance from an application standpoint
 * Practical considerations regarding the annotation effort
 * To facilitate compatibility with existing datasets
 
+
 #### Quality Control and Quality Assessment
 - Refer main PDF document: cordts2016cityscapes.pdf
+
 
 #### Dataset splits
 - Annotated images are split into separate training, validation, and test sets
 - Refer main PDF document: cordts2016cityscapes.pdf
+
+
 #### Statistical analysis
 - Comparison of cityscape with others based on:-
   * Annotation volume and density
@@ -183,10 +216,19 @@ Classes were selected:
 - DUS (Heidelberg) consists of a video sequence of 5000 images from which 500 have been annotated
 - KITTI (Karlsruhe)
 - DUS and CamVid seem more aligned with Cityscapes
+
+
 ### How the annotations would be stored and delivered?
+
+
 ### Is grouping of different survey items required? If yes, define groups?
+
+
 ### What are the different attributes for each identified items? And, how are they will be stored?
+
+
 ### Design overview
+
 #### References
 * [dataset-overview](https://www.cityscapes-dataset.com/dataset-overview/)
 
@@ -221,13 +263,19 @@ Parking lots and driveways. Not for regular driving, but rather to park a vehicl
 All kind of rail tracks that are non-drivable by cars, e.g. subway and train rail tracks, while tram rail tracks are usually drivable by cars and therefore part of road.
 * Single instance annotations are available. However, if the boundary between such instances cannot be clearly seen, the whole crowd/group is labeled together and annotated as group, e.g. car group.
 + This label is not included in any evaluation and treated as void (or in the case of license plate as the vehicle mounted on).
+
+
 #### Labeling policy
 - Foreground and background considerations e.g tree in front of a house or transparent car windows
+
+
 ### FAQs
 - How to label the content of the scene semantically?
 * Scene recognition - aims to determine the overall scene category
 * Object-centric - detecting dynamic subset of scene constituents
 * Scene labeling - identify the individual constituent parts of a whole scene and their interrelations
+
+
 ## Cityscape Calibration
 As provided in the calibration pdf file of citiscape:-
 1. Coordinate Systems
