@@ -90,6 +90,11 @@ Tags: Datasets and Data Creation for Training Machines
 * [Synthia](http://synthia-dataset.com/download-2/)
   - http://synthia-dataset.net/ 
 
+### 3D Datasets
+- https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
+- https://niessner.github.io/Matterport/
+- https://arxiv.org/pdf/1709.06158.pdf
+
 ### Others
 - https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
 * Free datasets are available from places like Kaggle.com and UCI. 

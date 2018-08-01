@@ -137,6 +137,7 @@ Tags: Computer Vision ML, DL Applications
 * https://github.com/waleedka/traffic-signs-tensorflow
 * https://mc.ai/the-traffic-sign-classifier-project/
 * http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf
+* https://pypi.org/project/pytesseract/
 
 **Details**
 * Detect and recognize iconic symbol and text strings contained in road panels

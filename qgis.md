@@ -343,3 +343,15 @@ Ordnance Survey (OS) is a national mapping agency in the United Kingdom which co
 https://blog.google/products/earth/keeping-earth-up-to-date-and-looking/ 
 
 https://medium.com/google-earth/imagery-update-explore-your-favorite-places-in-google-earth-5da3b28e4807
+
+
+## Loading Photos in qGIS
+- https://gis.stackexchange.com/questions/23698/how-can-i-import-georeferenced-photos-jpg-kml-kmz-using-qgis-or-arcgis-for-d
+
+QGIS has a plugin called "Photo2Shape" that will convert the geotagged coordinates of the photo into a shapefile.
+
+You can then use the "eVis" plugin to set up hotlinks to the photos themselves, and launch a photo viewer by clicking on the attribute field.
+
+## qGIS vs Mapinfo
+* http://planet.qgis.org/planet/tag/mapinfo/
+- check it for other uses cases: Kerb lines, Kerb defect, photos etcc

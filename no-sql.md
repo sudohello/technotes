@@ -3,10 +3,11 @@ Title: NoSQL Database
 Decription: NoSQL Database
 Author: Bhaskar Mangal
 Date: 
+Last Updated: 
 Tags: NoSQL Database
 */
 
-# NoSQL (Not Only SQL) Database
+## NoSQL (Not Only SQL) Database
 - https://www.tutorialspoint.com/cassandra/cassandra_introduction.htm
 
 **What is NoSQL database?**
