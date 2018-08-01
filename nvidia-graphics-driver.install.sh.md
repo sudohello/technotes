@@ -319,8 +319,27 @@ FAILED: Build did NOT complete successfully (106 packages loaded)
 
 =======
 
-## Dell Latitude 5580 Laptop COnfiguration
-
+## Dell Latitude 5580 Laptop Setup
+```bash
+sudo apt-get update
+mkdir -p $HOME/Documents/content $HOME/softwares
+sudo apt install -y git
+git clone https://github.com/mangalbhaskar/linuxscripts.git $HOME/softwares/linuxscripts
+git clone https://github.com/mangalbhaskar/technotes.git $HOME/Documents/content/technotes
+#
+# set the git config
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+# install graphics driver
+sudo apt-get update
+sudo apt-get upgrade
+sudo sh -c 'echo "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/disable-nouveau.conf'
+sudo apt install nvidia-driver-390
+sudo reboot
+lsmod | grep -i nouveau
+prime-select query
+```
+* Find out Graphics Details
 ```bash
 sudo lshw | grep -A10 "VGA\|3D"
 ```
