@@ -1,5 +1,5 @@
 # Machine Leanring (ML) & CNN Experiments
-[<< Back](ml-app-in-adv-map-creation.html)
+[<< Back](ml-app-in-adv-map-creation.md)
 
 ## ML
 > python + openCV3 python bindings

@@ -163,7 +163,7 @@ I’ll describe it on a Tesla’s car example - other objects have a similar pro
 
 ## 7) Productionization of Machine Learning Models
 
-![Alt ml](images/ai-ml-dl/ml-production-model.webp)
+![Alt ml](images/ai-ml-dl/ml-production.webp)
 >Distinguishing on these two dimensions, we can classify the productionalization of machine learning models using a 2-by-2 matrix.
 >
 >**Source:** [Do-most-machine-learning-algorithms-run-in-batch-or-do-they-run-every-time-they-get-a-new-bit-of-data](https://www.quora.com/Do-most-machine-learning-algorithms-run-in-batch-or-do-they-run-every-time-they-get-a-new-bit-of-data/answer/H%C3%A5kon-Hapnes-Strand)
