@@ -316,3 +316,84 @@ ERROR: /home/game/softwares/tensorflow/tensorflow/tools/pip_package/BUILD:114:1:
 ERROR: Analysis of target '//tensorflow/tools/pip_package:build_pip_package' failed; build aborted: no such package '@boringssl//': java.io.IOException: thread interrupted
 INFO: Elapsed time: 80.787s
 FAILED: Build did NOT complete successfully (106 packages loaded)
+
+=======
+
+## Dell Latitude 5580 Laptop COnfiguration
+
+```bash
+sudo lshw | grep -A10 "VGA\|3D"
+```
+                description: 3D controller
+                product: NVIDIA Corporation
+                vendor: NVIDIA Corporation
+                physical id: 0
+                bus info: pci@0000:01:00.0
+                version: a2
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress bus_master cap_list
+                configuration: latency=0
+                resources: memory:ec000000-ecffffff memory:c0000000-cfffffff memory:d0000000-d1ffffff ioport:e000(size=128) memory:ed000000-ed07ffff
+--
+             description: VGA compatible controller
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 04
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pciexpress msi pm vga_controller bus_master cap_list rom
+             configuration: driver=i915 latency=0
+             resources: irq:138 memory:eb000000-ebffffff memory:80000000-8fffffff ioport:f000(size=64) memory:c0000-dffff
+
+```bash
+lspci -nnk | grep -i "VGA\|3D" -A3
+```
+00:02.0 VGA compatible controller [0300]: Intel Corporation Device [8086:591b] (rev 04)
+	Subsystem: Dell Device [1028:07d1]
+	Kernel driver in use: i915
+	Kernel modules: i915
+--
+01:00.0 3D controller [0302]: NVIDIA Corporation Device [10de:179c] (rev a2)
+	Subsystem: Dell Device [1028:07d1]
+	Kernel modules: nvidiafb, nouveau
+02:00.0 Network controller [0280]: Intel Corporation Wireless 8265 / 8275 [8086:24fd] (rev 78)
+--
+3d:00.0 Non-Volatile memory controller [0108]: Toshiba America Info Systems Device [1179:0116]
+	Subsystem: Toshiba America Info Systems Device [1179:0001]
+	Kernel driver in use: nvme
+	Kernel modules: nvme
+
+```bash
+lspci -v -s $(lspci | grep VGA | cut -d" " -f 1)
+```
+00:02.0 VGA compatible controller: Intel Corporation Device 591b (rev 04) (prog-if 00 [VGA controller])
+	Subsystem: Dell Device 07d1
+	Flags: bus master, fast devsel, latency 0, IRQ 138
+	Memory at eb000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at 80000000 (64-bit, prefetchable) [size=256M]
+	I/O ports at f000 [size=64]
+	[virtual] Expansion ROM at 000c0000 [disabled] [size=128K]
+	Capabilities: <access denied>
+	Kernel driver in use: i915
+	Kernel modules: i915
+
+```bash
+lspci | grep -i nvidia
+```
+01:00.0 3D controller: NVIDIA Corporation Device 179c (rev a2)
+bhaskar@bhaskar-Latitude-5580:~$ sudo ubuntu-drivers devices
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+modalias : pci:v000010DEd0000179Csv00001028sd000007D1bc03sc02i00
+vendor   : NVIDIA Corporation
+driver   : nvidia-driver-390 - distro non-free recommended
+driver   : xserver-xorg-video-nouveau - distro free builtin
+
+```bash
+arch
+```
+x86_64
+
+
