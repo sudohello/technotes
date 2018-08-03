@@ -179,3 +179,6 @@ sudo make install
 * Compilation from source
 	* http://www.python36.com/install-tensorflow141-gpu/
 	* https://www.tensorflow.org/install/install_sources
+
+## DeepLearning Framework Installations
+- https://medium.com/@vivek.yadav/deep-learning-setup-for-ubuntu-16-04-tensorflow-1-2-keras-opencv3-python3-cuda8-and-cudnn5-1-324438dd46f0

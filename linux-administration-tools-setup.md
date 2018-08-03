@@ -1019,3 +1019,21 @@ more information, such as the ld(1) and ld.so(8) manual pages.
 
 ## `sed` command
 * https://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files
+
+## Utilities
+* Sublime Text Editor - [sublime-text-editor.md]
+* Beyond Compare - Comparing text Files
+	- http://www.scootersoftware.com/download.php?zz=kb_linux_install
+```bash
+#Terminal Install
+sudo apt install libqtwebkit4
+wget -c http://www.scootersoftware.com/bcompare-4.2.6.23150_amd64.deb
+sudo apt update
+sudo apt install gdebi-core
+sudo gdebi bcompare-4.2.6.23150_amd64.deb
+# Terminal Uninstall
+sudo apt remove bcompare
+```
+* FreeFileSync
+	- https://freefilesync.org/tutorials.php
+	- `wget -c https://freefilesync.org/download/FreeFileSync_10.2_Linux_64-bit.tar.gz`

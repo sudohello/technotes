@@ -176,6 +176,11 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 ## AL-ML-DL blogs
 - http://www.fast.ai/2018/07/12/auto-ml-1/
 - http://www.fast.ai/2018/04/30/dawnbench-fastai/
+- https://www.forbes.com/sites/nvidia/2018/08/02/how-swiss-federal-railway-is-improving-passenger-safety-with-the-power-of-deep-learning/#10fc74a650e3
+- https://www.linkedin.com/pulse/how-set-up-nvidia-gpu-enabled-deep-learning-development-tianyi-pan
+- https://hackernoon.com/setting-up-your-gpu-machine-to-be-deep-learning-ready-96b61a7df278
+- http://timdettmers.com/2014/09/21/how-to-build-and-use-a-multi-gpu-system-for-deep-learning/
+- https://becominghuman.ai/setting-up-deep-learning-gpu-environment-5651564ff936
 
 ## Deep Learning, CCN Terms and Concepts
 * https://github.com/ml4a/ml4a.github.io/blob/master/_chapters/neural_networks.md
