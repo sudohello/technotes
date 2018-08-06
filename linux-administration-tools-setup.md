@@ -1037,3 +1037,39 @@ sudo apt remove bcompare
 * FreeFileSync
 	- https://freefilesync.org/tutorials.php
 	- `wget -c https://freefilesync.org/download/FreeFileSync_10.2_Linux_64-bit.tar.gz`
+
+* **Ubuntu Software Installers**
+	- apt, apt-get
+	- deb
+	- snapd
+	- flatpak
+		* https://flatpak.org/setup/
+		* https://flatpak.org/setup/Ubuntu/
+		* **Install Flatpak**
+		       sudo add-apt-repository ppa:alexlarsson/flatpak
+	       sudo apt update
+	       sudo apt install flatpak
+	   * **Install the Software Flatpak plugin**
+	    ```bash
+	    sudo apt install gnome-software-plugin-flatpak
+	    ```
+
+* **Video Editor**
+	- http://developer.pitivi.org/Install_with_flatpak.html?gi-language=undefined#getting-flatpak
+	- https://itsfoss.com/best-video-editing-software-linux/
+	- https://www.blackmagicdesign.com/products/davinciresolve/
+- Flowblade
+	- https://jliljebl.github.io/flowblade/download.html
+- shotcut
+	* https://shotcut.org/
+```bash
+wget -c https://github.com/mltframework/shotcut/releases/download/v18.08/shotcut-linux-x86_64-180801.tar.bz2
+```
+	- openshot
+* LaTeX
+	- https://www.latex-project.org/get/
+	- https://www.latex-tutorial.com/installation/
+* Screenshot and Screencasting
+	- https://www.tecmint.com/take-or-capture-desktop-screenshots-in-ubuntu-linux/
+* Blender Tutorials
+	- http://www.paulcaggegi.com/video-editing-using-the-blender-vse/

@@ -133,6 +133,13 @@ https://askubuntu.com/questions/696431/should-i-auto-remove-this-packages
 * https://en.wikipedia.org/wiki/Comparison_of_3D_computer_graphics_software
 * https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro
 
+Short name  Name on device  Size in pixels
+HD  1280 x 720 / 720p 1280 x 720
+WVGA/ (Wide SD) 720 x 480 / WVGA  720 x 480
+VGA/ (4:3:SD) 640 x 480 / VGA 640 x 480
+QVGA  320 x 240 / QVGA  320 x 240
+
+
 ### Terrain Generation
 * https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Quickie_Texture
 * https://en.wikipedia.org/wiki/Bump_mapping
@@ -180,6 +187,10 @@ sudo apt-get -f install
 * https://cran.r-project.org/bin/linux/ubuntu/README
 
 ```r-base gdebi-core```
+
+## Docker
+- https://docs.docker.com/install/linux/docker-ee/ubuntu/
+
 
 ## Tutorials
 

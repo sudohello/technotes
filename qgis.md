@@ -354,4 +354,9 @@ You can then use the "eVis" plugin to set up hotlinks to the photos themselves, 
 
 ## qGIS vs Mapinfo
 * http://planet.qgis.org/planet/tag/mapinfo/
-- check it for other uses cases: Kerb lines, Kerb defect, photos etcc
+- check it for other uses cases: Kerb lines, Kerb defect, photos etc
+
+## Point Cloud / Photogrammetry
+- https://www.lutraconsulting.co.uk/blog/2018/03/01/working-with-qgis-3d-part-1/
+- https://medium.com/the-pointscene-diaries/3d-map-qgis-guide-4688975b8fb4
+- https://gis.stackexchange.com/questions/62020/qgis-point-clouds-and-photogrammetry
