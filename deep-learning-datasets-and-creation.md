@@ -20,6 +20,9 @@ Tags: Datasets and Data Creation for Training Machines
 * https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
 * https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
 * https://github.com/tzutalin/labelImg
+```bash
+https://github.com/tzutalin/labelImg
+```
 * http://sloth.readthedocs.io/en/latest/
 * https://github.com/yuyu2172/image-labelling-tool
 * https://blog.playment.io/training-data-for-computer-vision/
@@ -89,6 +92,9 @@ Tags: Datasets and Data Creation for Training Machines
   - https://www.mapillary.com/dataset/vistas
 * [Synthia](http://synthia-dataset.com/download-2/)
   - http://synthia-dataset.net/ 
+* [Udacity](https://github.com/udacity/self-driving-car/tree/master/datasets)
+  - https://github.com/udacity/self-driving-car/tree/master/datasets
+
 
 ### 3D Datasets
 - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
@@ -105,3 +111,22 @@ Tags: Datasets and Data Creation for Training Machines
 
 1. [Cityscape](cityscape-dataset.md)
 2. [Mapillary](mapillary-dataset.md)
+
+## Labelling
+- https://github.com/udacity/self-driving-car
+- http://aid-driving.eu/active-learning-and-labeling/
+- add situation-specific label
+  *  for each image if it was day, rainy, if there were roadworks, close traffic participants (or far away), and many more things.
+  * Image Properties
+    - Roadworkds:
+    - Cloudy
+    - Traffic participants close
+    - Traffic participants far
+    - City
+    - Rainy
+    - Day
+  * Transfer learning is the practice of taking an existing neural network trained on a specific task and retraining this neural network on another task. 
+  * By using transfer learning we profit from existing lower level filters. By training on all classes at the same time the gradients from other classes influence the upper layers!
+
+## Dataset Management
+- https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/

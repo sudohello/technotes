@@ -1073,3 +1073,26 @@ wget -c https://github.com/mltframework/shotcut/releases/download/v18.08/shotcut
 	- https://www.tecmint.com/take-or-capture-desktop-screenshots-in-ubuntu-linux/
 * Blender Tutorials
 	- http://www.paulcaggegi.com/video-editing-using-the-blender-vse/
+* **Ubuntu 18.04 UI Customization**
+	- https://askubuntu.com/questions/966576/customizing-tray-taskbar-date-display-in-ubuntu-beginning-with-17-10
+	- http://ubuntuhandbook.org/index.php/2018/04/remove-trash-icon-ubuntu-18-04-desktop/
+```bash
+sudo apt install gnome-tweak-tool
+gnome-tweaks
+```
+
+## Ubuntu 18.04 Shortcuts
+- https://askubuntu.com/questions/747541/how-do-i-easily-switch-between-windows-rather-than-applications-with-alttab-in
+You can use Alt+` (the key above Tab) to cycle between windows of the same application.
+
+You can even mix Alt+Tab to cycle between application and Alt+` to cycle between windows of the selected application.
+
+There is an exposition of the rationale in this blog post from Canonical's Didier Roche. It's part of a series discussing the development of gnome integration in Ubuntu 17.10.
+
+**/GnomeShell/Extensions**
+- https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+- https://wiki.gnome.org/Projects/GnomeShell/Extensions
+
+**Shortcut keys**
+- https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en
+- https://www.makeuseof.com/tag/10-useful-ubuntu-keyboard-shortcuts-that-you-might-not-know-of/

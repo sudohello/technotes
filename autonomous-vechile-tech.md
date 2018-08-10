@@ -49,5 +49,8 @@ Open-source software for urban autonomous driving, maintained by Tier IV. The fo
 - https://voyage.auto/open-autonomous-safety/
 
 ## Others
-https://www.producthunt.com/alternatives/scale-self-driving-training-api
-https://www.theverge.com/2016/11/30/13779336/comma-ai-autopilot-canceled-autonomous-car-software-free
+- https://www.producthunt.com/alternatives/scale-self-driving-training-api
+- https://www.theverge.com/2016/11/30/13779336/comma-ai-autopilot-canceled-autonomous-car-software-free
+
+## Misc
+- http://aid-driving.eu/active-learning-and-labeling/

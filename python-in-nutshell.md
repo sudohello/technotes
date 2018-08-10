@@ -1024,6 +1024,8 @@ a = np.arange(4)
 a.resize((8,))
 #
 # others
+## Generate a NumPy array of 10,000 random numbers
+b=np.random.randint(1000, size=10000)
 a=np.random.randint(0,40,10)
 a
 np.random.shuffle(a)
@@ -1032,6 +1034,10 @@ np.max(a) # max value
 np.argmax(a) # index of max value
 a[np.argmax(a)]==a.max()
 ```
+-  As a general rule, NumPy should be used for larger lists/arrays of numbers, as it is significantly more memory efficient and faster to compute on than lists.
+- **How to square or raise to a power (elementwise) a 2D numpy array?**
+  - https://stackoverflow.com/questions/25870923/how-to-square-or-raise-to-a-power-elementwise-a-2d-numpy-array
+  - The fastest way is to do `a*a` or `a**2` or `np.square(a)` whereas `np.power(a, 2)` showed to be considerably slower
 - **Universal functions**
   - Ufunc performs and elementwise operation on all elements of an array.
   - http://wiki.cython.org/MarkLodato/CreatingUfuncs
@@ -1088,6 +1094,8 @@ from skimage import data, exposure, img_as_float
 image = img_as_float(data.camera())
 np.histogram(image,bins=2)
 ```
+**Tutorials**
+* https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php
 
 ## Matplotlib
 - 2D plotting package
@@ -1749,3 +1757,29 @@ sudo pip install mistune
 usr/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   return f(*args, **kwds)
 ```
+
+## Images
+- https://matplotlib.org/gallery/images_contours_and_fields/image_clip_path.html#sphx-glr-gallery-images-contours-and-fields-image-clip-path-py
+
+1. Reading Images in python - Input/output, data types and colorspaces
+* skimage
+- `skimage.data_dir` = `/usr/local/lib/python2.7/dist-packages/skimage/data`
+- imsave also uses an external plugin such as PIL
+```python
+from skimage import io
+import os
+filename = os.path.join(skimage.data_dir, 'camera.png')
+# reading image files
+camera = io.imread(filename)
+logo = io.imread('http://scikit-image.org/_static/img/logo.png')
+io.imsave('local_logo.png', logo)
+```
+* matplotlib
+```python
+import matplotlib.pyplot as plt
+plt.imread('MarshOrchid.jpg')
+plt.imshow()
+plt.show()
+```
+* cv2 (openCV)
+* pillow, PIL

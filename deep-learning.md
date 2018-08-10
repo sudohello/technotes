@@ -860,3 +860,83 @@ Note that that same workflow would work with almost any image classification tas
 ## PyImageSearch
 * https://www.pyimagesearch.com/static/cv_dl_resource_guide.pdf
 * https://www.pyimagesearch.com/2014/10/13/deep-learning-amazon-ec2-gpu-python-nolearn/
+
+## TBD Notes
+* **Drones**
+- https://medium.com/nanonets/how-we-flew-a-drone-to-monitor-construction-projects-in-africa-using-deep-learning-b792f5c9c471
+
+**Pedistrian Detection in Survelliance**
+- https://github.com/thatbrguy/Pedestrian-Detector
+- https://medium.com/nanonets/how-to-automate-surveillance-easily-with-deep-learning-4eb4fa0cd68d
+* The most popular variants are the Faster RCNN, YOLO and the SSD networks
+* There is always a Speed vs Accuracy vs Size trade-off when choosing an Object Detection algorithm.
+* a scalable surveillance system should be able to interpret low quality images.
+* Most high performance models consume a lot of memory
+* Pocessing Power:
+  - The video streams from the cameras are processed frame by frame on a remote server or a cluster.
+  - The obvious problem is latency; you need a fast Internet connection for limited delay. Moreover, if you are not using a commerical API, the server setup and maintenance costs can be high.
+  * By attaching a small microcontroller, we can perform realtime inference on the camera itself. There is no transmission delay, and abnormalities can be reported faster than the previous method. 
+  * Moreover, this is an excellent add on for bots that are mobile, so that they need not be constrained by range of WiFi/Bluetooth available. (such as microdrones).
+  * The disadvantage is that, microcontrollers aren’t as powerful as GPUs, and hence you may be forced to use models with lower accuracy.
+  - https://medium.freecodecamp.org/how-to-play-quidditch-using-the-tensorflow-object-detection-api-b0742b99065d
+
+  **Data Augmentation**
+  - images in your camera feed maybe of lower quality. So you must train your model to work in such conditions.
+  - https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced
+  - add some noise to degrade the image quality of the dataset. We could also experiment with blur and erosion effects.
+
+  **Datasets**
+  - Towncenter
+    * http://www.robots.ox.ac.uk/ActiveVision/Research/Projects/2009bbenfold_headpose/project.html#datasets
+
+pip install -r requirements.txt
+sudo apt-get install protobuf-compiler
+
+protoc object_detection/protos/*.proto --python_out=.
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+
+python create_tf_record.py \
+    --data_dir=`pwd` \
+    --output_dir=`pwd`
+
+python object_detection/train.py \
+--logtostderr \
+--pipeline_config_path=pipeline.config \
+--train_dir=train
+
+python object_detection/inference.py \
+--input_dir={PATH} \
+--output_dir={PATH} \
+--label_map={PATH} \
+--frozen_graph={PATH} \
+--num_output_classes=1 \
+--n_jobs=1 \
+--delay=0
+
+
+**Commercial APIS**
+- https://nanonets.com/
+- https://github.com/NanoNets/object-detection-sample-python.git
+
+**Transfer Learning**
+- https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
+
+**Pre-trained Models**
+- https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+Download one of these models, and extract the contents into your base directory. You will receive the model checkpoints, a frozen inference graph, and a pipeline.config file.
+
+**SSD**
+- https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab
+
+python object_detection/inference.py \
+--input_dir=test_images \
+--output_dir=test_images_output \
+--label_map=annotations/label_map.pbtxt \
+--frozen_graph=output/frozen_inference_graph.pb \
+--num_output_classes=1 \
+--n_jobs=1 \
+--delay=0
+
+
+## Numpy Tutorials
+https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php

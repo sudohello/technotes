@@ -93,12 +93,25 @@ with tf.Session() as sess:
 - If we just want to run the same network with different data, you can simply pass the new data via feed_dict to the network.
 
 
-
-
 ## Tutorials
 * https://github.com/Hvass-Labs/TensorFlow-Tutorials
 * https://github.com/MorvanZhou/Tensorflow-Tutorial
+* https://learningtensorflow.com/getting_started/
 
 **MNIST**
 - https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/01_Simple_Linear_Model.ipynb
  
+### Tensorflow
+- http://learningtensorflow.com/Visualisation/
+TensorFlow is a way of representing computation without actually performing it until asked
+**Basics**
+* tf.constant
+* tf.Variable
+* tf.global_variables_initializer()
+* tf.Session()
+  - session.run(y)
+  - session.run(y,feed_dict={})
+* tf.placeholder
+  - So far we have used Variables to manage our data, but there is a more basic structure, the placeholder. A placeholder is simply a variable that we will assign data to at a later date. It allows us to create our operations and build our computation graph, without needing the data. In TensorFlow terminology, we then feed data into the graph through these placeholders.
+  - create a placeholder called x, i.e. a place in memory where we will store value later on
+  - Placeholders do not need to be statically sized.
