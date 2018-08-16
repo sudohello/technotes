@@ -387,3 +387,14 @@ Neuroevolution, or neuro-evolution, is a form of artificial intelligence that us
 - https://en.wikipedia.org/wiki/Neuroevolution
 - https://en.wikipedia.org/wiki/Memetic_algorithm
 
+## Blogs
+- http://www.wildml.com/
+- https://www.theatlantic.com/technology/archive/2017/08/inside-waymos-secret-testing-and-simulation-facilities/537648/
+- https://nips2017creativity.github.io/
+
+## Research Papers
+- https://arxiv.org/abs/1711.06396
+  * https://arxiv.org/pdf/1711.06396.pdf
+
+Number Plate Detection
+- http://matthewearl.github.io/2016/05/06/cnn-anpr/
