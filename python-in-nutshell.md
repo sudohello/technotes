@@ -1179,6 +1179,9 @@ cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
 * **Legend**
 	- https://matplotlib.org/2.0.2/users/legend_guide.html
 
+### mpl_toolkits - Basic 3D in Matplotlib
+https://matplotlib.org/1.4.3/mpl_toolkits/index.html
+
 
 ## Scipy: High Level Scientific Computing
 
@@ -1667,7 +1670,7 @@ The main packages of the Enthought Tool Suite are:
 **Tutorials**
 * https://www.youtube.com/watch?v=r4bRUvvlaBw
 * https://github.com/jakevdp/sklearn_tutorial
-
+* https://github.com/ujjwalkarn/DataSciencePython
 
 ## Description on Different Python Packages
 * **imutils (0.4.6)**
@@ -1783,3 +1786,23 @@ plt.show()
 ```
 * cv2 (openCV)
 * pillow, PIL
+
+## Misc Topics, Keywords etc
+* `__import__`
+* `getattr`
+
+## OOP in Python
+> Object Oriented Programming in Python
+
+* Classes and objects in Python
+* `self` and `__init__`
+  - https://www.programiz.com/article/python-self-why
+  * The use of self makes it easier to distinguish between instance attributes (and methods) from local variables.
+  * `self` is not yet a keyword in Python, like this in C++ and Java
+  * `__init__` is not a constructor but `__init__` gets called when we create an object
+  * Technically speaking, constructor is a method which creates the object itself. In Python, this method is `__new__`
+  * __new__() is always called before __init__()
+  * Generally, __init__() is used to initialize a newly created object while __new__() is used to control the way an object is created.
+  * One practical use of __new__() however, could be to restrict the number of objects created from a class.
+* Function Decorators
+  - https://www.programiz.com/python-programming/decorator

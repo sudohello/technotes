@@ -135,6 +135,9 @@ We should remember that the purpose of research is to create knowledge. It’s n
 Mathematical notation can be a huge accessibility barrier, and it isn’t at all a requirement to understand deep learning clearly. Code can be in many cases a very intuitive medium to work with mathematical ideas.
 
 
+## Research Papers
+* https://github.com/ujjwalkarn/deeplearning-papernotes
+
 ## References
 * http://lvdmaaten.github.io/tsne/
 	- t-Distributed Stochastic Neighbor Embedding (t-SNE)

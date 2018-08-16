@@ -45,3 +45,8 @@ http://www.allhindifont.com/catetory.php?key=Hindi+Brush+Font&cd=1
 
 sudo apt-get install font-manager
 sudo apt-get install fonts-indic
+
+## Gimp Plugins
+* Exports Layers as image
+- https://khalim19.github.io/gimp-plugin-export-layers/sections/Installation.html
+- https://askubuntu.com/questions/485917/gimp-export-every-layer-as-a-separate-png-image

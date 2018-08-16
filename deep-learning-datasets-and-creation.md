@@ -21,7 +21,7 @@ Tags: Datasets and Data Creation for Training Machines
 * https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
 * https://github.com/tzutalin/labelImg
 ```bash
-https://github.com/tzutalin/labelImg
+git clone https://github.com/tzutalin/labelImg
 ```
 * http://sloth.readthedocs.io/en/latest/
 * https://github.com/yuyu2172/image-labelling-tool

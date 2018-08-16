@@ -341,3 +341,85 @@ https://github.com/spatialdev/streetside-js
 https://openmaptiles.org/
 https://www.mapbox.com/maki-icons/
 
+## Recorder
+- https://github.com/phw/peek
+
+## Ubuntu Installation and Configruation
+- https://linuxconfig.org/8-best-ubuntu-desktop-environments-18-04-bionic-beaver-linux
+- https://linuxconfig.org/things-to-do-after-installing-ubuntu-18-04-bionic-beaver-linux
+- Install Firewall UI
+```bash
+sudo apt install gufw
+# weather app
+sudo apt install gnome-weather
+```
+
+PlayOnLinux is a graphical front-end for the Wine software compatibility layer. It provides Linux users with a possibility to install Windows-based video games, as well as many other applications such as Apple iTunes and Safari on their operating system.
+
+Lutris is a game manager for Linux-based operating systems. It features one-click installation for many games on its website and also integrates with the Steam website for easy install.
+
+https://telegram.org/
+
+https://linuxconfig.org/how-to-install-telegram-on-ubuntu-18-04-bionic-beaver-linux
+sudo snap install telegram-desktop
+
+
+## Gnome Extensions
+- https://linuxconfig.org/best-gnome-desktop-extensions-for-ubuntu-18-04-bionic-beaver-linux
+- https://linuxconfig.org/how-to-install-gnome-shell-extensions-on-ubuntu-18-04-bionic-beaver-linux
+- https://extensions.gnome.org/ba
+
+**System Monitor**
+- https://github.com/brndnmtthws/conky
+sudo apt install -y conky
+
+**LaTeX Editor**
+- https://itsfoss.com/latex-editors-linux/
+- http://www.lyx.org/
+
+https://en.wikipedia.org/wiki/TeX
+https://en.wikipedia.org/wiki/LaTeX
+https://wiki.lyx.org/LyX/LyXOnUbuntu#toc3
+
+**Open Source Editors for Writers**
+- https://itsfoss.com/open-source-tools-writers/
+
+* ostorybook
+  - https://ostorybook.tuxfamily.org/?lng=en
+  - https://ostorybook.tuxfamily.org/articles.php?lng=en&pg=393&mnuid=2&tconfig=3
+* calibre
+  - https://itsfoss.com/create-ebook-calibre-linux/
+  - https://calibre-ebook.com/download_linux
+* https://www.texstudio.org/
+
+```bash
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+sudo -v && wget --no-check-certificate -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+#
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin install_dir=~/softwares
+```
+* texmaker
+- http://www.xm1math.net/texmaker/
+```bash
+wget -c http://download.tuxfamily.org/ostorybook/5.04.01/oStorybook-5.04.01.deb -P $HOME/Downloads
+wget -c http://www.xm1math.net/texmaker/assets/files/texmaker_5.0.2_ubuntu_18_04_amd64.deb -P $HOME/Downloads
+```
+
+
+- https://ostorybook.tuxfamily.org/?lng=en
+
+**ePub reader**
+- https://itsfoss.com/open-epub-books-ubuntu-linux/
+
+
+sudo apt update --fix-missing
+https://calibre-ebook.com/download
+
+**7zip**
+https://www.howtoforge.com/tutorial/how-to-install-and-use-7zip-file-archiver-on-ubuntu-linux/
+```bash
+sudo apt install p7zip-full p7zip-rar
+#Usage
+## to archive
+7za files.7z *
+```
