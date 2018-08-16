@@ -1096,3 +1096,18 @@ There is an exposition of the rationale in this blog post from Canonical's Didie
 **Shortcut keys**
 - https://help.ubuntu.com/stable/ubuntu-help/shell-keyboard-shortcuts.html.en
 - https://www.makeuseof.com/tag/10-useful-ubuntu-keyboard-shortcuts-that-you-might-not-know-of/
+- How do I show the full path in file browser rather than buttons to folders?
+	- https://ubuntuforums.org/showthread.php?t=1494643
+	- https://www.howtogeek.com/189777/how-to-show-the-location-entry-instead-of-the-breadcrumb-bar-in-nautilus-in-ubuntu-14.04/
+	* `ctrl+L` in Nautilus File Browser
+	* ```bash
+	sudo apt install dconf-tools
+	dconf-tools
+	```
+	* org/gnome/nautilus/preferences/show-image-thumbnails
+		- `local-only` to `always`
+		- `aways-use-localation-entry` if path is required instead of breadcrumbs buttins
+* ALT+Tab, gnome extensions
+- http://tipsonubuntu.com/2017/10/24/enable-slick-3d-alt-tab-task-switcher-ubuntu-17-10/
+- `sudo apt install chrome-gnome-shell`
+- https://unix.stackexchange.com/questions/120098/how-to-show-the-tree-view-in-left-pane-of-nautilus

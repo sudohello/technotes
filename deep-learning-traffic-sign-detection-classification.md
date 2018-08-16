@@ -23,9 +23,7 @@ Experiments results show that, by combining the Haar Cascade and deep convolutio
 * https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_learning/2015-10-09-object-detection.md
 * https://github.com/topics/traffic-sign-detection
 
-
-
-Traffic Sign Detection and Recognition
+**Traffic Sign Detection and Recognition**
 * https://www.researchgate.net/publication/317607639_Deep_learning_traffic_sign_detection_recognition_and_augmentation
   - Combine Haar Cascade and DNN
 * https://arxiv.org/pdf/1802.10019.pdf
@@ -41,47 +39,112 @@ Traffic Sign Detection and Recognition
     * detection rates higher than 0.88 mean average precision (mAP)
     * boundary estimation error less than 3 pixels with respect to input resolution of 1280 × 720 pixels
 
+* https://github.com/upul/Traffic-Signs
+* https://github.com/MiguelPF/Traffic-Sign-Detection---Recognition-System
+* https://github.com/AutoModelCar/AutoModelCarWiki/wiki/traffic-sign-detection
+* https://github.com/ghostbbbmt/Traffic-Sign-Classification
+* https://github.com/topics/traffic-signs?l=python
+* https://github.com/georgesung/ssd_vehicle_detection
+* https://navoshta.com/traffic-signs-classification/
+* https://github.com/weiliu89/caffe/tree/ssd
+* http://moegelmose.com/p10/report.pdf
+* http://moegelmose.com/p10/
 
-  https://github.com/upul/Traffic-Signs
-  https://github.com/MiguelPF/Traffic-Sign-Detection---Recognition-System
-  https://github.com/AutoModelCar/AutoModelCarWiki/wiki/traffic-sign-detection
+**Datasets**
+* Viva
+  - http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
+* LISA
+  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
+  - https://www.codemade.io/lisa-traffic-sign-dataset/
 
+## Architectures
+* **SSD - Single Shot MultiBox Detector**
+  - https://arxiv.org/abs/1512.02325
+  - https://github.com/weiliu89/caffe/tree/ssd
+* **SSD v/s Faster R-CNN**
+  - Even the fastest high-accuracy detector, Faster R-CNN, operates at only 7 frames per second (FPS)
 
-  https://github.com/ghostbbbmt/Traffic-Sign-Classification
-
-https://github.com/topics/traffic-signs?l=python
-SSD - Single Shot MultiBox Detector
-
-https://github.com/georgesung/ssd_vehicle_detection
 
 Start Here:
+**TASK**:
+- Use SSD based pre-trained model in tensorflow
+- Re-training
+
+============================================
+## georgesung/ssd_tensorflow_traffic_sign_detection
 * https://github.com/georgesung/ssd_tensorflow_traffic_sign_detection
-* TypeError: Expected int32, got list containing Tensors of type '_Message' instead.
+```
+TypeError: Expected int32, got list containing Tensors of type '_Message' instead.
+```
+- Fixed
+- Successfully ran demo
+* `python3 inference.py -m demo`
+* Unable to run on LISA dataset
 
 
-http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
-
-Viva
-http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
+============================================
 
 
-SSD
-https://arxiv.org/abs/1512.02325
-https://github.com/weiliu89/caffe/tree/ssd
+## ljanyst/ssd-tensorflow
+- https://github.com/ljanyst/ssd-tensorflow.git
+- http://jany.st/post/2017-11-05-single-shot-detector-ssd-from-scratch-in-tensorflow.html
+```
+tensorflow graph_def.ParseFromString DecodeError: Error parsing message
+```
+- https://github.com/tensorflow/tensorflow/issues/582
+- https://stackoverflow.com/questions/49117938/unable-to-use-trained-tensorflow-model
+- https://stackoverflow.com/questions/35351760/tf-save-restore-graph-fails-at-tf-graphdef-parsefromstring
+- https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/framework/test_util_test.py#L84
+```
+from google.protobuf import text_format
+graph_def = graph_pb2.GraphDef()
+text_format.Merge(graph_str, graph_def)
+```
+* Errors
+```
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8d in position 3: invalid start byte
+```
+- https://github.com/tkipf/gcn/issues/6
+- https://github.com/google/protobuf/issues/4721
 
-SSD v/s Faster R-CNN
-- Even the fastest high-accuracy detector, Faster R-CNN, operates at only 7 frames per second (FPS)
+=================================================
 
-https://www.codemade.io/lisa-traffic-sign-dataset/
-https://navoshta.com/traffic-signs-classification/
 
-https://github.com/weiliu89/caffe/tree/ssd
-https://github.com/balancap/SSD-Tensorflow
-https://github.com/ljanyst/ssd-tensorflow.git
-http://jany.st/post/2017-11-05-single-shot-detector-ssd-from-scratch-in-tensorflow.html
+## balancap/SSD-Tensorflow
+- https://github.com/balancap/SSD-Tensorflow
+```
+WARNING:tensorflow:From eval_ssd_network.py:226: streaming_mean (from tensorflow.contrib.metrics.python.ops.metric_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.metrics.mean
+INFO:tensorflow:Evaluating None
+Traceback (most recent call last):
+  File "eval_ssd_network.py", line 346, in <module>
+    tf.app.run()
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "eval_ssd_network.py", line 320, in main
+    session_config=config)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/contrib/slim/python/slim/evaluation.py", line 212, in evaluate_once
+    config=session_config)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/training/evaluation.py", line 188, in _evaluate_once
+    eval_step_value = _get_latest_eval_step_value(eval_ops)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/training/evaluation.py", line 76, in _get_latest_eval_step_value
+    with ops.control_dependencies(update_ops):
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 5060, in control_dependencies
+    return get_default_graph().control_dependencies(control_inputs)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 4664, in control_dependencies
+    c = self.as_graph_element(c)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 3613, in as_graph_element
+    return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 3702, in _as_graph_element_locked
+    types_str))
+TypeError: Can not convert a tuple into a Tensor or Operation.
+```
+- https://github.com/balancap/SSD-Tensorflow/issues/154
 
-http://moegelmose.com/p10/report.pdf
-http://moegelmose.com/p10/
+
+===============================================
+
 
 ------------
 
