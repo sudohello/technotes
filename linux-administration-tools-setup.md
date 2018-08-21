@@ -1111,3 +1111,48 @@ There is an exposition of the rationale in this blog post from Canonical's Didie
 - http://tipsonubuntu.com/2017/10/24/enable-slick-3d-alt-tab-task-switcher-ubuntu-17-10/
 - `sudo apt install chrome-gnome-shell`
 - https://unix.stackexchange.com/questions/120098/how-to-show-the-tree-view-in-left-pane-of-nautilus
+- https://askubuntu.com/questions/973128/drag-and-drop-not-working-inside-nautilus-on-ubuntu-17-10
+```bash
+gsettings set org.gnome.nautilus.preferences use-experimental-views false
+# use dconf-editor
+```
+* cloumn/block select in the console
+	- `ctrl`+`alt`+`Left mouse key drag and release`
+
+
+## Installing Adobe Flash Player and Plugin for browser
+
+https://websiteforstudents.com/installing-the-latest-flash-player-on-ubuntu-17-10/
+
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo apt update
+sudo apt install adobe-flashplugin browser-plugin-freshplayer-pepperflash
+
+## System Sensor monitors
+https://help.ubuntu.com/community/SensorInstallHowto
+```bash
+sudo apt install lm-sensors
+sudo sensors-detect
+sudo service kmod start
+watch sensors
+man sensors.conf
+#
+sudo apt install psensor
+#
+```
+## Hardware Info Utilities
+* http://hardinfo.org/
+* http://goodies.xfce.org/
+
+## BLE connectivity
+* Sensortag command line tool for Python Bluetooth Low Energy access
+
+## Games for Ubuntu
+* Pocket Tank
+* Scorched3D
+* Wormux
+* Atomic Tanks
+* Xscorch
+```bash
+sudo apt install scorched3d
+```

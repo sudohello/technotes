@@ -1806,3 +1806,11 @@ plt.show()
   * One practical use of __new__() however, could be to restrict the number of objects created from a class.
 * Function Decorators
   - https://www.programiz.com/python-programming/decorator
+
+## Snippets
+* Listing Files in a directory
+```python
+# https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
+import glob
+print(glob.glob("/home/adam/*.txt"))
+```

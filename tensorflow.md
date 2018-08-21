@@ -358,6 +358,89 @@ server.join()
   - an ensemble learning may send individual machine learning models to multiple workers, and then combine the classifications to form the final result. 
 
 
+## Models in TensorFlow Repo
+* **Object Detections**
+- https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
+- https://github.com/tensorflow/models/issues/1962
+```
+cd $HOME/Documents/ai-ml-dl/external/models/research
+protoc -I=./ --python_out=./ ./object_detection/protos/*.proto
+#
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+# Test
+python object_detection/builders/model_builder_test.py
+python3 object_detection/builders/model_builder_test.py
+jupyter notebook object_detection/object_detection_tutorial.ipynb
+```
+
+## Different Saved Model Formats
+**What is up with all the different saved file formats?**
+- https://www.tensorflow.org/mobile/prepare_models
+
+* **graph_transforms:summarize_graph**
+tool to print out information about the inputs and outputs it finds from the graph structure. 
+```bash
+export TF_HOME=$HOME/softwares/tensorflow
+cd $TF_HOME
+bazel run tensorflow/tools/graph_transforms:summarize_graph -- --in_graph="$HOME/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb"
+#
+## output
+Found 1 possible inputs: (name=image_tensor, type=uint8(4), shape=[?,?,?,3]) 
+No variables spotted.
+Found 4 possible outputs: (name=detection_boxes, op=Identity) (name=detection_scores, op=Identity) (name=num_detections, op=Identity) (name=detection_classes, op=Identity) 
+Found 6818239 (6.82M) const parameters, 0 (0) variable parameters, and 1680 control_edges
+Op types used: 1878 Const, 549 Gather, 452 Minimum, 360 Maximum, 305 Reshape, 197 Sub, 184 Cast, 183 Greater, 180 Split, 180 Where, 146 Add, 135 Mul, 128 StridedSlice, 124 Shape, 114 Pack, 108 ConcatV2, 97 Squeeze, 93 Slice, 93 Unpack, 90 ZerosLike, 90 NonMaxSuppressionV2, 35 Relu6, 34 Conv2D, 28 Switch, 27 Identity, 23 Enter, 13 Tile, 13 DepthwiseConv2dNative, 13 Merge, 13 RealDiv, 12 BiasAdd, 10 Range, 9 ExpandDims, 9 TensorArrayV3, 7 NextIteration, 5 Assert, 5 TensorArrayWriteV3, 5 TensorArraySizeV3, 5 Exit, 5 TensorArrayGatherV3, 4 TensorArrayScatterV3, 4 TensorArrayReadV3, 4 Fill, 3 Transpose, 3 Equal, 2 Exp, 2 GreaterEqual, 2 Less, 2 LoopCond, 1 TopKV2, 1 All, 1 Size, 1 Sigmoid, 1 ResizeBilinear, 1 Placeholder, 1 LogicalAnd
+To use with tensorflow/tools/benchmark:benchmark_model try these arguments:
+bazel run tensorflow/tools/benchmark:benchmark_model -- --graph=/home/bhaskar/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb --show_flops --input_layer=image_tensor --input_layer_type=uint8 --input_layer_shape=-1,-1,-1,3 --output_layer=detection_boxes,detection_scores,num_detections,detection_classes
+(reverse-i-search)`transform&apos;: bazel run tensorflow/tools/graph_^Cansforms:summarize_graph -- --in_graph=&quot;$HOME/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb&quot;
+```
+- https://www.tensorflow.org/mobile/optimizing#binary_size
+- https://www.tensorflow.org/mobile/optimizing#how_to_profile_your_model
+* **graph_transforms:transform_graph**
+```bash
+
+bazel run tensorflow/tools/graph_transforms:transform_graph -- \
+--in_graph=$HOME/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb \
+--out_graph=$HOME/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/optimized_frozen_inference_graph.pb --inputs='image_tensor' --outputs='detection_boxes,detection_scores,num_detections,detection_classes' \
+--transforms='strip_unused_nodes(type=float, shape="-1,-1,-1,3")
+  fold_constants(ignore_errors=true)
+  fold_batch_norms
+  fold_old_batch_norms'
+```
+* **benchmark:benchmark_model**
+```bash
+export TF_HOME=$HOME/softwares/tensorflow
+cd $TF_HOME
+bazel run tensorflow/tools/benchmark:benchmark_model -- --graph=/home/bhaskar/Documents/ai-ml-dl/external/models/research/object_detection/ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb --show_flops --input_layer=image_tensor --input_layer_type=uint8 --input_layer_shape=-1,-1,-1,3 --output_layer=detection_boxes,detection_scores,num_detections,detection_classes
+##
+## Output
+Init ops:
+Input layers: [image_tensor]
+Input shapes: [-1,-1,-1,3]
+Input types: [uint8]
+Output layers: [detection_boxes,detection_scores,num_detections,detection_classes]
+Target layers: []
+Num runs: [1000]
+Inter-inference delay (seconds): [-1.0]
+Inter-benchmark delay (seconds): [-1.0]
+Num threads: [-1]
+Benchmark name: []
+Output prefix: []
+Show sizes: [0]
+Warmup runs: [1]
+Loading TensorFlow.
+```
+**What are the minimum device requirements for TensorFlow?**
+* how many FLOPs are required for a model, and then use that to make rule-of-thumb estimates of how fast they will run on different devices.
+  -  For example, a modern smartphone might be able to run 10 GFLOPs per second, so the best you could hope for from a 5 GFLOP model is two frames per second, though you may do worse depending on what the exact computation patterns are.
+  - For memory usage, you mostly need to make sure that the intermediate buffers that TensorFlow creates aren’t too large, which you can examine in the benchmark output too.
+
+**Speed**
+- One of the highest priorities of most model deployments is figuring out how to run the inference fast enough to give a good user experience.
+*  estimate of how many operations are needed to run the graph.
+  - this is done by rough estimate of this by using the benchmark_model tool.
+* For an example, a high-end phone from 2016 might be able to do 20 billion FLOPs per second, so the best speed you could hope for from a model that requires 10 billion FLOPs is around 500ms. On a device like the Raspberry Pi 3 that can do about 5 billion FLOPs, you may only get one inference every two seconds.
+
 # Artifical Life
 https://en.wikipedia.org/wiki/Artificial_life
 

@@ -56,6 +56,16 @@ Experiments results show that, by combining the Haar Cascade and deep convolutio
 * LISA
   - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
   - https://www.codemade.io/lisa-traffic-sign-dataset/
+* COCO
+  - http://cocodataset.org/#home
+  - COCO is a large-scale object detection, segmentation, and captioning dataset
+
+
+http://cocodataset.org/#detection-2018
+object detection tasks: using either bounding box output or object segmentation output (the latter is also known as instance segmentation).
+
+http://cocodataset.org/#detection-eval
+Average Precision (AP)
 
 ## Architectures
 * **SSD - Single Shot MultiBox Detector**
@@ -64,6 +74,20 @@ Experiments results show that, by combining the Haar Cascade and deep convolutio
 * **SSD v/s Faster R-CNN**
   - Even the fastest high-accuracy detector, Faster R-CNN, operates at only 7 frames per second (FPS)
 
+http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-detector-in-tensorflow.html
+
+
+https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+
+* **VGG16**
+  - https://www.cs.toronto.edu/~frossard/post/vgg16/
+  - https://disq.us/url?url=https%3A%2F%2Farxiv.org%2Fpdf%2F1409.1556.pdf%3Aoht-Wy0GgkCV6vMv1CR-PdCLMYg&cuid=4253828
+  - https://gist.github.com/ksimonyan/211839e770f7b538e2d8#file-readme-md
+
+
+* **AlexNet**
+  - https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
+  - http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
 Start Here:
 **TASK**:
@@ -71,6 +95,9 @@ Start Here:
 - Re-training
 
 ============================================
+## weiliu89 ssd (original, in caffee)
+- https://github.com/weiliu89/caffe/tree/ssd
+
 ## georgesung/ssd_tensorflow_traffic_sign_detection
 * https://github.com/georgesung/ssd_tensorflow_traffic_sign_detection
 ```
@@ -145,10 +172,27 @@ TypeError: Can not convert a tuple into a Tensor or Operation.
 
 ===============================================
 
+## HiKapok/SSD.TensorFlow
+- https://github.com/HiKapok/SSD.TensorFlow
+
+
+
+
+===============================================
+
+https://medium.com/@WuStangDan/step-by-step-tensorflow-object-detection-api-tutorial-part-1-selecting-a-model-a02b6aabe39e
+https://github.com/tensorflow/models.git
+
+**BOsch Traffic Light Dataset**
+- https://hci.iwr.uni-heidelberg.de/node/6132
+- https://hci.iwr.uni-heidelberg.de/node/6132
+https://github.com/bosch-ros-pkg/bstld
 
 ------------
+## Object Detections
+- https://cv-tricks.com/object-detection/faster-r-cnn-yolo-ssd/
 
-Object Detection Datasets
+* Datasets
 - http://host.robots.ox.ac.uk/pascal/VOC/
 ```bash
 wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
