@@ -47,6 +47,21 @@ git clone https://github.com/tzutalin/labelImg
 * Image segmentations
   - https://aws.amazon.com/public-datasets/spacenet/
   - http://www.cvlibs.net/datasets/kitti/eval_road.php
+* Viva
+  - http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
+* LISA
+  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
+  - https://www.codemade.io/lisa-traffic-sign-dataset/
+* COCO
+  - http://cocodataset.org/#home
+  - COCO is a large-scale object detection, segmentation, and captioning dataset
+* PASCAL VOC
+  - http://host.robots.ox.ac.uk/pascal/VOC/
+  ```bash
+  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
+  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+  ```
 
 ### Traffic Sign Datasets
 * **German**

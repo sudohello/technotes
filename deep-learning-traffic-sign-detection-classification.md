@@ -50,15 +50,6 @@ Experiments results show that, by combining the Haar Cascade and deep convolutio
 * http://moegelmose.com/p10/report.pdf
 * http://moegelmose.com/p10/
 
-**Datasets**
-* Viva
-  - http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
-* LISA
-  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
-  - https://www.codemade.io/lisa-traffic-sign-dataset/
-* COCO
-  - http://cocodataset.org/#home
-  - COCO is a large-scale object detection, segmentation, and captioning dataset
 
 
 http://cocodataset.org/#detection-2018
@@ -66,28 +57,6 @@ object detection tasks: using either bounding box output or object segmentation 
 
 http://cocodataset.org/#detection-eval
 Average Precision (AP)
-
-## Architectures
-* **SSD - Single Shot MultiBox Detector**
-  - https://arxiv.org/abs/1512.02325
-  - https://github.com/weiliu89/caffe/tree/ssd
-* **SSD v/s Faster R-CNN**
-  - Even the fastest high-accuracy detector, Faster R-CNN, operates at only 7 frames per second (FPS)
-
-http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-detector-in-tensorflow.html
-
-
-https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
-
-* **VGG16**
-  - https://www.cs.toronto.edu/~frossard/post/vgg16/
-  - https://disq.us/url?url=https%3A%2F%2Farxiv.org%2Fpdf%2F1409.1556.pdf%3Aoht-Wy0GgkCV6vMv1CR-PdCLMYg&cuid=4253828
-  - https://gist.github.com/ksimonyan/211839e770f7b538e2d8#file-readme-md
-
-
-* **AlexNet**
-  - https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
-  - http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
 Start Here:
 **TASK**:

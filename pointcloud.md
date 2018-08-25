@@ -91,3 +91,21 @@ keywords in context of PCD processing/rendering:-
 	- [Massive PotreeConverter. (Accessed 2015-10-23)](https://github.com/NLeSC/Massive-PotreeConverter)
 	- [AHN pointcloud viewer (Accessed 2015-10-23)](https://github.com/NLeSC/ahn-pointcloud-viewer)
 	- [AHN pointcloud viewer web service. (Accessed 2015-10-23)](https://github.com/NLeSC/ahn-pointcloud-viewer-ws)
+
+## StreetView tech
+- https://medium.com/@nocomputer/creating-point-clouds-with-google-street-view-185faad9d4ee
+
+
+## Point Cloud Classification Benchmarks
+- [semantic3d: Large-Scale Point Cloud Classification Benchmark!](http://semantic3d.net/)
+
+
+## Misc Tools
+- https://openframeworks.cc/about/
+- https://openframeworks.cc/download/
+
+## Vector Tiling
+- https://geovation.github.io/build-your-own-static-vector-tile-pipeline
+
+- https://www.graphhopper.com/blog/
+

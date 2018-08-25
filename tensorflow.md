@@ -102,19 +102,21 @@ with tf.Session() as sess:
 **MNIST**
 - https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/01_Simple_Linear_Model.ipynb
  
-### Tensorflow
-* Documentations
+
+* **Documentations**
   - https://www.tensorflow.org/versions/master/api_guides/python/array_ops#to_float
-* Tutorials
+  * TensorFlow is a way of representing computation without actually performing it until asked
+* **Tutorials**
   - https://www.tensorflow.org/tutorials/
   - http://learningtensorflow.com/Visualisation/
-* TensorFlow is a way of representing computation without actually performing it until asked
 
 
-**Basics**
+## **Basics**
+* tf.Tensor
 * tf.constant
-* tf.Variable
-* tf.global_variables_initializer()
+* tf.Variable, tf.get_variable, tf.contrib.eager.Variable
+* `tf.global_variables_initializer()`
+  - This function returns a single operation responsible for initializing all variables in the `tf.GraphKeys.GLOBAL_VARIABLES` collection
 * tf.Session()
   - session.run(y)
   - session.run(y,feed_dict={})
@@ -130,7 +132,141 @@ print("{} Kb".format(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
 ```
 * tf.slice
 * tf.matmul
+* `tf.truncated_normal` in module `tensorflow.python.ops.random_ops`
+  - `truncated_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)`
+  - Outputs random values from a truncated normal distribution.
+  - The generated values follow a normal distribution with specified mean and standard deviation, except that values whose magnitude is more than 2 standard deviations from the mean are dropped and re-picked.
+  - A tensor of the specified shape filled with random truncated normal values
 
+## [Tensor](https://www.tensorflow.org/guide/tensors)
+
+**Tensor, Rank, Shape, Data types**
+- A tensor is a generalization of vectors and matrices to potentially higher dimensions. Internally, TensorFlow represents tensors as n-dimensional arrays of base datatypes.
+- `tf.Tensor` in module `tensorflow.python.framework.ops`
+- It is n-dimensional array of cells
+- A tensor has **dataType** and **shape**
+- Each element in the Tensor has the same data type, and the data type is always known.
+- The shape (that is, the number of dimensions it has and the size of each dimension) might be only partially known.
+- Some types of tensors are special:
+  * tf.constant
+  * tf.Variable
+  * tf.placeholder
+  * tf.SparseTensor
+- the value of a tensor is immutable, expect for `tf.Variable` tensor;  which means that in the context of a single execution tensors only have a single value. 
+- However, evaluating the same tensor twice can return different values; for example that tensor can be the result of reading data from disk, or generating a random number.
+* A **string** is treated as a single item in TensorFlow, not as a sequence of characters. It is possible to have scalar strings, vectors of strings, etc.
+* `rank` is synonymous to `n-dimension`
+* The `shape` of a tensor is the number of elements in each dimension.
+* `tf.shape`, `tf.reshape`
+* The number of elements of a tensor is the product of the sizes of all its shapes.
+* when reshaped, the number of elements of the reshaped Tensors has to match the original number of elements.
+* `tf.DType`, [Ref](https://www.tensorflow.org/api_docs/python/tf/DType)
+  * float: 16,32,64
+  * int: 8,16,32,64
+  * bool
+  * string
+  * complex (64,128)
+  * Other types:
+    * uint (8,16,32,64) # `u` means `unsigned`
+    * qint (8,16,32)  3 # `q` means `quantized`
+    * quint (8,16)
+    * resource (mutable resource)
+    * variant (arbitary types)
+    * `_ref` suffix are defined for reference-typed tensors
+    * **TBD - what it means:**
+      - half, single, double precision
+      - signed and unsigned
+      - quantized
+* If you don't, TensorFlow chooses a datatype that can represent your data
+* TensorFlow converts Python integers to `tf.int32` and python floating point numbers to `tf.float32`
+* TensorFlow uses the same rules numpy uses when converting to arrays.
+* Evaluating Tensors: `tensor.eval`
+
+**Misc Functions**
+* `tf.as_dtype` function converts numpy types and string type names to a `DType` object.
+* `tf.cast` - cast tensor from one datatype to another
+- tf.zeros
+- tf.ones
+
+## [Tensorflow Debugger](https://www.tensorflow.org/guide/debugger)
+- tfdbg
+* Printing Tensor values
+```python
+t = <<some tensorflow operation>>
+tf.Print(t, [t])  # This does nothing
+t = tf.Print(t, [t])  # Here we are using the value returned by tf.Print
+result = t + 1  # Now when result is evaluated the value of `t` will be printed.
+```
+
+## [Variables](https://www.tensorflow.org/guide/variables)
+* `tf.Variable` in module  `tensorflow.python.ops.variables`
+* `tf.get_variable` in module `tensorflow.python.ops.variable_scope`
+* `tf.contrib.eager.Variable` in module `tensorflow.python.ops.resource_variable_ops`
+* Basic Usage
+```python
+mammal = tf.Variable("Elephant", tf.string)
+ignition = tf.Variable(451, tf.int16)
+floating = tf.Variable(3.14159265359, tf.float64)
+its_complicated = tf.Variable(12.3 - 4.85j, tf.complex64)
+#
+mystr = tf.Variable(["Hello"], tf.string)
+cool_numbers  = tf.Variable([3.14159, 2.71828], tf.float32)
+first_primes = tf.Variable([2, 3, 5, 7, 11], tf.int32)
+its_very_complicated = tf.Variable([12.3 - 4.85j, 7.5 - 6.23j], tf.complex64)
+#
+mymat = tf.Variable([[7],[11]], tf.int16)
+myxor = tf.Variable([[False, True],[True, False]], tf.bool)
+linear_squares = tf.Variable([[4], [9], [16], [25]], tf.int32)
+squarish_squares = tf.Variable([ [4, 9], [16, 25] ], tf.int32)
+rank_of_squares = tf.rank(squarish_squares)
+mymatC = tf.Variable([[7],[11]], tf.int32)
+#
+my_image = tf.zeros([10, 299, 299, 3])  # batch x height x width x color
+r = tf.rank(my_image) # After the graph runs, r will hold the value 4.
+#
+my_variable = tf.get_variable("my_variable", [1, 2, 3])
+my_int_variable = tf.get_variable("my_int_variable", [1, 2, 3], dtype=tf.int32, initializer=tf.zeros_initializer)
+other_variable = tf.get_variable("other_variable", dtype=tf.int32, initializer=tf.constant([23, 42]))
+```
+* By default every, tf.Variable gets placed in the following two collections:
+  - tf.GraphKeys.GLOBAL_VARIABLES --- variables that can be shared across multiple devices,
+  - tf.GraphKeys.TRAINABLE_VARIABLES --- variables for which TensorFlow will calculate gradients.
+* If you don't want a variable to be trainable, add it to the tf.GraphKeys.LOCAL_VARIABLES collection instead.
+```python
+my_local = tf.get_variable("my_local", shape=(), collections=[tf.GraphKeys.LOCAL_VARIABLES])
+my_non_trainable = tf.get_variable("my_non_trainable", shape=(), trainable=False)
+```
+* Partical usage
+```python
+import tensorflow as tf
+
+w = tf.truncated_normal([3,3,128,128], dtype=tf.float32, stddev=1e-1)
+kernel = tf.Variable(w, name="weights")
+#
+c = tf.constant(0.0, shape=[128], dtype=tf.float32)
+biases = tf.Variable(a, trainable=True, name='biases')
+```
+* Initializing variables - Before a variable can be used, it must be initialized.
+* When programming in the low-level TensorFlow API (that is, when explicitly creating graphs and sessions), variables must be explicitly initialized
+* On the otherhand, most high-level frameworks such as tf.contrib.slim, tf.estimator.Estimator and Keras automatically initialize variables for before training a model
+* `tf.global_variables_initializer()`
+  - This function returns a single operation responsible for initializing all variables in the `tf.GraphKeys.GLOBAL_VARIABLES`
+  - by default does not specify the order in which variables are initialized
+  - `initializer=tf.zeros_initializer()`
+  - Any time you use the value of a variable in a context in which not all variables are initialized (say, if you use a variable's value while initializing another variable), it is best to use variable.initialized_value() instead of variable:
+```python  
+v = tf.get_variable("v", shape=(), initializer=tf.zeros_initializer())
+w = tf.get_variable("w", initializer=v.initialized_value() + 1)
+```
+* `my_variable.initializer` initialize variables explicitly
+* `tf.report_uninitialized_variables()` provides list of variables not yet initialized
+
+## [Graphs and Sessions](https://www.tensorflow.org/guide/graphs)
+* [Introduction to **Dataflow Programming**](https://en.wikipedia.org/wiki/Dataflow_programming)
+  - Dataflow is a common programming model for parallel computing
+  - In a dataflow graph:
+    * the nodes represent units of computation
+    * the edges represent the data consumed (input) or produced (output) by a computation
 
 **Visualisation with TensorBoard**
 - https://www.tensorflow.org/guide/graph_viz
@@ -440,6 +576,12 @@ Loading TensorFlow.
 *  estimate of how many operations are needed to run the graph.
   - this is done by rough estimate of this by using the benchmark_model tool.
 * For an example, a high-end phone from 2016 might be able to do 20 billion FLOPs per second, so the best speed you could hope for from a model that requires 10 billion FLOPs is around 500ms. On a device like the Raspberry Pi 3 that can do about 5 billion FLOPs, you may only get one inference every two seconds.
+
+
+## Convert Models from Caffe to Tensorflow
+- https://github.com/ethereon/caffe-tensorflow
+
+
 
 # Artifical Life
 https://en.wikipedia.org/wiki/Artificial_life
