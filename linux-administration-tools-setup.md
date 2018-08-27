@@ -127,196 +127,17 @@ ___
 
 ## Software Development Tools
 
-### API Development
-* [Postman](https://www.getpostman.com/)
+* **API Development**
+	* [Postman](https://www.getpostman.com/)
 
 ## Linux (Ubuntu) Toolchain Setup
-### scp, sftp, ssh, rsync
+* scp, sftp, ssh, rsync
 * http://askubuntu.com/questions/94665/what-is-a-program-similar-to-winscp
 
-### LDAP
+## LDAP
 
-## ROS - Installation
-**References**
-* http://wiki.ros.org/indigo/Installation/Ubuntu
-* http://answers.ros.org/question/188732/e-unable-to-locate-package-ros-indigo-desktop-full/
-* http://wiki.ros.org/kinetic/Installation/Ubuntu
-
-* **Setup your sources.list**
-
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-```
-
-* **Set up your keys**
-
-```
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-```
-
-* **Installation**
-	- Desktop-Full Install: (Recommended) : ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
-
-```
-sudo apt-get update
-sudo apt-get install ros-kinetic-desktop-full
-```
-
-* **Initialize rosdep**
-	- Before you can use ROS, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS.
-
-```
-sudo rosdep init
-rosdep update
-```
-
-* **Environment setup**
-
-```
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-* **Getting rosinstall**
-	- rosinstall is a frequently used command-line tool in ROS that is distributed separately. It enables you to easily download many source trees for ROS packages with one command.
-
-```
-sudo apt-get install python-rosinstall
-```
-
-### ROS Commands
-* List packages
-	> rospack list-names
-
-* Install packages
-	> sudo apt-get install ros-"your ros distro"-"package-name"
-	> sudo apt-get install ros-kinetic-image-view
-	> sudo apt-get install ros-kinetic-stereo-image-proc
-
-* Install package dependencies - rosdep is a tool you can use to install system dependencies required by ROS packages.
-	> rosdep install [package]
-
-**Using ROS**
-
-* roscore is the first thing you should run when using ROS.
-	> roscore
-
-* rosnode displays information about the ROS nodes that are currently running. The rosnode list command lists these active nodes:
-	> rosnode list
-
-* The rosnode info command returns information about a specific node:-
-	> rosnode info /rosout
-
-* List service.
-	> rosservice list
-* Show service description.
-	> rosservice type spawn | rossrv show
-* Create a new turtle by creating a service.
-	> rosservice call spawn 2 2 0.2 ""
-* ROS parameter list.
-	> rosparam list
-* Set and get background colors using rosparam
-	> rosparam set background_r 150
-	> rosparam get background_g
-* Display parameters
-	> rosparam get /
-* Save parameters
-	> rosparam dump params.yaml
-* Load parameters into new namespace copy
-	> rosparam load params.yaml copy
-	> rosparam get copy/background_b
-
-#### PCL in ROS
-**References**
-* http://www.pointclouds.org/documentation/tutorials/
-
-#### Rviz in Stereo
-
-**References**
-* http://wiki.ros.org/stereo_image_proc
-* http://wiki.ros.org/image_view#stereo_view
-* http://docs.ros.org/api/sensor_msgs/html/index-msg.html
-* [Install packages in ROS](http://answers.ros.org/question/196766/how-to-install-packages-under-ros/)
-* [ROS Package lists](http://www.ros.org/browse/list.php?package_type=package&distro=groovy)
-* http://wiki.ros.org/FAQ
-* http://wiki.ros.org/ROS/Tutorials/rosdep
-
-* Install rviz
-	> rosdep install rviz
-
-
-##### Required Image processing Packages
-
-* stereo_image_proc
-	> Stereo and single image rectification and disparity processing. This package contains the stereo_image_proc node, which sits between the stereo camera drivers and vision processing nodes.
-* stereo_msgs
-	> stereo_msgs contains messages specific to stereo processing, such as disparity images.
-* stereo_synchronizer
-	> stereo_synchronizer
-* stereo_wall_detection
-	> Detects planar structures (e.g., walls) from stereo cameras point clouds (usually generated usi
-* camera1394
-	> IEEE 1394 Digital Camera driver
-* camera1394stereo
-	> This is a modified version of the ROS driver for devices supporting the IEEE 1394 Digital Camer
-* camera_application
-	> Camera Application
-* camera_calibration
-	> camera_calibration allows easy calibration of monocular or stereo cameras using a checkerboard
-* camera_calibration_parsers
-	> camera_calibration_parsers contains routines for reading and writing camera calibration parameters.
-* camera_calibration_standalone
-	> Simple tools for stereo camera calibration (to be deprecated by dcam/ost from ros-pkg).
-* camera_info_manager
-	> This package provides a C++ interface for camera calibration information. It provides CameraIn.
-* camera_info_manager_py
-	> Python interface for camera calibration information. This ROS package provides a CameraInfo int...
-* camera_pose_calibration
-	> camera_pose_calibration
-* camera_pose_toolkits
-	> camera_pose_toolkits
-* camera_self_filter
-* image_view
-	> A simple viewer for ROS image topics. Includes a specialized viewer for stereo + disparity images....
-* image_view2
-	> A simple viewer for ROS image topics with draw-on features
-
-### Octave
-Installation (opensource alternative to MatLab)
-
-**References**
-* http://wiki.octave.org/Octave_for_Debian_systems
-
-```
-sudo apt-get install octave
-```
-## OpenCV
-Compilation and Installation (opensource Computer Vision Lib)
-
-### References
-* http://answers.opencv.org/question/60804/how-to-build-docs-for-opencv-300-rc1/
-* http://askubuntu.com/questions/771601/problem-with-cmake
-* http://www.linuxfromscratch.org/blfs/view/cvs/general/opencv.html
-* http://stackoverflow.com/questions/17386551/how-to-build-opencv-with-java-under-linux-using-command-linegonna-use-it-in-ma
-
-### Required packages
-
-```
-sudo apt-get install --assume-yes build-essential cmake git
-sudo apt-get install --assume-yes build-essential pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
-sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
-sudo apt-get install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-sudo apt-get install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
-sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils
-
-sudo apt-get install --assume-yes ffmpeg python3-dev python3-numpy
-sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22-dev
-sudo apt-get install --assume-yes libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-sudo apt-get install --assume-yes libv4l-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev
-sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils
-```
-### Find number of cores in Linux
-[how-to-know-number-of-cores-of-a-system-in-linux](http://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
+**Find number of cores in Linux**
+- [how-to-know-number-of-cores-of-a-system-in-linux](http://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
 ```bash
 cat /proc/cpuinfo
 #
@@ -326,13 +147,10 @@ grep -m 1 'cpu cores' /proc/cpuinfo
 sudo dmidecode -t 4 | grep -E 'Socket Designation|Count'
 sudo dmidecode -t 4 | egrep -i "Designation|Intel|core|thread"
 ```
-
 * http://www.tutorialspoint.com/articles/how-to-install-doxygen-on-ubuntu
 * http://stackoverflow.com/questions/16963579/generate-graphs-and-diagrams-with-doxygen
 * http://askubuntu.com/questions/315646/update-java-alternatives-vs-update-alternatives-config-java
-
 * https://askubuntu.com/questions/668538/cores-vs-threads-how-many-threads-should-i-run-on-this-machine
-
 - You will find how many threads you can run on your machine by running htop or ps command that returns number of process on your machine.
 - If you want to calculate number of all users process, you can use one of these commands:
 ```bash
@@ -364,156 +182,98 @@ htop
 lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
 ```
 
-### Updating libpng
-Updating to libpng 1.6.28
-* http://www.linuxfromscratch.org/blfs/view/7.6/general/libpng.html
-* http://stackoverflow.com/questions/33634402/how-to-check-libpng-version
-
-```
-readelf -d  libpng.so |grep SONAME
-identify -list format | grep PNG
-```
-
-### Configure Java using Alternatives
-* http://askubuntu.com/questions/315646/update-java-alternatives-vs-update-alternatives-config-java
-
-```
-update-java-alternatives -l
-update-alternatives --config java
-```
-
-### Install JNI
-
-```
-ls $JAVA_HOME/include/jni.h
-```
-
-- FindJNI. Since the "FindJNI" module of cmake 3 doesn't support the detection of Oracle Java 8, we have to add our Java 8 directories manually. Therefore, locate the file FindJNI.cmake in your cmake directory,e.g /home/foo/bar/cmake-3.2.2-Linux-x86_64/share/cmake-3.2/Modules/FindJNI.cmake
-- Goto the JAVA_APPEND_LIBRARY_DIRECTORIES variable and add the path to your java lib architecture directory, e.g. /home/foo/bar/jdk1.8.0_45/lib/amd64
-- Goto the JAVA_AWT_INCLUDE_DIRECTORIES variable and add the path to your java include directory, e.g. /home/foo/bar/jdk1.8.0_45/include
-
-### Compile and Build OpenCV
-
-```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_CUBLAS=ON -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES"
-```
-
-Note: check how many cpu core you have or use default for using single core
-```
-make -j $(($(nproc) + 1))
-make -j 2 // number of cores of CPU, do not run on all the cores, it will hang and will not compile
-make -j //takes default cores as 1, use this
-```
-#### Stack Trace after running make, find out what is not avaiable and try to install based on requirements
-
-```
-curretly have gstreamer 0.10.36
-gstreamer-base-1.0 gstreamer-video-1.0 gstreamer-app-1.0 gstreamer-riff-1.0 gstreamer-pbutils-1.0
-
-libavresample
-libgphoto2
-ippicv_linux_20151201.tgz
-OpwnBLAS lib
-Atlas
-Doxygen
-
-JNI
-Matlab
-
-/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so
-/usr/lib/vtk
-
-Unavailable ( if graphics card with cuda enabled, following needs to be installed)
-cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev java
-
-Media I/O
-GDAL No
-GDCM No
-Video I/O
-FFMPEG
-avresample No
-Microsoft Kinect libs - OpenNI "OpenNI PrimeSensor Modules" OpenNI2
-PvAPI
-GigEVisionSDK
-Aravis SDK
-UniCap
-UniCal ucil
-V4L/V4L2
-XIMEA
-Xine
-gphoto2
-```
-
-**Install missing components**
-```
-sudo apt-get install --assume-yes doxygen
-sudo apt-get install --assume-yes graphviz
-sudo apt-get install --assume-yes doxygen-gui
-```
-You can run doxygen-gui using:
-```
-doxywizard
-```
-
-
 
 ## CVS Setup
-
 * set the following in .bashrc file (under the home dir)
-
-```
+```bash
 export CVSROOT=":pserver:<username>@<IP>:<port>/<path>/CVS_REPO"
 alias cvstt='cvs status 2>/dev/null | grep ^File | grep -v Up-to'
 cvs login
 ```
 
 ## Apache2 Installation
-
-Refer: [apache guide](apache.md)
+* Refer: [apache guide](apache.md)
 
 ## Exports & Aliases
-
 Use as per requirements
-
 * In .bashrc file (under home dir), read more on bashrc
-
-```
+```bash
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export PATH=/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$PATH
 export TOMCAT_HOME=/usr/share/tomcat5
 export LD_LIBRARY_PATH=/usr/local/lib
 export MALLOC_CHECK_=0
-
+#
 export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib/libflycapture-c.so:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib/libflycapture.so:$LD_LIBRARY_PATH
-
+#
 export LD_LIBRARY_PATH=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/amd64/server:$LD_LIBRARY_PATH
-
+#
 alias huawai="echo <userName> | sudo -kS touch /etc/usb_modeswitch.d/12d1:1f01; echo <userName> | sudo -kS usb_modeswitch -J -v 0x12d1 -p 0x1f01;"
 alias vpn="echo <userName> | sudo -kS openvpn --config ~/Downloads/fw-udp-1194-<userName>-config.ovpn;"
 ```
 
+## Mounting
+```bash
+#FAT
+sudo mount -t vfat -o rw,noauto,async,user,umask=1000 /dev/sdb1 /media/tmp/
+mount -l -t vfat,fat,msdos
+```
+
+**mount NTFS**
+```bash
+sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sdb1 /media/windows
+```
+
 * **Mount samba as dir**
-sudo apt install nfs-common 
-sudo apt install smb4k 
+```bash
+sudo apt install nfs-common
+sudo apt install smb4k
+sudo apt install cifs-utils
 sudo mount -t cifs //<IP>/samba5 /mnt/samba121 -o username=<username>,workgroup=<workgroup-name>
+```
+* https://serverfault.com/questions/414074/mount-cifs-host-is-down
+```bash
+sudo mount -t cifs //<IP>/<sharedDirName> /media/<mountPoint> --verbose -o username=<userName>,domain=<domainName>,vers=1.0
+```
+- if `vers=1.0` is not provided in `Ubuntu 18.04 LTS` it throws error `host is down`
+- `sharedDirName` is not the name of the folder on the file system, rather the shared folder name
+```bash
+sudo umount /media/<mountPoint>
+```
+- check `mount.local.sh` under linuxscripts for example
+* https://wiki.samba.org/index.php/Mounting_samba_shares_from_a_unix_client
 
-* **message to linux to linux user**
+**Mount Points in mtab and fstab**
+- https://askubuntu.com/questions/607149/change-permissions-to-a-specific-user-in-ubuntu-12-04
+```bash
+cat /etc/mtab
+sudo vi /etc/fstab
+sudo apt install exfat-utils
+```
+
+**Safe mounting**
+- https://askubuntu.com/questions/14365/mount-an-external-drive-at-boot-time-only-if-it-is-plugged-in
+- http://techmonks.net/nofail-and-nobootwait-mount-options-in-fstab-prevent-boot-problems/
+```bash
+LABEL=Series  /mnt/filer/Series  xfs  auto,nofail,nodev,noexec,nouser,noatime  0  2
+UUID=XXXXXXXXXXXXXXX    /myhdd ntfs  auto,nofail,noatime,rw,user    0   0
+```
+
+## **Sending message to linux to linux user**
 * https://unix.stackexchange.com/questions/99460/sending-messages-to-another-user
-
+```bash
 talk —
 mesg — Control if (non-root) users can send messages to your terminal.
 wall — Send a message to all logged-in users.
 who — Report which users are logged in to the system.
 write — Send a message to another user.
-
+```
 * https://askubuntu.com/questions/61995/chat-over-lan-from-linux-to-linux
-netcat / nc
-
-On PC 1, type: nc -l 55555
-
-On PC 2, type: nc $IP 55555, where $IP equals the local IP address of PC 1 [e.x. 192.168.2.50]
+	- `netcat / nc`
+	- On PC 1, type: `nc -l 55555`
+	- On PC 2, type: `nc $IP 55555`, where $IP equals the local IP address of PC 1 [e.x. 192.168.2.50]
 
 * **Enable Remote Desktop Connection on Ubuntu**
 * https://askubuntu.com/questions/4474/enable-remote-vnc-from-the-commandline
@@ -522,11 +282,11 @@ gconftool-2 --set --type=bool /desktop/gnome/remote_access/enabled true
 gconftool-2 -a /desktop/gnome/remote_access
 gsettings list-keys org.gnome.Vino
 ```
-/usr/lib/vino/vino-server
+* `/usr/lib/vino/vino-server`
 
 * What is **/dev/null**?
 * What is the purpose of outputting to /dev/null like that, and what does the 2>&1 mean?
-```
+```bash
 some command > /dev/null 2>&1
 # So, the STDOUT is redirected to the bit-bucket(trash) and the STDERR is redirected to where the STDOUT is located: the bit-bucket.
 ```
@@ -536,19 +296,16 @@ some command > /dev/null 2>&1
   - `2 >&1` redirects the standard error stream to the standard output stream (stderr = 2, stdout = 1).
 
 In practice it prevents any output from the command (both stdout and stderr) from being displayed. It's used when you don't care about the command output.
-
 STDIN is represented by 0, STDOUT by 1, and STDERR by 2.
-
-
-/dev/null is the bit-bucket: the place where you dump anything you don't need.
+`/dev/null` is the bit-bucket: the place where you dump anything you don't need.
 
 
 ## Disk Space Monitoring
-https://askubuntu.com/questions/413358/disk-is-full-but-cannot-find-big-files-or-folders
-```
+* https://askubuntu.com/questions/413358/disk-is-full-but-cannot-find-big-files-or-folders
+```bash
 sudo du -sch /root/*
 du -sch .[!.]* * |sort -h
-
+#
 #https://askubuntu.com/questions/36111/whats-a-command-line-way-to-find-large-files-directories-to-remove-and-free-up
 find / -size +10M -size -12M -ls
 #
@@ -557,10 +314,8 @@ sudo du -sx /* 2>/dev/null | sort -n
 sudo du -aBM 2>/dev/null | sort -nr | head -n 10
 ```
 
-
 ## Creating a bootable Ubuntu USB
 - http://cyberciti.biz
-
 ```bash
 df
 sudo umount /dev/sdb1
@@ -568,24 +323,14 @@ sudo dd if=ubuntu-16.04.3-desktop-amd64.iso of=/dev/sdb bs=1M status=progress
 ```
 You can also do
 
-    sudo -s
+```bash
+sudo -s
+```
 and you don't have to put "sudo" in front of everything!
 
-
-# Mounting
-```bash
-#FAT
-sudo mount -t vfat -o rw,noauto,async,user,umask=1000 /dev/sdb1 /media/tmp/
-mount -l -t vfat,fat,msdos
-```
-
-## install-chdk-on-your-canon-camera-using-linux
-
-
-
-
-https://scribblesandsnaps.com/2010/11/16/install-chdk-on-your-canon-camera-using-linux/
-https://askubuntu.com/questions/458743/cannot-format-my-sd-card
+## Install-chdk-on-your-canon-camera-using-linux
+- https://scribblesandsnaps.com/2010/11/16/install-chdk-on-your-canon-camera-using-linux/
+- https://askubuntu.com/questions/458743/cannot-format-my-sd-card
 ```bash
 # Format with Fat16
 sudo mkfs.vfat -F16 /dev/sdb1
@@ -593,22 +338,21 @@ sudo mkfs.vfat -F16 /dev/sdb1
 echo -n BOOTDISK | sudo dd bs=1 count=8 seek=64 of=/dev/sdbx
 #Replace the sdbx part with the actual name of the small FAT16 partition
 ```
-
+```bash
 dd bs=1 count=72 seek=0 conv=notrunc if=/dev/
-
+#
 sudo mount -t vfat -o rw,noauto,async,user,umask=1000 /dev/sdb1 /mnt/tmp
-
+#
 df | grep -e \"/$\" | sed s/[s/]/\\ /g | awk '{print $2\" \"$3 }' | sed s/\\ /s/g
-
+#
 printf \"BOOTDISK\" | dd bs=1 count=8 seek=0x40 conv=notrunc of=/dev/disk"
-
+#
 diskutil list
+#
+```
 
 **fdisk**
-https://gist.github.com/keithmorris/b2aeec1ea947d4176a14c1c6a58bfc36
-
-**mount**
-`sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sdb1 /media/windows`
+- https://gist.github.com/keithmorris/b2aeec1ea947d4176a14c1c6a58bfc36
 
 ## Tools
 * **Bulk Rename**
@@ -618,18 +362,19 @@ sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install metamorphose2
 ```
-* *Flatten Directory Structure**
-https://superuser.com/questions/91307/copying-only-jpg-from-a-directory-structure-to-another-location-linux
-https://ubuntuforums.org/showthread.php?t=1385966
 
+**Flatten Directory Structure**
+- https://superuser.com/questions/91307/copying-only-jpg-from-a-directory-structure-to-another-location-linux
+- https://ubuntuforums.org/showthread.php?t=1385966
+- https://www.lifewire.com/feh-command-line-image-viewer-4054068
+```bash
 find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec cp '{}' /cpjpg \;
-
+#
 find ./ -name '*.jpg' -exec cp '{}' ./ \;
-
+#
 sudo apt-get install feh
 feh -Fzr -D 5 ~/Images
-
-https://www.lifewire.com/feh-command-line-image-viewer-4054068
+```
 
 * **Merge and Split PDF documents**
 	- https://linuxcommando.blogspot.in/2013/02/splitting-up-is-easy-for-pdf-file.html
@@ -657,96 +402,85 @@ pdftk /path/to/input.pdf input_pw <yourpassword> output out.pdf
 ```
 
 * **PDF Editors**
-http://www.linuxandubuntu.com/home/5-best-linux-pdf-editors
+- http://www.linuxandubuntu.com/home/5-best-linux-pdf-editors
+
 
 ## Audio
 
+
 ### USB Soundcard
-https://blog.ostermiller.org/ubuntu-usb-audio/
+- https://blog.ostermiller.org/ubuntu-usb-audio/
 
 
 ## Data Streaming
-https://code.tutsplus.com/tutorials/building-with-the-twitter-api-using-real-time-streams--cms-22194
-https://kraken-php.com/
-
-https://www.reddit.com/r/PHP/comments/573fuh/kraken_distributed_async_php_framework/
-https://github.com/reactphp
-
+- https://code.tutsplus.com/tutorials/building-with-the-twitter-api-using-real-time-streams--cms-22194
+- https://kraken-php.com/
+- https://www.reddit.com/r/PHP/comments/573fuh/kraken_distributed_async_php_framework/
+- https://github.com/reactphp
 
 
 ## Wifi troubleshooting
+```bash
 sudo lshw -C network
 sudo lshw -class network
 lspci -nnk | grep 0280 -A2
-
-07:00.0 Network controller [0280]: Broadcom Corporation BCM43142 802.11b/g/n [14e4:4365] (rev 01)
-	Subsystem: Dell Wireless 1704 802.11n + BT 4.0 [1028:0016]
-	Kernel modules: bcma, wl
-
+# 07:00.0 Network controller [0280]: Broadcom Corporation BCM43142 802.11b/g/n [14e4:4365] (rev 01)
+# 	Subsystem: Dell Wireless 1704 802.11n + BT 4.0 [1028:0016]
+# 	Kernel modules: bcma, wl
+#
 sudo modprobe wl && dmesg | grep wl
 modprobe: ERROR: could not insert 'wl': Exec format error
-
 dmesg | grep wl
 dkms status -m broadcom-wl
-
+#
 sudo apt-get purge bcmwl-kernel-source
 sudo apt-get update
 sudo apt-get install bcmwl-kernel-source
-
-https://unix.stackexchange.com/questions/69199/wireless-not-working-after-update-network-unclaimed
-
-https://askubuntu.com/questions/770490/broadcom-wireless-drivers-unclaimed-after-installing-update-16-04
+```
+- https://unix.stackexchange.com/questions/69199/wireless-not-working-after-update-network-unclaimed
+- https://askubuntu.com/questions/770490/broadcom-wireless-drivers-unclaimed-after-installing-update-16-04
 ```bash
 sudo apt-get install --reinstall bcmwl-kernel-source
+#
+cat /etc/modprobe.d/iwlwifi.conf
+```
+1 # /etc/modprobe.d/iwlwifi.conf
+2 # iwlwifi will dyamically load either iwldvm or iwlmvm depending on the
+3 # microcode file installed on the system.  When removing iwlwifi, first
+4 # remove the iwl?vm module and then iwlwifi.
+5 remove iwlwifi \
+6 (/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
+7 && /sbin/modprobe -r mac80211
+```bash
+sudo lshw -C network
+# product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+```
+- https://askubuntu.com/questions/840772/how-to-create-this-etc-pm-config-d-config
+- https://askubuntu.com/questions/413663/whats-the-purpose-of-etc-pm-config-d-and-power-d/413684
+- https://ubuntuforums.org/archive/index.php/t-2004690.html
+```bash
+# Add one line:
+sudo gedit /etc/pm/config.d/config
+SUSPEND_MODULES="iwlwifi"
 ```
 
+## UEFI Loading Issues
+- https://askubuntu.com/questions/139157/booting-ubuntu-with-acpi-off-grub-parameter?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+- https://wiki.ubuntu.com/DebuggingACPI
+- `acpi=off` 
 
-/etc/modprobe.d/iwlwifi.conf
-
-  1 # /etc/modprobe.d/iwlwifi.conf
-  2 # iwlwifi will dyamically load either iwldvm or iwlmvm depending on the
-  3 # microcode file installed on the system.  When removing iwlwifi, first
-  4 # remove the iwl?vm module and then iwlwifi.
-  5 remove iwlwifi \
-  6 (/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
-  7 && /sbin/modprobe -r mac80211
-
-sudo lshw -C network
-
-product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
-
-https://askubuntu.com/questions/840772/how-to-create-this-etc-pm-config-d-config
-https://askubuntu.com/questions/413663/whats-the-purpose-of-etc-pm-config-d-and-power-d/413684
-
-
-https://ubuntuforums.org/archive/index.php/t-2004690.html
-
-
-sudo gedit /etc/pm/config.d/configAdd one line:
-SUSPEND_MODULES="iwlwifi"
-
-==========
-https://askubuntu.com/questions/139157/booting-ubuntu-with-acpi-off-grub-parameter?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-https://wiki.ubuntu.com/DebuggingACPI
- acpi=off 
-
-UEFI: Unified-Extensible-Firmware-Interface
- http://whatis.techtarget.com/definition/Unified-Extensible-Firmware-Interface-UEFI
-
-Unified Extensible Firmware Interface (UEFI)
-
-Unified Extensible Firmware Interface (UEFI) is a specification for a software program that connects a computer's firmware to its operating system (OS). UEFI is expected to eventually replace BIOS.
-
-https://www.howtogeek.com/56958/htg-explains-how-uefi-will-replace-the-bios/
-
+**UEFI**: Unified-Extensible-Firmware-Interface
+- http://whatis.techtarget.com/definition/Unified-Extensible-Firmware-Interface-UEFI
+- Unified Extensible Firmware Interface (UEFI) is a specification for a software program that connects a computer's firmware to its operating system (OS). UEFI is expected to eventually replace BIOS.
+- https://www.howtogeek.com/56958/htg-explains-how-uefi-will-replace-the-bios/
 
 **SSDs**
-/dev/nvme stands for SSDs
+* `/dev/nvme` stands for SSDs
 
-
-Make the change permanent:
-In Ubuntu, open terminal from the dash or press Ctrl+Alt+T, execute this to edit grub: gksudo gedit /etc/default/grub.
-Find the line starting with GRUB_CMDLINE_LINUX_DEFAULT and append acpi=off to its end, make it look like: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=off"
+**grub making changes**
+- Make the change permanent:
+- In Ubuntu, open terminal from the dash or press Ctrl+Alt+T, execute this to edit grub: gksudo gedit /etc/default/grub.
+- Find the line starting with GRUB_CMDLINE_LINUX_DEFAULT and append acpi=off to its end, make it look like: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=off"
 
 ## wget
 
@@ -769,29 +503,28 @@ wget -c http://releases.ubuntu.com/18.04/ubuntu-18.04-desktop-amd64.iso
 ```
 
 ## compress, uncompress
-https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-another-directory
-
+- https://stackoverflow.com/questions/18402395/how-to-uncompress-a-tar-gz-in-another-directory
+```bash
 tar -xzf bar.tar.gz -C foo
+```
 
-<<<<<<< HEAD
 ## Terminal Multiplexers
 - Screens, byobu, Gauake,
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server
-https://askubuntu.com/questions/449597/is-there-any-user-friendly-alternative-to-screen
-https://www.slant.co/topics/4018/~terminal-multiplexers
-https://www.linuxlinks.com/terminalmultiplexers/
-https://linuxconfig.org/an-introduction-to-terminal-multiplexers
+* https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server
+* https://askubuntu.com/questions/449597/is-there-any-user-friendly-alternative-to-screen
+* https://www.slant.co/topics/4018/~terminal-multiplexers
+* https://www.linuxlinks.com/terminalmultiplexers/
+* https://linuxconfig.org/an-introduction-to-terminal-multiplexers
+* I guess you all know this: you are connected to your server with SSH and in the middle of compiling some software (e.g. a new kernel) or doing some other task which takes lots of time, and suddenly your connection drops for some reason, and you lose your labour. This can be very annoying, but fortunately there is a small utility called screen which lets you reattach to a previous session so that you can finish your task. This short tutorial shows how to use screen for just this purpose.
 
-I guess you all know this: you are connected to your server with SSH and in the middle of compiling some software (e.g. a new kernel) or doing some other task which takes lots of time, and suddenly your connection drops for some reason, and you lose your labour. This can be very annoying, but fortunately there is a small utility called screen which lets you reattach to a previous session so that you can finish your task. This short tutorial shows how to use screen for just this purpose.
-=======
 
 **Check installed library version**
-https://askubuntu.com/questions/434154/how-to-get-the-list-of-installed-library-packages-only
-/sbin/ldconfig -p
-The -v option will show the libraries version.
+* https://askubuntu.com/questions/434154/how-to-get-the-list-of-installed-library-packages-only
+* `/sbin/ldconfig -p`
+* The -v option will show the libraries version.
 
 **/usr/bin/ld: final link failed: No space left on device**
-http://www.ubuntu-forum.de/artikel/61799/final-link-failed-no-space-left-on-device.html
+* http://www.ubuntu-forum.de/artikel/61799/final-link-failed-no-space-left-on-device.html
 
 <!-- /usr/bin/ld: final link failed: No space left on device
 collect2: error: ld returned 1 exit status
@@ -802,20 +535,20 @@ make[1]: *** [features/CMakeFiles/pcl_features.dir/all] Error 2
 Makefile:160: recipe for target 'all' failed
 make: *** [all] Error 2 -->
 
-
+```bash
 df -i 
 free -m
 grep tmpfs /etc/fstab
 mount |grep \/tmp
+```
 
-
-# Directory Space
+## Directory Space
+```bash
 du -h --max-depth=1 | sort -hr
->>>>>>> acec9b14d9022a2f23c0798d98c98f025edc32ca
-
+```
 
 ## Change Hostname/Computer name
-http://ubuntuhandbook.org/index.php/2014/04/change-hostname-ubuntu1404/
+* http://ubuntuhandbook.org/index.php/2014/04/change-hostname-ubuntu1404/
 ```bash
 hostname NEW_NAME_HERE
 sudo vi /etc/hostname
@@ -823,7 +556,7 @@ sudo vi /etc/hosts
 ```
 
 ## Get the UUID of the block device
-https://help.ubuntu.com/community/UsingUUID
+* https://help.ubuntu.com/community/UsingUUID
 ```bash
  sudo blkid
 ls -l /dev/disk/by-uuid/
@@ -834,67 +567,47 @@ ls -l /dev/disk/by-uuid/
 ### Move Home folder
 - https://www.maketecheasier.com/move-home-folder-ubuntu/
 
-### Mouting
-https://askubuntu.com/questions/607149/change-permissions-to-a-specific-user-in-ubuntu-12-04
-```
-cat /etc/mtab
-sudo vi /etc/fstab
-```
-
-- `sudo apt install exfat-utils`
-
-### Safe mounting
-- https://askubuntu.com/questions/14365/mount-an-external-drive-at-boot-time-only-if-it-is-plugged-in
-- http://techmonks.net/nofail-and-nobootwait-mount-options-in-fstab-prevent-boot-problems/
-```
-LABEL=Series  /mnt/filer/Series  xfs  auto,nofail,nodev,noexec,nouser,noatime  0  2
-UUID=XXXXXXXXXXXXXXX    /myhdd ntfs  auto,nofail,noatime,rw,user    0   0
-```
-
 ### Running the script on bootup
 - https://stackoverflow.com/questions/2062543/running-a-script-with-the-help-of-grub-and-menu-lst
 
 ### Remote and Local File transfer
 
 #### rsync
+```bash
 rsync -aXS
-
+```
 #### scp
 - https://stackoverflow.com/questions/11304895/how-to-scp-a-folder-from-remote-to-local
-
-
-To copy all from Local Location to Remote Location (Upload)
-
+* To copy all from Local Location to Remote Location (Upload)
+```bash
 scp -r /path/from/destination username@hostname:/path/to/destination
-
-To copy all from Remote Location to Local Location (Download)
-
+```
+* To copy all from Remote Location to Local Location (Download)
+```bash
 scp -r username@hostname:/path/from/destination /path/to/destination
-
-Custom Port where xxxx is custom port number
-
+```
+* Custom Port where xxxx is custom port number
+```bash
  scp -r -P xxxx username@hostname:/path/from/destination /path/to/destination
-
-Copy on current directory from Remote to Local
-
+```
+* Copy on current directory from Remote to Local
+```bash
 scp -r username@hostname:/path/from/file .
-
-Help:
-
-    -r Recursively copy all directories and files
-    Always use full location from /, Get full location by pwd
-    scp will replace all existing files
-    hostname will be hostname or IP address
-    if custom port is needed (besides port 22) use -P portnumber
-    . (dot) - it means current working directory, So download/copy from server and paste here only.
-
-Note: Sometimes the custom port will not work due to the port not being allowed in the firewall, so make sure that custom port is allowed in the firewall for incoming and outgoing connection
+```
+* Help:
+	-r Recursively copy all directories and files
+	Always use full location from /, Get full location by pwd
+	scp will replace all existing files
+	hostname will be hostname or IP address
+	if custom port is needed (besides port 22) use -P portnumber
+	. (dot) - it means current working directory, So download/copy from server and paste here only.
+	- **Note**: Sometimes the custom port will not work due to the port not being allowed in the firewall, so make sure that custom port is allowed in the firewall for incoming and outgoing connection
 
 ### User and Group details
 - http://geek-university.com/linux/uid-user-identifier-gid-group-identifier/
 
 **Enabling Intel Onboard Graphics**
-https://askubuntu.com/questions/989946/cannot-change-resolution-with-8th-gen-intel-cpu-in-ubuntu-16-04/1002662#1002662
+* https://askubuntu.com/questions/989946/cannot-change-resolution-with-8th-gen-intel-cpu-in-ubuntu-16-04/1002662#1002662
 ```bash
 sudo vi /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.alpha_support=1"
@@ -903,9 +616,12 @@ sudo reboot
 ```
 
 **System Information**
+```bash
 sudo lshw -short
-
+#
 efibootmg1 -v
+#
+```
 
 **xorg crashed with SIGABRT in OSAbort**
 - update/re-install following:
@@ -914,8 +630,8 @@ sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 lib
 ```
 
 ## Interesting Terminologies and Command in Linux
-https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
-https://www.lopezferrando.com/30-interesting-shell-commands/
+* https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
+* https://www.lopezferrando.com/30-interesting-shell-commands/
 
 * Shebang - The #! syntax used in scripts
 	- https://bash.cyberciti.biz/guide/Shebang
@@ -956,10 +672,10 @@ https://www.lopezferrando.com/30-interesting-shell-commands/
 * comm - Combine lines from two sorted files
 	- `comm file1 file2`
 * shuf - Randomize lines in file
-```
+```bash
 cat file.txt | sort -R
 cat file.txt | sort -R | head  # Pick a random msambple
-
+#
 # Even better (suggested by xearl in Hacker news):
 shuf file.txt
 ```
@@ -971,7 +687,7 @@ shuf file.txt
 * w - Who is logged in?
 	- `w`
 * find
-```
+```bash
 find . -size 20c             # By file size (20 bytes)
 find . -name "*.gz" -delete  # Delete files
 find . -exec echo {} \;      # One file by line
@@ -998,10 +714,10 @@ DIR="boost_"$(echo $VER | sed -e 's/\./_/g')
 echo $DIR ## boost_1_64_0
 ```
 
-* lib linking
-Libraries have been installed in:
-   /usr/local/lib
-
+* **lib linking**
+	- Libraries have been installed in:
+  - `/usr/local/lib`
+```
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
 specify the full pathname of the library, or use the `-LLIBDIR'
@@ -1016,9 +732,12 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------
+```
+
 
 ## `sed` command
 * https://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files
+
 
 ## Utilities
 * Sublime Text Editor - [sublime-text-editor.md]
@@ -1083,11 +802,9 @@ gnome-tweaks
 
 ## Ubuntu 18.04 Shortcuts
 - https://askubuntu.com/questions/747541/how-do-i-easily-switch-between-windows-rather-than-applications-with-alttab-in
-You can use Alt+` (the key above Tab) to cycle between windows of the same application.
-
-You can even mix Alt+Tab to cycle between application and Alt+` to cycle between windows of the selected application.
-
-There is an exposition of the rationale in this blog post from Canonical's Didier Roche. It's part of a series discussing the development of gnome integration in Ubuntu 17.10.
+* You can use `Alt+` (the key above Tab) to cycle between windows of the same application.
+* You can even mix Alt+Tab to cycle between application and `Alt+` to cycle between windows of the selected application.
+* There is an exposition of the rationale in this blog post from Canonical's Didier Roche. It's part of a series discussing the development of gnome integration in Ubuntu 17.10.
 
 **/GnomeShell/Extensions**
 - https://gitlab.gnome.org/GNOME/gnome-shell-extensions
@@ -1100,10 +817,10 @@ There is an exposition of the rationale in this blog post from Canonical's Didie
 	- https://ubuntuforums.org/showthread.php?t=1494643
 	- https://www.howtogeek.com/189777/how-to-show-the-location-entry-instead-of-the-breadcrumb-bar-in-nautilus-in-ubuntu-14.04/
 	* `ctrl+L` in Nautilus File Browser
-	* ```bash
-	sudo apt install dconf-tools
-	dconf-tools
-	```
+```bash
+sudo apt install dconf-tools
+dconf-tools
+```
 	* org/gnome/nautilus/preferences/show-image-thumbnails
 		- `local-only` to `always`
 		- `aways-use-localation-entry` if path is required instead of breadcrumbs buttins
@@ -1119,17 +836,29 @@ gsettings set org.gnome.nautilus.preferences use-experimental-views false
 * cloumn/block select in the console
 	- `ctrl`+`alt`+`Left mouse key drag and release`
 
+* opening-current-directory-from-a-terminal-onto-a-file-browser
+	- https://unix.stackexchange.com/questions/244970/opening-current-directory-from-a-terminal-onto-a-file-browser
+	- `nautilus .`
+	- `gio open .`
+
+
+## Different Bash commands
+- `nohup` - run a command immune to hangups, with output to a non-tty
+- `rsync` - a fast, versatile, remote (and local) file-copying tool
+- `watch` - execute a program periodically, showing output fullscreen
+
 
 ## Installing Adobe Flash Player and Plugin for browser
-
-https://websiteforstudents.com/installing-the-latest-flash-player-on-ubuntu-17-10/
-
+* https://websiteforstudents.com/installing-the-latest-flash-player-on-ubuntu-17-10/
+```bash
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt update
 sudo apt install adobe-flashplugin browser-plugin-freshplayer-pepperflash
+```
+
 
 ## System Sensor monitors
-https://help.ubuntu.com/community/SensorInstallHowto
+* https://help.ubuntu.com/community/SensorInstallHowto
 ```bash
 sudo apt install lm-sensors
 sudo sensors-detect
@@ -1140,6 +869,8 @@ man sensors.conf
 sudo apt install psensor
 #
 ```
+
+
 ## Hardware Info Utilities
 * http://hardinfo.org/
 * http://goodies.xfce.org/

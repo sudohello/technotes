@@ -11,18 +11,17 @@ Tags: Datasets and Data Creation for Training Machines
 
 [TOC]
 
-# Datasets and Data Creation for Training Machines
+## Datasets and Data Creation for Training Machines
 
 
 ## Creation for Training Machines
 
-### Image Labeling Tools
+
+## Image Labeling Tools
 * https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
 * https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
 * https://github.com/tzutalin/labelImg
-```bash
-git clone https://github.com/tzutalin/labelImg
-```
+  - `git clone https://github.com/tzutalin/labelImg.git`
 * http://sloth.readthedocs.io/en/latest/
 * https://github.com/yuyu2172/image-labelling-tool
 * https://blog.playment.io/training-data-for-computer-vision/
@@ -30,14 +29,40 @@ git clone https://github.com/tzutalin/labelImg
 * https://github.com/commaai/commacoloring
 * https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
 * https://github.com/Labelbox/Labelbox/blob/master/LICENSE
-* `git clone https://github.com/tzutalin/labelImg.git`
 * https://oclavi.com/
 * https://playment.io/image-annotation/
 * https://blog.playment.io/training-data-for-computer-vision/
+* https://github.com/davisking/dlib/tree/master/tools/imglab
+```bash
+git clone https://github.com/davisking/dlib.git
+cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
+```
+
+
+## Labelling
+- https://github.com/udacity/self-driving-car
+- http://aid-driving.eu/active-learning-and-labeling/
+- add situation-specific label
+  *  for each image if it was day, rainy, if there were roadworks, close traffic participants (or far away), and many more things.
+  * Image Properties
+    - Roadworkds:
+    - Cloudy
+    - Traffic participants close
+    - Traffic participants far
+    - City
+    - Rainy
+    - Day
+  * Transfer learning is the practice of taking an existing neural network trained on a specific task and retraining this neural network on another task. 
+  * By using transfer learning we profit from existing lower level filters. By training on all classes at the same time the gradients from other classes influence the upper layers!
+
+## Dataset Management
+- https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/
 
 ## Dataset / Data source / Datasource for ML / Deep Learning / Computer Vision Datasets
+**Extensive List of Datasets**
 - https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
 - https://handong1587.github.io/computer_vision/2015/09/24/datasets.html
+
 * **CIFAR-10**
   - One popular toy image classification dataset is the CIFAR-10 dataset. This dataset consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example “airplane, automobile, bird, etc”). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images.
   - http://www.cs.toronto.edu/~kriz/cifar.html
@@ -126,22 +151,3 @@ git clone https://github.com/tzutalin/labelImg
 
 1. [Cityscape](cityscape-dataset.md)
 2. [Mapillary](mapillary-dataset.md)
-
-## Labelling
-- https://github.com/udacity/self-driving-car
-- http://aid-driving.eu/active-learning-and-labeling/
-- add situation-specific label
-  *  for each image if it was day, rainy, if there were roadworks, close traffic participants (or far away), and many more things.
-  * Image Properties
-    - Roadworkds:
-    - Cloudy
-    - Traffic participants close
-    - Traffic participants far
-    - City
-    - Rainy
-    - Day
-  * Transfer learning is the practice of taking an existing neural network trained on a specific task and retraining this neural network on another task. 
-  * By using transfer learning we profit from existing lower level filters. By training on all classes at the same time the gradients from other classes influence the upper layers!
-
-## Dataset Management
-- https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/
