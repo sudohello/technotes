@@ -1,15 +1,18 @@
-/*
+---
 Title: Maze Architecture & Components
 Decription: maze architecture, components etc.
 Author: Bhaskar Mangal
 Date: 22 Feb 2017
 Placing: 1
 Tags: Linux, Maze, Architecture
-*/
+---
 
-# Maze Architecture Components
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
+
+## Maze Architecture Components
 
 ## Needel in the Haystack - Search & Retrive GB's of Images and text files
 * Problem Statement

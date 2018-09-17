@@ -1,13 +1,18 @@
-/*
+---
 Title: Indoor Mapping, Positioning and Routing
 Decription: Indoor Mapping, Positioning and Routing
 Author: Bhaskar Mangal
 Date: 
 Last Updated: 24th May 2018
 Tags: Indoor Mapping, Positioning and Routing
-*/
+---
 
-# Indoor Mapping, Positioning and Routing - Blue Dot Wayfinding
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Indoor Mapping, Positioning and Routing - Blue Dot Wayfinding
 
 ## Technology
 * https://blog.beaconstac.com/2015/07/ibeacon-vs-nfc-vs-gps-which-indoor-location-technology-will-your-business-benefit-from/

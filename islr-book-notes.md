@@ -1,12 +1,17 @@
-/*
+---
 Title: ISLR Book Notes
 Decription: ISLR Book Notes
 Author: Bhaskar Mangal
 Date: 
 Tags: ISLR Book Notes
-*/
+---
 
-# ISLR book notes
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## ISLR book notes
 > Introduction to Statistical Learning Using R
 
 Statistical learning has emerged as a new subfield in statistics, focused on supervised and unsupervised modeling and prediction

@@ -1,10 +1,14 @@
-/*
+---
 Title: YAML
 Decription: YAML
 Author: Bhaskar Mangal
 Date: 
 Tags: YAML
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 # YAML Tutorial
 

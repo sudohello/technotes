@@ -1,12 +1,17 @@
-/*
+---
 Title: Graphics, Multimedia
 Decription: Graphics, Multimedia
 Author: Bhaskar Mangal
 Date: 10th May 2018
 Tags: Graphics, Multimedia
-*/
+---
 
-# Graphics, Multimedia
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Graphics, Multimedia
 
 ## Photo/Image Editing Tools
 

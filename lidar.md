@@ -1,13 +1,18 @@
-/*
+---
 Title: LiDAR - Light Detection And Ranging
 Decription: Basics of LiDAR
 Author: Bhaskar Mangal
 Date: 20 Dec 2016
 Placing: 1
 Tags: LiDAR, Photogrammetry, Concept
-*/
+---
 
-### Lidar - Light Detection And Ranging
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Lidar - Light Detection And Ranging
 
 * Lidar (Light detection and ranging) is a popularly used technology to collect dense and precise data of topographic structures of the surface of the earth.
 * LiDAR (Light Detection and Ranging) is a new approach to high-resolution surface model generation.

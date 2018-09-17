@@ -1,13 +1,18 @@
-/*
+---
 Title: LMS
 Decription: LMS
 Author: Bhaskar Mangal
 Date: 
 Tags: Flipped LMS, LMS
-*/
+---
 
 
-# Flipped LMS
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Flipped LMS
 
 A flipped LMS approach is where an open platform, in the control of course participants, serves as an alternative front-end to the institutional LMS
 

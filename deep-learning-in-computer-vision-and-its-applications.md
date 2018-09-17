@@ -1,18 +1,19 @@
-/*
+---
 Title: Deep Learning in Computer Vision and its Applications
 Decription: Computer Vision ML, DL Applications
 Author: Bhaskar Mangal
 Date: 30 Jun 2018
 Last Updated: 12 Jul 2018
 Tags: Computer Vision ML, DL Applications
-*/
+---
 
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-# Deep Learning in Computer Vision and its Applications
+## Deep Learning in Computer Vision and its Applications
 > Provide APIs in Computer Vision using Deep Learning for Geospatial Industry
 
 * [AI Programme Slides](https://github.com/mangalbhaskar/dia/blob/master/AI-programme-slides.pdf)

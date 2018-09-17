@@ -1,14 +1,21 @@
-/*
+---
 Title: apt-get Errors
 Decription: apt-get Errors
 Author: Bhaskar Mangal
 Date: 5 Jan 2017
 Placing: 1
 Tags: apt-get Errors
-*/
+---
 
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Apt Get Errors
+```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
-
+```
 W: GPG error: https://artifacts.elastic.co/packages/5.x/apt stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D27D666CD88E42B4
 
 https://askubuntu.com/questions/749241/problem-with-apt-get-update-some-index-files-failed-to-download

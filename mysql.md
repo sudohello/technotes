@@ -1,10 +1,14 @@
-/*
+---
 Title: MySQL
 Decription: MySQL
 Author: Bhaskar Mangal
 Date: 07th May 2018
 Tags: MySQL
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
 ## MySQL

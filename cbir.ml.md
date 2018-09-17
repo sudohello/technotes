@@ -1,10 +1,15 @@
-/*
+---
 Title: CBIR
 Decription: CBIR
 Author: Bhaskar Mangal
 Date: 28th Apr 2018
 Tags: CBIR
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## CBIR or ge Search Engine
 

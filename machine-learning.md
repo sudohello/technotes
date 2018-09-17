@@ -1,13 +1,18 @@
-/*
+---
 Title: ML - Machine Learning
 Decription: Machine Learning
 Author: Bhaskar Mangal
 Date:
 Last Updated: 12th Jun 2018
 Tags: Machine Leaning, ML, Machine Learning in Python
-*/
+---
 
-# Machine Learning
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Machine Learning
 
 ## scikit-learn: machine learning in Python: `sklearn` python package
 > scikit-learn: machine learning in Python

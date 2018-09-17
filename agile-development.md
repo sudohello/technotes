@@ -1,12 +1,17 @@
-/*
+---
 Title: Agile Development
 Decription: Agile Development
 Author: Bhaskar Mangal
 Date: 
 Tags: Agile Development
-*/
+---
 
-# Agile Development
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Agile Development
 
 ## References
 * http://www.romanpichler.com/

@@ -1,12 +1,17 @@
-/*
+---
 Title: Grav
 Decription: Grav
 Author: Bhaskar Mangal
 Date: 
 Tags: Grav
-*/
+---
 
-# Grav
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Grav
 * https://en.wikipedia.org/wiki/Semantic_URL#Slug
 * https://getgrav.org
 

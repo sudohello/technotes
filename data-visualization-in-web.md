@@ -1,13 +1,17 @@
-/*
+---
 Title: Data Visualization in Web
 Decription: Data Visualization in Web
 Author: Bhaskar Mangal
 Date: 23rd Jan 2018
 Tags: Data Visualization in Web
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-# Data Visualization in Web
+## Data Visualization in Web
 
 ##  Geospatial Visualizations in Web
 > 2D/3D WebGL, Map

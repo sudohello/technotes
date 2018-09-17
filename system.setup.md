@@ -1,13 +1,18 @@
-/*
+---
 Title: Ubuntu System Setup
 Decription: Ubuntu System Setup
 Author: Bhaskar Mangal
 Date: 02 May 2018
 Updated: 11 May 2018
 Tags: Ubuntu System Setup
-*/
+---
 
-# System Setup
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## System Setup
 **Assembling decent system for Multi purpose:**
 * Computer Vision and Image Processing
 * Machine Learning

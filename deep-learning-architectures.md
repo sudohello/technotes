@@ -1,15 +1,17 @@
-/*
+---
 Title: Deep Learning Architectures
 Decription: Deep Learning Architectures
 Author: Bhaskar Mangal
 Date: 25th-Aug-2018
 Last updated: 25th-Aug-2018
 Tags: Deep Learning Architectures
-*/
+---
+
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
 ## Deep Learning Model Architectures
 * **VGG**

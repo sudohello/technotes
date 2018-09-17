@@ -1,10 +1,15 @@
-/*
+---
 Title: latex
 Decription: latex
 Author: Bhaskar Mangal
 Date: 30th Apr 2018
 Tags: latex
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## [LaTeX – A document preparation system](https://www.latex-project.org/)
 LaTeX is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. LaTeX is the de facto standard for the communication and publication of scientific documents. LaTeX is available as free software.

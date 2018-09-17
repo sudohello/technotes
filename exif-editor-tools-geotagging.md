@@ -1,11 +1,16 @@
-/*
+---
 Title: Geo-Tagging Images & Geo Tags
 Description: How to geo-tag images (post-processing)
 Author: Bhaskar Mangal
 Date: 28 Mar 2017
 Placing: 1
 Tags: Geo Tagging, ExifTool, Exif Tag
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Geo-Tagging Images
 

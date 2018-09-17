@@ -1,11 +1,14 @@
-/*
+---
 Title: ML for Mobile and Web Applications
 Decription: ML for Mobile and Web Applications
 Author: Bhaskar Mangal
 Date:
 Tags: ML Production Pipeline, ML for Mobile and Web Applications
-*/
+---
 
+**Table of Contents**
+* TOC
+{:toc}
 
 
 ## How to implement ML for Mobile and Web Apps

@@ -1,12 +1,17 @@
-/*
+---
 Title: HD Map
 Decription: HD Map
 Author: Bhaskar Mangal
 Date: 18th-Apr-2018
 Tags: HD Map
-*/
+---
 
-# HD Map
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## HD Map
 
 ## High Definiton Mapping - Motivation
 Autonomous vehicles will require many system redundancies to deal with unforeseen circumstances. A High Definition Map is required for precise localization of the vehicle, relative to road boundaries and intersections, under all conditions.

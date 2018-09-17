@@ -1,12 +1,17 @@
-/*
+---
 Title: Deep Learning Applications
 Decription: Deep Learning Applications
 Author: Bhaskar Mangal
 Date: 
 Tags: Deep Learning Applications
-*/
+---
 
-# Deep Learning Applications
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Deep Learning Applications
 
 > The Deep Learning Revolution
 

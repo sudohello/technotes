@@ -1,7 +1,11 @@
-/*
-Title: Algo & Math
-Placing: 7
-*/
+---
+title: Algo & Math
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Alogrithms
 * k-means clustering

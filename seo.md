@@ -1,12 +1,17 @@
-/*
+---
 Title: SEO
 Decription: SEO
 Author: Bhaskar Mangal
 Date: 
 Tags: SEO
-*/
+---
 
-# SEO
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## SEO
 
 ## schema.org
 

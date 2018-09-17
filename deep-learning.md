@@ -1,15 +1,16 @@
-/*
+---
 Title: Deep Learning
 Decription: Deep Learning
 Author: Bhaskar Mangal
 Date: 
 Last updated: 24th-Jul-2018
 Tags: Deep Learning
-*/
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
 ## Deep Learning Frameworks, Toolchain, Libraries
 * [Refer: Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
@@ -835,6 +836,15 @@ Note that that same workflow would work with almost any image classification tas
 ## PyImageSearch
 * https://www.pyimagesearch.com/static/cv_dl_resource_guide.pdf
 * https://www.pyimagesearch.com/2014/10/13/deep-learning-amazon-ec2-gpu-python-nolearn/
+
+## Latest Research
+
+### 2018
+* [automatically-remove-the-background-from-a-photo/]
+  - https://news.developer.nvidia.com/this-ai-can-automatically-remove-the-background-from-a-photo/
+  - Semantic Soft Segmentation
+  - https://www.youtube.com/watch?v=QYIQbfnS9jA
+
 
 ## TBD Notes
 * **Drones**

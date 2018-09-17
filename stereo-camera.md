@@ -1,13 +1,18 @@
-/*
+---
 Title: Stereo Camera
 Decription: Basics of Stereo Photogrammetry
 Author: Bhaskar Mangal
 Date: 18 Dec 2016
 Placing: 1
 Tags: Stereo Camera, Photogrammetry, Concept
-*/
+---
 
-### Stereo Camera
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Stereo Camera
 
 A **stereo camera** is a type of **camera** with two or more lenses with a separate image sensor or film frame for each lens. This allows the **camera** to simulate human binocular vision, and therefore gives it the ability to capture three-dimensional images, a process known as **stereo** photography. Not all two-lens cameras are used for taking stereoscopic photos
 

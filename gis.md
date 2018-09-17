@@ -1,13 +1,18 @@
-/*
+---
 Title: GIS
 Decription: GIS
 Author: Bhaskar Mangal
 Date: 
 Last Updated: 06-Jul-2018
 Tags: GIS
-*/
+---
 
-# GIS
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## GIS
 
 ## GIS Foundations
 * [Open Source Geospatial Foundation](https://www.osgeo.org/)

@@ -1,12 +1,17 @@
-/*
+---
 Title: Computer Vision
 Decription: Computer Vision
 Author: Bhaskar Mangal
 Date: 
 Tags: Computer Vision
-*/
+---
 
-# Applications of Image Processing and Computer Vision with Python and OpenCV
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Applications of Image Processing and Computer Vision with Python and OpenCV
 
 ## Image Search Engine
 * http://www.pyimagesearch.com/2014/01/27/hobbits-and-histograms-a-how-to-guide-to-building-your-first-image-search-engine-in-python/

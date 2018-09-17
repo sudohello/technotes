@@ -1,12 +1,17 @@
-/*
+---
 Title: HTML5, CSS3, SVG, WebGL, Animations
 Decription: HTML5, CSS3, SVG, WebGL, Animations
 Author: Bhaskar Mangal
 Date: 
 Tags: HTML5, CSS3, SVG, WebGL, Animations
-*/
+---
 
-# HTML5, CSS3, SVG, WebGL, Animations
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## HTML5, CSS3, SVG, WebGL, Animations
 
 * http://animateyourhtml5.appspot.com/pres/index.html?lang=en
 * https://github.com/raphamorim/awesome-canvas

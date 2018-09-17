@@ -1,13 +1,18 @@
-/*
+---
 Title: Chrome, Chrome Dev Tool, Firfox - Browsers Hacks
 Decription: Chrome, Chrome Dev Tool, Firfox - Browsers Hacks
 Author: Bhaskar Mangal
 Date: 12th Jun 2018
 Last Updated: 12th Jun 2018
 Tags: Chrome, Chrome Dev Tool, Firfox - Browsers Hacks
-*/
+---
 
-# Chrome, Chrome Dev Tool, Firfox - Browsers Hacks
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Chrome, Chrome Dev Tool, Firfox - Browsers Hacks
 
 ## How To's
 * Enable/Disable

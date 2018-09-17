@@ -1,13 +1,18 @@
-/*
+---
 Title: Mechanics of Self-Driving Car
 Decription: Mechanics of Self-Driving Car
 Author: Bhaskar Mangal
 Date: 
 Tags: Mechanics of Self-Driving Car
-*/
+---
 
 
-# Mechanics of Self-Driving Car
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Mechanics of Self-Driving Car
 
 This section is the quest to understand and educate myself on the mechanics of self-driving cars, automobiles and related technologies.
 

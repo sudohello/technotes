@@ -1,13 +1,18 @@
-/*
+---
 Title: Maths
 Decription: Maths
 Author: Bhaskar Mangal
 Date: 
 Updated: 16th May 2018
 Tags: Maths
-*/
+---
 
-# Mathematics
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Mathematics
 
 ## [Mathematical optimization: finding minima of functions](https://en.wikipedia.org/wiki/Mathematical_optimization)
 - ScipyLectures-simple.pdf

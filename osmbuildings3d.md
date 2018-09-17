@@ -1,33 +1,30 @@
+---
+title: OSM Buildings 3D
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-https://github.com/OSMBuildings/OSMBuildings/blob/master/docs/server.md
-
-https://github.com/mapbox/mapbox-gl-js/issues/3998
-
-https://blog.mapbox.com/tesla-ux-lead-and-uber-autonomous-experience-designer-brennan-boblett-to-lead-mapbox-navigation-6ae051a0e931
-
-https://twitter.com/Mapbox?lang=en
-
-
-https://osmbuildings.org/blog/2018-02-28_level_of_detail/
-http://wiki.openstreetmap.org/wiki/Simple_3D_buildings#Roof
+## OSM Buildings 3D
+- https://github.com/OSMBuildings/OSMBuildings/blob/master/docs/server.md
+- https://github.com/mapbox/mapbox-gl-js/issues/3998
+- https://blog.mapbox.com/tesla-ux-lead-and-uber-autonomous-experience-designer-brennan-boblett-to-lead-mapbox-navigation-6ae051a0e931
+- https://twitter.com/Mapbox?lang=en
+- https://osmbuildings.org/blog/2018-02-28_level_of_detail/
+- http://wiki.openstreetmap.org/wiki/Simple_3D_buildings#Roof
 
 
-Indoor
-https://wiki.openstreetmap.org/wiki/F3DB
-https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging
+**Indoor**
+- https://wiki.openstreetmap.org/wiki/F3DB
+- https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging
+- https://kontakt.io/blog/what-is-eddystone/
+- http://www.freepatentsonline.com/y2015/0350844.html
+- https://www.micello.com/products/apple-venue-maps-avf
+- https://3dmr.eu/model/4/3
 
-
-https://kontakt.io/blog/what-is-eddystone/
-
-http://www.freepatentsonline.com/y2015/0350844.html
-
-https://www.micello.com/products/apple-venue-maps-avf
-
-
-## There is no magical tool in osm buildings to create 3D models -OSM buildings Eiffel Tower designed in sketchup
-
-* https://3dmr.eu/model/4/3
+* There is no magical tool in osm buildings to create 3D models -OSM buildings Eiffel Tower designed in sketchup
 
 [A model of the Eiffel Tower taken from here](https://www.blendswap.com/blends/view/67944)
 [from the user's comment -  This model is designed by sketchup ]

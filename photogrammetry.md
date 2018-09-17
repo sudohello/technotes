@@ -1,17 +1,18 @@
-/*
+---
 Title: Photogrammetry
 Decription: Photogrammetry
 Author: Bhaskar Mangal
 Date: 
 Tags: Photogrammetry
-*/
-
-
-# Art of Photogrammetry
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
+
+
+## Art of Photogrammetry
 
 ## Introduction
 Photogrammetry is the science of using photographs to obtain measurements and models of real-world objects and scenes. 

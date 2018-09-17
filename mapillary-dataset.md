@@ -1,11 +1,15 @@
-/*
+---
 Title: Mapillary Databset Overview
 Decription: Mapillary Databset Overview
 Author: Bhaskar Mangal
 Date:
 Last updated: 30th-Jul-2018
 Tags: Mapillary Databset Overview
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
 ## Mapillary - Research Paper reviews

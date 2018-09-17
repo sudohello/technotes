@@ -1,12 +1,17 @@
-/*
+---
 Title: QGIS
 Decription: qGIS
 Author: Bhaskar Mangal
 Date: 
 Tags: qGIS
-*/
+---
 
-# qGIS
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## qGIS
 
 ## Tools
 * http://www.mapshaper.org

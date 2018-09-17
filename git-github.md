@@ -1,12 +1,17 @@
-/*
+---
 Title: Github
 Decription: Github
 Author: Bhaskar Mangal
 Date: 
 Tags: Github
-*/
+---
 
-# Git, GitHub, bitbucket, gitbook
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Git, GitHub, bitbucket, gitbook
 
 ## Git
 https://try.github.io/levels/1/challenges/1
@@ -156,6 +161,28 @@ git remote set-url origin --push --add https://github.com/mangalbhaskar/linuxscr
 git remote set-url origin --push --delete https://github.com/mangalbhaskar/linuxscript-2.git
 #
 ```
+
+## Rebase / Rebasing
+- “I want to base my changes on what everybody has already done.”
+* https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+* https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+* https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+```bash
+git rebase --help
+```
+**Proposal:**
+1. Create a github fork of release which was used to make local changes
+2. push all the local changes to the forked (master branch) [ensure its working]
+3. create a release tag [ name it according to stable release of mapboxgl which was used]
+4. create a 'dev' branch
+5. when the latest stable release is out form the mapboxgl branch:
+- create the branch 'patch' from the dev branch, which would be used for merging
+- add mapbox gl as the secondary remote repo
+- rebase this branch with the latest mapboxgl release
+- sanity check and commit
+- move this branch to the latest dev branch
+- delete the patch branch
+6. make a release with the release tag
 
 ## FAQs
 * **what-is-the-difference-between-git-pull-and-git-fetch**

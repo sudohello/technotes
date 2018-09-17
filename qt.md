@@ -1,12 +1,17 @@
-/*
+---
 Title: QT
 Decription: QT
 Author: Bhaskar Mangal
 Date: 14th-Apr-2018
 Tags: QT
-*/
+---
 
-# QT
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## QT
 
 ## QT Installations from Source
 - https://www.ics.com/blog/how-compile-qt-source-code-linux

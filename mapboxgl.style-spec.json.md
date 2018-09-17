@@ -1,3 +1,14 @@
+---
+title: MapboxGL Style Spec
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## MapboxGL Style Spec
+
 {
   "$version": 8,
   "$root": {

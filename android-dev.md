@@ -1,20 +1,29 @@
-/*
+---
 Title: Android App Development
 Decription: Android App Development
 Author: Bhaskar Mangal
 Date: 
 Tags: Android App Development
-*/
-
-# Android App Development
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
+
+## Android App Development
 
 ## Development Environment Setup
 * https://www.tutorialspoint.com/android/android_eclipse.htm
 * https://www.javatpoint.com/how-to-setup-android-for-eclipse-ide
+* https://www.monect.com/
+
+
+
+### Android to PC
+* https://github.com/koush/electron-chrome.git
+* https://www.firstpost.com/tech/news-analysis/how-to-stream-video-from-your-android-device-to-a-pc-and-vice-versa-3587791.html
+
 
 ### Eclipse
 * https://stuff.mit.edu/afs/sipb/project/android/docs/sdk/installing/installing-adt.html

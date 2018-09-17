@@ -1,15 +1,16 @@
-/*
+---
 Title: 3D City
 Decription: 3D City
 Author: Bhaskar Mangal
 Date: 29th Nov 2017
 Last Updated: 12th Jul 2018
 Tags: 3D City
-*/
+---
 
-** Table of Contents**
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
 ```bash
 ___________________________________________________
@@ -28,6 +29,7 @@ ___________________________________________________
 ___________________________________________________
 ```
 
+# 3D City
 
 ## 3D Cities Market Research
 * [3D Cities Market Research](3d-cities-competitors-landscape.html)

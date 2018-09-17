@@ -1,3 +1,13 @@
+---
+title: Indic Language Market
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Indic Language Market
 https://www.business-standard.com/article/current-affairs/google-launches-voice-maps-in-six-indic-languages-to-add-new-users-118031400054_1.html
 
 https://telecom.economictimes.indiatimes.com/news/growth-of-indic-language-to-create-over-50-million-jobs-by-2021-report/62144208

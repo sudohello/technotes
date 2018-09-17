@@ -1,12 +1,17 @@
-/*
+---
 Title: Image Magic
 Decription: Image Magic
 Author: Bhaskar Mangal
 Date: 30 Jan 2017
 Tags: Image Magic
-*/
+---
 
-# Image Magic
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Image Magic
 
 1. Merge, Split
 > convert images to pdf and vice-versa

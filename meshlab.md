@@ -1,15 +1,20 @@
-/*
+---
 Title: MeshLab
 Decription: MeshLab
 Author: Bhaskar Mangal
 Date: 
 Tags: MeshLab
-*/
+---
 
-# Install QT
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Install QT
 * https://info.qt.io/download-qt-for-application-development
 
-# Install CloudCompare
+## Install CloudCompare
 * https://github.com/CloudCompare/CloudCompare/blob/master/BUILD.md
 
 1. QT

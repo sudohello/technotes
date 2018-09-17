@@ -1,12 +1,17 @@
-/*
+---
 Title: Hardware Configuration
 Decription: Hardware Configuration
 Author: Bhaskar Mangal
 Date: 11th-Feb-2018
 Tags: Hardware Configuration
-*/
+---
 
-# Hardware Configuration
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Hardware Configuration
 Assembling decent system for Multi purpose:
 * Computer Vision and Image Processing
 * Machine Learning

@@ -1,16 +1,16 @@
-/*
+---
 Title: Deep Learning  - Traffic Sign Detection and Classification
 Decription: Traffic Sign Detection and Classification
 Author: Bhaskar Mangal
 Date: 06th-Aug-2018
 Last Updated: 06th-Aug-2018
 Tags: Computer Vision ML, DL Applications
-*/
-
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
 ##  Deep Learning  - Traffic Sign Detection and Classification
 

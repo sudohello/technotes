@@ -1,10 +1,15 @@
-/*
+---
 Title: Cluster & Distributed computing
 Decription: Cluster & Distributed computing
 Author: Bhaskar Mangal
 Date: 
 Tags: Cluster & Distributed computing
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Cluster & Distributed computing
 

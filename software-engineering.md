@@ -1,20 +1,25 @@
-/*
+---
 Title: Software Engineering
 Decription: Software Engineering
 Author: Bhaskar Mangal
 Date: 
 Tags: Software Engineering
-*/
+---
 
-# Software Engineering
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Software Engineering
 
 [DSL - Domain-specific_language](https://en.wikipedia.org/wiki/Domain-specific_language)
 
 **SRS, FRS, BRS**
 SRS means software requirement specification; FRS – functional requirement specification; BRS – business requirement specification. ... A system analyst is responsible for SRS creation, while developers – for FRS. BRS is a duty of a business analyst.
 
-http://www.jrobbins.org/ics121f03/lesson-spec-design.html
-http://searchsoftwarequality.techtarget.com/tip/Ambiguous-software-requirements-lead-to-confusion-extra-work
+* http://www.jrobbins.org/ics121f03/lesson-spec-design.html
+* http://searchsoftwarequality.techtarget.com/tip/Ambiguous-software-requirements-lead-to-confusion-extra-work
 
 Negative, or inverse, requirements state what the system will not do. Here's an example from an actual project: "All users with three or more accounts should not be migrated." Try to rephrase negative requirements into a positive sense: "The system shall migrate only users having fewer than three accounts."
 

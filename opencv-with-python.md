@@ -1,12 +1,18 @@
-/*
+---
 Title: Open CV with Python
 Decription: Open CV with Python
 Author: Bhaskar Mangal
 Date: 
 Last Updated: 25th-Jul-2018
 Tags: Open CV with Python
-*/
+---
 
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Open CV with Python
 
 ## Intro
 * https://github.com/arrybn/opencv_intro

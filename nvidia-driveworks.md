@@ -1,14 +1,16 @@
-/*
+---
 Title: Nvidia Driveworks
 Decription: Nvidia Driveworks
 Author: Bhaskar Mangal
 Date: May-2017
 Last Updated: May-2017
 Tags: Nvidia Driveworks
-*/
+---
 
 **Table of Contents**
-[TOC]
+* TOC
+{:toc}
+
 
 ## Nvidia Driveworks
 

@@ -1,10 +1,15 @@
-/*
+---
 Title: Blockchain
 Decription: Blockchain
 Author: Bhaskar Mangal
 Date: 
 Tags: Blockchain
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Blockchain Technology
 

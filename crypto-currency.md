@@ -1,10 +1,15 @@
-/*
+---
 Title: Crypto Currency
 Decription: Crypto Currency
 Author: 
 Date: 
 Tags: Crypto Currency
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Crypto Currency
 - https://www.investopedia.com/terms/s/second-life-economy.asp
@@ -13,5 +18,4 @@ Tags: Crypto Currency
 - https://iraqcurrencywatch.com/2017/12/
 - http://nwn.blogs.com/nwn/economics_of_sl/
 - LindeX
-
-https://www.lifewire.com/cryptocoin-mining-for-beginners-2483064
+- https://www.lifewire.com/cryptocoin-mining-for-beginners-2483064

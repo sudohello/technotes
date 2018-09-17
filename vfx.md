@@ -1,12 +1,17 @@
-/*
+---
 Title: VisualFX
 Decription: VisualFX
 Author: Bhaskar Mangal
 Date: 17th-Apr-2018
 Tags: VisualFX, VFX
-*/
+---
 
-# VFX: Visual Effects, VisualFX
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## VFX: Visual Effects, VisualFX
 
 ## Open Source Compositing Softwares
 - https://openvisualfx.com/software/

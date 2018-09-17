@@ -1,12 +1,17 @@
-/*
+---
 Title: R
 Decription: R
 Author: Bhaskar Mangal
 Date: 
 Tags: R
-*/
+---
 
-# R
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## R
 
 ## Statistics Terms
 * Standard Deviation

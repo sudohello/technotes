@@ -1,14 +1,17 @@
-/*
+---
 Title: GIS Maping Stack
 Decription: GIS Maping Stack
 Author: Bhaskar Mangal
 Date: 
 Tags: GIS Maping Stack
-*/
+---
 
-# GIS Maping Stack
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
+
+## GIS Maping Stack
 
 ## [Mapnik^1^](http://wiki.openstreetmap.org/wiki/Mapnik)
 - Mapnik is an open source toolkit for rendering maps. Among other things, it is used to render the five main Slippy Map layers on the OpenStreetMap website. It supports a variety of geospatial data formats and provides flexible styling options for designing many different kinds of maps.

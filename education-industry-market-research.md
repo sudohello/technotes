@@ -1,3 +1,13 @@
+---
+title: Education Industry Market Research
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Education Industry Market Research
 http://web.stanford.edu/group/e145/cgi-bin/winter/drupal/upload/handouts/Four_Steps.pdf
 http://ctinnovations.com/images/resources/Startup%20Owners%20Manual%20-%20BlankDorf.pdf
 https://hbr.org/2013/05/why-the-lean-start-up-changes-everything

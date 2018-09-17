@@ -1,10 +1,15 @@
-/*
+---
 Title: Ubuntu Exports Bash
 Decription: Ubuntu Exports Bash
 Author: Bhaskar Mangal
 Date: 23rd Jan 2018
 Tags: Ubuntu Exports Bash
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Custom New System Configuration: ~/.bashrc
 ```bash

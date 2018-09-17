@@ -1,12 +1,17 @@
-/*
+---
 Title: Snippets
 Decription: Snippets
 Author: Bhaskar Mangal
 Date: 15th-Mar-2018
 Tags: Snippets
-*/
+---
 
-# Snippets
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Snippets
 
 ## Javascript
 var style = this.options.style;

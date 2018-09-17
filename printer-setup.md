@@ -1,12 +1,17 @@
-/*
+---
 Title: Printer Setup
 Decription: Printer Setup
 Author: Bhaskar Mangal
 Date: 14th-Apr-2018
 Tags: Printer Setup
-*/
+---
 
-# Printer Setup
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Printer Setup
 
 ## HP LaserJet Pro MFP M132nw Printer
 https://support.hp.com/in-en/document/c05228191

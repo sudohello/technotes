@@ -1,3 +1,14 @@
+---
+title: Forum And Blog
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Forum And Blog
+
 ## Poetry Corner Forum
 * https://groups.google.com/forum/?fromgroups#!creategroup
 

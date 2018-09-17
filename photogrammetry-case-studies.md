@@ -1,7 +1,13 @@
-/*
-Title: Case Studies
-Placing: 8
-*/
+---
+Title: Photogrammetry Case Studies
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Photogrammetry Case Studies
 
 **Case Study References**
 * http://www.cvlibs.net/publications/Geiger2013IJRR.pdf

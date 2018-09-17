@@ -1,12 +1,17 @@
-/*
+---
 Title: Apache Guide
 Decription: Apache
 Author: Bhaskar Mangal
 Date: 
 Tags: Apache Guide
-*/
+---
 
-# Apache Guide
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Apache Guide
 
 ## Apache2 Installation
 

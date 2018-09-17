@@ -1,10 +1,15 @@
-/*
+---
 Title: Gimp
 Decription: Gimp
 Author: Bhaskar Mangal
 Date: 06th-Aug-2018
 Tags: Gimp
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Gimp
 

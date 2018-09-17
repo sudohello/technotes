@@ -1,3 +1,14 @@
+---
+title: PHP SLIM Debug
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## PHP SLIM Debug
+
 object(Slim\Container)#2 (7) {
   ["defaultSettings":"Slim\Container":private]=>
   array(7) {

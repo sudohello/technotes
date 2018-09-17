@@ -1,20 +1,28 @@
-/*
+---
 Title: Deep Learning Frameworks, Toolkits, Libraries
 Decription: Deep Learning Frameworks, Toolkits, Libraries
 Author: Bhaskar Mangal
 Date: 24th-Jul-2018
 Last update: 24th-Jul-2018
 Tags: Deep Learning Frameworks, Toolkits, Libraries
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Deep Learning Frameworks, Toolkits and Libraries
 * https://dzone.com/articles/progressive-tools10-best-frameworks-and-libraries
 * https://cloud.google.com/automl/
 * https://aws.amazon.com/sagemaker/
 
-**What framework(s) are avaiable to train deep learning models?**
-**top-9-favorite-python-deep-learning-libraries**
-* https://www.pyimagesearch.com/2016/06/27/my-top-9-favorite-python-deep-learning-libraries/
+* **What framework(s) are avaiable to train deep learning models?**
+* **top-9-favorite-python-deep-learning-libraries**
+	* https://www.pyimagesearch.com/2016/06/27/my-top-9-favorite-python-deep-learning-libraries/
+* **which-machine-learning-framework-should-you-opt-for**
+	- https://www.analyticsindiamag.com/tensorflow-vs-caffe-which-machine-learning-framework-should-you-opt-for/
+
 
 ### Theano
 - Theano is a numerical computation library for Python. In Theano, computations are expressed using a NumPy-esque syntax and compiled to run efficiently on either CPU or GPU architectures.

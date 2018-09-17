@@ -1,13 +1,17 @@
-/*
+---
 Title: Grub LDAP Samba
 Decription: Grub LDAP Samba
 Author: Bhaskar Mangal
 Date: 
 Tags: Grub LDAP Samba
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-# Grub LDAP Samba
+## Grub LDAP Samba
 
 ## Recovering LDAP and other server configuration after Hard Server Stop!
 We had two system:

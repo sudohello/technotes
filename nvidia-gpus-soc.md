@@ -1,14 +1,16 @@
-/*
+---
 Title: Nvidia Graphics cards/GPU
 Decription: Nvidia Graphics cards/GPU
 Author: Bhaskar Mangal
 Date: May-2017
 Last Updated: May-2017
 Tags: Nvidia Graphics cards/GPU
-*/
+---
 
 **Table of Contents**
-[TOC]
+* TOC
+{:toc}
+
 
 ## Nvidia Graphics cards/GPU
 GPUs had evolved into highly parallel multi-core systems allowing very efficient manipulation of large blocks of data.

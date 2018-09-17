@@ -1,17 +1,20 @@
-/*
+---
 Title: Game Engines
 Decription: Game Engines
 Author: Bhaskar Mangal
 Date: 5 Jan 2017
 Placing: 1
 Tags: Game Engines
-*/
+---
 
-### Game Engines
+**Table of Contents**
+* TOC
+{:toc}
 
-http://forums.cgarchitect.com/79999-stingray-vs-unity-difference-similarities.html
 
-https://www.cryengine.com/ 
+## Game Engines
+* http://forums.cgarchitect.com/79999-stingray-vs-unity-difference-similarities.html
+* https://www.cryengine.com/ 
 The most powerful game development platform is now available to everyone. Full engine source code. All features. No royalties. No obligations. No license fee.
 
 (

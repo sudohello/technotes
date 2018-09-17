@@ -1,11 +1,16 @@
-/*
+---
 Title: HTML5 Video
 Decription: HTML5 Video
 Author: Bhaskar Mangal
 Date: 4th Jun 2018
 Last Updates: 4th Jun 2018
 Tags: HTML5 Video
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## HTML5 Video
 

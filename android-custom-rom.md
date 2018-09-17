@@ -1,10 +1,15 @@
-/*
+---
 Title: Android Custom ROM
 Decription: Android Custom ROM
 Author: Bhaskar Mangal
 Date: 10th Apr 2018
 Tags: Android Custom ROM
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Android Custom ROM
 - https://www.digitalocean.com/community/tutorials/how-to-build-android-roms-on-ubuntu-16-04

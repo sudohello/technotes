@@ -1,13 +1,18 @@
-/*
+---
 Title: Open Source
 Decription: Open Source
 Author: Bhaskar Mangal
 Date: 17th May 2018
 Last Updates: 6th Jun 2018
 Tags: Open Source
-*/
+---
 
-# Open Source
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Open Source
 
 ## Open Source Business Models
 

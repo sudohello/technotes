@@ -1,10 +1,15 @@
-/*
+---
 Title: PHP SLIM
 Decription: PHP SLIM
 Author: Bhaskar Mangal
 Date: 19th-Apr-2018
 Tags: PHP SLIM
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## SLIM Framework
 - https://www.slimframework.com

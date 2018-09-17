@@ -1,12 +1,17 @@
-/*
+---
 Title: Smart Cities
 Decription: Smart Cities
 Author: Bhaskar Mangal
 Date: 
 Tags: Smart Cities
-*/
+---
 
-# Smart Cities
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Smart Cities
 
 ## 3D Map Design Principles for Urban City
 

@@ -1,4 +1,13 @@
-# Data Visualization In Python
+---
+title: Data Visualization In Python
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Data Visualization In Python
 >Learning data-visulaization and data-analysis in python
 
 ## Numpy, Pandas, Matplotlib

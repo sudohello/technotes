@@ -1,17 +1,18 @@
-/*
+---
 Title: Image Processing & Photography
 Decription: Image Processing & Photography
 Author: Bhaskar Mangal
 Date: 03rd May 2018
 Last Updated: 17th May 2018
 Tags: Image Processing & Photography
-*/
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-# Image Processing
+## Image Processing
 
 ## Photography
 

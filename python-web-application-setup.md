@@ -1,4 +1,13 @@
-# Web Application Setup for Python
+---
+title: Web Application Setup for Python
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Web Application Setup for Python
 >Learning to setup Apache for web applications in python
 
 
@@ -120,7 +129,7 @@ sudo pip2 install Flask
 - https://stackoverflow.com/questions/31252791/flask-importerror-no-module-named-flask
 
 - http://modwsgi.readthedocs.io/en/develop/user-guides/configuration-guidelines.html
-
+```bash
 webtool.wsgi
 import sys
 sys.path.append('/home/game/public_html/wsgi-bin')
@@ -139,6 +148,35 @@ def hello():
 
 if __name__=="__main__":
 	app.run(debug=True)
+```
+* http://jsonmate.com/
 
 
-http://jsonmate.com/
+## WSGI Servers
+- https://www.fullstackpython.com/wsgi-servers.html
+- https://realpython.com/kickstarting-flask-on-ubuntu-setup-and-deployment/
+```bash
+sudo pip install gunicorn
+sudo pip3 install gunicorn
+#
+gunicorn app:app -b localhost:8000
+gunicorn index:app -b localhost:8080
+```
+
+https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
+
+http://2ality.com/2014/06/simple-http-server.html
+
+
+
+https://stackoverflow.com/questions/10396330/how-to-host-python-cgi-script-with-python-m-simplehttpserver-8000-or-python
+
+This work for me, run the python -m CGIHTTPServer 8000 command same menu level with cgi-bin,and move cgi_script.py into cgi-bin folder.In browser type http://localhost:8000/cgi-bin/cgi_script.py
+
+https://gist.github.com/yoavram/4351498
+https://blog.hyperiondev.com/index.php/2018/02/01/deploy-machine-learning-model-flask-api/
+
+
+## Setup Env Variables
+- https://github.com/theskumar/python-dotenv
+- https://robinislam.me/blog/reading-environment-variables-in-python/

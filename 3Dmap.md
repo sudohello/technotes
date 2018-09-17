@@ -1,4 +1,13 @@
-# 3D Smartcity Solutions v1.0.0
+---
+title: 3D Smartcity Solutions
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## 3D Smartcity Solutions v1.0.0
 > by Bhaskar Mangal
 >[![Alt Blog, forum, k-bank](logos/blogger-logo-2.png "Blog, Forum, knowledge-bank"  "width:65px;margin-right:20px")](http://hdmapforselfdrivingcar.blogspot.in/) [![Alt Scripts](logos/git-hub-2.png "Scripts"  "width:23px;")](https://github.com/mangalbhaskar/linuxscripts)
 >

@@ -1,20 +1,18 @@
-/*
+---
 Title: Linux Administration, Tools setup
 Decription: nitty gritty of Linux
 Author: Bhaskar Mangal
 Date: 20 Jan 2017
 Updated: 12 Jul 2018
 Tags: Linux, Administration, Tools, Softwares
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-
-https://www.bankbazaar.com/tax/self-assessment-tax.html?ck=Y%2BziX71XnZjIM9ZwEflsyDYlRL7gaN4W0xhuJSr9Iq7aMYwRm2IPACTQB2XBBtGG&rc=1
-https://www.bankbazaar.com/tax/use-challan-280-to-pay-your-income-tax-online.html?ck=Y%2BziX71XnZjIM9ZwEflsyDYlRL7gaN4W0xhuJSr9Iq7aMYwRm2IPACTQB2XBBtGG&rc=1
-
-
-
-# Software & Tools Setup Help
+## Software & Tools Setup Help
 
 ## Linux Administration
 
@@ -404,6 +402,18 @@ pdftk /path/to/input.pdf input_pw <yourpassword> output out.pdf
 * **PDF Editors**
 - http://www.linuxandubuntu.com/home/5-best-linux-pdf-editors
 
+## Sounds
+**how-to-turn-off-the-beep-only-in-bash-tab-complete**
+- https://unix.stackexchange.com/questions/73672/how-to-turn-off-the-beep-only-in-bash-tab-complete
+- https://serverfault.com/questions/26405/how-do-i-turn-off-the-beep-in-the-terminal-in-linux
+* https://www.cyberciti.biz/faq/how-to-linux-disable-or-turn-off-beep-sound-for-terminal/
+Open Gnome terminal
+
+## bash script
+* error codes, exiting scripts
+- https://stackoverflow.com/questions/1378274/in-a-bash-script-how-can-i-exit-the-entire-script-if-a-certain-condition-occurs
+
+`Click on Settings > Preferences > Silence Terminal Bell`
 
 ## Audio
 
@@ -841,6 +851,20 @@ gsettings set org.gnome.nautilus.preferences use-experimental-views false
 	- `nautilus .`
 	- `gio open .`
 
+* BUG: alt+arrow, super + arrow will switch between the virtual consoles.
+- https://bugs.launchpad.net/ubuntu/+source/gnome-shell/+bug/1508146
+alt + left/right arrows switch between tty consoles, cannot disable
++ alt + left/right arrows switch between tty consoles (Gnome Shell
++ vanishes), cannot disable
+
+```bash
+sudo dumpkeys |grep -v -E '^(\W+)alt(\W+)keycode (105|106) = (Incr|Decr)_Console' |sudo loadkeys
+```
+* Reset default settings
+https://www.omgubuntu.co.uk/2017/10/how-to-reset-ubuntu-desktop-to-default
+```bash
+dconf reset -f /
+```
 
 ## Different Bash commands
 - `nohup` - run a command immune to hangups, with output to a non-tty
@@ -886,4 +910,61 @@ sudo apt install psensor
 * Xscorch
 ```bash
 sudo apt install scorched3d
+```
+
+
+## Diff and Merge Tools for Ubuntu
+_ https://askubuntu.com/questions/2946/what-are-some-good-gui-diff-and-merge-applications-available-for-ubuntu
+- https://www.slant.co/topics/5882/~linux-diff-tools
+- https://www.linuxlinks.com/difftools/
+
+* Diffuse -	Tool for merging and comparing text files
+* [Meld](http://meldmerge.org/) - Diff viewer and merge tool for GNOME
+	- Installations:
+	- https://www.linuxhelp.com/how-to-install-meld-tool-in-ubuntu/
+```bash
+sudo apt install meld
+```
+* xxdiff - File and directories comparator and merge tool
+* KDiff3	- Text difference analyzer for up to 3 input files
+* Kompare	- KDE diff tool
+* DiffMerge - 	Visually compare and merge files
+* vimdiff
+* GNU Diffutils (diff)
+* P4Merge
+* tkdiff - https://packages.ubuntu.com/trusty/tkdiff
+	- `sudo apt install tkcvs`
+
+* Get ubuntu version and code name
+```bash
+lsb_release -sc
+#bionic
+lsb_release -sr
+#18.04
+```
+
+## Connect to VPN
+```bash
+sudo -E apt -q -y install openvpn
+#
+cd $HOME/Documents/bmangal/vpn
+sudo openvpn --config fw-udp-1194-bhaskar.ovpn
+```
+
+dconf-editor
+
+/org/gnome/desktop/interface/can-change-accels
+
+make it true
+
+killall nautilus && UBUNTU_MENUPROXY= nautilus 
+
+http://tipsonubuntu.com/2018/04/22/re-enable-new-document-option-ubuntu-18-04/
+https://itsfoss.com/add-new-document-option/
+
+https://linuxconfig.org/how-to-create-desktop-shortcut-launcher-on-ubuntu-18-04-bionic-beaver-linux
+
+* Enabe New Document Option
+```bash
+touch ~/Templates/Empty\ Document
 ```

@@ -1,11 +1,16 @@
-/*
+---
 Title: NoSQL Database
 Decription: NoSQL Database
 Author: Bhaskar Mangal
 Date: 
 Last Updated: 
 Tags: NoSQL Database
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## NoSQL (Not Only SQL) Database
 - https://www.tutorialspoint.com/cassandra/cassandra_introduction.htm

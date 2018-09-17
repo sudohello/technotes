@@ -1,12 +1,17 @@
-/*
+---
 Title: Reverse Engineering
 Decription: Reverse Engineering
 Author: Bhaskar Mangal
 Date: 
 Tags: Reverse Engineering
-*/
+---
 
-# Reverse Engineering
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Reverse Engineering
 
 ## Decompilers
 

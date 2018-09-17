@@ -1,11 +1,16 @@
-/*
+---
 Title: VIM Editor
 Decription: VIM Editor
 Author: Bhaskar Mangal
 Date: 20 Jan 2017
 Updated: 12 Jul 2018
 Tags: Linux, Tools, Editor, VIM
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## VIM Editor
 

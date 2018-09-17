@@ -1,10 +1,15 @@
-/*
+---
 Title: WebGL
 Decription: WebGL 
 Author: Bhaskar Mangal
 Date: 
 Tags: WebGL
-*/
+---
+
+
+**Table of Contents**
+* TOC
+{:toc}
 
 ## WebGL
 

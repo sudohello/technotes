@@ -1,13 +1,18 @@
-/*
+---
 Title: Tensorflow
 Decription: Tensorflow
 Author: Bhaskar Mangal
 Date: 16th-Apr-2018
 Last Updated: 30th-Jul-2018
 Tags: Tensorflow
-*/
+---
 
-# Tensorflow
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Tensorflow
 
 ## Tensorflow Install
 * [tensorflow.install.sh](https://github.com/mangalbhaskar/linuxscripts/blob/master/tensorflow.install.sh)

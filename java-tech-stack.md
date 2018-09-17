@@ -1,13 +1,17 @@
-/*
+---
 Title: Java Tech Stack
 Decription: Java
 Author: Bhaskar Mangal
 Date: 
 Tags: Java
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-# Java Tech Stack
+## Java Tech Stack
 
 ## Build Frameworks
 - ANT, 2000

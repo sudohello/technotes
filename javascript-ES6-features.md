@@ -1,10 +1,15 @@
-/*
+---
 Title: JS ES6
 Decription: JS ES6
 Author: Bhaskar Mangal
 Date: 
 Tags: JS ES6
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Browser Compatibility
 * https://kangax.github.io/compat-table/es6/

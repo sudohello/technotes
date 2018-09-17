@@ -1,12 +1,17 @@
-/*
+---
 Title: Stats
 Decription: Stats
 Author: Bhaskar Mangal
 Date: 
 Tags: Stats
-*/
+---
 
-# Statistics
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Statistics
 
 ## Median
 **References**

@@ -1,12 +1,17 @@
-/*
+---
 Title: 360 degree pano
 Decription: 360 degree pano
 Author: Bhaskar Mangal
 Date: 
 Tags: 360 degree pano
-*/
+---
 
-# 360 degree pano
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## 360 degree pano
 
 ## Krpano WebView
 https://krpano.com/forum/wbb/index.php?page=Thread&postID=61064

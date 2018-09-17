@@ -1,13 +1,17 @@
-/*
+---
 Title: Libre Office
 Decription: Libre Office
 Author: Bhaskar Mangal
 Date: 
 Tags: Libre Office
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 
-# Libre Office
+## Libre Office
 
 ## Spell Check / Dictionary not working
 * https://ask.libreoffice.org/en/question/59016/writer-freezes-when-i-try-too-use-the-format-menu-what-can-i-do/?answer=59132#post-id-59132

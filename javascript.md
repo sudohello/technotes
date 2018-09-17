@@ -1,12 +1,17 @@
-/*
+---
 Title: Javascript
 Decription: Javascript
 Author: Bhaskar Mangal
 Date: 
 Tags: Javascript
-*/
+---
 
-# Javascript
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Javascript
 
 ## Dat-GUI
 - https://github.com/dataarts/dat.gui

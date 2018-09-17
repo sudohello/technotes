@@ -1,10 +1,14 @@
-/*
+---
 Title: Jekyll
 Decription: Jekyll
 Author: Bhaskar Mangal
 Date: 19th-Aug-2018
 Tags: Jekyll
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
 
 ## Jekyll
 
@@ -80,6 +84,47 @@ jekyll build -d ~/public_html/jekyll-sites/tnotes/
 - http://jekyllthemes.org/
 - http://pixyll.com/
 
+## Jekyll as headles CMS
+- https://www.storyblok.com/tp/headless-cms-jekyll
+
+```bash
+jekyll build
+jekyll build --watch
+```
+https://app.netlify.com/sites/elegant-mirzakhani-b5ecb7/settings/domain
+Your site is secured by Let’s Encrypt, a non-profit organization that provides free HTTPS (SSL/TLS) certificates to millions of sites.
+
+- http://yaml.org/
+
+- https://jekyllrb.com/docs/frontmatter/
+
+**Creating Layouts**
+- https://jeremenichelli.io/2015/07/building-blog-jekyll-creating-layouts/
+- Different markdowns
+  * karmdown
+  * redcarpet
+
+  https://www.taniarascia.com/make-a-static-website-with-jekyll/
+
+  https://www.taniarascia.com/2017-into-2018/
+
+  https://www.pcworld.com/article/2686467/privacy/how-to-use-the-tor-browser-to-surf-the-web-anonymously.html
+
+
+
 ## References, People, web-ste samples
 - https://www.taniarascia.com/make-a-static-website-with-jekyll/
 - http://www.gwern.net/
+
+## Liquid
+* https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+
+## FAQs
+* How to Add Table of Contents?
+  - http://www.seanbuscay.com/blog/jekyll-toc-markdown/
+
+```pre
+* TOC
+{:toc}
+```
+

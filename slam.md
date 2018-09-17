@@ -1,12 +1,17 @@
-/*
+---
 Title: SLAM
 Decription: SLAM
 Author: Bhaskar Mangal
 Date: 
 Tags: SLAM
-*/
+---
 
-# SLAM
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## SLAM
 SLAM consists of	multipleparts:
 - data reading,	datamapping, robot state,	state	update and map update
 - it is 2D or 3D

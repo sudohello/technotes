@@ -1,18 +1,18 @@
-/*
+---
 Title: Deep Learning Hardware
 Decription: Deep Learning Hardware
 Author: Bhaskar Mangal
 Date: 24th-Jul-2018
 Last update: 24th-Jul-2018
 Tags: Deep Learning Hardware
-*/
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-
-# Deep Learning Hardware
+## Deep Learning Hardware
 
 ## How to Select / Building Deep Learning Machine for Computer Vision?
 * [hardwares-configs.md](hardwares-configs.md)

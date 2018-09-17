@@ -1,12 +1,17 @@
-/*
+---
 Title: Google Analytics
 Decription: Google Analytics
 Author: Bhaskar Mangal
 Date: 
 Tags: Google Analytics
-*/
+---
 
-# Google Analytics
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Google Analytics
 
 ## Keywords & Definitions
 * Page

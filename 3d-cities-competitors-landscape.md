@@ -1,17 +1,18 @@
-/*
+---
 Title: 3D Cities Market Research
 Decription: 3D Cities Market Research
 Author: Bhaskar Mangal
 Date: 30th Apr 2018
 Updated: 21st May 2018
 Tags: 3D Cities Market Research
-*/
+---
 
-** Table of Contents**
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-# 3D Cities Market Research
+## 3D Cities Market Research
 
 ## 3D Cities/Maps Commercial Players/Products/Services
 

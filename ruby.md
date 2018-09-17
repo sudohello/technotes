@@ -1,11 +1,16 @@
-/*
+---
 Title: Ruby on Rails
 Decription: Ruby on Rails
 Author: Bhaskar Mangal
 Date: 17th May 2018
 Last Updates: 6th Jun 2018
 Tags: Ruby on Rails
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Ruby, Ruby on Rails, Ruby Gems
 * https://www.railstutorial.org/book/beginning
@@ -82,28 +87,7 @@ bundle show <gemName>
 
 https://hugogiraudel.com/2013/02/21/jekyll/
 
-## Jekyll as headles CMS
-- https://www.storyblok.com/tp/headless-cms-jekyll
+* [Jekyll - static website generator](jekyll.md)
 
-```bash
-jekyll build
-jekyll build --watch
-```
-https://app.netlify.com/sites/elegant-mirzakhani-b5ecb7/settings/domain
-Your site is secured by Let’s Encrypt, a non-profit organization that provides free HTTPS (SSL/TLS) certificates to millions of sites.
 
-- http://yaml.org/
-
-- https://jekyllrb.com/docs/frontmatter/
-
-**Creating Layouts**
-- https://jeremenichelli.io/2015/07/building-blog-jekyll-creating-layouts/
-- Different markdowns
-  * karmdown
-  * redcarpet
-
-  https://www.taniarascia.com/make-a-static-website-with-jekyll/
-
-  https://www.taniarascia.com/2017-into-2018/
-
-  https://www.pcworld.com/article/2686467/privacy/how-to-use-the-tor-browser-to-surf-the-web-anonymously.html
+https://www.smashingmagazine.com/2016/08/using-a-static-site-generator-at-scale-lessons-learned/

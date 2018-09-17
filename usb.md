@@ -1,12 +1,17 @@
-/*
+---
 Title: Linux Troubleshooting
 Decription: Linux Troubleshooting
 Author: Bhaskar Mangal
 Date: 
 Tags: Linux Troubleshooting, Ubuntu, DataCard/USB
-*/
+---
 
-# Linux Troubleshooting
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Linux Troubleshooting
 
 ## USB / Datacard (Huawei) Setup
 

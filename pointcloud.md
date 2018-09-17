@@ -1,17 +1,18 @@
-/*
+---
 Title: Point Cloud
 Decription: Point Cloud Data
 Author: Bhaskar Mangal
 Date: 12th Jul 2018
 Last Updated: 12th Jul 2018
 Tags: Point Cloud Data, PCD
-*/
+---
 
-** Table of Contents**
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-# PCD - Point Cloud Data
+## PCD - Point Cloud Data
 
 ## Showcase / Examples on Internet
 * [second national Lidar survey of the Netherlands, AHN2, with 640 billion points](http://ahn2.pointclouds.nl)

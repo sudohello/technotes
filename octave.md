@@ -1,12 +1,17 @@
-/*
+---
 Title: Octave
 Decription: Octave
 Author: Bhaskar Mangal
 Date: 
 Tags: Octave
-*/
+---
 
-# Octave
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Octave
 
 ~/.octaverc
 This file is used to make personal changes to the default Octave environment.

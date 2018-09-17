@@ -1,16 +1,17 @@
-/*
+---
 Title: Mapbox GL
 Decription: Mapbox GL
 Author: Bhaskar Mangal
 Date: 12th Feb 2018
 Tags: Mapbox GL
-*/
+---
 
-** Table of Contents**
+**Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
-# Mapbox GL
+## Mapbox GL
 ```javascript
 tileDomain = (window.location.hostname.includes("strava") ? 'http://{s}-globalheat.strava.com' :'http://' + window.location.hostname + ':9000');
 

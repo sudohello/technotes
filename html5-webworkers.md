@@ -1,13 +1,18 @@
-/*
+---
 Title: Javascript Web workers, Web Sockets
 Decription: Javascript
 Author: Bhaskar Mangal
 Date: 12th Jun 2018
 Last Updated: 12th Jun 2018
 Tags: Javascript Web workers, Web Sockets
-*/
+---
 
-# Javascript Web workers
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Javascript Web workers
 
 - HTML5 Web Workers provide background-processing capabilities to web applications and typically run on separate threads so that JavaScript applications using Web Workers can take advantage of multicore CPUs
 - Separating long-running tasks into Web Workers also avoids the dreaded slow-script warnings

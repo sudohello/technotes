@@ -1,11 +1,16 @@
-/*
+--
 Title: Error Budgets
 Decription: Types of Error in Photogrammetry
 Author: Bhaskar Mangal
 Date: 5 Jan 2017
 Placing: 1
 Tags: Error Budget, Photogrammetry, Concept
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Error
 Reprojection error

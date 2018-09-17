@@ -1,10 +1,17 @@
-/*
+---
 Title: PHP Tech
 Decription: PHP Tech
 Author: Bhaskar Mangal
 Date: 
 Tags: PHP Tech
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## PHP Tech
 
 ##  Twig - PHP templating engine
 * https://knpuniversity.com/screencast/twig/basics

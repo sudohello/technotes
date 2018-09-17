@@ -1,12 +1,17 @@
-/*
+---
 Title: VisualSfM
 Decription: VisualSfM
 Author: Bhaskar Mangal
 Date:
 Tags: VisualSfM
-*/
+---
 
-# VisualSfM
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## VisualSfM
 
 ## Installation
 * http://ccwu.me/vsfm/install.html

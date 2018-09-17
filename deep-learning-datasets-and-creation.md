@@ -1,15 +1,16 @@
-/*
+---
 Title: Datasets and Data Creation for Training Machines
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
 Date: 24th-Jul-2018
 Last updated: 24th-Jul-2018
 Tags: Datasets and Data Creation for Training Machines
-*/
+---
 
 **Table of Contents**
+* TOC
+{:toc}
 
-[TOC]
 
 ## Datasets and Data Creation for Training Machines
 
@@ -87,6 +88,7 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
   ```
+*  MNIST, then notMNIST, another famous one is cifar-10, cifar-100, and for driverless cars, we have GTSRB (Traffic sign recognition), GTSDB (Traffic sign detection) 
 
 ### Traffic Sign Datasets
 * **German**
@@ -151,3 +153,18 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
 
 1. [Cityscape](cityscape-dataset.md)
 2. [Mapillary](mapillary-dataset.md)
+
+
+# TBD
+* https://www.kaggle.com/learn/machine-learning
+
+## Dataset Pre-processing
+* http://shubhagrawal.in/2016/10/13/machine-learning-data-preprocessing/
+
+https://github.com/CPFL/Autoware
+https://maptools.tier4.jp/
+http://www.aisantec.co.jp/english/
+
+http://shubhagrawal.in/2016/08/01/creating-launcher-for-any-executable-file-linux/
+
+http://home.bharathh.info/

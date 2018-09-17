@@ -1,12 +1,17 @@
-/*
+---
 Title: OSM
 Decription: OSM
 Author: Bhaskar Mangal
 Date: 
 Tags: OSM, Open Street Map
-*/
+---
 
-# OSM - Open Street Map
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## OSM - Open Street Map
 
 ## Database
 https://help.openstreetmap.org/questions/53270/real-time-download-whole-osm-database

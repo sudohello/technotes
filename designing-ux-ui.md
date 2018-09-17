@@ -1,10 +1,15 @@
-/*
+---
 Title: Design, UI, UX
 Decription: Design, UI, UX
 Author: Bhaskar Mangal
 Date: 26th Apr 2018
 Tags: Design, UI, UX
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Blogs
 - https://www.smashingmagazine.com/2018/04/designing-emotional-interfaces-boring-apps/

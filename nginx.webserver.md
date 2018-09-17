@@ -1,10 +1,15 @@
-/*
+---
 Title: nginx Web Server
 Decription: nginx Web Server
 Author: Bhaskar Mangal
 Date: 25th Apr 2018
 Tags: nginx Web Server
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## nginx-vs-apache
 - https://anturis.com/blog/nginx-vs-apache/

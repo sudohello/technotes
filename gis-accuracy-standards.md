@@ -1,11 +1,11 @@
-/*
+---
 Title: Time Keepers - GIS Accuracy Standards
 Decription: Time Keepers - GIS Accuracy Standards
 Author: Bhaskar Mangal
 Date: Jul-2017
 Last Updated: Jul-2017
 Tags: Time Keepers - GIS Accuracy Standards
-*/
+---
 
 
 >**Follow here:-**
@@ -15,10 +15,13 @@ Tags: Time Keepers - GIS Accuracy Standards
 **by [Bhaskar Mangal](http://www.bhaskarmangal.com/)**
 27^th^ Jul 2017
 
-**Table of Contents**
-[TOC]
 
-##Time Keepers - GIS Accuracy Standards
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Time Keepers - GIS Accuracy Standards
 > A prolog to GIS Survey Standards & Specifications
 
 * [Click here to view ++Main Presentation - **27^th^ Jul 2017** ppt++](ppts-pdfs/gis-accuracy-standards-time-keepers.pdf)

@@ -1,12 +1,17 @@
-/*
+---
 Title: VueJs
 Decription: VueJs
 Author: Bhaskar Mangal
 Date: 13th-Mar-2018
 Tags: VueJs
-*/
+---
 
-# VueJs
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## VueJs
 
 ## vue-cli
 * https://tutorials.kode-blog.com/vue-js-tutorial

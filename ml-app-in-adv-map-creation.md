@@ -1,11 +1,16 @@
-/*
+---
 Title: Machine Learning, Deep Neural Network & Computer Vision
 Decription: Machine Learning, Deep Neural Network & Computer Vision
 Author: Bhaskar Mangal
 Date: Jul-2017
 Last Updated: Jul-2017
 Tags: Machine Learning, Deep Neural Network & Computer Vision
-*/
+---
+
+**Table of Contents**
+* TOC
+{:toc}
+
 
 ## Machine Learning, Deep Neural Network & Computer Vision
 >**Follow BDC-Team here:-**

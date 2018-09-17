@@ -1,13 +1,18 @@
-/*
+---
 Title: Drone Mapping
 Decription: Drone Mapping
 Author: Bhaskar Mangal
 Date: 13 Jul 2018
 Last updated: 13 Jul 2018
 Tags: Drone Mapping
-*/
+---
 
-# Drone Mapping
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Drone Mapping
 
 ## Showcase
 https://hivemapper.com/37.42522884627891/-122.1656555682589/zoom13.9/85/41

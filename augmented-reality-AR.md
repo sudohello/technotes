@@ -1,11 +1,15 @@
-/*
+---
 Title: AR - Augmented Reality
 Decription: Augmented Reality
 Author: Bhaskar Mangal
 Date: 
 Tags: Augmented reality
-*/
+---
 
-# AR - Augmented Reality
+**Table of Contents**
+* TOC
+{:toc}
 
-https://www.youtube.com/user/nonymity
+
+## AR - Augmented Reality
+* https://www.youtube.com/user/nonymity

@@ -1,12 +1,17 @@
-/*
+---
 Title: Cesium
 Decription: Cesium
 Author: Bhaskar Mangal
 Date: 
 Tags: Cesium
-*/
+---
 
-# Cesium
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Cesium
 * https://news.ycombinator.com/item?id=12404740
 
 Cesium does have a flat earth projection built in as well (there's a wireframe globe in top right of main page demo, and clicking it allows you to switch between 3D and 2D).

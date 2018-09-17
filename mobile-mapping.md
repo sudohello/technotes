@@ -1,11 +1,17 @@
-/*
+---
 Title: Mobile Mapping
 Decription: Mobile Mapping
 Author: Bhaskar Mangal
 Date: 
 Tags: Mobile Mapping
-*/
+---
 
+**Table of Contents**
+* TOC
+{:toc}
+
+
+## Mobile Mapping System
 
 Land Mobile Mapping systems acquire data that has application in like safe driving, development of public projects, disaster survey, road survey characteristics. We went through different companies building Land Mobile mapping systems (Rigs) like RIEGEL, Mitushubishi, Trimbel, Topcon, Photoscience, grwinc, imagi, pasco, WSP, iwane. Camera, LiDAR, GPS/IMU are the main sensor components of these systems. They have different configurations and camera's have at least 5MP resolutions. It's only iwane which has vision only based system using couple of FLIR Ladybug cameras. These system have the capabilities to acquire data with the vehicle speed from 20Km/hr to 160Km/hr and process data to provide Absolute accuracy of 10cm and Relative accuracy of 1 cm. Some of the software components of these system includes -viewer, editor, tracer (enable plotting), ortho generator - for image generation from point cloud data.
 
