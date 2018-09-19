@@ -914,7 +914,7 @@ sudo apt install scorched3d
 
 
 ## Diff and Merge Tools for Ubuntu
-_ https://askubuntu.com/questions/2946/what-are-some-good-gui-diff-and-merge-applications-available-for-ubuntu
+- https://askubuntu.com/questions/2946/what-are-some-good-gui-diff-and-merge-applications-available-for-ubuntu
 - https://www.slant.co/topics/5882/~linux-diff-tools
 - https://www.linuxlinks.com/difftools/
 
@@ -968,3 +968,12 @@ https://linuxconfig.org/how-to-create-desktop-shortcut-launcher-on-ubuntu-18-04-
 ```bash
 touch ~/Templates/Empty\ Document
 ```
+
+## Student-Teacher, Remote Access and Sharing
+* https://www.fractuslearning.com/tools-student-teacher-communication/
+* https://www.makeuseof.com/tag/12-excellent-free-screen-sharing-and-remote-access-tools-you-havent-heard-of-yet/
+* join.me
+* https://openmeetings.apache.org/downloads.html
+* https://www.linux.com/learn/using-screen-remote-interaction
+
+* https://discoverpraxis.com/

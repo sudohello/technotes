@@ -39,9 +39,20 @@ ID.svgiD is the easy to use editor found per default on the "Edit" button of the
 Potlatch2logo.pngPotlatch 2 is the precursor to iD, still used by quite a few people, and still available under the 'edit' button drop-down ("▼"). Requires Flash.
 JOSM Logo 2014.svgJOSM is a highly expandable standalone Java desktop application which allows fluid zooming, panning, and editing of a locally stored dataset, before uploading changes in a batch.
 
+* https://github.com/digidem/mapeo-desktop
+* https://github.com/digidem/mapeo-desktop/blob/master/docs/offline_tiles.md
+* https://www.digital-democracy.org/mapeo/
+
 ## OSM - Tutorials
 * http://learnosm.org/en/beginner/id-editor/
 
 
 ## Datameet
 * http://datameet.org/tag/osm/
+
+## People
+**Thomas MacWright**
+* https://macwright.org/
+* https://twitter.com/tmcw?lang=en
+* https://beta.observablehq.com/
+* https://github.com/tmcw?tab=repositories

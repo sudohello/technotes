@@ -73,6 +73,10 @@ jekyll build -d ~/public_html/jekyll-sites/tnotes/
 **Setting up your GitHub Pages site locally with Jekyll**
 - https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 
+## Installation
+* http://sharadchhetri.com/2014/06/30/install-jekyll-on-ubuntu-14-04-lts/
+
+  
 ## To be explored
 - this is what is required:
   * http://www.m-renaud.com/resources/
@@ -115,6 +119,10 @@ Your site is secured by Let’s Encrypt, a non-profit organization that provides
 ## References, People, web-ste samples
 - https://www.taniarascia.com/make-a-static-website-with-jekyll/
 - http://www.gwern.net/
+- https://github.com/planetjekyll/awesome-jekyll
+- https://github.com/planetjekyll/awesome-jekyll-plugins
+- https://github.com/tmm1/pygments.rb
+
 
 ## Liquid
 * https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
@@ -128,3 +136,28 @@ Your site is secured by Let’s Encrypt, a non-profit organization that provides
 {:toc}
 ```
 
+## Tutorials
+**building-blog-jekyll-creating-layouts**
+* https://jeremenichelli.io/2015/07/building-blog-jekyll-creating-layouts/
+
+## Jekyll Websites
+* http://www.cagrimmett.com/category/photography/
+* https://macwright.org/2016/05/03/the-featherweight-website.html
+* https://github.com/cagrimmett/jekyll-tools
+
+
+## Sinpets
+```bash
+sudo gem install redcarpet rb-pygments
+sudo gem install $(cat requirements.txt)
+#
+gem sources -r https://rubygems.org/
+gem sources -a http://rubygems.org/
+gem install gem_name --source http://rubygems.org
+#to install the gem locally, from your local directory.
+gem install --local aoifes_roman.gem
+gem list -r
+
+```
+**Syntax highlighter**
+* http://jekyll-windows.juthilo.com/3-syntax-highlighting/
