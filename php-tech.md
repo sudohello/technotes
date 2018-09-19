@@ -70,4 +70,9 @@ PSR-7 is a set of common interfaces defined by PHP Framework Interop Group. Thes
 Any web application using this set of interfaces is a PSR-7 application.
 
 ## Log in Apache Ubuntu
+```bash
 tail -f /var/log/apache2/error.log
+```
+
+## Upload File(s)
+* http://codul  ar.com/php-file-uploads
