@@ -225,6 +225,13 @@ The third way arrays can be created is using the NumPy arange function, which is
 * http://www.physics.nyu.edu/pine/pymanual/html/chap3/chap3_arrays.html
 
 ## FAQ's
+* **Paths**
+```python
+import os
+os.path.dirname(__file__) # relative directory path
+os.path.abspath(__file__) # absolute file path
+os.path.basename(__file__) # the file name only
+```
 * **How to find the version of installed library?**
 ```python
 import pandas as pd
