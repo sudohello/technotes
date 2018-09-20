@@ -33,3 +33,34 @@ Then using the arrow key and select until the last line
 Now press ShiftI, which will put the editor in INSERT mode and then press #. This will add a hash to the first line.
 Then press Esc (give it a second), and it will insert a # character on all other selected lines.
 For the stripped-down version of vim shipped with debian/ubuntu by default, type : s/^/# in the third step instead.
+
+
+## script-that-exports-enviromental-variables-cannot-export-them
+* https://unix.stackexchange.com/questions/399281/script-that-exports-enviromental-variables-cannot-export-them
+* https://stackoverflow.com/questions/16618071/can-i-export-a-variable-to-the-environment-from-a-bash-script-without-sourcing-i
+* in `env.vars`:
+  ```bash
+  foo=test
+  ```
+  * test script:
+  ```bash
+  eval `cat env.vars`
+  echo $foo         # => test
+  sh -c 'echo $foo' # => 
+  #
+  export eval `cat env.vars`
+  echo $foo         # => test
+  sh -c 'echo $foo' # => test
+  #
+  # a better one
+  export `cat env.vars`
+  echo $foo         # => test
+  sh -c 'echo $foo' # => test
+  ```
+
+## FAQs
+* **What is the meaning of IFS=$'\n' in bash scripting?**
+  * https://unix.stackexchange.com/questions/184863/what-is-the-meaning-of-ifs-n-in-bash-scripting
+  * IFS stands for "internal field separator". It is used by the shell to determine how to do word splitting, i. e. how to recognize word boundaries.
+* **Internal Variables**
+  * http://tldp.org/LDP/abs/html/internalvariables.html

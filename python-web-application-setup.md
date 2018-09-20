@@ -180,3 +180,33 @@ https://blog.hyperiondev.com/index.php/2018/02/01/deploy-machine-learning-model-
 ## Setup Env Variables
 - https://github.com/theskumar/python-dotenv
 - https://robinislam.me/blog/reading-environment-variables-in-python/
+
+## WSGI python path and Environment Variable Apache Configuration
+- https://code.google.com/archive/p/modwsgi/wikis/ConfigurationDirectives.wiki#WSGIPythonPath
+- https://developers.yubico.com/u2fval/Apache_Deployment.html
+
+* version of Python that mod_wsgi was compiled for
+- https://serverfault.com/questions/157854/python-version-for-mod-wsgi
+```bash
+ls -lrt /usr/lib/apache2/modules/mod_wsgi.so*
+ls -ltr /etc/apache2/mods-enabled/wsgi.load
+cat /etc/apache2/mods-enabled/wsgi.load
+```
+
+If you point that at one of those mod_wsgi.so-2.x files, you've changed the default version.
+
+* compiling mod_wsgi for the required version
+- http://code.google.com/p/modwsgi/wiki/QuickInstallationGuide#Configuring_The_Source_Code
+When you say different version you mean Python 2.5 vs 2.6, then you must install mod_wsgi package binary compiled against Python 2.5, or compile mod_wsgi from source code yourself against the Python 2.5 version. See notes about --with-python option in:
+
+
+**WSGIPythonHome**
+https://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIPythonHome.html
+
+**WSGIDaemonProcess**
+https://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIDaemonProcess.html
+
+/usr/local/lib/python2.7/dist-packages
+/usr/local/lib/python3.6/dist-packages
+
+* https://drumcoder.co.uk/blog/2010/nov/12/apache-environment-variables-and-mod_wsgi/
