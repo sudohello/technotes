@@ -29,3 +29,10 @@ Tags: Docker
 - https://mobyproject.org/
 
 Moby is an open framework created by Docker to assemble specialized container systems without reinventing the wheel. It provides a “lego set” of dozens of standard components and a framework for assembling them into custom platforms. At the core of Moby is a framework to assemble specialized container systems.
+
+## FAQs
+* http://blog.thoward37.me/articles/where-are-docker-images-stored/
+```bash
+sudo docker images
+sudo cat /var/lib/docker/image/overlay2/repositories.json
+```

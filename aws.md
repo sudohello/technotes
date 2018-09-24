@@ -13,3 +13,4 @@ Tags: AWS
 
 ## AWS - Amazon Web Service
 * https://aws.amazon.com/what-is-aws/
+* https://boto3.amazonaws.com/v1/documentation/api/latest/index.html

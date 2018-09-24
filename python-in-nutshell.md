@@ -231,6 +231,8 @@ import os
 os.path.dirname(__file__) # relative directory path
 os.path.abspath(__file__) # absolute file path
 os.path.basename(__file__) # the file name only
+## full current dir path
+os.path.dirname(os.path.abspath(__file__))
 ```
 * **How to find the version of installed library?**
 ```python
@@ -1840,4 +1842,21 @@ plt.show()
 # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
 import glob
 print(glob.glob("/home/adam/*.txt"))
+```
+
+## Encoding, Decoding
+- https://stackoverflow.com/questions/15092437/python-encoding-utf-8
+
+## PyYAML
+* https://stackoverflow.com/questions/20352794/pyyaml-is-producing-undesired-python-unicode-output
+```bash
+## write
+configFileName = "paths.yml"
+#
+with open(configFileName, 'w') as f:
+  yaml.safe_dump(cfg, f, default_flow_style=False)
+#
+## read
+with open(configFileName, 'r') as f:
+  cfg = yaml.load(f)
 ```

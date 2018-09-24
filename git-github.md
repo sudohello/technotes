@@ -199,3 +199,101 @@ git rebase --help
 * **What are Git submodules?**
   - https://git-scm.com/docs/git-submodule
   - **Submodules**, like subtrees, aim to reuse code from another repo somewhere inside your own repo’s tree. The goal is usually to benefit from central maintenance of the reused code across a number of container repos, without having to resort to clumsy, unreliable copy-pasting.
+
+
+## Cloning between two or more machines
+* References
+  * https://stackoverflow.com/questions/2816369/git-push-error-remote-rejected-master-master-branch-is-currently-checked/
+* base and non-bare repo
+  * https://stackoverflow.com/questions/5540883/whats-the-practical-difference-between-a-bare-and-non-bare-repository#5541917
+  * git init, which will create a non-bare repo with no remote specified. 
+  A bare repository is nothing but the .git folder itself i.e. the contents of a bare repository is same as the contents of .git folder inside your local working repository.
+
+Use bare repository on a remote server to allow multiple contributors to push their work.
+Non-bare - The one which has working tree makes sense on the local machine of each contributor of your project.
+* clone the repo from another machine
+```bash
+USER="blah"
+IP="168.4.1.6"
+REMOTE_PATH="/home/$USER/Documents/codeRepo"
+URL="$USER@$IP:$REMOTE_PATH"
+PROG_DIR="$HOME/Documents/codeRepo"
+## Clone the git repo under `$HOME/Documents/<repoName>`
+git clone $URL $PROG_DIR
+```
+
+* https://stackoverflow.com/questions/804545/what-is-this-git-warning-message-when-pushing-changes-to-a-remote-repository/28262104#28262104
+* On the remote repo:
+```bash
+git config receive.denyCurrentBranch updateInstead
+```
+
+
+## Internal Repository Setup
+**How to setup internal remote repository management system on the dedicated server?**
+* https://news.ycombinator.com/item?id=7197548
+* https://stackoverflow.com/questions/11430186/internal-repository-setup
+1. On the server run the following command in a directory you want to use...
+```bash
+git init --bare
+```
+This creates an empty/bare repository on the server.
+
+2. On the client run the following command in an existing git repository (assume you know how to do this)...
+```bash
+git remote add myserver <url/path>
+```
+This adds a remote / link to your server. Path can be local, remote (http, ssh, etc).
+  - On a local file system use: ~/myrepo/example.git
+  - Using ssh: ssh://username@example.org/~/myrepo/example.git
+  - Using http: http://username@example.org/myrepo/example.git
+3. To push code to your server do the following...
+```bash
+git push myserver master
+```
+This pushes your commits up to the remote server. Where 'myserver' is the alias you gave to your remote location
+```bash
+git pull myserver master
+```
+With git pull you download/pull all the commits from the server.
+
+
+## **Git Repo setup on Server**
+**Steps that worked for me:**
+* On Server
+```bash
+mkdir -p $HOME/Documents/git-repo/<repoName>
+cd $HOME/Documents/git-repo/<repoName>
+git init --bare
+```
+* On the client - origin (first time setup)
+```bash
+cd $HOME/Documents/<repoName>
+git remote -v
+git remote remove origin
+git remote add origin <userName>@<IP>:/home/<userName>/Documents/git-repo/<repoName>/
+git push --set-upstream origin master
+git push origin master
+```
+
+**All other clients**
+* Clone
+```bash
+cd $HOME/Documents
+git clone <userName>@<IP>:/home/<userName>/Documents/git-repo/<repoName>
+```
+* Pull latest changes - For any additional changes, update the clients
+```bash
+##
+cd $HOME/Documents/<repoName>
+git pull
+```
+* Push changes, after committing the local changes
+```bash
+git push
+```
+
+
+### How to Run Your Own Git Server
+* https://www.linux.com/learn/how-run-your-own-git-server
+* https://intercom.help/gitprime/data-setup-and-security/git-hosts/using-gitprime-with-an-internal-server-or-behind-a-firewall

@@ -210,3 +210,96 @@ https://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIDaemonPro
 /usr/local/lib/python3.6/dist-packages
 
 * https://drumcoder.co.uk/blog/2010/nov/12/apache-environment-variables-and-mod_wsgi/
+
+## GET, POST Requests using Python
+* https://www.geeksforgeeks.org/get-post-requests-using-python/
+* http://httpbin.org/
+```bash
+curl -X POST "http://httpbin.org/post" -H "accept: application/json"
+curl -X POST "http://httpbin.org/anything" -H "accept: application/json"
+```
+* https://stackoverflow.com/questions/11322430/how-to-send-post-request
+* http://docs.python-requests.org/en/latest/user/quickstart/#json-response-content
+
+
+## A simple HTTP Request & Response Service
+* https://stackoverflow.com/questions/5725430/http-test-server-accepting-get-post-requests
+**httpbin, pytest-httpbin**
+* https://github.com/kevin1024/pytest-httpbin
+```bash
+## pycparser, cffi, brotlipy, blinker, raven, httpbin, pytest-httpbin
+sudo pip install pytest-httpbin
+```
+* http://httpbin.org/
+* https://github.com/requests/httpbin
+```bash
+sudo docker pull kennethreitz/httpbin
+docker run -p 80:80 kennethreitz/httpbin
+docker run -p 8383:80 kennethreitz/httpbin
+http://localhost:8383/
+```
+* http://docs.python-requests.org/en/master/
+
+**Similar services**
+* https://pastebin.com/faq#1
+* http://httpbin.org
+* http://requestb.in
+* http://python-requests.org
+* https://grpcb.in/
+* http://ptsv2.com/
+* https://putsreq.com/
+    - also allows use with javascript
+* https://www.mockable.io/
+* https://webhook.site/#/4b2c2b10-d5a3-40da-8cb3-599b2e0b3015
+* `nc` one-liner local test server
+```bash
+while true; do printf '' | nc -l localhost 8000; done
+#
+wget http://localhost:8000
+```
+* https://postimages.org/about
+
+**NodeJS based Server**
+
+```bash
+const http = require("http");
+
+const hostname = "0.0.0.0";
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  console.log(`\n${req.method} ${req.url}`);
+  console.log(req.headers);
+
+  req.on("data", function(chunk) {
+    console.log("BODY: " + chunk);
+  });
+
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello World\n");
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://localhost:${port}/`);
+});
+```
+* save as `echo.js`
+* run
+```bash
+curl -d "[1,2,3]" -XPOST http://localhost:3000/foo/bar
+```
+## API Resources
+* https://github.com/rochacbruno/flasgger
+
+## Testing
+**pytest fixture**
+* https://docs.pytest.org/en/latest/fixture.html
+**Automation testings**
+* tox
+    * https://pypi.org/project/tox/
+    * tox aims to automate and standardize testing in Python. It is part of a larger vision of easing the packaging, testing and release process of Python software.
+
+
+
+https://tox.chat/

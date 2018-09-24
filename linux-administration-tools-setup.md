@@ -870,8 +870,46 @@ dconf reset -f /
 - `nohup` - run a command immune to hangups, with output to a non-tty
 - `rsync` - a fast, versatile, remote (and local) file-copying tool
 - `watch` - execute a program periodically, showing output fullscreen
+- `tr`
 
-
+* https://www.linuxnix.com/shell-scripting-convert-a-string-from-lowercase-to-uppercase/
+* https://www.cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase/
+```bash
+ls *.JPG | tr '[A-Z]' '[a-z]'
+```
+**Rename all files in a directory to upper case**
+```bash
+for i in *; do mv "$i" "${i^^}"; done
+```
+**Rename all items in a directory to lower case**
+* http://www.bashoneliners.com/oneliners/oneliner/?page=5
+```bash
+for i in *.JPG; do mv $i ${i,,}; done
+```
+* https://superuser.com/questions/71028/batch-converting-png-to-jpg-in-linux
+* The simplest solution is like most already posted. A simple bash for loop.
+```bash
+for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done
+#For some reason I tend to avoid loops in bash so here is a more unixy xargs approach, using bash for the name-mangling.
+#
+ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "${0%.*}.jpg"'
+#The one I use. It uses GNU Parallel to run multiple jobs at once, giving you a performance boost. It is installed by default on many systems and is almost definitely in your repo (it is a good program to have around).
+#
+ls -1 *.png | parallel convert '{}' '{.}.jpg'
+#The number of jobs defaults to the number of processes you have. I found better CPU usage using 3 jobs on my dual-core system.
+#
+ls -1 *.png | parallel -j 3 convert '{}' '{.}.jpg'
+#And if you want some stats (an ETA, jobs completed, average time per job...)
+#
+ls -1 *.png | parallel --eta convert '{}' '{.}.jpg'
+#There is also an alternative syntax if you are using GNU Parallel.
+#
+parallel convert '{}' '{.}.jpg' ::: *.png
+#And a similar syntax for some other versions (including debian).
+#
+parallel convert '{}' '{.}.jpg' -- *.png
+#
+```
 ## Installing Adobe Flash Player and Plugin for browser
 * https://websiteforstudents.com/installing-the-latest-flash-player-on-ubuntu-17-10/
 ```bash
@@ -977,3 +1015,4 @@ touch ~/Templates/Empty\ Document
 * https://www.linux.com/learn/using-screen-remote-interaction
 
 * https://discoverpraxis.com/
+
