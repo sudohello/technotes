@@ -82,3 +82,28 @@ http://www.craftymind.com/factory/html5video/CanvasVideo.htmlr
 ## 3D CSS Examples
 - https://danielcwilson.com/blog/2018/05/offset-and-beyond
 - https://www.layoutit.com/grid
+
+## HTML5, Canvas - Image Viewer, Editor, Effects
+
+**Fabric.js**
+* http://fabricjs.com/demos/
+* http://fabricjs.com/kitchensink/
+* https://github.com/fabricjs/fabric.js
+* https://cdnjs.com/libraries/fabric.js
+
+
+https://startupbros.com/9-ways-to-create-an-information-product-with-zero-expertise/
+https://medium.com/google-design/google-photos-45b714dfbed1
+
+
+https://konvajs.github.io/
+
+
+https://pixteller.com/pricing
+
+
+https://edwardshu.com/
+
+https://mattketmo.github.io/darkroomjs/
+http://www.jsiso.com/
+http://camanjs.com/examples/

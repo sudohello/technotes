@@ -1016,3 +1016,16 @@ touch ~/Templates/Empty\ Document
 
 * https://discoverpraxis.com/
 
+## ssh
+* https://stackoverflow.com/questions/9299651/git-says-warning-permanently-added-to-the-list-of-known-hosts
+```bash
+**Known Hosts added here**
+~/.ssh/known_hosts
+#
+**ssh config**
+~/.ssh/config
+#
+-o "UserKnownHostsFile /dev/null"
+#
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@host
+```
