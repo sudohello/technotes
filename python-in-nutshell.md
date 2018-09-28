@@ -239,6 +239,14 @@ os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 pd.__version__
 ```
+* **How to read and preocess a huge csv file?**
+  * https://stackoverflow.com/questions/17444679/reading-a-huge-csv-file
+  * Reading all rows into a list, then processing that list. **Don't do that**
+  * Process your rows as you produce them. If you need to filter the data first, use a generator function:
+
+* **How to check and create directories?**
+  * https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
+  * https://docs.python.org/3/library/os.html#os.makedirs
 
 * **How to view all the defined variables in python shell?**
 ```python

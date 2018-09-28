@@ -374,6 +374,36 @@ sudo apt-get install feh
 feh -Fzr -D 5 ~/Images
 ```
 
+
+## Feh
+* https://wiki.archlinux.org/index.php/feh
+* https://www.maketecheasier.com/feh-image-viewer/
+* https://unix.stackexchange.com/questions/395011/feh-warns-on-text-files
+* https://raspberrypi.stackexchange.com/questions/38511/auto-reload-new-images-in-feh-image-viewer
+```bash
+feh -Y -x -q -D 1 -B white -F -Z -z -r .
+#
+feh -Y -q -D 1 -R 5 -B white .
+feh -Y -q -D 1 -R 5 -B white -Z -g 640x480 -d --draw-tinted --draw-exif --title "Traffic Sign Detection of Gaze Images" .
+#
+feh -Y -q -D 1 -R 5 -B white -Z -z --scale-down -d --draw-tinted --title "Traffic Sign Detection of Gaze Images" .
+#
+feh -ZXrFD 5 ./
+```
+
+     h [toggle_pause]
+             Pause/Continue the slideshow.  When it is paused, it will not automatically change slides based on --slideshow-delay.
+
+     i [toggle_info]
+             Toggle info display (see --info)
+
+**Image viewers**
+* eoq
+* geeqie
+	- https://en.wikipedia.org/wiki/Geeqie
+* feh
+
+
 * **Merge and Split PDF documents**
 	- https://linuxcommando.blogspot.in/2013/02/splitting-up-is-easy-for-pdf-file.html
 	- https://linuxcommando.blogspot.in/2014/01/how-to-split-up-pdf-files-part-2.html
