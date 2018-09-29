@@ -59,3 +59,8 @@ Open-source software for urban autonomous driving, maintained by Tier IV. The fo
 
 ## Misc
 - http://aid-driving.eu/active-learning-and-labeling/
+
+## Software and Hardware Components
+* http://openxcplatform.com/
+* https://shop.openxcplatform.com/
+* https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd

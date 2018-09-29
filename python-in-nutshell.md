@@ -306,6 +306,25 @@ os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 pd.__version__
 ```
+* **What are different file read and write modes?**
+  * https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
+  * `r` read only
+  * `w` write only
+  * `a` append
+  * `r+` reading, and writing both
+  * `b` is for binary
+  * `rb`, `r+b` mode is open the binary file in read or write mode
+  * `wb`
+  * On Unix, it doesn’t hurt to append a 'b' to the mode, so you can use it platform-independently for all binary files
+  * On Windows makes a distinction between text and binary files; the end-of-line characters in text files are automatically altered slightly when data is read or written.
+* **How to read/edit EXIF and Custom Metatags in image?**
+  * https://stackoverflow.com/questions/27815719/editing-updating-the-data-of-photo-metadata-using-pyexiftool
+  * https://github.com/ianare/exif-py
+  * https://stackoverflow.com/questions/28588696/python-exiftool-combining-subject-and-keyword-tags
+  * **Custom Meta Tags**
+  * https://stackoverflow.com/questions/8586940/writing-complex-custom-metadata-on-images-through-python#8590271
+  * https://stackoverflow.com/questions/9808451/how-to-add-custom-metadata-to-opencv-numpy-image
+  * https://wiki.gnome.org/Projects/gexiv2
 * **How to check empty Variables?**
   * https://stackoverflow.com/questions/9573244/most-elegant-way-to-check-if-the-string-is-empty-in-python
   * https://stackoverflow.com/questions/10545385/how-to-check-if-a-variable-is-empty-in-python
@@ -331,7 +350,25 @@ pd.__version__
   * https://stackoverflow.com/questions/17444679/reading-a-huge-csv-file
   * Reading all rows into a list, then processing that list. **Don't do that**
   * Process your rows as you produce them. If you need to filter the data first, use a generator function:
+  ```python
+  import csv
 
+  def getstuff(filename):
+    with open(filename, "rb") as f:
+      datareader= csv.reader(f)
+      yield next(datareader) # yield the header row
+      for row in datareader:
+        yield row
+
+  for row in getstuff("sample.csv"):
+    print(row)
+  ```
+  * https://stackoverflow.com/questions/8009882/how-to-a-read-large-file-line-by-line-in-python#8010133
+  ```python
+  with open("sample.csv",'r') as f:
+  for line in f:
+    print(line)
+  ```
 * **How to check and create directories?**
   * https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
   * https://docs.python.org/3/library/os.html#os.makedirs
@@ -346,7 +383,8 @@ vars().keys()
 vars().values()
 ```
 	* https://stackoverflow.com/questions/633127/viewing-all-defined-variables
-
+* **How to create function with optional arguments?**
+  * https://stackoverflow.com/questions/9539921/how-do-i-create-a-python-function-with-optional-arguments
 * **How to install using `pip`?**
 ```shell
 sudo pip install numpy
