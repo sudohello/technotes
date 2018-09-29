@@ -120,6 +120,7 @@ from math import * #Imports all functions from the math module
 ### Strings
 
 ### Arrays
+* https://www.thegeekstuff.com/2013/08/python-array/
 * Arrays in basic Python are actually lists that can contain mixed datatypes
 * Array Indices begin at 0, like other Python sequences (and C/C++). In contrast, in Fortran or Matlab, indices begin at 1.
 * Creating lists
@@ -301,11 +302,42 @@ os.path.basename(__file__) # the file name only
 ## full current dir path
 os.path.dirname(os.path.abspath(__file__))
 ```
+* **How to preserve order in dicitionary?: Use ordereddict**
+  * https://pymotw.com/2/collections/ordereddict.html
+  * https://stackoverflow.com/questions/15711755/converting-dict-to-ordereddict
+  * YAML - orderedlist: https://gist.github.com/oglops/c70fb69eef42d40bed06
+  * https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
+  ```python
+  import collections
+
+  print 'Regular dictionary:'
+  d = {}
+  d['a'] = 'A'
+  d['b'] = 'B'
+  d['c'] = 'C'
+  d['d'] = 'D'
+  d['e'] = 'E'
+
+  for k, v in d.items():
+      print k, v
+
+  print '\nOrderedDict:'
+  d = collections.OrderedDict()
+  d['a'] = 'A'
+  d['b'] = 'B'
+  d['c'] = 'C'
+  d['d'] = 'D'
+  d['e'] = 'E'
+
+  for k, v in d.items():
+      print k, v
+  ```
 * **How to find the version of installed library?**
 ```python
 import pandas as pd
 pd.__version__
 ```
+<<<<<<< HEAD
 * **What are different file read and write modes?**
   * https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
   * `r` read only
@@ -325,6 +357,8 @@ pd.__version__
   * https://stackoverflow.com/questions/8586940/writing-complex-custom-metadata-on-images-through-python#8590271
   * https://stackoverflow.com/questions/9808451/how-to-add-custom-metadata-to-opencv-numpy-image
   * https://wiki.gnome.org/Projects/gexiv2
+* **How to list only files in a directory?**
+  * https://stackoverflow.com/questions/14176166/list-only-files-in-a-directory
 * **How to check empty Variables?**
   * https://stackoverflow.com/questions/9573244/most-elegant-way-to-check-if-the-string-is-empty-in-python
   * https://stackoverflow.com/questions/10545385/how-to-check-if-a-variable-is-empty-in-python
