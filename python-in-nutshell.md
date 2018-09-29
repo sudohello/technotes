@@ -120,6 +120,7 @@ from math import * #Imports all functions from the math module
 ### Strings
 
 ### Arrays
+* https://www.thegeekstuff.com/2013/08/python-array/
 * Arrays in basic Python are actually lists that can contain mixed datatypes
 * Array Indices begin at 0, like other Python sequences (and C/C++). In contrast, in Fortran or Matlab, indices begin at 1.
 * Creating lists
@@ -234,11 +235,43 @@ os.path.basename(__file__) # the file name only
 ## full current dir path
 os.path.dirname(os.path.abspath(__file__))
 ```
+* **How to preserve order in dicitionary?: Use ordereddict**
+  * https://pymotw.com/2/collections/ordereddict.html
+  * https://stackoverflow.com/questions/15711755/converting-dict-to-ordereddict
+  * YAML - orderedlist: https://gist.github.com/oglops/c70fb69eef42d40bed06
+  * https://stackoverflow.com/questions/5121931/in-python-how-can-you-load-yaml-mappings-as-ordereddicts
+  ```python
+  import collections
+
+  print 'Regular dictionary:'
+  d = {}
+  d['a'] = 'A'
+  d['b'] = 'B'
+  d['c'] = 'C'
+  d['d'] = 'D'
+  d['e'] = 'E'
+
+  for k, v in d.items():
+      print k, v
+
+  print '\nOrderedDict:'
+  d = collections.OrderedDict()
+  d['a'] = 'A'
+  d['b'] = 'B'
+  d['c'] = 'C'
+  d['d'] = 'D'
+  d['e'] = 'E'
+
+  for k, v in d.items():
+      print k, v
+  ```
 * **How to find the version of installed library?**
 ```python
 import pandas as pd
 pd.__version__
 ```
+* **How to list only files in a directory?**
+  * https://stackoverflow.com/questions/14176166/list-only-files-in-a-directory
 * **How to read and preocess a huge csv file?**
   * https://stackoverflow.com/questions/17444679/reading-a-huge-csv-file
   * Reading all rows into a list, then processing that list. **Don't do that**
