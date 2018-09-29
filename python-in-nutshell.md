@@ -337,7 +337,6 @@ os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 pd.__version__
 ```
-<<<<<<< HEAD
 * **What are different file read and write modes?**
   * https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
   * `r` read only
@@ -433,7 +432,6 @@ sudo pip install -r requirements
 pip freeze
 pip list
 ```
-
 * **Which version of python should pip point to, by default? Can it be changed?**
 * **How to reinstall pip? How to fix `pip` topoint to python2 instead of python3, when python points to v2 and python3 points to v3?**
 - https://askubuntu.com/questions/780502/ubuntu-16-pip-install-installs-to-python-3-instead-of-2
