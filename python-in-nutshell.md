@@ -195,6 +195,73 @@ range(0,10,2)  # makes a list of 10 integers from 0 to 9
 #[0, 2, 4, 6, 8]
 ```
 
+### set
+* https://www.programiz.com/python-programming/set
+
+A set is an unordered collection of items. Every element is unique (no duplicates) and must be immutable (which cannot be changed).
+
+However, the set itself is mutable. We can add or remove items from it.
+
+Sets can be used to perform mathematical set operations like union, intersection, symmetric difference etc.
+
+* `add()`, `update()`, `remove()`, `discard()`, `pop()`, `clear()`
+* **Union**
+  - Union of A and B is a set of all elements from both sets
+  - Union is performed using `|` operator. Same can be accomplished using the method `union()`
+* **Intersection**
+  - Intersection of A and B is a set of elements that are common in both sets
+  - Intersection is performed using `&` operator. Same can be accomplished using the method `intersection()`
+* **Difference**
+  - Difference of A and B (A - B) is a set of elements that are only in A but not in B. Similarly, B - A is a set of element in B but not in A
+  - Difference is performed using `-` operator. Same can be accomplished using the method `difference()`
+* **Symmetric Difference**
+  - Symmetric Difference of A and B is a set of elements in both A and B except those that are common in both
+  - Symmetric difference is performed using `^` operator. Same can be accomplished using the method `symmetric_difference()`
+
+```python
+# initialize A and B
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+#
+# Union:
+# use | operator
+# Output: {1, 2, 3, 4, 5, 6, 7, 8}
+print(A | B)
+#
+# Intersection:
+# use & operator
+# Output: {4, 5}
+print(A & B)
+#
+# Difference:
+# use - operator on A
+# Output: {1, 2, 3}
+print(A - B)
+#
+# Symmetric Difference:
+# use ^ operator
+# Output: {1, 2, 3, 6, 7, 8}
+print(A ^ B)
+#
+A = frozenset([1, 2, 3, 4])
+#
+# initialize my_set
+my_set = set("apple")
+
+# check if 'a' is present
+# Output: True
+print('a' in my_set)
+
+# check if 'p' is present
+# Output: False
+print('p' not in my_set)
+```
+* Membership Test - We can test if an item exists in a set or not, using the keyword `in`
+* While tuples are immutable lists, frozensets are immutable sets
+* Using a for loop, we can iterate though each item in a set.
+* Built-in functions like all(), any(), enumerate(), len(), max(), min(), sorted(), sum() etc. are commonly used with set to perform different tasks
+
+
 ### Tupels
 * Tuples are lists that are immutable. That is, once defined, the individual elements of a tuple cannot be changed. Whereas a list is written as a sequence of numbers enclosed in square brackets, a tuple is written as a sequence of numbers enclosed in round parentheses.
 ```python
@@ -272,6 +339,27 @@ pd.__version__
 ```
 * **How to list only files in a directory?**
   * https://stackoverflow.com/questions/14176166/list-only-files-in-a-directory
+* **How to check empty Variables?**
+  * https://stackoverflow.com/questions/9573244/most-elegant-way-to-check-if-the-string-is-empty-in-python
+  * https://stackoverflow.com/questions/10545385/how-to-check-if-a-variable-is-empty-in-python
+  * mpty strings are "falsy" which means they are considered false in a Boolean context, so you can just do this:
+  ```python
+  if myString == "":
+  ``` 
+* **Compare string with all values in an array**
+  * https://stackoverflow.com/questions/2783969/compare-string-with-all-values-in-array
+  * If you only want to know if any item of d is contained in paid[j], as you literally say:
+    ```python
+    if any(x in paid[j] for x in d):
+    ```
+  * If you also want to know which items of d are contained in paid[j]:
+    ```python
+    contained = [x for x in d if x in paid[j]]
+    ```
+  * get the first item of d contained in paid[j] - (and None if no item is so contained)
+    ```python
+    firstone = next((x for x in d if x in paid[j]), None)
+    ```
 * **How to read and preocess a huge csv file?**
   * https://stackoverflow.com/questions/17444679/reading-a-huge-csv-file
   * Reading all rows into a list, then processing that list. **Don't do that**
@@ -358,8 +446,11 @@ if not os.path.exists(os.path.dirname(filename)):
 with open(filename, "w") as f:
     f.write("FOOBAR")
 ```
+
+
 ## TIPs
 * Use python shell to learn and ``help()`` command to learn the details of the functions
+
 
 ## Setting up for Web Application development
 - https://optimalbi.com/blog/2016/03/31/apache-meet-python-flask/
@@ -1248,6 +1339,60 @@ cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
 	- https://matplotlib.org/gallery/subplots_axes_and_figures/subplots_demo.html
 * **Legend**
 	- https://matplotlib.org/2.0.2/users/legend_guide.html
+
+### Examples
+* https://stackoverflow.com/questions/34768717/matplotlib-unable-to-save-image-in-same-resolution-as-original-image
+
+There are two factors at play here:
+
+An Axes doesn't take up the entire Figure by default
+In matplotlib, the Figure's size is fixed, and the contents are stretched/squeezed/interpolated to fit the figure. You want the Figure's size to be defined by its contents.
+To do what you want to do, there are three steps:
+
+Create a figure based on the size of the image and a set DPI
+Add a subplot/axes that takes up the entire figure
+Save the figure with the DPI you used to calculate figure's size
+Let's use a random Hubble image from Nasa http://www.nasa.gov/sites/default/files/thumbnails/image/hubble_friday_12102015.jpg. It's a 1280x1216 pixel image.
+
+Here's a heavily commented example to walk you through it:
+
+```python
+import matplotlib.pyplot as plt
+
+# On-screen, things will be displayed at 80dpi regardless of what we set here
+# This is effectively the dpi for the saved figure. We need to specify it,
+# otherwise `savefig` will pick a default dpi based on your local configuration
+dpi = 80
+
+im_data = plt.imread('hubble_friday_12102015.jpg')
+height, width, nbands = im_data.shape
+
+# What size does the figure need to be in inches to fit the image?
+figsize = width / float(dpi), height / float(dpi)
+
+# Create a figure of the right size with one axes that takes up the full figure
+fig = plt.figure(figsize=figsize)
+ax = fig.add_axes([0, 0, 1, 1])
+
+# Hide spines, ticks, etc.
+ax.axis('off')
+
+# Display the image.
+ax.imshow(im_data, interpolation='nearest')
+
+# Add something...
+ax.annotate('Look at This!', xy=(590, 650), xytext=(500, 500),
+            color='cyan', size=24, ha='right',
+            arrowprops=dict(arrowstyle='fancy', fc='cyan', ec='none'))
+
+# Ensure we're displaying with square pixels and the right extent.
+# This is optional if you haven't called `plot` or anything else that might
+# change the limits/aspect.  We don't need this step in this case.
+ax.set(xlim=[0, width], ylim=[height, 0], aspect=1)
+
+fig.savefig('test.jpg', dpi=dpi, transparent=True)
+plt.show()
+```
 
 ### mpl_toolkits - Basic 3D in Matplotlib
 https://matplotlib.org/1.4.3/mpl_toolkits/index.html
