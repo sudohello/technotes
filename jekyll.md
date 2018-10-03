@@ -42,6 +42,9 @@ github_username: Your GitHub username.
 - https://ben.balter.com/2015/02/20/jekyll-collections/
 
 * [Collections](https://jekyllrb.com/docs/collections/)
+  - https://halfelf.org/2015/jekyll-collections/
+
+
 
 ## Links
 - https://stackoverflow.com/questions/25826770/jekyll-using-links-to-internal-markdown-files
@@ -76,7 +79,6 @@ jekyll build -d ~/public_html/jekyll-sites/tnotes/
 ## Installation
 * http://sharadchhetri.com/2014/06/30/install-jekyll-on-ubuntu-14-04-lts/
 
-  
 ## To be explored
 - this is what is required:
   * http://www.m-renaud.com/resources/
@@ -84,9 +86,60 @@ jekyll build -d ~/public_html/jekyll-sites/tnotes/
   * https://stackoverflow.com/questions/17118551/generating-a-list-of-pages-not-posts-in-a-given-category
   * Jekyll Collections to be explored
 
-## Themes
+* Building Image Heavy Jekyll Site
+  - http://benwilhelm.com/the-website/nerd-stuff/2014/12/21/building-an-image-heavy-jekyll-site/
+    *  use grunt.js for managing development and deployment tasks. In order to create versions of my photos at different sizes (thumbnail, medium, large, etc), I created a grunt task using grunt-image-resize which scans the originals folder and creates corresponding images at multiple resolutions in folders called thumbs, medium, and large.
+
+
+https://packery.metafizzy.co/
+http://terrymun.github.io/Fluidbox/demo/index.html
+
+https://olivierpieters.be/blog/2016/02/26/creating-a-jekyll-image-gallery
+
+
+## Create your Own Theme
+* https://medium.com/@jameshamann/creating-your-own-jekyll-theme-gem-1f8180a0e4b8
+
+
+## Themes/Templates
 - http://jekyllthemes.org/
 - http://pixyll.com/
+- https://www.wowthemes.net/jekyll-themes-templates/
+- https://html5up.net/
+  * https://html5up.net/parallelism
+
+**Marketing**
+* Hydra
+  - https://github.com/CloudCannon/hydra-jekyll-template
+  - https://proud-alligator.cloudvent.net/
+
+
+**Presentations**
+* Levytsroman
+  * https://github.com/LevytsRoman/levytsroman.github.io
+  * https://levytsroman.github.io/
+    - nice flickering image effect
+
+**Tutorials and Documentation**
+* Base
+  * https://github.com/CloudCannon/base-jekyll-template
+  * https://orange-ape.cloudvent.net/
+
+**Image / Photography**
+* pintereso
+  - https://www.wowthemes.net/pintereso-free-bootstrap-jekyll-theme/
+  - https://github.com/wowthemesnet/template-pintereso-bootstrap-jekyll
+* lens
+  - https://andrewbanchich.github.io/lens-jekyll-theme/
+
+**Resumes**
+* highlights
+  - https://andrewbanchich.github.io/highlights-jekyll-theme/
+
+**Blogging**
+  - https://github.com/chesterhow/tale
+  - https://chesterhow.github.io/tale/about/
+
 
 ## Jekyll as headles CMS
 - https://www.storyblok.com/tp/headless-cms-jekyll
@@ -113,6 +166,33 @@ Your site is secured by Let’s Encrypt, a non-profit organization that provides
   https://www.taniarascia.com/2017-into-2018/
 
   https://www.pcworld.com/article/2686467/privacy/how-to-use-the-tor-browser-to-surf-the-web-anonymously.html
+
+
+## Jekyll Plugins and Hacks
+**Gem File and Bundler**
+* https://learn.cloudcannon.com/jekyll/gemfiles-and-the-bundler/
+
+What is a Gem?
+A Gem is a bundle of code we can include in Ruby projects. This allows us to take someone else’s code and drop it into our own project.
+
+What is a Gemfile?
+A Gemfile is Ruby’s dependency management system or in other words, a list of Gems a Ruby project needs to run. We use Gemfiles on Jekyll sites when we have Jekyll plugins.
+
+* Pagination
+  - https://jekyllrb.com/docs/pagination/
+  - https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples
+  - https://mademistakes.com/til/static-files/
+  - https://github.com/fadhilnapis/jekyll-multi-paginate
+
+
+**Introduction to Jekyll Plugins**
+* https://learn.cloudcannon.com/jekyll/using-jekyll-plugins/
+
+**Display all images/files from a directory on a jekyll powered website**
+  * https://stackoverflow.com/questions/9204091/display-all-images-from-a-directory-on-a-jekyll-powered-website#9212302
+  * https://jekyllrb.com/docs/static-files/
+  * https://stackoverflow.com/questions/17677094/jekyll-for-loop-over-all-images-in-a-folder
+  * https://bitbucket.org/christianspecht/code-examples/src/tip/jekyll-gallery-example/
 
 
 
@@ -161,3 +241,6 @@ gem list -r
 ```
 **Syntax highlighter**
 * http://jekyll-windows.juthilo.com/3-syntax-highlighting/
+
+## Image Processing in Web
+* https://lokeshdhakar.com/projects/color-thief/
