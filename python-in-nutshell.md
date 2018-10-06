@@ -2083,3 +2083,6 @@ with open(configFileName, 'w') as f:
 with open(configFileName, 'r') as f:
   cfg = yaml.load(f)
 ```
+
+## Top Python Projects in 2018
+* https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-c750f9bf56a0

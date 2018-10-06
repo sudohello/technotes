@@ -5,6 +5,7 @@ Author: Bhaskar Mangal
 Date: 25th-Aug-2018
 Last updated: 25th-Aug-2018
 Tags: Deep Learning Architectures
+
 ---
 
 
@@ -53,10 +54,14 @@ Tags: Deep Learning Architectures
 * **ResNet**
   - ResNet-18,ResNet-34
   - https://arxiv.org/abs/1512.03385
-  - https://mc.ai/resnet-for-traffic-sign-classification-with-pytorch/\
+  - https://mc.ai/resnet-for-traffic-sign-classification-with-pytorch/
+* **Mask R-CNN**
+  - https://arxiv.org/abs/1703.06870
 * **SSD - Single Shot MultiBox Detector**
   - https://arxiv.org/abs/1512.02325
   - https://github.com/weiliu89/caffe/tree/ssd
+* **Detectron**
+  - https://github.com/facebookresearch/Detectron
 
 ## Comparision of Model Architectures
 * **SSD v/s Faster R-CNN**

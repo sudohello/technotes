@@ -12,6 +12,13 @@ Tags: Jekyll
 
 ## Jekyll
 
+```bash
+# runs a local development server at http://localhost:4000 by default, _site
+jekyll serve
+#  builds the site to _site. , then copy _site to hosting provider
+jekylle build
+```
+
 * **_config.yml**
 
 ```bash
@@ -27,6 +34,7 @@ github_username: Your GitHub username.
 ```
 
 ## Tutorials
+- [Learn Jekyll](https://learn.cloudcannon.com/)
 - https://www.siteleaf.com/blog/tags/tutorial/
 - https://www.siteleaf.com/blog/jekyll-from-scratch/
 - https://jekyllrb.com/docs/static-files/
@@ -169,21 +177,29 @@ Your site is secured by Let’s Encrypt, a non-profit organization that provides
 
 
 ## Jekyll Plugins and Hacks
-**Gem File and Bundler**
 * https://learn.cloudcannon.com/jekyll/gemfiles-and-the-bundler/
+* Gemfile
+```bash
+source 'https://rubygems.org'
 
-What is a Gem?
-A Gem is a bundle of code we can include in Ruby projects. This allows us to take someone else’s code and drop it into our own project.
+gem 'jekyll', '3.1.6'
 
-What is a Gemfile?
-A Gemfile is Ruby’s dependency management system or in other words, a list of Gems a Ruby project needs to run. We use Gemfiles on Jekyll sites when we have Jekyll plugins.
-
-* Pagination
+group :jekyll_plugins do
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
+end
+```
+* Install Gem using bundler and start jekyll
+```bash
+gem install bundler
+bundle install
+bundle exec jekyll serve
+```
+* **Pagination**
   - https://jekyllrb.com/docs/pagination/
   - https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples
   - https://mademistakes.com/til/static-files/
   - https://github.com/fadhilnapis/jekyll-multi-paginate
-
 
 **Introduction to Jekyll Plugins**
 * https://learn.cloudcannon.com/jekyll/using-jekyll-plugins/
