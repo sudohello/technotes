@@ -38,6 +38,8 @@ If you want to decay your learning rate after a certain amount of training itera
 #---------------
 
 Training py-faster-rcnn
+https://huangying-zhan.github.io/2016/09/22/detection-faster-rcnn
+
 
 https://huangying-zhan.github.io/2016/09/22/detection-faster-rcnnhttps://www.dropbox.com/s/iywkgsrx2fx6t5q/basketball.tar.gz?dl=0
 
@@ -75,3 +77,12 @@ lt /home/bhaskar/Documents/ai-ml-dl/external/py-faster-rcnn/output/marker/train/
  https://github.com/rbgirshick/py-faster-rcnn/issues/130
  https://blog.csdn.net/qq_14975217/article/details/51495844
 
+
+
+./tools/train_net.py --weights output/marker/train/basketball_iter_0.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt  --iter 10000
+
+
+ ./tools/test_net.py --gpu 0 --def models/basketball/test.prototxt --net output/marker/train/basketball_iter_0.caffemodel --imdb basketball_val --cfg experiments/cfgs/config.yml
+
+
+ $ ./tools/train_net.py --gpu 0 --weights data/imagenet_models/VGG16.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
