@@ -302,6 +302,41 @@ os.path.basename(__file__) # the file name only
 ## full current dir path
 os.path.dirname(os.path.abspath(__file__))
 ```
+* **How to convert one data type to other data type?**
+  * https://www.datacamp.com/community/tutorials/python-data-type-conversion
+* **How to split string to various data types?**
+  * https://stackoverflow.com/questions/34515139/split-string-to-various-data-types
+  * List comprehension: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
+  * https://docs.python.org/3/library/stdtypes.html#str.isdigit
+  ```python
+  y='1;0.9971295;1920;1080;126.76472;150.67957;118.44906;111.22757'
+  [int(i) if i.isdigit() else i for i in s.split('|')]
+  #
+  ```
+* **How to join a list of strtings or numbers to a string?**
+  * https://stackoverflow.com/questions/3590165/join-a-list-of-items-with-different-types-as-string-in-python
+  ```python
+  x=[1,2,3,4,]
+  print ';'.join(str(i) for i in x)
+  #
+  y=['1', '2', '3', '4']
+  ";".join(y)
+  #
+  ```
+* **How to detect empty generators?**
+  * no simple way
+  * https://bytes.com/topic/python/answers/44490-empty-lists-vs-empty-generators
+  * create a flag; loop and change the flag, break; check the flag
+* **How to delete Files?**
+  ```python
+  os.path.exists(fileName) and os.remove(fileName)
+  ```
+* **How to Convert List to Dicitionary**
+  * https://stackoverflow.com/questions/4576115/convert-a-list-to-a-dictionary-in-python
+```python
+a='l;m;n'.split(';')
+b={a[i]: i for i in range(0, len(a), 1)} ## b={'m': 1, 'l': 0, 'n': 2}
+```
 * **How to preserve order in dicitionary?: Use ordereddict**
   * https://pymotw.com/2/collections/ordereddict.html
   * https://stackoverflow.com/questions/15711755/converting-dict-to-ordereddict
@@ -2083,3 +2118,7 @@ with open(configFileName, 'w') as f:
 with open(configFileName, 'r') as f:
   cfg = yaml.load(f)
 ```
+
+## Flask
+* https://stackoverflow.com/questions/33241050/trailing-slash-triggers-404-in-flask-path-rule
+* https://stackoverflow.com/questions/10434599/how-to-get-data-received-in-flask-request
