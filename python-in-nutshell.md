@@ -2119,6 +2119,11 @@ with open(configFileName, 'r') as f:
   cfg = yaml.load(f)
 ```
 
+
 ## Flask
 * https://stackoverflow.com/questions/33241050/trailing-slash-triggers-404-in-flask-path-rule
 * https://stackoverflow.com/questions/10434599/how-to-get-data-received-in-flask-request
+
+
+## Top Python Projects in 2018
+* https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-c750f9bf56a0

@@ -213,6 +213,11 @@ alias vpn="echo <userName> | sudo -kS openvpn --config ~/Downloads/fw-udp-1194-<
 ```
 
 ## Mounting
+**mount read, write**
+```bash
+sudo mount -o rw /dev/sda1 /media/tmp/
+```
+
 ```bash
 #FAT
 sudo mount -t vfat -o rw,noauto,async,user,umask=1000 /dev/sdb1 /media/tmp/

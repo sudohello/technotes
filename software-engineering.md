@@ -102,3 +102,7 @@ https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0
 ## [Dataflow Programming](https://en.wikipedia.org/wiki/Dataflow_programming)
 - dataflow languages are inherently parallel and can work well in large, decentralized systems
 - Data flow has been proposed as an abstraction for specifying the global behavior of distributed system components: in the live distributed objects programming model, distributed data flows are used to store and communicate state, and as such, they play the role analogous to variables, fields, and parameters in Java-like programming languages
+
+## System Primer
+* https://github.com/donnemartin/system-design-primer
+

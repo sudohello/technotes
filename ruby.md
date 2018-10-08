@@ -45,6 +45,23 @@ The disciplines involved in creating the UI (User Interface) are substantially d
 
 * https://rvm.io/
 
+## **Gem File and Bundler**
+* https://learn.cloudcannon.com/jekyll/gemfiles-and-the-bundler/
+
+What is a Gem?
+A Gem is a bundle of code we can include in Ruby projects. This allows us to take someone else’s code and drop it into our own project.
+
+What is a Gemfile?
+A Gemfile is Ruby’s dependency management system or in other words, a list of Gems a Ruby project needs to run. We use Gemfiles on Jekyll sites when we have Jekyll plugins.
+
+What is the bundler and how do we use it?
+
+The bundler is the program which reads the Gemfile and downloads the Gems. We can install the bundler by running:
+```bash
+gem install bundler
+```
+
+
 ## Jekyll
 - Installation
   * https://jekyllrb.com/docs/installation/#requirements
@@ -88,6 +105,7 @@ bundle show <gemName>
 https://hugogiraudel.com/2013/02/21/jekyll/
 
 * [Jekyll - static website generator](jekyll.md)
+
 
 
 https://www.smashingmagazine.com/2016/08/using-a-static-site-generator-at-scale-lessons-learned/
