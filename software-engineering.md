@@ -106,3 +106,7 @@ https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0
 ## System Primer
 * https://github.com/donnemartin/system-design-primer
 
+## Terms
+**heisenbug**
+* https://en.wikipedia.org/wiki/Heisenbug
+In computer programming jargon, a heisenbug is a software bug that seems to disappear or alter its behavior when one attempts to study it.[1] The term is a pun on the name of Werner Heisenberg, the physicist who first asserted the observer effect of quantum mechanics, which states that the act of observing a system inevitably alters its state. In electronics the traditional term is probe effect, where attaching a test probe to a device changes its behavior.

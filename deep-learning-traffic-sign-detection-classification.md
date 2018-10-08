@@ -11,6 +11,9 @@ Tags: Computer Vision ML, DL Applications
 * TOC
 {:toc}
 
+## Object Detections
+* https://cv-tricks.com/object-detection/faster-r-cnn-yolo-ssd/
+* https://medium.com/@jonathan_hui/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359
 
 ##  Deep Learning  - Traffic Sign Detection and Classification
 

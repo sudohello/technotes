@@ -42,8 +42,11 @@ If you want to decay your learning rate after a certain amount of training itera
 ## Training py-faster-rcnn
 * https://huangying-zhan.github.io/2016/09/22/detection-faster-rcnn - nice tutorial
 * https://www.dropbox.com/s/iywkgsrx2fx6t5q/basketball.tar.gz?dl=0
+* http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html
+
 
 ## Compiling and Installation
+
 **Errors**
 * https://groups.google.com/forum/#!topic/caffe-users/3NHh06RhWd4
 ```bash
@@ -108,12 +111,8 @@ TypeError: slice indices must be integers or None or have an __index__ method
 
 
 
-
-
-http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html
-
-
-https://github.com/rbgirshick/py-faster-rcnn/issues/198
+* https://github.com/rbgirshick/py-faster-rcnn/issues/198
+```bash
 I1006 14:25:06.882606 19555 net.cpp:816] Ignoring source layer prob
 Traceback (most recent call last):
   File "./tools/train_net.py", line 113, in <module>
@@ -123,11 +122,12 @@ Traceback (most recent call last):
   File "/home/bhaskar/Documents/ai-ml-dl/external/py-faster-rcnn/tools/../lib/fast_rcnn/train.py", line 51, in __init__
     pb2.text_format.Merge(f.read(), self.solver_param)
 AttributeError: 'module' object has no attribute 'text_format'
-
-
+```
+* Fix for `AttributeError: 'module' object has no attribute 'text_format'`
+```bash
 vi lib/fast_rcnn/train.py
 import google.protobuf.text_format
-
+```
 
 ./tools/train_net.py --weights data/imagenet_models/ZF.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
 
@@ -138,15 +138,50 @@ lt /home/bhaskar/Documents/ai-ml-dl/external/py-faster-rcnn/output/marker/train/
 
  smooth_L1_loss_layer.cpp:54] Not Implemented Yet
 
- https://github.com/rbgirshick/py-faster-rcnn/issues/130
- https://blog.csdn.net/qq_14975217/article/details/51495844
-
-
-
+* https://github.com/rbgirshick/py-faster-rcnn/issues/130
+* https://blog.csdn.net/qq_14975217/article/details/51495844
+```bash
 ./tools/train_net.py --weights output/marker/train/basketball_iter_0.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt  --iter 10000
-
-
  ./tools/test_net.py --gpu 0 --def models/basketball/test.prototxt --net output/marker/train/basketball_iter_0.caffemodel --imdb basketball_val --cfg experiments/cfgs/config.yml
+ ./tools/train_net.py --gpu 0 --weights data/imagenet_models/VGG16.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
+```
+
+/home/alpha/Documents/ai-ml-dl-data/data/imagenet
+
+./tools/test_net.py --gpu 0 --def /home/ce/Documents/py-faster-rcnn/models/mmi/faster_rcnn_end2end/test.prototxt --net /home/ce/Documents/py-faster-rcnn/data/faster_rcnn_models/mmi_da_20170214_iter_100000.caffemodel  --imdb mmi_test --cfg /home/ce/Documents/py-faster-rcnn/experiments/cfgs/faster_rcnn_end2end.yml  --comp
 
 
- $ ./tools/train_net.py --gpu 0 --weights data/imagenet_models/VGG16.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
+In file: lib./rpn/proposal_target_layer.py: get_bbox_regression_labels:
+* https://github.com/rbgirshick/py-faster-rcnn/issues/9
+```bash
+cls = clss[ind]
+#
+## Change it to:
+cls = int(clss[ind])
+```
+
+
+EXP_DIR: faster_rcnn_end2end
+MODELS_DIR: "/home/ce/Documents/py-faster-rcnn/models"
+TRAIN:
+  HAS_RPN: True
+  IMS_PER_BATCH: 1
+  BBOX_NORMALIZE_TARGETS_PRECOMPUTED: True
+  RPN_POSITIVE_OVERLAP: 0.7
+  RPN_BATCHSIZE: 256
+  PROPOSAL_METHOD: gt
+  BG_THRESH_LO: 0.0
+  SNAPSHOT_ITERS: 10000
+  USE_FLIPPED: True
+  BBOX_NORMALIZE_TARGETS: True
+  SCALES: [600]
+TEST:
+  HAS_RPN: True
+
+```baah
+./tools/train_net.py --gpu 0 --weights data/faster_rcnn_models/ZF_faster_rcnn_final.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
+#
+./tools/train_net.py --gpu 0 --weights output/marker/train/zf_faster_rcnn_basketball_iter_0.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 10000
+#
+./tools/test_net.py --gpu 0 --def models/basketball/test.prototxt --net output/marker/train/zf_faster_rcnn_basketball_iter_10000.caffemodel --imdb basketball_val --cfg experiments/cfgs/config.yml
+```

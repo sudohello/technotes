@@ -38,6 +38,13 @@ Tags: Datasets and Data Creation for Training Machines
 git clone https://github.com/davisking/dlib.git
 cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
 ```
+* Amazon Mechanical Turk
+  - https://www.mturk.com/
+  Amazon Mechanical Turk (MTurk) operates a marketplace for work that requires human intelligence. The MTurk web service enables companies to programmatically access this marketplace and a diverse, on-demand workforce. Developers can leverage this service to build human intelligence directly into their applications.
+
+  While computing technology continues to improve, there are still many things that human beings can do much more effectively than computers, such as identifying objects in a photo or video, performing data de-duplication, transcribing audio recordings or researching data details. Traditionally, tasks like this have been accomplished by hiring a large temporary workforce (which is time consuming, expensive and difficult to scale) or have gone undone.
+
+  MTurk aims to make accessing human intelligence simple, scalable, and cost-effective. Businesses or developers needing tasks done (called Human Intelligence Tasks or “HITs”) can use the robust MTurk API to access thousands of high quality, global, on-demand Workers—and then programmatically integrate the results of that work directly into their business processes and systems. MTurk enables developers and businesses to achieve their goals more quickly and at a lower cost than was previously possible.
 
 
 ## Labelling
@@ -89,6 +96,15 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
   ```
 *  MNIST, then notMNIST, another famous one is cifar-10, cifar-100, and for driverless cars, we have GTSRB (Traffic sign recognition), GTSDB (Traffic sign detection) 
+* **Inria**
+  - A large set of marked up images of standing or walking people
+  - http://pascal.inrialpes.fr/data/human/
+  ```bash
+  wget -c ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
+  ```
+
+## AI datasets Search Engines
+* http://classif.ai/
 
 ### Traffic Sign Datasets
 * **German**

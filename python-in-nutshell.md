@@ -2127,3 +2127,9 @@ with open(configFileName, 'r') as f:
 
 ## Top Python Projects in 2018
 * https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-c750f9bf56a0
+
+
+## Assertions (assert) in Python
+* https://dbader.org/blog/python-assert-tutorial
+* https://www.journaldev.com/15791/python-assert
+
