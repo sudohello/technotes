@@ -911,6 +911,8 @@ dconf reset -f /
 * https://www.cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase/
 ```bash
 ls *.JPG | tr '[A-Z]' '[a-z]'
+## replace width with comma separated entries
+ls -m
 ```
 **Rename all files in a directory to upper case**
 ```bash

@@ -15,6 +15,32 @@ Tags: Computer Vision ML, DL Applications
 * https://cv-tricks.com/object-detection/faster-r-cnn-yolo-ssd/
 * https://medium.com/@jonathan_hui/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359
 
+**Train Faster-RCNN**
+* https://github.com/xinleipan/py-faster-rcnn-with-new-dataset
+* https://github.com/deboc/py-faster-rcnn/blob/master/help/Readme.md
+
+* INRIAperson
+```bash
+speed: 0.089s / iter
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/multiprocessing/process.py", line 267, in _bootstrap
+    self.run()
+  File "/usr/lib/python2.7/multiprocessing/process.py", line 114, in run
+    self._target(*self._args, **self._kwargs)
+  File "./tools/train_faster_rcnn_alt_opt.py", line 195, in train_fast_rcnn
+    max_iters=max_iters)
+  File "/home/alpha/Documents/ai-ml-dl/external/py-faster-rcnn/tools/../lib/fast_rcnn/train.py", line 162, in train_net
+    model_paths = sw.train_model(max_iters)
+  File "/home/alpha/Documents/ai-ml-dl/external/py-faster-rcnn/tools/../lib/fast_rcnn/train.py", line 110, in train_model
+    model_paths.append(self.snapshot())
+  File "/home/alpha/Documents/ai-ml-dl/external/py-faster-rcnn/tools/../lib/fast_rcnn/train.py", line 75, in snapshot
+    self.bbox_stds[:, np.newaxis])
+ValueError: operands could not be broadcast together with shapes (84,1024) (8,1) 
+```
+
+
+
 ##  Deep Learning  - Traffic Sign Detection and Classification
 
 * https://github.com/xfqbuaa/Traffic-Signs-Detect-German

@@ -331,7 +331,14 @@ os.path.dirname(os.path.abspath(__file__))
   ```python
   os.path.exists(fileName) and os.remove(fileName)
   ```
-* **How to Convert List to Dicitionary**
+* **How to insert at index in a List?**
+  * https://stackoverflow.com/questions/14895599/insert-an-element-at-specific-index-in-a-list-and-return-updated-list
+  ```python
+  a = [1, 2, 4]
+  b = a[:]
+  b.insert(2, 'a') # [1, 2, 'a', 4]
+  ```
+* **How to Convert List to Dicitionary?**
   * https://stackoverflow.com/questions/4576115/convert-a-list-to-a-dictionary-in-python
 ```python
 a='l;m;n'.split(';')

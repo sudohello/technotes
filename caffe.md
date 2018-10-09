@@ -185,3 +185,15 @@ TEST:
 #
 ./tools/test_net.py --gpu 0 --def models/basketball/test.prototxt --net output/marker/train/zf_faster_rcnn_basketball_iter_10000.caffemodel --imdb basketball_val --cfg experiments/cfgs/config.yml
 ```
+* INRIAPerson
+```bash
+./tools/train_faster_rcnn_alt_opt.py --gpu 0 --net_name INRIA_person --weights /home/alpha/Documents/ai-ml-dl-data/data/imagenet/VGG_CNN_M_1024.v2.caffemodel --imdb inria_train --cfg data/INRIA_Person_devkit/config.yml
+```
+
+## Object Detections
+* https://cv-tricks.com/object-detection/faster-r-cnn-yolo-ssd/
+* https://medium.com/@jonathan_hui/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359
+
+**Train Faster-RCNN**
+* https://github.com/xinleipan/py-faster-rcnn-with-new-dataset
+* https://github.com/deboc/py-faster-rcnn/blob/master/help/Readme.md
