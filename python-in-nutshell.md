@@ -647,7 +647,8 @@ from scipy.ndimage import morphology
 * **os module**
 	- operating system functionality - A portable way of using operating system dependent functionality.
 ```python
-os.getcwd() #Current directory:
+os.getcwd() #Current directory: #(returns "a string representing the current working directory")
+os.chdir(path) #("change the current working directory to path")
 os.listdir(os.curdir) #List a directory
 os.mkdir('junkdir') #Make a directory:
 os.rename('junkdir', 'foodir') #Rename the directory
@@ -658,7 +659,8 @@ os.remove('junk.txt') #Delete file
 # os.path provides common operations on pathnames.
 a = os.path.abspath('junk.txt')
 os.path.split(a)
-os.path.dirname(a)
+os.path.dirname(path) #(returns "the directory name of pathname path")
+os.path.realpath(path) #(returns "the canonical path of the specified filename, eliminating any symbolic links encountered in the path")
 os.path.basename(a)
 os.path.splitext(os.path.basename(a))
 os.path.exists('junk.txt')
@@ -666,6 +668,12 @@ os.path.isfile('junk.txt')
 os.path.isdir('junk.txt')
 os.path.expanduser('~/local')
 os.path.join(os.path.expanduser('~'), 'local', 'bin')
+#
+## The  constants:
+__file__
+#
+## To get the full path to the directory a Python file is contained in, write this in that file
+dir_path = os.path.dirname(os.path.realpath(__file__))
 #
 # Running an external command
 #

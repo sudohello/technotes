@@ -39,13 +39,9 @@ If you want to decay your learning rate after a certain amount of training itera
 * https://stackoverflow.com/questions/29529959/caffe-understanding-expected-lmdb-datastructure-for-blobs
 * https://ceciliavision.wordpress.com/2016/02/29/caffe-what-files-do-you-need-to-train-your-own-network/
 
-## Training py-faster-rcnn
-* https://huangying-zhan.github.io/2016/09/22/detection-faster-rcnn - nice tutorial
-* https://www.dropbox.com/s/iywkgsrx2fx6t5q/basketball.tar.gz?dl=0
-* http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html
-
 
 ## Compiling and Installation
+* py-faster-rcnn with CUDA 9.0 and cuDNN 7.1
 
 **Errors**
 * https://groups.google.com/forum/#!topic/caffe-users/3NHh06RhWd4
@@ -128,16 +124,17 @@ AttributeError: 'module' object has no attribute 'text_format'
 vi lib/fast_rcnn/train.py
 import google.protobuf.text_format
 ```
-
+* training
+```bash
 ./tools/train_net.py --weights data/imagenet_models/ZF.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
-
+#
 lt /home/bhaskar/Documents/ai-ml-dl/external/py-faster-rcnn/output/marker/train/basketball_iter_0.caffemodel
-
+#
  ./tools/train_net.py --weights output/marker/train/basketball_iter_0.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 10000
-
-
+#
+## error:
  smooth_L1_loss_layer.cpp:54] Not Implemented Yet
-
+```
 * https://github.com/rbgirshick/py-faster-rcnn/issues/130
 * https://blog.csdn.net/qq_14975217/article/details/51495844
 ```bash
@@ -145,11 +142,6 @@ lt /home/bhaskar/Documents/ai-ml-dl/external/py-faster-rcnn/output/marker/train/
  ./tools/test_net.py --gpu 0 --def models/basketball/test.prototxt --net output/marker/train/basketball_iter_0.caffemodel --imdb basketball_val --cfg experiments/cfgs/config.yml
  ./tools/train_net.py --gpu 0 --weights data/imagenet_models/VGG16.v2.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
 ```
-
-/home/alpha/Documents/ai-ml-dl-data/data/imagenet
-
-./tools/test_net.py --gpu 0 --def /home/ce/Documents/py-faster-rcnn/models/mmi/faster_rcnn_end2end/test.prototxt --net /home/ce/Documents/py-faster-rcnn/data/faster_rcnn_models/mmi_da_20170214_iter_100000.caffemodel  --imdb mmi_test --cfg /home/ce/Documents/py-faster-rcnn/experiments/cfgs/faster_rcnn_end2end.yml  --comp
-
 
 In file: lib./rpn/proposal_target_layer.py: get_bbox_regression_labels:
 * https://github.com/rbgirshick/py-faster-rcnn/issues/9
@@ -159,25 +151,7 @@ cls = clss[ind]
 ## Change it to:
 cls = int(clss[ind])
 ```
-
-
-EXP_DIR: faster_rcnn_end2end
-MODELS_DIR: "/home/ce/Documents/py-faster-rcnn/models"
-TRAIN:
-  HAS_RPN: True
-  IMS_PER_BATCH: 1
-  BBOX_NORMALIZE_TARGETS_PRECOMPUTED: True
-  RPN_POSITIVE_OVERLAP: 0.7
-  RPN_BATCHSIZE: 256
-  PROPOSAL_METHOD: gt
-  BG_THRESH_LO: 0.0
-  SNAPSHOT_ITERS: 10000
-  USE_FLIPPED: True
-  BBOX_NORMALIZE_TARGETS: True
-  SCALES: [600]
-TEST:
-  HAS_RPN: True
-
+* Imagenet basketball
 ```baah
 ./tools/train_net.py --gpu 0 --weights data/faster_rcnn_models/ZF_faster_rcnn_final.caffemodel --imdb basketball_train --cfg experiments/cfgs/config.yml --solver models/basketball/solver.prototxt --iter 0
 #
@@ -187,13 +161,49 @@ TEST:
 ```
 * INRIAPerson
 ```bash
-./tools/train_faster_rcnn_alt_opt.py --gpu 0 --net_name INRIA_person --weights /home/alpha/Documents/ai-ml-dl-data/data/imagenet/VGG_CNN_M_1024.v2.caffemodel --imdb inria_train --cfg data/INRIA_Person_devkit/config.yml
+./tools/train_faster_rcnn_alt_opt.py --gpu 0 --net_name INRIA_person --weights $HOME/Documents/ai-ml-dl-data/data/imagenet/VGG_CNN_M_1024.v2.caffemodel --imdb inria_train --cfg data/INRIA_Person_devkit/config.yml
+```
+* <custom>
+```bash
+solverprototxt="$HOME/Documents/ai-ml-dl-data/data/<custom>/traffic_sign_detection/2/faster_rcnn_end2end/prototxt/solver.prototxt"
+caffemodel="$HOME/Documents/ai-ml-dl-data/data/imagenet/VGG16_faster_rcnn_final.caffemodel"
+cfg="$HOME/Documents/ai-ml-dl-data/data/<custom>/traffic_sign_detection/2/faster_rcnn_end2end/faster_rcnn_end2end.<custom>.yml"
+./tools/train_net.py --gpu 0 --weights $caffemodel --imdb <custom>_train --cfg $cfg --solver $solverprototxt --iter 10
 ```
 
 ## Object Detections
 * https://cv-tricks.com/object-detection/faster-r-cnn-yolo-ssd/
 * https://medium.com/@jonathan_hui/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359
+* https://storage.googleapis.com/openimages/web/challenge_visualizer/index.html?set=relationships&c=wears
 
+**Series**
+* https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/
+* https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+- https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471
+
+## Training py-faster-rcnn
 **Train Faster-RCNN**
 * https://github.com/xinleipan/py-faster-rcnn-with-new-dataset
 * https://github.com/deboc/py-faster-rcnn/blob/master/help/Readme.md
+* https://huangying-zhan.github.io/2016/09/22/detection-faster-rcnn - **nice tutorial**
+* https://github.com/deboc/py-faster-rcnn/tree/master/help - **INRIAPerson**
+```bash
+cd $FRCN_ROOT/data/INRIA_Person_devkit/data
+ln -s $HOME/Documents/ai-ml-dl-data/data/INRIAPerson/Train/annotations/ Annotations
+ln -s $HOME/Documents/ai-ml-dl-data/data/INRIAPerson/Train/pos/ Images
+mkdir ImageSets
+ls Annotations/ -m | sed s/\\s/\\n/g | sed s/.txt//g | sed s/,//g > ImageSets/train.txt
+```
+* https://www.dropbox.com/s/iywkgsrx2fx6t5q/basketball.tar.gz?dl=0
+* http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html
+
+
+**Researchers**
+https://www.cc.gatech.edu/~parikh/
+
+**Web Challanges**
+* https://storage.googleapis.com/openimages/web/challenge.html
+
+**New Tools, Frameworks. libraries**
+* https://github.com/tryolabs/luminoth
+
