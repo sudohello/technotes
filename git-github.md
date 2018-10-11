@@ -11,6 +11,19 @@ Tags: Github
 {:toc}
 
 
+## Git LFS
+* https://git-lfs.github.com/
+An open source Git extension for versioning large files
+Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
+
+## Version Control Management of GIS Data
+* http://geogig.org/
+* https://www.locationtech.org/content/geogig-git-approach-geospatial
+---
+* http://archaeogeek.github.io/aging_githubtalk/#/30
+* https://www.directionsmag.com/article/1613
+* https://gis.stackexchange.com/questions/61978/implementing-version-control-system-for-geospatial-data
+
 ## Git, GitHub, bitbucket, gitbook
 
 ## Git

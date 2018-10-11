@@ -943,4 +943,15 @@ Practical Black-Box Attacks against Machine Learning
 https://arxiv.org/abs/1602.02697
 
 
+**Removing objects**
+* https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
+* https://www.dailymail.co.uk/sciencetech/article-5011649/Adobe-Cloak-AI-automatically-removes-objects-video.html
+* https://towardsdatascience.com/background-removal-with-deep-learning-c4f2104b3157?gi=ee87561234c9
+* https://greenscreen-ai.boorgle.com/
+* https://medium.com/@burgalon/deploying-your-keras-model-35648f9dc5fb
+
+* http://www.fast.ai/
+
+**Currently Reading**
 https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+
