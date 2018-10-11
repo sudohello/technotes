@@ -925,3 +925,22 @@ python object_detection/inference.py \
 
 ## Numpy Tutorials
 https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php
+
+## References
+* http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+* https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
+
+https://en.wikipedia.org/wiki/Precision_and_recall
+
+https://github.com/tflearn/tflearn/tree/master/examples#tflearn-examples
+
+
+https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196
+
+
+
+Practical Black-Box Attacks against Machine Learning
+https://arxiv.org/abs/1602.02697
+
+
+https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/

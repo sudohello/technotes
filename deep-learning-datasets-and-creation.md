@@ -71,9 +71,9 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
 - https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
 - https://handong1587.github.io/computer_vision/2015/09/24/datasets.html
 
-* **CIFAR-10**
+* **[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)**
   - One popular toy image classification dataset is the CIFAR-10 dataset. This dataset consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example “airplane, automobile, bird, etc”). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images.
-  - http://www.cs.toronto.edu/~kriz/cifar.html
+  - https://www.cs.toronto.edu/~kriz/cifar.html
 * **Pima Indians**
 * **Ionosphere**
   - http://cv-tricks.com/tensorflow-tutorial/understanding-alexnet-resnet-squeezenetand-running-on-tensorflow/
@@ -102,6 +102,11 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   ```bash
   wget -c ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
   ```
+**Caltech-UCSD Birds-200-2011**
+* http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
+* Warning: Images in this dataset overlap with images in ImageNet. Exercise caution when using networks pretrained with ImageNet (or any network pretrained with images from Flickr) as the test set of CUB may overlap with the training set of the original network.
+
+
 
 ## AI datasets Search Engines
 * http://classif.ai/

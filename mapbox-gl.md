@@ -691,6 +691,11 @@ Tiled GeoJSON isn't supported. If you want to use tiled data, you need to provid
 ## LiDAR to mapbox GL
 * https://blog.mapbox.com/add-lidar-to-mapbox-43f7e3912424
 
+
+## Weather/Earthquake
+* http://mapbox2.rssing.com/chan-13943511/all_p79.html
+* https://www.mapbox.com/bites/00394/ - **nice animation concept**
+
 ## Custom Draw Tool
 * https://medium.com/nycplanninglabs/building-a-custom-draw-mode-for-mapbox-gl-draw-1dab71d143ee
 * https://github.com/NYCPlanning/labs-zola/blob/907c950e5173bd129b21781acafc1a5e950f5ad7/app/components/main-map.js#L238-L299

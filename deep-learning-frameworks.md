@@ -73,6 +73,10 @@ sudo apt-get install libhdf5-serial-dev -y
 sudo pip install keras==1.0.8
 ```
 
+### [tflearn](http://tflearn.org/)
+* TFLearn: Deep learning library featuring a higher-level API for TensorFlow.
+
+
 ### [scikit-learn](http://scikit-learn.org/stable/)
 The scikit-learn library is a general purpose machine learning framework in Python built on top of SciPy. Scikit-learn excels at tasks such as evaluating model performance and optimizing model hyperparameters in just a few lines of code. Keras provides a wrapper class that allows you to use your deep learning models with scikit-learn.
 

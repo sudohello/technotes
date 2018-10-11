@@ -302,6 +302,17 @@ os.path.basename(__file__) # the file name only
 ## full current dir path
 os.path.dirname(os.path.abspath(__file__))
 ```
+* **how-to-downcase-the-first-character-of-a-string?**
+  * https://stackoverflow.com/questions/3840843/how-to-downcase-the-first-character-of-a-string
+  ```python
+  ## One-liner which handles empty strings and None
+  fclower = lambda s: s[:1].lower() + s[1:] if s else ''
+  fclower(None) # ''
+  fclower('') # ''
+  fclower('MARTINEAU') # 'mARTINEAU'
+  #
+  fcupper = lambda s: s[:1].upper() + s[1:] if s else ''
+  ```
 * **How to convert one data type to other data type?**
   * https://www.datacamp.com/community/tutorials/python-data-type-conversion
 * **How to split string to various data types?**

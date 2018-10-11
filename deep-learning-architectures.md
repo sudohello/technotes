@@ -66,3 +66,13 @@ Tags: Deep Learning Architectures
 ## Comparision of Model Architectures
 * **SSD v/s Faster R-CNN**
   - Even the fastest high-accuracy detector, Faster R-CNN, operates at only 7 frames per second (FPS)
+
+## Deep Learning Models
+ * Convolutions
+ * RNN
+ * LSTM
+ * BiRNN
+ * BatchNorm
+ * PReLU
+ * Residual networks
+ * Generative networks
