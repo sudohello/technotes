@@ -955,3 +955,5 @@ https://arxiv.org/abs/1602.02697
 **Currently Reading**
 https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
 
+**IoU - Intersection Of Unionn**
+- https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
