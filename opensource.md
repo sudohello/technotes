@@ -14,6 +14,11 @@ Tags: Open Source
 
 ## Open Source
 
+## Licenses
+* https://choosealicense.com/
+* https://github.com/github/choosealicense.com
+* https://developer.github.com/v3/licenses/
+
 ## Open Source Business Models
 
 ### Open Core

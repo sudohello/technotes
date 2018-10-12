@@ -64,3 +64,4 @@ Open-source software for urban autonomous driving, maintained by Tier IV. The fo
 * http://openxcplatform.com/
 * https://shop.openxcplatform.com/
 * https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd
+* https://mechanics.stackexchange.com/questions/17634/read-steering-angle-data-in-real-time

@@ -12,6 +12,22 @@ Tags: Jekyll
 
 ## Jekyll
 
+
+## Highlights
+**write reusable content**
+- https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/#content-references
+- https://jekyllrb.com/docs/datafiles/
+
+**Versioned documentation**
+
+**Testing Content Generation**
+* HTMLProofer
+  - It is a set of tests to validate your HTML output. These tests check if your image references are legitimate, if they have alt tags, if your internal links are working, and so on. It's intended to be an all-in-one checker for your output.
+  - https://github.com/gjtorikian/html-proofer
+
+
+
+## Quick Start
 ```bash
 # runs a local development server at http://localhost:4000 by default, _site
 jekyll serve
@@ -33,6 +49,8 @@ twitter_username: Your Twitter username (do not include @ symbol).
 github_username: Your GitHub username.
 ```
 
+
+
 ## Tutorials
 - [Learn Jekyll](https://learn.cloudcannon.com/)
 - https://www.siteleaf.com/blog/tags/tutorial/
@@ -49,10 +67,26 @@ github_username: Your GitHub username.
 - https://jekyllrb.com/docs/configuration/
 - https://ben.balter.com/2015/02/20/jekyll-collections/
 
-* [Collections](https://jekyllrb.com/docs/collections/)
+**[Collections](https://jekyllrb.com/docs/collections/)**
   - https://halfelf.org/2015/jekyll-collections/
+  - https://ben.balter.com/2015/02/20/jekyll-collections/
 
+## Github Pages workflow with Jekyll
+* https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
+* https://github.com/gjtorikian/jekyll-html-pipeline
+* https://github.com/gjtorikian/extended-markdown-filter
 
+## Search Option for Jekyll Sites
+
+### Lunr
+>  full text search with Lunr
+* https://lunrjs.com/
+* https://lunrjs.com/guides/getting_started.html
+* https://github.com/olivernn/lunr.js
+- 
+Lunr.js is a small, full-text search library for use in the browser. It indexes JSON documents and provides a simple search interface for retrieving documents that best match text queries.
+
+* why a server-side search solution is needed?
 
 ## Links
 - https://stackoverflow.com/questions/25826770/jekyll-using-links-to-internal-markdown-files
@@ -222,6 +256,11 @@ bundle exec jekyll serve
 
 ## Liquid
 * https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+* https://shopify.github.io/liquid/
+
+## cheatseet
+* https://learn.cloudcannon.com/jekyll-cheat-sheet/
+
 
 ## FAQs
 * How to Add Table of Contents?

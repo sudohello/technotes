@@ -24,6 +24,27 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 * https://www.directionsmag.com/article/1613
 * https://gis.stackexchange.com/questions/61978/implementing-version-control-system-for-geospatial-data
 
+## Github Pages
+* https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
+* https://pages.github.com/
+* https://dita.xml.org/
+* travis-ci
+  - https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/#testing-our-site
+  - https://travis-ci.com/
+> By committing to using the same hosting features we provide to every GitHub user, we were able to provide better documentation, faster. Our internal workflow has made us more productive, and enabled us to provide features we never could before, such as versioned content.
+
+
+* CI: Continious Integration
+* CD: Continious Deveopment
+* https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
+
+
+## hubbots and chatops
+- https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
+
+## Webhooks
+- https://developer.github.com/webhooks/
+
 ## Git, GitHub, bitbucket, gitbook
 
 ## Git
