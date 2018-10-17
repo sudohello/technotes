@@ -2159,3 +2159,8 @@ with open(configFileName, 'r') as f:
 * https://dbader.org/blog/python-assert-tutorial
 * https://www.journaldev.com/15791/python-assert
 
+## Snipets
+```python
+np.arange(3, 6) # array([3, 4, 5])
+2**np.arange(3, 6) # array([ 8, 16, 32])
+```

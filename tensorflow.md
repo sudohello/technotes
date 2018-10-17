@@ -586,6 +586,17 @@ Loading TensorFlow.
 ## Convert Models from Caffe to Tensorflow
 - https://github.com/ethereon/caffe-tensorflow
 
+## Tensorflow Ecosystem
+* https://www.tensorflow.org/ecosystem/
+
+
+### Tensor Hub
+* https://www.tensorflow.org/hub/
+* https://medium.com/tensorflow/introducing-tensorflow-hub-a-library-for-reusable-machine-learning-modules-in-tensorflow-cdee41fa18f9
+TensorFlow Hub is a library for the publication, discovery, and consumption of reusable parts of machine learning models. A module is a self-contained piece of a TensorFlow graph, along with its weights and assets, that can be reused across different tasks in a process known as transfer learning. Transfer learning can:
+Train a model with a smaller dataset,
+Improve generalization, and
+Speed up training.
 
 
 # Artifical Life
@@ -600,3 +611,4 @@ A zero-player game or no-player game is a game that has no sentient players.
 In computer games, the term refers to programs that use artificial intelligence rather than human players.
 
 In addition, some fighting and real-time strategy games can be put into zero-player mode where one AI plays against another AI.
+

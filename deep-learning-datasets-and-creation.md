@@ -45,7 +45,7 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   While computing technology continues to improve, there are still many things that human beings can do much more effectively than computers, such as identifying objects in a photo or video, performing data de-duplication, transcribing audio recordings or researching data details. Traditionally, tasks like this have been accomplished by hiring a large temporary workforce (which is time consuming, expensive and difficult to scale) or have gone undone.
 
   MTurk aims to make accessing human intelligence simple, scalable, and cost-effective. Businesses or developers needing tasks done (called Human Intelligence Tasks or “HITs”) can use the robust MTurk API to access thousands of high quality, global, on-demand Workers—and then programmatically integrate the results of that work directly into their business processes and systems. MTurk enables developers and businesses to achieve their goals more quickly and at a lower cost than was previously possible.
-
+* VoTT - https://github.com/Microsoft/VoTT/blob/master/README.md
 
 ## Labelling
 - https://github.com/udacity/self-driving-car
@@ -102,10 +102,11 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   ```bash
   wget -c ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
   ```
+* http://course.fast.ai/datasets
+
 **Caltech-UCSD Birds-200-2011**
 * http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
 * Warning: Images in this dataset overlap with images in ImageNet. Exercise caution when using networks pretrained with ImageNet (or any network pretrained with images from Flickr) as the test set of CUB may overlap with the training set of the original network.
-
 
 
 ## AI datasets Search Engines
