@@ -51,6 +51,7 @@ Even when you have people who are both data scientists and engineers (that is, t
     - To learn a network for Cifar-10, DARTS takes just 4 GPU days, compared to 1800 GPU days for NASNet and 3150 GPU days for AmoebaNet (all learned to the same accuracy). This is a huge gain in efficiency! 
 - how can humans and computers work together to make machine learning more effective?
 
+
 ## FAQs - Technical Questions
 
 * **How many nodes to have in the hidden layer?**
@@ -135,6 +136,13 @@ We should remember that the purpose of research is to create knowledge. It’s n
 
 Mathematical notation can be a huge accessibility barrier, and it isn’t at all a requirement to understand deep learning clearly. Code can be in many cases a very intuitive medium to work with mathematical ideas.
 
+* **How to understand / calculate FLOPs of the neural network model?**
+  * http://imatge-upc.github.io/telecombcn-2016-dlcv/slides/D2L1-memory.pdf
+
+● Estimating neural network memory consumption
+● Mini-batch sizes and gradient splitting trick
+● Estimating neural network computation (FLOP/s)
+● Calculating effective aperture sizes
 
 ## Research Papers
 * https://github.com/ujjwalkarn/deeplearning-papernotes
@@ -943,6 +951,13 @@ Practical Black-Box Attacks against Machine Learning
 https://arxiv.org/abs/1602.02697
 
 
+
+**Object Detections**
+* https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/
+* https://www.descarteslabs.com/
+* https://www.tensorflight.com/
+
+
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
 * https://www.dailymail.co.uk/sciencetech/article-5011649/Adobe-Cloak-AI-automatically-removes-objects-video.html
@@ -954,4 +969,32 @@ https://arxiv.org/abs/1602.02697
 
 **Currently Reading**
 https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
+
+
+**IoU - Intersection Of Unionn**
+- https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+
+**Binary Cross Entropy**
+- http://rdipietro.github.io/friendly-intro-to-cross-entropy-loss/
+
+**Online Books**
+- https://www.deeplearningbook.org/
+
+
+**Free Online Course**
+* http://course.fast.ai/lessons/lesson1.html
+  - http://files.fast.ai/setup/paperspace
+**Cloud Insfrastructure**
+* https://www.paperspace.com/
+  - https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/paperspace.md
+* Cloud TPU
+  - https://medium.com/swlh/how-to-train-keras-model-x20-times-faster-with-tpu-for-free-cac6cf5089cb
+  - https://techcrunch.com/2017/05/17/the-tensorflow-research-cloud-program-gives-the-latest-cloud-tpus-to-scientists/
+  - **What is TPU?**
+    * https://en.wikipedia.org/wiki/Tensor_processing_unit
+    * A tensor processing unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google specifically for neural network machine learning.
+
+**Transfer Learning**
+- https://www.tensorflow.org/hub/tutorials/image_retraining
 

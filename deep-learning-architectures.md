@@ -62,6 +62,10 @@ Tags: Deep Learning Architectures
   - https://github.com/weiliu89/caffe/tree/ssd
 * **Detectron**
   - https://github.com/facebookresearch/Detectron
+* **NASNet**
+  * Automl-for-large-scale-image
+  * https://ai.googleblog.com/2017/11/automl-for-large-scale-image.html
+
 
 ## Comparision of Model Architectures
 * **SSD v/s Faster R-CNN**
