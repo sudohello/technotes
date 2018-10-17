@@ -263,10 +263,99 @@ print('p' not in my_set)
 
 
 ### Tupels
-* Tuples are lists that are immutable. That is, once defined, the individual elements of a tuple cannot be changed. Whereas a list is written as a sequence of numbers enclosed in square brackets, a tuple is written as a sequence of numbers enclosed in round parentheses.
+* **Tuples are lists that are immutable**. That is, once defined, the individual elements of a tuple cannot be changed.
+* A tuple is written as a sequence of numbers enclosed in round parentheses
+* Whereas a list is written as a sequence of numbers enclosed in square brackets
 ```python
 t=(1, 1, 2, 3, 5, 8, 13)
 type(t) #<type 'tuple'>
+```
+
+### Namedtupels
+- https://stackoverflow.com/questions/2970608/what-are-named-tuples-in-python
+- https://www.reddit.com/r/Python/comments/38ee9d/intro_to_namedtuple/
+
+* **What are named tuples?**
+  * Named tuples are basically easy-to-create, lightweight object types. Named tuple instances can be referenced using object-like variable dereferencing or the standard tuple syntax
+  * namedtuple is a factory function for making a tuple class. With that class we can create tuples that are callable by name also
+* **How to use them?**
+  * They can be used similarly to `struct` or other common record types, except that they are immutable. They were added in Python 2.6 and Python 3.0
+  * common to represent a point as a tuple (x, y). This leads to code like the following:
+  ```python
+  pt1 = (1.0, 5.0)
+  pt2 = (2.5, 1.5)
+  #
+  from math import sqrt
+  line_length = sqrt((pt1[0]-pt2[0])**2 + (pt1[1]-pt2[1])**2)
+  ```
+  * Using a named tuple it becomes more readable:
+  ```python
+  from collections import namedtuple
+  Point = namedtuple('Point', 'x y')
+  pt1 = Point(1.0, 5.0)
+  pt2 = Point(2.5, 1.5)
+  Point._make([1,2]) ##  Make a namedtuple from a list of values
+  #
+  from math import sqrt
+  line_length = sqrt((pt1.x-pt2.x)**2 + (pt1.y-pt2.y)**2)
+  ```
+  * named tuples are still backwards compatible with normal tuples, s
+  ```python
+  line_length = sqrt((pt1[0]-pt2[0])**2 + (pt1[1]-pt2[1])**2)
+  ```python
+  use tuple unpacking
+  ```python
+  x1, y1 = pt1
+  ```
+* **Why/when should I use named tuples instead of normal tuples?**
+  * you should use named tuples instead of tuples anywhere you think object notation will make your code more pythonic and more easily readable
+  * You can also replace ordinary immutable classes that have no functions, only fields with them
+  * You can use them instead of an object if you would otherwise use an object with unchanging data attributes and no functionality.
+  * You can even use your named tuple types as base classes
+  * `**_asdict()**`: You may just want to use a dictionary in this situation. Named tuples can be converted to dictionaries using `pt1._asdict()` which returns `{'x': 1.0, 'y': 5.0}` and can be operated upon with all the usual dictionary functions. Or use **slotted object** or **namedlist**
+  ```python
+  class Point(namedtuple('Point', 'x y')):
+    [...]
+  ```
+  * as with tuples, attributes in named tuples are immutable:
+  ```python
+  Point = namedtuple('Point', 'x y')
+  pt1 = Point(1.0, 5.0)
+  pt1.x = 2.0 ## AttributeError: can't set attribute
+  pt1._asdict() ## OrderedDict([('x', 1.0), ('y', 5.0)])
+
+  ```
+* **Why/when should I use normal tuples instead of named tuples?**
+* **Is there any kind of "named list" (a mutable version of the named tuple)?**
+  * You're looking for either a slotted object that implements all of the functionality of a statically sized list or a subclassed list that works like a named tuple (and that somehow blocks the list from changing in size.)
+
+
+### NamedLists
+* https://pypi.python.org/pypi/namedlist
+```python
+from namedlist import namedlist
+Point = namedlist('Point', 'x y')
+p = Point(1, 3)
+p.x = 2
+assert p.x == 2
+assert p.y == 3
+#
+# Specific default value for all vields as same
+Point = namedlist('Point', 'x y', default=3)
+# per field default value
+Point = namedlist('Point', [('x', 0), ('y', 100)])
+```
+
+### Record Type: `rcdtype`
+* http://code.activestate.com/recipes/576555/
+```python
+from rcdtype import *
+Point = recordtype('Point', 'x y')
+vars(Point) ## dumps the object
+pt1 = Point(1.0, 5.0)
+pt1 = Point(1.0, 5.0)
+pt1.x = 2.0
+print(pt1[0])
 ```
 
 ### Numpy Array
@@ -291,6 +380,13 @@ The third way arrays can be created is using the NumPy arange function, which is
 
 #### References
 * http://www.physics.nyu.edu/pine/pymanual/html/chap3/chap3_arrays.html
+
+
+## Careful TIps
+* Note though, that as per **[PEP8](https://www.python.org/dev/peps/pep-0008/)** a single underscore is considered a “weak "internal use" indicator” with its own behavior. Careful when making use of functions that start with ` _!`
+
+## PEP8
+* https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
 * **Paths**

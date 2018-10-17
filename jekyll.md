@@ -49,6 +49,9 @@ twitter_username: Your Twitter username (do not include @ symbol).
 github_username: Your GitHub username.
 ```
 
+* **datafiles - Read data from CSV, JSON or YAML files into your Liquid templates**
+  - Data files give you access information from CSV, JSON or YAML files on your Jekyll site. You can almost treat these files like a database.
+
 
 
 ## Tutorials
