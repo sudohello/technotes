@@ -1016,8 +1016,13 @@ For the problem of using an X-ray dataset to identify a disease, and build a web
 * https://github.com/ethz-asl/kalibr/wiki/multiple-camera-calibration
 
 
+## Market
+* https://www.geosemi.com/
+
+
 ## Terms
 * Image_warping
   - https://en.wikipedia.org/wiki/Image_warping
   - Image warping is the process of digitally manipulating an image such that any shapes portrayed in the image have been significantly distorted. Warping may be used for correcting image distortion as well as for creative purposes (e.g., morphing[1]). The same techniques are equally applicable to video.
   - Pure warping means that points are mapped to points without changing the colors.
+

@@ -11,11 +11,15 @@ Tags: CBIR
 {:toc}
 
 
-## CBIR or ge Search Engine
+## CBIR or Image Search Engine
 
 * http://www.pyimagesearch.com/2014/01/27/hobbits-and-histograms-a-how-to-guide-to-building-your-first-image-search-engine-in-python/
 * http://www.pyimagesearch.com/2014/12/01/complete-guide-building-image-search-engine-python-opencv/
 * http://www.pyimagesearch.com/2014/01/15/the-3-types-of-image-search-engines-search-by-meta-data-search-by-example-and-hybrid/
+
+**PPTs**
+* https://www.slideshare.net/xavigiro/d1l5-contentbased-image-retrieval-upc-2018-deep-learning-for-computer-vision
+
 
 ### Types
 * meta-data

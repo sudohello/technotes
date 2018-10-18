@@ -55,6 +55,12 @@ translateX,Y,Z, rotateX,Y,Z, matrix3d
 * https://www.w3.org/Talks/2012/0416-CSS-WWW2012/Demos/transforms/demo-rotate3d.html
 
 
+## 404 Pages
+* http://bit.ly/DLCV2018
+  - nice simple keyframe with canvas animation
+  - ripple effect, http://www.otherhalffull.com
+
+
 # Map Based Animations
 * http://www.animaps.com/pb/88280001/6820/New_Showcase
 * http://theoutpost.io/leaflet/

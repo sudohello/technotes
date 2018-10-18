@@ -108,6 +108,34 @@ git push -u origin master
 sudo apt-get install git-core
 ```
 
+**Sparse Checkout**
+-  git 1.7.0 (Feb. 2012)
+* http://schacon.github.io/git/git-read-tree.html#_sparse_checkout
+* https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository#13738951
+
+"sparse clone" and "sparse fetch"  are not supported
+
+The steps to do a sparse clone are as follows:
+```bash
+mkdir <repo>
+cd <repo>
+git init
+git remote add -f origin <url>
+```
+This creates an empty repository with your remote, and fetches all objects but doesn't check them out. Then do:
+```bash
+git config core.sparseCheckout true
+```
+Now you need to define which files/folders you want to actually check out.
+```bash
+echo "some/dir/" >> .git/info/sparse-checkout
+echo "another/sub/tree" >> .git/info/sparse-checkout
+```
+update your empty repo with the state from the remote:
+```bash
+git pull origin master
+```
+
 ## Git Commands
 
 ### Plugins/External Utils
@@ -331,3 +359,11 @@ git push
 ### How to Run Your Own Git Server
 * https://www.linux.com/learn/how-run-your-own-git-server
 * https://intercom.help/gitprime/data-setup-and-security/git-hosts/using-gitprime-with-an-internal-server-or-behind-a-firewall
+
+
+## Git Hub Education - Student and Teacher Collaboration
+* https://github.com/education
+
+## Subversion (SVN) Client Support
+* https://help.github.com/articles/support-for-subversion-clients/
+* https://github.com/telecombcn-dl/2016-dlcv/tree/gh-pages/slides

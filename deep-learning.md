@@ -110,6 +110,7 @@ The objective of the training is to get the best possible values of the all thes
 You can find the best set of parameters using a process called Backward propagation, i.e. you start with a random set of parameters and keep changing these weights such that for every training image we get the correct output. There are many optimizer methods to change the weights that are mathematically quick in finding the correct weights. GradientDescent is one such method(Backward propagation and optimizer methods to change the gradient is a very complicated topic. But we don’t need to worry about it now as Tensorflow takes care of it).
 - Which architectures should I use? Should I create my own architecture to get started with?
 	- There are many standard architectures which work great for many standard problems. Examples being AlexNet, GoogleNet, InceptionResnet, VGG etc. In the beginning, you should only use the standard network architectures. You could start designing networks after you get a lot of experience with neural nets. Hence, let’s not worry about it now.
+
 **Machine Learning** and the role it plays in computer vision, image classification, and deep learning.
 - http://neuralnetworksanddeeplearning.com/index.html
 - http://neuralnetworksanddeeplearning.com/chap1.html
@@ -184,6 +185,20 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 * http://deeplearning.net/tutorial/
 * http://www.fast.ai/2017/09/08/introducing-pytorch-for-fastai/
 * http://course.fast.ai/
+* http://imatge-upc.github.io/telecombcn-2016-dlcv/
+
+**Central repository for all lectures on deep learning at UPC ETSETB TelecomBCN.**
+* https://github.com/telecombcn-dl/lectures-all
+* https://github.com/telecombcn-dl/2016-dlcv
+* https://github.com/telecombcn-dl/2017-dlsl
+* https://github.com/telecombcn-dl/2018-dlsl
+* https://github.com/telecombcn-dl/lectures-all/blob/master/computer-vision.md
+
+
+## **Currentyly Reading**
+* https://github.com/telecombcn-dl/lectures-all/blob/master/computer-vision.md
+
+
 
 ## AL-ML-DL blogs
 - http://www.fast.ai/2018/07/12/auto-ml-1/
@@ -276,6 +291,10 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 		- Dropout
 			- Dropout also helps reduce overfitting, by preventing a layer from seeing twice the exact same pattern, thus acting in a way analoguous to data augmentation (you could say that both dropout and data augmentation tend to disrupt random correlations occuring in your data).
 *  Dilated Convolutions
+
+### neural Network Zoo
+* [neural network zoo prequel: cells and layers](https://www.asimovinstitute.org/author/fjodorvanveen/)
+* [neural network zoo](http://www.asimovinstitute.org/neural-network-zoo/)
 
 ### Options in User Interface for Model Selection and Traning
 **Deep Learning Key Terms**
