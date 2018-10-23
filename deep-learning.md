@@ -975,11 +975,14 @@ https://arxiv.org/abs/1602.02697
 * https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/
 * https://www.descarteslabs.com/
 * https://www.tensorflight.com/
+* https://github.com/tensorflow/models/tree/master/research/object_detection
+* http://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
 * Mask-RCNN
   - https://github.com/facebookresearch/Detectron
   - https://github.com/matterport/Mask_RCNN
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
+  * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
 
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
