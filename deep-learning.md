@@ -976,6 +976,10 @@ https://arxiv.org/abs/1602.02697
 * https://www.descarteslabs.com/
 * https://www.tensorflight.com/
 
+* Mask-RCNN
+  - https://github.com/facebookresearch/Detectron
+  - https://github.com/matterport/Mask_RCNN
+  - https://github.com/CharlesShang/FastMaskRCNN - just for basics
 
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
@@ -1017,3 +1021,16 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 **Transfer Learning**
 - https://www.tensorflow.org/hub/tutorials/image_retraining
 
+
+## Computer Vision Conferences, Challanges
+* http://www.guide2research.com/topconf/computer-vision
+
+* CVPR : IEEE Conference on Computer Vision and Pattern Recognition, CVPR
+* **ICCV : IEEE International Conference on Computer Vision**
+  - https://en.wikipedia.org/wiki/International_Conference_on_Computer_Vision
+* **ECCV : European Conference on Computer Vision**
+* **ICIAR : International Conference on Image Analysis and Recognition**
+
+## Research Publications
+* **ArXiv**
+  - https://en.wikipedia.org/wiki/ArXiv
