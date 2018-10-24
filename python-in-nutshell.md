@@ -2264,3 +2264,14 @@ np.arange(3, 6) # array([3, 4, 5])
 ## Annoy
 * https://github.com/spotify/annoy
 * Annoy (Approximate Nearest Neighbors Oh Yeah) is a C++ library with Python bindings to search for points in space that are close to a given query point. It also creates large read-only file-based data structures that are mmapped into memory so that many processes may share the same data.
+
+## urllib, urlparse
+* https://stackoverflow.com/questions/29358403/no-module-named-urllib-parse-how-should-i-install-it#37526119
+  ```python
+  * try:
+      from urllib.parse import urlparse
+      from urllib.parse import urljoin
+  except ImportError:
+      from urlparse import urljoin
+      from urlparse import urlparse
+   ```

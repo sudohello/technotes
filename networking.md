@@ -46,3 +46,10 @@ Service disruption (preventing your headphones from working, probably by floodin
 Infiltration (using your PC or iPad's bluetooth capabilities to gain unauthorized access to the PC or iPad)
 
 Bluesnarfing and Bluejacking
+
+
+https://linuxhint.com/pulse_audio_sounds_ubuntu/
+```bash
+sudo apt install pulseaudio
+
+```
