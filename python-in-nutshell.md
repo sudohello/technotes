@@ -2260,3 +2260,7 @@ with open(configFileName, 'r') as f:
 np.arange(3, 6) # array([3, 4, 5])
 2**np.arange(3, 6) # array([ 8, 16, 32])
 ```
+
+## Annoy
+* https://github.com/spotify/annoy
+* Annoy (Approximate Nearest Neighbors Oh Yeah) is a C++ library with Python bindings to search for points in space that are close to a given query point. It also creates large read-only file-based data structures that are mmapped into memory so that many processes may share the same data.

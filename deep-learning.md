@@ -976,7 +976,7 @@ https://arxiv.org/abs/1602.02697
 * https://www.descarteslabs.com/
 * https://www.tensorflight.com/
 * https://github.com/tensorflow/models/tree/master/research/object_detection
-* http://deeplearninganalytics.org/blog/do-pixel-wise-classification
+* https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
 * Mask-RCNN
   - https://github.com/facebookresearch/Detectron
