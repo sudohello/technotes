@@ -197,7 +197,7 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 
 ## **Currentyly Reading**
 * https://github.com/telecombcn-dl/lectures-all/blob/master/computer-vision.md
-
+* http://insightdata.ai/
 
 
 ## AL-ML-DL blogs
@@ -1011,6 +1011,8 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 **Free Online Course**
 * http://course.fast.ai/lessons/lesson1.html
   - http://files.fast.ai/setup/paperspace
+* https://www.insightdata.ai/
+
 **Cloud Insfrastructure**
 * https://www.paperspace.com/
   - https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/paperspace.md
@@ -1037,3 +1039,9 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 ## Research Publications
 * **ArXiv**
   - https://en.wikipedia.org/wiki/ArXiv
+
+
+## Text based DNN
+* https://nlp.stanford.edu/projects/glove/
+  - GloVe (trained on Wikipedia).
+  - https://github.com/hundredblocks/semantic-search

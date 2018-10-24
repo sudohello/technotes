@@ -2260,3 +2260,16 @@ with open(configFileName, 'r') as f:
 np.arange(3, 6) # array([3, 4, 5])
 2**np.arange(3, 6) # array([ 8, 16, 32])
 ```
+
+## CBIR Demo Setup
+* https://stackoverflow.com/questions/29358403/no-module-named-urllib-parse-how-should-i-install-it#37526119
+  ```python
+  * try:
+      from urllib.parse import urlparse
+      from urllib.parse import urljoin
+  except ImportError:
+      from urlparse import urljoin
+      from urlparse import urlparse
+   ```
+
+   

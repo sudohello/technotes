@@ -20,6 +20,9 @@ Tags: CBIR
 **PPTs**
 * https://www.slideshare.net/xavigiro/d1l5-contentbased-image-retrieval-upc-2018-deep-learning-for-computer-vision
 
+* https://blog.insightdatascience.com/the-unreasonable-effectiveness-of-deep-learning-representations-4ce83fc663cf
+* https://en.wikipedia.org/wiki/Recommender_system#Content-based_filtering
+-  building your own representations, both for image and text data, and efficiently do similarity Search
 
 ### Types
 * meta-data
