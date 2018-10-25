@@ -94,6 +94,10 @@ import sklearn
 sklearn.__path__
 dir(sklearn)
 
+* https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels.h5
+https://keras.io/applications/
+
+
 ## Questions
 * What is feed forward neural network
 * What are HOG descriptors used to describe?
