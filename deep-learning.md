@@ -3,7 +3,7 @@ Title: Deep Learning
 Decription: Deep Learning
 Author: Bhaskar Mangal
 Date: 
-Last updated: 24th-Jul-2018
+Last updated: 24th-Oct-2018
 Tags: Deep Learning
 ---
 
@@ -1007,11 +1007,15 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 **Online Books**
 - https://www.deeplearningbook.org/
 
+**CBIR**
+- https://blog.insightdatascience.com/the-unreasonable-effectiveness-of-deep-learning-representations-4ce83fc663cf
 
 **Free Online Course**
 * http://course.fast.ai/lessons/lesson1.html
   - http://files.fast.ai/setup/paperspace
 * https://www.insightdata.ai/
+* https://www.insightdatascience.com/
+
 
 **Cloud Insfrastructure**
 * https://www.paperspace.com/

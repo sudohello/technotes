@@ -550,3 +550,19 @@ https://blog.mapbox.com/mapbox-ar-2f065374eacb
 
 ## Reference
 http://spatialreference.org/
+
+
+## GIS Formats
+https://gisgeography.com/gis-formats/
+
+## Tricks
+
+* polygon to centerline
+- skeleton algorithm
+
+https://www.udcus.com/blog/2017/06/28/creating-centerlines-postgis-and-arcgis
+https://gis.stackexchange.com/questions/114541/extracting-centerline-of-a-complex-polygon-in-postgis-python/203928
+https://gis.stackexchange.com/questions/290805/is-it-possible-to-convert-polygon-to-centerline-linestring
+https://lists.osgeo.org/pipermail/postgis-users/2008-January/018215.html
+
+
