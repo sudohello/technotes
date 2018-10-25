@@ -2275,3 +2275,13 @@ np.arange(3, 6) # array([3, 4, 5])
       from urlparse import urljoin
       from urlparse import urlparse
    ```
+
+## Python based web servers
+
+* SimpleHTTPServer
+* gunicorn
+* tornado
+
+### Tornado
+- https://www.tornadoweb.org/en/stable/
+- Tornado is different from most Python web frameworks. It is not based on WSGI, and it is typically run with only one thread per process.

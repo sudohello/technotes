@@ -51,5 +51,16 @@ Bluesnarfing and Bluejacking
 https://linuxhint.com/pulse_audio_sounds_ubuntu/
 ```bash
 sudo apt install pulseaudio
-
 ```
+
+## Proxy Server
+https://www.techwalla.com/13713498/what-is-a-proxy-server
+1. What Is a Proxy Server?
+A proxy server is a computer that channels traffic from other computers to the internet.
+
+
+
+
+
+
+* https://www.techwalla.com/articles/what-is-a-proxy-server-port
