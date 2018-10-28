@@ -180,6 +180,10 @@ python st_hello.py
 # http://localhost:8501/?name=st_hello
 ```
 
+**Automation**
+- https://blog.insightdatascience.com/airflow-101-start-automating-your-batch-workflows-with-ease-8e7d35387f94?source=placement_card_footer_grid---------0-41
+
+
 ### Types
 * meta-data
 * CBIR (search by example)

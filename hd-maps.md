@@ -577,3 +577,17 @@ observation
 
 ## Photogrammetry Experts to follow on internet
 * Wishgranter
+
+## TBD
+- does zoning is required for HD maps? How relevant it is?
+- LoD level for road and road network?
+  - what we can see in different sceneraios?
+  - what we can't see?
+    - underground pipelines, tunnels, sewage
+      - does it create threat or opportunity
+    - eletromagnetic radiations
+      - can these cause interference to the autonomous vehicle's sensors
+  - vertical objects, protusions, hanging cabels, electric cabels, road blockages during thunder storm or otherwise
+  - u-turns, reverse, narrow roads, kaccha roads, water lodging
+  - natural and man made disasters and calimities impact - floods, thrunderstorm impact: road blockages, dangerous electric cabels, fire, typoons
+  - Drone networks, sky corridors

@@ -55,7 +55,9 @@ github_username: Your GitHub username.
 
 
 ## Tutorials
-- [Learn Jekyll](https://learn.cloudcannon.com/)
+- [Learn Jekyll](https://learn.cloudcannon.com/) - best to get started
+  - https://learn.cloudcannon.com/jekyll/permalinks/
+  - https://learn.cloudcannon.com/jekyll/converting-a-static-site-to-jekyll/ - relevant when want to adopt good html template to jekyll site
 - https://www.siteleaf.com/blog/tags/tutorial/
 - https://www.siteleaf.com/blog/jekyll-from-scratch/
 - https://jekyllrb.com/docs/static-files/
