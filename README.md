@@ -1,5 +1,10 @@
 ---
-title: README
+Title: Technotes README
+Decription: Technotes README
+Author: Bhaskar Mangal
+Date: 
+Last updated: 28th-Oct-2018
+Tags: Technotes README
 ---
 
 **Table of Contents**
@@ -22,8 +27,8 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 
 ### **Pre-requisite: Software Stack, Python Stack**
 * [Software Stack](https://github.com/mangalbhaskar/linuxscripts/blob/master/README.md)
-* [Python In Nutshell](https://github.com/mangalbhaskar/pragmatic-approach-4-learning-data-visualisation/blob/master/chapter-1/python-in-nutshell.md)
-* [Web Application in Python Setup](https://github.com/mangalbhaskar/pragmatic-approach-4-learning-data-visualisation/blob/master/chapter-2/web-application-in-python-setup.md)
+* [Python In Nutshell](python-in-nutshell.md)
+* [Web Application in Python Setup](python-web-application-setup.md)
 * [Job Description for AI-ML](jd.ai-ml.md)
 
 ### **Image processing, Computer Vision**
@@ -38,10 +43,22 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 ### **Machine Learning**
 * [Machine Learning](machine-learning.md)
 * [ML for Mobile and Web Applications](ml-for-mobile-and-web-applications.md)
-* [CBIR](cbir.ml.md)
 
 ### **Deep Learning**
+* [AI Programme Overview](ppts-pdfs/AI-programme-slides.pdf)
+* [Deep Learning](deep-learning.md)
+* [Deep Learning Hardware](deep-learning-hardware.md)
+* [Deep Learning Frameworks](deep-learning-frameworks.md)
+* [Deep Learning Architectures](deep-learning-architectures.md)
+* [Deep Learning Datasets and Creation](deep-learning-datasets-and-creation.md)
+* [Deep Learning Applications](deep-learning-applications.md)
 * [Deep Learning in Computer Vision and its Applications](deep-learning-in-computer-vision-and-its-applications.md)
+* [Deep Learning Traffic Sign Detection Classification](deep-learning-traffic-sign-detection-classification.md)
+	* tsr - traffic sign recognition
+	* tsd - traffic sign detection
+	* spd - sign post detection
+* [Deep Learning NLP](deep-learning-nlp.md)
+* [CBIR - Content Based Image Retrival](cbir.ml.md)
 
 ### **Mathematics, Statistics and Statistical Learning**
 * [Statistics](stats.md)
