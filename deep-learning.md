@@ -186,6 +186,10 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 * http://www.fast.ai/2017/09/08/introducing-pytorch-for-fastai/
 * http://course.fast.ai/
 * http://imatge-upc.github.io/telecombcn-2016-dlcv/
+* https://towardsdatascience.com/how-to-learn-deep-learning-in-6-months-e45e40ef7d48
+* https://towardsdatascience.com/lets-code-a-neural-network-in-plain-numpy-ae7e74410795
+
+
 
 **Central repository for all lectures on deep learning at UPC ETSETB TelecomBCN.**
 * https://github.com/telecombcn-dl/lectures-all
@@ -981,6 +985,9 @@ https://arxiv.org/abs/1602.02697
 * Mask-RCNN
   - https://github.com/facebookresearch/Detectron
   - https://github.com/matterport/Mask_RCNN
+  	```
+  	sudo pip3 install pycocotools
+  	```
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
   * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
 
