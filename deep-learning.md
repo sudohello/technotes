@@ -983,10 +983,11 @@ https://arxiv.org/abs/1602.02697
 * https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
 * Mask-RCNN
+  - https://github.com/priya-dwivedi/Deep-Learning
   - https://github.com/facebookresearch/Detectron
   - https://github.com/matterport/Mask_RCNN
   	```
-  	sudo pip3 install pycocotools
+  	sudo pip3 install pycocotools imgaug IPython[all]
   	```
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
   * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
@@ -1056,3 +1057,8 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 * https://nlp.stanford.edu/projects/glove/
   - GloVe (trained on Wikipedia).
   - https://github.com/hundredblocks/semantic-search
+
+## Tasks
+
+**Challanges**
+* to support training on data from multiple sources at the same time

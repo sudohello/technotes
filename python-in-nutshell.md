@@ -2161,6 +2161,12 @@ ipython nbconvert --to python <YourNotebook>.ipynb
 #
 sudo pip install mistune
 ```
+* **How do I convert a IPython Notebook into a Python file via commandline?**
+  - https://stackoverflow.com/questions/17077494/how-do-i-convert-a-ipython-notebook-into-a-python-file-via-commandline#19779226
+  ```bash
+  jupyter-nbconvert --to script demo.ipynb
+  ```
+
 
 ## Caffe, TensorFlow, Keras for Python2 and Python3
 
