@@ -992,6 +992,14 @@ https://arxiv.org/abs/1602.02697
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
   * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
 
+**matterport/Mask_RCNN**
+* how the model works and show how to use it in a real application.
+* https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
+* uses a ResNet101 + FPN backbone.
+* Region Proposal Network (RPN)
+The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects.
+ If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
+
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
 * https://www.dailymail.co.uk/sciencetech/article-5011649/Adobe-Cloak-AI-automatically-removes-objects-video.html
