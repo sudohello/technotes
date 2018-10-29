@@ -302,11 +302,47 @@ https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
 - Animal
 - Plant
 
-## Image Annotation Tools
-* https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
-* https://github.com/wkentaro/labelme
-* https://github.com/CSAILVision/LabelMeAnnotationTool
-* https://en.wikipedia.org/wiki/LabelMe
+
+## Commercial Solutions
+* https://github.com/goberoi/cloudy_vision
+* https://goberoi.com/comparing-the-top-five-computer-vision-apis-98e3e3d7c647
+* https://www.datasciencecentral.com/profiles/blogs/comparison-of-the-top-cloud-apis-for-computer-vision
+
+
+**Following free trial requires to furnish Credit Card details:**
+1. [Google](https://cloud.google.com/vision/)
+2. [Amazon](https://aws.amazon.com/rekognition/)
+3. [Microsoft](https://azure.microsoft.com/en-us/free/ai/)
+  * https://azure.microsoft.com/en-us/services/cognitive-services/
+4. [Cloudsight](https://cloudsight.ai)
+**No Credit Card required for free trial:**
+5. [IBM Watson](https://console.bluemix.net/docs/services/watson/index.html#about)
+  ```bash
+  curl -X POST -u "apikey:<your-key>" \
+  --form "images_file=@fruitbowl.jpg" \
+  "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19"
+  ```
+6. [Clarifai](https://www.clarifai.com/)
+  * https://samples.clarifai.com/metro-north.jpg
+  ```bash
+  curl -X POST \
+    -H "Authorization: <your-key>" \
+    -H "Content-Type: application/json" \
+    -d '
+    {
+      "inputs": [
+        {
+          "data": {
+            "image": {
+              "url": "fruitbowl.jpg"
+            }
+          }
+        }
+      ]
+    }'\
+    https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs
+  ```
+
 
 ## Drone Data Solutions
 http://huviair.com/

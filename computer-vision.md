@@ -737,7 +737,7 @@ Our initial task was to see if we could even build a state of the art OCR system
 
 ## Commercial AI Services
 - https://www.crowdflower.com/use-case/image-annotation/
-
+- https://github.com/goberoi/cloudy_vision
 
 
 - https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/
