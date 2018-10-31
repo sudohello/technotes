@@ -983,13 +983,22 @@ https://arxiv.org/abs/1602.02697
 * https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
 * Mask-RCNN
+  - https://github.com/priya-dwivedi/Deep-Learning
   - https://github.com/facebookresearch/Detectron
   - https://github.com/matterport/Mask_RCNN
   	```
-  	sudo pip3 install pycocotools
+  	sudo pip3 install pycocotools imgaug IPython[all]
   	```
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
   * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
+
+**matterport/Mask_RCNN**
+* how the model works and show how to use it in a real application.
+* https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
+* uses a ResNet101 + FPN backbone.
+* Region Proposal Network (RPN)
+The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects.
+ If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
 
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
@@ -1056,3 +1065,8 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 * https://nlp.stanford.edu/projects/glove/
   - GloVe (trained on Wikipedia).
   - https://github.com/hundredblocks/semantic-search
+
+## Tasks
+
+**Challanges**
+* to support training on data from multiple sources at the same time
