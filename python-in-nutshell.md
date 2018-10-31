@@ -398,6 +398,22 @@ os.path.basename(__file__) # the file name only
 ## full current dir path
 os.path.dirname(os.path.abspath(__file__))
 ```
+* **Importing files from different folder**
+  * https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
+  ```python
+  # some_file.py
+  import sys
+  sys.path.insert(0, '/path/to/application/app/folder')
+  import file
+  ##
+  ## OR
+  sys.path.append('/path/to/application/app/folder')
+  ```
+  * When modules are in parallel locations
+  ```python
+  import sys
+  sys.path.append('../')
+  ```
 * **how-to-downcase-the-first-character-of-a-string?**
   * https://stackoverflow.com/questions/3840843/how-to-downcase-the-first-character-of-a-string
   ```python
@@ -686,6 +702,10 @@ import flask
 flask.__version__
 '0.12.2'
 ```
+**Templating Engine**
+* Jinja
+  - Jinja is a **template engine** for the Python programming language and is licensed under a BSD License created by Armin Ronacher. It is similar to the Django template engine but provides Python-like expressions while ensuring that the templates are evaluated in a sandbox. It is a text-based template language and thus can be used to generate any markup as well as sourcecode.
+
 
 ## Basic Python Concepts
 

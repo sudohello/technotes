@@ -186,6 +186,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 ### 3D Datasets
 - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
+- https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
 - https://niessner.github.io/Matterport/
 - https://arxiv.org/pdf/1709.06158.pdf
 

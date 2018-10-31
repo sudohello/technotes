@@ -151,6 +151,20 @@ if __name__=="__main__":
 ```
 * http://jsonmate.com/
 
+**Change the default template path for Flask**
+* https://stackoverflow.com/questions/31002890/how-to-reference-a-html-template-from-a-different-directory-in-python-flask
+```python
+template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+app = Flask(__name__, template_folder=template_dir)
+
+@app.route("/")
+def hello():
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
 
 ## WSGI Servers
 - https://www.fullstackpython.com/wsgi-servers.html

@@ -695,6 +695,7 @@ sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 lib
 * make - GNU make utility to maintain groups of programs
 * whereis - locate the binary, source, and manual page files for a command
 * unzip - list, test and extract compressed files in a ZIP archive
+  * Unzip files in particular directory or folder under Linux or UNIX: `unzip blah.zip -d /tmp`
 * mount - mount a filesystem
 * umount - unmount file systems
 * strip - Discard symbols from object files
