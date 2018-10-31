@@ -59,6 +59,9 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 	* spd - sign post detection
 * [Deep Learning NLP](deep-learning-nlp.md)
 * [CBIR - Content Based Image Retrival](cbir.ml.md)
+* [Deep Learning Commercial Solutions](deep-learning-commercial-solutions.md)
+
+
 
 ### **Mathematics, Statistics and Statistical Learning**
 * [Statistics](stats.md)

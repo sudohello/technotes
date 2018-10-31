@@ -590,4 +590,4 @@ observation
   - vertical objects, protusions, hanging cabels, electric cabels, road blockages during thunder storm or otherwise
   - u-turns, reverse, narrow roads, kaccha roads, water lodging
   - natural and man made disasters and calimities impact - floods, thrunderstorm impact: road blockages, dangerous electric cabels, fire, typoons
-  - Drone networks, sky corridors
+  - Drone networks, sky corridors 
