@@ -17,3 +17,9 @@ Tags: NLP - Natural Language Processing
 * **Word_embedding**
   * https://en.wikipedia.org/wiki/Word_embedding
   - Word embedding is the collective name for a set of language modeling and feature learning techniques in natural language processing (NLP) where words or phrases from the vocabulary are mapped to vectors of real numbers. Conceptually it involves a mathematical embedding from a space with one dimension per word to a continuous vector space with a much lower dimension.
+
+
+Here is the link which gives Voice Recognition using Arduino Board and Microphone.
+
+
+https://www.youtube.com/watch?v=Ur1tzMDP97g

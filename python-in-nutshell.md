@@ -2308,6 +2308,113 @@ np.arange(3, 6) # array([3, 4, 5])
 * gunicorn
 * tornado
 
-### Tornado
+## Asynchronous, non-blocking network I/O; Streaming; Websocket
+**Tornado**
 - https://www.tornadoweb.org/en/stable/
 - Tornado is different from most Python web frameworks. It is not based on WSGI, and it is typically run with only one thread per process.
+
+
+**streamlit-demo**
+https://github.com/treuille/insight-streamlit-demo
+https://github.com/fivethirtyeight/uber-tlc-foil-response/tree/master/uber-trip-data
+http://streamlit.io/docs/tutorial/
+http://streamlit.io/docs/
+```bash
+vi $HOME/.streamlit/config.yaml
+```
+```bash
+client:
+  remotelyTrackUsage: false
+proxy:
+  useNode: false
+  waitForConnectionSecs: 30
+```
+* create file: `st_hello.py`
+```bash
+import streamlit as st
+st.write('Hello, world')
+```
+* run the app
+```bash
+python st_hello.py
+#
+## it starts at
+# http://localhost:8501/?name=st_hello
+```
+
+### **Asynchronous**
+* How to create an asynchronous streaming websocket with Autobahn?
+* https://stackoverflow.com/questions/21653519/python-server-for-streaming-request-body-content
+* https://stackoverflow.com/questions/4962808/asynchronous-http-calls-in-python
+* https://stackoverflow.com/questions/10555292/ideal-method-for-sending-multiple-http-requests-over-python
+
+* **grequests**
+  - https://stackoverflow.com/questions/9110593/asynchronous-requests-with-python-requests
+  - https://github.com/kennethreitz/grequests
+  - GRequests allows you to use Requests with Gevent to make asynchronous HTTP Requests easily.
+  - **Note:** You should probably use requests-futures instead.
+* **Twisted**
+  - https://github.com/twisted/twisted
+  - Twisted is an event-driven networking engine written in Python and licensed under the open source ​MIT license. Twisted runs on Python 2 and an ever growing subset also works with Python 3.
+  - https://twistedmatrix.com/trac/
+  - Twisted does not rely on threads for doing multiple things at once. Rather, it takes a cooperative multitasking approach---your main script starts the reactor and the reactor calls functions that you set up. Your functions must return control to the reactor before the reactor can continue working.
+  - `sudo pip install twisted`
+  - https://stackoverflow.com/questions/14712752/using-inlinecallbacks
+  - https://twistedmatrix.com/documents/current/api/twisted.internet.defer.html
+  - https://hackedbellini.org/development/writing-asynchronous-python-code-with-twisted-using-inlinecallbacks/
+* **requests-futures**
+  - https://github.com/ross/requests-futures
+* **txrequests**
+  - https://pypi.org/project/txrequests/
+  - https://github.com/tardyp/txrequests
+  - `sudo pip install txrequests`
+  - https://programtalk.com/python-examples/txrequests.Session/
+* **concurrent futures**
+  - https://docs.python.org/dev/library/concurrent.futures.html
+* **autobahn**
+  * https://github.com/crossbario/autobahn-python
+Autobahn|Python is a subproject of Autobahn and provides open-source implementations of
+
+The WebSocket Protocol
+The Web Application Messaging Protocol (WAMP)
+for Python 2 and 3, and running on Twisted and asyncio.
+
+You can use Autobahn|Python to create clients and servers in Python speaking just plain WebSocket or WAMP.
+WebSocket allows bidirectional real-time messaging on the Web and beyond, while WAMP adds real-time application communication on top of WebSocket.
+WAMP provides asynchronous Remote Procedure Calls and Publish & Subscribe for applications in one protocol running over WebSocket. WAMP is a routed protocol, so you need a WAMP Router to connect your Autobahn|Python based clients. We provide Crossbar.io, but there are other options as well.
+
+* https://wamp-proto.org/implementations/index.html#routers
+* https://crossbar.io/
+
+## WAMP - Web Application Messaging Protocol
+* https://wamp-proto.org/
+- WAMP is an open standard WebSocket subprotocol that provides two application messaging patterns in one unified protocol: Remote Procedure Calls + Publish & Subscribe.
+- Using WAMP you can build distributed systems out of application components which are loosely coupled and communicate in (soft) real-time.
+
+
+## Websockets
+* https://www.html5rocks.com/en/tutorials/websockets/basics/
+1. The Problem: Low Latency Client-Server and Server-Client Connections
+
+Latency is a time interval between the stimulation and response, or, from a more general point of view, a time delay between the cause and the effect of some physical change in the system being observed.
+
+2005 - AJAX
+
+Push, Comet, Flash, XHR Multipart, [htmlfiles](http://cometdaily.com/2007/10/25/http-streaming-and-internet-explorer/) - html streaming
+ Long Pooling, 
+
+WebSocket: Bringing Sockets to the Web
+http://dev.w3.org/html5/websockets/
+
+The WebSocket specification defines an API establishing "socket" connections between a web browser and a server. In plain words: There is an persistent connection between the client and the server and both parties can start sending data at any time.
+
+
+
+## HTTP2
+* https://hyper.readthedocs.io/en/latest/
+
+
+## Web utilities
+* https://httpbin.org/
+  - A simple HTTP Request & Response Service. 
+

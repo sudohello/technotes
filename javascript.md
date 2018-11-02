@@ -25,6 +25,10 @@ Get started with dat.GUI by reading the tutorial at http://workshop.chromeexperi
 ## [ReactJs](https://reactjs.org/)
 > A JavaScript library for building user interfaces
 
+## Canvas libs
+* https://konvajs.github.io/docs/sandbox/Zoom_Layer_On_hover.html
+
+
 ## Ecmascript
 https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c
 

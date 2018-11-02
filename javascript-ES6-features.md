@@ -16,6 +16,8 @@ Tags: JS ES6
 
 ## ES6 Feature sets 
 * https://www.sitepoint.com/the-es6-conundrum/
+* https://webapplog.com/es6/
+
 
 ES6 features:
 

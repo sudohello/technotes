@@ -13,6 +13,10 @@ Tags: GIS Maping Stack
 
 ## GIS Maping Stack
 
+## Spatialpoint - Mapinfo
+* http://www.spatialpoint.com/desktop/mapinfo-pro/
+* http://www.spatialpoint.com/desktop/kwa-overview/
+
 ## [Mapnik^1^](http://wiki.openstreetmap.org/wiki/Mapnik)
 - Mapnik is an open source toolkit for rendering maps. Among other things, it is used to render the five main Slippy Map layers on the OpenStreetMap website. It supports a variety of geospatial data formats and provides flexible styling options for designing many different kinds of maps.
 - [Mapnik^2^](https://github.com/mapnik/mapnik/wiki/About-Mapnik) is a Free Toolkit for developing mapping applications. It is written in modern C++ and has Python bindings that support fast-paced agile development. It can comfortably be used for both desktop map design and web development. Mapnik is about making beautiful maps. It uses the AGG graphics library, which offers world-class anti-aliasing rendering with subpixel accuracy for geographic data.

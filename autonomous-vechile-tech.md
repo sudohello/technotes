@@ -16,6 +16,25 @@ Tags: Autonomous Vechile
 ## ApolloAuto
 - https://github.com/ApolloAuto/apollo
 
+http://www.acrosser.com/
+
+apollo videos
+
+https://www.youtube.com/watch?v=WelxS19p9mE
+https://www.youtube.com/watch?v=EEOHr3zZoY4
+https://www.youtube.com/watch?v=Y70Me-Cr8ls
+https://www.youtube.com/watch?v=pLW6uaLZmpA
+https://www.youtube.com/watch?v=DGRmoJ9gFdk
+
+## CAN, Accutators, Sensors etc
+https://www.peak-system.com/PCAN-Cable-3.290.0.html?&L=1
+https://www.peak-system.com/PCAN-USB.199.0.html?&L=1
+some CAN related info but the interfaces which is used to read CAN data from car looks different.
+https://core.ac.uk/download/pdf/41984076.pdf
+
+ROS based CAN subscriber
+http://wiki.ros.org/cob_generic_can
+
 ## Europilot
 - https://github.com/marsauto/europilot
 
