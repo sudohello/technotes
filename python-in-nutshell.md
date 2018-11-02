@@ -414,6 +414,25 @@ os.path.dirname(os.path.abspath(__file__))
   import sys
   sys.path.append('../')
   ```
+* **listing content of directories**
+  - https://stackoverflow.com/questions/3964681/find-all-files-in-a-directory-with-extension-txt-in-python
+  ```python
+  import glob, os
+  os.chdir("/mydir")
+  for file in glob.glob("*.txt"):
+      print(file)
+
+  import os
+  for file in os.listdir("/mydir"):
+      if file.endswith(".txt"):
+          print(os.path.join("/mydir", file))
+
+  import os
+  for root, dirs, files in os.walk("/mydir"):
+      for file in files:
+          if file.endswith(".txt"):
+               print(os.path.join(root, file))
+  ```
 * **how-to-downcase-the-first-character-of-a-string?**
   * https://stackoverflow.com/questions/3840843/how-to-downcase-the-first-character-of-a-string
   ```python
