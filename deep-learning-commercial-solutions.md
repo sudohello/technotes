@@ -25,7 +25,7 @@ Tags: Deep Learning Commercial Solutions
 ## 1. [Google](https://cloud.google.com/vision/)
 > **Free trial requires to furnish Credit Card details**
 
-**Cloud Vision Products**
+### **Cloud Vision Products**
 * **Vision API**
 The Vision API allows you to easily integrate vision detection features in your applications, including image labeling, face and landmark detection, optical character recognition (OCR), object localization, and tagging of explicit content.
 * **AutoML Vision**
@@ -109,6 +109,26 @@ for label in labels:
     print(label.description)
 ```
 
+**API Schema**
+* https://vision.googleapis.com/$discovery/rest?version=v1
+
+**Faces**
+**Logos**
+**Crop Hints**
+**Landmarks**
+**Text Detections**
+**Image Properties**
+**Safe Search Properties**
+**Web Entities and Pages**
+**Document Text Detection**
+
+**Object Detection**
+* https://cloud.google.com/vision/docs/detecting-objects
+* Object Localization can detect and extract multiple objects in an image.
+* Object localization identifies multiple objects in an image and provides a LocalizedObjectAnnotation for each object in the image.
+  - https://cloud.google.com/vision/docs/reference/rest/v1/images/annotate#LocalizedObjectAnnotation
+  - LocalizedObjectAnnotation: Set of detected objects with bounding boxes.
+
 
 ## 2. [Amazon](https://aws.amazon.com/rekognition/)
 
@@ -123,6 +143,7 @@ for label in labels:
 ## 5. [IBM Watson](https://console.bluemix.net/docs/services/watson/index.html#about)
 > **No Credit Card required for free trial:**
 
+### **Vision**
 **curl - ex1**
 ```bash
 curl -X POST -u "apikey:<your-key>" \
@@ -136,9 +157,15 @@ curl -X POST -u "apikey:<your-key>" \
 sudo pip install --upgrade watson-developer-cloud
 ```
 
+### **NLP**
+* https://www.ibm.com/watson/developercloud/natural-language-understanding/api/v1/#versioning
+
+
 
 ## 6. [Clarifai](https://www.clarifai.com/)
 
+
+### **Vision**
 **curl - ex1**
 * https://samples.clarifai.com/metro-north.jpg
 ```bash

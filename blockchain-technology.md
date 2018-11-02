@@ -1,5 +1,5 @@
----
 Title: Blockchain
+---
 Decription: Blockchain
 Author: Bhaskar Mangal
 Date: 
@@ -15,6 +15,8 @@ Tags: Blockchain
 
 ## Tutorials
 - https://www.learningblockchains.com/lessons/
+- https://dzone.com/articles/blockchain-implementation-with-java-code
+
 
 ### Keywords
 * FPGA - Field-programmable gate array
