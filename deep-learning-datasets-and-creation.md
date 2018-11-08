@@ -49,6 +49,13 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   * https://github.com/CSAILVision/LabelMeAnnotationTool
   * https://en.wikipedia.org/wiki/LabelMe
 
+## Vector Editors
+* http://teselagen.github.io/openVectorEditor/#/Editor
+
+
+https://www.crowdai.org/challenges/mapping-challenge
+
+
 
 ## Amazon Mechanical Turk - MTurk
 - https://www.mturk.com/
@@ -135,6 +142,13 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 ## AI datasets Search Engines
 * http://classif.ai/
+
+### General Images
+* Imagenet - http://www.image-net.org/
+* OpenImages - https://storage.googleapis.com/openimages/web/index.html
+  - https://github.com/openimages/dataset
+* Coco Dataset - http://cocodataset.org/#home
+
 
 ### Traffic Sign Datasets
 * **German**

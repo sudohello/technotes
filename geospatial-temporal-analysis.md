@@ -55,7 +55,12 @@ https://www.witpress.com/Secure/elibrary/papers/AIR00/AIR00043FU.pdf
  kriging as the gridding method. 
 
 
- ## Mapbox-GL with D3.js
- https://bl.ocks.org/etpinard/9cce3976acc33770bd1212adcc95c9fe
- https://www.mapbox.com/mapbox-gl-js/example/3d-extrusion-floorplan/
- https://www.mapbox.com/mapbox-gl-js/example/timeline-animation/
+## Mapbox-GL with D3.js
+https://bl.ocks.org/etpinard/9cce3976acc33770bd1212adcc95c9fe
+https://www.mapbox.com/mapbox-gl-js/example/3d-extrusion-floorplan/
+https://www.mapbox.com/mapbox-gl-js/example/timeline-animation/
+
+## Tools
+https://geotrellis.io/
+- GeoTrellis is a geographic data processing engine for high performance applications.
+https://geopyspark.readthedocs.io/en/latest/

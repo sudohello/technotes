@@ -58,3 +58,14 @@ Incremental Learning in Deep Convolutional Neural Networks Using Partial Network
 
 
 https://www.techleer.com/articles/506-yolov3-an-incremental-improvement/
+
+
+----
+https://blog.emacsen.net/blog/2018/02/16/osm-is-in-trouble/  ???
+- Is it what he claims?
+- Is edit history is the only reason to hop on to way-node-relation, in that case can option like http://geogig.org/ can be looked into?
+- This leads me to give 2nd thoughts on company wide adoption of OSM data model way-node-relation and also to think for alternatives for HD Map workflow, possibly to explore and evaluate geogig as an alternative.
+- GeoGig is an open source tool that draws inspiration from Git, but adapts its core concepts to handle distributed versioning of geospatial data.
+
+https://www.citylab.com/equity/2018/03/who-maps-the-world/555272/
+https://blog.emacsen.net/blog/2018/02/16/osm-is-in-trouble/
