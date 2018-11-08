@@ -1086,3 +1086,6 @@ https://www.unrealengine.com/en-US/blog/imperfection-for-perfection-part-2
 
 
 
+## Research
+* http://levneba.com/
+* https://www.researchgate.net/publication/321730206_The_evaluation_of_photogrammetry-based_DSM_from_low-cost_UAV_by_LiDAR-based_DSM

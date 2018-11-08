@@ -1067,3 +1067,12 @@ touch ~/Templates/Empty\ Document
 #
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@host
 ```
+
+## ffmpeg
+
+https://superuser.com/questions/525249/convert-avi-xvid-to-mp4-h-264-keeping-the-same-quality#525253
+
+* convert `avi` to `mp4`
+```bash
+ffmpeg -i input.avi -c:v libx264 -crf 19 -preset slow -c:a aac -b:a 192k -ac 2 out.mp4
+```

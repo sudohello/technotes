@@ -191,3 +191,18 @@ https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs
 ```bash
 sudo pip install --upgrade clarifai
 ```
+
+## Market Opportunities
+* http://platform.neuromation.io/
+- The Neuromation platform allows users to create datasets, generators and train deep learning models. The platform provides the marketplace, where users can buy already existing datasets and models. 
+
+* https://github.com/jremillard/images-to-osm
+  - Using Mask R-CNN successfully on a new data set would be a good indication that the algorithm is generic enough to be applicable on many problems. However, the number of publicly available data sets with enough images to train this algorithm are limited because collecting and annotating data for 50,000+ images is expensive and time consuming.
+
+  - Workflow
+The training workflow is in the trainall.py, which calls the following scripts in sequence.
+
+getdatafromosm.py uses overpass to download the data for the sports fields.
+gettilesfrombing.py uses the OSM data to download the required Bing tiles. The script downloads the data slowly, please expect around 2 days to run the first time.
+maketrainingimages.py collects the OSM data, and the Bing tiles into a set of training images and masks. Expect 12 hours to run each time.
+train.py actually runs training for the Mask R-CNN algorithm. Expect that this will take 4 days to run on single GTX 1080 with 8GB of memory.

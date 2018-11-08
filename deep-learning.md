@@ -991,7 +991,9 @@ https://arxiv.org/abs/1602.02697
     sudo pip3 install pycocotools imgaug IPython[all]
     ```
   - https://github.com/CharlesShang/FastMaskRCNN - just for basics
-  * https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
+  * https://medium.com/@jonathan_hui/image-segmentation-with-mask-r-cnn-ebe6d793272
+  * https://medium.com/neuromation-io-blog/neuronuggets-segmentation-with-mask-r-cnn-c76d363b67fb
+  * https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
 
 ### **matterport/Mask_RCNN**
 - https://github.com/matterport/Mask_RCNN
@@ -1014,6 +1016,99 @@ The RPN is a lightweight neural network that scans the image in a sliding-window
 
 
 
+=======
+Applications in other projects:
+* 4K video
+* Segmenting Nuclei in Microscopy Images.  - https://github.com/matterport/Mask_RCNN/tree/master/samples/nucleus
+* splash of color
+* image to osm - https://github.com/jremillard/images-to-osm
+* Reconstructing 3D buildings from aerial LiDAR
+  - https://medium.com/geoai/reconstructing-3d-buildings-from-aerial-lidar-with-ai-details-6a81cb3079c0
+  - Pros and Cons
+    * At this point, after four weeks of training and as we have reached the training plateau on the given set of Miami data, we can draw some conclusions: while the neural network prediction accuracy did not achieve the accuracy of human editors, the speed (60,000 segments per hour from a single NVIDIA Quadro GP100 GPU versus 70 per man hour) and negligible marginal cost at which neural network predictions can be produced, makes a pre-trained Mask R-CNN service a great helper tool which will significantly reduce the cost of creating and maintaining 3D city models. With this new tool in the workflow, human editors, instead of starting from rasterized LiDAR point cloud and manually digitizing roof segments, can now focus on fine tuning AI-offered 3D building multipatches using standard editing tools.
+
+**Car Damage**
+* https://www.analyticsvidhya.com/blog/2018/07/building-mask-r-cnn-model-detecting-damage-cars-python/
+
+
+**Multi-Net for Autonomous driving**
+* road segmentation, classification and car detection
+* http://mi.eng.cam.ac.uk/~cipolla/publications/inproceedings/2018-IV-multinet.pdf
+* https://github.com/MarvinTeichmann/MultiNet
+* https://towardsdatascience.com/road-scene-understating-using-deep-learning-c3610f6b1c4
+
+**KittiSeg, KittiBox**
+- KittiSeg: road segmentation
+- https://github.com/MarvinTeichmann/KittiSeg
+- KittiBox a similar projects to perform state-of-the art detection. And finally the MultiNet repository contains code to jointly train segmentation, classification and detection. KittiSeg and KittiBox are utilized as submodules in MultiNet.
+
+
+**deep-learning-on-aerial-imagery**
+* https://www.azavea.com/blog/2017/05/30/deep-learning-on-aerial-imagery/
+* Parking Lot Vehicle Detection Using Deep Learning - https://medium.com/geoai/parking-lot-vehicle-detection-using-deep-learning-49597917bc4a
+* https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn
+* https://www.crowdai.org/challenges/mapping-challenge - main for aerial imagery annotation
+  * https://www.crowdai.org/challenges/mapping-challenge/dataset_files
+* https://www.missingmaps.org/learn/
+
+
+* CrowdAI - Mapping Challange
+  - https://github.com/crowdAI/mapping-challenge-round2-starter-kit
+  - https://www.crowdai.org/challenges/mapping-challenge
+  - https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn/blob/master/Prediction-and-Submission.ipynb
+
+train.tar.gz
+Training Set : 280741 tiles (as 300x300 pixel RGB images) of satellite imagery with the corresponding annotations in MS COCO format
+
+pretrained_weights.h5
+Pretrained Weights from the Mask RCNN based baseline solution
+
+val.tar.gz
+Validation Set : 60317 tiles (as 300x300 pixel RGB images) of satellite imagery with the corresponding annotations in MS COCO format
+
+LICENSE.md
+License under which this dataset is released
+
+test_images.tar.gz
+Test Set : 60697 tiles (as 300x300pixel RGB images) of satellite imagery
+
+File Size
+805 MB
+
+```bash
+Dataset location
+Now we expect that you have downloaded all the files in the datasets section and untar-ed them to have the following structure :
+
+├── data
+|   ├── pretrained_weights.h5 (already included in this repository)
+│   ├── test
+│   │   └── images/
+│   │   └── annotation.json
+│   ├── train
+│   │   └── images/
+│   │   └── annotation.json
+│   └── val
+│       └── images/
+│       └── annotation.json
+```
+* https://github.com/matterport/Mask_RCNN/issues/566
+  - `from keras.engine import topology`
+  - change it to: `from keras.engine import saving`
+
+
+**GeoAI - thoughts about where AI and GIS intersect**
+* https://medium.com/geoai
+
+**Transfer Learning**
+> I mean a person who can boil eggs should know how to boil just water right?
+
+
+* https://towardsdatascience.com/transfer-learning-and-image-classification-using-keras-on-kaggle-kernels-c76d3b030649
+* Well Transfer learning works for Image classification problems because Neural Networks learn in an increasingly complex way. i.e The deeper you go down the network the more image specific features are learnt.
+* The take-away here is that the earlier layers of a neural network will always detect the same basic shapes and edges that are present in both the picture of a car and a person.
+* There are different variants of pretrained networks each with its own architecture, speed, size, advantages and disadvantages.
+
+>>>>>>> d07fed8db3c8458d58cc97daa160d58936b0ea30
 
 
 
@@ -1065,6 +1160,15 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 - https://www.tensorflow.org/hub/tutorials/image_retraining
 
 
+**VoxelNet**
+*  VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection
+* https://www.voxelnet.com/
+* https://www.mining3.com/research/voxelnet/
+* https://github.com/qianguih/voxelnet
+* https://github.com/jeasinema/VoxelNet-tensorflow
+
+
+
 ## Computer Vision Conferences, Challanges
 * http://www.guide2research.com/topconf/computer-vision
 
@@ -1088,3 +1192,10 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 
 **Challanges**
 * to support training on data from multiple sources at the same time
+
+
+## AI for GIS tools
+https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
+https://github.com/mnboos/osm-instance-segmentation
+https://github.com/ctu-geoforall-lab-projects/dp-pesek-2018
+http://teselagen.github.io/openVectorEditor/#/Editor
