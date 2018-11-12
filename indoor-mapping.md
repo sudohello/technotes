@@ -553,6 +553,33 @@ http://www.indoorgml.net/
 
 
 ## All about GeoJSON
-https://macwright.org/2015/03/23/geojson-second-bite.html
+* https://macwright.org/2015/03/23/geojson-second-bite.html
 
-https://www.pinterest.com/pin/209135976419720012/
+
+## High Precisions Indoor Map
+* https://www.nttdata.com/global/en/media/press-release/2018/october/japans-first-high-precision-indoor-positioning-driven#
+
+
+## Indoor Apps
+
+https://inmapz.com/features/
+https://github.com/leantegra/AndroidWiBeatSDK
+
+
+## Indoor Tech Papers
+* https://www.researchgate.net/publication/261845794_LocateMe_Magnetic-fields-based_Indoor_localization_using_smartphones
+* http://hkr.diva-portal.org/smash/get/diva2:475619/FULLTEXT02.pdf
+* https://stackoverflow.com/questions/7499959/indoor-positioning-system-based-on-gyroscope-and-accelerometer
+* https://stackoverflow.com/questions/7356829/calculating-distance-within-a-building
+
+
+
+**Kalman Filter**
+* https://code.google.com/archive/p/quadcopter-miami-ece/downloads
+
+For those of you who do not know what a Kalman filter is, it is an algorithm which
+uses a series of measurements observed over time, in this context an
+accelerometer and a gyroscope. These measurements will contain noise that will
+contribute to the error of the measurement. The Kalman filter will then try to estimate
+the state of the system, based on the current and previous states, that tend to be
+more precise that than the measurements alone.

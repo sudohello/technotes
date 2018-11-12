@@ -98,9 +98,14 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/
 
 ## Dataset / Data source / Datasource for ML / Deep Learning / Computer Vision Datasets
-**Extensive List of Datasets**
+
+
+### **Extensive List of Datasets**
 - https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
 - https://handong1587.github.io/computer_vision/2015/09/24/datasets.html
+- https://www.analyticsvidhya.com/blog/2018/03/comprehensive-collection-deep-learning-datasets/
+- https://martin-thoma.com/sota/
+- SotA - State of the Arts
 
 * **[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)**
   - One popular toy image classification dataset is the CIFAR-10 dataset. This dataset consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example “airplane, automobile, bird, etc”). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images.
@@ -143,11 +148,25 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 ## AI datasets Search Engines
 * http://classif.ai/
 
+
 ### General Images
-* Imagenet - http://www.image-net.org/
+* Imagenet
+  - http://www.image-net.org/
+  - http://image-net.org/download-API
+  - http://image-net.org/download
 * OpenImages - https://storage.googleapis.com/openimages/web/index.html
   - https://github.com/openimages/dataset
-* Coco Dataset - http://cocodataset.org/#home
+* Coco Dataset
+  - http://cocodataset.org/#home
+* Tencent
+  - https://medium.com/syncedreview/tencent-open-sources-its-massive-multi-labeled-image-dataset-7b0b3dd5373f
+* Google JFT-300M
+  - https://arxiv.org/pdf/1707.02968.pdf
+  - https://ai.googleblog.com/2017/07/revisiting-unreasonable-effectiveness.html
+
+
+### Chinsese Dataset
+* https://ctwdataset.github.io/
 
 
 ### Traffic Sign Datasets
@@ -196,7 +215,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   - http://synthia-dataset.net/ 
 * [Udacity](https://github.com/udacity/self-driving-car/tree/master/datasets)
   - https://github.com/udacity/self-driving-car/tree/master/datasets
-
+* ApolloScape
 
 ### 3D Datasets
 - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
@@ -214,6 +233,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 1. [Cityscape](cityscape-dataset.md)
 2. [Mapillary](mapillary-dataset.md)
+3. [ApolloScape](apolloscape-dataset.md)
+
 
 ## Dataset Pre-processing
 * http://shubhagrawal.in/2016/10/13/machine-learning-data-preprocessing/

@@ -170,7 +170,8 @@ https://olivierpieters.be/blog/2016/02/26/creating-a-jekyll-image-gallery
 **Tutorials and Documentation**
 * Base
   * https://github.com/CloudCannon/base-jekyll-template
-  * https://orange-ape.cloudvent.net/
+  * https://orange-ape.cloudvent.net/ - best
+    - https://github.com/CloudCannon/base-jekyll-template
 
 **Image / Photography**
 * pintereso

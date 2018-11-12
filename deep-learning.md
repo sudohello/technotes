@@ -445,6 +445,8 @@ http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-det
 
 https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
 
+### Training on ImageNet
+* https://medium.com/syncedreview/tencent-ml-team-trains-imagenet-in-record-four-minutes-d3d85eff2062
 
 ### References
 * https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
@@ -463,6 +465,11 @@ https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-
 #### News/Articles
 * http://www.dailymail.co.uk/sciencetech/article-3371075/See-world-eyes-driverless-car-town-Interactive-tool-reveals-autonomous-vehicles-navigate-streets.html
 * http://www.sanborn.com/highly-automated-driving-maps-for-autonomous-vehicles/
+* https://medium.com/@Synced
+
+## AI Patents
+* https://medium.com/syncedreview/epo-issues-first-guidelines-on-ai-patents-995a797109c6
+
 
 ## Machine Learning
 * https://elitedatascience.com/learn-machine-learning

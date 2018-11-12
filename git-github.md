@@ -24,7 +24,7 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 * https://www.directionsmag.com/article/1613
 * https://gis.stackexchange.com/questions/61978/implementing-version-control-system-for-geospatial-data
 
-## Github Pages
+## Github Pages, Jekyll sites
 * https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
 * https://pages.github.com/
 * https://dita.xml.org/
@@ -36,7 +36,24 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 
 * CI: Continious Integration
 * CD: Continious Deveopment
+
+**How I Setup Jekyll on GitHub Pages**
 * https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
+
+* https://chrisyeh96.github.io/2017/08/05/setting-up-jekyll-on-github-pages.html
+
+* https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf
+
+**Best guide is github help itself**
+* https://pages.github.com/
+* https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/
+* https://stackoverflow.com/questions/35978862/github-pages-why-do-i-need-a-gh-pages
+* https://idratherbewriting.com/documentation-theme-jekyll/mydoc_publishing_github_pages.html
+
+
+
+**Custom Domain for github pages**
+* https://help.github.com/articles/quick-start-setting-up-a-custom-domain/
 
 
 ## hubbots and chatops
@@ -367,3 +384,9 @@ git push
 ## Subversion (SVN) Client Support
 * https://help.github.com/articles/support-for-subversion-clients/
 * https://github.com/telecombcn-dl/2016-dlcv/tree/gh-pages/slides
+
+
+## Fork / Forking
+* https://help.github.com/articles/renaming-a-repository/
+* https://guides.github.com/activities/forking/
+* https://github.com/octocat/Spoon-Knife - Practice Repo

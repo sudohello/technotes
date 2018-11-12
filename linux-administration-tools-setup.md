@@ -430,10 +430,13 @@ convert -density 300 RentalAgreement-2016-17.jpg RentalAgreement-2016-17.pdf
 * **Remove password from PDF**
 https://askubuntu.com/questions/828720/how-to-remove-the-password-from-a-pdf
 ```bash
-sudo apt get install pdftk
+sudo apt install pdftk
 pdftk /path/to/input.pdf input_pw <yourpassword> output out.pdf
 ```
-
+* **Merge PDF files**
+```bash
+pdfunite 1.pdf 2.pdf 12.pdf
+```
 * **PDF Editors**
 - http://www.linuxandubuntu.com/home/5-best-linux-pdf-editors
 

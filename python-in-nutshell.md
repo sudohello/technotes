@@ -389,6 +389,14 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **OOPS in python**
+  * http://dirtsimple.org/2004/12/python-is-not-java.html
+* **Python Module vs Class and when to use them**
+  * https://softwareengineering.stackexchange.com/questions/329348/classes-vs-modules-in-python
+  * You can create multiple instances of a class, but you cannot create instances of a module. You could compare modules to static classes or singletons.
+* **Dynamic Loading module, class**
+  * https://stackoverflow.com/questions/8790003/dynamically-import-a-method-in-a-file-from-a-string
+  * https://docs.python.org/3.5/library/importlib.html
 * **Paths**
 ```python
 import os

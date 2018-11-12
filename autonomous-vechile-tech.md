@@ -13,23 +13,52 @@ Tags: Autonomous Vechile
 
 ## Autonomous Vechile
 
-## Lectures
+## Lectures, Courses
 * http://copypasteprogrammers.com/mit-6-s094-deep-learning-for-self-driving-cars-2018-lecture-5-notes-deep-learning-for-human-5cb0f53e4f15-2/
+* https://www.coursera.org/lecture/convolutional-neural-networks/yolo-algorithm-fF3O0
+
+## Different Levels of Autonomy
+* https://jalopnik.com/whats-a-level-4-autonomous-car-this-chart-explains-eve-1785466324
+* https://www.techrepublic.com/article/autonomous-driving-levels-0-to-5-understanding-the-differences/
 
 
 
 ## ApolloAuto
 - https://github.com/ApolloAuto/apollo
+- http://www.acrosser.com/
 
-http://www.acrosser.com/
+**dev center**
+- http://apollo.auto/devcenter/devcenter.html
 
-apollo videos
+**apollo videos**
+- https://www.youtube.com/watch?v=WelxS19p9mE
+- https://www.youtube.com/watch?v=EEOHr3zZoY4
+- https://www.youtube.com/watch?v=Y70Me-Cr8ls
+- https://www.youtube.com/watch?v=pLW6uaLZmpA
+- https://www.youtube.com/watch?v=DGRmoJ9gFdk
 
-https://www.youtube.com/watch?v=WelxS19p9mE
-https://www.youtube.com/watch?v=EEOHr3zZoY4
-https://www.youtube.com/watch?v=Y70Me-Cr8ls
-https://www.youtube.com/watch?v=pLW6uaLZmpA
-https://www.youtube.com/watch?v=DGRmoJ9gFdk
+**News, Blogs, Articles**
+- https://opensource.com/article/18/4/apollo-open-autonomous-vehicle-platform
+- https://pandaily.com/ai-feast-at-baidu-create-2018-level-4-autonomous-bus-apollo-3-0-dueros-3-0/
+- https://www.blackducksoftware.com/open-source-rookies-2018
+  * Moving into 2018, the Apollo team is focusing on productization requirements to extend innovation to a greater portfolio of businesses, while upholding one of its core tenets: Autonomous driving data belongs to humankind, not solely to the company, and the more we all contribute, the more we will benefit from this project. 
+- https://medium.com/@Synced/baidu-apollo-releases-massive-self-driving-dataset-teams-up-with-berkeley-deepdrive-5e785ab4053b
+- https://medium.com/syncedreview/baidu-all-in-ai-dueros-and-apollo-open-platforms-dc5cdf88e8ed
+- Both DuerOS and Apollo operate based on the Baidu Brain and Baidu Cloud services
+* [ApolloScape - Apollo Dataset](apolloscape-dataset.md)
+* Next-Gen Simulation
+  - Use of simulation environments for autonomous driving is getting a lot of attention in the automobile and computing industry. The key challenges include safety considerations that arise when an autonomous vehicle navigates the roads surrounded by other vehicles, bicycles, or pedestrians. In order to perform extensive testing and evaluations, we need to develop good simulation systems that can be used to test these vehicle not only in typical, relatively safe scenarios, but also in uncertain and dangerous environments. Our current open simulation tools include WorldSim and LogSim. We are also developing next generation technologies that can be used to generate realistic simulations of real-world traffic scenarios and driver behaviors.
+
+**Installation**
+- https://github.com/ApolloAuto/apollo/blob/master/docs/howto/how_to_run_apollo_3.0_with_ubuntu16.md
+
+
+## Apollo Modules
+
+### Perception
+* https://github.com/ApolloAuto/apollo/tree/master/modules/perception
+
+
 
 ## CAN, Accutators, Sensors etc
 https://www.peak-system.com/PCAN-Cable-3.290.0.html?&L=1

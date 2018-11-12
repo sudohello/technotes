@@ -14,6 +14,34 @@ Tags: Open Source
 
 ## Open Source
 
+## Open Source Rookies
+
+### 2018
+- https://www.blackducksoftware.com/open-source-rookies-2018
+- 2018 Open Source Rookies of the Year invest their efforts in everything from
+	* autonomous driving
+		- apollo auto
+			- http://apollo.auto/
+			- Moving into 2018, the Apollo team is focusing on productization requirements to extend innovation to a greater portfolio of businesses, while upholding one of its core tenets: Autonomous driving data belongs to humankind, not solely to the company, and the more we all contribute, the more we will benefit from this project. 
+	* scalable blockchain
+	* VNF orchestration
+		- https://www.sdxcentral.com/nfv/definitions/what-is-nfv-orchestration/
+		- Software-defined networks (SDNs)
+		- virtual network functions (VNFs)
+		- Open Network Automation Platform (ONAP)
+		- https://www.onap.org/
+	* personal security
+		- https://guardianproject.github.io/haven/
+	* relationship management 
+
+### Others
+* Kubernetes (2014)
+* Docker (2013)
+* Ansible (2012)
+* Bootstrap (2011)
+* NuGet (2011)
+* OpenStack (2010) 
+
 ## Licenses
 * https://choosealicense.com/
 * https://github.com/github/choosealicense.com

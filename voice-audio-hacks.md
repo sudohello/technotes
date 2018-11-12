@@ -11,6 +11,14 @@ Tags: Voice and Audio Hacks
 * TOC
 {:toc}
 
+## Voice AI
+* https://voice.mozilla.org/en/data
+  * dataset of voices that everyone can use to train speech-enabled applications.
+
+## Voice Synthesis
+* https://azure.microsoft.com/en-us/blog/microsoft-s-new-neural-text-to-speech-service-helps-machines-speak-like-people/
+* https://medium.com/syncedreview/microsoft-neural-tts-makes-machines-speak-like-humans-9496b6f007a6
+
 
 ## Voice and Audio Hacks
 
