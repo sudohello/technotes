@@ -167,11 +167,13 @@ https://olivierpieters.be/blog/2016/02/26/creating-a-jekyll-image-gallery
   * https://levytsroman.github.io/
     - nice flickering image effect
 
-**Tutorials and Documentation**
+**Tutorials and Documentation themes**
 * Base
   * https://github.com/CloudCannon/base-jekyll-template
   * https://orange-ape.cloudvent.net/ - best
     - https://github.com/CloudCannon/base-jekyll-template
+* git-hub Documentation theme
+  * https://github.com/tomjoht/documentation-theme-jekyll
 
 **Image / Photography**
 * pintereso

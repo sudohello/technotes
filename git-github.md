@@ -49,12 +49,22 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 * https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/
 * https://stackoverflow.com/questions/35978862/github-pages-why-do-i-need-a-gh-pages
 * https://idratherbewriting.com/documentation-theme-jekyll/mydoc_publishing_github_pages.html
-
+* https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site-with-the-jekyll-theme-chooser/
 
 
 **Custom Domain for github pages**
 * https://help.github.com/articles/quick-start-setting-up-a-custom-domain/
 
+**Git-Hub Pages Jekyll based Documentation site**
+* https://github.com/tomjoht/documentation-theme-jekyll
+* https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+
+**Perfect Example is Jekyll on github itself**
+* https://jekyllrb.com/docs/github-pages/#project-page-url-structure
+* https://github.com/jekyll/jekyll/blob/master/docs/_config.yml
+* Another Examples:
+  - https://github.com/mojombo/mojombo.github.io
+  - http://tom.preston-werner.com/
 
 ## hubbots and chatops
 - https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/

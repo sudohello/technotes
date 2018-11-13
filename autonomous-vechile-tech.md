@@ -118,3 +118,16 @@ Open-source software for urban autonomous driving, maintained by Tier IV. The fo
 * https://shop.openxcplatform.com/
 * https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd
 * https://mechanics.stackexchange.com/questions/17634/read-steering-angle-data-in-real-time
+
+## OpenDrive, OpenCRG, OpenScenario
+* http://www.opendrive.org/
+* http://opencrg.org/
+* https://en.wikipedia.org/wiki/OpenCRG
+* http://openscenario.org/
+
+ASAM - Standardization for Automotive Development
+* https://www.asam.net/
+* https://www.asam.net/about-asam/technology/
+
+**Digitizing OpenDrive Road Data**
+* http://www.atlatec.de/en/open-drive-sample-data/
