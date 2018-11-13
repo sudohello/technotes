@@ -2335,6 +2335,18 @@ np.arange(3, 6) # array([3, 4, 5])
 * gunicorn
 * tornado
 
+### gunicorn
+* https://cloud.google.com/appengine/docs/flexible/python/runtime
+* Recommended Gunicorn configuration
+* Most applications, however, will need to further configure the WSGI server. Instead of specifying all of the settings on the entrypoint, create a gunicorn.conf.py file in your project root directory, where your app.yaml is located, and specify it in your entrypoint:
+```bash
+gunicorn -c gunicorn.conf.py -b :$PORT
+```
+* http://docs.gunicorn.org/en/19.3/settings.html
+* http://docs.gunicorn.org/en/stable/run.html
+
+
+
 ## Asynchronous, non-blocking network I/O; Streaming; Websocket
 **Tornado**
 - https://www.tornadoweb.org/en/stable/
@@ -2445,3 +2457,52 @@ The WebSocket specification defines an API establishing "socket" connections bet
 * https://httpbin.org/
   - A simple HTTP Request & Response Service. 
 
+
+## Adoption of Python as Main Line System Language - Challanges & Solutions
+* https://bytes.com/topic/python/answers/841071-eggs-virtualenv-apt-best-practices
+
+I have basically recommended that we only install the python base (core
+language) from apt, and that everything else should be installed into
+virtual environments. But I wanted to check to see how other enterprises
+are handling this issue? Are you building python from scratch, or using
+specific sets of .deb packages, or some other process.
+
+Suggestions on build/rollout tools (like zc.buildout, Paver, etc) would
+also be appreciated.
+
+Any insight into the best way to have a consistent, repeatable,
+controllable development and production environment would be much
+appreciated.
+
+---
+This is the exact way we are deploying our software. You can even use
+the virtualenv --no-site-packages option to completely isolate the VE
+from the underlying system site-packages.
+
+
+* I would recommend that all you install into the system python is virtualenv, and maybe some uncritical C-modules such as psycopg2.
+* Currently there is much going on regarding setuptools. A fork, "Distribute" has been announced, and "pyinstall" by Ian Bicking, an easy_install replacement that deals with some of it's ancestors shortcomings.
+
+
+
+## Packaging, Distribution
+* https://packaging.python.org/glossary/#term-source-distribution-or-sdist
+* http://sunnybala.com/2018/09/10/python-etch-a-sketch.html
+
+**What is a Python egg?**
+* https://stackoverflow.com/questions/2051192/what-is-a-python-egg
+* Egg packaging has been superseded by Wheel packaging
+* Same concept as a .jar file in Java, it is a .zip file with some metadata files renamed .egg, for distributing code as bundles.
+* http://svn.python.org/projects/sandbox/trunk/setuptools/doc/formats.txt
+```bash
+A "Python egg" is a logical structure embodying the release of a specific version of a Python project, comprising its code, resources, and metadata. There are multiple formats that can be used to physically encode a Python egg, and others can be developed. However, a key principle of Python eggs is that they should be discoverable and importable. That is, it should be possible for a Python application to easily and efficiently find out what eggs are present on a system, and to ensure that the desired eggs' contents are importable.
+
+The .egg format is well-suited to distribution and the easy uninstallation or upgrades of code, since the project is essentially self-contained within a single directory or file, unmingled with any other projects' code or resources. It also makes it possible to have multiple versions of a project simultaneously installed, such that individual programs can select the versions they wish to use.
+```
+* Wheel and Egg are both packaging formats that aim to support the use case of needing an install artifact that doesn’t require building or compilation, which can be costly in testing and production workflows.
+* The Egg format was introduced by setuptools in 2004, whereas the Wheel format was introduced by PEP 427 in 2012.
+* Wheel is currently considered the standard for built and binary packaging for Python.
+
+
+**Wheel V/s Egg**
+* https://packaging.python.org/discussions/wheel-vs-egg/  
