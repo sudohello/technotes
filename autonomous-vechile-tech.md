@@ -124,6 +124,12 @@ Open-source software for urban autonomous driving, maintained by Tier IV. The fo
 * http://opencrg.org/
 * https://en.wikipedia.org/wiki/OpenCRG
 * http://openscenario.org/
+* https://www.road-xml.org/
+
+**Apollo OpenDrive Specification**
+* https://github.com/ApolloAuto/apollo/issues/3005
+* https://github.com/ApolloAuto/apollo/issues/603
+
 
 ASAM - Standardization for Automotive Development
 * https://www.asam.net/
@@ -131,3 +137,86 @@ ASAM - Standardization for Automotive Development
 
 **Digitizing OpenDrive Road Data**
 * http://www.atlatec.de/en/open-drive-sample-data/
+* http://www.atlatec.de/en/products/atlamap/
+* https://www.mathworks.com/help/driving/ug/add-opendrive-roads-to-driving-scenario.html
+* https://stackoverflow.com/questions/48884655/python-opendrive-map-spiral-clothoid-euler-spiral-curu-spiral-interpol
+
+* vector zero
+  - https://www.youtube.com/watch?v=5Si77LULrNo
+* Trian3d-Builder
+https://triangraphics.de/?q=en/produkte/Trian3d-Builder
+* vterrain
+  - http://vterrain.org/Culture/Roads/
+* VTD - Virtual Test Drive by Vires
+  - https://vires.com/vtd-vires-virtual-test-drive/
+  - https://www.youtube.com/watch?v=SGQ0VxhMcmw
+* RightHook 
+  - https://righthook.io/
+* cognata
+  - http://www.cognata.com/
+
+**Simulators Only**
+* Carla
+  - http://carla.org/
+  - https://github.com/carla-simulator/carla
+* Udacity
+  - https://github.com/udacity/self-driving-car-sim
+  - https://towardsdatascience.com/introduction-to-udacity-self-driving-car-simulator-4d78198d301d
+
+**Deep Learning in Autonomy**
+* https://www.slideshare.net/yuhuang/3d-interpretation-from-single-2d-image-for-autonomous-driving-121650450
+* Camera based Lane Detection
+  - https://www.slideshare.net/yuhuang/camerabased-lane-detection-by-deep-learning
+  - DVCNN - Dual View CNN for accurate lane detection
+  - VPGNet - Vanishing Point Guided Network for lane and road marking detection and recogition
+  - SCNN - Spatial CNN
+    * probability maps of baseline - ReNet, MRFNet, ResNet-101, SCNN
+* 3D Scene Construction
+  - https://sites.google.com/site/yorkyuhuang/home/tutorial/deep-learning-1/deeplearningforscenereconstruction
+* Topics
+  - NMS: Non maximal supression
+    - https://arxiv.org/pdf/1705.02950.pdf
+  - convert the segmentation mask to polygon
+    - https://github.com/cocodataset/cocoapi/issues/39
+    - https://docs.opencv.org/trunk/d4/d73/tutorial_py_contours_begin.html
+    - https://gist.github.com/hellpanderrr/2c08af0f07eed4782234
+    - http://blog.thehumangeo.com/2014/05/12/drawing-boundaries-in-python/
+
+* Mask_RCNN
+  - https://stackoverflow.com/questions/49684468/mask-r-cnn-for-object-detection-and-segmentation-train-for-a-custom-dataset
+
+You need to have all your annotations.
+All of those need to be converted to VGG Polygon schema (yes i mean polygons). I have added a sample VGG Polygon format at the end of this answer.
+You need to divide your custom dataset into train, test and val
+The annotation by default are looked with a filename via_region_data.json inside the individual dataset folder. For eg for training images it would look at train\via_region_data.json. You can also change it if you want.
+Inside Samples folder you can find folders like Balloon, Nucleus, Shapes etc. Copy one of the folders. Preferably balloon. We will now try to modify this new folder for our custom dataset.
+Inside the copied folder, you will have a .py file (for balloon it will be balloon.py), change the following variables
+ROOT_DIR : the absolute path where you have cloned the project
+DEFAULT_LOGS_DIR : This folder will get bigger in size so change this path accordingly (if you are running your code in a low disk storage VM). It will store the .h5 file as well. It will make subfolder inside the log folder with timestamp attached to it.
+.h5 files are roughly 200 - 300 MB per epoch. But guess what this log directory is Tensorboard compatible. You can pass the timestamped subfolder as --logdir argument while running tensorboard.
+This .py file also has two classes - one class with suffix as Config and another class with suffix as Dataset.
+
+
+**Python in GIS**
+* http://toblerity.org/shapely/
+  * pip install shapely
+* http://toblerity.org/fiona/
+  * loading gis data
+**Resources**
+* https://sites.google.com/site/yorkyuhuang/home/tutorial - very interesting k-bank slides
+* http://www.akshaysoam.com/#/projects
+https://oclavi.com/
+
+http://www.transportationtechnologyventures.com/simwiki/index.php?title=Modeling - Best Resource of 3d road construction
+https://www.slideshare.net/yuhuang/visualization-and-simulation-for-adas-and-autonomous-driving
+
+
+
+**Datasets**
+* FCAV
+Driving in the Matrix: Can Virtual Worlds Replace Human-Generated Annotations for Real World Tasks?
+  - https://arxiv.org/abs/1610.01983
+  - https://fcav.engin.umich.edu/safety-pilot-dataset
+  - https://fcav.engin.umich.edu/sim-dataset
+  - https://github.com/umautobots/driving-in-the-matrix
+  - https://github.com/umautobots/GTAVisionExport
