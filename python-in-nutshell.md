@@ -2488,11 +2488,39 @@ from the underlying system site-packages.
 * every Python project sharing the same dependencies
 * isolate projects with its own specific dependencies
 
+* https://docs.python-guide.org/dev/virtualenvs/
+* https://medium.freecodecamp.org/manage-multiple-python-versions-and-virtual-environments-venv-pyenv-pyvenv-a29fb00c296f
+* [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
 
-**Setting up and using a virtual environment for Python projects**
+Virtual environments: isolated independent environments that can have both a specific version of Python and of any project-specific packages installed within them, without affecting any other projects.
 
-### Tools
+**How & Where python packages are stored?**
+* There are a few different locations where these packages can be installed on system
+* most system packages are stored in a child directory of the path stored in `sys.prefix`
+```python
+import sys
+sys.prefix
+#
+#'/usr'
+```
+* third party packages installed using [easy_install](https://pythonhosted.org/setuptools/easy_install.html) or [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) are typically placed in one of the directories pointed to by site.getsitepackages:
+```python
+import site
+site.getsitepackages()
+## ['/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages']
+```
+
+**Tools: Setting up and using a virtual environment for Python projects**
+* venv / pyvenv
+* pyenv
+* pyenv-virtualenv
 * virtualenv
+
+**What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc?**
+* https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+
+Recommendation for beginners:
+This is my personal recommendation for beginners: start by learning virtualenv and pip, tools which work with both Python 2 and 3 and in a variety of situations, and pick up the other tools once you start needing them.
 
 
 ## Packaging, Distribution
@@ -2515,5 +2543,4 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 
 
 **Wheel V/s Egg**
-* https://packaging.python.org/discussions/wheel-vs-egg/  
->>>>>>> 3b088c11923dd6670b7eda25556b5436018f5739
+* https://packaging.python.org/discussions/wheel-vs-egg/
