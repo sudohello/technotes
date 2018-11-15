@@ -18,38 +18,37 @@ Tags: Tools
 * [openshot](https://www.openshot.org/)
 
 ## utilities
-openssh-client,openssh-server,dos2unix,tree,chromium-browser,unrar
-vim,vim-gtk
-sublime-text-installer
+* openssh-client,openssh-server,dos2unix,tree,chromium-browser,unrar
+* vim,vim-gtk
+* sublime-text-installer
 
 ## version control
-git,cvs,tkcvs
+* git,cvs,tkcvs
 
 ## exif tool
-libimage-exiftool-perl
+* libimage-exiftool-perl
 
 ## Used in openCV
-doxygen,doxygen-gui,graphviz
+* doxygen,doxygen-gui,graphviz
 
 ## Pre-requisite for CUDA, cuDNN, tensorflow etc.
-python-numpy,python-dev,python-pip,python-wheel
+* python-numpy,python-dev,python-pip,python-wheel
 
 ## Misc
-libexif-dev,ntp,libconfig++-dev,kino
-wine (ppa:ubuntu-wine/ppa)
+* libexif-dev,ntp,libconfig++-dev,kino
+* wine (ppa:ubuntu-wine/ppa)
 
 ## vncserver
-ubuntu-desktop,gnome-panel,gnome-settings-daemon,metacity,nautilus,gnome-terminal,vnc4server
+* ubuntu-desktop,gnome-panel,gnome-settings-daemon,metacity,nautilus,gnome-terminal,vnc4server
 
 ## VLC
-vlc,browser-plugin-vlc
+* vlc,browser-plugin-vlc
 
 ## java
-default-jre,default-jdk,openjfx,ant
+* default-jre,default-jdk,openjfx,ant
 
 ## graphics
-
-inkscape (ppa:inkscape.dev/stable), gimp (ppa:otto-kesselgulasch/gimp), meshlab (ppa:zarquon42/meshlab)
+* inkscape (`ppa:inkscape.dev/stable`), gimp (`ppa:otto-kesselgulasch/gimp`), meshlab (`ppa:zarquon42/meshlab`)
 Blender
 
 ### visual effects (VFX) industry from the perspective of being either an artist, compositor, video editor, or systems engineer.
@@ -60,74 +59,90 @@ https://natron.fr/download/?os=Linux&d=https://downloads.natron.fr/Linux/release
 * picogen, povray, yafray, wings3D
 
 ## sound
-audacity (ppa:ubuntuhandbook1/audacity)
+* `audacity (ppa:ubuntuhandbook1/audacity)`
 
 ## php 7.0 (ppa:ondrej/php)
-php7.0,php7.0-cli,php7.0-fpm,php7.0-gd,php7.0-json,php7.0-mysql,php7.0-readline,php7.0-xml,php7.0-mbstring
+* php7.0,php7.0-cli,php7.0-fpm,php7.0-gd,php7.0-json,php7.0-mysql,php7.0-readline,php7.0-xml,php7.0-mbstring
 
 ## apache2
-apache2,libapache2-mod-php,php-mcrypt,php-mysql,libapache2-mod-php7.0
+* apache2,libapache2-mod-php,php-mcrypt,php-mysql,libapache2-mod-php7.0
 
 ## Database, Filesystem
 ### Postgres
-python-pip,python-dev,libpq-dev,postgresql,postgresql-contrib,pgadmin3
+* python-pip,python-dev,libpq-dev,postgresql,postgresql-contrib,pgadmin3
 
 ### Elastic Search
-elasticsearch
+* elasticsearch
 
 ## look & feel
 compizconfig-settings-manager, compiz-plugins
 
-# computer vision, datasciene, photogrammetry etc.
-octave, ros
-nodejs
+## computer vision, datasciene, photogrammetry etc.
+* octave
+* ROS/ROS2
 
-# Screen Recorders
+
+## Screen Recorders
 * https://askubuntu.com/questions/4428/how-to-record-my-screen
 * https://www.unixmen.com/vokoscreen-a-new-screencasting-tool-for-linux/
-vokoscreen (ppa:vokoscreen-dev/vokoscreen)
+* `vokoscreen (ppa:vokoscreen-dev/vokoscreen)`
 
-# Screen-capture/Screen-shots
+## Screen-capture/Screen-shots
 * http://tipsonubuntu.com/2015/04/13/install-the-latest-shutter-screenshot-tool-in-ubuntu/
-shutter (ppa:shutter/ppa)
+* `shutter (ppa:shutter/ppa)`
 
-# Youtube downloader
+## Youtube downloader
 * https://www.lifewire.com/download-youtube-videos-p2-2202105
-youtube-dl ytd-gtk
+* `youtube-dl ytd-gtk`
 
-# Markdown editors
+## Markdown editors
 * https://www.maketecheasier.com/markdown-editors-linux/
 * https://www.maketecheasier.com/best-markdown-editor-for-windows/
 
 ## Remarkable
 * http://remarkableapp.github.io
 * http://remarkableapp.github.io/files/remarkable_1.87_all.deb
-
+```bash
 sudo apt -y install python3-bs4 wkhtmltopdf
 sudo dpkg -i remarkable_1.87_all.deb
+```
+
 
 ## Haroopad (my fav)
 * http://pad.haroopress.com/user.html
 
-# Teamviewer
+## Teamviewer
 * https://askubuntu.com/questions/453157/how-to-install-teamviewer-on-14-04
 * https://community.teamviewer.com/t5/Knowledge-Base/Installation-of-TeamViewer-on-a-Ubuntu-system/ta-p/45
 * https://www.teamviewer.com/en/download/linux/
+ 
+
+## Chat
+* https://matrix.to/#/#qgis:matrix.org
+* https://gitter.im/
+* discord
+* https://tox.chat
+* wickrme
+
 
 ----------
-## How To's
-Installation of software on Ubuntu
-Additing ppa repositories
-Automating configuration settings
--Adding unique line in ~/.bashrc file using script - helpful for 
-Nvidia Graphics card driver installation on Ubuntu
-CUDA Installation (CUDA toolkit)
-cuDNN, tensorflow setup
-Troubleshoot errors during installaions etc.
-How do I add a PPA in a shell script without user input?
-https://askubuntu.com/questions/304178/how-do-i-add-a-ppa-in-a-shell-script-without-user-input
-should-i-auto-remove-this-packages
-https://askubuntu.com/questions/696431/should-i-auto-remove-this-packages
+
+
+## How Tos
+* Snap, AppImg, Docker/Kubernetes
+* Installation of software on Ubuntu
+* Additing ppa repositories
+* Automating configuration settings
+* dding unique line in `~/.bashrc` file using script - helpful for 
+* Nvidia Graphics card driver installation on Ubuntu
+* CUDA Installation (CUDA toolkit)
+* cuDNN, tensorflow setup
+* Troubleshoot errors during installaions etc.
+* How do I add a PPA in a shell script without user input?
+  - https://askubuntu.com/questions/304178/how-do-i-add-a-ppa-in-a-shell-script-without-user-input
+  - should-i-auto-remove-this-packages
+    * https://askubuntu.com/questions/696431/should-i-auto-remove-this-packages
+
 
 ## References
 ### Comprehensive listing of Opensource softwares for all purposes:
@@ -156,9 +171,13 @@ QVGA  320 x 240 / QVGA  320 x 240
 * http://picogen.org/
 * https://hubalternative.com/top-10-picogen-alternatives
 * http://vterrain.org/Packages/Artificial/
+
+
 #### povray
 * http://www.povray.org/
 * https://charmie11.wordpress.com/2016/01/29/pov-ray-3-7-installation-on-ubuntu-14-04/
+
+
 #### wings3d
 * http://www.wings3d.com/
 
@@ -166,8 +185,8 @@ QVGA  320 x 240 / QVGA  320 x 240
 * https://en.wikipedia.org/wiki/Sweet_Home_3D
 * https://sourceforge.net/projects/sweethome3d/files/SweetHome3D/stats/map
 
-
-game@game-pc:~/Downloads$ sudo apt install libjpeg62
+```
+sudo apt install libjpeg62
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -182,6 +201,7 @@ sudo dpkg --add-architecture i386;
 sudo apt-get update; 
 sudo dpkg -i teamviewer_12.0.76279_i386.deb
 sudo apt-get -f install
+```
 
 ## R, R-studio
 * https://www.rstudio.com/products/rstudio/download-server/
@@ -190,7 +210,10 @@ sudo apt-get -f install
 * https://cran.r-project.org
 * https://cran.r-project.org/bin/linux/ubuntu/README
 
-```r-base gdebi-core```
+```
+r-base gdebi-core
+```
+
 
 ## Docker
 - https://docs.docker.com/install/linux/docker-ee/ubuntu/
@@ -330,28 +353,22 @@ as.factor()   - function converts quantitative variables into qualitative variab
 - bloxplot
 * data frame
 
-## Chat
-* https://matrix.to/#/#qgis:matrix.org
-* https://gitter.im/
-* discord
-
 ## Misc
-https://gis.stackexchange.com/questions/133090/map-box-gl-mature-appropriate-for-own-osm-tileserver
-https://openmaptiles.org/docs/website/mapbox-gl-js/
-https://gis.stackexchange.com/questions/125037/self-hosting-mapbox-vector-tiles
-https://github.com/spatialdev/PGRestAPI
-https://github.com/spatialdev/streetside-js
-
-https://openmaptiles.org/
-https://www.mapbox.com/maki-icons/
+* https://gis.stackexchange.com/questions/133090/map-box-gl-mature-appropriate-for-own-osm-tileserver
+* https://openmaptiles.org/docs/website/mapbox-gl-js/
+* https://gis.stackexchange.com/questions/125037/self-hosting-mapbox-vector-tiles
+* https://github.com/spatialdev/PGRestAPI
+* https://github.com/spatialdev/streetside-js
+* https://openmaptiles.org/
+* https://www.mapbox.com/maki-icons/
 
 ## Recorder
-- https://github.com/phw/peek
+* https://github.com/phw/peek
 
 ## Ubuntu Installation and Configruation
-- https://linuxconfig.org/8-best-ubuntu-desktop-environments-18-04-bionic-beaver-linux
-- https://linuxconfig.org/things-to-do-after-installing-ubuntu-18-04-bionic-beaver-linux
-- Install Firewall UI
+* https://linuxconfig.org/8-best-ubuntu-desktop-environments-18-04-bionic-beaver-linux
+* https://linuxconfig.org/things-to-do-after-installing-ubuntu-18-04-bionic-beaver-linux
+* Install Firewall UI
 ```bash
 sudo apt install gufw
 # weather app

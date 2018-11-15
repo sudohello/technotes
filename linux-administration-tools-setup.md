@@ -682,8 +682,18 @@ sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 lib
 * https://www.lopezferrando.com/30-interesting-shell-commands/
 
 * Shebang - The #! syntax used in scripts
+  - https://en.wikipedia.org/wiki/Shebang_(Unix)
 	- https://bash.cyberciti.biz/guide/Shebang
 	- The #! syntax used in scripts to indicate an interpreter for execution under UNIX / Linux operating systems
+  * Some typical shebang lines:
+    * `#!/bin/sh` – Execute the file using the Bourne shell, or a compatible shell, with path `/bin/sh`
+    * `#!/bin/bash` – Execute the file using the Bash shell.
+    * `#!/bin/csh -f` – Execute the file using csh, the C shell, or a compatible shell, and suppress the execution of the user’s .cshrc file on startup
+    * `#!/usr/bin/perl -T` – Execute using Perl with the option for taint checks
+    * `#!/usr/bin/env python` – Execute using Python by looking up the path to the Python interpreter automatically via env
+    * `#!/bin/false` – Do nothing, but return a non-zero exit status, indicating failure. Used to prevent stand-alone execution of a script file intended for execution in a specific context, such as by the . command from sh/bash, source from csh/tcsh, or as a .profile, .cshrc, or .login file.
+    Shebang lines may include specific options that are passed to the interpreter. However, implementations vary in the parsing behavior of options; for portability, only one option should be specified without any embedded whitespace. Further portability guidelines are found below.
+
 * man - The man command is used to format and display the man pages
 	- www.linfo.org/man.html
 	- The man pages are a user manual that is by default built into most Linux

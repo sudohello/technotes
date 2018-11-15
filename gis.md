@@ -566,3 +566,5 @@ https://gis.stackexchange.com/questions/290805/is-it-possible-to-convert-polygon
 https://lists.osgeo.org/pipermail/postgis-users/2008-January/018215.html
 
 
+
+https://www.thasler.com/blog/

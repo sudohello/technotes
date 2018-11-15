@@ -400,3 +400,17 @@ git push
 * https://help.github.com/articles/renaming-a-repository/
 * https://guides.github.com/activities/forking/
 * https://github.com/octocat/Spoon-Knife - Practice Repo
+
+## Version Control Management Concepts
+* https://betterexplained.com/articles/a-visual-guide-to-version-control/
+
+### Other Version Control softwares
+**Mercurial**
+- It’s different from other revision control systems in that Mercurial is primarily implemented in Python as opposed to C, but there are some instances where C is used.
+- Some of the major drawbacks to Mercurial include that it doesn’t allow for two parents to be merged and unlike Git, it uses an extension system rather than being scriptable.
+- https://stackshare.io/stackups/git-vs-mercurial
+
+* https://www.atlassian.com/blog/software-teams/mercurial-vs-git-why-mercurial
+* What is the Difference Between Mercurial and Git?
+* 2018 Version Control Software Comparison: SVN, Git, Mercurial
+  - https://biz30.timedoctor.com/git-mecurial-and-cvs-comparison-of-svn-software/

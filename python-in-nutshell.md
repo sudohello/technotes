@@ -2483,7 +2483,9 @@ from the underlying system site-packages.
 * Currently there is much going on regarding setuptools. A fork, "Distribute" has been announced, and "pyinstall" by Ian Bicking, an easy_install replacement that deals with some of it's ancestors shortcomings.
 
 ## Virtual Environment, Isolated Python Environment
+* https://tech.instacart.com/freezing-pythons-dependency-hell-in-2018-f1076d625241
 * https://www.bluetin.io/isolated-python-environment-guide/
+* https://www.sitepoint.com/virtual-environments-python-made-easy/
 
 * every Python project sharing the same dependencies
 * isolate projects with its own specific dependencies
@@ -2523,6 +2525,96 @@ Recommendation for beginners:
 This is my personal recommendation for beginners: start by learning virtualenv and pip, tools which work with both Python 2 and 3 and in a variety of situations, and pick up the other tools once you start needing them.
 
 
+* After a while, though, you might end up with a lot of virtual environments littered across your system, and its possible you’ll forget their names or where they were placed.
+
+* In addition, there is nuance around whether or not you should freeze all packages to patch versions.
+* The hope is that if you don’t freeze any versions, you get free upgrades from all those upstream library developers. In reality what you’ll notice are the bugs and breaking changes that randomly get introduced into your continuous integration pipeline, or that the next developer to checkout your project needs to spend 30 minutes figuring out the dependency versions that work, rather than what the most recent versions are. It’s difficult to track down the source of these breakages, because they’re not in your own code and the changes were not tracked or intentional. The same logic applies to patch version changes in Python itself.
+
+### virtualenv
+* https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv
+* virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.
+```bash
+pip install virtualenv
+virtualenv --version
+cd my_project_folder
+virtualenv my_project
+virtualenv -p /usr/bin/python2.7 my_project
+## export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+source my_project/bin/activate
+## From now on, any package that you install using pip will be placed in the my_project folder, isolated from the global Python installation
+## Install packages as usual
+deactivate
+## To delete a virtual environment, just delete its folder. (
+```
+* After a while, though, you might end up with a lot of virtual environments littered across your system, and its possible you’ll forget their names or where they were placed.
+* Running virtualenv with the option `--no-site-packages` will not include the packages that are installed globally. This can be useful for keeping the package list clean in case it needs to be accessed later. [This is the default behavior for virtualenv 1.7 and later.]
+* “freeze” the current state of the environment packages. This will create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions.
+```bash
+pip freeze > requirements.txt
+#
+## Later it will be easier for a different developer (or you, if you need to re-create the environment) to install the same packages using the same versions:
+pip install -r requirements.txt
+```
+* Version Control Ignores - exclude the virtual environment folder from source control by adding it to the ignore list
+  * https://docs.python-guide.org/writing/gotchas/#version-control-ignores
+  ```bash
+  ## Disabling Bytecode (.pyc) Files
+  export PYTHONDONTWRITEBYTECODE=1
+  #
+  ## Removing Bytecode (.pyc) Files
+  find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
+  ```
+  * `.gitignore`
+  ```bash
+  *.py[cod]     # Will match .pyc, .pyo and .pyd files.
+  __pycache__/  # Exclude the whole folder
+  ```
+
+
+### virtualenvwrapper
+* https://virtualenvwrapper.readthedocs.io/en/latest/index.html
+* `virtualenvwrapper` provides a set of commands which makes working with virtual environments much more pleasant. It also places all your virtual environments in one place.
+* Organizes all of your virtual environments in one place.
+* Wrappers for managing your virtual environments (create, delete, copy).
+* Use a single command to switch between environments.
+* Tab completion for commands that take a virtual environment as argument.
+* User-configurable hooks for all operations (see Per-User Customization).
+* Plugin system for more creating sharable ext
+* Installation: To install (**make sure virtualenv is already installed!**):
+* https://virtualenvwrapper.readthedocs.io/en/latest/install.html
+  - virtualenvwrapper should be installed into the same global site-packages area where virtualenv is installed.
+  - An alternative to installing it into the global site-packages is to add it to your user local directory (usually `~/.local`).
+  ```bash
+  pip install virtualenvwrapper
+  export WORKON_HOME=$HOME/.virtualenvs
+  # export PROJECT_HOME=$HOME/Devel
+  source /usr/local/bin/virtualenvwrapper.sh
+  ```
+* Usage
+```bash
+## creates the my_project folder inside ~/.virtualenvs
+mkvirtualenv my_project
+## workon also deactivates whatever environment you are currently in, so you can quickly switch between environments.
+workon my_project
+#
+deactivate
+rmvirtualenv my_project
+```
+
+* **Activating-the-virtualenv-of-two-different-version-of-python**
+  * https://stackoverflow.com/questions/45809731/activating-the-virtualenv-of-two-different-version-of-python
+* **Run programs from one virtual environment while another one is active**
+* **How can we run 3 different python applications on 3 different python versions on same machine?** - best illustration
+  * http://rafiqnayan.blogspot.com/2018/03/deploy-python-application-with-gunicorn.html
+
+
+### Best Practices
+* Don’t rely on humans to follow best practices. Write code to do it for them.
+* Use a fresh `virtualenv` for each project
+* `pip freeze > requirements.txt` on every change
+* Specify your exact Python version in `runtime.txt`
+* Project code should be organized in a Python module
+
 ## Packaging, Distribution
 * https://packaging.python.org/glossary/#term-source-distribution-or-sdist
 * http://sunnybala.com/2018/09/10/python-etch-a-sketch.html
@@ -2544,3 +2636,12 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 
 **Wheel V/s Egg**
 * https://packaging.python.org/discussions/wheel-vs-egg/
+
+
+## Lore
+* https://github.com/instacart/lore
+  - Lore is a python framework to make machine learning approachable for Engineers and maintainable for Data Scientists.
+
+
+## Python Guides
+* https://docs.python-guide.org/
