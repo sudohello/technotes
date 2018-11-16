@@ -303,6 +303,10 @@ server.listen(port, hostname, () => {
 ```bash
 curl -d "[1,2,3]" -XPOST http://localhost:3000/foo/bar
 ```
+**how-to-run-multiple-python-versions-using-apache-and-gunicorn**
+* https://stackoverflow.com/questions/48954705/how-to-run-multiple-python-versions-using-apache-and-gunicorn
+
+
 ## API Resources
 * https://github.com/rochacbruno/flasgger
 
@@ -316,4 +320,3 @@ curl -d "[1,2,3]" -XPOST http://localhost:3000/foo/bar
 
 
 
-https://tox.chat/
