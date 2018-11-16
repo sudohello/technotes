@@ -2587,7 +2587,10 @@ pip install -r requirements.txt
   - virtualenvwrapper should be installed into the same global site-packages area where virtualenv is installed.
   - An alternative to installing it into the global site-packages is to add it to your user local directory (usually `~/.local`).
   ```bash
-  pip install virtualenvwrapper
+  sudo pip install virtualenv
+  sudo pip install virtualenvwrapper
+  mkdir $HOME/.virtualenvs
+  ##
   export WORKON_HOME=$HOME/.virtualenvs
   # export PROJECT_HOME=$HOME/Devel
   source /usr/local/bin/virtualenvwrapper.sh
@@ -2602,12 +2605,66 @@ workon my_project
 deactivate
 rmvirtualenv my_project
 ```
-
+* other commands:
+```bash
+## List all of the environments.
+lsvirtualenv
+#
+## Navigate into the directory of the currently activated virtual environment, so you can browse its site-packages, for example.
+cdvirtualenv
+#
+## Like the above, but directly into site-packages directory.
+cdsitepackages
+#
+## Shows contents of site-packages directory.
+lssitepackages
+```
 * **Activating-the-virtualenv-of-two-different-version-of-python**
   * https://stackoverflow.com/questions/45809731/activating-the-virtualenv-of-two-different-version-of-python
 * **Run programs from one virtual environment while another one is active**
-* **How can we run 3 different python applications on 3 different python versions on same machine?** - best illustration
+* **How can we run 3 different python applications on 3 different python versions on same machine?** - best illustration: virtualenv, virtualenvwrapper, supervisor
   * http://rafiqnayan.blogspot.com/2018/03/deploy-python-application-with-gunicorn.html
+  ```bash
+  sudo apt install supervisor
+  ```
+  * This will actually install two softwares - supervisord and supervisorctl. supervisord is the daemon process that'll monitor and run the gunicorn processes. supervisorctl is the controller interface to interact with supervisord e.g. start, stop, restart.
+  * We've to write a configuration file for supervisord. The file will contain which applications we want to run and how to run them.
+  ```text
+
+  For our 3 applications, our configuration file may look like the following:
+
+  [supervisord]
+  logfile = /home/nayan/supervisor/log/supervisord.log
+
+  [program:analytics-app]
+  environment=ANALYTICS_APP_CONFIG=/home/nayan/app_config/analytics_app.cfg
+  directory=/var/www/apps/analytics-app
+  command=/var/www/apps/analytics-app/venv/bin/gunicorn --bind 0.0.0.0:8001 wsgi:app
+
+  [program:android-api-app]
+  directory=/var/www/apps/android-api-app
+  command=/var/www/apps/android-api-app/venv/bin/gunicorn --bind 0.0.0.0:8002 wsgi:app
+
+  [program:auth-api-app]
+  directory=/var/www/apps/auth-api-app
+  command=/var/www/apps/auth-api-app/venv/bin/gunicorn --bind 0.0.0.0:8003 wsgi:app
+
+  [unix_http_server]
+  file = /home/nayan/supervisor/supervisor.sock
+  chmod = 0777
+  username = nayan
+  password = 123456
+
+  [supervisorctl]
+  serverurl = unix:///home/nayan/supervisor/supervisor.sock
+  username = nayan
+  password = 123456
+
+  [rpcinterface:supervisor]
+  supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+  ```
+* pygpu installation
+  - https://github.com/roebius/deeplearning_keras2/issues/3
 
 
 ### Best Practices
@@ -2647,3 +2704,13 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 
 ## Python Guides
 * https://docs.python-guide.org/
+
+
+**Python in GIS**
+* http://toblerity.org/shapely/
+  * pip install shapely
+* http://toblerity.org/fiona/
+  * loading gis data
+**Resources**
+* https://sites.google.com/site/yorkyuhuang/home/tutorial - very interesting k-bank slides
+* http://www.akshaysoam.com/#/projects

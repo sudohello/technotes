@@ -216,12 +216,25 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * [Udacity](https://github.com/udacity/self-driving-car/tree/master/datasets)
   - https://github.com/udacity/self-driving-car/tree/master/datasets
 * ApolloScape
+* FCAV
+  * Driving in the Matrix: Can Virtual Worlds Replace Human-Generated Annotations for Real World Tasks?
+  - https://arxiv.org/abs/1610.01983
+  - https://fcav.engin.umich.edu/safety-pilot-dataset
+  - https://fcav.engin.umich.edu/sim-dataset
+  - https://github.com/umautobots/driving-in-the-matrix
+  - https://github.com/umautobots/GTAVisionExport
+
 
 ### 3D Datasets
-- https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
-- https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
-- https://niessner.github.io/Matterport/
-- https://arxiv.org/pdf/1709.06158.pdf
+- Matterport 
+  - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
+  - https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
+  - https://niessner.github.io/Matterport/
+  - https://arxiv.org/pdf/1709.06158.pdf
+- Trimble 3D Warehouse
+- Yobi3D
+- ShapeNet - Semantic annotation knowledge bases
+  * https://drive.google.com/file/d/1Z8gt4HdPujBNFABYrthhau9VZW10WWYe/view
 
 ### Others
 - https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research

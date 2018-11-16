@@ -976,10 +976,9 @@ https://github.com/tflearn/tflearn/tree/master/examples#tflearn-examples
 https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196
 
 
-
-Practical Black-Box Attacks against Machine Learning
-https://arxiv.org/abs/1602.02697
-
+**DNN Security**
+* Practical Black-Box Attacks against Machine Learning
+  * https://arxiv.org/abs/1602.02697
 
 
 **Object Detections**
@@ -989,7 +988,7 @@ https://arxiv.org/abs/1602.02697
 * https://github.com/tensorflow/models/tree/master/research/object_detection
 * https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
-## * Mask-RCNN
+## **Mask-RCNN**
   - https://github.com/priya-dwivedi/Deep-Learning
   - https://github.com/facebookresearch/Detectron
   - https://github.com/matterport/Mask_RCNN
@@ -1002,6 +1001,7 @@ https://arxiv.org/abs/1602.02697
   * https://medium.com/neuromation-io-blog/neuronuggets-segmentation-with-mask-r-cnn-c76d363b67fb
   * https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
 
+
 ### **matterport/Mask_RCNN**
 - https://github.com/matterport/Mask_RCNN
 - https://github.com/matterport/Mask_RCNN/releases
@@ -1009,22 +1009,31 @@ https://arxiv.org/abs/1602.02697
 * how the model works and show how to use it in a real application.
 * uses a ResNet101 + FPN backbone.
 * Region Proposal Network (RPN)
-The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects.
- If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
+  * The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects. If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
+* **Mask-RCNN Training**
+  - https://stackoverflow.com/questions/49684468/mask-r-cnn-for-object-detection-and-segmentation-train-for-a-custom-dataset
+  * You need to have all your annotations.
+  * All of those need to be converted to VGG Polygon schema (yes i mean polygons). I have added a sample VGG Polygon format at the end of this answer.
+  * You need to divide your custom dataset into train, test and val
+  * The annotation by default are looked with a filename via_region_data.json inside the individual dataset folder. For eg for training images it would look at train\via_region_data.json. You can also change it if you want.
+  * Inside Samples folder you can find folders like Balloon, Nucleus, Shapes etc. Copy one of the folders. Preferably balloon. We will now try to modify this new folder for our custom dataset.
+  * Inside the copied folder, you will have a .py file (for balloon it will be balloon.py), change the following variables
+  * ROOT_DIR : the absolute path where you have cloned the project
+  * DEFAULT_LOGS_DIR : This folder will get bigger in size so change this path accordingly (if you are running your code in a low disk storage VM). It will store the .h5 file as well. It will make subfolder inside the log folder with timestamp attached to it.
+  * `.h5` files are roughly 200 - 300 MB per epoch. But guess what this log directory is Tensorboard compatible. You can pass the timestamped subfolder as --logdir argument while running tensorboard.
+  * This `.py` file also has two classes - one class with suffix as Config and another class with suffix as Dataset.
 
 
 #### splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow
 * https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
-
 - baloon: done
+
 
 #### Images to OSM
 * https://github.com/jremillard/images-to-osm
 
 
-
-=======
-Applications in other projects:
+#### Applications in other projects:
 * 4K video
 * Segmenting Nuclei in Microscopy Images.  - https://github.com/matterport/Mask_RCNN/tree/master/samples/nucleus
 * splash of color
@@ -1115,10 +1124,6 @@ Now we expect that you have downloaded all the files in the datasets section and
 * The take-away here is that the earlier layers of a neural network will always detect the same basic shapes and edges that are present in both the picture of a car and a person.
 * There are different variants of pretrained networks each with its own architecture, speed, size, advantages and disadvantages.
 
->>>>>>> d07fed8db3c8458d58cc97daa160d58936b0ea30
-
-
-
 
 **Removing objects**
 * https://www.digitalartsonline.co.uk/tutorials/after-effects/remove-moving-objects-from-video
@@ -1206,3 +1211,58 @@ https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
 https://github.com/mnboos/osm-instance-segmentation
 https://github.com/ctu-geoforall-lab-projects/dp-pesek-2018
 http://teselagen.github.io/openVectorEditor/#/Editor
+
+**Commercial tool**
+https://oclavi.com/
+
+
+## **Deep Learning in Autonomy**
+* https://www.slideshare.net/yuhuang/3d-interpretation-from-single-2d-image-for-autonomous-driving-121650450
+* Topics
+  - NMS: Non maximal supression
+    - https://arxiv.org/pdf/1705.02950.pdf
+  - convert the segmentation mask to polygon
+    - https://github.com/cocodataset/cocoapi/issues/39
+    - https://docs.opencv.org/trunk/d4/d73/tutorial_py_contours_begin.html
+    - https://gist.github.com/hellpanderrr/2c08af0f07eed4782234
+    - http://blog.thehumangeo.com/2014/05/12/drawing-boundaries-in-python/
+* **Camera based Lane Detection**
+  - https://www.slideshare.net/yuhuang/camerabased-lane-detection-by-deep-learning
+  - DVCNN - Dual View CNN for accurate lane detection
+  - VPGNet - Vanishing Point Guided Network for lane and road marking detection and recogition
+  - SCNN - Spatial CNN
+    * probability maps of baseline - ReNet, MRFNet, ResNet-101, SCNN
+
+
+## **Deep Learning: 3D Re-Construction, Analysis**
+- https://sites.google.com/site/yorkyuhuang/home/tutorial/deep-learning-1/deeplearningforscenereconstruction
+- https://www.slideshare.net/yuhuang/deep-learning-for-3d-scene-reconstruction-and-modeling
+* LIFT
+  - Learned Invariant Feature Transform
+  - https://www.eccv2016.org/files/posters/S-4A-08.pdf
+* MatchNet
+  - Matchnet is a deep learning approach for patch-based local image matching
+  - http://www.cs.unc.edu/~xufeng/cs/papers/cvpr15-matchnet.pdf
+  - https://github.com/hanxf/matchnet
+* PoseNet
+  * https://github.com/tensorflow/tfjs-models/tree/master/posenet
+  * https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5
+* Pixel2Mesh
+  * https://arxiv.org/pdf/1804.06032.pdf
+  * https://github.com/nywang16/Pixel2Mesh
+  * TFLearn to be installed
+    - http://tflearn.org/installation/
+    - `sudo pip install tflearn`
+* Researchers
+  * https://github.com/B-C-WANG?tab=stars
+* Graph CNN
+  * https://github.com/tkipf/gcn
+  * http://tkipf.github.io/graph-convolutional-networks/
+  * https://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/
+* 3D-R2N2
+  * https://github.com/chrischoy/3D-R2N2
+
+#### CSE291-100
+* https://cse291-i.github.io/
+* https://github.com/Fire-Sale/Machine-Learning-for-3D-Data/tree/master/Slides
+* https://github.com/timzhang642/3D-Machine-Learning
