@@ -2460,41 +2460,25 @@ The WebSocket specification defines an API establishing "socket" connections bet
 ## Adoption of Python as Main Line System Language - Challanges & Solutions
 * https://bytes.com/topic/python/answers/841071-eggs-virtualenv-apt-best-practices
 
-I have basically recommended that we only install the python base (core
-language) from apt, and that everything else should be installed into
-virtual environments. But I wanted to check to see how other enterprises
-are handling this issue? Are you building python from scratch, or using
-specific sets of .deb packages, or some other process.
+I have basically recommended that we only install the python base (core language) from apt, and that everything else should be installed into virtual environments. But I wanted to check to see how other enterprises are handling this issue? Are you building python from scratch, or using
+specific sets of .deb packages, or some other process. Suggestions on build/rollout tools (like zc.buildout, Paver, etc) would also be appreciated.
 
-Suggestions on build/rollout tools (like zc.buildout, Paver, etc) would
-also be appreciated.
+Any insight into the best way to have a consistent, repeatable, controllable development and production environment would be much appreciated.
 
-Any insight into the best way to have a consistent, repeatable,
-controllable development and production environment would be much
-appreciated.
-
----
-This is the exact way we are deploying our software. You can even use
-the virtualenv --no-site-packages option to completely isolate the VE
-from the underlying system site-packages.
-
-
+* This is the exact way we are deploying our software. You can even use the virtualenv --no-site-packages option to completely isolate the VE from the underlying system site-packages.
 * I would recommend that all you install into the system python is virtualenv, and maybe some uncritical C-modules such as psycopg2.
 * Currently there is much going on regarding setuptools. A fork, "Distribute" has been announced, and "pyinstall" by Ian Bicking, an easy_install replacement that deals with some of it's ancestors shortcomings.
 
 ## Virtual Environment, Isolated Python Environment
 * https://www.bluetin.io/isolated-python-environment-guide/
-
-* every Python project sharing the same dependencies
-* isolate projects with its own specific dependencies
-
 * https://docs.python-guide.org/dev/virtualenvs/
 * https://medium.freecodecamp.org/manage-multiple-python-versions-and-virtual-environments-venv-pyenv-pyvenv-a29fb00c296f
+
+* Every Python project sharing the same dependencies
+* Isolate projects with its own specific dependencies
 * [python-virtual-environments-a-primer](https://realpython.com/python-virtual-environments-a-primer/)
 
-Virtual environments: isolated independent environments that can have both a specific version of Python and of any project-specific packages installed within them, without affecting any other projects.
-
-**How & Where python packages are stored?**
+**How & Where python packages are stored? When Virtual Environment is required?**
 * There are a few different locations where these packages can be installed on system
 * most system packages are stored in a child directory of the path stored in `sys.prefix`
 ```python
@@ -2509,6 +2493,14 @@ import site
 site.getsitepackages()
 ## ['/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages']
 ```
+* by default, every project on your system will use these same directories to store and retrieve site packages (third party libraries)
+* At first glance, this may not seem like a big deal, and it isn’t really, for system packages (packages that are part of the standard Python library), but it does matter for site packages.
+* This is a real problem for Python since it can’t differentiate between versions in the site-packages directory. So both v1.0.0 and v2.0.0 would reside in the same directory with the same name
+* This is where virtual environments and the virtualenv/venv tools come into play
+* Virtual environments: isolated independent environments that can have both a specific version of Python and of any project-specific packages installed within them, without affecting any other projects.
+* There are no limits to the number of environments you can have since they’re just directories containing a few scripts. Plus, they’re easily created using the virtualenv or pyenv command line tools
+
+
 
 **Tools: Setting up and using a virtual environment for Python projects**
 * venv / pyvenv
@@ -2518,9 +2510,19 @@ site.getsitepackages()
 
 **What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc?**
 * https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+* **Recommendation for beginners:**
+  - This is my personal recommendation for beginners: start by learning virtualenv and pip, tools which work with both Python 2 and 3 and in a variety of situations, and pick up the other tools once you start needing them.
 
-Recommendation for beginners:
-This is my personal recommendation for beginners: start by learning virtualenv and pip, tools which work with both Python 2 and 3 and in a variety of situations, and pick up the other tools once you start needing them.
+**Managing Virtual Environments**
+* While virtual environments certainly solve some big problems with package management, they’re not perfect. After creating a few environments, you’ll start to see that they create some problems of their own, most of which revolve around managing the environments themselves. 
+* To help with this, the virtualenvwrapper tool was created. It’s just some wrapper scripts around the main virtualenv tool.
+* A few of the more useful features of virtualenvwrapper are that it:
+  * Organizes all of your virtual environments in one location
+  * Provides methods to help you easily create, delete, and copy environments
+  * Provides a single command to switch between environments
+```bash
+pip install virtualenvwrapper
+```
 
 
 ## Packaging, Distribution
