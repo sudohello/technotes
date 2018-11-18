@@ -1261,6 +1261,10 @@ https://oclavi.com/
   * https://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/
 * 3D-R2N2
   * https://github.com/chrischoy/3D-R2N2
+  * errors:
+  AbstractConv2d Theano optimization failed: there is no implementation available supporting the requested options. Did you exclude both "conv_dnn" and "conv_gemm" from the optimizer?
+
+
 
 #### CSE291-100
 * https://cse291-i.github.io/

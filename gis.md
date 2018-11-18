@@ -465,10 +465,8 @@ A digital elevation model (DEM) is a digital model or 3D representation of a ter
 - https://en.wikipedia.org/wiki/Cadastral_survey
 - A cadastre (also spelled cadaster), using a cadastral survey or cadastral map, is a comprehensive register of the real estate or real property's metes-and-bounds of a country
 
-https://earth.esa.int/web/guest/home
-
-
-https://www.mapbox.com/mapbox-gl-js/example/third-party/
+* https://earth.esa.int/web/guest/home
+* https://www.mapbox.com/mapbox-gl-js/example/third-party/
 
 
 ## Footprint Extration 
@@ -483,42 +481,38 @@ https://www.mapbox.com/mapbox-gl-js/example/third-party/
 - http://www.ierek.com/news/index.php/2016/08/08/can-mix-urban-planning-remote-sensing-make-future/
 
 ## qGIS plugins
-http://www.qgistutorials.com/en/docs/using_gme_connector.html
-
-
-https://research.csc.fi/open-gis-data
+* http://www.qgistutorials.com/en/docs/using_gme_connector.html
+* https://research.csc.fi/open-gis-data
 
 **Removing Silver Polygons**
-https://gis.stackexchange.com/questions/11004/removing-small-spaces-slivers-between-polygons
-
-https://github.com/ptabriz/Geovisualization-with-Blender
-
-https://blenderartists.org/
-https://github.com/domlysz/BlenderGIS
+* https://gis.stackexchange.com/questions/11004/removing-small-spaces-slivers-between-polygons
+* https://github.com/ptabriz/Geovisualization-with-Blender
+* https://blenderartists.org/
+* https://github.com/domlysz/BlenderGIS
 
 Alignment of continuous video onto 3D point clouds.
 [Unreal Engine 4: Point Cloud processing](https://www.youtube.com/watch?v=NvKF5Sv5qpk)
 
 ## Webtools
-mapshaper.org
+* [mapshaper.org](https://mapshaper.org/)
 
 ## GTFS - General Transit Feed Specification
-https://developers.google.com/transit/gtfs/
-https://en.wikipedia.org/wiki/General_Transit_Feed_Specification
-https://www.conveyal.com/
+* https://developers.google.com/transit/gtfs/
+* https://en.wikipedia.org/wiki/General_Transit_Feed_Specification
+* https://www.conveyal.com/
 
 The General Transit Feed Specification (GTFS) defines a common format for public transportation schedules and associated geographic information.
 
 ### Multimodal Transportation
-https://en.wikipedia.org/wiki/Multimodal_transport
+* https://en.wikipedia.org/wiki/Multimodal_transport
 Multimodal transport (also known as combined transport) is the transportation of goods under a single contract, but performed with at least two different means of transport; the carrier is liable (in a legal sense) for the entire carriage, even though it is performed by several different modes of transport (by rail, sea and road, for example). The carrier does not have to possess all the means of transport, and in practice usually does not; the carriage is often performed by sub-carriers (referred to in legal language as "actual carriers"). The carrier responsible for the entire carriage is referred to as a multimodal transport operator, or MTO.
 
 **opentripplanner**
-http://www.opentripplanner.org/
-https://github.com/opentripplanner/OpenTripPlanner
+* http://www.opentripplanner.org/
+* https://github.com/opentripplanner/OpenTripPlanner
 
 ### Journey Planner
-https://en.wikipedia.org/wiki/Journey_planner
+* https://en.wikipedia.org/wiki/Journey_planner
 
 Trip planning or Journey planning is sometimes distinguished from route planning,[4] where route planning is typically thought of as using private modes of transportation such as driving, walking, or cycling, normally using a single mode at a time.
 
@@ -532,25 +526,24 @@ They may be constrained for example to leave or arrive at a certain time, to avo
 A single journey may use a sequence of several modes of transport, meaning that the system may know about public transport services as well as transport networks for private transportation.
 
 ## Weather API
-https://wxtiles.com/pricing/
-https://api.weather.com/v3/TileServer/tile/cloudsFcst?ts=1522297800&xyz=11722:7597:14&apiKey=8191cad7cb99410f91cad7cb99110fc6
-http://openweathermap.org/api
-https://www.weatherbug.com
+* https://wxtiles.com/pricing/
+* https://api.weather.com/v3/TileServer/tile/cloudsFcst?ts=1522297800&xyz=11722:7597:14&apiKey=8191cad7cb99410f91cad7cb99110fc6
+* http://openweathermap.org/api
+* https://www.weatherbug.com
 
 ### Pricing
-http://openweathermap.org/price
+* http://openweathermap.org/price
 
 ## Mapbox API
-https://www.mapbox.com/api-documentation/
-https://www.mapbox.com/blog/tags/weather/
+* https://www.mapbox.com/api-documentation/
+* https://www.mapbox.com/blog/tags/weather/
 
 ## AR - Augmented Reality with location based applications
-https://blog.mapbox.com/mapbox-ar-2f065374eacb
+* https://blog.mapbox.com/mapbox-ar-2f065374eacb
 
 
 ## Reference
-http://spatialreference.org/
-
+* http://spatialreference.org/
 
 ## GIS Formats
 https://gisgeography.com/gis-formats/
@@ -560,23 +553,190 @@ https://gisgeography.com/gis-formats/
 * polygon to centerline
 - skeleton algorithm
 
-https://www.udcus.com/blog/2017/06/28/creating-centerlines-postgis-and-arcgis
-https://gis.stackexchange.com/questions/114541/extracting-centerline-of-a-complex-polygon-in-postgis-python/203928
-https://gis.stackexchange.com/questions/290805/is-it-possible-to-convert-polygon-to-centerline-linestring
-https://lists.osgeo.org/pipermail/postgis-users/2008-January/018215.html
+* https://www.udcus.com/blog/2017/06/28/creating-centerlines-postgis-and-arcgis
+* https://gis.stackexchange.com/questions/114541/extracting-centerline-of-a-complex-polygon-in-postgis-python/203928
+* https://gis.stackexchange.com/questions/290805/is-it-possible-to-convert-polygon-to-centerline-linestring
+* https://lists.osgeo.org/pipermail/postgis-users/2008-January/018215.html
+
+**FME for cesium 3D tiler.**
+* https://knowledge.safe.com/questions/55696/converting-from-geojson-to-cesium-3d-tiles.html
+* https://www.safe.com/integrate/cesium-3d-tiles/
 
 
-
-FME for cesium 3D tiler.
-
-https://knowledge.safe.com/questions/55696/converting-from-geojson-to-cesium-3d-tiles.html
-https://www.safe.com/integrate/cesium-3d-tiles/
-
-
-HD Vector Maps
-echopiatech.com
-https://www.thasler.com/blog/
+**HD Vector Maps**
+* echopiatech.com
+* https://www.thasler.com/blog/
 
 
 ## Post-gis
 * http://www.postgis.us/
+
+
+## STOMA - State of Map Asia: **2018**
+
+### **1st Day**
+* Pukar
+	- sarkar - bazar - janta
+	- govt - private - people
+	- private ltd + social org -> social policy impact=>govt
+	* Mapping provides visibility in social issues, helps in stakeholder management; impact policy changes and execution
+	* Addressing encoding scheme: dharavi
+* Strategies to handle community building and sustenance:
+	- After reaction -> follow-up, people development, knowledge transfer, mapathons, handover to built community, exit strategy
+	- university involvement
+	- developing graduate students participation
+	- youth involvement
+	- internship programme: 4 days intense training, 2-3 months
+* some osm tools used for village mapping:
+	- GPX loggers, OSM Trackers
+* kerala flood disaster management
+	- people sending 'SOS message with geo-location'
+	- `https://process.keralarescue.in/`
+	- `https://keralarescue.in/map/`
+* Some keywords:
+	* HOT - Humanitarian OpenStreetMap Team
+	* sensinglocal
+	* PTWebEditor
+	* OpenMapTIles
+	* Native language mapping
+	* OpenData Collect
+	* OpenMapKit
+	* OpenGeoData
+	* `petabencana.id/map/jakarta`
+	* `secondarycities.state.gov`
+	* `katmandulivinglabs.org`
+	* wikimedia maps, wikidata, wikipedia
+		* no wikimedia mpas dedicated team
+		* `#opendata`
+		* gov data portal: `data.gov.in`
+		* not many volunteers to add data to osm
+		* Level 0 openstreetmap editor
+		* osm:
+			- no standard way how rivers are added: as a line, shape
+			- CC0 licesnsing
+			- vandalism
+		* HOTOSM Tasks
+	* OSM allows commercialisation
+	* NRSC
+**Thoughts and Ideas**
+* TBD: connect: pukar+goonj
+* some social issues:
+	- water consumption
+	- waste generation & management
+	- open and green spaces
+	- consumption patterns
+	- logistics
+	- farmers suicide
+	* osm-d (osm-data): open geo-analytics
+	* crowd-sourcing ma creation: people participation, monetisation benefit for contributors
+	* CSR: contribution to osm during natural disaster, eg: facebook during kerala floods
+	* Digital Charity: donating geo-data to osm
+
+
+### **2nd Day**
+**Business of Geospatial Data in Asia**
+* Maps are never done! (forever...)
+* time to respond rather the perfect, accurate map
+* everyone will create their own dataset
+* landmark distortion
+	- in-accurate cadastral data
+	- leading to land acquisitions
+* yahoo opendata: `webscope data`
+* good amount of effort data scrubbing, engineering, regulartory, legal, disambiguity
+	- to figure out data company can give back; at the same time protect business, customers v/s opendata
+	- company ownership gives sense of security, protection - bring trust wrt data
+	- get interns to work on the data and publish their works
+* West, European Geodata V/s India, Asian countries Geodata
+	* structured vs unstructured
+	* policies vs no policies
+		- example: rules when two vechiles are approaching each other in perpendicular directions, who goes first 
+	* predictive vs unpredictive
+	* batch, solid state vs highly dynamic, fluid, requirement of more realtime data
+* Big Data problem in GIS
+	- sources, shapes; Volume; Velocity
+* Huge gap: Development to release gap
+	- realtime
+	- more latency batch process
+* [veditum.org](https://www.veditum.org/)
+* **Visualizing Flood Propogation with OSM and DEM**
+	- https://github.com/pratapvardhan
+* **How to bring Veracity, Trust (trust, conformity to facts, accuracy)?**
+	* Use AI - get evidences, AI not yet completely reliable
+	* build redundancy for veracity
+	* Traditional go & collect
+	*  Grab:
+		- Grab-NUS AI Lab
+			* using to cut travel time in city traffic
+	*  Accenture:
+		- some GIS data -> what kind of <xxx>
+		- Used AI in Computer Vision to audit and replace `telecom poles`
+* Geospatial media commnication - stats and survey
+	* Geospatial regulation bill in 2016 -> put to cold storage
+* mapping of auroville
+	* geomatic studioportal (gisaf)
+	* python:
+		- is swiff army knief to glue heterogenous pieces
+		- aiohttp, geopandas (also for generating map)
+		- gdal (osgeo)
+		- Folium (leaflet)
+		- JupyterLab
+	* [https://gis.auroville.org.in/dashboard](https://gis.auroville.org.in/dashboard)
+
+
+**Working with OSM Map and Data**
+* [taginfo](https://taginfo.openstreetmap.org/)
+* [hotosm](https://www.hotosm.org/)
+* https://www.openstreetmap.org/
+	- three geometryies: poin, line, ploygon -> object/feature
+		* https://mapschool.io/img/vector_types.png
+	- each feature, many key-value
+		* https://wiki.openstreetmap.org/wiki/Map_Features
+		* anyone can add any-key value pair, nobody stops you but be responsible
+	- osm editing
+		* https://www.openstreetmap.org/edit
+* https://mapschool.io/
+* OSM - free and open, without legal and technical resitrictions
+	- ODbl: share-aline, attribute, keep-open
+
+**Extract data:**
+* what can be extracted:
+	* taginfo, map_features
+	* key-value pair: `amenity=atm`, `highway=residential`
+	* tags never separated by spaces but underscors
+* overpass API
+	* http://overpass-turbo.eu/
+	* queries:
+	```javascript
+	name=traffic_sign
+	amenity=hospital
+	amenity=hospital and "building:levels"=*
+	amenity=hospital and (phone=* or email=*)
+	## query in "<polygon_name>"
+	amenity=hospital and building=hospital in "karnataka, India"
+	#
+	## regular expression is supported
+	amenity=hospital and name~/[Ll]ife/
+	## around something
+	amenity=hospital around "IIMB"
+	## Using `in` vs `around`
+	```
+	* nodes: yellow have geo-coordinates, red does not have
+	* Mapcss: https://wiki.openstreetmap.org/wiki/MapCSS/0.1
+	* Changing tile server
+		- settings -> map
+	* Download / Export data:
+* Data format
+	* node : a single point
+	* way: an ordered list of nodes, polyline, plygon
+	* relations: logical grouping of nodes and ways
+* **OSM Bulk downloaders:**
+	- http://export.hotosm.org/
+	- http://download.bbbike.org/osm/
+	- http://download.geofabrik.de/
+	- http://www.geofabrik.de
+	- http://umap.openstreetmap.fr/en/
+* **Create Maps - `uMap`**
+	- http://umap.openstreetmap.fr/en/map/new/#6/51.000/2.000
+* https://github.com/poornibadrinath/workshops/tree/gh-pages/OSM-Session-CEPT
+
+
