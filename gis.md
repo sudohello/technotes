@@ -618,6 +618,8 @@ https://gisgeography.com/gis-formats/
 		* HOTOSM Tasks
 	* OSM allows commercialisation
 	* NRSC
+
+
 **Thoughts and Ideas**
 * TBD: connect: pukar+goonj
 * some social issues:
