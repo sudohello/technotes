@@ -642,6 +642,8 @@ https://gisgeography.com/gis-formats/
 	- in-accurate cadastral data
 	- leading to land acquisitions
 * yahoo opendata: `webscope data`
+	- https://webscope.sandbox.yahoo.com/
+	- http://www.trainingdatasets.com/datasets/yahoo-webscope/
 * good amount of effort data scrubbing, engineering, regulartory, legal, disambiguity
 	- to figure out data company can give back; at the same time protect business, customers v/s opendata
 	- company ownership gives sense of security, protection - bring trust wrt data
@@ -667,13 +669,16 @@ https://gisgeography.com/gis-formats/
 	*  Grab:
 		- Grab-NUS AI Lab
 			* using to cut travel time in city traffic
+			* https://www.grab.com/sg/press/tech-product/grab-and-nus-open-ai-lab-to-transform-cities-and-transportation-in-southeast-asia/
+			* https://news.nus.edu.sg/press-releases/Grab-NUS-AI-Lab
 	*  Accenture:
 		- some GIS data -> what kind of <xxx>
 		- Used AI in Computer Vision to audit and replace `telecom poles`
+			* [Ref: Case Study in the ppt](https://www.accenture.com/t20180626T145231Z__w__/in-en/_acnmedia/PDF-81/Accenture-AI_Scale_THINK_Arati-Deo.pdf)
 * Geospatial media commnication - stats and survey
 	* Geospatial regulation bill in 2016 -> put to cold storage
-* mapping of auroville
-	* geomatic studioportal (gisaf)
+* mapping of [Auroville](https://www.auroville.org/)
+	* [geomatic studioportal - gisaf ](https://gis.auroville.org.in/)
 	* python:
 		- is swiff army knief to glue heterogenous pieces
 		- aiohttp, geopandas (also for generating map)
