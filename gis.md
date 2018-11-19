@@ -572,7 +572,7 @@ https://gisgeography.com/gis-formats/
 * http://www.postgis.us/
 
 
-## STOMA - State of Map Asia: **2018**
+## [SOTMA - State Of The Map Asia](https://stateofthemap.asia/): **2018**
 
 ### **1st Day**
 * Pukar
@@ -738,5 +738,15 @@ https://gisgeography.com/gis-formats/
 * **Create Maps - `uMap`**
 	- http://umap.openstreetmap.fr/en/map/new/#6/51.000/2.000
 * https://github.com/poornibadrinath/workshops/tree/gh-pages/OSM-Session-CEPT
+
+
+## Version Management of Geospatial Data
+
+
+### [geogig](http://geogig.org)
+- http://geogig.org/docs/start/installation.html#start-installation
+- http://geogig.org/docs/start/tutorial.html
+
+
 
 
