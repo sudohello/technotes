@@ -441,6 +441,8 @@ os.path.dirname(os.path.abspath(__file__))
           if file.endswith(".txt"):
                print(os.path.join(root, file))
   ```
+* **Matplotlib: save plot to numpy array**
+  * https://stackoverflow.com/questions/7821518/matplotlib-save-plot-to-numpy-array
 * **how-to-downcase-the-first-character-of-a-string?**
   * https://stackoverflow.com/questions/3840843/how-to-downcase-the-first-character-of-a-string
   ```python
