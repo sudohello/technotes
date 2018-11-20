@@ -27,3 +27,10 @@ Tags: Deep Learning - Voice, Speech, Audio
 * https://www.wired.com/brandlab/2018/10/lyrebird-uses-ai-find-artificial-voice/
 * https://lyrebird.ai/
 
+**Podcasts**
+* https://soundcloud.com/theaipodcast/kai-fu-lee-ai
+
+**News and Articles**
+* https://news.developer.nvidia.com/nvidia-to-host-ai-tech-summit-at-neurips
+* https://blogs.nvidia.com/blog/2018/11/06/rsna-radiology-transformation-ai
+* https://www.nvidia.com/en-gb/deep-learning-ai/industries/ai-innovators
