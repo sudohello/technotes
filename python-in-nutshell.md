@@ -2534,6 +2534,16 @@ pip install virtualenvwrapper
 * In addition, there is nuance around whether or not you should freeze all packages to patch versions.
 * The hope is that if you don’t freeze any versions, you get free upgrades from all those upstream library developers. In reality what you’ll notice are the bugs and breaking changes that randomly get introduced into your continuous integration pipeline, or that the next developer to checkout your project needs to spend 30 minutes figuring out the dependency versions that work, rather than what the most recent versions are. It’s difficult to track down the source of these breakages, because they’re not in your own code and the changes were not tracked or intentional. The same logic applies to patch version changes in Python itself.
 
+### Python Setup Configurations
+
+**Update-alternatives**
+* **Use update alternative for multiple python2 version or python3 version**
+  * https://askubuntu.com/questions/609623/enforce-a-shell-script-to-execute-a-specific-python-version
+
+**version checks**
+* https://stackoverflow.com/questions/6141581/detect-python-version-in-shell-script
+
+
 ### virtualenv
 * https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv
 * virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.
