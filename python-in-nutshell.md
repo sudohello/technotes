@@ -2646,10 +2646,10 @@ lssitepackages
   For our 3 applications, our configuration file may look like the following:
 
   [supervisord]
-  logfile = /home/nayan/supervisor/log/supervisord.log
+  logfile = $HOME/supervisor/log/supervisord.log
 
   [program:analytics-app]
-  environment=ANALYTICS_APP_CONFIG=/home/nayan/app_config/analytics_app.cfg
+  environment=ANALYTICS_APP_CONFIG=$HOME/app_config/analytics_app.cfg
   directory=/var/www/apps/analytics-app
   command=/var/www/apps/analytics-app/venv/bin/gunicorn --bind 0.0.0.0:8001 wsgi:app
 
@@ -2662,14 +2662,14 @@ lssitepackages
   command=/var/www/apps/auth-api-app/venv/bin/gunicorn --bind 0.0.0.0:8003 wsgi:app
 
   [unix_http_server]
-  file = /home/nayan/supervisor/supervisor.sock
+  file = $HOME/supervisor/supervisor.sock
   chmod = 0777
-  username = nayan
+  username = blah
   password = 123456
 
   [supervisorctl]
-  serverurl = unix:///home/nayan/supervisor/supervisor.sock
-  username = nayan
+  serverurl = unix://$HOME/supervisor/supervisor.sock
+  username = blah
   password = 123456
 
   [rpcinterface:supervisor]
@@ -2677,6 +2677,14 @@ lssitepackages
   ```
 * pygpu installation
   - https://github.com/roebius/deeplearning_keras2/issues/3
+* **Process Managers**
+  * [supervisord](http://supervisord.org/introduction.html)
+    - Supervisor is a client/server system that allows its users to control a number of processes on UNIX-like operating systems
+  * [circus](https://github.com/circus-tent/circus)
+    - Circus is a program that runs and watches processes and sockets. Circus can be used as a library or through the command line
+    - https://circus.readthedocs.io/en/latest/
+  - https://stackoverflow.com/questions/32290292/is-there-a-supervisor-for-python-3
+  - https://stackoverflow.com/questions/19796883/supervisord-for-python-3
 
 
 ### Best Practices
