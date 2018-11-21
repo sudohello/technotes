@@ -2552,6 +2552,8 @@ pip install virtualenv
 virtualenv --version
 cd my_project_folder
 virtualenv my_project
+## alternatively
+virtualenv --no-site-packages name-of-environment
 virtualenv -p /usr/bin/python2.7 my_project
 ## export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 source my_project/bin/activate
@@ -2676,7 +2678,14 @@ lssitepackages
   supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
   ```
 * pygpu installation
+  - http://deeplearning.net/software/libgpuarray/installation.html#step-by-step-install
   - https://github.com/roebius/deeplearning_keras2/issues/3
+  - https://github.com/openwrt/packages/issues/616
+  - http://queirozf.com/entries/setup-keras-theano-backend-and-gpu-on-ubuntu-16-04
+  - https://www.robberphex.com/2016/05/521
+  - https://theano.readthedocs.io/en/master/install_ubuntu.html
+
+  python setup.py build_ext -L $MY_PREFIX/lib -I $MY_PREFIX/include
 * **Process Managers**
   * [supervisord](http://supervisord.org/introduction.html)
     - Supervisor is a client/server system that allows its users to control a number of processes on UNIX-like operating systems
@@ -2685,6 +2694,24 @@ lssitepackages
     - https://circus.readthedocs.io/en/latest/
   - https://stackoverflow.com/questions/32290292/is-there-a-supervisor-for-python-3
   - https://stackoverflow.com/questions/19796883/supervisord-for-python-3
+
+### Installing Packages
+* Do you want to install OpenCV only in virtualenv or just make OpenCV work in virtualenv? 
+  - https://stackoverflow.com/questions/31389655/install-opencv-into-a-virtual-environment
+  - https://stackoverflow.com/questions/13312139/opencv-and-python-virtualenv/19213369#19213369
+  - copying the shared objects produced from the opencv installation to my virtual environment, seemed to do the trick
+
+**install OpenCV only in virtualenv**
+* https://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
+* provide virtual env path to `cmake` or set it in `ccmake` before compiling and installing
+
+**just make OpenCV work in virtualen**: best way
+* compile and install python bindings systemwide and them copy to respective virtualenv
+* https://stackoverflow.com/questions/37188623/ubuntu-how-to-install-opencv-for-python3
+```bash
+cp /usr/local/lib/python2.7/dist-packages/cv2.so <pathToVirtualEnv>/lib/python2.7/site-packages
+cp /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so  <pathToVirtualEnv>/lib/python3.6/site-packages
+```
 
 
 ### Best Practices
