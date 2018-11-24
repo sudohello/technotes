@@ -937,24 +937,24 @@ In either case you need to keep in mind that the GPU must support CUDA, so AMD/A
 
 
 **mapillary rig setup**
-https://help.mapillary.com/hc/en-us/categories/115000239905
-https://help.mapillary.com/hc/en-us/articles/115001471709
+* https://help.mapillary.com/hc/en-us/categories/115000239905
+* https://help.mapillary.com/hc/en-us/articles/115001471709
 
 IMAGE-BASED RENDERING OF LOD1 3D CITY MODELS FOR TRAFFIC-AUGMENTED IMMERSIVE STREET-VIEW NAVIGATION
-https://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/II-3-W3/7/2013/isprsannals-II-3-W3-7-2013.pdf
+* https://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/II-3-W3/7/2013/isprsannals-II-3-W3-7-2013.pdf
 
 case study: determine the global positions of POI features that appear on two overlapping images
 
 Developing an internet platform for accessing the position and orientation parameters of panoramas in order to determine the global positions of POI features that appear on two overlapping images by intersection, and to determine the position of the exposure center of a panorama from at least three known points by resection. 
 
 FEATURE POSITIONING ON GOOGLE STREET VIEW PANORAMAS 
-http://www.ce.nchu.edu.tw/Pic/Writings/2104_2103_1084-Final-isprsannals-I-4-305-2012.pdf
+* http://www.ce.nchu.edu.tw/Pic/Writings/2104_2103_1084-Final-isprsannals-I-4-305-2012.pdf
 
 GOOGLE STREET VIEW: Capturing the World at Street Level
 
 
 Check the timeline of technology development:
-http://www.tiki-toki.com/timeline/entry/350328/Google-Street-View/
+* http://www.tiki-toki.com/timeline/entry/350328/Google-Street-View/
 
 Google Street View began in March 2001 with The Stanford CityBlock Project.
 
@@ -975,23 +975,22 @@ Hyperlapse is the junction of timelapse with videos that add camera movement. Ba
 
 
 Other papers:
-http://www.vincent-net.com/luc/papers/10ieeecomputer_theworldatstreetlevel.pdf
-http://slideplayer.com/slide/6297331/
+* http://www.vincent-net.com/luc/papers/10ieeecomputer_theworldatstreetlevel.pdf
+* http://slideplayer.com/slide/6297331/
 
 
 ## Georeferencing PCD
-https://gis.stackexchange.com/questions/168761/georeference-xyz-point-cloud
-http://www.agisoft.com/forum/index.php?topic=4132.0
-https://community.topoi.org/documents/95181/583855/Georeferencing_BT_Pointclouds.pdf/55ebd4c8-6dc5-4bc2-87b4-ac758132a2cc
-https://www.cadlinecommunity.co.uk/hc/en-us/articles/115000978749-How-to-Geo-Reference-Point-Cloud-in-Recap-360
-
-http://www.cloudcompare.org/forum/viewtopic.php?t=728
-http://www.cloudcompare.org/doc/wiki/index.php?title=Global_Shift_and_Scale 
-http://www.cloudcompare.org/doc/wiki/index.php?title=Rasterize
+* https://gis.stackexchange.com/questions/168761/georeference-xyz-point-cloud
+* http://www.agisoft.com/forum/index.php?topic=4132.0
+* https://community.topoi.org/documents/95181/583855/Georeferencing_BT_Pointclouds.pdf/55ebd4c8-6dc5-4bc2-87b4-ac758132a2cc
+* https://www.cadlinecommunity.co.uk/hc/en-us/articles/115000978749-How-to-Geo-Reference-Point-Cloud-in-Recap-360
+* http://www.cloudcompare.org/forum/viewtopic.php?t=728
+* http://www.cloudcompare.org/doc/wiki/index.php?title=Global_Shift_and_Scale 
+* http://www.cloudcompare.org/doc/wiki/index.php?title=Rasterize
 
 
 ## OpenSfM
-https://github.com/mapillary/OpenSfM
+* https://github.com/mapillary/OpenSfM
 
 ### Installation
 **Building from source**
@@ -1021,15 +1020,16 @@ http://boostorg.github.io/python/doc/html/index.html
 git clone https://github.com/boostorg/python.git boost-python
 
 **faber**
-https://github.com/stefanseefeld/faber
-
+* https://github.com/stefanseefeld/faber
+```bash
 git clone https://github.com/stefanseefeld/faber.git
 cd faber
 python setup.py build
+```
 
 **boost**
-https://theboostcpplibraries.com/introduction-installation
-https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/
+* https://theboostcpplibraries.com/introduction-installation
+* https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/
 
 sudo ./bootstrap.sh --prefix=/usr/local --with-libraries=all
 sudo ./b2 install
@@ -1043,33 +1043,35 @@ $ export PATH=$PATH:/usr/local/include/:/usr/local/lib/
 - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives
 
 ## Opensource Photogrammetry
-https://link.springer.com/article/10.1186/s40965-017-0027-2
-http://3dom.fbk.eu/projects/graphos
-
-http://3dom.fbk.eu/projects/spherical-photogrammetry
-https://volta.fbk.eu/
+* https://link.springer.com/article/10.1186/s40965-017-0027-2
+* http://3dom.fbk.eu/projects/graphos
+* http://3dom.fbk.eu/projects/spherical-photogrammetry
+* https://volta.fbk.eu/
 
 ## alicevision
-https://alicevision.github.io/
-https://github.com/alicevision/meshroom
-https://sketchfab.com/AliceVision
+* https://alicevision.github.io/
+* https://github.com/alicevision/meshroom
+* https://github.com/alicevision/AliceVision
+* https://sketchfab.com/AliceVision
 
-
+## Misc
+* 3D Face: https://github.com/limingatunc/face3d
+* https://github.com/limingatunc?tab=repositories
 
 ## MicMac
-https://github.com/micmacIGN/micmac
-https://micmac.ensg.eu/index.php/Install
-https://github.com/micmacIGN/InterfaceCEREMA/tree/master/InterfaceCEREMA
+* https://github.com/micmacIGN/micmac
+* https://micmac.ensg.eu/index.php/Install
+* https://github.com/micmacIGN/InterfaceCEREMA/tree/master/InterfaceCEREMA
 
 ## GRAPHOS - C/C++
-https://github.com/itos3d/GRAPHOS
+* https://github.com/itos3d/GRAPHOS
 
 ## nframes
-https://www.nframes.com/
+* https://www.nframes.com/
 
 ## Spherical Photogrammetry
-http://3dom.fbk.eu/projects/spherical-photogrammetry
-http://3dom.fbk.eu/sites/3dom.fbk.eu/files/pdf/barazzetti_etal_VAST2010.pdf
+* http://3dom.fbk.eu/projects/spherical-photogrammetry
+* http://3dom.fbk.eu/sites/3dom.fbk.eu/files/pdf/barazzetti_etal_VAST2010.pdf
 
 - Images are then stitched together and eventually the derived panorama is projected on a virtual sphere.
 - Several commercial packages are also available to perform this task (Realviz Stitcher, PTgui, Autopano, etc.)
