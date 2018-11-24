@@ -1025,6 +1025,9 @@ vars(dataset).keys()
 dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_classes', 'class_ids', 'class_names', 'num_images', 'class_from_source_map', 'image_from_source_map', 'sources'])
 ```
 
+* http://www.immersivelimit.com/tutorials/using-mask-r-cnn-on-custom-coco-like-dataset
+
+
 
 #### Images to OSM
 * https://github.com/jremillard/images-to-osm
