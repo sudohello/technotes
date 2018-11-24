@@ -441,6 +441,21 @@ os.path.dirname(os.path.abspath(__file__))
           if file.endswith(".txt"):
                print(os.path.join(root, file))
   ```
+* one-line-list-comprehension-if-else-variants
+  * https://stackoverflow.com/questions/17321138/one-line-list-comprehension-if-else-variants
+  * x if y else z is the syntax for the expression you're returning for each element. Thus you need:
+  ```python
+  [ x if x%2 else x*100 for x in range(1, 10) ]
+  ```
+  * The confusion arises from the fact you're using a filter in the first example, but not in the second. In the second example you're only mapping each value to another, using a ternary-operator expression.
+  * With a filter, you need:
+  ```python
+  [ EXP for x in seq if COND ]
+  ```
+  * Without a filter you need:
+  ```python
+  [ EXP for x in seq]
+  ```
 * **Matplotlib: save plot to numpy array**
   * https://stackoverflow.com/questions/7821518/matplotlib-save-plot-to-numpy-array
 * **how-to-downcase-the-first-character-of-a-string?**
@@ -2215,6 +2230,8 @@ sudo pip install mistune
   ```bash
   jupyter-nbconvert --to script demo.ipynb
   ```
+* Convert Python files to IPython Notebook Files: `.py` to `'.ipyb`
+  - https://www.webucator.com/blog/2015/07/bulk-convert-python-files-to-ipython-notebook-files-py-to-ipynb-conversion/
 
 
 ## Caffe, TensorFlow, Keras for Python2 and Python3
@@ -2743,6 +2760,10 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 **Wheel V/s Egg**
 * https://packaging.python.org/discussions/wheel-vs-egg/
 
+### Running Python's PDB debugger with Docker, Flask and Gunicorn
+* https://www.fullstackpython.com/blog/python-3-flask-gunicorn-ubuntu-1804-bionic-beaver.html
+* https://blog.lucasferreira.org/howto/2017/06/03/running-pdb-with-docker-and-gunicorn.html
+* https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-convenience-script
 
 ## Lore
 * https://github.com/instacart/lore

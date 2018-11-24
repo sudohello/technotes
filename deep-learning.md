@@ -434,17 +434,6 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 * https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
 * https://in.udacity.com/course/how-to-use-git-and-github--ud775
 
-## Pre-training, Transfer Learning
-* http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html#transfer
-* https://www.analyticsvidhya.com/blog/2017/06/transfer-learning-the-art-of-fine-tuning-a-pre-trained-model/
-* https://www.analyticsvidhya.com/blog/2017/05/neural-network-from-scratch-in-python-and-r/
-* https://github.com/alexgkendall/caffe-segnet/issues/3
-
-http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-detector-in-tensorflow.html
-
-
-https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
-
 ### Training on ImageNet
 * https://medium.com/syncedreview/tencent-ml-team-trains-imagenet-in-record-four-minutes-d3d85eff2062
 
@@ -941,9 +930,6 @@ python object_detection/inference.py \
 - https://nanonets.com/
 - https://github.com/NanoNets/object-detection-sample-python.git
 
-**Transfer Learning**
-- https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
-
 **Pre-trained Models**
 - https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
 Download one of these models, and extract the contents into your base directory. You will receive the model checkpoints, a frozen inference graph, and a pipeline.config file.
@@ -1005,28 +991,39 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 ### **matterport/Mask_RCNN**
 - https://github.com/matterport/Mask_RCNN
 - https://github.com/matterport/Mask_RCNN/releases
+- https://github.com/matterport/Mask_RCNN/wiki
 
 * how the model works and show how to use it in a real application.
 * uses a ResNet101 + FPN backbone.
 * Region Proposal Network (RPN)
   * The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects. If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
-* **Mask-RCNN Training**
-  - https://stackoverflow.com/questions/49684468/mask-r-cnn-for-object-detection-and-segmentation-train-for-a-custom-dataset
-  * You need to have all your annotations.
-  * All of those need to be converted to VGG Polygon schema (yes i mean polygons). I have added a sample VGG Polygon format at the end of this answer.
-  * You need to divide your custom dataset into train, test and val
-  * The annotation by default are looked with a filename via_region_data.json inside the individual dataset folder. For eg for training images it would look at train\via_region_data.json. You can also change it if you want.
-  * Inside Samples folder you can find folders like Balloon, Nucleus, Shapes etc. Copy one of the folders. Preferably balloon. We will now try to modify this new folder for our custom dataset.
-  * Inside the copied folder, you will have a .py file (for balloon it will be balloon.py), change the following variables
-  * ROOT_DIR : the absolute path where you have cloned the project
-  * DEFAULT_LOGS_DIR : This folder will get bigger in size so change this path accordingly (if you are running your code in a low disk storage VM). It will store the .h5 file as well. It will make subfolder inside the log folder with timestamp attached to it.
-  * `.h5` files are roughly 200 - 300 MB per epoch. But guess what this log directory is Tensorboard compatible. You can pass the timestamped subfolder as --logdir argument while running tensorboard.
-  * This `.py` file also has two classes - one class with suffix as Config and another class with suffix as Dataset.
+
+#### **Mask-RCNN Training**
+- https://stackoverflow.com/questions/49684468/mask-r-cnn-for-object-detection-and-segmentation-train-for-a-custom-dataset
+* You need to have all your annotations.
+* All of those need to be converted to VGG Polygon schema (yes i mean polygons). I have added a sample VGG Polygon format at the end of this answer.
+* You need to divide your custom dataset into train, test and val
+* The annotation by default are looked with a filename via_region_data.json inside the individual dataset folder. For eg for training images it would look at train\via_region_data.json. You can also change it if you want.
+* Inside Samples folder you can find folders like Balloon, Nucleus, Shapes etc. Copy one of the folders. Preferably balloon. We will now try to modify this new folder for our custom dataset.
+* Inside the copied folder, you will have a .py file (for balloon it will be balloon.py), change the following variables
+* ROOT_DIR : the absolute path where you have cloned the project
+* DEFAULT_LOGS_DIR : This folder will get bigger in size so change this path accordingly (if you are running your code in a low disk storage VM). It will store the .h5 file as well. It will make subfolder inside the log folder with timestamp attached to it.
+* `.h5` files are roughly 200 - 300 MB per epoch. But guess what this log directory is Tensorboard compatible. You can pass the timestamped subfolder as --logdir argument while running tensorboard.
+* This `.py` file also has two classes - one class with suffix as Config and another class with suffix as Dataset.
+* https://codesign.blog/2018/07/11/mask-r-cnn-mask-r-cnn-for-object-detection-and-instance-segmentation-on-keras-and-tensorflow-2/
+
+**Case Studies**
+* **splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow**
+  * https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
+  - baloon: done
+* video
+  * https://github.com/priya-dwivedi/Deep-Learning/blob/master/Mask_RCNN/Mask_RCNN_Videos.ipynb
 
 
-#### splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow
-* https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
-- baloon: done
+```python
+vars(dataset).keys()
+dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_classes', 'class_ids', 'class_names', 'num_images', 'class_from_source_map', 'image_from_source_map', 'sources'])
+```
 
 
 #### Images to OSM
@@ -1035,6 +1032,8 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 
 #### Applications in other projects:
 * 4K video
+  * https://www.youtube.com/watch?v=OOT3UIXZztE
+  * https://github.com/karolmajek/Mask_RCNN
 * Segmenting Nuclei in Microscopy Images.  - https://github.com/matterport/Mask_RCNN/tree/master/samples/nucleus
 * splash of color
 * image to osm - https://github.com/jremillard/images-to-osm
@@ -1115,14 +1114,29 @@ Now we expect that you have downloaded all the files in the datasets section and
 **GeoAI - thoughts about where AI and GIS intersect**
 * https://medium.com/geoai
 
-**Transfer Learning**
-> I mean a person who can boil eggs should know how to boil just water right?
+
+## Pre-training, Transfer Learning
+* http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html#transfer
+* https://www.analyticsvidhya.com/blog/2017/06/transfer-learning-the-art-of-fine-tuning-a-pre-trained-model/
+* https://www.analyticsvidhya.com/blog/2017/05/neural-network-from-scratch-in-python-and-r/
+* https://github.com/alexgkendall/caffe-segnet/issues/3
+* http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-detector-in-tensorflow.html
+* https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+
+- https://www.tensorflow.org/hub/tutorials/image_retraining
+- https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a
 
 
 * https://towardsdatascience.com/transfer-learning-and-image-classification-using-keras-on-kaggle-kernels-c76d3b030649
 * Well Transfer learning works for Image classification problems because Neural Networks learn in an increasingly complex way. i.e The deeper you go down the network the more image specific features are learnt.
 * The take-away here is that the earlier layers of a neural network will always detect the same basic shapes and edges that are present in both the picture of a car and a person.
 * There are different variants of pretrained networks each with its own architecture, speed, size, advantages and disadvantages.
+
+**Transfer Learning**
+> I mean a person who can boil eggs should know how to boil just water right?
+
+- https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
+
 
 
 **Removing objects**
@@ -1168,9 +1182,6 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
     * https://en.wikipedia.org/wiki/Tensor_processing_unit
     * A tensor processing unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google specifically for neural network machine learning.
 
-**Transfer Learning**
-- https://www.tensorflow.org/hub/tutorials/image_retraining
-
 
 **VoxelNet**
 *  VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection
@@ -1179,7 +1190,8 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 * https://github.com/qianguih/voxelnet
 * https://github.com/jeasinema/VoxelNet-tensorflow
 
-
+## Road Segmentation
+* https://roadmaps.csail.mit.edu/roadtracer/
 
 ## Computer Vision Conferences, Challanges
 * http://www.guide2research.com/topconf/computer-vision

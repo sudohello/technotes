@@ -19,43 +19,58 @@ Tags: Datasets and Data Creation for Training Machines
 
 
 ## Image Labeling / Annotation Tools
-* https://github.com/ox-vgg/via - simple, intutive, best
-  - http://www.robots.ox.ac.uk/~vgg/blog/author/abhishek-dutta.html
-  - http://www.robots.ox.ac.uk/~vgg/software/via/
-  - http://www.robots.ox.ac.uk/~vgg/software/via/via-1.0.6.html
-  - http://www.robots.ox.ac.uk/~vgg/blog/vgg-image-annotator.html
-* https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
-* https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
-* https://github.com/tzutalin/labelImg
-  - `git clone https://github.com/tzutalin/labelImg.git`
-* http://sloth.readthedocs.io/en/latest/
-* https://github.com/yuyu2172/image-labelling-tool
-* https://blog.playment.io/training-data-for-computer-vision/
-* https://alpslabel.wordpress.com/
-* https://github.com/commaai/commacoloring
-* https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
-* https://github.com/Labelbox/Labelbox/blob/master/LICENSE
-* https://oclavi.com/
-* https://playment.io/image-annotation/
-* https://blog.playment.io/training-data-for-computer-vision/
-* https://github.com/davisking/dlib/tree/master/tools/imglab
-```bash
-git clone https://github.com/davisking/dlib.git
-cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
-```
-* VoTT - https://github.com/Microsoft/VoTT/blob/master/README.md
-* LabelMe
+* **VGG VIA**
+  * https://github.com/ox-vgg/via - simple, intutive, best
+    - http://www.robots.ox.ac.uk/~vgg/blog/author/abhishek-dutta.html
+    - http://www.robots.ox.ac.uk/~vgg/software/via/
+    - http://www.robots.ox.ac.uk/~vgg/software/via/via-1.0.6.html
+    - http://www.robots.ox.ac.uk/~vgg/blog/vgg-image-annotator.html
+  * VGG VIA tool saves the annotations in a JSON file, and each mask is a set of polygon points
+  * No documentation for the format, but it’s pretty easy to figure out by looking at the generated JSON
+* **labelImg**
+  * https://github.com/tzutalin/labelImg
+    - `git clone https://github.com/tzutalin/labelImg.git`
+* **commacoloring**
+  * https://github.com/commaai/commacoloring
+  * https://commacoloring.herokuapp.com/
+  * based on `js-segment-annotator`
+* **js-segment-annotator**
+  * https://github.com/kyamagu/js-segment-annotator
+  * http://kyamagu.github.io/js-segment-annotator/?view=index
+* **LabelBox**
+  * https://github.com/Labelbox/Labelbox/blob/master/LICENSE
+  * https://www.labelbox.com/
+  * https://github.com/Labelbox/Labelbox/tree/master/custom-interfaces/classification
+* **VoTT**
+  * https://github.com/Microsoft/VoTT/blob/master/README.md
+* **LabelMe**
   * https://github.com/wkentaro/labelme
   * https://github.com/CSAILVision/LabelMeAnnotationTool
   * https://en.wikipedia.org/wiki/LabelMe
-
-## Vector Editors
-* http://teselagen.github.io/openVectorEditor/#/Editor
-
-
-https://www.crowdai.org/challenges/mapping-challenge
-
-
+* **imglab**
+  * https://github.com/davisking/dlib/tree/master/tools/imglab
+  ```bash
+  git clone https://github.com/davisking/dlib.git
+  cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
+  ```
+* **CoCo UI**
+  * https://github.com/tylin/coco-ui
+  * The tool used to annotate the COCO dataset.
+* **Vector Editors**
+  * http://teselagen.github.io/openVectorEditor/#/Editor
+* **Listing of Tools**
+  * https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
+  * https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
+  * http://sloth.readthedocs.io/en/latest/
+  * https://github.com/yuyu2172/image-labelling-tool
+  * https://blog.playment.io/training-data-for-computer-vision/
+  * https://alpslabel.wordpress.com/
+  * https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
+  * https://oclavi.com/
+  * https://playment.io/image-annotation/
+  * https://blog.playment.io/training-data-for-computer-vision/
+* **Misc**
+  * https://www.crowdai.org/challenges/mapping-challenge
 
 ## Amazon Mechanical Turk - MTurk
 - https://www.mturk.com/
@@ -78,7 +93,18 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 **Key Terms**
 * HIT - Human Intelligence Task
 
-## Labelling
+## Labelling for AI datasets
+
+**Format**
+* There isn’t a universally accepted format to store segmentation masks
+* Some datasets save them as PNG images, others store them as polygon points, and so on
+
+**Loading the Dataset**
+* To handle all these cases,implementation should provide a Dataset class that is inherited from and then override a few functions to read your data in whichever format it happens to be.
+
+**Tools**
+
+**Labeling for Self-Driving Cards**
 - https://github.com/udacity/self-driving-car
 - http://aid-driving.eu/active-learning-and-labeling/
 - add situation-specific label
@@ -124,6 +150,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * COCO
   - http://cocodataset.org/#home
   - COCO is a large-scale object detection, segmentation, and captioning dataset
+  - https://github.com/cocodataset
+  - http://cocodataset.org/#overview
 * PASCAL VOC
   - http://host.robots.ox.ac.uk/pascal/VOC/
   ```bash
@@ -248,11 +276,34 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 2. [Mapillary](mapillary-dataset.md)
 3. [ApolloScape](apolloscape-dataset.md)
 
+### MS COCO
+http://cocodataset.org/#home
+COCO is a large-scale object detection, segmentation, and captioning dataset. COCO has several features:
+
+Object segmentation
+Recognition in context
+Superpixel stuff segmentation
+330K images (>200K labeled)
+1.5 million object instances
+80 object categories
+91 stuff categories
+5 captions per image
+250,000 people with keypoints
+
+https://github.com/aleju/imgaug (pip3 install imgaug)
+
+Download and install the Python COCO tools from https://github.com/waleedka/coco
+That's a fork from the original https://github.com/pdollar/coco with a bug
+fix for Python 3.
+I submitted a pull request https://github.com/cocodataset/cocoapi/pull/50
+If the PR is merged then use the original repo.
+Note: Edit PythonAPI/Makefile and replace "python" with "python3".
+
 
 ## Dataset Pre-processing
 * http://shubhagrawal.in/2016/10/13/machine-learning-data-preprocessing/
 
-# TBD
+## TBD
 * https://www.kaggle.com/learn/machine-learning
 * https://github.com/CPFL/Autoware
 * https://maptools.tier4.jp/
