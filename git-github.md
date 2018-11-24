@@ -414,3 +414,30 @@ git push
 * What is the Difference Between Mercurial and Git?
 * 2018 Version Control Software Comparison: SVN, Git, Mercurial
   - https://biz30.timedoctor.com/git-mecurial-and-cvs-comparison-of-svn-software/
+
+
+
+## technotes jekyll site
+
+* **frontmatter:**
+  * title
+  * author
+  * keyowrds
+  * last_updated
+  * tags
+  * summary
+  * sidebar
+  * permalink
+  * folder
+  - date
+  - description
+  - categories
+  - resources
+  - set
+  - set_order
+  - type:video,document; video_id
+* **dofferent type of contens**
+  * blogs
+  * pages
+    * topic
+    * listing pages

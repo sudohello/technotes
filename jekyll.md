@@ -93,6 +93,9 @@ Lunr.js is a small, full-text search library for use in the browser. It indexes 
 
 * why a server-side search solution is needed?
 
+* https://idratherbewriting.com/2016/03/23/release-of-documentation-theme-for-jekyll-50/
+integrate with something like Algolia or Swiftype to provide a more powerful search feature or integrate something from Apache Solr
+
 ## Links
 - https://stackoverflow.com/questions/25826770/jekyll-using-links-to-internal-markdown-files
 
@@ -174,6 +177,8 @@ https://olivierpieters.be/blog/2016/02/26/creating-a-jekyll-image-gallery
     - https://github.com/CloudCannon/base-jekyll-template
 * git-hub Documentation theme
   * https://github.com/tomjoht/documentation-theme-jekyll
+  * https://idratherbewriting.com/documentation-theme-jekyll/pdf/mydoc.pdf
+
 
 **Image / Photography**
 * pintereso

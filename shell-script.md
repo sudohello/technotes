@@ -64,3 +64,6 @@ For the stripped-down version of vim shipped with debian/ubuntu by default, type
   * IFS stands for "internal field separator". It is used by the shell to determine how to do word splitting, i. e. how to recognize word boundaries.
 * **Internal Variables**
   * http://tldp.org/LDP/abs/html/internalvariables.html
+* **Is double square brackets [[ ]] preferable over single square brackets [ ] in Bash?**
+  * https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba
+  * `[[` has fewer surprises and is generally safer to use. But it is not portable - POSIX doesn't specify what it does and only some shells support it (beside bash, I heard ksh supports it too). For example, you can do
