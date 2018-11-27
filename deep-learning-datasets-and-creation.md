@@ -69,8 +69,6 @@ Tags: Datasets and Data Creation for Training Machines
   * https://oclavi.com/
   * https://playment.io/image-annotation/
   * https://blog.playment.io/training-data-for-computer-vision/
-* **Misc**
-  * https://www.crowdai.org/challenges/mapping-challenge
 
 ## Amazon Mechanical Turk - MTurk
 - https://www.mturk.com/
@@ -125,6 +123,18 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 ## Dataset / Data source / Datasource for ML / Deep Learning / Computer Vision Datasets
 
+### AI datasets Search Engines
+* http://classif.ai/
+
+
+
+### **Datasets Detailed Review / Overview**
+
+1. [Cityscape](cityscape-dataset.md)
+2. [Mapillary](mapillary-dataset.md)
+3. [ApolloScape](apolloscape-dataset.md)
+4. [MS COCO](mscoco-dataset.md)
+
 
 ### **Extensive List of Datasets**
 - https://projet.liris.cnrs.fr/voir/wiki/doku.php?id=datasets
@@ -133,72 +143,98 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - https://martin-thoma.com/sota/
 - SotA - State of the Arts
 
-* **[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)**
-  - One popular toy image classification dataset is the CIFAR-10 dataset. This dataset consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example “airplane, automobile, bird, etc”). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images.
-  - https://www.cs.toronto.edu/~kriz/cifar.html
+* **Imagenet**
+  - http://www.image-net.org/
+  - http://image-net.org/download-API
+  - http://image-net.org/download
+* **OpenImages**
+  - https://storage.googleapis.com/openimages/web/index.html
+  - https://github.com/openimages/dataset
+* **Tencent**
+  - https://medium.com/syncedreview/tencent-open-sources-its-massive-multi-labeled-image-dataset-7b0b3dd5373f
+* **Google JFT-300M**
+  - https://arxiv.org/pdf/1707.02968.pdf
+  - https://ai.googleblog.com/2017/07/revisiting-unreasonable-effectiveness.html
 * **Pima Indians**
 * **Ionosphere**
   - http://cv-tricks.com/tensorflow-tutorial/understanding-alexnet-resnet-squeezenetand-running-on-tensorflow/
-* Image segmentations
+* **Image segmentations**
   - https://aws.amazon.com/public-datasets/spacenet/
   - http://www.cvlibs.net/datasets/kitti/eval_road.php
-* Viva
-  - http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
-* LISA
-  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
-  - https://www.codemade.io/lisa-traffic-sign-dataset/
-* COCO
+* **MS COCO**
   - http://cocodataset.org/#home
   - COCO is a large-scale object detection, segmentation, and captioning dataset
   - https://github.com/cocodataset
   - http://cocodataset.org/#overview
-* PASCAL VOC
+  - **Annnotation Format**
+    * https://github.com/cocodataset/cocoapi/issues/111
+    ```bash
+    git clone https://github.com/cocodataset/cocoapi.git
+    ```
+  * Download train2014
+    ```bash
+    wget -c http://images.cocodataset.org/annotations/annotations_trainval2014.zip
+    wget -c http://images.cocodataset.org/zips/train2014.zip
+    wget -c http://images.cocodataset.org/zips/val2014.zip
+    wget -c https://dl.dropboxusercontent.com/s/s3tw5zcg7395368/instances_valminusminival2014.json.zip?dl=0
+    ```
+  * **coco stuff**
+    * https://github.com/nightrome/cocostuff
+* **PASCAL VOC**
   - http://host.robots.ox.ac.uk/pascal/VOC/
   ```bash
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
   wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
   ```
-*  MNIST, then notMNIST, another famous one is cifar-10, cifar-100, and for driverless cars, we have GTSRB (Traffic sign recognition), GTSDB (Traffic sign detection) 
 * **Inria**
   - A large set of marked up images of standing or walking people
   - http://pascal.inrialpes.fr/data/human/
   ```bash
   wget -c ftp://ftp.inrialpes.fr/pub/lear/douze/data/INRIAPerson.tar
   ```
-* http://course.fast.ai/datasets
+*  **Misc**
+  * MNIST
+  * notMNIST
+  * **[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)**
+    - One popular toy image classification dataset is the CIFAR-10 dataset. This dataset consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example “airplane, automobile, bird, etc”). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images.
+    - https://www.cs.toronto.edu/~kriz/cifar.html
+  * cifar-100
+* **fast.ai**
+  * http://course.fast.ai/datasets
+* **Viva**
+  - http://cvrr.ucsd.edu/vivachallenge/index.php/signs/sign-detection/
+* **LISA**
+  - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
+  - https://www.codemade.io/lisa-traffic-sign-dataset/
+* **Caltech-UCSD Birds-200-2011**
+  * http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
+  * Warning: Images in this dataset overlap with images in ImageNet. Exercise caution when using networks pretrained with ImageNet (or any network pretrained with images from Flickr) as the test set of CUB may overlap with the training set of the original network.
+* **Chinsese Dataset**
+  * https://ctwdataset.github.io/
+* **crowd-ai**
+  * **Satellite Images: Building Footprint**
+    * https://unitar.org/unosat/
+    * https://www.unglobalpulse.org/
+  * **Main web site for reference:** https://www.crowdai.org/challenges/mapping-challenge
+  * **[Baseline](https://github.com/crowdai/crowdai-mapping-challenge-mask-rcnn)**
+    ```bash
+    git clone https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn.git
+    ```
+  * **[Round-1 Starter Kit](https://github.com/crowdAI/mapping-challenge-starter-kit)**
+    ```bash
+    git clone https://github.com/crowdAI/mapping-challenge-starter-kit.git
+    ```
+  * **[Round-2 Starter Kit](https://github.com/crowdAI/mapping-challenge-round2-starter-kit)**
+  * **open solution**
+    * https://github.com/neptune-ml/open-solution-mapping-challenge
 
-**Caltech-UCSD Birds-200-2011**
-* http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
-* Warning: Images in this dataset overlap with images in ImageNet. Exercise caution when using networks pretrained with ImageNet (or any network pretrained with images from Flickr) as the test set of CUB may overlap with the training set of the original network.
-
-
-## AI datasets Search Engines
-* http://classif.ai/
-
-
-### General Images
-* Imagenet
-  - http://www.image-net.org/
-  - http://image-net.org/download-API
-  - http://image-net.org/download
-* OpenImages - https://storage.googleapis.com/openimages/web/index.html
-  - https://github.com/openimages/dataset
-* Coco Dataset
-  - http://cocodataset.org/#home
-* Tencent
-  - https://medium.com/syncedreview/tencent-open-sources-its-massive-multi-labeled-image-dataset-7b0b3dd5373f
-* Google JFT-300M
-  - https://arxiv.org/pdf/1707.02968.pdf
-  - https://ai.googleblog.com/2017/07/revisiting-unreasonable-effectiveness.html
-
-
-### Chinsese Dataset
-* https://ctwdataset.github.io/
 
 
 ### Traffic Sign Datasets
 * **German**
+  * GTSRB (Traffic sign recognition)
+  * GTSDB (Traffic sign detection) 
   - http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
 * **LISA: Laboratory for Intelligent Safe Automobiles**
   - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
@@ -222,6 +258,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
     - Names are:
       - XXXXX_YYYYY.ppm, XXXXX - pole number
       - running number for the views where the traffic sign is annotated. There is no temporal order of the images
+
 
 ### **Self Driving Car Datasets Semantic Segmentation**
 - https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/
@@ -270,38 +307,12 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   - https://www.kaggle.com/datasets
   - https://archive.ics.uci.edu/ml/datasets.html
 
-## Datasets Detailed Review
-
-1. [Cityscape](cityscape-dataset.md)
-2. [Mapillary](mapillary-dataset.md)
-3. [ApolloScape](apolloscape-dataset.md)
-
-### MS COCO
-http://cocodataset.org/#home
-COCO is a large-scale object detection, segmentation, and captioning dataset. COCO has several features:
-
-Object segmentation
-Recognition in context
-Superpixel stuff segmentation
-330K images (>200K labeled)
-1.5 million object instances
-80 object categories
-91 stuff categories
-5 captions per image
-250,000 people with keypoints
-
-https://github.com/aleju/imgaug (pip3 install imgaug)
-
-Download and install the Python COCO tools from https://github.com/waleedka/coco
-That's a fork from the original https://github.com/pdollar/coco with a bug
-fix for Python 3.
-I submitted a pull request https://github.com/cocodataset/cocoapi/pull/50
-If the PR is merged then use the original repo.
-Note: Edit PythonAPI/Makefile and replace "python" with "python3".
-
-
 ## Dataset Pre-processing
 * http://shubhagrawal.in/2016/10/13/machine-learning-data-preprocessing/
+
+## Dataset Creation
+After working hard to collect your images and annotating all the objects, you have to decide what format you’re going to use to store all that info. 
+
 
 ## TBD
 * https://www.kaggle.com/learn/machine-learning
