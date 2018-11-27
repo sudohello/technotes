@@ -2782,3 +2782,34 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 **Resources**
 * https://sites.google.com/site/yorkyuhuang/home/tutorial - very interesting k-bank slides
 * http://www.akshaysoam.com/#/projects
+
+
+## Python in GIS
+* geopanda
+* shapely
+
+
+
+
+**References**
+* https://www.earthdatascience.org/courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-to-coordinate-reference-systems-python/
+* https://shapely.readthedocs.io/en/stable/project.html
+* https://fiona.readthedocs.io/en/latest/README.html
+* https://speakerdeck.com/supercooper/bridging-gis-and-3d-animation-with-python?slide=83
+* https://gisgeography.com/free-gis-programming-tutorials
+* https://www.e-education.psu.edu/geog485/node/17
+**Blogs**
+* http://geospatialpython.com/
+
+**Automating GIS using Pytho**
+* https://github.com/Automating-GIS-processes/2018
+* https://automating-gis-processes.github.io/2016/Lesson1-Geometric-Objects.html
+* https://github.com/Python-for-geo-people
+
+**e-books**
+* http://file.allitebooks.com/20160104/Learning%20Geospatial%20Analysis%20with%20Python.pdf
+* http://file.allitebooks.com/20171009/Python%20for%20Data%20Analysis,%202nd%20Edition.pdf
+
+### geopandas
+* https://geohackweek.github.io/vector/04-geopandas-intro/
+* http://geopandas.org/mapping.html

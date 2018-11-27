@@ -70,6 +70,18 @@ Cesium is a globe and map engine that can render 3D and 2D Maps. There are diffe
 8. **[wrld3d](https://www.wrld3d.com/3d-maps/indoor-mapping/)**
 Check out our 3D mapping platform, it's free to use and its a true ready build 3D environment. Available on web, mobile, VR, AR, Unity and Desktop. www.wrld3d.com Share with us what you think on Twitter @wrld3d
 9. **WebGL for 3D**
+10. **[Maptalks](http://maptalks.org)**
+  * http://maptalks.org/examples/en/3d/polygon-altitude/
+  * http://maptalks.org/examples/en/style/line-arrow/
+  * http://maptalks.org/examples/en/3d/line-draw-altitude/#3d_line-draw-altitude
+  * https://github.com/maptalks/maptalks.js
+11. **deck gl, vis-gl, keppler gl**
+  *  https://medium.com/vis-gl/deckgl-and-mapbox-better-together-47b29d6d4fb1
+  * https://eng.uber.com/deck-gl-framework/
+  * **Deck GL**
+    > 3D Visualization over map, mapboxgl, deckgl
+    * http://uber.github.io/deck.gl/#/documentation/overview/introduction
+    * http://uber.github.io/deck.gl/#/
 
 
 ## Data format for 3D City
@@ -382,12 +394,15 @@ For software around vector tiles see https://github.com/mapbox/awesome-vector-ti
 * https://maps3d.io/
 * http://bl.ocks.org/letmaik/e71eae5b3ae9e09f8aeb288c3b95230b
 
-## Vector Tile 3rd Parties Business Models
+## 3D Lines, Line Extrusion, 3D Map
+**Vector Tile 3rd Parties Business Models**
 * https://www.jawg.io/en/
 * http://maptalks.org/examples/en/3d/polygon-altitude/
 * http://maptalks.org/examples/en/style/line-arrow/
 * http://maptalks.org/examples/en/3d/line-draw-altitude/#3d_line-draw-altitude
 * https://github.com/maptalks/maptalks.js
+* https://maptalks.org/
+
 
 ### Raster V/s Vector
 * http://vector-conversions.com/vectorizing/raster_vs_vector.html
