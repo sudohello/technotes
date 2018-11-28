@@ -799,6 +799,28 @@ more information, such as the ld(1) and ld.so(8) manual pages.
 
 
 ## Utilities
+* Open and Edit Large text files
+  * https://askubuntu.com/questions/28847/text-editor-to-edit-large-4-3-gb-plain-text-file
+  * https://joe-editor.sourceforge.io/
+  * https://stackoverflow.com/questions/1591723/working-with-huge-files-in-vim
+  * http://stoopidsimple.com/lfhex
+  * Another method is to use split. Split the file into 8 pieces and manipulate the files with a editor. After  hat, you reassemble the files again
+    ```bash
+    split -b 53750k <your-file>
+    cat xa* > <your-file>
+    SYNOPSIS
+           split [OPTION]... [INPUT [PREFIX]]
+    -a, --suffix-length=N
+                  use suffixes of length N (default 2)
+           -b, --bytes=SIZE
+                  put SIZE bytes per output file
+           -C, --line-bytes=SIZE
+                  put at most SIZE bytes of lines per output file
+           -d, --numeric-suffixes
+                  use numeric suffixes instead of alphabetic
+           -l, --lines=NUMBER
+                  put NUMBER lines per output file
+    ```
 * Sublime Text Editor - [sublime-text-editor.md]
 * Beyond Compare - Comparing text Files
 	- http://www.scootersoftware.com/download.php?zz=kb_linux_install
