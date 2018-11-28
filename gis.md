@@ -295,6 +295,12 @@ manipulation
 - It supports various types of display like elevation, satellite, LiDAR, KMZ and MrSID.
 13. [OrbisGIS](http://www.orbisgis.org/)
 14. [TerraLib](http://www.terralib.org/)
+15. [openEV](http://openev.sourceforge.net/)
+	* https://en.wikipedia.org/wiki/OpenEV
+16. [CIETmap](http://www.ciet.org/en/method/cietmap-software/)
+	* CIETmap is free, user-friendly software linking maps with epidemiological analy
+17. List of Open source GIS Tools
+	* https://gisgeography.com/free-gis-software/
 
 ## Data Collection
 
@@ -571,6 +577,17 @@ https://gisgeography.com/gis-formats/
 ## Post-gis
 * http://www.postgis.us/
 
+## Data sources
+* https://worlddem-database.terrasar.com/
+	* Recently, more ambitious attempts at a worldwide elevation dataset are underway in the form of TerraSAR-X and TanDEM-X satellites launched by Germany in 2007 and 2010, respectively. These two radar elevation satellites worked together to produce a global DEM called WorldDEM that was released on April 15, 2014. This dataset has a relative accuracy of two meters and an absolute accuracy of four meters.
+
+* https://gisgeography.com/free-global-dem-data-sources/
+* https://www.gislounge.com/world-gis-data/
+
+
+## Remote Sensing
+* https://gisgeography.com/satellite-list/
+
 
 ## [SOTMA - State Of The Map Asia](https://stateofthemap.asia/): **2018**
 
@@ -745,6 +762,8 @@ https://gisgeography.com/gis-formats/
 * **Create Maps - `uMap`**
 	- http://umap.openstreetmap.fr/en/map/new/#6/51.000/2.000
 * https://github.com/poornibadrinath/workshops/tree/gh-pages/OSM-Session-CEPT
+
+
 
 
 ## Version Management of Geospatial Data
