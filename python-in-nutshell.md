@@ -722,6 +722,9 @@ sudo pip list --format=columns | grep -E 'h5py|pillow|numpy|scikit-learn|tensorf
 #pandas                        0.22.0     
 #scikit-learn                  0.19.1     
 #scipy                         1.0.1      
+#
+## check from requirement.txt has which may or may not have version specified
+pip list | grep -E $(cat requirements.txt | cut -d'=' -f1 | tr '\n' '|')
 ```
 * **Install form the directory**
 ```bash

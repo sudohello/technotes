@@ -987,6 +987,8 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
   * https://medium.com/neuromation-io-blog/neuronuggets-segmentation-with-mask-r-cnn-c76d363b67fb
   * https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
 
+### Mask-rcnn Docker
+* https://github.com/waspinator/deep-learning-explorer/tree/master/mask-rcnn
 
 ### **matterport/Mask_RCNN**
 - https://github.com/matterport/Mask_RCNN
@@ -1026,7 +1028,9 @@ dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_cl
 ```
 
 * http://www.immersivelimit.com/tutorials/using-mask-r-cnn-on-custom-coco-like-dataset
-
+* https://patrickwasp.com/train-a-mask-r-cnn-model-on-your-own-dataset/
+  * **Mask-rcnn results back to COCO format**
+    * https://github.com/waspinator/deep-learning-explorer/blob/master/mask-rcnn/notebooks/mask_rcnn.ipynb
 
 
 #### Images to OSM
@@ -1074,6 +1078,42 @@ dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_cl
   - https://github.com/crowdAI/mapping-challenge-round2-starter-kit
   - https://www.crowdai.org/challenges/mapping-challenge
   - https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn/blob/master/Prediction-and-Submission.ipynb
+
+**Best Trained Model on satellite images**  
+- https://github.com/neptune-ml/open-solution-mapping-challenge
+- 0.943 Average Precision, 0.954 Average Recall
+```bash
+git clone https://github.com/neptune-ml/open-solution-mapping-challenge.git
+#
+## set paths in neptune.yaml
+data_dir:              /path/to/data
+meta_dir:              /path/to/data
+masks_overlayed_prefix: masks_overlayed
+experiment_dir:        /path/to/work/dir
+#
+## change erosion/dilation setup in neptune.yaml if you want to. Suggested setup
+border_width: 0
+small_annotations_size: 14
+erode_selem_size: 0
+dilate_selem_size: 0
+#
+## prepare target masks and metadata for training
+python main.py -- prepare_masks
+python main.py -- prepare_metadata --train_data --valid_data --test_data
+#
+## Train model
+python main.py -- train --pipeline_name unet_weighted
+#
+## Evaluate model and predict on test data:
+## Change values in the configuration file neptune.yaml. Suggested setup:
+tta_aggregation_method: gmean
+loader_mode: resize
+erode_selem_size: 0
+dilate_selem_size: 2
+#
+##
+python main.py -- evaluate_predict --pipeline_name unet_tta --chunk_size 1000
+```
 
 train.tar.gz
 Training Set : 280741 tiles (as 300x300 pixel RGB images) of satellite imagery with the corresponding annotations in MS COCO format
