@@ -1032,6 +1032,20 @@ dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_cl
   * **Mask-rcnn results back to COCO format**
     * https://github.com/waspinator/deep-learning-explorer/blob/master/mask-rcnn/notebooks/mask_rcnn.ipynb
 
+#### Issues
+* https://github.com/matterport/Mask_RCNN/issues/849
+```bash
+Loading weights  /home/alpha/Documents/ai-ml-dl/external/Mask_RCNN/logs/coco20181128T1811/mask_rcnn_coco_0002.h5
+Traceback (most recent call last):
+  File "road.py", line 580, in <module>
+    model.load_weights(weights_path, by_name=True)
+  File "/home/alpha/Documents/ai-ml-dl/external/Mask_RCNN/mrcnn/model.py", line 2130, in load_weights
+    saving.load_weights_from_hdf5_group_by_name(f, layers)
+  File "/usr/local/lib/python3.6/dist-packages/keras/engine/saving.py", line 1017, in load_weights_from_hdf5_group_by_name
+    str(weight_values[i].shape) + '.')
+ValueError: Layer #391 (named "mrcnn_bbox_fc"), weight <tf.Variable 'mrcnn_bbox_fc/kernel:0' shape=(1024, 8) dtype=float32_ref> has shape (1024, 8), but the saved weight has shape (1024, 324).
+```
+
 
 #### Images to OSM
 * https://github.com/jremillard/images-to-osm

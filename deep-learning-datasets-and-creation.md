@@ -136,6 +136,62 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * Transfer learning is the practice of taking an existing neural network trained on a specific task and retraining this neural network on another task. 
   * By using transfer learning we profit from existing lower level filters. By training on all classes at the same time the gradients from other classes influence the upper layers!
 
+## Image Augmentation Utilities
+
+* [imgaug](https://github.com/aleju/imgaug)
+  ```bash
+  pip3 install imgaug
+  ```
+
+## Training and Prediction on Multiple Datasets for Object Detections/Segmentation
+
+**Challenges**
+* Every Open dataset available have their own way of classification and labels. It's OK as everyone and as an individual labels and categories text can be given in innumerable ways
+* Some datasets assign integer values to their classes and some don't
+* They have different storage formats
+* Everyone has desire or need to have different category groups and labels
+* In order to explore the labels and ids, may require to download the entire dataset and then programatically load to determine the category details
+* there cannot be one soultion fit all but still should be possible to switch between context without manual intervention at the time of use
+
+
+**Other Challenges**
+* `pre-trained` and custom models have their own labelling schemes
+* no easy way to manage and explore labels (i.e. class_names and ids and not the polygons or segmentation)
+* most of the time these label mapping is the part of the python code in general due to convenience
+* addition of new labels and categories
+* `text -> image` based searching in CBIR becomes cumbersome for incremental workflows
+* different business use cases may require:
+  * to label data differently
+  * to use only subset of labels, hence detections
+    - here, we may not want to disable the detections of superset but in the final output turn-off selectively; high ROI item from commericalisation perpective
+  * example: categorization, labeling for **self-driving car** vs **smartcity** vs **indoors** vs **maps** even though they may share common objects but different grouping may be desired for each of these business verticals
+
+
+**Area of Research**
+* **Incremental learning** vs **transfer learning**
+* Is it possible to keep the memory of previously learned categorization, when training for new category without having to provide the whole training dataset of previous training?
+
+
+**what is needed got multi-dataset training**
+* **Open Datasets**
+  * different datasets needs to be downloaded in common repository
+    - to avoid duplication and waste of resources as these are huge size
+    - should be stored in external storage and mapped to AI servers; use symlnks to individual code repositories
+* **Data Exploratory Tools**
+  * ipython notebooks and python apis are generally available for most of the popular datasets
+  * use these to explore and extract required data for the control sheets
+* **Control Sheets**
+  * Mapping of labels, categories across multiple datasets with the custom dataset
+  * With versioning and other release management aspects
+  * individual csv files for different datasets, with proper naming convetions
+* **Annotation Label API**
+  * A common api to be created and used in individual code repository for training, evaluation and predictions
+* **Annotation Tools**
+  * Flexibility to use any custom or open source tools for annotations
+  * use the control sheets
+    * integrated with APIs or simply imports in annotation tool to get all categorisations
+
+
 ## Dataset Management
 - https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/
 
@@ -144,6 +200,16 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 ### AI datasets Search Engines
 * http://classif.ai/
 
+
+### Dataset APIs
+**MS COCO Dataset API**
+* [pycocotools](https://github.com/cocodataset/cocoapi)
+* [pycoco - with fix from crowdAI](https://github.com/crowdai/coco)
+  - Note: If you are using `Python3.*`, then there are chances that pycocotools will not work for you. In that case, install it from this fork :
+  ```bash
+  pip3 install git+https://github.com/crowdai/coco.git#subdirectory=PythonAPI
+  ```
+* More details, refer: [MS COCO](mscoco-dataset.md)
 
 
 ### **Datasets Detailed Review / Overview**

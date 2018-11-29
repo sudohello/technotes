@@ -39,6 +39,13 @@ If the PR is merged then use the original repo.
 Note: Edit PythonAPI/Makefile and replace "python" with "python3".
 
 
+## Data Format
+* http://cocodataset.org/#format-data
+* For Detections:
+  * [Task](http://cocodataset.org/#detection-2018)
+  * [Evaluation](http://cocodataset.org/#detection-eval)
+
+
 ## **COCO and Mapillary Joint Recognition**
 * https://research.mapillary.com/eccv18/
 
@@ -56,7 +63,32 @@ Note: Edit PythonAPI/Makefile and replace "python" with "python3".
 * pycococreator takes care of all the annotation formatting details and will help convert your data into the COCO format
 * the whole reason we’re trying to make a COCO dataset isn’t because it’s the best way of representing annotated images, but because everyone else is using it.
 
-## **Create you Own COCO type annotation dataset**
+## [pycocotools](https://github.com/cocodataset/cocoapi)
+* [pycoco - with fix from crowdAI](https://github.com/crowdai/coco)
+* **Note:** If you are using `Python3.*`, then there are chances that pycocotools will not work for you. In that case, install it from this fork :
+```bash
+pip3 install git+https://github.com/crowdai/coco.git#subdirectory=PythonAPI
+```
+
+
+### **Class Names and corresponding Ids**
+* Download **train2014**
+  ```bash
+  wget -c http://images.cocodataset.org/annotations/annotations_trainval2014.zip
+  wget -c http://images.cocodataset.org/zips/train2014.zip
+  wget -c http://images.cocodataset.org/zips/val2014.zip
+  wget -c https://dl.dropboxusercontent.com/s/s3tw5zcg7395368/instances_valminusminival2014.json.zip?dl=0
+  ```
+* To get the list of class names, you'd load the dataset
+* The model classifies objects and returns class IDs, which are integer value that identify each class. Some datasets assign integer values to their classes and some don't.
+* For example, in the MS-COCO dataset, the 'person' class is 1 and 'teddy bear' is 88. The IDs are often sequential, but not always. The COCO dataset, for example, has classes associated with class IDs 70 and 72, but not 71.
+* For details on class names and corresponding ids refer:
+  * https://github.com/crowdAI/mapping-challenge-starter-kit.git
+    * `[Dataset Utils.ipynb](https://github.com/crowdAI/mapping-challenge-starter-kit/blob/master/Dataset%20Utils.ipynb)`
+    * This list is generated using the above code for **train2014** dataset: [mscoco-dataset-segmentation-categories.md](mscoco-dataset-segmentation-categories.md)
+
+
+## **Create you Own `COCO type annotation` dataset**
 * https://www.programcreek.com/python/example/94653/pycocotools.coco.COCO
 * https://patrickwasp.com/create-your-own-coco-style-dataset/
 * COCO uses JSON (JavaScript Object Notation) to encode information about a dataset
