@@ -17,7 +17,6 @@ Tags: Datasets and Data Creation for Training Machines
 * This is especially the case for pixel-wise prediction tasks such as semantic segmentation, used in applications such as autonomous driving, robotics, and image search.
 
 
-
 ## Datasets and Data Creation for Training Machines
 
 
@@ -109,6 +108,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 **Key Terms**
 * HIT - Human Intelligence Task
 
+
 ## Labelling for AI datasets
 
 **Format**
@@ -136,12 +136,14 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * Transfer learning is the practice of taking an existing neural network trained on a specific task and retraining this neural network on another task. 
   * By using transfer learning we profit from existing lower level filters. By training on all classes at the same time the gradients from other classes influence the upper layers!
 
+
 ## Image Augmentation Utilities
 
 * [imgaug](https://github.com/aleju/imgaug)
   ```bash
   pip3 install imgaug
   ```
+
 
 ## Training and Prediction on Multiple Datasets for Object Detections/Segmentation
 
@@ -195,7 +197,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 ## Dataset Management
 - https://autonomous-driving.org/2018/06/16/dataset-management-for-machine-learning/
 
+
 ## Dataset / Data source / Datasource for ML / Deep Learning / Computer Vision Datasets
+
 
 ### AI datasets Search Engines
 * http://classif.ai/
@@ -218,6 +222,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 2. [Mapillary](mapillary-dataset.md)
 3. [ApolloScape](apolloscape-dataset.md)
 4. [MS COCO](mscoco-dataset.md)
+5. [ade20k](ade20k-dataset.md)
 
 
 ### **Extensive List of Datasets**
@@ -226,12 +231,14 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - https://www.analyticsvidhya.com/blog/2018/03/comprehensive-collection-deep-learning-datasets/
 - https://martin-thoma.com/sota/
 - SotA - State of the Arts
+- https://github.com/nightrome/really-awesome-semantic-segmentation
 
-* **Imagenet**
+
+* **[Imagenet](http://image-net.org/download)**
   - http://www.image-net.org/
   - http://image-net.org/download-API
   - http://image-net.org/download
-* **OpenImages**
+* **[OpenImages](https://github.com/openimages/dataset)**
   - https://storage.googleapis.com/openimages/web/index.html
   - https://github.com/openimages/dataset
   - https://ai.googleblog.com/2018/04/announcing-open-images-v4-and-eccv-2018.html
@@ -246,7 +253,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * **Image segmentations**
   - https://aws.amazon.com/public-datasets/spacenet/
   - http://www.cvlibs.net/datasets/kitti/eval_road.php
-* **MS COCO**
+* **[MS COCO](http://cocodataset.org/#home)**
+  - **Detailed Overview**: [MS COCO](mscoco-dataset.md)
   - http://cocodataset.org/#home
   - COCO is a large-scale object detection, segmentation, and captioning dataset
   - https://github.com/cocodataset
@@ -265,13 +273,22 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
     ```
   * **coco stuff**
     * https://github.com/nightrome/cocostuff
-* **PASCAL VOC**
+* **PASCAL**
+  * PASCAL VOC 2006
+  * PASCAL VOC 2007
+  * PASCAL VOC 2008
+  * PASCAL VOC 2009
+  * PASCAL VOC 2010
+  * PASCAL VOC 2011 incl. SBD
+  * PASCAL VOC 2012
+  * PASCAL Context
+  * PASCAL Person Part
   - http://host.robots.ox.ac.uk/pascal/VOC/
-  ```bash
-  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
-  wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
-  ```
+    ```bash
+    wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+    wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
+    wget -c http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+    ```
 * **Inria**
   - A large set of marked up images of standing or walking people
   - http://pascal.inrialpes.fr/data/human/
@@ -313,7 +330,33 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * **[Round-2 Starter Kit](https://github.com/crowdAI/mapping-challenge-round2-starter-kit)**
   * **open solution**
     * https://github.com/neptune-ml/open-solution-mapping-challenge
-
+* **LabelMe Facade**
+* **SIFT Flow / LabelMe Outdoor**
+* **LM+SUN**
+* **SUN RGB-D**
+* **SUN**
+* **MSRC (21/23/v2 and 9/13/v1)**
+* **NYUD (1 or 2)**
+* **Stanford Background**
+* **Barcelona**
+* **Sowerby**
+* **Corel**
+* **TU Graz**
+* **MINC (Materials in Context)**
+* **Etrims**
+* **Geometric Context (Gatech)**
+* **Cross Category Object Recognition (CORE)**
+* **MHMS 11**
+* **Leuven (+stereo augmented)**
+* **Google Street View**
+* **MDRS3 - Multi-Domain Road Scene Semantic Segmentation**
+* **Vaihingen (ISPRS contest)**
+* **2D-3D-S (Stanford)**
+* **NICTA/DATA61 2D-3D**
+* **CMU VMR**
+* **Flickr MFC**
+* **GTA / Playing for Benchmarks [Richter ICCV 17]**
+* **Cross-city dataset [Yi-Hsin Chen]**
 
 
 ### Traffic Sign Datasets
@@ -321,9 +364,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * GTSRB (Traffic sign recognition)
   * GTSDB (Traffic sign detection) 
   - http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
-* **LISA: Laboratory for Intelligent Safe Automobiles**
+* **[LISA: Laboratory for Intelligent Safe Automobiles](http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html)**
   - http://cvrr.ucsd.edu/LISA/lisa-traffic-sign-dataset.html
-* **Belgium**
+* **[Belgium](https://btsd.ethz.ch/shareddata/)**
   - https://btsd.ethz.ch/shareddata/
   - The images in this dataset are in an old .ppm format
   - Images are square-ish, but have different aspect ratios
@@ -345,28 +388,35 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
       - running number for the views where the traffic sign is annotated. There is no temporal order of the images
 
 
-### **Self Driving Car Datasets Semantic Segmentation**
+### **Self-Driving-Car Datasets Semantic Segmentation**
 - https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/
-* [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)
+* **[CamVid Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)**
+  - **CamVid**: Cambridge Video
   - http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/
-* [KITTI - Karlsruhe Institute of Technology and Toyota Technological Institute](http://www.cvlibs.net/datasets/kitti/)
+* **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
+  - **KITTI**: Karlsruhe Institute of Technology and Toyota Technological Institute
   - http://www.cvlibs.net/datasets/kitti/
   - http://www.cvlibs.net/datasets/kitti/eval_road.php
-* [DUS - Daimler Urban Segmentation](http://www.6d-vision.com/scene-labeling)
+* **[DUS Dataset](http://www.6d-vision.com/scene-labeling)**
+  - **DUS**: Daimler Urban Segmentation
   - http://www.6d-vision.com/scene-labeling
   - http://www.6d-vision.com/home
-* [CityScapes](https://www.cityscapes-dataset.com/)
+* **[CityScapes Dataset](https://www.cityscapes-dataset.com/)**
+  * **Detailed Overview**: [Cityscape](cityscape-dataset.md)
   - https://www.cityscapes-dataset.com/
   - https://www.cityscapes-dataset.com/benchmarks/
-* [Mapillary Vista](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)
+* **[Mapillary Vista Dataset](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
+  - **MVD**: Mapillary Vista Dataset
+  - **Detailed Overview**: [Mapillary](mapillary-dataset.md)
   - https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html
   - https://www.mapillary.com/dataset/vistas
-* [Synthia](http://synthia-dataset.com/download-2/)
+* **[Synthia Dataset](http://synthia-dataset.com/download-2/)**
   - http://synthia-dataset.net/ 
-* [Udacity](https://github.com/udacity/self-driving-car/tree/master/datasets)
+* **[Udacity Dataset](https://github.com/udacity/self-driving-car/tree/master/datasets)**
   - https://github.com/udacity/self-driving-car/tree/master/datasets
-* ApolloScape
-* FCAV
+* **[ApolloScape](http://apolloscape.auto/index.html)**
+  - **Detailed Overview**: [apolloscape-dataset.md](apolloscape-dataset.md)
+* **[FCAV](https://fcav.engin.umich.edu/sim-dataset)**
   * Driving in the Matrix: Can Virtual Worlds Replace Human-Generated Annotations for Real World Tasks?
   - https://arxiv.org/abs/1610.01983
   - https://fcav.engin.umich.edu/safety-pilot-dataset
@@ -375,8 +425,19 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   - https://github.com/umautobots/GTAVisionExport
 
 
+### Scene understanding Datasets
+* **[MIT Places Dataset](http://places.csail.mit.edu/)**
+  * http://places.csail.mit.edu/
+* **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
+  * **Detailed Overview**: [ade20k](ade20k-dataset.md)
+  * Deals with: (1) scene parsing, (2) instance segmentation, (3) semantic boundary detection. More details, refer: http://placeschallenge.csail.mit.edu/
+  * http://groups.csail.mit.edu/vision/datasets/ADE20K/
+  * pixel-wise annotated image dataset for scene parsing. Scene parsing network are also proposed to detect and segment visual concepts from any input images.
+  * https://gluon-cv.mxnet.io/build/examples_datasets/ade20k.html
+
+
 ### 3D Datasets
-- Matterport 
+- **[Matterport Dataset] (https://niessner.github.io/Matterport/)**
   - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
   - https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
   - https://niessner.github.io/Matterport/
@@ -386,21 +447,31 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - ShapeNet - Semantic annotation knowledge bases
   * https://drive.google.com/file/d/1Z8gt4HdPujBNFABYrthhau9VZW10WWYe/view
 
+
 ### Others
 - https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
 * Free datasets are available from places like Kaggle.com and UCI. 
   - https://www.kaggle.com/datasets
   - https://archive.ics.uci.edu/ml/datasets.html
 
+
 ## Dataset Pre-processing
 * http://shubhagrawal.in/2016/10/13/machine-learning-data-preprocessing/
 
-## Dataset Creation
+
+## Dataset Creation Effort Statistics
+
 After working hard to collect your images and annotating all the objects, you have to decide what format you’re going to use to store all that info. 
 * https://venturebeat.com/2018/10/22/googles-fluid-annotation-uses-ai-to-speed-up-image-dataset-annotation/
 * Labeling a single pic in the popular Coco+Stuff dataset, for example, takes 19 minutes; tagging the whole dataset of 164,000 images would take over 53,000 hours.
+* Different Sets:
+  * Training
+  * Validation
+  * Test
+  * Consistency (annotations used for checking the annotation consistency)
 
-## Fluid Annotation
+
+## Fluid Annotation - Google
 * https://venturebeat.com/2018/10/22/googles-fluid-annotation-uses-ai-to-speed-up-image-dataset-annotation/
 * https://ai.googleblog.com/2018/10/fluid-annotation-exploratory-machine.html
 * https://fluidann.appspot.com/ - Demo
@@ -413,9 +484,39 @@ After working hard to collect your images and annotating all the objects, you ha
   * Add a segment to cover a missing object. The machine identifies the most likely pre-generated segments, through which the annotator can scroll and select the best one
   * Remove an existing segment
   * Change the depth-order of overlapping segments
+
+
 **Other commetitors applying AI in annotation**
 * Scale - https://venturebeat.com/2018/08/07/scale-raises-18-million-to-label-data-from-autonomous-car-companies-like-lyft-and-embark/
 * https://supervise.ly/
+
+
+## AI Database Creation Companies
+* https://www.kinetica.com/
+  - Combine a GPU database, real-time location visualization, and the power of AI
+  - https://www.kinetica.com/solutions/
+
+
+## Business, News, Blogs
+* [ai-databases-what-they-are-and-why-your-business-should-care](https://in.pcmag.com/ibm-watson-analytics/117335/ai-databases-what-they-are-and-why-your-business-should-care) - TBD:cross-links
+  * "An AI database is a subset of a general database," said Radalj. "Right now, AI databases are very popular. But a lot of solutions use distributed components. [Apache] Spark, [Hadoop] MapReduce and HDFS are always spinning back and forth rather than in-memory
+  * "This gives you an idea of what an extreme difference there is in what vendors are doing. Some are trying to pass off advanced analytics as ML—and it isn't. And others are doing ML at such an advanced level that's beyond what most businesses can comprehend at the moment."
+  * **"Data Availability"** and **"Data Ingestion"** are key; **"Data Shipping"**
+  * Kinetica doesn't separate CPU and GPU compute nodes versus storage nodes
+  * solutions use an **orchestrator** like IBM Symphony to schedule work across various components
+  * Kinetica stresses function shipping against co-located resources, with advanced optimization to minimize data shipping"
+  * **goal is to create a workflow in which the faster batch ingestion, streaming, and querying generate model results that can immediately be applied to BI**
+  * "It's easier to quickly provision, prototype, and test. The word 'modeling' is thrown about in AI, but it's all about cycling through different approaches—the more data, the better—[and] running them again and again, testing, comparing, and coming up with the best models"
+
+
+## Keywords
+* GPU Databases
+* Data Streaming
+* data warehousing
+* in-memory database
+* orchestrator
+* unified model training process
+
 
 ## TBD
 * https://www.kaggle.com/learn/machine-learning

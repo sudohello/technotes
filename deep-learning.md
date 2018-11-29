@@ -1001,6 +1001,7 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
   * The RPN is a lightweight neural network that scans the image in a sliding-window fashion and finds areas that contain objects. If several anchors overlap too much, we keep the one with the highest foreground score and discard the rest (referred to as Non-max Suppression - NMS)
 
 #### **Mask-RCNN Training**
+- https://archive.org/details/github.com-matterport-Mask_RCNN_-_2017-11-03_10-28-11
 - https://stackoverflow.com/questions/49684468/mask-r-cnn-for-object-detection-and-segmentation-train-for-a-custom-dataset
 * You need to have all your annotations.
 * All of those need to be converted to VGG Polygon schema (yes i mean polygons). I have added a sample VGG Polygon format at the end of this answer.

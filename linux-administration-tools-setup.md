@@ -1111,3 +1111,6 @@ https://superuser.com/questions/525249/convert-avi-xvid-to-mp4-h-264-keeping-the
 ```bash
 ffmpeg -i input.avi -c:v libx264 -crf 19 -preset slow -c:a aac -b:a 192k -ac 2 out.mp4
 ```
+
+**checking version of installed softwares**
+* https://tech.amikelive.com/node-841/command-cheatsheet-checking-versions-of-installed-software-libraries-tools-for-deep-learning-on-ubuntu-16-04/#more-841

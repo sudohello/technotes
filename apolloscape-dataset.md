@@ -15,7 +15,7 @@ Tags: ApolloScape - Apollo Dataset
 ## ApolloScape - Apollo Dataset Overview
 
 ### ApolloScape - Apollo Dataset
-- Refer: [apolloscape-dataset.md](apolloscape-dataset.md)
+- 
 - https://arxiv.org/pdf/1803.06184.pdf
 - ApolloScape, billed as the world’s largest open-source dataset for autonomous driving technology.
 - http://apolloscape.auto/index.html
