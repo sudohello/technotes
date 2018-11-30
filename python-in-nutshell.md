@@ -458,6 +458,13 @@ os.path.dirname(os.path.abspath(__file__))
   ```
 * **Matplotlib: save plot to numpy array**
   * https://stackoverflow.com/questions/7821518/matplotlib-save-plot-to-numpy-array
+* **How to convert-a-list-into-a-string-and-allow-for-a-separator?**
+  * https://stackoverflow.com/questions/37604618/convert-a-list-into-a-string-and-allow-for-a-separator
+  ```python
+  x=[{'color': (0.0, 1.0, 0.18181818181818166), 'bbox': [155, 742, 289, 884], 'label': 'truck', 'score': 0.7501553, 'caption': 'truck 0.750'}]
+  print ', '.join([str(i) for i in x[0].values()])
+  ## '(0.0, 1.0, 0.18181818181818166), truck 0.750, 0.7501553, [155, 742, 289, 884], truck'
+  ```
 * **how-to-downcase-the-first-character-of-a-string?**
   * https://stackoverflow.com/questions/3840843/how-to-downcase-the-first-character-of-a-string
   ```python
@@ -477,7 +484,7 @@ os.path.dirname(os.path.abspath(__file__))
   * https://docs.python.org/3/library/stdtypes.html#str.isdigit
   ```python
   y='1;0.9971295;1920;1080;126.76472;150.67957;118.44906;111.22757'
-  [int(i) if i.isdigit() else i for i in s.split('|')]
+  [int(i) if i.isdigit() else i for i in y.split(';')]
   #
   ```
 * **How to join a list of strtings or numbers to a string?**
@@ -2816,3 +2823,34 @@ The .egg format is well-suited to distribution and the easy uninstallation or up
 ### geopandas
 * https://geohackweek.github.io/vector/04-geopandas-intro/
 * http://geopandas.org/mapping.html
+
+
+### SVG, path tracing
+* **pypotrace**
+  * https://pypi.org/project/pypotrace/
+**SVG Maksing**
+* https://vanseodesign.com/web-design/svg-masking-examples-2/
+
+## snippets
+```python
+ret,thresh = cv2.threshold(padded_mask,27,25,0)
+contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_TC89_L1)
+print(type(contours)) #type list
+c = max(contours, key=cv2.contourArea) #max contour
+height, width, nbands = masked_image.shape
+# fileName = Util.getOutFileName(out_file, im_name, ".svg", __appcfg)
+
+f = open(fileName+".svg", 'w+')
+f.write('<svg width="'+str(width)+'" height="'+str(height)+'" xmlns="http://www.w3.org/2000/svg">')
+f.write('<path d="M')
+
+for i in xrange(len(c)):
+    #print(c[i][0])
+    x, y = c[i][0]
+    print(x)
+    f.write(str(x)+  ' ' + str(y)+' ')
+
+f.write('"/>')
+f.write('</svg>')
+f.close()
+```
