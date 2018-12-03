@@ -160,24 +160,35 @@ Note: Edit PythonAPI/Makefile and replace "python" with "python3".
 
 
 ### **Class Names and corresponding Ids**
+* http://cocodataset.org/#download
 * Download **train2014**
   ```bash
   wget -c http://images.cocodataset.org/annotations/annotations_trainval2014.zip
   wget -c http://images.cocodataset.org/zips/train2014.zip
   wget -c http://images.cocodataset.org/zips/val2014.zip
   wget -c https://dl.dropboxusercontent.com/s/s3tw5zcg7395368/instances_valminusminival2014.json.zip?dl=0
+  wget -c http://images.cocodataset.org/zips/test2014.zip
+  wget -c http://images.cocodataset.org/annotations/image_info_test2014.zip
   ```
 * Download **train2017**: Stuff
   * https://github.com/nightrome/cocostuff
     ```bash
     wget -c http://images.cocodataset.org/zips/train2017.zip
     wget -c http://images.cocodataset.org/zips/val2017.zip  
+    wget -c http://images.cocodataset.org/zips/test2017.zip
+    wget -c http://images.cocodataset.org/annotations/image_info_test2017.zip
+    #
     ## Stuff+thing PNG-style annotations on COCO 2017 trainval
     wget -c http://calvin.inf.ed.ac.uk/wp-content/uploads/data/cocostuffdataset/stuffthingmaps_trainval2017.zip
     ## Stuff-only COCO-style annotations on COCO 2017 trainval
     wget -c http://calvin.inf.ed.ac.uk/wp-content/uploads/data/cocostuffdataset/stuff_trainval2017.zip
+
+    ## stuff_annotations_trainval2017
+    wget -c http://images.cocodataset.org/annotations/stuff_annotations_trainval2017.zip
     ## Thing-only COCO-style annotations on COCO 2017 trainval
     wget -c http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+    ## 2017 Panoptic Train/Val annotations
+    wget -c http://images.cocodataset.org/annotations/panoptic_annotations_trainval2017.zip
     ```
 * To get the list of class names, you'd load the dataset
 * The model classifies objects and returns class IDs, which are integer value that identify each class. Some datasets assign integer values to their classes and some don't.
