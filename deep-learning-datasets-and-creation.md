@@ -314,22 +314,6 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * Warning: Images in this dataset overlap with images in ImageNet. Exercise caution when using networks pretrained with ImageNet (or any network pretrained with images from Flickr) as the test set of CUB may overlap with the training set of the original network.
 * **Chinsese Dataset**
   * https://ctwdataset.github.io/
-* **crowd-ai**
-  * **Satellite Images: Building Footprint**
-    * https://unitar.org/unosat/
-    * https://www.unglobalpulse.org/
-  * **Main web site for reference:** https://www.crowdai.org/challenges/mapping-challenge
-  * **[Baseline](https://github.com/crowdai/crowdai-mapping-challenge-mask-rcnn)**
-    ```bash
-    git clone https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn.git
-    ```
-  * **[Round-1 Starter Kit](https://github.com/crowdAI/mapping-challenge-starter-kit)**
-    ```bash
-    git clone https://github.com/crowdAI/mapping-challenge-starter-kit.git
-    ```
-  * **[Round-2 Starter Kit](https://github.com/crowdAI/mapping-challenge-round2-starter-kit)**
-  * **open solution**
-    * https://github.com/neptune-ml/open-solution-mapping-challenge
 * **LabelMe Facade**
 * **SIFT Flow / LabelMe Outdoor**
 * **LM+SUN**
@@ -357,6 +341,29 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * **Flickr MFC**
 * **GTA / Playing for Benchmarks [Richter ICCV 17]**
 * **Cross-city dataset [Yi-Hsin Chen]**
+
+### Remote Sensing
+**Building Footprint Extraction**
+
+* **[spacenet](https://spacenetchallenge.github.io/)**
+  * https://spacenetchallenge.github.io/
+  * Localizes building footprints in pixel level in high-resolution satellite imagery
+* **crowd-ai**
+  * **Satellite Images: Building Footprint**
+    * https://unitar.org/unosat/
+    * https://www.unglobalpulse.org/
+  * **Main web site for reference:** https://www.crowdai.org/challenges/mapping-challenge
+  * **[Baseline](https://github.com/crowdai/crowdai-mapping-challenge-mask-rcnn)**
+    ```bash
+    git clone https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn.git
+    ```
+  * **[Round-1 Starter Kit](https://github.com/crowdAI/mapping-challenge-starter-kit)**
+    ```bash
+    git clone https://github.com/crowdAI/mapping-challenge-starter-kit.git
+    ```
+  * **[Round-2 Starter Kit](https://github.com/crowdAI/mapping-challenge-round2-starter-kit)**
+  * **open solution**
+    * https://github.com/neptune-ml/open-solution-mapping-challenge
 
 
 ### Traffic Sign Datasets

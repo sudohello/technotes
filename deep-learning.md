@@ -987,6 +987,16 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
   * https://medium.com/neuromation-io-blog/neuronuggets-segmentation-with-mask-r-cnn-c76d363b67fb
   * https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
 
+**Explanation Videos**
+* part 1: https://www.youtube.com/watch?v=QSYd61jOa8M
+* part 2: https://www.youtube.com/watch?v=UdZnhZrM2vQ
+* part 3: https://www.youtube.com/watch?v=XGi-Mz3do2s
+* https://www.youtube.com/watch?v=Ul25zSysk2A&list=PLkRkKTC6HZMxZrxnHUDYSLiPZxiUUFD2C
+* https://www.youtube.com/watch?v=g7z4mkfRjI4&list=PLe6h2Vdf1gFENsJ0W2bUlOGoLWrZdzK8n
+* https://www.youtube.com/watch?v=UdZnhZrM2vQ&list=PLjh3zPDW5j_v20KQvJb9Q5puTC4AjK7jK
+
+
+
 ### Mask-rcnn Docker
 * https://github.com/waspinator/deep-learning-explorer/tree/master/mask-rcnn
 
@@ -1337,6 +1347,24 @@ https://oclavi.com/
 
 
 #### CSE291-100
+
 * https://cse291-i.github.io/
 * https://github.com/Fire-Sale/Machine-Learning-for-3D-Data/tree/master/Slides
 * https://github.com/timzhang642/3D-Machine-Learning
+
+
+## DeepLearning in Remote Sensing
+
+
+###**[SpaceNetChallenge](https://github.com/SpaceNetChallenge/)**
+
+* https://medium.com/the-downlinq/getting-started-with-spacenet-data-827fd2ec9f53
+
+
+####**Building Foorprint Detection**
+
+
+####**road-detection in Satellite Imagery**
+
+* https://devblogs.nvidia.com/solving-spacenet-road-detection-challenge-deep-learning/
+
