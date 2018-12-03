@@ -97,3 +97,13 @@ Moby is an open framework created by Docker to assemble specialized container sy
 sudo docker images
 sudo cat /var/lib/docker/image/overlay2/repositories.json
 ```
+
+
+
+web server
+database
+messaging
+orchestration
+
+
+DockerFile -> Image (template) -> Container

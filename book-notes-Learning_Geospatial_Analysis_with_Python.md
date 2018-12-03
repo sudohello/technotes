@@ -89,3 +89,8 @@ Geospatial analysis is the best approach to understanding our world more efficie
 Images in NumPy are multidimensional arrays in the order of band, height, and width.
 
 It's important to note that NumPy references the array locations as y,x (row, column) instead of the usual x, y (column, row) format that we work with in spreadsheets and other software:
+
+
+## Ideas
+* In remote sensing, for instance, **infrared light makes moisture highly visible**. This phenomenon has a variety of uses such as monitoring ground saturation during a flood or **finding hidden leaks in a roof** or levee.
+  * This concept can be potentially used for **indoor scanning and mapping to find out leaks in the building**
