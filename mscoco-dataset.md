@@ -110,6 +110,7 @@ The performance of the algorithms will be evaluated on:
 * The classes **desk**, **door**, **mirror** and **window** could be **either stuff** or **things** and therefore occur in both COCO and COCO-Stuff. To avoid confusion suffix is added **"-stuff"** or **"-other"** to those classes in COCO-Stuff
 * Full list of classes in stuff: [Labels in COCO-Stuff](https://github.com/nightrome/cocostuff/blob/master/labels.md)
 
+* https://github.com/nightrome/cocostuff10k#annotation-tool
 
 ### Panoptic Segmentation
 * http://cocodataset.org/#panoptic-2018

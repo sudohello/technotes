@@ -389,24 +389,44 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
-* **OOPS in python**
+* **How to creating-class-instance-properties-from-a-dictionary?**  
+  * https://stackoverflow.com/questions/1639174/creating-class-instance-properties-from-a-dictionary
+    * **creates a class whose class attributes are based on a given dictionary**
+      ```python
+      q = { 'Field1' : 3000, 'Field2' : 6000, 'RandomField' : 5000 }
+      z = type('allMyFields', (object,), q)
+      z.Field1
+      a = z()
+      a.Field1
+      ```
+    * **creates a class of which instance attributes are based on a given dictionary.**
+    ```python
+      class AllMyFields:
+        def __init__(self, dictionary):
+          for k, v in dictionary.items():
+            setattr(self, k, v) 
+      
+      o = AllMyFields({'a': 1, 'b': 2})
+      o.a
+    ```
+* **How to use OOP (Object Oriented Programming) in python?**
   * http://dirtsimple.org/2004/12/python-is-not-java.html
-* **Python Module vs Class and when to use them**
+* **What are the difference between Python Module vs Class? When to use them?**
   * https://softwareengineering.stackexchange.com/questions/329348/classes-vs-modules-in-python
   * You can create multiple instances of a class, but you cannot create instances of a module. You could compare modules to static classes or singletons.
-* **Dynamic Loading module, class**
+* **How to Dynamicall load module, class?**
   * https://stackoverflow.com/questions/8790003/dynamically-import-a-method-in-a-file-from-a-string
   * https://docs.python.org/3.5/library/importlib.html
-* **Paths**
-```python
-import os
-os.path.dirname(__file__) # relative directory path
-os.path.abspath(__file__) # absolute file path
-os.path.basename(__file__) # the file name only
-## full current dir path
-os.path.dirname(os.path.abspath(__file__))
-```
-* **Importing files from different folder**
+* **How to get different type of Paths?**
+  ```python
+  import os
+  os.path.dirname(__file__) # relative directory path
+  os.path.abspath(__file__) # absolute file path
+  os.path.basename(__file__) # the file name only
+  ## full current dir path
+  os.path.dirname(os.path.abspath(__file__))
+  ```
+* **How to Import files from different folder?**
   * https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
   ```python
   # some_file.py
@@ -422,7 +442,7 @@ os.path.dirname(os.path.abspath(__file__))
   import sys
   sys.path.append('../')
   ```
-* **listing content of directories**
+* **How to list content of directories?**
   - https://stackoverflow.com/questions/3964681/find-all-files-in-a-directory-with-extension-txt-in-python
   ```python
   import glob, os
@@ -441,7 +461,7 @@ os.path.dirname(os.path.abspath(__file__))
           if file.endswith(".txt"):
                print(os.path.join(root, file))
   ```
-* one-line-list-comprehension-if-else-variants
+* **What are the one-line-list-comprehension-if-else-variants?**
   * https://stackoverflow.com/questions/17321138/one-line-list-comprehension-if-else-variants
   * x if y else z is the syntax for the expression you're returning for each element. Thus you need:
   ```python
@@ -514,10 +534,10 @@ os.path.dirname(os.path.abspath(__file__))
   ```
 * **How to Convert List to Dicitionary?**
   * https://stackoverflow.com/questions/4576115/convert-a-list-to-a-dictionary-in-python
-```python
-a='l;m;n'.split(';')
-b={a[i]: i for i in range(0, len(a), 1)} ## b={'m': 1, 'l': 0, 'n': 2}
-```
+  ```python
+  a='l;m;n'.split(';')
+  b={a[i]: i for i in range(0, len(a), 1)} ## b={'m': 1, 'l': 0, 'n': 2}
+  ```
 * **How to preserve order in dicitionary?: Use ordereddict**
   * https://pymotw.com/2/collections/ordereddict.html
   * https://stackoverflow.com/questions/15711755/converting-dict-to-ordereddict
@@ -549,10 +569,10 @@ b={a[i]: i for i in range(0, len(a), 1)} ## b={'m': 1, 'l': 0, 'n': 2}
       print k, v
   ```
 * **How to find the version of installed library?**
-```python
-import pandas as pd
-pd.__version__
-```
+  ```python
+  import pandas as pd
+  pd.__version__
+  ```
 * **What are different file read and write modes?**
   * https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
   * `r` read only
@@ -621,84 +641,82 @@ pd.__version__
 * **How to check and create directories?**
   * https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
   * https://docs.python.org/3/library/os.html#os.makedirs
-
 * **How to view all the defined variables in python shell?**
-```python
-dir() #will give you the list of in scope variables:
-globals() #will give you a dictionary of global variables
-locals() #will give you a dictionary of local variables
-vars()
-vars().keys()
-vars().values()
-```
+  ```python
+  dir() #will give you the list of in scope variables:
+  globals() #will give you a dictionary of global variables
+  locals() #will give you a dictionary of local variables
+  vars()
+  vars().keys()
+  vars().values()
+  ```
 	* https://stackoverflow.com/questions/633127/viewing-all-defined-variables
 * **How to create function with optional arguments?**
   * https://stackoverflow.com/questions/9539921/how-do-i-create-a-python-function-with-optional-arguments
 * **How to install using `pip`?**
-```shell
-sudo pip install numpy
-```
+  ```shell
+  sudo pip install numpy
+  ```
 * **How to setup & publish project dependencies?**
 	* create txt file, say name requirements, each line mention package name ex: ploty=version (optional)
-```shell
-sudo pip install -r requirements
-```
-* **List all python pakages**
-```bash
-pip freeze
-pip list
-```
+  ```shell
+  sudo pip install -r requirements
+  ```
+* **How to List all python pakages?**
+  ```bash
+  pip freeze
+  pip list
+  ```
 * **Which version of python should pip point to, by default? Can it be changed?**
 * **How to reinstall pip? How to fix `pip` topoint to python2 instead of python3, when python points to v2 and python3 points to v3?**
-- https://askubuntu.com/questions/780502/ubuntu-16-pip-install-installs-to-python-3-instead-of-2
-```bash
-pip freeze
-pip list
-#
-pip -V
-#pip 10.0.0 from /home/game/.local/lib/python3.5/site-packages/pip (python 3.5)
-#
-pip2 -V
-#pip 10.0.0 from /home/game/.local/lib/python2.7/site-packages/pip (python 2.7)
-#
-sudo python -m pip install -U --force-reinstall pip
-```
+  - https://askubuntu.com/questions/780502/ubuntu-16-pip-install-installs-to-python-3-instead-of-2
+  ```bash
+  pip freeze
+  pip list
+  #
+  pip -V
+  #pip 10.0.0 from /home/game/.local/lib/python3.5/site-packages/pip (python 3.5)
+  #
+  pip2 -V
+  #pip 10.0.0 from /home/game/.local/lib/python2.7/site-packages/pip (python 2.7)
+  #
+  sudo python -m pip install -U --force-reinstall pip
+  ```
 
-* **Which python points to which version**
-```bash
-python -V
-#Python 2.7.12
-#
-python2 -V
-#Python 2.7.12
-#
-python3 -V
-#Python 3.5.2
-```
+* **Which python points to which version?**
+  ```bash
+  python -V
+  #Python 2.7.12
+  #
+  python2 -V
+  #Python 2.7.12
+  #
+  python3 -V
+  #Python 3.5.2
+  ```
 * **How to preserve files downloaded by pip after failed installation?** 
-- https://superuser.com/questions/769565/how-to-preserve-files-downloaded-by-pip-after-failed-installation
-```bash
-sudo pip install -d $HOME/softwares/pip-cache
-sudo pip3 install -d $HOME/softwares/pip-cache
-```
-
+  - https://superuser.com/questions/769565/how-to-preserve-files-downloaded-by-pip-after-failed-installation
+  ```bash
+  sudo pip install -d $HOME/softwares/pip-cache
+  sudo pip3 install -d $HOME/softwares/pip-cache
+  ```
 * **How to automatically-creating-directories-with-file-output?
-- https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
-```python
-import os
-import errno
+  - https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
+  ```python
+  import os
+  import errno
 
-filename = "/foo/bar/baz.txt"
-if not os.path.exists(os.path.dirname(filename)):
-    try:
-        os.makedirs(os.path.dirname(filename))
-    except OSError as exc: # Guard against race condition
-        if exc.errno != errno.EEXIST:
-            raise
+  filename = "/foo/bar/baz.txt"
+  if not os.path.exists(os.path.dirname(filename)):
+      try:
+          os.makedirs(os.path.dirname(filename))
+      except OSError as exc: # Guard against race condition
+          if exc.errno != errno.EEXIST:
+              raise
 
-with open(filename, "w") as f:
-    f.write("FOOBAR")
-```
+  with open(filename, "w") as f:
+      f.write("FOOBAR")
+  ```
 
 
 ## TIPs
@@ -711,51 +729,51 @@ with open(filename, "w") as f:
 - http://geoffboeing.com/2016/03/scientific-python-raspberry-pi/
 - https://unix.stackexchange.com/questions/37313/how-do-i-grep-for-multiple-patterns-with-pattern-having-a-pipe-character
 - https://www.thegeekstuff.com/2011/10/grep-or-and-not-operators/
-```bash
-sudo pip install numpy
-sudo pip install scipy
-sudo pip install pandas
-sudo pip install matplotlib
-sudo pip install scikit-learn
-sudo pip install Flask
-#
-pip list | grep -E 'numpy|scipy|pandas|matplotlib|scikit-learn|Flask'
-sudo pip list --format=legacy | grep -E 'h5py|pillow|numpy|scikit-learn|tensorflow|keras|cv2'
-sudo pip list --format=columns | grep -E 'h5py|pillow|numpy|scikit-learn|tensorflow|keras|cv2'
-#
-#Flask                         0.12.2     
-#matplotlib                    2.2.2      
-#numpy                         1.14.2     
-#pandas                        0.22.0     
-#scikit-learn                  0.19.1     
-#scipy                         1.0.1      
-#
-## check from requirement.txt has which may or may not have version specified
-pip list | grep -E $(cat requirements.txt | cut -d'=' -f1 | tr '\n' '|')
-```
+  ```bash
+  sudo pip install numpy
+  sudo pip install scipy
+  sudo pip install pandas
+  sudo pip install matplotlib
+  sudo pip install scikit-learn
+  sudo pip install Flask
+  #
+  pip list | grep -E 'numpy|scipy|pandas|matplotlib|scikit-learn|Flask'
+  sudo pip list --format=legacy | grep -E 'h5py|pillow|numpy|scikit-learn|tensorflow|keras|cv2'
+  sudo pip list --format=columns | grep -E 'h5py|pillow|numpy|scikit-learn|tensorflow|keras|cv2'
+  #
+  #Flask                         0.12.2     
+  #matplotlib                    2.2.2      
+  #numpy                         1.14.2     
+  #pandas                        0.22.0     
+  #scikit-learn                  0.19.1     
+  #scipy                         1.0.1      
+  #
+  ## check from requirement.txt has which may or may not have version specified
+  pip list | grep -E $(cat requirements.txt | cut -d'=' -f1 | tr '\n' '|')
+  ```
 * **Install form the directory**
-```bash
-sudo pip install `ls -1 | tr '\n' ' '`
-```
+  ```bash
+  sudo pip install `ls -1 | tr '\n' ' '`
+  ```
 
 **Natural Language Toolkit**
 - https://www.nltk.org/
 
 **Installing scikit-learn; Python Data Mining Library**
 - https://calebshortt.com/2016/01/15/installing-scikit-learn-python-data-mining-library/
-```python
-import scipy
-scipy.__version__
-'1.0.1'
-#
-import numpy as np
-np.__version__
-'1.14.2'
-#
-import flask
-flask.__version__
-'0.12.2'
-```
+  ```python
+  import scipy
+  scipy.__version__
+  '1.0.1'
+  #
+  import numpy as np
+  np.__version__
+  '1.14.2'
+  #
+  import flask
+  flask.__version__
+  '0.12.2'
+  ```
 **Templating Engine**
 * Jinja
   - Jinja is a **template engine** for the Python programming language and is licensed under a BSD License created by Armin Ronacher. It is similar to the Django template engine but provides Python-like expressions while ensuring that the templates are evaluated in a sandbox. It is a text-based template language and thus can be used to generate any markup as well as sourcecode.
@@ -779,17 +797,17 @@ flask.__version__
 
 **Standalone scripts may also take command-line arguments**
 - Importing objects from modules
-```python
-import sys
-print sys.argv
-#
-# Don’t implement option parsing yourself. Use modules such as optparse , argparse or
-:mod‘docopt‘.
-#
-import os
-os.listdir('.')
-dir(os)
-```
+  ```python
+  import sys
+  print sys.argv
+  #
+  # Don’t implement option parsing yourself. Use modules such as optparse , argparse or
+  :mod‘docopt‘.
+  #
+  import os
+  os.listdir('.')
+  dir(os)
+  ```
 
 ### **Modules & Packages**
 * https://www.programiz.com/python-programming/modules
@@ -804,149 +822,146 @@ We use modules to break down large programs into small manageable and organized 
 We can define our most used functions in a module and import it, instead of copying their definitions into different programs.
 
 - Modules are cached: if you modify demo.py and re-import it in the old session, you will get the old one.
-```python
-reload(demo)
-```
+  ```python
+  reload(demo)
+  ```
 - Sometimes we want code to be executed when a module is run directly, but not when it is imported by another module. if __name__ == '__main__' allows us to check whether the  module is being run directly.
-```python
-if __name__ == '__main__':
-	do_something_here
-```
-- A directory that contains many modules is called a package
-- A package is a module with submodules (which can have submodules themselves, etc.)
-- A special file called __init__.py (which may be empty) tells Python that the directory is a Python package, from which modules can be imported.
-```python
-import scipy
-scipy.__file__
-#
-import scipy.ndimage.morphology
-#
-from scipy.ndimage import morphology
-```
+  ```python
+  if __name__ == '__main__':
+  	do_something_here
+  ```
+  - A directory that contains many modules is called a package
+  - A package is a module with submodules (which can have submodules themselves, etc.)
+  - A special file called __init__.py (which may be empty) tells Python that the directory is a Python package, from which modules can be imported.
+  ```python
+  import scipy
+  scipy.__file__
+  #
+  import scipy.ndimage.morphology
+  #
+  from scipy.ndimage import morphology
+  ```
 
 ### **Standard Library**
 * **os module**
 	- operating system functionality - A portable way of using operating system dependent functionality.
-```python
-os.getcwd() #Current directory: #(returns "a string representing the current working directory")
-os.chdir(path) #("change the current working directory to path")
-os.listdir(os.curdir) #List a directory
-os.mkdir('junkdir') #Make a directory:
-os.rename('junkdir', 'foodir') #Rename the directory
-os.rmdir('foodir') #Delete directory
-os.remove('junk.txt') #Delete file
-#
-# os.path: path manipulations
-# os.path provides common operations on pathnames.
-a = os.path.abspath('junk.txt')
-os.path.split(a)
-os.path.dirname(path) #(returns "the directory name of pathname path")
-os.path.realpath(path) #(returns "the canonical path of the specified filename, eliminating any symbolic links encountered in the path")
-os.path.basename(a)
-os.path.splitext(os.path.basename(a))
-os.path.exists('junk.txt')
-os.path.isfile('junk.txt')
-os.path.isdir('junk.txt')
-os.path.expanduser('~/local')
-os.path.join(os.path.expanduser('~'), 'local', 'bin')
-#
-## The  constants:
-__file__
-#
-## To get the full path to the directory a Python file is contained in, write this in that file
-dir_path = os.path.dirname(os.path.realpath(__file__))
-#
-# Running an external command
-#
-os.system('ls')
-#
-# Walking a directory
-# os.path.walk generates a list of filenames in a directory tree
-#
-for dirpath, dirnames, filenames in os.walk(os.curdir):
-	for fp in filenames:
-		print os.path.abspath(fp)
-#
-# Environment Variables
-#
-os.environ['PYTHONPATH']
-os.getenv('PYTHONPATH')
-```
+  ```python
+  os.getcwd() #Current directory: #(returns "a string representing the current working directory")
+  os.chdir(path) #("change the current working directory to path")
+  os.listdir(os.curdir) #List a directory
+  os.mkdir('junkdir') #Make a directory:
+  os.rename('junkdir', 'foodir') #Rename the directory
+  os.rmdir('foodir') #Delete directory
+  os.remove('junk.txt') #Delete file
+  #
+  # os.path: path manipulations
+  # os.path provides common operations on pathnames.
+  a = os.path.abspath('junk.txt')
+  os.path.split(a)
+  os.path.dirname(path) #(returns "the directory name of pathname path")
+  os.path.realpath(path) #(returns "the canonical path of the specified filename, eliminating any symbolic links encountered in the path")
+  os.path.basename(a)
+  os.path.splitext(os.path.basename(a))
+  os.path.exists('junk.txt')
+  os.path.isfile('junk.txt')
+  os.path.isdir('junk.txt')
+  os.path.expanduser('~/local')
+  os.path.join(os.path.expanduser('~'), 'local', 'bin')
+  #
+  ## The  constants:
+  __file__
+  #
+  ## To get the full path to the directory a Python file is contained in, write this in that file
+  dir_path = os.path.dirname(os.path.realpath(__file__))
+  #
+  # Running an external command
+  #
+  os.system('ls')
+  #
+  # Walking a directory
+  # os.path.walk generates a list of filenames in a directory tree
+  #
+  for dirpath, dirnames, filenames in os.walk(os.curdir):
+  	for fp in filenames:
+  		print os.path.abspath(fp)
+  #
+  # Environment Variables
+  #
+  os.environ['PYTHONPATH']
+  os.getenv('PYTHONPATH')
+  ```
 
 * **urllib**
 - URL handling library
-```python
-import urllib
-import os
+  ```python
+  import urllib
+  import os
 
-file = 'airfares.txt'
-url = 'http://www.stat.ufl.edu/~winner/data/airq4.dat'
-if not os.path.exists(file):
-	urllib.urlretrieve(url,file)
-#
-data = pandas.read_csv(file,sep=' +',header=0,names=['city1', 'city2', 'pop1', 'pop2','dist', 'fare_2000', 'nb_passengers_2000','fare_2001', 'nb_passengers_2001'])
-data = pandas.read_csv(file,sep=' +',header=0,names=['city1', 'city2', 'pop1', 'pop2','dist', 'fare_2000', 'nb_passengers_2000','fare_2001', 'nb_passengers_2001'])
-#
-```
+  file = 'airfares.txt'
+  url = 'http://www.stat.ufl.edu/~winner/data/airq4.dat'
+  if not os.path.exists(file):
+  	urllib.urlretrieve(url,file)
+  #
+  data = pandas.read_csv(file,sep=' +',header=0,names=['city1', 'city2', 'pop1', 'pop2','dist', 'fare_2000', 'nb_passengers_2000','fare_2001', 'nb_passengers_2001'])
+  data = pandas.read_csv(file,sep=' +',header=0,names=['city1', 'city2', 'pop1', 'pop2','dist', 'fare_2000', 'nb_passengers_2000','fare_2001', 'nb_passengers_2001'])
+  #
+  ```
 __main__:1: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
 
 * **sh module**
   - Which provides much more convenient ways to obtain the output, error stream and exit code of the external command.
-```python
-#
-# Alternative to os.system
-#
-import sh
-com = sh.ls()
-print com.exit_code
-```
+  ```python
+  #
+  # Alternative to os.system
+  #
+  import sh
+  com = sh.ls()
+  print com.exit_code
+  ```
 * **shutil**
   - high-level file operations
 	- The shutil provides useful file operations:
 		- shutil.rmtree : Recursively delete a directory tree.
 		- shutil.move : Recursively move a file or directory to another location.
 		- shutil.copy : Copy files or directories.
-
 * **glob**
   - Pattern matching on files
 	- The glob module provides convenient file pattern matching. example: Find all files ending in .txt
-```python
-import glob
-glob.glob('*.txt')
-```
-
+  ```python
+  import glob
+  glob.glob('*.txt')
+  ```
 * **sys module**
 	- system-specific information
   - System-specific information related to the Python interpreter
   - Which version of python are you running and where is it installed
-```python
-import sys
-sys.platform
-sys.version
-sys.prefix
-sys.argv # List of command line arguments passed to a Python script
-sys.path # List of strings that specifies the search path for modules. Initialized from PYTHONPATH
-```
-
+  ```python
+  import sys
+  sys.platform
+  sys.version
+  sys.prefix
+  sys.argv # List of command line arguments passed to a Python script
+  sys.path # List of strings that specifies the search path for modules. Initialized from PYTHONPATH
+  ```
 * **pickle**
   - easy persistence
   - Useful to store arbitrary objects to a file
   - **Not safe or fast!**
   - **TBD**: alternative to pickle
-```python
-import pickle
-l = [1, None, 'Stan']
-pickle.dump(l, file('test.pkl', 'w'))
-pickle.load(file('test.pkl'))
-```
+  ```python
+  import pickle
+  l = [1, None, 'Stan']
+  pickle.dump(l, file('test.pkl', 'w'))
+  pickle.load(file('test.pkl'))
+  ```
 * **timeit**
-- https://docs.python.org/2/library/timeit.html
-```python
-import timeit
-timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=100)
-timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=1000)
-timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=10000)
-```
+  - https://docs.python.org/2/library/timeit.html
+  ```python
+  import timeit
+  timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=100)
+  timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=1000)
+  timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=10000)
+  ```
 
 **Exception Handling**
 - Exceptions are raised by errors in Python
@@ -954,24 +969,26 @@ timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=10000)
 - Capturing and reraising an exception
 - Use exceptions to notify certain conditions are met (e.g. StopIteration) or not (e.g. custom error raising)
 
+
 **Object-oriented programming (OOP)**
 - Python supports object-oriented programming (OOP)
 - class, methods, attributes
 - constructor: `__init__`
+
 
 **Iterators, generator expressions and generators**
 * **Iterator**
 	- An iterator is an object adhering to the iterator protocol — basically this means that it has a next method, which, when called, returns the next item in the sequence, and when there’s nothing to return, raises the StopIteration exception.
 	- When used in a loop, StopIteration is swallowed and causes the loop to finish. But with explicit invocation,
 we can see that once the iterator is exhausted, accessing it raises an exception.
-```python
-num=[1,2,3]
-it=iter(num)
-next(it)
-next(it)
-next(it)
-next(it) # StopIteration Exception
-```
+  ```python
+  num=[1,2,3]
+  it=iter(num)
+  next(it)
+  next(it)
+  next(it)
+  next(it) # StopIteration Exception
+  ```
 * **Generator expressions**
 	- A second way in which iterator objects are created is through generator expressions
 	- the basis for list comprehensions
@@ -981,15 +998,15 @@ next(it) # StopIteration Exception
 	- The list comprehension syntax also extends to dictionary and set comprehensions
 	- A set is created when the generator expression is enclosed in curly braces
 	- A dict is created when the generator expression contains “pairs” of the form key:value.
-```python
-(i for i in num) # generator is created
-[i for in num] # list is created
-#
-{i for i in range(3)} # set is created: set([0, 1, 2])
-#
-# in old Pythons the index variable ( i ) would leak, and in versions >= 3 this is fixed.
-{i:i**2 for i in range(3)} # dictionary is created: {0: 0, 1: 1, 2: 4}
-```
+  ```python
+  (i for i in num) # generator is created
+  [i for in num] # list is created
+  #
+  {i for i in range(3)} # set is created: set([0, 1, 2])
+  #
+  # in old Pythons the index variable ( i ) would leak, and in versions >= 3 this is fixed.
+  {i:i**2 for i in range(3)} # dictionary is created: {0: 0, 1: 1, 2: 4}
+  ```
 * **Generators**
 	- A generator is a function that produces a sequence of results instead of a single value
 	- A third way to create iterator objects is to call a generator function
@@ -1007,18 +1024,17 @@ next(it) # StopIteration Exception
 	- `throw(type, value=None, traceback=None)`
 	- `send(value)` equivalent to `g.next() and g.send(None)` # raise type, value, traceback
 	- `close()` method, which can be used to force a generator that would otherwise be able to provide more values to finish immediately
-```python
-def f():
-	yield 1
-	yield 2
-#
-gen=f()
-#
-next(f)	# 1
-next(f) # 2
-next(f) # StopIteration
-```
-
+  ```python
+  def f():
+  	yield 1
+  	yield 2
+  #
+  gen=f()
+  #
+  next(f)	# 1
+  next(f) # 2
+  next(f) # StopIteration
+  ```
 * **Decorators**
   - Since functions and classes are objects, they can be passed around. Since they are mutable objects, they can be modified. The act of altering a function or class object after it has been constructed but before it is bound to its name is called decorating
   - Decorators can be applied to functions and to classes
@@ -1029,30 +1045,30 @@ next(f) # StopIteration
 	- A context manager is an object with __enter__ and __exit__ methods which can be used in the with statement
 	- Use cases:
 		* Using generators to define context managers: use a decorator to turn generator functions into context managers
-```python
-with manager as var:
-  do_something(var)
-#
-# simplest case equivalent to
-var = manager.__enter__()
-try:
-	do_something(var)
-finally:
-	manager.__exit__()
-#
-# calls close and can be used as a context manager itself
-with open('/tmp/file', 'a') as f:
-	f.write('more contents\n')
-```
-
+  ```python
+  with manager as var:
+    do_something(var)
+  #
+  # simplest case equivalent to
+  var = manager.__enter__()
+  try:
+  	do_something(var)
+  finally:
+  	manager.__exit__()
+  #
+  # calls close and can be used as a context manager itself
+  with open('/tmp/file', 'a') as f:
+  	f.write('more contents\n')
+  ```
 * **Others**
-```python
-# Return a list of tuples, where each tuple contains the i-th element
-## from each of the argument sequences.  The returned list is truncated
-### in length to the length of the shortest argument sequence.
-#
-zip
-```
+  ```python
+  # Return a list of tuples, where each tuple contains the i-th element
+  ## from each of the argument sequences.  The returned list is truncated
+  ### in length to the length of the shortest argument sequence.
+  #
+  zip
+  ```
+
 
 ### Debugging
 
@@ -1092,7 +1108,6 @@ p: to print the value of an expression in the current context
 If you don't want to use a command line debugger, some IDEs like Pydev have a GUI debugger.
 
 
-
 ### Optimizing Code
 - http://packages.python.org/line_profiler/
 - https://docs.python.org/library/timeit.html
@@ -1103,6 +1118,7 @@ If you don't want to use a command line debugger, some IDEs like Pydev have a GU
 ```bash
 python -m cProfile -o demo.prof demo.py
 ```
+
 
 **Commonly encountered tricks to make code faster**
 - moving computation or memory allocation outside a for loop
@@ -1115,10 +1131,12 @@ python -m cProfile -o demo.prof demo.py
 - Beware of cache effects
 	* Memory access is cheaper when it is grouped: accessing a big array in a continuous way is much faster than random access. This implies amongst other things that smaller strides are faster
 
+
 ### Sparse Matrices
 - scipy.sparse
 - PyAMG
 - Pysparse
+
 
 ## NumPy
 - creating and manipulating numerical data
@@ -1134,18 +1152,18 @@ python -m cProfile -o demo.prof demo.py
 - Different data-types allow us to store data more compactly in memory, but most of the time we simply work with floating point numbers.
 - The default data type for number array is floating point
 - Few datatypes:
-```python
-dtype('int64')
-dtype('float64')
-dtype('complex128')
-dtype('bool')
-dtype('S7') #strings containing max. 7 letters
-#
-int32
-int64
-uint32
-uint64
-```
+  ```python
+  dtype('int64')
+  dtype('float64')
+  dtype('complex128')
+  dtype('bool')
+  dtype('S7') #strings containing max. 7 letters
+  #
+  int32
+  int64
+  uint32
+  uint64
+  ```
 - Array Indices begin at 0, like other Python sequences (and C/C++). In contrast, in Fortran or Matlab, indices begin at 1.
 - Usual python idiom for reversing a sequence is supported
 - For multidimensional arrays, indexes are tuples of integers
@@ -1157,268 +1175,268 @@ uint64
 - The shape of an array is a tuple indicating the number of elements along each axis.
 - An existing array `a` has an attribute `a.shape` which contains this tuples
 - Array functions
-```python
-import numpy as np
-#
-np.lookfor('create array')
-#
-help(np.array)
-#
-# 1-D Array
-a = np.array([0, 1, 2, 3])	# 1D
-b = np.array([[0, 1, 2], [3, 4, 5]]) #2D: 2 x 3 array
-c = np.array([[[1], [2]], [[3], [4]]])	#3D
-type(a)
-a.ndim
-a.shape
-a.dtype
-np.shape(a)
-len(a)
-#
-# Evenly spaced
-a = np.arange(10) # 0 .. n-1 (!)
-a[2:9:3] # [start:end:step]
-#
-# by number of points
-np.linspace(0, 1, 6) # start, end, num-points
-np.linspace(0, 1, 5, endpoint=False)
-#
-np.ones((3, 3)) # reminder: (3, 3) is a tuple
-np.zeros((2, 2))
-np.eye(3)
-np.diag(np.array([1, 2, 3, 4]))
-np.random.rand(4) # Gaussian
-np.random.seed(1234) # Setting the random seed
-#
-np.lookfor(np.empty)
-help(np.empty)
-#
-# explicitly specify which data-type
-np.array([1, 2, 3], dtype=float)
-#
-# complex number/datatype
-np.array([1+2j, 3+4j, 5+6*1j])
-#
-# Exercise
-# Odd number counting backwards using np.linspace
-np.linspace(1,20,20,dtype='int')[::2][::-1]
-# Even number counting forward using np.linspace
-np.linspace(2,21,20,dtype='int')[::2]
-#
-np.arange(0,51,10)[:,np.newaxis]
-#
-# Tiling array
-# np.tile
-a=np.array([(4,3),(2,1)])
-np.tile(a,(2,3))
-```
+  ```python
+  import numpy as np
+  #
+  np.lookfor('create array')
+  #
+  help(np.array)
+  #
+  # 1-D Array
+  a = np.array([0, 1, 2, 3])	# 1D
+  b = np.array([[0, 1, 2], [3, 4, 5]]) #2D: 2 x 3 array
+  c = np.array([[[1], [2]], [[3], [4]]])	#3D
+  type(a)
+  a.ndim
+  a.shape
+  a.dtype
+  np.shape(a)
+  len(a)
+  #
+  # Evenly spaced
+  a = np.arange(10) # 0 .. n-1 (!)
+  a[2:9:3] # [start:end:step]
+  #
+  # by number of points
+  np.linspace(0, 1, 6) # start, end, num-points
+  np.linspace(0, 1, 5, endpoint=False)
+  #
+  np.ones((3, 3)) # reminder: (3, 3) is a tuple
+  np.zeros((2, 2))
+  np.eye(3)
+  np.diag(np.array([1, 2, 3, 4]))
+  np.random.rand(4) # Gaussian
+  np.random.seed(1234) # Setting the random seed
+  #
+  np.lookfor(np.empty)
+  help(np.empty)
+  #
+  # explicitly specify which data-type
+  np.array([1, 2, 3], dtype=float)
+  #
+  # complex number/datatype
+  np.array([1+2j, 3+4j, 5+6*1j])
+  #
+  # Exercise
+  # Odd number counting backwards using np.linspace
+  np.linspace(1,20,20,dtype='int')[::2][::-1]
+  # Even number counting forward using np.linspace
+  np.linspace(2,21,20,dtype='int')[::2]
+  #
+  np.arange(0,51,10)[:,np.newaxis]
+  #
+  # Tiling array
+  # np.tile
+  a=np.array([(4,3),(2,1)])
+  np.tile(a,(2,3))
+  ```
 - `np.may_share_memory()` to check if two arrays share the same memory block. Note  however, that this uses heuristics and may give you false positives.
 - NumPy arrays can be indexed with slices, but also with boolean or integer arrays (masks). This method is called fancy indexing. It creates copies not views
-```python
-import numpy as np
-#
-# copy(); np.copy()
-a=np.arange(10)
-c=a[::2].copy()
-#
-# np.may_share_memory
-np.may_share_memory(a,c)
-np.sqrt
-np.nonzero
-#
-# Return an array representing the indices of a grid.
-x, y = np.indices((1, 1))
-#
-np.searchsorted
-#
-```
+  ```python
+  import numpy as np
+  #
+  # copy(); np.copy()
+  a=np.arange(10)
+  c=a[::2].copy()
+  #
+  # np.may_share_memory
+  np.may_share_memory(a,c)
+  np.sqrt
+  np.nonzero
+  #
+  # Return an array representing the indices of a grid.
+  x, y = np.indices((1, 1))
+  #
+  np.searchsorted
+  #
+  ```
 - **masking:** Indexing with a mask can be very useful to assign a new value to a sub-array
 - NumPy arrays can be indexed with slices, but also with boolean or integer arrays (masks). This method is called **fancy indexing**. It creates copies not views
-```python
-import numpy as np
-np.random.seed(3)
-a=np.random.randint(0, 21, 15) # 15 numbers between 0 and 21
-mask=(a%3==0)
-extract_from_a = a[mask]
-a[mask] = 0
-```
+  ```python
+  import numpy as np
+  np.random.seed(3)
+  a=np.random.randint(0, 21, 15) # 15 numbers between 0 and 21
+  mask=(a%3==0)
+  extract_from_a = a[mask]
+  a[mask] = 0
+  ```
 - Indexing can be done with an array of integers, where the same index is repeated several time
-```python
-import numpy as np
-a = np.arange(0, 100, 10)
-a[[2, 3, 2, 4, 2]]
-a[[7,9]]=0
-a[[7,9]]=[70,90]
-```
+  ```python
+  import numpy as np
+  a = np.arange(0, 100, 10)
+  a[[2, 3, 2, 4, 2]]
+  a[[7,9]]=0
+  a[[7,9]]=[70,90]
+  ```
 - When a new array is created by indexing with an array of integers, the new array has the same shape as the array of integers
-```python
-import numpy as np
-a=np.arange(10)
-idx=np.array([[3,4],[9,7]])
-idx.shape
-a[idx]
-```
+  ```python
+  import numpy as np
+  a=np.arange(10)
+  idx=np.array([[3,4],[9,7]])
+  idx.shape
+  a[idx]
+  ```
 - **Numerical operations on arrays**
 - Elementwise operations: Basic operations on numpy arrays (addition, etc.) are elementwise
-```python
-import numpy as np
-x=np.arange(1,11) # (start,stop,step)
-x+1
-x-2
-x*2
-x**2
-2**x
-#
-# Array-wise comparisons
-y=np.arange(1,11)
-x==y
-x>y
-np.array_equal(x,y)
-#
-# Logical operations
-np.logical_or(x,y)
-np.logical_and(x,y)
-np.all([True, True, False]) # Test whether `all` array elements along a given axis evaluate to True
-np.any([True, True, False]) #  Test whether `any` array element along a given axis evaluates to True
-#
-# Transcendental functions
-np.sin(x)
-np.log(x)
-np.exp(x)
-#
-# Computing sums
-x=np.arange(5)
-np.sum(x)
-x.sum()
-#
-# Sum by rows and by columns
-x=np.array([[1,1],[2,2]])
-x.sum(axis=0) # columns (1st dimension)
-x.sum(axis=1) # rows (2nd dimension)
-#
-# Unique Values
-np.unique(x)
-#
-# cummulative sum
-x.cumsum()
-#
-# Same idea in higher dimensions
-#
-x=np.array([[1,2],[3,4]])
-x.min()
-x.min(axis=0)
-x.min(axis=1)
-x.max()
-x.max(axis=0)
-x.max(axis=1)
-x.argmin() # index of minimum
-x.argmax() # index of maximum
-#
-# Datatype
-a=np.arange(10)
-a.shape,type(a),a.ndim,a.dtype # ((10,), <type 'numpy.ndarray'>, 1, dtype('int64'))
-#
-b=np.arange(10).astype(float) # ((10,), <type 'numpy.ndarray'>, 1, dtype('float64'))
-b.shape,type(b),b.ndim,b.dtype
-```
+  ```python
+  import numpy as np
+  x=np.arange(1,11) # (start,stop,step)
+  x+1
+  x-2
+  x*2
+  x**2
+  2**x
+  #
+  # Array-wise comparisons
+  y=np.arange(1,11)
+  x==y
+  x>y
+  np.array_equal(x,y)
+  #
+  # Logical operations
+  np.logical_or(x,y)
+  np.logical_and(x,y)
+  np.all([True, True, False]) # Test whether `all` array elements along a given axis evaluate to True
+  np.any([True, True, False]) #  Test whether `any` array element along a given axis evaluates to True
+  #
+  # Transcendental functions
+  np.sin(x)
+  np.log(x)
+  np.exp(x)
+  #
+  # Computing sums
+  x=np.arange(5)
+  np.sum(x)
+  x.sum()
+  #
+  # Sum by rows and by columns
+  x=np.array([[1,1],[2,2]])
+  x.sum(axis=0) # columns (1st dimension)
+  x.sum(axis=1) # rows (2nd dimension)
+  #
+  # Unique Values
+  np.unique(x)
+  #
+  # cummulative sum
+  x.cumsum()
+  #
+  # Same idea in higher dimensions
+  #
+  x=np.array([[1,2],[3,4]])
+  x.min()
+  x.min(axis=0)
+  x.min(axis=1)
+  x.max()
+  x.max(axis=0)
+  x.max(axis=1)
+  x.argmin() # index of minimum
+  x.argmax() # index of maximum
+  #
+  # Datatype
+  a=np.arange(10)
+  a.shape,type(a),a.ndim,a.dtype # ((10,), <type 'numpy.ndarray'>, 1, dtype('int64'))
+  #
+  b=np.arange(10).astype(float) # ((10,), <type 'numpy.ndarray'>, 1, dtype('float64'))
+  b.shape,type(b),b.ndim,b.dtype
+  ```
 - Array multiplication is not matrix multiplication
 - Array multiplication is Elementwise operations
-```python
-import numpy as np
-x=np.ones((3,3))
-c*c
-c**c # c to the power of c
-```
+  ```python
+  import numpy as np
+  x=np.ones((3,3))
+  c*c
+  c**c # c to the power of c
+  ```
 - Matrix multiplication
-```python
-c.dot(c)
-```
+  ```python
+  c.dot(c)
+  ```
 - **Transposition**
 - The transposition is a view
-```python
-import numpy as np
-help(np.triu) # Upper triangle of an array
-help(np.tril) # Lower triangle of an array
-x=np.ones((3,3))
-np.triu(x)
-a=np.triu(x,1)
-a.T
-```
+  ```python
+  import numpy as np
+  help(np.triu) # Upper triangle of an array
+  help(np.tril) # Lower triangle of an array
+  x=np.ones((3,3))
+  np.triu(x)
+  a=np.triu(x,1)
+  a.T
+  ```
 - **Some Useful Transformations**
-```python
-# Flip array in the up/down direction.
-np.flipud(x)
-```
+  ```python
+  # Flip array in the up/down direction.
+  np.flipud(x)
+  ```
 - **Linear algebra**
 - `numpy.linalg` implements basic linear algebra such as solving linear systems, singular value  decomposition, etc. However, it is not guaranteed to be compiled using efficient routines
 - instead of `numpy.linalg` use of `scipy.linalg`
 - **Statistics**
-```python
-import numpy as np
-x=np.arange(1,11)
-#
-x.mean()
-np.mean(x)
-#
-x.median() # AttributeError: 'numpy.ndarray' object has no attribute 'median'
-np.median(x)
-#
-x.std()
-np.std(x)
-#
-np.random.normal(0,1,n)
-np.random.uniform(0.5, 1.0, n)
-```
+  ```python
+  import numpy as np
+  x=np.arange(1,11)
+  #
+  x.mean()
+  np.mean(x)
+  #
+  x.median() # AttributeError: 'numpy.ndarray' object has no attribute 'median'
+  np.median(x)
+  #
+  x.std()
+  np.std(x)
+  #
+  np.random.normal(0,1,n)
+  np.random.uniform(0.5, 1.0, n)
+  ```
 - **loading data**
 - [populations.txt](https://www.scipy-lectures.org/_downloads/populations.txt)
-```python
-import numpy as np
-data=np.loadtxt('data/populations.txt')
-year, hares, lynxes, carrots = data.T # trick: columns to variables
-#
-import matplotlib.pyplot as plt
-plt.axes([0.2,0.1,0.5,0.8])
-plt.plot(year, hares, year, lynxes, year, carrots)
-plt.legend(('Hare','Lynx','Carrot'),loc=(1.05,0.5))
-plt.show()
-```
+  ```python
+  import numpy as np
+  data=np.loadtxt('data/populations.txt')
+  year, hares, lynxes, carrots = data.T # trick: columns to variables
+  #
+  import matplotlib.pyplot as plt
+  plt.axes([0.2,0.1,0.5,0.8])
+  plt.plot(year, hares, year, lynxes, year, carrots)
+  plt.legend(('Hare','Lynx','Carrot'),loc=(1.05,0.5))
+  plt.show()
+  ```
 - **Broadcasting**
 - It’s also possible to do operations on arrays of different sizes if NumPy can transform these arrays so that they all have the same size: this conversion is called broadcasting.
 - to solve a problem whose output data is an array with more dimensions than input data
 - A lot of grid-based or network-based problems can also use broadcasting.
 - Some Errors in broadcasting
 	* IndexError: shape mismatch: indexing arrays could not be broadcast together with shapes (384,) (512,)
-```python
-import numpy as np
-a = np.tile(np.arange(0, 40, 10), (3, 1)).T
-b = np.array([0, 1, 2])
-a+b
-```
+  ```python
+  import numpy as np
+  a = np.tile(np.arange(0, 40, 10), (3, 1)).T
+  b = np.array([0, 1, 2])
+  a+b
+  ```
 - For instance, if we want to compute the distance from the origin of points on a 10x10 grid, we can do:
 - `np.ogrid()` function allows to directly create vectors x and y of the previous example, with two “significant dimensions”
 - `np.mgrid` directly provides matrices full of indices for cases where we can’t (or don’t want to) benefit from broadcasting
 - `np.mgrid`, `np.ogrid`, `np.meshgrid`
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-x, y = np.arange(5), np.arange(5)[:, np.newaxis] # defining x and y variables in a single line
-distance = np.sqrt(x ** 2 + y ** 2) # linear distance formula
-plt.pcolor(distance)
-plt.colorbar()
-plt.show()
-#
-# np.ogrid
-x,y=np.ogrid[0:5,0:5]
-#
-# np.mgrid
-x1,y1=np.mgrid[0:5,0:5]
-#
-#
-n = 256
-x = np.linspace(-3, 3, n)
-y = np.linspace(-3, 3, n)
-X, Y = np.meshgrid(x, y)
-```
+  ```python
+  import numpy as np
+  import matplotlib.pyplot as plt
+  x, y = np.arange(5), np.arange(5)[:, np.newaxis] # defining x and y variables in a single line
+  distance = np.sqrt(x ** 2 + y ** 2) # linear distance formula
+  plt.pcolor(distance)
+  plt.colorbar()
+  plt.show()
+  #
+  # np.ogrid
+  x,y=np.ogrid[0:5,0:5]
+  #
+  # np.mgrid
+  x1,y1=np.mgrid[0:5,0:5]
+  #
+  #
+  n = 256
+  x = np.linspace(-3, 3, n)
+  y = np.linspace(-3, 3, n)
+  X, Y = np.meshgrid(x, y)
+  ```
 - **Array shape manipulation**
 - ++Flattening++: Higher dimensions: last dimensions ravel out “first”.
 - ++Reshaping++: ndarray.reshape may return a view or copy. To understand this you need to learn more about the memory layout of a numpy arrays
@@ -1427,42 +1445,42 @@ X, Y = np.meshgrid(x, y)
 - ++Resizing++: Size of an array can be changed with `ndarray.resize`
 - ++Sorting data++: `np.sort`
 - `np.argsort, np.argmax, np.argmin, np.random.shuffle(a),  np.random.random`
-```python
-import numpy as np
-#
-# Flattening
-a = np.array([[1, 2, 3], [4, 5, 6]])
-a.ravel()
-a.T.ravel()
-a.flatten()
-#
-# Reshaping
-a.ravel().reshape((2,3))
-a.ravel().reshape((2,-1)) # unspecified (-1) value is inferred
-#
-# Adding a dimension
-z = np.array([1, 2, 3])
-z[:,np.newaxis]
-#
-# Dimension shuffling
-a = np.arange(4*3*2).reshape(4, 3, 2)
-b = a.transpose(1, 2, 0)
-#
-# Resizing
-a = np.arange(4)
-a.resize((8,))
-#
-# others
-## Generate a NumPy array of 10,000 random numbers
-b=np.random.randint(1000, size=10000)
-a=np.random.randint(0,40,10)
-a
-np.random.shuffle(a)
-a
-np.max(a) # max value
-np.argmax(a) # index of max value
-a[np.argmax(a)]==a.max()
-```
+  ```python
+  import numpy as np
+  #
+  # Flattening
+  a = np.array([[1, 2, 3], [4, 5, 6]])
+  a.ravel()
+  a.T.ravel()
+  a.flatten()
+  #
+  # Reshaping
+  a.ravel().reshape((2,3))
+  a.ravel().reshape((2,-1)) # unspecified (-1) value is inferred
+  #
+  # Adding a dimension
+  z = np.array([1, 2, 3])
+  z[:,np.newaxis]
+  #
+  # Dimension shuffling
+  a = np.arange(4*3*2).reshape(4, 3, 2)
+  b = a.transpose(1, 2, 0)
+  #
+  # Resizing
+  a = np.arange(4)
+  a.resize((8,))
+  #
+  # others
+  ## Generate a NumPy array of 10,000 random numbers
+  b=np.random.randint(1000, size=10000)
+  a=np.random.randint(0,40,10)
+  a
+  np.random.shuffle(a)
+  a
+  np.max(a) # max value
+  np.argmax(a) # index of max value
+  a[np.argmax(a)]==a.max()
+  ```
 -  As a general rule, NumPy should be used for larger lists/arrays of numbers, as it is significantly more memory efficient and faster to compute on than lists.
 - **How to square or raise to a power (elementwise) a 2D numpy array?**
   - https://stackoverflow.com/questions/25870923/how-to-square-or-raise-to-a-power-elementwise-a-2d-numpy-array
@@ -1474,28 +1492,27 @@ a[np.argmax(a)]==a.max()
 - **chararray**
 	- chararray: vectorized string operations
 	- `.view()` has a second meaning: it can make an ndarray an instance of a specialized ndarray subclass
-```python
-x = np.array(['a', ' bbb', ' ccc']) # type: <type 'numpy.ndarray'>
-y = x.view(np.chararray) # type: <class 'numpy.core.defchararray.chararray'>
-y.lstrip(' ').upper()
-```
+  ```python
+  x = np.array(['a', ' bbb', ' ccc']) # type: <type 'numpy.ndarray'>
+  y = x.view(np.chararray) # type: <class 'numpy.core.defchararray.chararray'>
+  y.lstrip(' ').upper()
+  ```
 - **maskedarray**
 	- Masked arrays are arrays that may have missing or invalid entries
 	- Not all NumPy functions respect masks, for instance np.dot , so check the return types.
 	- The masked_array returns a view to the original array
-```python
-x = np.array([1, 2, 3, -99, 5])
-mx = np.ma.masked_array(x, mask=[0, 0, 0, 1, 0]) # type: <class 'numpy.ma.core.MaskedArray'>
-mx # masked_array(data = [1 2 3 -- 5],mask = [False False False True False],fill_value = 999999)
-```
-
+  ```python
+  x = np.array([1, 2, 3, -99, 5])
+  mx = np.ma.masked_array(x, mask=[0, 0, 0, 1, 0]) # type: <class 'numpy.ma.core.MaskedArray'>
+  mx # masked_array(data = [1 2 3 -- 5],mask = [False False False True False],fill_value = 999999)
+  ```
 - **matrix**
 	- `np.matrix`
 	- always 2-D
 	- * is the matrix product, not the elementwise one
-```python
-np.matrix([[1, 0], [0, 1]]) * np.matrix([[1, 2], [3, 4]]) # type: <class 'numpy.matrixlib.defmatrix.matrix'>
-```
+  ```python
+  np.matrix([[1, 0], [0, 1]]) * np.matrix([[1, 2], [3, 4]]) # type: <class 'numpy.matrixlib.defmatrix.matrix'>
+  ```
 - **Summary**
 	- Know how to create arrays : array , arange , ones , zeros .
 	- Know the shape of the array with array.shape , then use slicing to obtain different views of the array: array[::2] , etc. Adjust the shape of the array using reshape or flatten it with ravel.
@@ -1504,27 +1521,30 @@ np.matrix([[1, 0], [0, 1]]) * np.matrix([[1, 2], [3, 4]]) # type: <class 'numpy.
 	- master the indexing with arrays of integers, as well as broadcasting. Know more NumPy functions to handle various array operations
 - numpy.lookfor looks for keywords inside the docstrings of specified module
 - `numexpr` is designed to mitigate cache effects in array computing
-```python
-import numpy as np
-np.pi
-#
-a=np.arange(0,11)
-a.strides
-#
-# some functions
-help()
-str()
-len()
-```
+  ```python
+  import numpy as np
+  np.pi
+  #
+  a=np.arange(0,11)
+  a.strides
+  #
+  # some functions
+  help()
+  str()
+  len()
+  ```
 - other functions
-```python
-import nummpy as np
-from skimage import data, exposure, img_as_float
-image = img_as_float(data.camera())
-np.histogram(image,bins=2)
-```
+  ```python
+  import nummpy as np
+  from skimage import data, exposure, img_as_float
+  image = img_as_float(data.camera())
+  np.histogram(image,bins=2)
+  ```
+
+
 **Tutorials**
 * https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php
+
 
 ## Matplotlib
 - 2D plotting package
@@ -1532,81 +1552,82 @@ np.histogram(image,bins=2)
 - pyplot: provides a procedural interface to the matplotlib object-oriented plotting library
 - **TBD**: Learn about `figure` and `subplot`
 - Figures, Subplots, Axes and Ticks
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+  ```python
+  import numpy as np
+  import matplotlib.pyplot as plt
 
-# 1D plotting
-# line-plot
-x=np.linspace(0,3,20)
-y=np.linspace(0,9,20)
-plt.plot(x,y)
-plt.show()
-plt.plot(x, y, 'o') # dot plot
-#
-# 2D arrays (such as images)
-image = np.random.rand(30, 30)
-plt.imshow(image, cmap=plt.cm.hot)
-plt.colorbar()
-plt.show()
-#
-import numpy as np
-import matplotlib.pyplot as plt
-X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
-C, S = np.cos(X), np.sin(X)
-plt.plot(X, C)
-plt.plot(X, S)
-plt.show()
-# commands
-plt.plot
-#
-plt.figure
-fig = plt.figure(figsize=(6, 6)) # figure size in inches
-fig.subplots_adjust
-fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
-fig.add_subplot(8, 8, i + 1, xticks=[], yticks=[])
-#
-plt.subplot
-plt.xlim
-plt.ylim
-plt.xticks
-plt.yticks
-plt.set_xticklabels
-plt.set_yticklabels
-plt.gca() # gca stands for 'get current axis'
-plt.legend
-plt.annotate
-plt.close
-plt.show
-plt.text
-plt.title
-#
-plt.imshow
-plt.imshow(digits.images[i], cmap=plt.cm.binary, interpolation='nearest')
-plt.imshow(digits.images[i], cmap=plt.cm.gray, interpolation='nearest')
-plt.imshow(digits.images[i], cmap="gray", interpolation='nearest')
-#
-plt.axes
-plt.pie
-plt.bar
-plt.scatter
-plt.quiver
-plt.contour
-plt.contourf
-plt.pcolormesh
-plt.scatter
-# Automatically adjust subplot parameters to give specified padding
-plt.tight_layout
-#
-# Create color maps
-from matplotlib.colors import ListedColormap
-cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
-cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
-```
+  # 1D plotting
+  # line-plot
+  x=np.linspace(0,3,20)
+  y=np.linspace(0,9,20)
+  plt.plot(x,y)
+  plt.show()
+  plt.plot(x, y, 'o') # dot plot
+  #
+  # 2D arrays (such as images)
+  image = np.random.rand(30, 30)
+  plt.imshow(image, cmap=plt.cm.hot)
+  plt.colorbar()
+  plt.show()
+  #
+  import numpy as np
+  import matplotlib.pyplot as plt
+  X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
+  C, S = np.cos(X), np.sin(X)
+  plt.plot(X, C)
+  plt.plot(X, S)
+  plt.show()
+  # commands
+  plt.plot
+  #
+  plt.figure
+  fig = plt.figure(figsize=(6, 6)) # figure size in inches
+  fig.subplots_adjust
+  fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
+  fig.add_subplot(8, 8, i + 1, xticks=[], yticks=[])
+  #
+  plt.subplot
+  plt.xlim
+  plt.ylim
+  plt.xticks
+  plt.yticks
+  plt.set_xticklabels
+  plt.set_yticklabels
+  plt.gca() # gca stands for 'get current axis'
+  plt.legend
+  plt.annotate
+  plt.close
+  plt.show
+  plt.text
+  plt.title
+  #
+  plt.imshow
+  plt.imshow(digits.images[i], cmap=plt.cm.binary, interpolation='nearest')
+  plt.imshow(digits.images[i], cmap=plt.cm.gray, interpolation='nearest')
+  plt.imshow(digits.images[i], cmap="gray", interpolation='nearest')
+  #
+  plt.axes
+  plt.pie
+  plt.bar
+  plt.scatter
+  plt.quiver
+  plt.contour
+  plt.contourf
+  plt.pcolormesh
+  plt.scatter
+  # Automatically adjust subplot parameters to give specified padding
+  plt.tight_layout
+  #
+  # Create color maps
+  from matplotlib.colors import ListedColormap
+  cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+  cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
+  ```
 * **Subplots**
 	- https://matplotlib.org/gallery/subplots_axes_and_figures/subplots_demo.html
 * **Legend**
 	- https://matplotlib.org/2.0.2/users/legend_guide.html
+
 
 ### Examples
 * https://stackoverflow.com/questions/34768717/matplotlib-unable-to-save-image-in-same-resolution-as-original-image
@@ -1662,8 +1683,9 @@ fig.savefig('test.jpg', dpi=dpi, transparent=True)
 plt.show()
 ```
 
+
 ### mpl_toolkits - Basic 3D in Matplotlib
-https://matplotlib.org/1.4.3/mpl_toolkits/index.html
+* https://matplotlib.org/1.4.3/mpl_toolkits/index.html
 
 
 ## Scipy: High Level Scientific Computing
@@ -1689,49 +1711,50 @@ https://matplotlib.org/1.4.3/mpl_toolkits/index.html
 	* scipy.spatial - Spatial data structures and algorithms
 	* scipy.special - Special functions/Any special mathematical functions
 	* scipy.stats - Statistics and random numbers
-```python
-import numpy as np
-from scipy import stats # same for other sub-modules
-from scipy import io as spio
-```
+  ```python
+  import numpy as np
+  from scipy import stats # same for other sub-modules
+  from scipy import io as spio
+  ```
 
 ### Statistics and random numbers: `scipy.stats`
 - `scipy.stats.ttest_1samp()` tests if the population mean of data is likely to be equal to a given value.
 - It returns `T-statistic` and the `p-value`
-```python
-from scipy import stats
-stats.ttest_1samp(data['VIQ'], 0)
-```
+  ```python
+  from scipy import stats
+  stats.ttest_1samp(data['VIQ'], 0)
+  ```
 - to To test if the difference of a mean between two groups for a particular variable is significant. Do a 2-sample t-test with `scipy.stats.ttest_ind()`
-```python
-from scipy import stats
-stats.ttest_ind(viq_f,viq_m)
-```
+  ```python
+  from scipy import stats
+  stats.ttest_ind(viq_f,viq_m)
+  ```
 
 ### Linear algebra operations: `scipy.linalg`
 
-```python
-scipy.linalg.det() # determinant of a square matrix
-scipy.linalg.inv() # inverse of a square Matrix
-#
-# SVD - Singular Value Decomposition
-a=np.arange(9).reshape((3,3))+np.diag([1,0,1])
-u,s,v=linalg.svd(a)
-## verify svd
-aa=u.dot(np.diag(s)).dot(v)
-np.allclose(a,aa)
-```
+  ```python
+  scipy.linalg.det() # determinant of a square matrix
+  scipy.linalg.inv() # inverse of a square Matrix
+  #
+  # SVD - Singular Value Decomposition
+  a=np.arange(9).reshape((3,3))+np.diag([1,0,1])
+  u,s,v=linalg.svd(a)
+  ## verify svd
+  aa=u.dot(np.diag(s)).dot(v)
+  np.allclose(a,aa)
+  ```
 - principal component analysis (PCA) or SVD: PCA is a technique for dimensionality reduction, i.e. an algorithm
 to explain the observed variance in your data using less dimensions.
 - independent component analysis (ICA): ICA is a source seperation technique, for example to unmix multiple signals that have been recorded through multiple sensors. Doing a PCA first and then an ICA can be useful if you have more sensors than signals.
 
+
 ### Interpolate: `scipy.interpolatescipy.interpolate`
 - is useful for fitting a function from experimental data and thus evaluating points where no measure exists
 - example: Maximum wind speed prediction at the Sprogø station for a more advanced spline interpolation
-```python
-scipy.interpolate.interp1d
-scipy.interpolate.interp2d
-```
+  ```python
+  scipy.interpolate.interp1d
+  scipy.interpolate.interp2d
+  ```
 
 ### Optimization and fit: `scipy.optimize`
 - Optimization is the problem of finding a numerical solution to a minimization or equality
@@ -1743,98 +1766,98 @@ scipy.interpolate.interp2d
 - If we don’t know the neighborhood of the global minimum to choose the initial point, we need to resort to 
 costlier global optimization
 - To find the global minimum, we use `scipy.optimize.basinhopping()` (added in version 0.12.0 of Scipy). It combines a local optimizer with sampling of starting points
-```python
-import numpy as np
-from scipy import optimize
-import matplotlib.pyplot as plt
+  ```python
+  import numpy as np
+  from scipy import optimize
+  import matplotlib.pyplot as plt
 
-# Seed the random number generator for reproducibility
-np.random.seed(0)
+  # Seed the random number generator for reproducibility
+  np.random.seed(0)
 
-x_data = np.linspace(-5, 5, num=50)
-y_data = 2.9 * np.sin(1.5 * x_data) + np.random.normal(size=50)
+  x_data = np.linspace(-5, 5, num=50)
+  y_data = 2.9 * np.sin(1.5 * x_data) + np.random.normal(size=50)
 
-def test_func(x, a, b):
-    return a * np.sin(b * x)
+  def test_func(x, a, b):
+      return a * np.sin(b * x)
 
-params, params_covariance = optimize.curve_fit(test_func, x_data, y_data, p0=[2, 2])
-print(params)
-#
-# plot the resulting curve on the data
-plt.figure(figsize=(6, 4))
-plt.scatter(x_data, y_data, label='Data')
-plt.plot(x_data, test_func(x_data, params[0], params[1]), label='Fitted function')
-plt.legend(loc='best')
-plt.show()
-#
-optimize.minimize(f, x0=0)
-optimize.minimize(f, x0=0, method="L-BFGS-B")
-#
-# global minimum
-optimize.basinhopping(f, 0)
-optimize.minimize(f, x0=1,bounds=((0, 10), ) )
-```
+  params, params_covariance = optimize.curve_fit(test_func, x_data, y_data, p0=[2, 2])
+  print(params)
+  #
+  # plot the resulting curve on the data
+  plt.figure(figsize=(6, 4))
+  plt.scatter(x_data, y_data, label='Data')
+  plt.plot(x_data, test_func(x_data, params[0], params[1]), label='Fitted function')
+  plt.legend(loc='best')
+  plt.show()
+  #
+  optimize.minimize(f, x0=0)
+  optimize.minimize(f, x0=0, method="L-BFGS-B")
+  #
+  # global minimum
+  optimize.basinhopping(f, 0)
+  optimize.minimize(f, x0=1,bounds=((0, 10), ) )
+  ```
 - Minimizing functions of several variables: To minimize over several variables, the trick is to turn them into a function of a multi-dimensional variable (a vector)
 - `optimize.minimize_scalar()` is a function with dedicated methods to minimize functions of only one variable
 - Filters should be created using the scipy filter design code
 - Exercise
-```python
-temp_max = np.array([17, 19, 21, 28, 33, 38, 37, 37, 31, 23, 19, 18])
-temp_min = np.array([-62, -59, -56, -46, -32, -18, -9, -13, -25, -46, -52, -58])
-```
+  ```python
+  temp_max = np.array([17, 19, 21, 28, 33, 38, 37, 37, 31, 23, 19, 18])
+  temp_min = np.array([-62, -59, -56, -46, -32, -18, -9, -13, -25, -46, -52, -58])
+  ```
 - Optimization of a two-parameter function
-```python
-import numpy as np
-# Define the function that we are interested in
-def sixhump(x):
-	return ((4 - 2.1*x[0]**2 + x[0]**4 / 3.) * x[0]**2 + x[0] * x[1] + (-4 + 4*x[1]**2) * x[1] **2)
+  ```python
+  import numpy as np
+  # Define the function that we are interested in
+  def sixhump(x):
+  	return ((4 - 2.1*x[0]**2 + x[0]**4 / 3.) * x[0]**2 + x[0] * x[1] + (-4 + 4*x[1]**2) * x[1] **2)
 
-# Make a grid to evaluate the function (for plotting)
-x = np.linspace(-2, 2)
-y = np.linspace(-1, 1)
-xg, yg = np.meshgrid(x, y)
-#
-# (AxisConcatenator) |  Translates slice objects to concatenation along the second axis.
-help(np.c_)
-#
-np.dstack([xg.flat,yg.flat])
-np.vstack
-#
-import matplotlib.pyplot as plt
-plt.figure()
-plt.imshow(sixhump([xg, yg]), extent=[-2, 2, -1, 1])
-plt.colorbar()
-#
-from mpl_toolkits.mplot3d import Axes3D
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-surf = ax.plot_surface(xg, yg, sixhump([xg, yg]), rstride=1, cstride=1,
-cmap=plt.cm.jet, linewidth=0, antialiased=False)
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('f(x, y)')
-ax.set_title('Six-hump Camelback function')
-#
-from scipy import optimize
-x_min = optimize.minimize(sixhump, x0=[0, 0])
-plt.figure()
-# Show the function in 2D
-plt.imshow(sixhump([xg, yg]), extent=[-2, 2, -1, 1])
-plt.colorbar()
-# And the minimum that we've found:
-plt.scatter(x_min.x[0], x_min.x[1])
-plt.show()
-#
-# variety of filters
-from scipy import ndimage
-from scipy import signal
-#
-# fft - fast fourier transform
-from scipy import fftpack
-#
-np.random.standard_normal
-np.copy(face).astype(np.float)
-```
+  # Make a grid to evaluate the function (for plotting)
+  x = np.linspace(-2, 2)
+  y = np.linspace(-1, 1)
+  xg, yg = np.meshgrid(x, y)
+  #
+  # (AxisConcatenator) |  Translates slice objects to concatenation along the second axis.
+  help(np.c_)
+  #
+  np.dstack([xg.flat,yg.flat])
+  np.vstack
+  #
+  import matplotlib.pyplot as plt
+  plt.figure()
+  plt.imshow(sixhump([xg, yg]), extent=[-2, 2, -1, 1])
+  plt.colorbar()
+  #
+  from mpl_toolkits.mplot3d import Axes3D
+  fig = plt.figure()
+  ax = fig.add_subplot(111, projection='3d')
+  surf = ax.plot_surface(xg, yg, sixhump([xg, yg]), rstride=1, cstride=1,
+  cmap=plt.cm.jet, linewidth=0, antialiased=False)
+  ax.set_xlabel('x')
+  ax.set_ylabel('y')
+  ax.set_zlabel('f(x, y)')
+  ax.set_title('Six-hump Camelback function')
+  #
+  from scipy import optimize
+  x_min = optimize.minimize(sixhump, x0=[0, 0])
+  plt.figure()
+  # Show the function in 2D
+  plt.imshow(sixhump([xg, yg]), extent=[-2, 2, -1, 1])
+  plt.colorbar()
+  # And the minimum that we've found:
+  plt.scatter(x_min.x[0], x_min.x[1])
+  plt.show()
+  #
+  # variety of filters
+  from scipy import ndimage
+  from scipy import signal
+  #
+  # fft - fast fourier transform
+  from scipy import fftpack
+  #
+  np.random.standard_normal
+  np.copy(face).astype(np.float)
+  ```
 - image blur by convolution with a Gaussian kernel
 - Image denoising by FFT
 
@@ -1842,22 +1865,24 @@ np.copy(face).astype(np.float)
 ## Mayavi: 3D plotting with Mayavi
 
 - Example
-```python
-from mpl_toolkits.mplot3d import Axes3D
-fig = plt.figure()
-ax = Axes3D(fig)
-X = np.arange(-4, 4, 0.25)
-Y = np.arange(-4, 4, 0.25)
-X, Y = np.meshgrid(X, Y)
-R = np.sqrt(X**2 + Y**2)
-Z = np.sin(R)
-ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='hot')
-plt.show()
-```
+  ```python
+  from mpl_toolkits.mplot3d import Axes3D
+  fig = plt.figure()
+  ax = Axes3D(fig)
+  X = np.arange(-4, 4, 0.25)
+  Y = np.arange(-4, 4, 0.25)
+  X, Y = np.meshgrid(X, Y)
+  R = np.sqrt(X**2 + Y**2)
+  Z = np.sin(R)
+  ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='hot')
+  plt.show()
+  ```
 * Image plane widgets
 * Isosurfaces
 
+
 ## Other Libraries/Packages/Extensions/Modules
+
 
 ### Cython
 - http://cython.org/
@@ -1866,19 +1891,22 @@ plt.show()
 - Cython is a superset of the Python programming language, designed to give C-like performance with code that is mostly written in Python
 - Cython is a compiled language that generates CPython extension modules. These extension modules can then be loaded and used by regular Python code using the import statement
 
+
 ### PIL
 - https://en.wikipedia.org/wiki/Python_Imaging_Library
 - PIL is the Python Imaging Library
 - PIL is one of the core libraries for image manipulation in Python. Unfortunately, its development has stagnated, with its last release in 2009
 
+
 ### Pillow
 - http://python-pillow.org/
 - https://pillow.readthedocs.io/
 - Actively-developed fork of PIL called Pillow - it’s easier to install, runs on all operating systems, and supports Python 3
-```bash
-# Installation
-pip install Pillow
-```
+  ```bash
+  # Installation
+  pip install Pillow
+  ```
+
 
 ## Image Processing in Python
 - image-processing.md
@@ -1901,6 +1929,7 @@ pip install Pillow
 7. Measuring objects properties: ndimage.measurements
 8. Registration
 
+
 ## Interfacing with C/C++
 - A process commonly referred to wrapping.
 - Cython is the most modern and advanced. In particular, the ability to optimize code incrementally by adding types to your Python code is unique.
@@ -1909,6 +1938,7 @@ pip install Pillow
 	* Ctypes
 	* SWIG
 	* Cython
+
 
 ## Statistics in Python
 * Standard scientific Python environment (numpy, scipy, matplotlib)
@@ -1922,48 +1952,49 @@ pip install Pillow
 
 - multiple observations or samples described by a set of different attributes or features
 
+
 ## Pandas
 * data-frame
 	- We will store and manipulate this data in a pandas.DataFrame , from the pandas module. It is the Python equivalent of the spreadsheet table
 	- It is different from a 2D numpy array as it has named columns, can contain a mixture of different data types by column, and has elaborate selection and pivotal mechanisms.
 
 The installed version of numexpr 2.4.3 is not supported in pandas and will be not be used The minimum supported version is 2.4.6
-
-```
+```bash
 sudo pip list | grep numexpr
 sudo pip install -U numexpr
 ```
 - **numexpr:** for accelerating certain numerical operations. numexpr uses multiple cores as well as smart chunking and caching to achieve large speedups. If installed, must be Version 2.1 or higher.
 - numexpr (2.6.5), numpy (1.14.3)
-```python
-import pandas
-data = pandas.read_csv('brain_size.csv',sep=';',na_values=".")
-data.shape
-data.columns
-data['Gender']
-data[data['Gender'] == 'Female']
-data[data['Gender'] == 'Female']['VIQ'].mean()	
-```
+  ```python
+  import pandas
+  data = pandas.read_csv('brain_size.csv',sep=';',na_values=".")
+  data.shape
+  data.columns
+  data['Gender']
+  data[data['Gender'] == 'Female']
+  data[data['Gender'] == 'Female']['VIQ'].mean()	
+  ```
 - pandas can input data from SQL, excel files, or other formats
 - data is a pandas.DataFrame , that resembles R’s dataframe
 - A pandas.DataFrame can also be seen as a dictionary of 1D ‘series’, eg arrays or lists.
 - 3 numpy arrays can be exposed as a pandas.DataFrame
-```python
-pandas.DataFrame({'t': t, 'sin': sin_t, 'cos': cos_t})
-```
+  ```python
+  pandas.DataFrame({'t': t, 'sin': sin_t, 'cos': cos_t})
+  ```
 - For a quick view on a large dataframe, use its describe method: `pandas.DataFrame.describe()`
 - `groupby`: splitting a dataframe on values of categorical variables
 - Other common grouping functions are **median**,**count** (useful for checking to see the amount of missing values in different subsets) or **sum**
 - Groupby evaluation is lazy, no work is done until an aggregation function is applied.
-```python
-gGender = data.groupby('Gender')
-for gender, value in gGender['VIQ']:
-	print((gender, value.mean()))
-gGender.mean()
-#
-gGender.boxplot()
-```
+  ```python
+  gGender = data.groupby('Gender')
+  for gender, value in gGender['VIQ']:
+  	print((gender, value.mean()))
+  gGender.mean()
+  #
+  gGender.boxplot()
+  ```
 - Pandas comes with some plotting tools ( `pandas.tools.plotting` , using `matplotlib` behind the scene) to display statistics of the data in dataframes
+
 
 **Hypothesis testing**
 - comparing two groups
@@ -1975,26 +2006,28 @@ gGender.boxplot()
 - non paired case is the **Mann–Whitney U test**: `scipy.stats.mannwhitneyu()`
 - non parametric statistics to test the difference between a variable in two groups
 
+
 ## Statsmodel
 **Given two set of observations, x and y, we want to test the hypothesis that y is a linear function of x**
 - `y=mx+c+e`
-```python
-import numpy as np
-m = -5
-x = np.linspace(-5,5,20)
-e = 4*np.random.normal(size=x.shape)
-y = -5 + 3*x + e
-data = pandas.DataFrame({'x':x,'y':y})
-#
-from statsmodels.formula.api import ols
-model = ols("y ~ x", data).fit()
-model.summary()
-```
+  ```python
+  import numpy as np
+  m = -5
+  x = np.linspace(-5,5,20)
+  e = 4*np.random.normal(size=x.shape)
+  y = -5 + 3*x + e
+  data = pandas.DataFrame({'x':x,'y':y})
+  #
+  from statsmodels.formula.api import ols
+  model = ols("y ~ x", data).fit()
+  model.summary()
+  ```
 - Statsmodels uses a statistical terminology: the y variable in statsmodels is called ‘endogenous’ while the x variable is called exogenous.
 - y (endogenous) is the value you are trying to predict
 - x (exogenous) represents the features you are using to make the prediction
 - http://statsmodels.sourceforge.net/devel/endog_exog.html
 - non-float data type or categorical value, statsmodels is able to automatically infer this
+
 
 **Categorical variables: comparing groups or multiple categories**
 ```python
@@ -2008,27 +2041,29 @@ model = ols('VIQ ~ C(Gender)', data).fit()
 ```
 - By default, statsmodels treats a categorical variable with K possible values as K-1 ‘dummy’ boolean variables (the last level being absorbed into the intercept term). This is almost always a good default choice - however, it is possible to specify different encodings for categorical variables
 - http://statsmodels.sourceforge.net/devel/contrasts.html
-```python
-import pandas
-import
-data_fisq = pandas.DataFrame({'iq': data['FSIQ'], 'type': 'fsiq'})
-data_piq = pandas.DataFrame({'iq': data['PIQ'], 'type': 'piq'})
-data_long = pandas.concat((data_fisq, data_piq))
-#
-from statsmodels.formula.api import ols
-model = ols("iq ~ type", data_long).fit()
-model.summary()
-#
-# t-test
-stats.ttest_ind(data['FSIQ'], data['PIQ'])
-```
+  ```python
+  import pandas
+  import
+  data_fisq = pandas.DataFrame({'iq': data['FSIQ'], 'type': 'fsiq'})
+  data_piq = pandas.DataFrame({'iq': data['PIQ'], 'type': 'piq'})
+  data_long = pandas.concat((data_fisq, data_piq))
+  #
+  from statsmodels.formula.api import ols
+  model = ols("iq ~ type", data_long).fit()
+  model.summary()
+  #
+  # t-test
+  stats.ttest_ind(data['FSIQ'], data['PIQ'])
+  ```
+
 
 **Multiple Regression: including multiple factors**
 - Consider a linear model explaining a variable z (the dependent variable) with 2 variables x and y:
-```python
-z = x*c1 + y*c2 + i + e
-```
+  ```python
+  z = x*c1 + y*c2 + i + e
+  ```
 - Such a model can be seen in 3D as fitting a plane to a cloud of (x, y, z) points.
+
 
 ## Seaborn
 **More visualization: seaborn for statistical exploration**
@@ -2036,19 +2071,20 @@ z = x*c1 + y*c2 + i + e
 - http://lib.stat.cmu.edu/datasets/CPS_85_Wages
 - http://gael-varoquaux.info/stats_in_python_tutorial/auto_examples/plot_wage_data.html
 - Seaborn changes the default of matplotlib figures to achieve a more “modern”, “excel-like” look. It does that upon import. You can reset the default using:
-	```python
-	from matplotlib import pyplot as plt
-	plt.rcdefaults()
-	```
+  ```python
+  from matplotlib import pyplot as plt
+  plt.rcdefaults()
+  ```
 	- `lmplot`: plotting a univariate regression
-	```python
-	import seaborn
-	seaborn.lmplot(y='VIQ',x='Height',data=data)
-	```
+  ```python
+  import seaborn
+  seaborn.lmplot(y='VIQ',x='Height',data=data)
+  ```
 - http://seaborn.pydata.org/tutorial/aesthetics.html
 - To compute a regression that is less sentive to outliers, one must use a robust model.
 - Formulate a single model that tests for a variance of slope across the two populations. This is done via an “interaction”.
 - http://www.statsmodels.org/devel/example_formulas.html#multiplicative-interactions
+
 
 ## [Sympy](http://www.sympy.org/en/index.html)
 - Symbolic Mathematics in Python
@@ -2058,16 +2094,17 @@ z = x*c1 + y*c2 + i + e
 - SymPy uses mpmath in the background, which makes it possible to perform computations using arbitrary-precision arithmetic.
 - That way, some special constants, like e, pi , oo (Infinity), are treated as symbols and can be evaluated with arbitrary precision
 - mathematical infinity, called `oo`
-```python
-import sympy as sym
-a = sym.Rational(1, 2)
-sym.pi**2
-sym.pi.evalf()
-(sym.pi + sym.exp(1)).evalf()
-#
-# mathematical infinity
-sym.oo > 99999
-```
+  ```python
+  import sympy as sym
+  a = sym.Rational(1, 2)
+  sym.pi**2
+  sym.pi.evalf()
+  (sym.pi + sym.exp(1)).evalf()
+  #
+  # mathematical infinity
+  sym.oo > 99999
+  ```
+
 
 ## Key Learnings in Stats
 * Hypothesis testing and p-values give you the significance of an effect / difference.
@@ -2075,18 +2112,23 @@ sym.oo > 99999
 * Visualizing your data and fitting simple models give insight into the data.
 * Conditionning (adding factors that can explain all or part of the variation) is an important modeling aspect that changes the interpretation.
 
+
 ## [Scikit-image: image processing](http://scikit-image.org/)
 - scikit-image is a Python package dedicated to image processing, and using natively NumPy arrays as image objects
+
 
 ### References
 - http://pymc-devs.github.io/pymc/
 - http://greenteapress.com/thinkstats2/thinkstats2.pdf
 
+
 ## Online Practice Tools
 - https://www.dataquest.io
 
+
 ## Contribution to documentation
 - Refer: Pg 310
+
 
 ## References
 
@@ -2095,12 +2137,13 @@ sym.oo > 99999
   - https://stackoverflow.com/questions/30245397/why-is-list-comprehension-so-faster/30245489
 2. Profiling and Timing Code
 	- https://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html
+* http://josephcslater.github.io/scipy-numpy-matplotlib-pylab.html
 
-http://josephcslater.github.io/scipy-numpy-matplotlib-pylab.html
 
 ## TBD List
 - Pg 72: for now skipping to next chaptrer - matplotlib
 - Pg 313: debugging code
+
 
 ## Python IDEs and Editors
 - https://www.techradar.com/news/best-ide-for-python
@@ -2108,11 +2151,13 @@ http://josephcslater.github.io/scipy-numpy-matplotlib-pylab.html
 - https://cewing.github.io/training.codefellows/assignments/day01/sublime_as_ide.html
 - https://wiki.python.org/moin/PythonEditors
 
+
 **Pyzo**
-http://www.pyzo.org/install_linux.html#install-linux
-```bash
-sudo python3 -m pip install pyzo
-```
+* http://www.pyzo.org/install_linux.html#install-linux
+  ```bash
+  sudo python3 -m pip install pyzo
+  ```
+
 
 ## Python - Building Interactive GUI
 **Tool Suite**
@@ -2135,6 +2180,7 @@ The main packages of the Enthought Tool Suite are:
 
 - wxPython, PyQt or PySide
 - Numpy and Scipy
+
 
 ## Mayavi - 3D plotting
 - `Mayavi` is an interactive 3D plotting package.
