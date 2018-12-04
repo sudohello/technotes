@@ -83,12 +83,94 @@ Geospatial analysis is the best approach to understanding our world more efficie
   * In remote sensing, for instance, **infrared light makes moisture highly visible**. This phenomenon has a variety of uses such as monitoring ground saturation during a flood or **finding hidden leaks in a roof** or levee.
 
 
-### Chapter-6: Python and Remote Sensing
+**Different types of `essential` GIS processes commonly used in geospatial analysis**
+* **Data structures**
+  * consisting of, at a minimum, an x horizontal value and a y vertical value to represent a location on the Earth
+* a point may also contain a z value
+* ancillary values are possible including measurements or timestamps
+* Vector data typically represents topographic features better than raster data
+* Vector data has better accuracy potential and is more precise.
+* However, to collect vector data on a large scale is also traditionally more costly than raster data.
 
+
+**Bounding Box** and **Convex Hull**
+* Two other important terms related to vector data structures are bounding box and
+convex hull.
+  * The bounding box or minimum bounding box is the smallest possible square that contains all of the points in a dataset.
+  * The convex hull of a dataset is similar to the bounding box, but instead of a square, it is the smallest possible polygon that can contain a dataset.
+
+
+**Buffer**
+* A buffer operation can be applied to spatial objects including points, lines, or
+polygons
+* This operation creates a polygon around the object at a specified distance.
+* **Usage examples**
+  * **Buffer operations** are used for **proximity analysis**, for example, establishing a safety zone around a dangerous area
+
+
+**Dissolve**
+* A dissolve operation creates a single polygon out of **adjacent polygons**
+* **Usage examples**
+  * A common use for a dissolve operation is to merge two adjacent properties in a tax database that have been purchased by a single owner.
+  * Dissolves are also used to simplify data extracted from remote sensing
+
+
+**Generalize**
+* Objects that have more points than necessary for the geospatial model can be generalized to reduce the number of points used to represent the shape.
+* It is a data optimization technique to simplify data for the efficiency of computing or better visualization.
+* **Usage example**
+  * his technique is useful in web-mapping applications. Computer screens have a resolution of 72 dots per inch (dpi). Highly-detailed point data, which would not be visible, can be reduced so that less bandwidth is used to send a visually equivalent map to the user:
+
+
+**Intersection**
+* An intersection operation is used to see if one part of a feature intersects with one or more features.
+* **Usage example**
+  * This operation is for spatial queries in **proximity analysis** and is often a follow-on operation to a buffer analysis
+
+
+**Merge**
+* A merge operation combines two or more non-overlapping shapes in a single multishape object
+* **Multishape objects** mean that the shapes **maintain separate geometries** but are **treated as a single feature** with a **single set of attributes** by the GIS
+
+
+**Point in polygon**
+* A fundamental geospatial operation is checking to see whether a point is inside a polygon
+* If the point is on the boundary of the polygon, it is considered inside
+* can be very slow on a large number of points
+* The most common and efficient algorithm to detect if a point is inside a polygon is called the **ray casting** algorithm
+* **Usage example**
+  * This one operation is the atomic building block of many different types of spatial queries
+
+
+**Union**
+* It is similar to dissolve, but in this case, the polygons are **overlapping** as opposed to being adjacent
+* **Usage example**
+  * This operation is used to clean up automatically-generated feature datasets from remote sensing operations
+
+**Join**
+* spatial joins, combine the attributes to two features in the same way that you do in a SQL join, but the relation is based on the spatial proximity of the two features.
+
+
+**Geospatial rules about polygons**
+* There are several general rules of thumb regarding polygons that are different from mathematical descriptions of polygons
+* Polygons must have at least four points—the first and last points must be the same
+* A polygon boundary should not overlap itself
+* A polygon in a layer inside another polygon is considered as a hole in the underlying polygon
+
+* A polygon is by definition a closed shape, which means that the first and last vertices of the polygon are identical
+* The data format that you use to store your geospatial data may also dictate how polygons are defined
+
+**Image Band mathematics**
+
+
+* In array math, arrays are treated as single units, which are added, subtracted, multiplied, and divided
+* in an array, the corresponding numbers in each row and column across multiple arrays are computed simultaneously
+
+
+### Chapter-6: Python and Remote Sensing
+It's important to note that NumPy references the array locations as y,x (row, column) instead of the usual x, y (column, row) format that we work with in spreadsheets and other software:
 * load the image to a NumPy array using gdal_array , and then we'll immediately save it back to a new GeoTIFF file
 Images in NumPy are multidimensional arrays in the order of band, height, and width.
-
-It's important to note that NumPy references the array locations as y,x (row, column) instead of the usual x, y (column, row) format that we work with in spreadsheets and other software:
 
 
 ## Ideas

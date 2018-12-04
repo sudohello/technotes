@@ -14,6 +14,12 @@ Tags: Open Source
 
 ## Open Source
 
+* https://www.canonical.com/ - Ubuntu
+
+## [CNCF](https://www.cncf.io/)
+CNCF is an open source software foundation dedicated to making cloud native computing universal and sustainable. Cloud native computing uses an open source software stack to deploy applications as microservices, packaging each part into its own container, and dynamically orchestrating those containers to optimize resource utilization. Cloud native technologies enable software developers to build great products faster.
+
+
 ## Open Source Rookies
 
 ### 2018
