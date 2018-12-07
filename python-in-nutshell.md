@@ -389,6 +389,22 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **How to check-if-a-given-key-already-exists-in-a-dictionary**
+  * https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
+    ```python
+     d = dict()
+    for i in xrange(100):
+      key = i % 10
+      if key in d:
+          d[key] += 1
+      else:
+          d[key] = 1
+    #
+    ## 2nd option: use get
+    for i in xrange(100):
+      key = i % 10
+      d[key] = d.get(key, 0) + 1
+    ```
 * **How to creating-class-instance-properties-from-a-dictionary?**  
   * https://stackoverflow.com/questions/1639174/creating-class-instance-properties-from-a-dictionary
     * **creates a class whose class attributes are based on a given dictionary**
@@ -963,11 +979,21 @@ __main__:1: ParserWarning: Falling back to the 'python' engine because the 'c' e
   timeit.timeit(stmt='t=[i**2 for i in range(1000)]',number=10000)
   ```
 
-**Exception Handling**
+### **Errors and Exception Handling**
 - Exceptions are raised by errors in Python
 - There are different types of exceptions for different errors
 - Capturing and reraising an exception
 - Use exceptions to notify certain conditions are met (e.g. StopIteration) or not (e.g. custom error raising)
+
+
+**Errors**
+* IndexError
+  * is raised when trying to access an invalid index within a list
+* KeyError
+  * https://wiki.python.org/moin/KeyError
+  * https://airbrake.io/blog/python-exception-handling/python-keyerror
+  * is raised when accessing an invalid key within a dict
+  * Python raises a KeyError whenever a dict() object is requested (using the format a = adict[key]) and the key is not in the dictionary.
 
 
 **Object-oriented programming (OOP)**
