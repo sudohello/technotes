@@ -302,6 +302,19 @@ In practice it prevents any output from the command (both stdout and stderr) fro
 STDIN is represented by 0, STDOUT by 1, and STDERR by 2.
 `/dev/null` is the bit-bucket: the place where you dump anything you don't need.
 
+* https://askubuntu.com/questions/698669/setup-remmina-for-remote-desktop-connection
+1. In order to be able to use Remmina, you need first to activate certain options of the "Desktop Sharing" screen (Dash -> Desktop Sharing) on both computers:
+2. On the Desktop Sharing Preferences:
+
+Activate the option "Allow other users to view your desktop"
+Activate the option "Allow other users to control your desktop"
+For security's sake, also:
+
+Activate the option "You must confirm each access to this machine"
+Activate the option "Require the user to enter this password" and provide a password
+Once the configuration is done, you can simply open Remmina, create a new connection and specify the connection to the other computer using VNC (virtual network computing) protocol and using the password you used in the "Desktop Sharing" screen. Hint: You can ignore the field "user".
+
+
 
 ## Disk Space Monitoring
 * https://askubuntu.com/questions/413358/disk-is-full-but-cannot-find-big-files-or-folders
