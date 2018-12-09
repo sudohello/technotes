@@ -58,6 +58,8 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 **Git-Hub Pages Jekyll based Documentation site**
 * https://github.com/tomjoht/documentation-theme-jekyll
 * https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+* https://sanskrit-coders.github.io/site/
+
 
 **Perfect Example is Jekyll on github itself**
 * https://jekyllrb.com/docs/github-pages/#project-page-url-structure
@@ -441,3 +443,24 @@ git push
   * pages
     * topic
     * listing pages
+
+
+* collections /categories / topics
+
+**Getting Started for Image Processing, Computer Vision, Machine Learning and Deep Learning for GIS**
+Pre-requisite: Software Stack, Python Stack
+Image Processing, Computer Vision
+Machine Learning
+Deep Learning
+Mathematics, Statistics and Statistical Learning
+Data Analytics and Visualization
+GIS
+Tools, Software, Hardware
+Linux
+Programming Langauges, frameworks & related:
+  - PHP
+  - Ruby on Rails
+  - Python
+  - Javascript
+  - Android
+Misc

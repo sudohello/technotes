@@ -303,6 +303,12 @@ STDIN is represented by 0, STDOUT by 1, and STDERR by 2.
 `/dev/null` is the bit-bucket: the place where you dump anything you don't need.
 
 
+**Other Remote Desktop Control Option**
+* Teamviewer
+* Anydeck
+  * https://websiteforstudents.com/how-to-install-anydesk-on-ubuntu-16-04-17-10-18-04-desktop/
+
+
 ## Disk Space Monitoring
 * https://askubuntu.com/questions/413358/disk-is-full-but-cannot-find-big-files-or-folders
 ```bash
@@ -917,6 +923,11 @@ gsettings set org.gnome.nautilus.preferences use-experimental-views false
 * cloumn/block select in the console
 	- `ctrl`+`alt`+`Left mouse key drag and release`
 
+
+The closest thing I've found is Ctrl+Alt+Tab which allows switching between applications, windows, searching.
+
+
+
 * opening-current-directory-from-a-terminal-onto-a-file-browser
 	- https://unix.stackexchange.com/questions/244970/opening-current-directory-from-a-terminal-onto-a-file-browser
 	- `nautilus .`
@@ -936,6 +947,31 @@ https://www.omgubuntu.co.uk/2017/10/how-to-reset-ubuntu-desktop-to-default
 ```bash
 dconf reset -f /
 ```
+
+**Mac-like file browser**
+* https://softwarerecs.stackexchange.com/questions/19835/osx-like-finder-file-manager-for-linux-ubuntu
+* https://askubuntu.com/questions/1020183/how-to-split-the-screen-in-gnome-files-nautilus-file-manager
+* https://askubuntu.com/questions/256986/how-to-achieve-list-tree-view-in-nautilus
+* Nautilus
+* Dolhpin
+* Nemo
+* Pantheon
+* thunar
+* Dolphin is quite similar to nautilus in terms of file browsing and user interface concept in general. 
+* pcmanfm: `sudo apt install pcmanfm`
+* caja: `sudo apt-get install caja`
+
+Required features:
+* split pane
+* tree view: `gsettings set org.gnome.nautilus.list-view use-tree-view true`
+* mac-like file browsing
+
+* https://itsfoss.com/gnome-tricks-ubuntu/
+
+**Mac-OS look linke**
+* https://www.ubuntupit.com/ubuntu-mac-theme-tutorial-make-ubuntu-look-like-mac-os/
+
+
 
 ## Different Bash commands
 - `nohup` - run a command immune to hangups, with output to a non-tty
@@ -1114,3 +1150,50 @@ ffmpeg -i input.avi -c:v libx264 -crf 19 -preset slow -c:a aac -b:a 192k -ac 2 o
 
 **checking version of installed softwares**
 * https://tech.amikelive.com/node-841/command-cheatsheet-checking-versions-of-installed-software-libraries-tools-for-deep-learning-on-ubuntu-16-04/#more-841
+
+## Encrypting Storage Drives
+* https://www.howtogeek.com/115955/how-to-quickly-encrypt-removable-storage-devices-with-ubuntu/
+* https://askubuntu.com/questions/500981/how-to-encrypt-external-devices
+
+
+**LUKS (Linux Unified Key Setup) encryption**
+Ubuntu’s Disk Utility uses LUKS (Linux Unified Key Setup) encryption, which may not be compatible with other operating systems. However, the drive will be plug-and-play with any Linux system running the GNOME desktop.
+```bash
+sudo apt install cryptsetup
+```
+
+
+**How to use WD “My Passport” with Ubuntu Linux**
+https://community.wd.com/t/how-to-use-wd-my-passport-with-ubuntu-linux/9115
+https://www.quora.com/Is-the-WD-Passport-hard-disk-compatible-with-Linux-OS
+https://www.quora.com/Is-the-WD-Passport-hard-disk-compatible-with-Ubuntu
+https://www.youtube.com/watch?v=lCshVeh0Prg
+
+
+sudo apt-get install guvcview
+
+The following additional packages will be installed:
+  libguvcview-2.0-2 libwebcam0 uvcdynctrl uvcdynctrl-data
+
+
+http://www.linux-commands-examples.com/uvcdynctrl
+https://support.lenovo.com/in/en/solutions/ht072130
+
+
+http://derekmolloy.ie/kernel-gpio-programming-buttons-and-leds/
+https://fossbytes.com/dont-put-tape-on-your-webcam-this-app-alerts-you-when-someone-uses-your-webcam/
+http://www.techytalk.info/webcam-settings-control-ubuntu-linux/
+
+
+## Technical Events
+
+**Dec 2018**
+
+* https://www.eventbrite.com/e/free-seminar-on-artificial-intelligence-tickets-53001882056?aff=ebdssbcitybrowse
+* https://www.eventshigh.com/bangalore/technology
+* http://ieeebangalore.org/
+
+
+Live in Nature. Do Yoga. Learn to Code. Code for India.
+
+https://www.switchup.org/rankings/best-coding-bootcamps
