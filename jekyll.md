@@ -16,7 +16,8 @@ Tags: Jekyll
 ## Highlights
 **write reusable content**
 - https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/#content-references
-- https://jekyllrb.com/docs/datafiles/
+- https://jekyllrb.com/docs
+/datafiles/
 
 **Versioned documentation**
 
@@ -32,7 +33,7 @@ Tags: Jekyll
 # runs a local development server at http://localhost:4000 by default, _site
 jekyll serve
 #  builds the site to _site. , then copy _site to hosting provider
-jekylle build
+jekyll build
 ```
 
 * **_config.yml**

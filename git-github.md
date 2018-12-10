@@ -3,6 +3,7 @@ Title: Github
 Decription: Github
 Author: Bhaskar Mangal
 Date: 
+Last Updadated: 09th-Dec-2019 
 Tags: Github
 ---
 
@@ -181,6 +182,10 @@ git pull origin master
 git rm -r -f --cached DirectoryName
 git rm -r --cached myFolder
 ```
+**Why are there 2 ways to unstage a file in git**
+* `git rm --cached <filePath>` does not unstage a file, it actually stages the removal of the file(s) from the repo (assuming it was already committed before) but leaves the file in your working tree (leaving you with an untracked file).
+* `git reset -- <filePath>` will unstage any staged changes for the given file(s).
+* That said, if you used `git rm --cached` on a new file that is staged, it would basically look like you had just unstaged it since it had never been committed before
 
 ## Git Ignore Setup/Templates
 - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
@@ -464,3 +469,29 @@ Programming Langauges, frameworks & related:
   - Javascript
   - Android
 Misc
+
+
+## Create Pull Requests (PR)
+* http://www.dasblinkenlichten.com/how-to-create-a-github-pull-request-pr/
+* Suggest a change to the code to fix it. This is what’s called a ‘pull request’ or often just a ‘PR’.
+* A PR means you are submitting a request to ‘pull’ new code into the active repository.  Once your PR is submitted, people have a chance to review and comment on your suggested changes and if everything looks good, it will get pulled into the repository.
+
+
+**Steps:**
+1. **`fork` the original repo**
+  * Forking essentially copies the code into your own repository. This is done most easily from the GitHub webpage.  Find the repo you want to fork and then click the ‘fork’ button.
+2. **`clone` forked repo**
+  * The next step is to clone new repo (forked repo) down onto your system so you can work with the code
+3. **Create `branch`**
+  * Once you have a local copy of the code, create a branch of the repo to make our changes in
+  * its best practice; so you aren’t working on code in the master branch directly
+4. Make & Commitchanges
+  * create your proposed changes in a new branch and add our commits (changes) to that
+  ```bash
+  git status
+  git remote -v
+  git remote remove origin
+  git remote add origin https://github.com/mangalbhaskar/Mask_RCNN.git
+  git branch --set-upstream-to=origin/master
+  git status
+  ```

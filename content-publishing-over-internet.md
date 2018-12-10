@@ -2,7 +2,8 @@
 Title: Content Publishing - audio, video
 Decription: Content Publishing - audio, video
 Author: Bhaskar Mangal
-Date: 04th Feb 2018
+Date: 04th-Feb-2018
+Last Updated: 9th-Dec-2018
 Tags: Content Publishing - audio, video
 ---
 
@@ -12,6 +13,113 @@ Tags: Content Publishing - audio, video
 
 
 ## Content Publishing - audio, video
+
+## Audio Books
+* https://acxuniversity.com/
+* https://self-publishingschool.com/creating-audiobook-every-author-know/
+* https://masteranthonystevens.com/tech-support/audacity-for-ebooks/
+
+
+
+
+Audio Requirements
+Opening and closing credits audio files. Two separate files are required to begin and end your audiobook. 
+
+Opening Credits:
+[title of audiobook]
+Written by [name of author]
+Narrated by [name of narrator]
+
+Closing Credits:
+This has been [title of audiobook]
+Written by [name of author]
+Narrated by [name of narrator]
+Copyright [year and name of copyright holder]
+Production copyright [year it was recorded] by [company name]
+
+
+
+All recordings must be human-voice -- no computer-read books accepted.
+File type accepted: MP3 (192 kbps or higher)
+Files must be CBR (constant bit rate)
+Submitted audiobooks may not contain both mono and stereo files. Stereo files must not be joint-stereo. Mono files are strongly recommended.
+Each file must be comprised of a single chapter, episode, or story. Note that each file will typically become a “track” that a customer may use for navigation.
+If the audio has no chapters, please split the audio into segments that are no longer than 2 hours each, but no shorter than 30 minutes each (when possible).
+The files should be consolidated into individual Chapters.
+Each file should be preceded by a three digit number that denotes the order in which the files should appear. The file names should appear as: 001_title.mp3, 002_title.mp3, 003_title.mp3.
+Be free of extraneous sounds (mouse clicks, mic pops, mouth noises, etc.)
+Measure between -23dB and -18dB RMS and have -3dB peak values and a maximum -60dB noise floor
+Each uploaded file must have between 0.5 and 1 second of room tone at the head, and between 1 and 5 seconds of room tone at the tail.
+
+Image Requirements
+Images must be no smaller than 2400 X 2400 pixels in size.
+The resolution of these images can be no smaller than 72 dpi.
+Images must be squared. The squared cover must be a true squared cover and cannot be rectangular with colored borders on the side. (ex. CD case cover/jacket)
+Images should be at least 24-bit.
+Image types allowed: JPEG, TIFF, PNG
+Images must contain both the name of the title and author(s)
+
+
+
+Here are some general tips for recording:
+
+Record in mono, not stereo.  Play the recording back through headphones, and make sure the sound is evenly played in both channels.
+Don't use digital vocal effects. If you have a good reason you might want to use some light effects to enhance your voice or the overall sound, but for the vast majority of cases, remove any vocal effects that might be on the track.
+Make sure volume levels are set at 0.0db. When you record at this level, you should have very peaks and the overall sound should be loud enough to so the volume does not have to be all the way up to hear it.
+Save often. You never know when a crash or technical glitch will erase everything you have done prior to your last save, so save your recording often.
+
+
+
+Adapting Your Book for Audio
+Virtually all books have one or more elements that need to be changed for the audio version. These are usually picked up in the narration process. Some of these include
+
+References to pages (e.g., "see page 22 for details"). This would need to be changed to something like "this will be discussed in chapter 2".
+Charts and graphs. You might want to leave these out, or describe them to the listener. You can also include them as a .pdf supplement to the audiobook, but very few people actually make use of these. Another option is to refer listeners to a URL.
+Footnotes and references. These make for a very awkward listening experience. Again, perhaps the best strategy is to leave these out and refer the listener to a URL for these references.
+Table of contents. Leave this out.
+Glossary. Leave this out.
+Long lists. Sometimes books include long lists that are not really meant to be read, but just there for effect
+
+
+Post-Production Editing
+
+
+ Shoot for .75 seconds of space at the beginning of the file and 3 seconds at the end. This will give you some "buffer".
+ In Audacity, delete any space at the start of the file and make sure the play bar is at the beginning of the file. 
+
+
+Normalize
+According to the Audible specs, each file must "measure between -23dB and -18dB RMS and have -3dB peak values and a maximum -60dB noise floor." 
+
+Making Your Audiobook
+As of now, what you have are many files that will make up your audiobook, not an actual audiobook. However, many people who listen to audiobooks on their computers would be just fine with a bunch of .mp3 files, so this format is usually offered as an optional format for download. Another format, the M4B format, is designed specifically for audio books and has bookmarking capability, which allows the listener to stop listening to the audio book and later resume listening from the same point, even if the device was shut down. This is the standard for audiobook
+
+**Audio Book Format**
+* https://mintguide.org/audio/846-m4baker-tool-for-creating-m4b-audiobooks-in-linux-mint.html
+
+The m4b format is used for audiobooks and podcasts MPEG-4 (MPEG-4 Audio Book File).
+
+This format is used by applications and devices from Apple. In addition to audio tracks, m4b files contain some additional data, for example, a table of contents and the cover of the book
+
+
+## Tools
+* https://www.tecmint.com/free-music-creation-or-audio-editing-softwares-for-linux/
+* http://technicalbud.com/free-video-editor-for-creators/
+
+* M4Baker
+  * https://www.addictivetips.com/ubuntu-linux-tips/create-audio-books-on-linux-with-m4baker/
+* M4b-tools
+  * https://github.com/adamvoss/m4b-tool
+
+
+**Streaming**
+* http://letzgro.net/blog/5-reasons-to-choose-ubuntu-as-a-platform-for-your-streaming-server/
+
+
+## Hindi Audiobooks
+* http://www.audiohindi.com/
+
+
 
 ## Audio Publishing
 - https://webapps.stackexchange.com/questions/933/is-there-a-youtube-like-service-for-audio
@@ -34,6 +142,13 @@ https://www.podomatic.com/podcasts/drshashimangal/episodes/2018-02-04T08_03_09-0
 
 https://www.thepodcasthost.com/
 https://www.thepodcasthost.com/equipment/headset-microphones-for-podcasting/
+
+**podtrac**
+https://analytics.podtrac.com/
+
+
+https://idratherbewriting.com/2018/10/24/technical-aptitude/
+https://idratherbewriting.com/learnapidoc/
 
 ## vlogging - Voice Logging
 * Which microphone is the best for me?
@@ -188,3 +303,83 @@ https://www.amazon.in/Audio-Technica-ATH-M40X-Professional-Over-ear-Headphones/d
 https://homestudiobasics.com/audio-technica-ath-m40x-vs-m50x-very-different/
 
 https://homestudiobasics.com/the-law-of-diminishing-returns/
+
+## Books Publishing
+https://linoxide.com/linux-how-to/merge-pdf-files-linux/
+
+### KDP - Kindle Direct Publishing
+
+#### Language Supported
+* https://kdp.amazon.com/en_US/help/topic/G200673300
+
+#### Indian-Language Publishing
+* https://kdp.amazon.com/en_US/help/topic/G202124400
+* [Guidelines](https://kdp.amazon.com/en_US/help/topic/G202124410)
+
+
+**Ek Baat Aur**
+क्या सोचा था, क्या हो गया ? क्या पाना था, क्या पाया ? ज़िन्दगी का कारवाँ उबड़-खाबड़ जमीन पर चलता रहता है | ज़िन्दगी की चुनौतियों को चुनौती देती, जीवन की संघर्ष यात्रा और भूलभुलैया ने सृजित किया है संकलन - एक बात और | 
+    यदि इन रचनाओं से प्रेरणा पाकर एक ज़िन्दगी भी जीने का साहस बटोर पाई तो मुझे अपने जीवन मैं कुछ सार्थकता तो नज़र आएगी, क्योंकि; कोई भी ज़िन्दगी अकेली नहीं होती उसके साथ होता है उसका परिवार, उसके मित्र, उसका परिवेश और; फिर सम्पूर्ण समाज | ये तो शृंखला की कड़ियाँ हैं | आप कहाँ रुके थे, कैसे चले, बता सकें तो अच्छा है | 
+
+मेरी आपसे अनेकानेक शुब्कामनाएँ | 
+
+प्रतिक्रिया की प्रतीक्षा में। ... | 
+* https://superuser.com/questions/117443/how-to-know-which-fonts-are-used-in-selected-part-of-a-pdf-document
+
+
+shree-dev
+0999e-bold
+0708e-bold
+0708e-normal
+0700e-normal
+0708e-bolditalic
+shree-sym7-0004
+monotypesorts
+
+
+https://hindifonts.org/
+https://devanagarifonts.net/fonts/28
+
+
+**Hindi Converters**
+* http://service.vishalon.net/pramukh-font-converter/marathi/shree-dev-0708
+* http://service.vishalon.net/pramukh-font-converter/hindi/shree-dev-0708
+* http://www.hindiconverter.com/Converter.php?q=Shree-Lipi-to-Unicode
+
+
+* https://frs.monotypeimaging.com/ImagingService.ashx?imagetype=waterfalldesc&shopid=1185926&width=738&RenderText=%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%B5+%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8B%E0%A4%82+%E0%A4%95%E0%A5%80+%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AD%E0%A5%8C%E0%A4%AE+%E0%A4%98%E0%A5%8B%E0%A4%B7%E0%A4%A3%E0%A4%BE
+
+* https://frs.monotypeimaging.com/ImagingService.ashx?imagetype=typeit&shopid=1185926&width=738&RenderText=%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%B5+%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8B%E0%A4%82+%E0%A4%95%E0%A5%80+%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AD%E0%A5%8C%E0%A4%AE+%E0%A4%98%E0%A5%8B%E0%A4%B7%E0%A4%A3%E0%A4%BE&TextSize=32&TextColor=%23000000&BgColor=%23ffffff
+
+
+#### ISBN
+* https://kdp.amazon.com/en_US/help/topic/G201834170
+
+An ISBN is not required to publish an eBook with Kindle Direct Publishing. Once your content is published on KDP, Amazon will assign it a 10-digit ASIN (Amazon Standard Identification Number), which is unique to the eBook, and is an identification number for the Kindle Book on Amazon.com. 
+
+If you already have an ISBN for your eBook, you'll be able to enter it during the publishing process. Do not use an ISBN from a print version of your book; eBook ISBNs must be unique to eBook versions. You can purchase an ISBN from multiple sources on the Web, including the official ISBN body.
+
+* amazon.in
+* flipkart.com
+* infibeam.com
+* shopclues.com
+* paytm.com
+
+**Online Reading**
+* apple ibooks
+* google play
+* scribd
+* kobo
+* rockstand
+
+How to Self-Publish Your eBook in Indian Languages on Amazon KDP: Indic Language Publishing on Kindle for Tamil, Hindi, Marathi, Gujarati, and Malayalam
+
+CHAPTER 1 – HOW TO CORRECTLY SETUP YOUR KDP ACCOUNT
+
+CHAPTER 2 – HOW TO SEAMLESSLY WRITE YOUR EBOOK IN INDIAN LANGUAGES
+
+CHAPTER 3 – KINDLE FORMATTING SECRETS
+
+CHAPTER 4 – MANUSCRIPTS TO EBOOKS
+
+PROMOTING AND MARKETING EBOOKS - FREE Preview

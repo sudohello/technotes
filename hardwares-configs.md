@@ -562,3 +562,46 @@ https://en.wikipedia.org/wiki/Thunderbolt_(interface)
 
 **Overclocking**
 https://www.hardocp.com/article/2017/01/03/gigabyte_z270x_gaming_7_lga_1151_motherboard_review/7
+
+## TF card vs SD Card
+* https://www.techora.net/tf-card-and-microsd-card.html
+* https://www.techykeeday.com/tf-card/
+
+
+Before that SanDisk, Matsushita, Toshiba agreed to develop and market the SD card. The card was derived from the Multimedia Card and provided digital rights management. It was designed to compete with the Memory Stick, a DRM product that SONY had released a year before. Then came the miniSD form as a small factor extension to the SD card standard. Along with mini SD came mini SDHC supporting some devices only. Since 2008, miniSD were no longer produced and MICRO SD paved their way.
+
+
+Secure Digital (SD) cards were launched in 1999 by Panasonic, Toshiba having the ability to store encrypted music data. 
+It is a non-volatile memory card format developed by the SD card association.
+
+SD includes 4 card families available in three different sizes. The four are the original Standard-Capacity (SDSC), the High-Capacity (SDHC), the extended-Capacity ( SDXC), and the SDIO, which combines input/output functions with data storage.
+
+The three form factors are the original size, the mini size, and the micro size.
+
+The SD card’s small footprint is an ideal storage medium for smaller, thinner and more portable electronic devices.
+
+Initially, their size varied from 1MB TO 125MB. SDHC being less than 2GB and greater than 32 GB. But now their size varying up to 32 GB offering a large amount of storage space to store your files and documents. Also, these cards are reusable such that when any content is copied from PC to card that can be easily deleted and can be copied again.
+
+CARD SECURITY
+Cards can protect their contents from erasure or modification, prevent access by non –authorized users, and protect copyrighted content. Also, the data can be erased and even copied again as and when required.
+
+COMMAND TO DISABLE WRITE
+The host device can even command the SD card to become read only. There is both reversible and irreversible host that commands this.
+
+Also, while talking about other SD cards TransFlash memory card definitely makes their way in. Now the other question which arises is “What the main diff. btw TF Card and microSD Card?
+
+**“The microSD removable miniaturised secure Digital flash memory cards were originally named T –Flash or TF, also commonly called TransFlash.”**
+
+The storage capacity of TF card varies from 128 MB, 256 MB, 512 MB, 1GB, 2GB, 4 GB, 6GB, 8GB, 16 GB, 32 GB and 64 GB as well
+
+TF card or TransFlash card is generally used for its micro secure digital cards and was considered to be the world’s smallest memory card. Both the cards are very much alike and can be used in place of one other but there is a little dissimilarity which sets them different from each other.
+
+* MicroSD cards can perform non-memory jobs such as GPS, Bluetooth and near field Communication. But a TransFlash cannot do such non-memory jobs.
+There is also a switch on security segment in SD card whereas no such feature is found in TransFlash.
+The volume of SD card is comparatively more than TF card.
+TF card can support 64 GB as well which microSD card doesn’t.
+
+The size of the TF Card is available up to around 128 GB and SD Card is available in the size up to 2 TB.
+
+Most of the mobile phones or Smartphones used the technology of Micro SD Card rather than TF Card.
+

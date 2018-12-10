@@ -87,6 +87,9 @@ Nightly gives you latest builds of work in progress for the next major release.
 
 * Docker uses its own images. The images are created by a script that includes every step of the installation from a bare server. 
 
+* https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images
+
+
 ## Moby
 - https://mobyproject.org/
 

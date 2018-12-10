@@ -134,21 +134,30 @@ The performance of the algorithms will be evaluated on:
 
 
 
+## **Image Augmentation**
+* https://github.com/aleju/imgaug `pip3 install imgaug`
+
+
 ## Data Format
 * http://cocodataset.org/#format-data
 
 
-## [pycococreator](https://github.com/waspinator/pycococreator/)
+### Explore MS COCO dataset
+
+
+### [pycococreator](https://github.com/waspinator/pycococreator/)
 * https://github.com/waspinator/pycococreator/
 * pycococreator takes care of all the annotation formatting details and will help convert your data into the COCO format
 * the whole reason we’re trying to make a COCO dataset isn’t because it’s the best way of representing annotated images, but because everyone else is using it.
 
-## [pycocotools](https://github.com/cocodataset/cocoapi)
+
+### [pycocotools](https://github.com/cocodataset/cocoapi)
 * [pycoco - with fix from crowdAI](https://github.com/crowdai/coco)
 * **Note:** If you are using `Python3.*`, then there are chances that pycocotools will not work for you. In that case, install it from this fork :
 ```bash
 pip3 install git+https://github.com/crowdai/coco.git#subdirectory=PythonAPI
 ```
+
 
 **waleedka**
 Download and install the Python COCO tools from https://github.com/waleedka/coco
@@ -156,8 +165,78 @@ That's a fork from the original https://github.com/pdollar/coco with a bug fix f
 If the PR is merged then use the original repo.
 Note: Edit PythonAPI/Makefile and replace "python" with "python3".
 
-**Image Augmentation**
-* https://github.com/aleju/imgaug `pip3 install imgaug`
+
+### [panopticapi](https://github.com/cocodataset/panopticapi)
+* **COCO panoptic segmentation is stored in a new format; Unlike COCO detection format** that stores each segment independently, COCO panoptic format stores all segmentations for an image in a single PNG file. This compact representation naturally maintains non-overlapping property of the panoptic segmentation.
+
+**Converters**
+* Mainly interested for conversion from **coco detection format** to **coco panoptic format** and vice-versa
+* https://github.com/cocodataset/panopticapi/blob/master/CONVERTERS.md
+* Note that panoptic segmentation does not allow different segments to overlap
+* From COCO detection format to COCO panoptic format
+* From COCO panoptic format to COCO detection formats
+
+
+**Issues**
+* https://github.com/cocodataset/cocoapi/issues/181
+* https://github.com/facebookresearch/Detectron/issues/100
+* https://github.com/cocodataset/panopticapi/issues/2
+```bash
+## colors fix
+git clone https://github.com/mangalbhaskar/panopticapi.git
+##
+python converters/panoptic2detection_coco_format.py \
+  --input_json_file $AI_DATA/data/ms-coco/annotations/panoptic_val2017.json \
+  --output_json_file $AI_DATA/data/ms-coco/annotations/panoptic_instances_val2017.json \
+  --segmentations_folder $AI_DATA/data/ms-coco/panoptic_val2017
+```
+* Error:
+```bash
+Traceback (most recent call last):
+  File "converters/panoptic2detection_coco_format.py", line 152, in <module>
+    args.things_only)
+  File "converters/panoptic2detection_coco_format.py", line 118, in convert_panoptic_to_detection_coco_format
+    category.pop('color')
+KeyError: u'color'
+```
+* viz
+```bash
+python visualization.py --colors \
+ --input_json_file $AI_DATA/data/ms-coco-1/annotations/panoptic_val2017.json \
+ --segmentations_folder $AI_DATA/data/ms-coco-1/panoptic_val2017 \
+ --img_folder $AI_DATA/data/ms-coco-1/val2017
+```
+
+### **Annotation Keys**
+
+**coco things - 2014, 2017; coco stuff 2017**
+```bash
+ann: dict_keys(['segmentation', 'area', 'iscrowd', 'image_id', 'bbox', 'category_id', 'id'])
+```
+* coco things 2014
+  * `annotations/instances_val2014.json`
+  * `annotations/instances_train2014.json`
+  * `annotations/instances_minival2014.json`
+  * `annotations/instances_valminusminival2014.json`
+* coco things 2017
+  * `annotations/instances_val2017.json`
+  * `annotations/instances_train2017.json`
+* coco stuff 2017
+  * `annotations/stuff_val2017.json`
+  * `annotations/stuff_train2017.json`
+
+
+**coco panoptic 2017**
+* `annotations/panoptic_train2017.json`
+  ```bash
+  ann: dict_keys(['segments_info', 'file_name', 'image_id'])
+  ```
+* classes (BG is not part of the spec, only there as as part of running it with mask-rcnn)
+  ```bash
+  Classes: ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush', 'banner', 'blanket', 'bridge', 'cardboard', 'counter', 'curtain', 'door-stuff', 'floor-wood', 'flower', 'fruit', 'gravel', 'house', 'light', 'mirror-stuff', 'net', 'pillow', 'platform', 'playingfield', 'railroad', 'river', 'road', 'roof', 'sand', 'sea', 'shelf', 'snow', 'stairs', 'tent', 'towel', 'wall-brick', 'wall-stone', 'wall-tile', 'wall-wood', 'water-other', 'window-blind', 'window-other', 'tree-merged', 'fence-merged', 'ceiling-merged', 'sky-other-merged', 'cabinet-merged', 'table-merged', 'floor-other-merged', 'pavement-merged', 'mountain-merged', 'grass-merged', 'dirt-merged', 'paper-merged', 'food-other-merged', 'building-other-merged', 'rock-merged', 'wall-other-merged', 'rug-merged']
+  Total Classes: 134
+```
+
 
 
 ### **Class Names and corresponding Ids**

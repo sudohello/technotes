@@ -232,6 +232,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - https://martin-thoma.com/sota/
 - SotA - State of the Arts
 - https://github.com/nightrome/really-awesome-semantic-segmentation
+* [50 free Machine Learning Datasets: Image Datasets - 22nd-Oct-2018](https://blog.cambridgespark.com/50-free-machine-learning-datasets-image-datasets-241852b03b49)
 
 
 * **[Imagenet](http://image-net.org/download)**
@@ -346,8 +347,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 **Building Footprint Extraction**
 
 * **[spacenet](https://spacenetchallenge.github.io/)**
-  * https://spacenetchallenge.github.io/
   * Localizes building footprints in pixel level in high-resolution satellite imagery
+  * https://spacenetchallenge.github.io/
+  * https://spacenetchallenge.github.io/datasets/datasetHomePage.html
 * **crowd-ai**
   * **Satellite Images: Building Footprint**
     * https://unitar.org/unosat/
