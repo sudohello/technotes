@@ -313,3 +313,6 @@ gem list -r
 
 ## Image Processing in Web
 * https://lokeshdhakar.com/projects/color-thief/
+
+## Blogs
+* https://mademistakes.com/articles/using-jekyll-2016/

@@ -1,3 +1,4 @@
+
 ---
 Title: Content Publishing - audio, video
 Decription: Content Publishing - audio, video
@@ -383,3 +384,9 @@ CHAPTER 3 – KINDLE FORMATTING SECRETS
 CHAPTER 4 – MANUSCRIPTS TO EBOOKS
 
 PROMOTING AND MARKETING EBOOKS - FREE Preview
+
+
+## Static HTML File generators
+
+* [Jekyll](jekyll.md)
+* [mkdocs](mkdocs.md)

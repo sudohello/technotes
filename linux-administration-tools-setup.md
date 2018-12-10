@@ -2,8 +2,8 @@
 Title: Linux Administration, Tools setup
 Decription: nitty gritty of Linux
 Author: Bhaskar Mangal
-Date: 20 Jan 2017
-Updated: 12 Jul 2018
+Date: 20th-Jan-2017
+Updated: 09th-Dec-2018
 Tags: Linux, Administration, Tools, Softwares
 ---
 
