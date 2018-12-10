@@ -974,6 +974,17 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 * https://github.com/tensorflow/models/tree/master/research/object_detection
 * https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
+## Backbone Networks
+
+### ResNet - Residual Neural Network
+* https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5
+* https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035
+* It achieves a top-5 error rate of 3.57% which beats human-level performance on this dataset.
+
+
+* https://towardsdatascience.com/the-10-coolest-papers-from-cvpr-2018-11cb48585a49
+
+
 ## **Mask-RCNN**
   - https://github.com/priya-dwivedi/Deep-Learning
   - https://github.com/facebookresearch/Detectron
@@ -988,13 +999,23 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
   * https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4
 
 **Explanation Videos**
+part1-mask-rcnn-architecture-how-faster-rcnn-works.mp4
 * part 1: https://www.youtube.com/watch?v=QSYd61jOa8M
+part2-mask-rcnn-architecture-how-fcn-fully-convolutional-networks-works-for-semantic-segmentation.mp4
 * part 2: https://www.youtube.com/watch?v=UdZnhZrM2vQ
+part3-mask-rcnn-architecture-how-roi-pooling-roi-warping-roi-align-work.mp4
 * part 3: https://www.youtube.com/watch?v=XGi-Mz3do2s
-* https://www.youtube.com/watch?v=Ul25zSysk2A&list=PLkRkKTC6HZMxZrxnHUDYSLiPZxiUUFD2C
+
+
+mask-rcnn-iccv-2017-author-kaiminppt
 * https://www.youtube.com/watch?v=g7z4mkfRjI4&list=PLe6h2Vdf1gFENsJ0W2bUlOGoLWrZdzK8n
+
+* https://www.youtube.com/watch?v=Ul25zSysk2A&list=PLkRkKTC6HZMxZrxnHUDYSLiPZxiUUFD2C
 * https://www.youtube.com/watch?v=UdZnhZrM2vQ&list=PLjh3zPDW5j_v20KQvJb9Q5puTC4AjK7jK
 
+
+
+* https://github.com/matterport/Mask_RCNN/wiki
 
 
 ### Mask-rcnn Docker

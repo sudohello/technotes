@@ -389,6 +389,8 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **How to switch between gunicorn python version at execution time? - not yet found**
+  * https://stackoverflow.com/questions/14566570/how-to-use-flask-script-and-gunicorn - probable solution
 * **How to check-if-a-given-key-already-exists-in-a-dictionary**
   * https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
     ```python
@@ -425,6 +427,21 @@ The third way arrays can be created is using the NumPy arange function, which is
       o = AllMyFields({'a': 1, 'b': 2})
       o.a
     ```
+* **How to invoke the super constructor?**
+  * https://stackoverflow.com/questions/2399307/how-to-invoke-the-super-constructor#2399332
+  * super() returns a parent-like object in new-style classes:
+  ```python
+  class A(object):
+    def __init__(self):
+        print "world"
+
+  class B(A):
+      def __init__(self):
+          print "hello"
+          super(B, self).__init__()
+
+  B()
+  ```
 * **How to use OOP (Object Oriented Programming) in python?**
   * http://dirtsimple.org/2004/12/python-is-not-java.html
 * **What are the difference between Python Module vs Class? When to use them?**
@@ -2926,3 +2943,12 @@ f.write('"/>')
 f.write('</svg>')
 f.close()
 ```
+
+## DevOps
+
+### virtualenv, virtualenvwrapper
+* TBD - process manager to monitor and manage multiple virtualenvwrappers
+
+### **DevOps: python gunicorn, docker and kubernetes**
+* [how-is-python-scaling-with-gunicorn-and-kubernetes](https://stackoverflow.com/questions/52458393/how-is-python-scaling-with-gunicorn-and-kubernetes)
+
