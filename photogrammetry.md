@@ -1091,3 +1091,12 @@ https://www.unrealengine.com/en-US/blog/imperfection-for-perfection-part-2
 ## Research
 * http://levneba.com/
 * https://www.researchgate.net/publication/321730206_The_evaluation_of_photogrammetry-based_DSM_from_low-cost_UAV_by_LiDAR-based_DSM
+* https://www.tested.com/art/makers/460057-tested-dark-art-photogrammetry/
+
+
+
+## References
+* https://www.allegorithmic.com/blog/go-scan-world-photogrammetry-smartphone
+* [INDOOR PHOTOGRAMMETRY AIDED WITH UWB NAVIGATION](https://www.researchgate.net/publication/325470046_INDOOR_PHOTOGRAMMETRY_AIDED_WITH_UWB_NAVIGATION)
+
+

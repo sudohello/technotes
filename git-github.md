@@ -127,11 +127,23 @@ git remote add origin [copied web url of github repo]
 git push -u origin master
 ```
 
-## How To's
+## FAQs
 
-* **How to add an existing project to github using the command line?**
+* **how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer**
+  * https://stackoverflow.com/questions/255202/how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer
   * https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
-
+  * can use `git difftool` instead of `git diff` in all newer versions of git.
+  ```bash
+  git difftool --tool-help
+  ```
+  * first time: `git difftool`
+  ```
+  This message is displayed because 'diff.tool' is not configured.
+  See 'git difftool --tool-help' or 'git help config' for more details.
+  'git difftool' will now attempt to use one of the following tools:
+  meld opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare emerge vimdiff
+  ```
+* **what-is-the-difference-between-pull-and-clone-in-git**
 * https://stackoverflow.com/questions/3620633/what-is-the-difference-between-pull-and-clone-in-git
 
 ```bash
