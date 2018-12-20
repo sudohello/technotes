@@ -1389,3 +1389,31 @@ https://oclavi.com/
 
 * https://devblogs.nvidia.com/solving-spacenet-road-detection-challenge-deep-learning/
 
+
+## Conventions
+* BBOX: Top(y),Left(x),Width,Height,Label
+
+
+
+## Deep Learning Toolkits
+
+### [gluon-cv](https://gluon-cv.mxnet.io/index.html)
+GluonCV: a Deep Learning Toolkit for Computer Vision¶
+GluonCV provides implementations of state-of-the-art (SOTA) deep learning algorithms in computer vision. It aims to help engineers, researchers, and students quickly prototype products, validate new ideas and learn computer vision.
+
+GluonCV features:
+
+training scripts that reproduce SOTA results reported in latest papers,
+a large set of pre-trained models,
+carefully designed APIs and easy to understand implementations,
+community support.
+
+
+## Meta Architectures
+
+ImageNet: VGGNet, ResNet, Inception, and Xception with Keras
+* https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
+
+
+* https://www.learnopencv.com/keras-tutorial-using-pre-trained-imagenet-models/
+* https://keras.rstudio.com/reference/application_inception_resnet_v2.html
