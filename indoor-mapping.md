@@ -590,3 +590,10 @@ accelerometer and a gyroscope. These measurements will contain noise that will
 contribute to the error of the measurement. The Kalman filter will then try to estimate
 the state of the system, based on the current and previous states, that tend to be
 more precise that than the measurements alone.
+
+
+
+## Indoor Positioning Technologies
+* https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4883398/
+* Ultra WideBand (UWB) is an emerging technology in the field of indoor positioning that has shown better performance compared to others
+

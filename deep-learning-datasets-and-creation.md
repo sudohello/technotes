@@ -534,3 +534,7 @@ After working hard to collect your images and annotating all the objects, you ha
 * http://www.aisantec.co.jp/english/
 * http://shubhagrawal.in/2016/08/01/creating-launcher-for-any-executable-file-linux/
 * http://home.bharathh.info/
+
+
+## Creating and Veryfing Dataset
+* https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884

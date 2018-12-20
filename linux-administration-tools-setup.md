@@ -1210,3 +1210,7 @@ http://www.techytalk.info/webcam-settings-control-ubuntu-linux/
 Live in Nature. Do Yoga. Learn to Code. Code for India.
 
 https://www.switchup.org/rankings/best-coding-bootcamps
+
+**How to correct the “host key verification failed” error**
+* https://www.thegeekdiary.com/how-to-fix-the-error-host-key-verification-failed/
+ ssh-keygen -R [hostname|IP address]
