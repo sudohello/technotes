@@ -1195,11 +1195,318 @@ carefully designed APIs and easy to understand implementations,
 community support.
 
 
-## Meta Architectures
-
-ImageNet: VGGNet, ResNet, Inception, and Xception with Keras
+## Deep Learning Using Keras
+* ImageNet: VGGNet, ResNet, Inception, and Xception with Keras
 * https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
-
-
-* https://www.learnopencv.com/keras-tutorial-using-pre-trained-imagenet-models/
 * https://keras.rstudio.com/reference/application_inception_resnet_v2.html
+
+### [keras-tutorial-using-pre-trained-imagenet-models](https://www.learnopencv.com/keras-tutorial-using-pre-trained-imagenet-models/)
+* VGG16
+* InceptionV3
+* ResNet
+* MobileNet
+* Xception
+* InceptionResNetV2
+
+**a) Loading a Model**
+- first import the python module containing the respective models
+- load the model architecture
+- load the weights for the networks
+**b) Loading and pre-processing an image**
+- **Load the image.**
+  * load the image using any library such as OpenCV, PIL, skimage etc. 
+  * This is done using the load_img() function. Keras uses the PIL format for loading images. Thus, the image is in width x height x channels format.
+- **Pre-processing**
+  * conver the image in the right format - Convert the image from PIL format to Numpy format ( height x width x channels ) using image_to_array() function
+  * create network input format: example some networks would accept a 4-dimensional Tensor as an input of the form ( batchsize, height, width, channels)  
+  * Based on how the model was trained, image may need to be normalized by subtracting the mean of the ImageNet data or other dataset, because the network would have trained on the images after this pre-processing
+  * Preprocess the input by subtracting the mean value from each channel of the images in the batch
+**c)Get the Result from Network**
+- Get the result & Convert the result to human-readable format
+
+### [keras-tutorial-transfer-learning-using-pre-trained-models](https://www.learnopencv.com/keras-tutorial-transfer-learning-using-pre-trained-models/)
+
+
+**[Transfer Learning](http://cs231n.github.io/transfer-learning/)**
+* ConvNet as fixed feature extractor
+* Fine-tuning the ConvNet
+* Pretrained models
+
+**When and how to fine-tune?**
+1. How do you decide what type of transfer learning you should perform on a new dataset? 
+  * 2 most important ones are:
+    - a) the size of the new dataset (small or big)
+    - b) its similarity to the original dataset (e.g. ImageNet-like in terms of the content of images and the classes, or very different, such as microscope images)
+  *  Keeping in mind that ConvNet features are more generic in early layers and more original-dataset-specific in later layers
+    * a) New dataset is small and similar to original dataset
+      - no fine-tuning due to overfitting concerns
+      - the best idea might be to train a linear classifier on the CNN codes
+    * b) New dataset is large and similar to the original dataset
+      - have more confidence that we won’t overfit if we were to try to fine-tune through the full network
+    * c) New dataset is small but very different from the original dataset
+      - data is small, it is likely best to only train a linear classifier
+      - dataset is very different, it might not be best to train the classifier form the top of the network, which contains more dataset-specific features. Instead, it might work better to train the SVM classifier from activations somewhere earlier in the network
+    * d) New dataset is large and very different from the original dataset
+      - dataset is very large, we may expect that we can afford to train a ConvNet from scratch
+      - in practice it is very often still beneficial to initialize with weights from a pretrained model
+      - we would have enough data and confidence to fine-tune through the entire network
+2. Practical Advice
+  * a) Constraints from pretrained models
+    - a pretrained network, you may be slightly constrained in terms of the architecture you can use for your new dataset.
+  * b) Learning rates
+    -  use a smaller learning rate for ConvNet weights because we expect that the ConvNet weights are relatively good, so we don’t wish to distort them too quickly and too much (especially while the new Linear Classifier above them is being trained from random initialization)
+  * **Data pre-processing**
+    * PCA/Whitening in these notes for completeness, but these transformations are not used with Convolutional Networks.
+    * However, it is very important to zero-center the data, and it is common to see normalization of every pixel as well.
+    * An **important point** to make about the preprocessing is that any preprocessing statistics (e.g. the data mean) must only be computed on the training data, and then applied to the validation / test data. E.g. computing the mean and subtracting it from every image across the entire dataset and then splitting the data into train/val/test splits would be a mistake. Instead, the mean must be computed only over the training data and then subtracted equally from all splits (train/val/test).
+  * **Weight Initialization**
+    * there is no source of asymmetry between neurons if their weights are initialized to be the same
+    * we still want the weights to be very close to zero, but, not identically zero
+    * it is common to initialize the weights of the neurons to small numbers and refer to doing so as **symmetry breaking**
+    * The idea is that the neurons are all random and unique in the beginning, so they will compute distinct updates and integrate themselves as diverse parts of the full network
+    * he implementation for one weight matrix might look like `W = 0.01* np.random.randn(D,H)`, where randn samples from a zero mean, unit standard deviation gaussian. With this formulation, every neuron’s weight vector is initialized as a random vector sampled from a multi-dimensional gaussian, so the neurons point in random direction in the input space.
+    * It’s not necessarily the case that smaller numbers will work strictly better. For example, a Neural Network layer that has very small weights will during backpropagation compute very small gradients on its data (since this gradient is proportional to the value of the weights). This could greatly diminish the “gradient signal” flowing backward through a network, and could become a concern for deep networks.
+    * **Calibrating the variances with 1/sqrt(n)**: One problem with the above suggestion is that the distribution of the outputs from a randomly initialized neuron has a variance that grows with the number of inputs. It turns out that we can normalize the variance of each neuron’s output to 1 by scaling its weight vector by the square root of its fan-in (i.e. its number of inputs). That is, the recommended heuristic is to initialize each neuron’s weight vector as: `w = np.random.randn(n) / sqrt(n)`, where n is the number of its inputs. 
+    * gives the initialization `w = np.random.randn(n) * sqrt(2.0/n)`, and is the current recommendation for use in practice in the specific case of neural networks with ReLU neurons.
+    * **Sparse initialization**
+  * **Initializing the biases**
+    * some people like to use small constant value such as 0.01 for all biases because this ensures that all ReLU units fire in the beginning and therefore obtain and propagate some gradient. However, it is not clear if this provides a consistent improvement (in fact some results seem to indicate that this performs worse) and it is more common to simply use 0 bias initialization.
+  * http://arxiv-web3.library.cornell.edu/abs/1502.01852
+  * In practice, the current recommendation is to use `ReLU` units and use the `w = np.random.randn(n) * sqrt(2.0/n)`
+  * **Batch Normalization.**
+    * alleviates a lot of headaches with properly initializing neural networks by explicitly forcing the activations throughout a network to take on a unit gaussian distribution at the beginning of the training. 
+    * The core observation is that this is possible because normalization is a simple differentiable operation
+    *  In the implementation, applying this technique usually amounts to insert the BatchNorm layer immediately after fully connected layers (or convolutional layers), and before non-linearities
+    * **it has become a very common practice to use Batch Normalization in neural networks**
+    * In practice networks that use Batch Normalization are significantly more robust to bad initialization
+    * batch normalization can be interpreted as doing preprocessing at every layer of the network, but integrated into the network itself in a differentiable manner
+* **Regularization** - ways of controlling the capacity of Neural Networks to **prevent overfitting**
+  * **L2 regularization**
+    - implemented by penalizing the squared magnitude of all parameters directly in the objective
+    - The L2 regularization has the intuitive interpretation of heavily penalizing peaky weight vectors and preferring diffuse weight vectors
+    - L2 loss is much harder to optimize than a more stable loss such as softmax
+    - the L2 loss is less robust because outliers can introduce huge gradients.
+  * **L1 regularization**
+    -  has the intriguing property that it leads the weight vectors to become sparse during optimization (i.e. very close to exactly zero).
+    - In other words, neurons with L1 regularization end up using only a sparse subset of their most important inputs and become nearly invariant to the “noisy” inputs
+    - final weight vectors from L2 regularization are usually diffuse, small numbers
+  * **Elastic net regularization**
+    - combine the L1 regularization with the L2 regularization
+  * **Max norm constraints**
+    -  One of its appealing properties is that network cannot “explode” even when the learning rates are set too high because the updates are always bounded.
+  * **Dropout**
+    - extremely effective, simple
+    - While training, dropout is implemented by only keeping a neuron active with some probability p (a hyperparameter), or setting it to zero otherwise
+    - During training, Dropout can be interpreted as sampling a Neural Network within the full Neural Network, and only updating the parameters of the sampled network based on the input data. 
+  * stochastic pooling, fractional pooling, and data augmentation
+  * **Bias regularization**
+    *  it is not common to regularize the bias parameters because they do not interact with the data through multiplicative interactions, and therefore do not have the interpretation of controlling the influence of a data dimension on the final objective
+    * Regularizing the bias rarely leads to significantly worse performance. This is likely because there are very few bias terms compared to all the weights, so the classifier can “afford to” use the biases if it needs them to obtain a better data loss.
+  * **Per-layer regularization**
+    * not very common to regularize different layers to different amounts
+  * **In practice**
+    * It is most common to use a single, global L2 regularization strength that is cross-validated. It is also common to combine this with dropout applied after all layers. The value of p=0.5 is a reasonable default, but this can be tuned on validation data.
+* **Loss functions**
+  * **data loss**,  in a supervised learning problem measures the compatibility between a prediction (e.g. the class scores in classification) and the ground truth label. 
+  * The data loss takes the form of an average over the data losses for every individual example.
+  * Squared hinge loss
+  * cross-entropy loss (used by Softmax classifier)
+  * Hierarchical Softmax
+  * with Softmax, where the precise value of each score is less important: It only matters that their magnitudes are appropriate
+  * structured SVM loss
+*  **Regression**
+  * is the task of predicting real-valued quantities, such as the price of houses or the length of something in an image
+  * it is common to compute the loss between the predicted quantity and the true answer and then measure the L2 squared norm, or L1 norm of the difference
+  * When faced with a regression problem, first consider if it is absolutely inadequate to quantize the output into bins. For example, if you are predicting star rating for a product, it might work much better to use 5 independent classifiers for ratings of 1-5 stars instead of a regression loss. Classification has the additional benefit that it can give you a distribution over the regression outputs, not just a single output with no indication of its confidence.
+
+
+**Data Pre-processing**
+* http://cs231n.github.io/neural-networks-2/
+* **Mean subtraction**
+  * It involves subtracting the mean across every individual feature in the data
+  * has the geometric interpretation of centering the cloud of data around the origin along every dimension
+  *  In numpy, this operation would be implemented as: `X -= np.mean(X, axis = 0)`. With images specifically, for convenience it can be common to subtract a single value from all pixels (e.g. `X -= np.mean(X))`, or to do so separately across the three color channels.
+* **Normalization**
+  * normalizing the data dimensions so that they are of approximately the same scale
+  * There are two common ways of achieving this normalization
+    * a) One is to divide each dimension by its standard deviation, once it has been zero-centered: `(X /= np.std(X, axis = 0))`
+    * b) Another form of this preprocessing normalizes each dimension so that the min and max along the dimension is -1 and 1 respectively
+  -  It only makes sense to apply this preprocessing if you have a reason to believe that different input features have different scales (or units), but they should be of approximately equal importance to the learning algorithm
+  - In case of images, the relative scales of pixels are already approximately equal (and in range from 0 to 255), so it is not strictly necessary to perform this additional preprocessing step.
+* **PCA (Principal Component Analysis) and Whitening**
+  * used for dimensionality reduction
+  * the data is first centered
+  * compute the covariance matrix that tells us about the correlation structure in the data
+  * The (i,j) element of the data covariance matrix contains the covariance between i-th and j-th dimension of the data
+  * the diagonal of this matrix contains the variances
+  * the covariance matrix is symmetric and positive semi-definite
+  * compute the **singular-value decomposition - SVD** factorization of the data covariance matrix
+  * where the columns of U are the eigenvectors and S is a 1-D array of the singular values.
+  * To decorrelate the data, we project the original (but zero-centered) data into the eigenbasis
+  * Notice that the columns of U are a set of orthonormal vectors (norm of 1, and orthogonal to each other), so they can be regarded as basis vectors
+  ```python
+  # Assume input data matrix X of size [N x D]
+  X -= np.mean(X, axis = 0) # zero-center the data (important)
+  cov = np.dot(X.T, X) / X.shape[0] # get the data covariance matrix
+  #
+  U,S,V = np.linalg.svd(cov)
+  #
+  Xrot = np.dot(X, U) # decorrelate the data
+  Xrot_reduced = np.dot(X, U[:,:100]) # Xrot_reduced becomes [N x 100]
+  ```
+  * After this operation, we would have reduced the original dataset of size [N x D] to one of size [N x 100], keeping the 100 dimensions of the data that contain the most variance
+  * It is very often the case that you can get very good performance by training linear classifiers or neural networks on the PCA-reduced datasets, obtaining savings in both space and time
+  * **whitening**
+    * The whitening operation takes the data in the eigenbasis and divides every dimension by the eigenvalue to normalize the scale
+    * The geometric interpretation of this transformation is that if the input data is a multivariable gaussian, then the whitened data will be a gaussian with zero mean and identity covariance matrix.
+    ```python
+    # whiten the data:
+    # divide by the eigenvalues (which are square roots of the singular values)
+    Xwhite = Xrot / np.sqrt(S + 1e-5)
+    ```
+    * Exaggerating noise. Note that we’re adding 1e-5 (or a small constant) to prevent division by zero. One weakness of this transformation is that it can greatly exaggerate the noise in the data, since it stretches all dimensions (including the irrelevant dimensions of tiny variance that are mostly noise) to be of equal size in the input. This can in practice be mitigated by stronger smoothing (i.e. increasing 1e-5 to be a larger number).
+
+
+**process of learning the parameters and finding good hyperparameters**
+* http://cs231n.github.io/neural-networks-3/
+* **Gradient Checks**
+  * Use the centered formula
+  * Use relative error for the comparison
+  * Use double precision
+  * Stick around active range of floating point
+    * http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+  * Kinks in the objective
+    * Kinks refer to non-differentiable parts of an objective function, introduced by functions such as ReLU (max(0,x)), or the SVM loss, Maxout neurons, etc
+  * Use only few datapoints
+  * Be careful with the step size h
+  * Gradcheck during a “characteristic” mode of operation
+  * Don’t let the regularization overwhelm the data
+  * Remember to turn off dropout/augmentations
+  * Check only few dimensions
+* **Before learning: sanity checks Tips/Tricks**
+  * Look for correct loss at chance performance
+  * increasing the regularization strength should increase the loss
+  * Overfit a tiny subset of data
+    - Lastly and most importantly, before training on the full dataset try to train on a tiny portion (e.g. 20 examples) of your data and make sure you can achieve zero cost. For this experiment it’s also best to set regularization to zero, otherwise this can prevent you from getting zero cost. Unless you pass this sanity check with a small dataset it is not worth proceeding to the full dataset.
+    - For instance, if your datapoints’ features are random due to some bug, then it will be possible to overfit your small training set but you will never notice any generalization when you fold it your full dataset.
+* **Quantities to monitor during training Neural Network**
+  * get intuitions about different hyperparameter settings and how they should be changed for more efficient learning
+  * The x-axis of the plots below are always in units of epochs, which measure **how many times every example has been seen** during training in expectation (e.g. one epoch means that every example has been seen once)
+  * It is preferable to track epochs rather than iterations since the number of iterations depends on the arbitrary setting of batch size.
+  * **Loss**
+    * The first quantity that is useful to track during training is the loss
+    * it is evaluated on the individual batches during the forward pass
+    * With low learning rates the improvements will be linear
+    * With high learning rates they will start to look more exponential
+    * Higher learning rates will decay the loss faster, but they get stuck at worse values of loss. This is because there is too much "energy" in the optimization and the parameters are bouncing around chaotically, unable to settle in a nice spot in the optimization landscape
+    * The amount of “wiggle” in the loss is related to the batch size
+    * When the batch size is 1, the wiggle will be relatively high
+    * When the batch size is the full dataset, the wiggle will be minimal because every gradient update should be improving the loss function monotonically (unless the learning rate is set too high).
+    * https://lossfunctions.tumblr.com/
+  * **Train/Val accuracy**
+    * plot can give you valuable insights into the amount of overfitting in your model
+    * The gap between the training and validation accuracy indicates the amount of overfitting
+    * very small validation accuracy compared to the training accuracy, indicating strong overfitting (note, it's possible for the validation accuracy to even start to go down after some point). When you see this in practice you probably want to increase regularization (stronger L2 weight penalty, more dropout, etc.) or collect more data.
+    * The other possible case is when the validation accuracy tracks the training accuracy fairly well. This case indicates that your model capacity is not high enough: make the model larger by increasing the number of parameters
+  * **Ratio of weights:updates**
+    * track the ratio of the update magnitudes to the value magnitudes. Note: updates, not the raw gradients (e.g. in vanilla sgd this would be the gradient multiplied by the learning rate)
+    * You might want to evaluate and track this ratio for every set of parameters independently
+    * A rough heuristic is that this ratio should be somewhere around `1e-3`. If it is lower than this then the learning rate might be too low. If it is higher then the learning rate is likely too high.
+  * **Activation / Gradient distributions per layer**
+    * An incorrect initialization can slow down or even completely stall the learning process
+    * plot activation/gradient histograms for all layers of the network
+    * Intuitively, it is not a good sign to see any strange distributions - e.g. with tanh neurons we would like to see a distribution of neuron activations between the full range of [-1,1], instead of seeing all neurons outputting zero, or all neurons being completely saturated at either -1 or 1
+  * **First-layer Visualizations**
+    * when one is working with image pixels it can be helpful and satisfying to plot the first-layer features visually
+    * Noisy features indicate could be a symptom: Unconverged network, improperly set learning rate, very low weight regularization penalty
+    * Nice, smooth, clean and diverse features are a good indication that the training is proceeding well
+
+
+**Parameter updates**
+Once the analytic gradient is computed with backpropagation, the gradients are used to perform a parameter update. There are several approaches for performing the update:
+* **Vanilla update**
+  * The simplest form of update is to change the parameters along the negative gradient direction (since the gradient indicates the direction of increase, but we usually wish to minimize a loss function).
+  ```python
+      # Vanilla update
+    x += - learning_rate * dx
+  ```
+  * where `learning_rate` is a hyperparameter - a fixed constant. When evaluated on the full dataset, and when the learning rate is low enough, this is guaranteed to make non-negative progress on the loss function.
+* **Momentum update**
+  * enjoys better converge rates on deep networks
+  * motivated from a physical perspective of the optimization problem
+  * In particular, the loss can be interpreted as the height of a hilly terrain (and therefore also to the potential energy since U=mgh and therefore U∝h )
+  * Initializing the parameters with random numbers is equivalent to setting a particle with zero initial velocity at some location
+  * The optimization process can then be seen as equivalent to the process of simulating the parameter vector (i.e. a particle) as rolling on the landscape
+  *  A typical setting is to start with momentum of about 0.5 and anneal it to 0.99 or so over multiple epochs.
+* **Nesterov Momentum**
+  * consistenly works slightly better than standard momentum
+  * Instead of evaluating gradient at the current position (red circle), we know that our momentum is about to carry us to the tip of the green arrow. With Nesterov momentum we therefore instead evaluate the gradient at this "looked-ahead" position
+* **Annealing the learning rate**
+  * it is usually helpful to anneal the learning rate over time
+  * Good intuition to have in mind is that with a high learning rate, the system contains too much kinetic energy and the parameter vector bounces around chaotically, unable to settle down into deeper, but narrower parts of the loss function. Knowing when to decay the learning rate can be tricky: Decay it slowly and you’ll be wasting computation bouncing around chaotically with little improvement for a long time. But decay it too aggressively and the system will cool too quickly, unable to reach the best position it can. There are three common types of implementing the learning rate decay:
+    * **Step decay:**
+    * **Exponential decay:**
+    * **1/t decay:**
+  * In practice, we find that the step decay is slightly preferable because the hyperparameters it involves (the fraction of decay and the step timings in units of epochs) are more interpretable than the hyperparameter k. Lastly, if you can afford the computational budget, err on the side of slower decay and train for a longer time
+* **Second order methods**
+  *  [L-BFGS](http://en.wikipedia.org/wiki/Limited-memory_BFGS) to work on mini-batches is more tricky and an active area of research
+  * SGD variants based on (Nesterov’s) momentum are more standard because they are simpler and scale more easily
+* **Per-parameter adaptive learning rate methods**
+  * generally the learning rate are manipulated globally and equally for all parameters
+  * Tuning the learning rates is an expensive process
+  * adaptive methods:
+    * **Adagrad** is an adaptive learning rate method 
+    * **RMSprop** is a very effective
+    * **Adam** looks a bit like RMSProp with momentum
+* **Hyperparameter optimization**
+  * The most common hyperparameters in context of Neural Networks include:
+    * the initial learning rate
+    * learning rate decay schedule (such as the decay constant)
+    * regularization strength (L2 penalty, dropout strength)
+  * there are many more relatively less sensitive hyperparameters, for example:
+    * in per-parameter adaptive learning methods
+    * the setting of momentum and its schedule, etc.
+  * ** tips and tricks for performing the hyperparameter search:**
+    * **Implementation**
+      - writes a model checkpoints (together with miscellaneous training statistics such as the loss over time) to a file
+      - useful to include the validation performance directly in the filename, so that it is simple to inspect and sort the progress
+      - inspect the checkpoints &  plot their training statistics, etc
+    * **Prefer one validation fold to cross-validation**
+      - In most cases a **single validation set** of respectable size substantially simplifies the code base, without the need for cross-validation with multiple folds
+    * **Hyperparameter ranges**
+      - Search for hyperparameters on log scale
+      - Learning rate and regularization strength have multiplicative effects on the training dynamics. For example, a fixed change of adding 0.01 to a learning rate has huge effects on the dynamics if the learning rate is 0.001, but nearly no effect if the learning rate when it is 10. This is because the learning rate multiplies the computed gradient in the update.
+      - Therefore, it is much more natural to consider a range of learning rate multiplied or divided by some value, than a range of learning rate added or subtracted to by some value. Some parameters (e.g. dropout) are instead usually searched in the original scale
+    * **Prefer random search to grid search**
+      - randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid
+      -  Performing random search rather than grid search allows you to much more precisely discover good values for the important ones.
+* **Evaluation**
+
+
+
+**Maths notation**
+* https://math.stackexchange.com/questions/853643/how-to-convert-1e11-into-number
+
+
+
+### Exercises
+
+1. **Reading, Writing & Converting Images**
+  * Loading images using different libraries such as OpenCV, PIL, skimage etc
+  * handle image arrays to-and-fro between different image libraries
+  * convert loaded images into numpy array
+  * convert numpy image array into network input format
+  * saving numpy image array to image, visualize images
+2. **Manipulate Numpy Image array**
+  * Calculate Mean of Image
+  * Subract Mean of Image, visualiize and save the new array to new image
+  * Image re-size, padding, splitting
+  * RBG to grey channel
+  * visualize histograms of RGB channels, observe and analyze image highlights, midtownes, exposure and other properties from the image graphs
+
+
+**Notes:**
+* Numpy format  ( height x width x channels[RGB] )
+* Keras format  ( width x height x channels[RGB] )
+* OpenCV format ( height x width x channels[BGR] )
+* Mean is an array of three elements obtained by the average of R, G, B pixels of all images
