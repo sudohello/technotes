@@ -612,3 +612,16 @@ In computer games, the term refers to programs that use artificial intelligence 
 
 In addition, some fighting and real-time strategy games can be put into zero-player mode where one AI plays against another AI.
 
+
+
+**How to prevent tensorflow from allocating the totality of a GPU memory?**
+* https://stackoverflow.com/questions/34199233/how-to-prevent-tensorflow-from-allocating-the-totality-of-a-gpu-memory
+* You can set the fraction of GPU memory to be allocated when you construct a tf.Session by passing a tf.GPUOptions as part of the optional config argument:
+  ```python
+  # Assume that you have 12GB of GPU memory and want to allocate ~4GB:
+  gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+
+  sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+  ```
+* The per_process_gpu_memory_fraction acts as a hard upper bound on the amount of GPU memory that will be used by the process on each GPU on the same machine. Currently, this fraction is applied uniformly to all of the GPUs on the same machine; there is no way to set this on a per-GPU basis.
+
