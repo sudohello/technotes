@@ -1176,6 +1176,9 @@ https://oclavi.com/
 * https://devblogs.nvidia.com/solving-spacenet-road-detection-challenge-deep-learning/
 
 
+## TBD:
+* http://www.themtank.org/a-year-in-computer-vision
+
 ## Conventions
 * BBOX: Top(y),Left(x),Width,Height,Label
 
