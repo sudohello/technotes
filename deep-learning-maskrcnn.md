@@ -86,11 +86,11 @@ dict_keys(['_image_ids', 'image_info', 'class_info', 'source_class_ids', 'num_cl
 #### Issues
 * https://github.com/matterport/Mask_RCNN/issues/849
 ```bash
-Loading weights  /home/alpha/Documents/ai-ml-dl/external/Mask_RCNN/logs/coco20181128T1811/mask_rcnn_coco_0002.h5
+Loading weights  $HOME/ai-ml-dl/external/Mask_RCNN/logs/coco20181128T1811/mask_rcnn_coco_0002.h5
 Traceback (most recent call last):
   File "road.py", line 580, in <module>
     model.load_weights(weights_path, by_name=True)
-  File "/home/alpha/Documents/ai-ml-dl/external/Mask_RCNN/mrcnn/model.py", line 2130, in load_weights
+  File "$HOME/ai-ml-dl/external/Mask_RCNN/mrcnn/model.py", line 2130, in load_weights
     saving.load_weights_from_hdf5_group_by_name(f, layers)
   File "/usr/local/lib/python3.6/dist-packages/keras/engine/saving.py", line 1017, in load_weights_from_hdf5_group_by_name
     str(weight_values[i].shape) + '.')
@@ -221,3 +221,150 @@ Now we expect that you have downloaded all the files in the datasets section and
 
 **AI for GIS Tools**
 https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
+
+## Setting up datasets links for Mask-Rcnn:
+
+```bash
+MRCNN_ROOT=$AI_HOME/external/Mask_RCNN
+# cd $MRCNN_ROOT/datasets
+wget -c https://github.com/matterport/Mask_RCNN/releases/download/v2.1/balloon_dataset.zip -P $AI_DATA/data/balloon_dataset.zip
+unzip -q $AI_DATA/data/balloon_dataset.zip -d $AI_DATA/data/balloon_dataset
+mkdir $MRCNN_ROOT/datasets
+ln -s $AI_DATA/data/balloon_dataset/balloon $MRCNN_ROOT/datasets/balloon
+ln -s $AI_DATA/data/ms-coco $MRCNN_ROOT/datasets/coco
+ln -s $AI_DATA/data/crowd-ai-mapping $MRCNN_ROOT/datasets/crowd-ai-mapping
+```
+
+## Notes from Original Mask-RCNN Paper 
+
+
+
+We report the standard COCO metrics including AP (averaged over IoU thresholds)
+AP 50 , AP 75 , and AP S , AP M , AP L (AP at different scales)
+
+AP is evaluating using mask IoU
+
+we train using the union of 80k train images and a 35k subset of val images (trainval35k), and report ablations on the remaining 5k val images (minival). We also report results on test-dev
+
+
+outperform baseline variants of previous state-of-the-art models.
+This includes MNC [10] and FCIS the winners of the COCO 2015 and 2016 segmentation challenges, respectively
+Mask R-CNN with ResNet-101-FPN backbone outperforms FCIS+++
+which includes multi-scale train/test, horizontal flip test, and online hard example mining (OHEM)
+
+Fully convolutional networks (FCN)
+multi-layer perceptrons (MLP, fully-connected)
+
+Backbone Architecture
+* Better backbones bring expected gains: deeper networks do better, FPN outperforms C4 features, and ResNeXt improves on ResNet.
+* It benefits from deeper networks (50 vs. 101) and advanced designs including FPN and ResNeXt.
+* We note that not all frameworks automatically benefit from deeper or advanced networks
+
+Experiments on Cityscapes:
+* report instance segmentation results on the Cityscapes [7] dataset. This dataset has fine annotations for 2975 train, 500 val, and 1525 test images. It has 20k coarse training images without instance annotations, which we do not use.
+* All images are 2048×1024 pixels
+* The instance segmentation task involves 8 object categories
+* numbers of instances on the fine training set are
+  * person: 17.9k
+  * rider: 1.8k
+  * car: 26.9k
+  * truck: 0.5k
+  * bus: 0.4k
+  * train: 0.2k
+  * mcycle: 0.7k
+  * bicycle: 3.7k
+* Instance segmentation performance on this task is measured by the COCO-style mask AP (averaged over IoU thresholds); AP 50 (i.e., mask AP at an IoU of 0.5) is also reported
+
+* Mask R-CNN models with the ResNet-FPN-50 backbone; we found the 101-layer counterpart performs similarly due to the small dataset size We train with image scale (shorter side) randomly sampled from [800, 1024], which reduces overfitting; inference is on a single scale of 1024 pixels.
+* We use a mini-batch size of 1 image per GPU (so 8 on 8 GPUs) and train the model for 24k iterations, starting from a learning rate of 0.01 and reducing it to 0.001 at 18k iterations. It takes ∼ 4 hours of training on a single 8-GPU machine under this setting
+* Without using the coarse training set, our method achieves 26.2 AP on test, which is over 30% relative improvement over the previous best en- try (DIN), and is also better than the concurrent work of SGN’s 25.0.
+* Both DIN and SGN use fine + coarse data. Compared to the best entry using fine data only (17.4 AP), we achieve a ∼ 50% improvement
+* For the person and car categories, the Cityscapes dataset exhibits a large number of within-category overlapping instances (on average 6 people and 9 cars per image)
+* We argue that within-category overlap is a core difficulty of instance segmentation. Our method shows massive improvement on these two categories over the other best entries (relative ∼ 40% improvement on person from 21.8 to 30.5 and ∼ 20% improvement on car from 39.4 to 46.9), even though our method does not exploit the coarse data
+* A main challenge of the Cityscapes dataset is training models in a low-data regime, particularly for the categories of truck, bus, and train, which have about 200-500 traiing samples each
+* We show that using COCO pretraining is an effective strategy on this dataset.
+* initialize the corresponding 7 categories in Cityscapes from a pre-trained COCO Mask R-CNN model (rider being randomly initialized). We fine-tune this model for 4k iterations in which the learning rate is reduced at 3k iterations, which takes ∼ 1 hour for training given the COCO model
+* This indicates the important role the amount of training data plays
+* we observed a bias between the val and test AP
+* found that this **bias** is mainly caused by the truck, bus, and train categories, with the fine-only model having val/test AP of 28.8/22.8, 53.5/32.2, and 33.0/18.6, respectively
+* This suggests that there is a **domain shift** on these categories, which also have little training data
+* for the person and car categories we do not see any such bias (val/test AP are within ±1 point)
+
+
+* ImageNet-5k pre-training
+* Scale augmentation at train time further improves results
+* During training, we randomly sample a scale from [640, 800] pixels and we increase the number of iterations to 260k (with the learning rate reduced by 10 at 200k and 240k iterations)
+* upgrading the 101-layer ResNeXt to its 152-layer counterpart deeper model can still improve results on COCO
+* recently proposed non-local (NL) model [43], we achieve 40.3 mask AP and 45.0 box AP
+
+
+
+https://github.com/matterport/Mask_RCNN/issues/635
+
+
+BACKBONE_SHAPES 
+[
+  [512 512]
+  [256 256]
+  [128 128]
+  [ 64 64]
+  [ 32 32]
+]
+DETECTION_MIN_CONFIDENCE 0.7
+IMAGE_MAX_DIM 2048
+IMAGE_MIN_DIM 800
+IMAGE_PADDING True
+IMAGE_SHAPE [2048 2048 3]
+MINI_MASK_SHAPE (224, 224)
+LEARNING_RATE 0.002
+MASK_SHAPE [56, 56]
+MINI_MASK_SHAPE (224, 224)
+TRAIN_ROIS_PER_IMAGE 128
+
+
+* `build_rpn_targets`
+
+* `./mrcnn/utils.py`
+  * `compute_ap`
+    ```python
+    """Compute Average Precision at a set IoU threshold (default 0.5).
+    Returns:
+    mAP: Mean Average Precision
+    precisions: List of precisions at different class score thresholds.
+    recalls: List of recall values at different class score thresholds.
+    overlaps: [pred_boxes, gt_boxes] IoU overlaps.
+    """
+    ```
+  * `compute_ap_range`
+  * `compute_recall`
+* `./mrcnn/visualize.py`
+  * `plot_precision_recall`
+  * `plot_overlaps`
+
+
+* Convolution layers are independent of the input size; only their kernel size matter.
+
+**Anchors**
+```python
+# BACKBONE                       resnet101
+
+backbone_shapes = modellib.compute_backbone_shapes(config, config.IMAGE_SHAPE)
+
+ # [[480 480]
+ # [240 240]
+ # [120 120]
+ # [ 60  60]
+ # [ 30  30]]
+
+# BACKBONE_STRIDES               [4, 8, 16, 32, 64]
+# RPN_ANCHOR_SCALES              (32, 64, 128, 256, 512)
+# RPN_ANCHOR_RATIOS              [0.5, 1, 2]
+# RPN_ANCHOR_STRIDE              1
+anchors = utils.generate_pyramid_anchors(config.RPN_ANCHOR_SCALES, 
+                                          config.RPN_ANCHOR_RATIOS,
+                                          backbone_shapes,
+                                          config.BACKBONE_STRIDES, 
+                                          config.RPN_ANCHOR_STRIDE)
+
+## utils.generate_anchors
+```
