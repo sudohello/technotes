@@ -221,3 +221,29 @@ Now we expect that you have downloaded all the files in the datasets section and
 
 **AI for GIS Tools**
 https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
+
+
+## Mask-RCNN Hyperparameters
+* epochs
+* batch-size
+* learning-rate
+  * `0.01`, `0.001`
+* weight decay
+* regularization strength, weight decay
+  * `1e-4`, `1e-3`
+* data augmentation
+
+**problems in training**
+* high bias & high variance
+
+
+**Reporting**
+* mAP - mean Average Precision scores for each hyperparameters
+
+Average Precision  (AP)
+Average Recall     (AR)
+IoU
+
+
+https://stackoverflow.com/questions/36274638/map-metric-in-object-detection-and-computer-vision
+
