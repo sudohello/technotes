@@ -389,6 +389,37 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **What is a “callable” in Python?**
+  * https://stackoverflow.com/questions/111234/what-is-a-callable-in-python
+  * https://docs.python.org/3/library/typing.html#callable
+  * A callable is anything that can be called.
+  * The method named `__call__` is Called when the instance is called as a function
+  ```python
+  class Foo:
+    def __call__(self):
+      print 'called'
+
+  foo_instance = Foo()
+  foo_instance() #this is calling the __call__ method
+  ```
+  * see the documentation for callable() in Python 3.x: "This function was first removed in Python 3.0 and then brought back in Python 3.2.
+* **What are metaclasses in Python and what do we use them for?**
+  * https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python
+  * Before understanding metaclasses, you need to master classes in Python    
+  * A **metaclass** is the class of a class. Like a class defines how an instance of the class behaves, a metaclass defines how a class behaves. A class is an instance of a metaclass
+  * A metaclass is most commonly used as a class-factory
+  * However, metaclasses actually define the type of a class, not just a factory for it, so you can do much more with them
+  *  You can, for instance, define normal methods on the metaclass. These metaclass-methods are like classmethods, in that they can be called on the class without an instance, but they are also not like classmethods in that they cannot be called on an instance of the class
+* **What are classes in Python?**
+  * Classes are objects too
+  * object (the class) is itself capable of creating objects (the instances), and this is why it's a class.
+  * But still, it's an object, and therefore:
+    - you can assign it to a variable
+    - you can copy it
+    - you can add attributes to it
+    - you can pass it as a function parameter
+  * **Creating classes dynamically**
+    * Since classes are objects, you can create them on the fly, like any object.
 * **How to switch between gunicorn python version at execution time? - not yet found**
   * https://stackoverflow.com/questions/14566570/how-to-use-flask-script-and-gunicorn - probable solution
 * **How to check-if-a-given-key-already-exists-in-a-dictionary**
@@ -715,7 +746,6 @@ The third way arrays can be created is using the NumPy arange function, which is
   #
   sudo python -m pip install -U --force-reinstall pip
   ```
-
 * **Which python points to which version?**
   ```bash
   python -V

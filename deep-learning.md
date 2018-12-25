@@ -1161,6 +1161,8 @@ https://oclavi.com/
 
 
 ## DeepLearning in Remote Sensing
+* [object-detection-with-deep-learning-on-aerial-imagery](https://medium.com/data-from-the-trenches/object-detection-with-deep-learning-on-aerial-imagery-2465078db8a9)
+* [car-localization-and-counting-with-overhead-imagery](https://medium.com/the-downlinq/car-localization-and-counting-with-overhead-imagery-an-interactive-exploration-9d5a029a596b)
 
 
 ###**[SpaceNetChallenge](https://github.com/SpaceNetChallenge/)**
@@ -1484,6 +1486,7 @@ Once the analytic gradient is computed with backpropagation, the gradients are u
       - randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid
       -  Performing random search rather than grid search allows you to much more precisely discover good values for the important ones.
 * **Evaluation**
+
 
 
 
