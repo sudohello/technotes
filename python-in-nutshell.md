@@ -1,5 +1,10 @@
 ---
 title: Python In Nutshell
+Decription: Python In Nutshell
+Author: Bhaskar Mangal
+Date: 
+Last Updated: 26th-Dec-2018
+Tags: Python In Nutshell
 ---
 
 **Table of Contents**

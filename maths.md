@@ -380,3 +380,6 @@ Our goal is to find analogies, diagrams, examples, and plain-English description
 Happy math,
 
 -Kalid
+
+## **Maths notation**
+* https://math.stackexchange.com/questions/853643/how-to-convert-1e11-into-number

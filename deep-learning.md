@@ -12,11 +12,161 @@ Tags: Deep Learning
 {:toc}
 
 
+## Deep Learning
+* Refer: [Machine Learning](machine-learning.md)
+* **References**
+  * **Lecture Slides**
+    * http://wavelab.uwaterloo.ca/wp-content/uploads/
+      * http://wavelab.uwaterloo.ca/wp-content/uploads/2017/04/
+
+
+* **Feedforward:** Information flows from the input x through some intermediate steps, all the way to the output y. There is no Feedback connections.
+* **Neural Networks:** **Neural** because these models are loosely inspired by neuroscience, **Networks** because these models can be represented as a composition of many functions
+* **Different Layers**
+  * First layer is called the **input layer**
+  * The final layer is called the **output layer**
+  * The layers in between, input and output layers are called **hidden layers**
+* **Depth:** The **length of the chain of functions** in a neural network is called its depth
+* **Width:** The **dimensionality of the hidden layers** of a neural network is called its width
+* **Training Data**
+  * The training data provides us with noisy approximations
+  * Only the output of the neural network is specified for each example
+  * The training data does not specify what the network should do with its hidden layers, the network itself must decide how to modify these layers to best implement an approximation
+  * This is referred to as **representation learning**
+
+### Bulding Blocks of Deep Learning
+
+**Designing Deep Learning Algorithms**
+* Specify and optimization procedure, cost function, and model family
+* Design considerations specific to the cost function and the model family
+
+
+**Cost Function**
+* The cost function is a measure of how well our algorithm performs
+* Training is performed through minimizing the cost function
+* As with traditional machine learning algorithms, most neural networks are trained using maximum likelihood
+* The cost function in that case referred to as the **cross entropy** between between the **training data** and the **model distribution**
+
+
+**Output Layer**
+* The choice of cost function is tightly coupled with the choice of output unit
+* This is because the form of the cross-entropy function depends on how the output is represented
+
+**The Output Layer: Linear Units**
+* A simple kind of output unit is one based on an affine transformation with no non-linearity
+* Using maximum likelihood estimation, the cost function will be the Mean Square Error
+* Classification With Linear Output Units, and Multiclass SVM Cost Function
+* Define the Multi-Class SVM Loss also called the **Hinge Loss**
+
+
+**The Output Layer: Softmax Units**
+* **Softmax functions** are most often used as the **output of a classifier**, to represent the probability distribution over K different classes
+* Softmax function on a vector z is applied element wise
+
+**The Output Layer: Other Output Types**
+* linear, softmax output units
+* **Sigmoid** units are sometimes used for binary classification
+* **Gaussian mixture models** are employed in mixture density networks
+
+
+**Hidden Units**
+* Hidden units are what makes deep learning unique
+* Generally, all hidden units discussed in start off with a linear transformation of the input
+* The linear transformation is followed by an **element wise**, **nonlinear function g(z)** . This function is usually called the **activation function**
+
+
+**Activation functions**
+
+* **The Rectified Linear Units: ReLU**
+  * The ReLU hidden unit are the default choice of activation function for Feedforward Neural Networks
+  * The ReLU hidden unit use the function max(0, z) as its activation function
+  * ReLUs are easy to optimize because they are very similar to linear units
+  * Derivative through ReLU remain large whenever the unit is active
+  * The derivative is also consistent, and the gradient direction is far more useful for learning than it would be with activation functions that introduce second order effects
+  * One drawback of ReLUs is that they cannot learn via gradient based methods on examples for which their activation function is zero
+  * However, this drawback is not as sever as what we refer to as the **”dead”** ReLU phenomenon
+  * A large gradient flowing through a ReLU neuron could cause the weights to update in such a way that the neuron will never activate on any datapoint again
+  * If this happens, then the gradient flowing through the unit will forever be zero from that point on. That is, the ReLU units can irreversibly die during training since they can get knocked off the data manifold
+* **Leaky ReLu**
+  * The **Leaky ReLu** tries to remedy the ”dead” ReLU problem by allowing learning to proceed even with z ≤ 0
+  * This is done through extending the activation function to be: `g(z) = max(0, z) + α min(0, z)`. `α` is usually set to `0.1`
+* **Parametric ReLu**
+  * **Parametric ReLu** uses the same concept as the Leaky Relu, but treats `α` as a **learnable parameter**
+* **Maxout ReLu**
+  * Maxout units can be thought of as a generalization to the ReLU units
+  * Maxout units can learn a piecewise linear, convex function with up to k pieces. This can be thought of as **learning the activation function itself**
+  * With large enough k, Maxout units can learn to approximate any convex function up to an arbitrary fidelity
+  * The Maxout units enjoy the benefetis of ReLUs with out having any of their drawbacks
+  * Because each unit is driven by multiple filters, Maxout units have some redundancy that helps them to resist a phenomenon called **catastrophic forgetting**, in which **neural networks forget how to perform tasks that they were trained on in the past**
+  * However, each Maxout unit is now parametrized by k weight vectors instead of just one,so Maxout units typically need more regularization than ReLUs
+* **Sigmoidal Units**
+  * Prior to the introduction of ReLUs, most neural networks used the sigmoid activation function
+  * The sigmoid activation function ”squashes” its input to a value between 0 and 1
+  * The sigmoid function has seen frequent use historically since it has a nice interpretation as the firing rate of a neuron: from not firing at all (0) to fully-saturated firing at an assumed maximum frequency
+  * sigmoidal units have been abandoned in Feedforward Neural Networks because:
+    * Sigmoidal units saturate and kill gradients
+      * When the value of z is at the 0 tail of the sigmoid function, the local gradient is very small. This will result in the sigmoid ”Killing” the gradient and almost no signal will flow through the neuron to its weights and recursively to its data. If the value of z is on the 1 tail (when the initial weights are very large for example), then the gradient is also almost zero and the network will barely learn
+    * The outputs of Sigmoidal units are not zero-centered. This is less sever than gradient killing, but also affects the gradient decent dynamics
+* **Tanh Units**
+  * Tanh is one other non-linearity that was used prior to ReLUs
+  * The Tanh unit attempts to fix the zero-centering problem of the sigmoidal unit
+  * However, the tanh function also has the sigmoid function’s same gradient killing characteristics
+  * Tanh units is almost always favoured over the sigmoidal unit
+* **Sigmoidal and Tanh Units**
+  * Recurrent networks, many probabilistic models, and some autoencoders have additional requirements that rule out the use of piecewise linear activation functions and make sigmoidal and tanh units more appealing despite the drawbacks of saturation
+
+
+**Computing the Derivcation: Back-Propogation**
+* **Forward Propagation And Back Propagation**
+  * When we use the a feedforward neural network to accept an input x and produce an output ŷ, information flows from the input to the cost function J(θ)
+  * During training, we need to update the parameters according to the cost function. **Back Propagation** or **Backprop** for short, allows us to propagate information from the cost function through the parameters.
+* **Backprop**
+  * Backprop is not the whole learning algorithm, it is **merely a method to compute the derivatives**
+  * It **can be used to compute the derivative of any function**, and **is not limited to deep neural networks training**
+  * Backprop relies on **applying the chain rule recursively**
+  * **Modifying the parameters** is done by SGD or other **optimization algorithms**
+  * Backprop can be easily understood when applied on computational graphs
+
+
+**Universal Approximation Properties Of Feedforward Neural Networks**
+* The No Free Lunch theorem shows that there is no universally superior machine learning algorithm. Feedforward networks provide a universal system for representing functions, in the sense that, given a function, there exists a feedforward network that approximates the function. There is no universal procedure for examining a training set of specific examples and choosing a function that will generalize to points not in the training set
+* The universal approximation theorem says that there exists a network large enough to achieve any degree of accuracy we desire, but the theorem does not say how large this network will be. The single hidden layer might be infeasably large. Furthermore, it may fail to generalize well due to overfitting.
+* In many circumstances, using deeper models can reduce the number of units in each hidden layer that are required to represent the desired function and can reduce the amount of generalization error.
+
+
+**Conclusions**
+* the standard choice to increase the capacity of feedforward networks is to go deeper, rather than wider
+* Choosing a deep model encodes a very general belief that the function we want to learn should involve composition of several simpler functions. The prior helps us overcome the curse of dimensionality!
+
+
+
+**Regularization For Deep Models**
+
+
+
+**Optimization for Training Deep Models**
+
+
+
+## Questions
+* **Q)** Why is it called softmax?
+* **Q)** How to make convolution with maxout activation?
+  * https://stackoverflow.com/questions/45009051/how-to-make-convolution-with-maxout-activation
+  * https://towardsdatascience.com/activation-functions-and-its-types-which-is-better-a9a5310cc8f
+
+
+## Research Papers
+* https://www.research.ibm.com/artificial-intelligence/publications/2018/download/pdf/scalingAI.pdf
+
+
+
 ## Deep Learning Frameworks, Toolchain, Libraries
 * [Refer: Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
 
+
 ## Datasets and Data Creation for Training Machines
 * [Refer: Datasets and Data Creation for Deep Learning](deep-learning-datasets-and-creation.md)
+
 
 ## What do Machine Learning practitioners do?
 * http://www.fast.ai/2016/12/08/org-structure/
@@ -36,6 +186,7 @@ Even when you have people who are both data scientists and engineers (that is, t
 - Modeling:
 - Productionize:
 - Monitor:
+
 
 ### **AutoML and Neural Architecture Search**
 - As it’s name suggests, AutoML is one field in particular that has focused on automating machine learning, and a subfield of AutoML called neural architecture search is currently receiving a ton of attention.
@@ -145,8 +296,10 @@ Mathematical notation can be a huge accessibility barrier, and it isn’t at all
 ● Estimating neural network computation (FLOP/s)
 ● Calculating effective aperture sizes
 
+
 ## Research Papers
 * https://github.com/ujjwalkarn/deeplearning-papernotes
+
 
 ## References
 * http://lvdmaaten.github.io/tsne/
@@ -170,6 +323,7 @@ Mathematical notation can be a huge accessibility barrier, and it isn’t at all
 * http://www.cs.cornell.edu/~asaxena/learningdepth/ijcv_monocular3dreconstruction.pdf
 * http://www.theia-sfm.org/sfm.html
 
+
 ## Books
 * https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/chapter1.html
 
@@ -178,6 +332,7 @@ Incremental SfM
 [ACSfM]	Adaptive structure from motion with a contrario model estimation. Pierre Moulon, Pascal Monasse, and Renaud Marlet. In ACCV, 2012.
 
 We consider the task of 3-d depth estimation from a single still image. We take a supervised learning approach to this problem, in which we begin by collecting a training set of monocular images (of unstructured indoor and outdoor environments which include forests, sidewalks, trees, buildings, etc.) and their corresponding ground-truth depthmaps. Then, we apply supervised learning to predict the value of the depthmap as a function of the image.
+
 
 ## MOOC Courses
 * https://www.coursera.org/learn/neural-networks
@@ -212,6 +367,7 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 - https://hackernoon.com/setting-up-your-gpu-machine-to-be-deep-learning-ready-96b61a7df278
 - http://timdettmers.com/2014/09/21/how-to-build-and-use-a-multi-gpu-system-for-deep-learning/
 - https://becominghuman.ai/setting-up-deep-learning-gpu-environment-5651564ff936
+
 
 ## Deep Learning, CCN Terms and Concepts
 * https://github.com/ml4a/ml4a.github.io/blob/master/_chapters/neural_networks.md
@@ -296,9 +452,11 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 			- Dropout also helps reduce overfitting, by preventing a layer from seeing twice the exact same pattern, thus acting in a way analoguous to data augmentation (you could say that both dropout and data augmentation tend to disrupt random correlations occuring in your data).
 *  Dilated Convolutions
 
+
 ### neural Network Zoo
 * [neural network zoo prequel: cells and layers](https://www.asimovinstitute.org/author/fjodorvanveen/)
 * [neural network zoo](http://www.asimovinstitute.org/neural-network-zoo/)
+
 
 ### Options in User Interface for Model Selection and Traning
 **Deep Learning Key Terms**
@@ -358,6 +516,7 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 	* Caffe
 	* Torch
 
+
 ### What are Convolutional Neural Networks and why are they important?
 * https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/
 
@@ -372,12 +531,14 @@ The size of the Feature Map (Convolved Feature) is controlled by three parameter
 * Stride - Stride is the number of pixels by which we slide our filter matrix over the input matrix.
 * Zero-padding - Sometimes, it is convenient to pad the input matrix with zeros around the border, so that we can apply the filter to bordering elements of our input image matrix.
 
+
 ### Introducing Non Linearity (ReLU)
 - **ReLU** stands for Rectified Linear Unit and is a non-linear operation. Other non linear functions such as tanh or sigmoid.
 - ReLU is an element wise operation (applied per pixel) and replaces all negative pixel values in the feature map by zero.
 - The purpose of ReLU is to introduce non-linearity in our ConvNet, since most of the real-world data we would want our ConvNet to learn would be non-linear
 - Convolution is a linear operation – element wise matrix multiplication and addition, so we account for non-linearity by introducing a non-linear function like ReLU
 - The ReLU operation applied to the feature maps provides the output feature map referred to as the **Rectified feature map**.
+
 
 ### The Pooling Step
 - The function of Pooling is to progressively reduce the spatial size of the input representation
@@ -389,6 +550,7 @@ The size of the Feature Map (Convolved Feature) is controlled by three parameter
 - reduces the number of parameters and computations in the network, therefore, controlling overfitting
 - makes the network invariant to small transformations, distortions and translations in the input image (a small distortion in input will not change the output of Pooling – since we take the maximum / average value in a local neighborhood).
 - helps us arrive at an almost scale invariant representation of our image (the exact term is “equivariant”). This is very powerful since we can detect objects in an image no matter where they are located 
+
 
 **basic building blocks of any CNN**
 - Convolution, ReLU & Pooling layers
@@ -403,18 +565,23 @@ The size of the Feature Map (Convolved Feature) is controlled by three parameter
 - The purpose of the Fully Connected layer is to use the high-level features of the input image provided as an output from the convolutional and pooling layer, for classifying the input image into various classes based on the training dataset.
 - The sum of output probabilities from the Fully Connected Layer is 1. This is ensured by using the Softmax as the activation function in the output layer of the Fully Connected Layer.
 
+
 The **Softmax function** takes a vector of arbitrary real-valued scores and squashes it to a vector of values between zero and one that sum to one.
+
 
 ### Putting it all together – Training using Backpropagation
 - Convolution + Pooling layers act as Feature Extractors from the input image while Fully Connected layer acts as a classifier.
 
+
 ### Data Divide
 Split your training set into training set and a validation set. Use validation set to tune all hyperparameters. At the end run a single time on the test set and report performance.
+
 
 Cross-validation. In cases where the size of your training data (and therefore also the validation data) might be small, people sometimes use a more sophisticated technique for hyperparameter tuning called cross-validation. Working with our previous example, the idea is that instead of arbitrarily picking the first 1000 datapoints to be the validation set and rest training set, you can get a better and less noisy estimate of how well a certain value of k works by iterating over different validation sets and averaging the performance across these. For example, in 5-fold cross-validation, we would split the training data into 5 equal folds, use 4 of them for training, and 1 for validation. We would then iterate over which fold is the validation fold, evaluate the performance, and finally average the performance across the different folds.
 
 
 In practice. In practice, people prefer to avoid cross-validation in favor of having a single validation split, since cross-validation can be computationally expensive. The splits people tend to use is between 50%-90% of the training data for training and rest for validation.
+
 
 It is worth considering some advantages and drawbacks of the Nearest Neighbor classifier. Clearly, one advantage is that it is very simple to implement and understand. Additionally, the classifier takes no time to train, since all that is required is to store and possibly index the training data. However, we pay that computational cost at test time, since classifying a test example requires a comparison to every single training example. This is backwards, since in practice we often care about the test time efficiency much more than the efficiency at training time. In fact, the deep neural networks we will develop later in this class shift this tradeoff to the other extreme: They are very expensive to train, but once the training is finished it is very cheap to classify a new test example. This mode of operation is much more desirable in practice.
 
@@ -426,6 +593,7 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 * https://github.com/uber/horovod
 * http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/
 
+
 ** Hardware Guides for Deep Learning
 * http://timdettmers.com/2015/03/09/deep-learning-hardware-guide/
 
@@ -434,8 +602,10 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 * https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
 * https://in.udacity.com/course/how-to-use-git-and-github--ud775
 
+
 ### Training on ImageNet
 * https://medium.com/syncedreview/tencent-ml-team-trains-imagenet-in-record-four-minutes-d3d85eff2062
+
 
 ### References
 * https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
@@ -445,16 +615,19 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 * https://github.com/rasbt/python-machine-learning-book/blob/master/faq/difference-deep-and-normal-learning.md
 * https://www.quora.com/How-is-a-convolutional-neural-network-able-to-learn-invariant-features
 
+
 #### Convolutional Neural Networks
 * http://cs231n.github.io/convolutional-networks/
 * http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/
 * https://docs.gimp.org/en/plug-in-convmatrix.html
 * http://colah.github.io/posts/2014-07-Understanding-Convolutions/
 
+
 #### News/Articles
 * http://www.dailymail.co.uk/sciencetech/article-3371075/See-world-eyes-driverless-car-town-Interactive-tool-reveals-autonomous-vehicles-navigate-streets.html
 * http://www.sanborn.com/highly-automated-driving-maps-for-autonomous-vehicles/
 * https://medium.com/@Synced
+
 
 ## AI Patents
 * https://medium.com/syncedreview/epo-issues-first-guidelines-on-ai-patents-995a797109c6
@@ -463,6 +636,7 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 ## Machine Learning
 * https://elitedatascience.com/learn-machine-learning
 * https://www.datacamp.com/community/tutorials/deep-learning-python#gs.ny4aO4s
+
 
 ## Object Detection
 * https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/blob/master/README.md
@@ -473,6 +647,7 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 
 
 ## Street View Image Segmentation
+
 **Segmentation**
 * https://medium.com/nanonets/nanonets-how-to-use-deep-learning-when-you-have-limited-data-f68c0b512cab
 * https://medium.com/nanonets/how-to-do-image-segmentation-using-deep-learning-c673cc5862ef
@@ -481,8 +656,10 @@ It is worth considering some advantages and drawbacks of the Nearest Neighbor cl
 * http://www.cvlibs.net/datasets/kitti/eval_road.php
 * https://github.com/udacity/CarND-Semantic-Segmentation/
 
+
 ### Feature_extraction_using_convolution
 * http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution
+
 
 ### Image Segmentations & Classification
 The process of classifying each part of an image in different categories is called “image segmentation”.
@@ -500,19 +677,25 @@ The role of a sigmoid function is to output a value between 0 and 1, we use it t
 * https://aws.amazon.com/public-datasets/spacenet/
 * http://nicolovaligi.com/converting-deep-learning-model-caffe-keras.html
 
+
 **companies Involved**
 *  DigitalGlobe, CosmiQ Works, and NVIDIA; SpaceNet
+
 
 **References**
 * [MULTI-SCALE CONTEXT AGGREGATION BY DILATED CONVOLUTIONS](https://arxiv.org/pdf/1511.07122.pdf)
 
+
 The dilated convolution operator has been referred to in the past as “convolution with a dilated filter”
+
 
 ### Road Segmentation
 * http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html
 
+
 **SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation**
 * https://www.youtube.com/watch?v=G15Dg2QoI_M
+
 
 **How to Simulate a Self-Driving Car**
 * https://www.youtube.com/watch?v=EaY5QiZwSP4
@@ -522,22 +705,24 @@ The dilated convolution operator has been referred to in the past as “convolut
 * https://developers.google.com/edu/c++/getting-started
 * https://github.com/CPFL/Autoware
 
+
 #### caffe-segnet
 
 **Errors while installation**
 * hdf5 dir not found HDF5_DIR-NOTFOUND
 https://github.com/NVIDIA/DIGITS/issues/156
 
+
 #### keras-segnet
 * https://github.com/imlab-uiip/keras-segnet
-```
+```bash
 sudo pip install pandas
 ```
 
 model.add(Convolution2D(112,3,3, border_mode='same',init='uniform',input_shape=(136,136,3),dim_ordering='tf',name='conv_1.1'))
 model.add(Conv2D(112,(3,3), border_mode='same',kernel_initializer='uniform',input_shape=(136,136,3),dim_ordering='tf',name='conv_1.1'))
 
-https://github.com/tensorflow/cleverhans/issues/109
+* https://github.com/tensorflow/cleverhans/issues/109
 
 Convolutional2D -> CONV2D with following parameters have changed name/format:-
  Conv2D(10, 3, 3) becomes Conv2D(10, (3, 3))
@@ -545,6 +730,7 @@ Convolutional2D -> CONV2D with following parameters have changed name/format:-
 subsample -> strides
 border_mode -> padding
 nb_filter -> filters
+
 
 ## LeNet – Convolutional Neural Network in Python
 
@@ -555,18 +741,19 @@ convolutional, activation, and pooling layers, fully-connected layer, activation
 
 In many ways, LeNet + MNIST is the “Hello, World” equivalent of Deep Learning for image classification.
 
-https://www.pyimagesearch.com/pyimagesearch-gurus/
-
+* https://www.pyimagesearch.com/pyimagesearch-gurus/
 - Common splits include the standard 60,000/10,000, 75%/25%, and 66.6%/33.3%. I’ll be using 2/3 of the data for training and 1/3 of the data for testing later in the blog post.
-
 * http://opencv.org/
 * https://medium.com/@acrosson/installing-nvidia-cuda-cudnn-tensorflow-and-keras-69bbf33dce8a
 * http://chrisstrelioff.ws/sandbox/2014/06/04/install_and_setup_python_and_packages_on_ubuntu_14_04.html
+
 
 In reality, an (image) convolution is simply an element-wise multiplication of two matrices followed by a sum.
 * http://www.pyimagesearch.com/2016/08/01/lenet-convolutional-neural-network-in-python/
 * http://www.pyimagesearch.com/2016/07/25/convolutions-with-opencv-and-python/
 * http://www.pyimagesearch.com/2016/08/01/lenet-convolutional-neural-network-in-python/
+
+
 **An image is just a multi-dimensional matrix:**
 -  image has a width (# of columns) and a height (# of rows), just like a matrix.
 -  images also have a depth to them — the number of channels in the image.
@@ -600,10 +787,13 @@ $cost=0.5\sum_{i=0}^n(y_{actual} - y_{prediction})^2$
 - The Initial value of these weights can be taken anything but it works better if you take normal distributions(with mean zero and small variance).
 - There are other methods to initialize the network but normal distribution is more prevalent.
 
+
 ## Learning Keras by Implementing the VGG Network From Scratch
 https://hackernoon.com/learning-keras-by-implementing-vgg16-from-scratch-d036733f2d5
 
+
 ## Case Studies
+
 
 ### [MULTI-SCALE CONTEXT AGGREGATION BY DILATED CONVOLUTIONS](https://arxiv.org/pdf/1511.07122.pdf)
 
@@ -612,24 +802,22 @@ The dilated convolution operator has been referred to in the past as “convolut
 * https://github.com/BVLC/caffe/issues/782
 * https://github.com/BVLC/caffe/issues/263
 * https://stackoverflow.com/questions/14585598/installing-numba-for-python
-
-```
-#python caffe path
-#custom
-export CAFFE_ROOT=$HOME/Documents/ml/caffe-segnet
-#export PATH=$PATH:$CAFFE_ROOT/build/tools
-export PYTHONPATH=$CAFFE_ROOT/python
-# Install numba
-sudo pip install numba
-#
-python predict.py dilation10_cityscapes.caffemodel 1.jpg
-usage: predict.py [-h] [-o OUTPUT_PATH] [--gpu GPU]
-                  [{pascal_voc,camvid,kitti,cityscapes}] [input_path]
-predict.py: error: argument dataset: invalid choice: 'dilation10_cityscapes.caffemodel' (choose from 'pascal_voc', 'camvid', 'kitti', 'cityscapes')
-#correct command
-python predict.py pascal_voc 1.jpg
-```
-
+  ```bash
+  #python caffe path
+  #custom
+  export CAFFE_ROOT=$HOME/Documents/ml/caffe-segnet
+  #export PATH=$PATH:$CAFFE_ROOT/build/tools
+  export PYTHONPATH=$CAFFE_ROOT/python
+  # Install numba
+  sudo pip install numba
+  #
+  python predict.py dilation10_cityscapes.caffemodel 1.jpg
+  usage: predict.py [-h] [-o OUTPUT_PATH] [--gpu GPU]
+                    [{pascal_voc,camvid,kitti,cityscapes}] [input_path]
+  predict.py: error: argument dataset: invalid choice: 'dilation10_cityscapes.caffemodel' (choose from 'pascal_voc', 'camvid', 'kitti', 'cityscapes')
+  #correct command
+  python predict.py pascal_voc 1.jpg
+  ```
 * https://github.com/richzhang/colorization/issues/2
 
 
@@ -648,24 +836,21 @@ F0629 00:41:04.755961 18550 syncedmem.hpp:33] Check failed: *ptr host allocation
 Aborted (core dumped)
 
 
-**protobuff**
-* https://github.com/google/protobuf/blob/master/src/README.md
-* https://github.com/google/protobuf
 
 ### Snippets
-```
+```bash
 python convert.py \
   --caffemodel=~/Documents/ml/dilation/pretrained/dilation8_pascal_voc.caffemodel \
   --code-output-path=./pascal_voc_tf/dil8_net.py \
   --data-output-path=./pascal_voc_tf/ \
   ~/Documents/ml/dilation/models/dilation8_pascal_voc_deploy.prototxt
-
-
+#
 python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_deploy.prototxt --caffemodel=~/Documents/ml/dilation/pretrained/dilation8_pascal_voc.caffemodel --code-output-path=./pascal_voc_tf/dil8_net.py --data-output-path=./pascal_voc_tf/
 ```
 
 
 ## Nvidia Deep Learning
+
 
 ### What network architectures most closely resemble ones you use now?
 * Alexnet
@@ -686,6 +871,7 @@ python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_d
 * Text and Document applications
 * Multimodal (combination of the above)
 
+
 ### Which of the following would you say is the main bottleneck for deployment? *
 * Throughput
 * Latency
@@ -693,10 +879,9 @@ python convert.py def_path=~/Documents/ml/dilation/models/dilation8_pascal_voc_d
 * Ease of updating model
 * Maintainability
 
+
 ### Nvidia Education
-
-https://www.nvidia.com/en-us/deep-learning-ai/education/
-
+* https://www.nvidia.com/en-us/deep-learning-ai/education/
 
 deep learning courses
  - you’ll learn how to train, optimize, and deploy neural networks
@@ -830,6 +1015,7 @@ Creating a new model in DIGITS is a lot like creating a new dataset.
 - Processing
 - Other
 
+
 **epoch**
 We need to tell the network how long we want it to train. An epoch is one trip through the entire training dataset. Set the number of Training Epochs to 5 to give our network enough time to learn something, but not take all day. This is a great setting to experiment with.
 
@@ -860,11 +1046,14 @@ Note that that same workflow would work with almost any image classification tas
 * http://deeplearning.net/tutorial/
 * http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf
 
+
 ## PyImageSearch
 * https://www.pyimagesearch.com/static/cv_dl_resource_guide.pdf
 * https://www.pyimagesearch.com/2014/10/13/deep-learning-amazon-ec2-gpu-python-nolearn/
 
+
 ## Latest Research
+
 
 ### 2018
 * [automatically-remove-the-background-from-a-photo/]
@@ -892,74 +1081,72 @@ Note that that same workflow would work with almost any image classification tas
   * The disadvantage is that, microcontrollers aren’t as powerful as GPUs, and hence you may be forced to use models with lower accuracy.
   - https://medium.freecodecamp.org/how-to-play-quidditch-using-the-tensorflow-object-detection-api-b0742b99065d
 
-  **Data Augmentation**
-  - images in your camera feed maybe of lower quality. So you must train your model to work in such conditions.
-  - https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced
-  - add some noise to degrade the image quality of the dataset. We could also experiment with blur and erosion effects.
 
-  **Datasets**
-  - Towncenter
-    * http://www.robots.ox.ac.uk/ActiveVision/Research/Projects/2009bbenfold_headpose/project.html#datasets
+**Data Augmentation**
+- images in your camera feed maybe of lower quality. So you must train your model to work in such conditions.
+- https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced
+- add some noise to degrade the image quality of the dataset. We could also experiment with blur and erosion effects.
 
-pip install -r requirements.txt
-sudo apt-get install protobuf-compiler
 
-protoc object_detection/protos/*.proto --python_out=.
-export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
-
-python create_tf_record.py \
-    --data_dir=`pwd` \
-    --output_dir=`pwd`
-
-python object_detection/train.py \
---logtostderr \
---pipeline_config_path=pipeline.config \
---train_dir=train
-
-python object_detection/inference.py \
---input_dir={PATH} \
---output_dir={PATH} \
---label_map={PATH} \
---frozen_graph={PATH} \
---num_output_classes=1 \
---n_jobs=1 \
---delay=0
+**Datasets**
+- Towncenter
+  * http://www.robots.ox.ac.uk/ActiveVision/Research/Projects/2009bbenfold_headpose/project.html#datasets
+  ```bash
+  pip install -r requirements.txt
+  sudo apt-get install protobuf-compiler
+  #
+  protoc object_detection/protos/*.proto --python_out=.
+  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+  #
+  python create_tf_record.py \
+      --data_dir=`pwd` \
+      --output_dir=`pwd`
+  #
+  python object_detection/train.py \
+  --logtostderr \
+  --pipeline_config_path=pipeline.config \
+  --train_dir=train
+  #
+  python object_detection/inference.py \
+  --input_dir={PATH} \
+  --output_dir={PATH} \
+  --label_map={PATH} \
+  --frozen_graph={PATH} \
+  --num_output_classes=1 \
+  --n_jobs=1 \
+  --delay=0
+  ```
 
 
 **Commercial APIS**
 - https://nanonets.com/
 - https://github.com/NanoNets/object-detection-sample-python.git
 
+
 **Pre-trained Models**
 - https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
 Download one of these models, and extract the contents into your base directory. You will receive the model checkpoints, a frozen inference graph, and a pipeline.config file.
 
+
 **SSD**
 - https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab
-
-python object_detection/inference.py \
---input_dir=test_images \
---output_dir=test_images_output \
---label_map=annotations/label_map.pbtxt \
---frozen_graph=output/frozen_inference_graph.pb \
---num_output_classes=1 \
---n_jobs=1 \
---delay=0
-
-
-## Numpy Tutorials
-https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php
+  ```bash
+  python object_detection/inference.py \
+  --input_dir=test_images \
+  --output_dir=test_images_output \
+  --label_map=annotations/label_map.pbtxt \
+  --frozen_graph=output/frozen_inference_graph.pb \
+  --num_output_classes=1 \
+  --n_jobs=1 \
+  --delay=0
+  ```
 
 ## References
 * http://karpathy.github.io/2015/05/21/rnn-effectiveness/
 * https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
-
-https://en.wikipedia.org/wiki/Precision_and_recall
-
-https://github.com/tflearn/tflearn/tree/master/examples#tflearn-examples
-
-
-https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196
+* https://en.wikipedia.org/wiki/Precision_and_recall
+* https://github.com/tflearn/tflearn/tree/master/examples#tflearn-examples
+* https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196
 
 
 **DNN Security**
@@ -974,15 +1161,15 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 * https://github.com/tensorflow/models/tree/master/research/object_detection
 * https://deeplearninganalytics.org/blog/do-pixel-wise-classification
 
+
 ## Backbone Networks
 
 ### ResNet - Residual Neural Network
 * https://medium.com/@sidereal/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5
 * https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035
 * It achieves a top-5 error rate of 3.57% which beats human-level performance on this dataset.
-
-
 * https://towardsdatascience.com/the-10-coolest-papers-from-cvpr-2018-11cb48585a49
+
 
 ### **[Mask-Rcnn](deep-learning-maskrcnn.md)**
 
@@ -997,15 +1184,13 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 * https://github.com/alexgkendall/caffe-segnet/issues/3
 * http://silverpond.com.au/2017/02/17/how-we-built-and-trained-an-ssd-multibox-detector-in-tensorflow.html
 * https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
-
 - https://www.tensorflow.org/hub/tutorials/image_retraining
 - https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a
-
-
 * https://towardsdatascience.com/transfer-learning-and-image-classification-using-keras-on-kaggle-kernels-c76d3b030649
 * Well Transfer learning works for Image classification problems because Neural Networks learn in an increasingly complex way. i.e The deeper you go down the network the more image specific features are learnt.
 * The take-away here is that the earlier layers of a neural network will always detect the same basic shapes and edges that are present in both the picture of a car and a person.
 * There are different variants of pretrained networks each with its own architecture, speed, size, advantages and disadvantages.
+
 
 **Transfer Learning**
 > I mean a person who can boil eggs should know how to boil just water right?
@@ -1020,25 +1205,28 @@ https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally
 * https://towardsdatascience.com/background-removal-with-deep-learning-c4f2104b3157?gi=ee87561234c9
 * https://greenscreen-ai.boorgle.com/
 * https://medium.com/@burgalon/deploying-your-keras-model-35648f9dc5fb
-
 * http://www.fast.ai/
 
+
 **Currently Reading**
-https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
-https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
+* https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+* https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 
 
 **IoU - Intersection Of Unionn**
 - https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
 
+
 **Binary Cross Entropy**
 - http://rdipietro.github.io/friendly-intro-to-cross-entropy-loss/
+
 
 **Online Books**
 - https://www.deeplearningbook.org/
 
 **CBIR**
 - https://blog.insightdatascience.com/the-unreasonable-effectiveness-of-deep-learning-representations-4ce83fc663cf
+
 
 **Free Online Course**
 * http://course.fast.ai/lessons/lesson1.html
@@ -1065,8 +1253,10 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 * https://github.com/qianguih/voxelnet
 * https://github.com/jeasinema/VoxelNet-tensorflow
 
+
 ## Road Segmentation
 * https://roadmaps.csail.mit.edu/roadtracer/
+
 
 ## Computer Vision Conferences, Challanges
 * http://www.guide2research.com/topconf/computer-vision
@@ -1087,6 +1277,7 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
   - GloVe (trained on Wikipedia).
   - https://github.com/hundredblocks/semantic-search
 
+
 ## Tasks
 
 **Challanges**
@@ -1094,13 +1285,14 @@ https://github.com/tryolabs/luminoth/tree/master/luminoth/models/fasterrcnn
 
 
 ## AI for GIS tools
-https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
-https://github.com/mnboos/osm-instance-segmentation
-https://github.com/ctu-geoforall-lab-projects/dp-pesek-2018
-http://teselagen.github.io/openVectorEditor/#/Editor
+* https://github.com/ctu-geoforall-lab/i.ann.maskrcnn
+* https://github.com/mnboos/osm-instance-segmentation
+* https://github.com/ctu-geoforall-lab-projects/dp-pesek-2018
+* http://teselagen.github.io/openVectorEditor/#/Editor
+
 
 **Commercial tool**
-https://oclavi.com/
+* https://oclavi.com/
 
 
 ## **Deep Learning in Autonomy**
@@ -1124,29 +1316,29 @@ https://oclavi.com/
 ## **Deep Learning: 3D Re-Construction, Analysis**
 - https://sites.google.com/site/yorkyuhuang/home/tutorial/deep-learning-1/deeplearningforscenereconstruction
 - https://www.slideshare.net/yuhuang/deep-learning-for-3d-scene-reconstruction-and-modeling
-* LIFT
+* **LIFT**
   - Learned Invariant Feature Transform
   - https://www.eccv2016.org/files/posters/S-4A-08.pdf
-* MatchNet
+* **MatchNet**
   - Matchnet is a deep learning approach for patch-based local image matching
   - http://www.cs.unc.edu/~xufeng/cs/papers/cvpr15-matchnet.pdf
   - https://github.com/hanxf/matchnet
-* PoseNet
+* **PoseNet**
   * https://github.com/tensorflow/tfjs-models/tree/master/posenet
   * https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5
-* Pixel2Mesh
+* **Pixel2Mesh**
   * https://arxiv.org/pdf/1804.06032.pdf
   * https://github.com/nywang16/Pixel2Mesh
   * TFLearn to be installed
     - http://tflearn.org/installation/
     - `sudo pip install tflearn`
-* Researchers
+* **Researchers**
   * https://github.com/B-C-WANG?tab=stars
-* Graph CNN
+* **Graph CNN**
   * https://github.com/tkipf/gcn
   * http://tkipf.github.io/graph-convolutional-networks/
   * https://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/
-* 3D-R2N2
+* **3D-R2N2**
   * https://github.com/chrischoy/3D-R2N2
   * errors:
   AbstractConv2d Theano optimization failed: there is no implementation available supporting the requested options. Did you exclude both "conv_dnn" and "conv_gemm" from the optimizer?
@@ -1181,6 +1373,7 @@ https://oclavi.com/
 ## TBD:
 * http://www.themtank.org/a-year-in-computer-vision
 
+
 ## Conventions
 * BBOX: Top(y),Left(x),Width,Height,Label
 
@@ -1189,21 +1382,20 @@ https://oclavi.com/
 ## Deep Learning Toolkits
 
 ### [gluon-cv](https://gluon-cv.mxnet.io/index.html)
-GluonCV: a Deep Learning Toolkit for Computer Vision¶
-GluonCV provides implementations of state-of-the-art (SOTA) deep learning algorithms in computer vision. It aims to help engineers, researchers, and students quickly prototype products, validate new ideas and learn computer vision.
-
-GluonCV features:
-
-training scripts that reproduce SOTA results reported in latest papers,
-a large set of pre-trained models,
-carefully designed APIs and easy to understand implementations,
-community support.
+* GluonCV: a Deep Learning Toolkit for Computer Vision
+* GluonCV provides implementations of state-of-the-art (SOTA) deep learning algorithms in computer vision. It aims to help engineers, researchers, and students quickly prototype products, validate new ideas and learn computer vision.
+* GluonCV features:
+  * training scripts that reproduce SOTA results reported in latest papers,
+  * a large set of pre-trained models,
+  * carefully designed APIs and easy to understand implementations,
+  * community support.
 
 
 ## Deep Learning Using Keras
 * ImageNet: VGGNet, ResNet, Inception, and Xception with Keras
 * https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
 * https://keras.rstudio.com/reference/application_inception_resnet_v2.html
+
 
 ### [keras-tutorial-using-pre-trained-imagenet-models](https://www.learnopencv.com/keras-tutorial-using-pre-trained-imagenet-models/)
 * VGG16
@@ -1229,13 +1421,14 @@ community support.
 **c)Get the Result from Network**
 - Get the result & Convert the result to human-readable format
 
-### [keras-tutorial-transfer-learning-using-pre-trained-models](https://www.learnopencv.com/keras-tutorial-transfer-learning-using-pre-trained-models/)
 
+### [keras-tutorial-transfer-learning-using-pre-trained-models](https://www.learnopencv.com/keras-tutorial-transfer-learning-using-pre-trained-models/)
 
 **[Transfer Learning](http://cs231n.github.io/transfer-learning/)**
 * ConvNet as fixed feature extractor
 * Fine-tuning the ConvNet
 * Pretrained models
+
 
 **When and how to fine-tune?**
 1. How do you decide what type of transfer learning you should perform on a new dataset? 
@@ -1490,11 +1683,6 @@ Once the analytic gradient is computed with backpropagation, the gradients are u
 
 
 
-**Maths notation**
-* https://math.stackexchange.com/questions/853643/how-to-convert-1e11-into-number
-
-
-
 ### Exercises
 
 1. **Reading, Writing & Converting Images**
@@ -1516,3 +1704,4 @@ Once the analytic gradient is computed with backpropagation, the gradients are u
 * Keras format  ( width x height x channels[RGB] )
 * OpenCV format ( height x width x channels[BGR] )
 * Mean is an array of three elements obtained by the average of R, G, B pixels of all images
+

@@ -342,6 +342,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * **Flickr MFC**
 * **GTA / Playing for Benchmarks [Richter ICCV 17]**
 * **Cross-city dataset [Yi-Hsin Chen]**
+* **[QMUL Multiview Face Dataset](http://www.eecs.qmul.ac.uk/~sgg/QMUL_FaceDataset/)**
 
 ### Remote Sensing
 **Building Footprint Extraction**
@@ -455,6 +456,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - Yobi3D
 - ShapeNet - Semantic annotation knowledge bases
   * https://drive.google.com/file/d/1Z8gt4HdPujBNFABYrthhau9VZW10WWYe/view
+
+### Face Datasets
+* https://github.com/jian667/face-dataset
 
 
 ### Others
