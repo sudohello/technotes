@@ -174,8 +174,28 @@ We usually split our dataset to three subsets: train, val, test.
 * **Q)** Is there a way to represent a complex function that has many more regions to be distinguished than the number of training examples?
 
 
+## What do Machine Learning practitioners do?
+* http://www.fast.ai/2016/12/08/org-structure/
+
+The processes of appropriately framing a business problem, collecting and cleaning the data, building the model, implementing the result, and then monitoring for changes are interconnected in many ways that often make it hard to silo off just a single piece (without at least being aware of what the other pieces entail)
+
+While it’s common to have machine learning, engineering, and data/pipeline/infrastructure engineering all as separate roles, try to avoid this as much as possible. This leads to a lot of duplicate or unused work, particularly when these roles are on separate teams. You want people who have some of all these skills: can build the pipelines for the data they need, create models with that data, and put those models in production.
+You’re not going to be able to hire many people who can do all of this. So you’ll need to provide them with training. 
+
+Tech companies waste their employees’ potential by not offering enough opportunities for on-the-job learning, training, and mentoring. Your people are smart and eager to learn. Be prepared to offer training, pair-programming, or seminars to help your data scientists fill in skills gaps. 
+
+Even when you have people who are both data scientists and engineers (that is, they can create machine learning models and put those models into production), you still need to have them embedded in other teams and not cordoned off together. Otherwise, there won’t be enough institutional understanding and buy-in of what they’re doing, and their work won’t be as integrated as it needs to be with other systems.
+
+**what do machine learning practitioners do?**
+- Understanding the context:
+- Data:
+- Modeling:
+- Productionize:
+- Monitor:
+
+
 ## Deep Learning
-* Refer: [Deep Learning](deep-learning.md)
+* [Refer: Deep Learning](deep-learning.md)
 
 
 ## scikit-learn: machine learning in Python: `sklearn` python package

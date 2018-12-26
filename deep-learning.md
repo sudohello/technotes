@@ -36,47 +36,50 @@ Tags: Deep Learning
 
 ### Bulding Blocks of Deep Learning
 
-**Designing Deep Learning Algorithms**
+#### **Designing Deep Learning Algorithms**
 * Specify and optimization procedure, cost function, and model family
 * Design considerations specific to the cost function and the model family
+* **Conclusions**
+  * the standard choice to increase the capacity of feedforward networks is to go deeper, rather than wider
+  * Choosing a deep model encodes a very general belief that the function we want to learn should involve composition of several simpler functions. The prior helps us overcome the curse of dimensionality!
 
 
-**Cost Function**
+#### **Cost Function**
 * The cost function is a measure of how well our algorithm performs
 * Training is performed through minimizing the cost function
 * As with traditional machine learning algorithms, most neural networks are trained using maximum likelihood
 * The cost function in that case referred to as the **cross entropy** between between the **training data** and the **model distribution**
 
 
-**Output Layer**
+#### **Output Layer**
 * The choice of cost function is tightly coupled with the choice of output unit
 * This is because the form of the cross-entropy function depends on how the output is represented
 
-**The Output Layer: Linear Units**
+
+#### **The Output Layer: Linear Units**
 * A simple kind of output unit is one based on an affine transformation with no non-linearity
 * Using maximum likelihood estimation, the cost function will be the Mean Square Error
 * Classification With Linear Output Units, and Multiclass SVM Cost Function
 * Define the Multi-Class SVM Loss also called the **Hinge Loss**
 
 
-**The Output Layer: Softmax Units**
+#### **The Output Layer: Softmax Units**
 * **Softmax functions** are most often used as the **output of a classifier**, to represent the probability distribution over K different classes
 * Softmax function on a vector z is applied element wise
 
-**The Output Layer: Other Output Types**
+#### **The Output Layer: Other Output Types**
 * linear, softmax output units
 * **Sigmoid** units are sometimes used for binary classification
 * **Gaussian mixture models** are employed in mixture density networks
 
 
-**Hidden Units**
+#### **Hidden Units**
 * Hidden units are what makes deep learning unique
 * Generally, all hidden units discussed in start off with a linear transformation of the input
 * The linear transformation is followed by an **element wise**, **nonlinear function g(z)** . This function is usually called the **activation function**
 
 
-**Activation functions**
-
+#### **Activation functions**
 * **The Rectified Linear Units: ReLU**
   * The ReLU hidden unit are the default choice of activation function for Feedforward Neural Networks
   * The ReLU hidden unit use the function max(0, z) as its activation function
@@ -116,7 +119,7 @@ Tags: Deep Learning
   * Recurrent networks, many probabilistic models, and some autoencoders have additional requirements that rule out the use of piecewise linear activation functions and make sigmoidal and tanh units more appealing despite the drawbacks of saturation
 
 
-**Computing the Derivcation: Back-Propogation**
+### **Computing the Derivation: Back-Propogation**
 * **Forward Propagation And Back Propagation**
   * When we use the a feedforward neural network to accept an input x and produce an output ŷ, information flows from the input to the cost function J(θ)
   * During training, we need to update the parameters according to the cost function. **Back Propagation** or **Backprop** for short, allows us to propagate information from the cost function through the parameters.
@@ -128,23 +131,105 @@ Tags: Deep Learning
   * Backprop can be easily understood when applied on computational graphs
 
 
-**Universal Approximation Properties Of Feedforward Neural Networks**
+#### **Universal Approximation Properties Of Feedforward Neural Networks**
 * The No Free Lunch theorem shows that there is no universally superior machine learning algorithm. Feedforward networks provide a universal system for representing functions, in the sense that, given a function, there exists a feedforward network that approximates the function. There is no universal procedure for examining a training set of specific examples and choosing a function that will generalize to points not in the training set
 * The universal approximation theorem says that there exists a network large enough to achieve any degree of accuracy we desire, but the theorem does not say how large this network will be. The single hidden layer might be infeasably large. Furthermore, it may fail to generalize well due to overfitting.
 * In many circumstances, using deeper models can reduce the number of units in each hidden layer that are required to represent the desired function and can reduce the amount of generalization error.
 
 
-**Conclusions**
-* the standard choice to increase the capacity of feedforward networks is to go deeper, rather than wider
-* Choosing a deep model encodes a very general belief that the function we want to learn should involve composition of several simpler functions. The prior helps us overcome the curse of dimensionality!
+
+### **Regularization For Deep Models**
+* **Regularization** is any modification made to the learning algorithm with an intention to lower the generalization error but not the training error
+* most regularization strategies are based on **regularizing estimators**. This is done through **reducing variance** at the **expense of increasing the bias** of the estimator
+* An effective regularizer is one that **decreases the variance significantly** while **not overly increasing the bias**
+* **three regimes** concerning the **capacity of models** where the model either:
+  1. Excludes the true data generating process which induces bias (underfitting)
+  2. Matches the true data generating process
+  3. Includes the true data generating process, but also includes many other possible candidates, which results in variance dominating the estimation error (overfitting)
+* The goal of regularization is to take the model from the third to the second regime
+* **controlling the complexity of the model** is **not a simple matter** of finding the right model size and the right number of parameters, because:
+  * we never have access to the true data generating distribution - extremely complicated domains (images, text and audio sequences)
+  * the data generating process is almost certainly outside the chosen model family
+* Instead, deep learning **relies on finding the best fitting model as a large model that has been regularized properly**
+
+
+#### **Regularization Strategies**
+1. **Parameter Norm Penalities**
+  * most traditional form of regularization
+  * This approach **limits the capacity of the model** by **adding the penalty** `Ω(θ)` to the objective function
+  * `α ∈ [0, ∞)` is a **hyperparameter** that **weights the relative contribution of the norm penalty to the value of the objective function**
+  * When the optimization procedure tries to minimize the objective function, it will also decrease some measure of size of the parameters θ
+  * The bias terms in the affine transformations of deep models usually require less data to be fit and are usually left unregularized
+  * Without loss of generality, we will assume we will be regularizing only the weights w
+  * **L2 Norm Parameter Regularization**
+    * The L2 parameter norm penalty, also **known as weight decay** drives w closer to the origin by adding the regularization term
+    * The weights **multiplicatively shrink** by a constant factor at each step
+    * L2 norm penalty can be interpreted as a MAP Bayesian Inference with a Gaussian prior on the weights
+  * **L1 Norm Parameter Regularization**
+    * L1 norm penalty can be interpreted as a MAP Bayesian Inference with a Isotropic Laplace Distribution prior on the weights
+2. **Data Augmentation**
+  * for consistent estimators, the best way to get better generalization is to train on more data
+  * under most circumstances, data is limited and labelling is an extremely tedious task
+  * **Dataset Augmentation** provides a cheap and easy way to increase the amount of your training data
+    * **Color jitter** is a very effective method to augment datasets. It is also extremely easy to apply
+      * **Fancy PCA** was proposed by Krizhevsky et al. in the famous Alex net paper. It is a way to perform color jitter on images
+    * **Horizontal Flipping** is applied on data that **exhibit horizontal asymmetry**
+      * Care must be taken to propagate the labels through this transformation
+      * Horizontal flipping can be applied to **natural images** and **point clouds**
+      * one can **double the amount of data** through horizontal flipping
+  * Many other task specific dataset augmentation algorithms exist
+  * It is highly advised to always use dataset augmentation
+  * be careful not to alter the correct output!
+  * Example: `b` and `d`, horizontal flipping
+  * Furthermore, **when comparing two machine learning algorithms** train **both** with **either** augmented or non-augmented dataset.Otherwise, no subjective decision can be made on which algorithm performed better
+3. **Noise Robustness**
+  * **Noise Injection** can be thought of as a form of regularization
+  * The addition of noise with infinitesimal variance at the input of the model is equivalent to imposing a penalty on the norm of the weights (Bishop, 1995)
+  * Noise can be **injected at different levels** of deep models
+  * **Noise Robustness : Noise Injection on Weights**
+    * Noise added to weights can be interpreted as a more traditional form of regularization
+    * This form of regularization encourages the parameters to go to regions of parameter space where small perturbations of the weights have a relatively small influence on the output
+    * In other words, it pushes the model into regions where the model is relatively insensitive to small variations in the weights, finding points that are not merely minima, but minima surrounded by flat regions (Hochreiter and Schmidhuber, 1995)
+  * **Noise Robustness : Noise Injection on Outputs**
+    * Most datasets have some amount (A LOT!) of mistakes in the y labels. Minimizing our cost function on wrong labels can be extremely harmful
+    * One way to remedy this is to explicitly model the noise on labels
+    * This is done through setting a probability for which we think the labels are correct
+    * This probability is easily incorporated into the cross entropy cost function **analytically**
+    * An example is **label smoothing**
+  * **Noise Robustness : Label Smoothing**
+    * It has the advantage of preventing the pursuit of hard probabilities without discouraging correct classification
+4. **Early Stopping**
+  * **Motivation**
+    * When training models with sufficient representational capacity to overfit the task, we often observe that training error decreases steadily over time, while the error on the validation set begins to rise again
+    * The occurrence of this behaviour in the scope of our applications is almost certain
+    * This means we can obtain a model with better validation set error (and thus,hopefully better test set error) by returning to the parameter setting at the point in time with the lowest validation set error
+    * This is termed **Early Stopping**
+    * **Practical Issues**
+      * one of the most used regularization strategies in deep learning
+      * Early stopping can be thought of as a **hyperparameter selection method**, where **training time** is the **hyperparameter** to be chosen
+      * However, a portion of data should be reserved for validation
+      * Choosing the training time automatically can be done through a single run through the training phase, the only addition being the evaluation of the validation set error at every n iterations. This is usually done on a second GPU
+      * Overhead for writing parameters to disk is negligible
+    * First Strategy, To exploit all of our precious training data we can:
+      * a) Employ early stopping
+      * b) Retrain using all of the data up to the point that was determined during early stopping
+        * **Q)** Do we train for the same number of parameter updates or for the same number of epochs(passes through training data)?
+    * A second strategy to exploit the full training dataset would be to:
+      * a) Employ early stopping    
+      * b) Continue training with the parameters determined by early stopping, using the validation set data
+      * This strategy avoids the high cost of retraining the model from scratch, but is not well-behaved
+      * Since we no longer have a validation set, we cannot know if generalization error is improving or not. Our best bet is to stop training when the training error is not decreasing much any more
+5. **Parameter Sharing**
+6. **Parameter Tying**
+7. **Multitask Learning**
+8. **Bagging**
+9. **Ensemble Models**
+10. **Dropout**
+11. **Adversarial Training**
 
 
 
-**Regularization For Deep Models**
-
-
-
-**Optimization for Training Deep Models**
+### **Optimization for Training Deep Models**
 
 
 
@@ -153,54 +238,15 @@ Tags: Deep Learning
 * **Q)** How to make convolution with maxout activation?
   * https://stackoverflow.com/questions/45009051/how-to-make-convolution-with-maxout-activation
   * https://towardsdatascience.com/activation-functions-and-its-types-which-is-better-a9a5310cc8f
+* **Q)** What is the difference between L2 and L1 norm penalty when applied to machine learning models ? But what happens over the entire course of training in both?
+  * **A)**
+  * The L2 Norm penalty **decays the components of the vector w that do not contribute much to reducing the objective function**
+  * On the other hand, the **L1 norm penalty provides solutions that are sparse**. This **sparsity** property can be thought of as a **feature selection** mechanism
 
 
-## Research Papers
-* https://www.research.ibm.com/artificial-intelligence/publications/2018/download/pdf/scalingAI.pdf
-
-
-
-## Deep Learning Frameworks, Toolchain, Libraries
-* [Refer: Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
-
-
-## Datasets and Data Creation for Training Machines
-* [Refer: Datasets and Data Creation for Deep Learning](deep-learning-datasets-and-creation.md)
-
-
-## What do Machine Learning practitioners do?
-* http://www.fast.ai/2016/12/08/org-structure/
-
-The processes of appropriately framing a business problem, collecting and cleaning the data, building the model, implementing the result, and then monitoring for changes are interconnected in many ways that often make it hard to silo off just a single piece (without at least being aware of what the other pieces entail)
-
-While it’s common to have machine learning, engineering, and data/pipeline/infrastructure engineering all as separate roles, try to avoid this as much as possible. This leads to a lot of duplicate or unused work, particularly when these roles are on separate teams. You want people who have some of all these skills: can build the pipelines for the data they need, create models with that data, and put those models in production.
-You’re not going to be able to hire many people who can do all of this. So you’ll need to provide them with training. 
-
-Tech companies waste their employees’ potential by not offering enough opportunities for on-the-job learning, training, and mentoring. Your people are smart and eager to learn. Be prepared to offer training, pair-programming, or seminars to help your data scientists fill in skills gaps. 
-
-Even when you have people who are both data scientists and engineers (that is, they can create machine learning models and put those models into production), you still need to have them embedded in other teams and not cordoned off together. Otherwise, there won’t be enough institutional understanding and buy-in of what they’re doing, and their work won’t be as integrated as it needs to be with other systems.
-
-**what do machine learning practitioners do?**
-- Understanding the context:
-- Data:
-- Modeling:
-- Productionize:
-- Monitor:
-
-
-### **AutoML and Neural Architecture Search**
-- As it’s name suggests, AutoML is one field in particular that has focused on automating machine learning, and a subfield of AutoML called neural architecture search is currently receiving a ton of attention.
-- https://www.youtube.com/watch?v=kSa3UObNS6o
-- The term AutoML has traditionally been used to describe automated methods for model selection and/or hyperparameter optimization.
-- https://www.automl.org/automl/
-- AutoML provides a way to select models and optimize hyper-parameters. It can also be useful in getting a baseline to know what level of performance is possible for a problem.
-- What Pichai refers to as using **“neural nets to design neural nets”** is known as **neural architecture search**; typically **reinforcement learning** or **evolutionary algorithms** are used to design the **new neural net architectures**.
-  - NASNet:1800 GPU days (the equivalent of almost 5 years for 1 GPU) 
-  - AmoebaNet: 3150 GPU days (the equivalent of almost 9 years for 1 GPU)
-  - Efficient Neural Architecture Search (ENAS): 16hrs, 1 GPU
-  - DARTS - Differentiable architecture search (DARTS)
-    - To learn a network for Cifar-10, DARTS takes just 4 GPU days, compared to 1800 GPU days for NASNet and 3150 GPU days for AmoebaNet (all learned to the same accuracy). This is a huge gain in efficiency! 
-- how can humans and computers work together to make machine learning more effective?
+## Notes
+* [Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
+* [Datasets and Data Creation for Deep Learning](deep-learning-datasets-and-creation.md)
 
 
 ## FAQs - Technical Questions
@@ -299,6 +345,7 @@ Mathematical notation can be a huge accessibility barrier, and it isn’t at all
 
 ## Research Papers
 * https://github.com/ujjwalkarn/deeplearning-papernotes
+* https://www.research.ibm.com/artificial-intelligence/publications/2018/download/pdf/scalingAI.pdf
 
 
 ## References
@@ -367,6 +414,22 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 - https://hackernoon.com/setting-up-your-gpu-machine-to-be-deep-learning-ready-96b61a7df278
 - http://timdettmers.com/2014/09/21/how-to-build-and-use-a-multi-gpu-system-for-deep-learning/
 - https://becominghuman.ai/setting-up-deep-learning-gpu-environment-5651564ff936
+
+
+
+### **AutoML and Neural Architecture Search**
+- As it’s name suggests, AutoML is one field in particular that has focused on automating machine learning, and a subfield of AutoML called neural architecture search is currently receiving a ton of attention.
+- https://www.youtube.com/watch?v=kSa3UObNS6o
+- The term AutoML has traditionally been used to describe automated methods for model selection and/or hyperparameter optimization.
+- https://www.automl.org/automl/
+- AutoML provides a way to select models and optimize hyper-parameters. It can also be useful in getting a baseline to know what level of performance is possible for a problem.
+- What Pichai refers to as using **“neural nets to design neural nets”** is known as **neural architecture search**; typically **reinforcement learning** or **evolutionary algorithms** are used to design the **new neural net architectures**.
+  - NASNet:1800 GPU days (the equivalent of almost 5 years for 1 GPU) 
+  - AmoebaNet: 3150 GPU days (the equivalent of almost 9 years for 1 GPU)
+  - Efficient Neural Architecture Search (ENAS): 16hrs, 1 GPU
+  - DARTS - Differentiable architecture search (DARTS)
+    - To learn a network for Cifar-10, DARTS takes just 4 GPU days, compared to 1800 GPU days for NASNet and 3150 GPU days for AmoebaNet (all learned to the same accuracy). This is a huge gain in efficiency! 
+- how can humans and computers work together to make machine learning more effective?
 
 
 ## Deep Learning, CCN Terms and Concepts
@@ -453,7 +516,7 @@ We consider the task of 3-d depth estimation from a single still image. We take 
 *  Dilated Convolutions
 
 
-### neural Network Zoo
+### Neural Network Zoo
 * [neural network zoo prequel: cells and layers](https://www.asimovinstitute.org/author/fjodorvanveen/)
 * [neural network zoo](http://www.asimovinstitute.org/neural-network-zoo/)
 
