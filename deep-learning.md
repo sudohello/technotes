@@ -82,7 +82,7 @@ Tags: Deep Learning
 #### **Activation functions**
 * **The Rectified Linear Units: ReLU**
   * The ReLU hidden unit are the default choice of activation function for Feedforward Neural Networks
-  * The ReLU hidden unit use the function max(0, z) as its activation function
+  * The ReLU hidden unit use the function `max(0, z)` as its activation function
   * ReLUs are easy to optimize because they are very similar to linear units
   * Derivative through ReLU remain large whenever the unit is active
   * The derivative is also consistent, and the gradient direction is far more useful for learning than it would be with activation functions that introduce second order effects
@@ -139,7 +139,7 @@ Tags: Deep Learning
 
 
 ### **Regularization For Deep Models**
-* **Regularization** is any modification made to the learning algorithm with an intention to lower the generalization error but not the training error
+* **Regularization** is any **modification** made to the learning algorithm with an intention to **lower the generalization error** but **not the training error**
 * most regularization strategies are based on **regularizing estimators**. This is done through **reducing variance** at the **expense of increasing the bias** of the estimator
 * An effective regularizer is one that **decreases the variance significantly** while **not overly increasing the bias**
 * **three regimes** concerning the **capacity of models** where the model either:
@@ -162,7 +162,7 @@ Tags: Deep Learning
   * The bias terms in the affine transformations of deep models usually require less data to be fit and are usually left unregularized
   * Without loss of generality, we will assume we will be regularizing only the weights w
   * **L2 Norm Parameter Regularization**
-    * The L2 parameter norm penalty, also **known as weight decay** drives w closer to the origin by adding the regularization term
+    * The L2 parameter norm penalty, also **known as weight decay** drives `w` closer to the origin by adding the regularization term
     * The weights **multiplicatively shrink** by a constant factor at each step
     * L2 norm penalty can be interpreted as a MAP Bayesian Inference with a Gaussian prior on the weights
   * **L1 Norm Parameter Regularization**
@@ -219,17 +219,269 @@ Tags: Deep Learning
       * b) Continue training with the parameters determined by early stopping, using the validation set data
       * This strategy avoids the high cost of retraining the model from scratch, but is not well-behaved
       * Since we no longer have a validation set, we cannot know if generalization error is improving or not. Our best bet is to stop training when the training error is not decreasing much any more
-5. **Parameter Sharing**
-6. **Parameter Tying**
+5. **Parameter Tying**
+  * Parameter Tying refers to explicitly forcing the parameters of two models to be close to each other, through the norm penalty
+6. **Parameter Sharing**
+  * Parameter Sharing imposes much stronger assumptions on parameters through forcing the parameter sets to be equal
 7. **Multitask Learning**
+  * Multitask Learning is a way to improve generalization by pooling the examples arising out of several tasks
+  * Multitask learning is a form of parameter sharing
+  * Improved generalization and generalization error bounds can be achieved because of the shared parameters, for which statistical strength can be greatly improved in proportion with the increased number of examples for the shared parameters, compared to the scenario of single-task models
+  * Intuitively, the additional task imposes constraints on the parameters in the shared layers, preventing overfitting
+  * Improvement in generalization only occurs when there is something shared across the tasks at hand
 8. **Bagging**
+  * Bagging (short for **bootstrap aggregating**) is a technique for reducing generalization error through combining several models
+  * Train k different models on k different subsets of training data, constructed to have the same number of examples as the original dataset through random sampling from that dataset **with replacement**. Have all of the models **vote** on the output for test examples
+  * Techniques employing bagging are called **ensemble models**
+  * The reason that Bagging works is:
+    * different models will usually not all make the same errors on the test set.This is a direct results of training on k different subsets of the training data, where each subset is missing some of the examples from the original dataset
+    * Other factors such as differences in random initialization, random selection of mini-batches,differences in hyperparameters, or different outcomes of non-deterministic implementations of neural networks are often enough to cause different members of the ensemble to make **partially independent errors**
 9. **Ensemble Models**
+  * The only disadvantage of ensemble models is that they do not provide us with a scalable way to improve performance. Usually, ensemble models of more than 2-3 networks become too tedious to train and handle.
 10. **Dropout**
+  * Dropout provides a computationally inexpensive but powerful method of regularizing a broad family of models
+  * Dropout provides an inexpensive approximation to training and evaluating a bagged ensemble of exponentially many neural networks
+  * Specifically, dropout trains the ensemble consisting of all sub-networks that can be formed by removing non-output units from an underlying base network
+  * it is very computationally cheap, using dropout during training requires only O(n) computation per example per update,to generate n random binary numbers and multiply them by the state
+  * It works well with nearly any model that uses a distributed representation and can be trained with stochastic gradient descent
+  * Though the cost per-step of applying dropout to a specific model is negligible,the cost of using dropout in a complete system can be significant
+  * keep in mind that for very large datasets, regularization confers little reduction in generalization error. In these cases, the computational cost of using dropout and larger models may outweigh the benefit of regularization
+  * **Training with Dropout**
+    * To train with dropout,we use a minibatch-based learning algorithm that makes small steps, such as stochastic gradient descent
+    * Each time we load an example into a minibatch, we randomly sample a different binary mask to apply to all of the input and hidden units in the network
+    * The mask for each unit is sampled independently from all of the others
+    * Typically, the probability of including a hidden unit is `0.5`, while the probability of including an input unit is `0.8`
+    * Dropout allows us to represent an exponential number of models with a tractable amount of memory
+    * Dropout removes the need to accumulate model votes at the inference stage
+    * Dropout can intuitively be explained as forcing the model to learn with missing input and hidden units
+    * Dropout training has some **intricacies**:
+      * At training time, we are **required** to divide the output of each unit by the probability of that unit’s dropout mask
+      * The **goal is** to make sure that the **expected total input to a unit at test time** is **roughly the same** as the **expected total input to that unit at train time**, even though **half the units at train time are missing on average**
 11. **Adversarial Training**
-
+  * In many cases, neural networks have begun to reach human performance when evaluated on an i.i.d. test set
+  * However, szegedy et al.(2014) found that even networks that have achieved human accuracy, have a 100% error rate on examples that have been intentionally constructed to ”fool” the network
+  * the modified example is so similar to the original one, human observers cannot tell the difference
+  * These examples are called **adversarial examples**
+  * Adversarial examples are interesting in the context of regularization because one can reduce the error rate on the original i.i.d.test set via adversarial training - training on adversarially perturbed examples from the training set
+  * Adversarial training discourages highly sensitive linear behaviour through explicitly introducing a local constancy prior into supervised neural nets
 
 
 ### **Optimization for Training Deep Models**
+* Newton’s Method, Conjugate Gradients, Broyden-Fletcher-Goldfarb-Shanno Algorithms (BFGS), Limited Memory BFGS (L-BFGS).
+* this problem is so important and so expensive, a specialized set of optimization techniques have been developed for solving it
+* Finding the parameters θ of a neural network that significantly reduces a cost function J(θ)
+* **First Order Optimization Algorithms**
+  * Optimization algorithms that use only the **gradient** are termed first order optimization algorithms
+  * First order algorithms are optimal for neural network training since the target loss functions can be decomposed to a sum over training data
+* **Second Order Optimization Algorithms**
+  * Optimization algorithms that make use of the **Hessian matrix** are termed second order optimization algorithms
+  * Hessian Matrix is a matrix of second derivatives
+  * The simplest second order optimization algorithm is **Newton’s Method**
+  * The **condition number** of the matrix is the ratio of the magnitude of the largest singular value to the smallest
+* **Lipschitz Continuity**
+  * In the context of deep learning, we sometimes gain some guarantees by restricting ourselves to functions that are either Lipschitz continuous or have Lipschitz continuous derivatives
+  * A Lipschitz continuous function is a function f whose rate of change is bounded by a Lipschitz constant L
+  * This property is useful because it allows us to quantify our assumption that a small change in the input made by an algorithm such as gradient descent will have a small change in the output
+* **How Learning Differs From Pure Optimization?**
+* the Loss function can be written as an average over the training set
+* **empirical risk minimization**
+  * Rather than optimizing the risk directly, we optimize the empirical risk, and hope that the risk decreases significantly as well
+  * in the context of deep learning, we cannot usually use empirical risk minimization
+* We should rely on a slightly different approach, in which the quantity that we actually optimize is even more different from the quantity that we truly want to optimize
+* **Surrogate Loss Functions**
+  * Instead of minimizing empirical risk, we minimize surrogate loss functions
+  * A surrogate loss function acts as a proxy to empirical risk while being ”nice” enough to be optimized efficiently
+  * Example: SVM loss is a surrogate to the 0-1 loss for classification
+* **Batch and Minibatch Algorithms**
+  * One aspect of machine learning algorithms that separates them from general optimization algorithms is that the objective function usually decomposes as a sum over the training examples
+  * The gradient in this case is also an expectation over training data
+  * Computing this expectation exactly is very expensive as it requires evaluating the model on every example in the entire dataset
+  * optimization algorithms usually converge faster if they are allowed to rapidly compute approximate estimates of the gradient rather than slowly computing exact gradients
+  * Another consideration that motivates the estimation of the gradient from a small number of samples is the **redundancy in the training set**
+  * Optimization algorithms that **use the entire training set** to compute the gradient are called **batch or deterministic gradient methods**
+  * Ones that use a **single training example** for that task are called **stochastic or online gradient methods**
+  * Most of the algorithms we use for deep learning fall somewhere in between
+  * These are called **minibatch** or **minibatch stochastic methods**
+  * Larger batches provide a more accurate estimate of the gradient, but with less than linear returns
+  * Multicore architectures are usually underutilized by extremely small batches.This motivates using some absolute minimum batch size, below which there is no reduction in the time to process a minibatch
+  * Small batches can offer a regularizing effect. The best generalization error is often achieved with batch size of 1 (Wilson and Martinez, 2003)
+  * It is **extremely crucial** that minibatches are sampled at **random**
+* **Model identifiability Problem**
+  * A model is said to be identifiable if a suffeciently large training set can rule out all but one setting of the model’s parameters
+  * In fact, if we have m layers with n hidden units each, there are n!^m ways of arranging the hidden units to obtain equivalent models
+  * **weight space symmetry**
+  * Local minima are only truly problematic if they have a much higher cost than the global minimum
+  * it is not important to find a true global minimum. We can do with finding a point in parameter space that has low but not minimal cost
+* In lower dimensional spaces, local minima and maxima are common
+* In higher dimensional spaces, local minima and maxima are rare, saddle points are much more common
+* **Plateaus, Saddle Points, and Other Flat Regions**
+* The proliferation of saddle points in high dimensional spaces  explains why second order methods have failed to replace gradient decent for deep learning
+* Dauphin et al. (2014) introduced a **saddle-free Newton Method** for second order optimization
+* Second-order methods remain difficult to scale to large neural networks, but this saddle-free approach holds promise if it could be scaled
+* **Cliffs And Exploding Gradients**
+  * Neural networks with many layers often have extremely steep regions reassembling cliffs
+  * **Cliffs** result from the multiplication of several large weights together
+  * Gradients do not specify the optimal step size, but only the optimal direction within and infinitesimal region
+  * **Long Term Dependencies:** Arises when the computational graph is very deep. The result of this problem is vanishing and exploding gradients
+* **Initialization is really important** - initialization is very important for stable performance of our optimization algorithms
+* We almost never arrive to a global minimum, our goal is to reduce the generalization error rather than the cost function itself
+
+
+
+### **Parameter Initialization Strategies**
+* **The initial point can effect:**
+  * the speed of convergence
+  * the quality of the final solution
+  * if the algorithm converges all together
+* points of comparable cost will have a different generalization error!
+* we have very primitive understanding on the effect of the initial point on generalization, which offers no guidance in the selection procedure
+* **Good Characteristics Of Initial Parameters**
+* Breaking The Weight Space Symmetry
+  * If two hidden units with the same activation function are connected to the same inputs, then these units must have different initial parameters
+* **random initialization**
+  * If we have at most as many outputs as inputs, we could use **Gram-Schmidt orthogonalization on an initial weight matrix**, and be guaranteed that each unit computes a very different function from each other unit
+  * Random Initialization is performed by setting the biases to a constant (0 or 0.01 in most cases)
+  * Weights are initialized by sampling from either a Gaussian or a uniform distribution (the choice doesn’t seem to matter much)
+  * The scale of the initial distribution, however, does have a large effect on both the outcome of the optimization procedure and on the ability of the network to generalize
+  * Larger initial weights will yield a stronger symmetry breaking effect, helping to avoid redundant units. (Also prevents loss of signal in forward pass)
+  * However, initial weights that are too large may result in exploding values during forward propagation or back-propagation. (**choas** in RNNs)
+* **Normalized (Xavier) Initialization**
+  * A rule of the thumb is to **always use xavier initialization** when **training ReLU based networks from scratch**
+
+
+## **First Order Optimization Algorithms**
+* SGD Varients: **SGD**, **Momentum**, **Nestrov Momentum**, **AdaGrad**, **RMS-Prop**, **Adam**
+* Stochastic Gradient Decent (SGD) and its variants are probably the most used optimization techniques for deep model training
+* The learning rate is an essential parameter
+* **In practice, it is necessary to gradually decrease the learning rate over time**
+  * This is because SGD gradient estimation introduces a source of noise, caused by the random minibatch sampling
+  * However, the true gradient becomes closer to 0 as we converge to a minimum
+* In practice, it is common to decay the learning rate linearly until iteration `τ` according to: `ek = (1 − α)e0 + αeτ`
+* `α = k/τ`
+* After iteration τ we keep `e` constant
+* Choosing `eτ` , `e0` and `τ` is more of an art than a science
+* **This is done by monitoring the learning curves that plot the objective functions as a function of time**
+* **Large oscillations implies one is using a large e0**
+* Gentle oscillations are fine, especially if we are using a stochastic cost functions
+* Typically, the **optimal initial learning rate**, in terms of total training time and the final cost value, is higher than the learning rate that yields the best performance after the first 100 iterations or so
+* It is usually best to monitor the first several iterations and use a learning rate that is higher than the best-performing learning rate at this time, but not so high that it causes severe instability
+* `τ` is chosen as the number of iterations it takes for the algorithm to go through a few hundred passes through the training set. `eτ` is chosen to be approximately 1% of `e0`
+* **Momentum**
+  * Momentum tries to remedy the slowness of SGD especially in face of high curvature, small but consistent gradients, or noisy gradients
+  * The momentum algorithm accumulates an exponentially decaying moving average of past gradients and continues to move in their direction
+  * Analogous to rolling a ball with mass and gravity on the topology of the objective function
+  * `α ∈ [0, 1]` is a **hyperparameter** that **determines how quickly the contributions of previous gradients exponentially decay**. In practice, `α` is set to be `0.5`, `0.9` and `0.99`
+* **Nestrov Momentum**
+  * The difference between Nesterov momentum and standard momentum is where the gradient is evaluated
+  * With Nesterov momentum the **gradient is evaluated after the current velocity is applied**
+  * Thus one can interpret Nesterov momentum as attempting to add a correction factor to the standard method of momentum
+* **AdaGrad**
+  * AdaGrad **individually adapts the learning rates of all model parameters** by **scaling them inversely proportional to the square root** of the **sum of all of their historical squared values**
+  * The parameters with the largest partial derivative of the loss have a correspondingly rapid decrease in their learning rate, while parameters with small partial derivative shave a relatively small decrease in their learning rate
+  * The net effect is greater progress in the more gently sloped directions of parameter space
+  * AdaGrad performs well for some but not all deep learning models
+  * Empirically it has been found that for training deep neural network models the accumulation of squared gradients from the beginning of training can result in a premature and excessive decrease in the effective learning rate
+* **RMSProp**
+  * RMSProp modifies AdaGrad to perform better in the non-convex setting by changing the gradient accumulation into an exponentially weighted moving average
+  * RMSProp uses an exponentially decaying average to discard history from the extreme past so that it can converge rapidly after finding a convex bowl, as if it were an instance of the AdaGrad algorithm initialized within that bowl
+  * Effective and practical optimization algorithm for deep neural networks
+  * **It is currently one of the go-to optimization methods being employed routinely by deep learning practitioners**
+* **Adam (adaptive moments)**
+  * Adam (adaptive moments) is a **variant of RMSProp** and momentum with a few important distinctions
+  * First, in Adam, momentum is incorporated directly as an estimate of the first order moment (with exponential weighting) of the gradient
+  * Second, Adam includes bias corrections to the estimates of both the first-order moments (the momentum term) and the (uncentered) second-order moments to account for their initialization at the origin
+  * **Always use Adam, it is fairly robust to the choices of hyperparameters and available in many deep learning packages**
+
+
+### **Optimization Strategies And Meta-Algorithms**
+* Batch Norm, Coordinate Descent, Polyak Averaging, Greedy Supervised Pretraining.
+* **Batch Normalization** (Ioffe and Szegedy, 2015) is one of the most exciting innovations in optimizing neural networks
+  * It is not an optimization algorithm, but a method of **adaptive reparameterization**
+  * Training a deep model involves parameter updates for each layer via gradient direction under the assumptions that other layers are not changing
+  * In practice, all layers are updated simultaneously. This can cause unexpected results in optimization
+  * It is very hard to choose an appropriate learning rate, because the effects of an update to the parameters for one layer depends so strongly on all of the other layers
+  * Second order optimization methods tries to remedy this phenomenon by taking into account second order effects. However, in very deep networks, the effects of higher order effects is very prominent
+  * **Solution**: Batch normalization provides an elegant way of reparametrizing almost any deep network
+  * It can be applied to any layer, and the reparametrization significantly **reduces the problem of coordinating updates across many layers**
+  * Improves gradient flow through the network
+  * Allows higher learning rates
+  * Reduces the strong dependence on initialization
+  * Acts as a form of regularization in a funny way, and slightly reduces the need for dropout, maybe?
+* **Greedy Supervised Pretraining**
+  * Greedy algorithms can be computationally much cheaper than algorithms that solve for the best joint solution, and the quality of a greedy solution is often acceptable if not optimal.
+  * Greedy algorithms may also be followed by a fine tuning stage in which a joint optimization algorithm searches for an optimal solution to the full problem
+  * Initializing the joint optimization algorithm with a greedy solution can greatly speed it up and improve the quality of the solution it finds
+* To improve optimization, the best strategy is not always to improve the optimization algorithm
+* In practice, it is more important to choose a model family that is easy to optimize than to use a powerful optimization algorithm
+* model design strategies can help to make optimization easier; Example: auxiliary losses, skip connections
+
+
+### **Convolutional Neural Networks (ConvNets)**
+* ConvNets are a specialized kind of neural networks for processing data that has a **known grid like topology**
+* Example of such data can be 1-D time series data sampled at regular intervals, or 2-D images
+* these networks employ the mathematical convolution operator
+* Convolutions are a special kind of linear operators that can be used instead of general matrix multiplication
+* machine learning libraries implement cross-correlation while calling it convolutions
+* **Why Use Convolution**
+  * Convolutions leverage three important ideas that can help improve a machine learning system:
+    * Sparse Interactions
+      * Sparse connectivity is achieved by making the kernel smaller than the input
+      * This allows the network to efficiently describe complicated interactions between many variables by constructing such interactions from simple building blocks that each describe only sparse interactions
+    * Parameter Sharing
+      * It refers to using the same parameter for more than one function in a model
+      * Convolutional layers heavily apply this concept through applying the same kernel to every position of the input
+      * This does not affect the runtime at inference, but it affects the memory requirement per layer as we now have to store only k parameters
+      * Convolution is dramatically more efficient than dense matrix multiplication in terms of memory requirements and statistical efficiency
+    * Equivariant Representation
+      * A function `f(x)` is equivariant to a function `g(x)` if `f(g(x)) = g(f(x))`
+      * Convolution operators are equivariant to translation of the input
+      * Convolution is not naturally equivariant to some other transformations, such as changes in the scale or rotation of an image. Other mechanisms are necessary for handling these kinds of transformations
+  * convolutions provide a way to handle input of different sizes
+* In practice, **three hyperparameters** **control the size** of the **output** of a convolutional layer:
+  * The output **depth** of the volume is a hyper parameter and **corresponds** to the **number of filters** we would like to use, each learning to look for something different in the input
+  * The output **width** and **height** are **controlled by** the **stride** we use **to slide each filter** and the **padding** we use **to expand the input**
+* Compute the **size of the output volume**, assuming that the filters are `m × m` and we have `K filters`.
+  * $W_out = \frac{W_in - m + 2Padding}{Stride + 1}$
+  * $H_out = \frac{H_in - m + 2Padding}{Stride + 1}$
+  * $D_out = K$
+* The number of parameters in a convolutional layer:
+  * `Parameters = m^2 × k × D_in + k` 
+  * This is due to the layer having `m^2 × D` in weights for `k` filters and `k` biases
+* The backward pass for a convolution operation (for both the data and the weights) is also a convolution (but with spatially-flipped filters)
+* `1 × 1` convolutions are used to **manipulate the depth of the output volume**. They can be thought of **as a dot product through a depth slice**
+* Many variations of convolution exist such as **Dilated Convolutions** and **Deformable Convolutions**
+* Receptive Field
+* Output Volume size
+
+
+### **Pooling Layers**
+* A pooling function replaces the output of the previous layer, with a summary statistic of the nearby outputs
+* Pooling helps to make representations become approximately invariant to small translation of the input. If we translate the input a small amount, the output of the pooling layer will not change
+* The use of pooling can be viewed as adding an infinitely strong prior that the function the layer learns must be invariant to small translations. When this assumption is correct, it can greatly improve the statistical efficiency of the network
+* Average Pooling
+* Max Pooling
+* If the pools do not overlap, pooling loses valuable information about where things are. We need this information to detect precise relationships between the parts of an object.
+* Alternatively, Just use a larger stride every once in a while to shrink down the input size
+* **Discarding pooling layers** has also been **found to be important** in training good generative models, such as **variational autoencoders (VAEs)** or **generative adversarial networks (GANs)**
+* **Region Of Interest (ROI) Pooling**
+  * It is an operation widely used in object detection tasks using convolutional neural networks
+  * The operation was proposed in Fast RCNN paper in 2015
+  * Its purpose is to **perform max pooling on inputs of non-uniform sizes to obtain fixed-size feature maps**
+  * This **enables** training architectures **containing RPNs** in an **end-to-end** fashion
+
+### **Capsules - alternative to Pooling**
+* Geoffrey Hinton On Pooling, he proposed **”capsules”** (subnetworks in networks) as an alternative to pooling
+* https://medium.com/mlreview/deep-neural-network-capsules-137be2877d44
+* https://hackernoon.com/what-is-a-capsnet-or-capsule-network-2bfbe48769cc
+
+
+
+## TBD
+* Curriculum Learning
+
+
+## Keywords
+* i.i.d - [independent and identically distributed](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) 
 
 
 
@@ -239,10 +491,16 @@ Tags: Deep Learning
   * https://stackoverflow.com/questions/45009051/how-to-make-convolution-with-maxout-activation
   * https://towardsdatascience.com/activation-functions-and-its-types-which-is-better-a9a5310cc8f
 * **Q)** What is the difference between L2 and L1 norm penalty when applied to machine learning models ? But what happens over the entire course of training in both?
-  * **A)**
   * The L2 Norm penalty **decays the components of the vector w that do not contribute much to reducing the objective function**
   * On the other hand, the **L1 norm penalty provides solutions that are sparse**. This **sparsity** property can be thought of as a **feature selection** mechanism
-
+* **Q)** How Learning Differs From Pure Optimization?
+* **Q)** What is the problem with empirical risk minimization?
+  * Empirical risk minimization is prone to overfitting. Models with high enough capacity can simply memorize the training set
+* **Q)** What Minibatch Size Should We Use?
+* **Q)** What are the implications of the proliferation of saddle points in the cost functions of deep models?
+* **Q)** How to define convolution operator mathematically?
+* **Q)** What is a Capsule Network?
+  * https://hackernoon.com/what-is-a-capsnet-or-capsule-network-2bfbe48769cc
 
 ## Notes
 * [Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
@@ -1441,8 +1699,14 @@ Download one of these models, and extract the contents into your base directory.
 * BBOX: Top(y),Left(x),Width,Height,Label
 
 
+## Adversarial Vision Challanges
+* https://medium.com/@wielandbr/reading-list-for-the-nips-2018-adversarial-vision-challenge-63cbac345b2f
+* https://ai.googleblog.com/2018/09/introducing-unrestricted-adversarial.html
+* https://github.com/google/unrestricted-adversarial-examples
+* https://tsenghungchen.github.io/show_adapt_tell/
 
 ## Deep Learning Toolkits
+
 
 ### [gluon-cv](https://gluon-cv.mxnet.io/index.html)
 * GluonCV: a Deep Learning Toolkit for Computer Vision
