@@ -24,6 +24,9 @@ SLAM consists of	multipleparts:
 * http://home.wlu.edu/~levys/students/BreezySLAM_SurajBajracharya.pdf
 * https://stackoverflow.com/questions/1080533/slam-algorithm
 * https://github.com/randvoorhies/SimpleSLAM
+* https://github.com/KarthickPN/Kalman-and-Bayesian-Filters-in-Python
+* https://www.analyticsinsight.net/future-ar-slam-technology-slam/
+
 
 Probabilistic	Robotics (Thrun	etal.2005)
   - it is a field of robotics that involves robots in environment subject to uncertainity

@@ -400,3 +400,15 @@ A satellite navigation or "satnav" system is a system of satellites that provide
 * https://research.google.com/pubs/SanjayGhemawat.html
 * http://archive.indianexpress.com/news/why-time-will-stop/404201/0
 * http://www.nplindia.in/node/1869
+
+## NavIC - Navigation with Indian Constellation
+
+**News**
+* https://www.geospatialworld.net/blogs/will-navic-be-a-commercial-success/
+* https://www.geospatialworld.net/blogs/irnss-compatible-smartphones-likely-to-be-launched-in-2019-xiaomi-to-lead-the-way/
+* https://timesofindia.indiatimes.com/india/indias-desi-gps-navic-all-set-to-navigate-you/articleshow/64639096.cms
+
+**Space Expo**
+* https://spacenews.com/event/6th-bengaluru-space-expo-2018/
+* http://bsxindia.com/index.asp
+

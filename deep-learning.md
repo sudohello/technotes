@@ -468,6 +468,15 @@ Tags: Deep Learning
   * The operation was proposed in Fast RCNN paper in 2015
   * Its purpose is to **perform max pooling on inputs of non-uniform sizes to obtain fixed-size feature maps**
   * This **enables** training architectures **containing RPNs** in an **end-to-end** fashion
+  * ROI pooling employes three steps to transform the input regions to similar size feature vectors:
+    * Divide the region proposal into equal-sized sections (the number of which is the same as the dimension of the output)
+    * Find the largest value in each section
+    * Copy these max values to the output buffer
+  * For training a network in an end-to-end fashion, ROI pooling layers need to be (sub)differentiable
+  * Backpropagation Through ROI Pooling
+  * ROI pooling has different goals than regular pooling
+  * It allows the network to reuse the feature map for all ROIs
+  * It also allows obtaining same size feature vectors from multimodal input
 
 ### **Capsules - alternative to Pooling**
 * Geoffrey Hinton On Pooling, he proposed **”capsules”** (subnetworks in networks) as an alternative to pooling
@@ -475,12 +484,210 @@ Tags: Deep Learning
 * https://hackernoon.com/what-is-a-capsnet-or-capsule-network-2bfbe48769cc
 
 
+### **Practical Considerations for Training Deep Models**
+* **A machine learning practitioner also needs to know**:
+  * how to choose an algorithm for a particular application
+  * how to monitor and respond to feedback obtained from experiments
+  * how to use this feedback in order to improve a machine learning system
+* **We need to know:**
+  * when to collect more data
+  * increase or decrease the capacity of our model
+  * add or remove regularization
+  * improve the optimization algorithm
+  * or simply just debug the software implementation of the model
+* Each one of the above operations is **extremely time consuming** and it is **very important** to us that we **know exactly where we went wrong**
+* In practice, one can usually do much better with a correct application of a commonplace algorithm than by sloppily applying an obscure algorithm
+* **Methodology**
+  * **Determine your goals**
+    * what error metric to use
+    * your target value for this error metric
+    * These goals and error metrics should be driven by the problem that the application is intended to solve
+  * **Establish a working end-to-end pipeline**
+    * This should be done as soon as possible
+    * should include the estimation of the appropriate performance metrics
+  * **Instrument the system well to determine bottlenecks in performance**
+    * Diagnose which components are performing worse than expected
+    * whether it is due to overfitting, underfitting, or a defect in the data or software
+  * **Repeatedly make incremental changes**
+    * This includes gathering new data
+    * adjusting hyperparameters
+    * changing algorithms, based on specific findings from your instrumentation
+* **Determining The Goals Of The System**
+  * **Performance Metrics**
+    * Determining which **error metric** to use is the most important first step for designing a deep learning system
+    * This is because your error metric will guide all your future actions
+    * The second step is determining the value of the **error metric to beat**
+    * Keep in mind that for most applications, it is **impossible to achieve zero error**, reasons:
+      * Imperfect optimization procedure
+      * Not enough training data
+      * The real data distribution is not part of the model distribution family
+      * Even with infinite training data and the ability to recover the true data distribution, there is a minimum error bound that a system can achieve, reasons:
+        * The input features may not contain complete information about the output variable
+        * The process to be estimated might be inherently stochastic
 
-## TBD
+    * **Q)** how can we determine what minimum performance measure is required?
+    * **Academic Setting**
+      * Standard benchmarks for almost all applications already exist
+      * The result to beat is the best performing published algorithm on those benchmarks
+      * Keep in mind to not compare apples to oranges
+      * **Do not** compare **two algorithms** that have been **trained with different training data**
+      * **Do not** compare **ensembles of networks** to a **single network**
+    * **Applications Setting**
+      * We usually have some idea of the error rate that is necessary for an application to be safe,cost-effective, or appealing to consumers
+      * In this setting, every method to get a performance boost should be used. This includes:
+        * collecting more data
+        * model ensembles
+        * empirically determined thresholds
+        * dataset augmentation
+  * **Default Baselines**
+    * After choosing performance metrics and goals, the next step in any practical application is to establish a reasonable end-to-end system as soon as possible
+    * deep learning research progresses quickly, so better default algorithms are likely to become available regularly
+    * You should never use a cannon to hunt a rabbit
+    * If your problem does not fall in the **AI-Complete** category, then you will likely do well with a simple statistical model such as **linear SVMs** or **logistic regression**
+    * If your problem falls in the **AI-Complete** category, **choose the base architecture** based on the structure of the problem
+    * **Supervised learning problems**:
+      * With **fixed small size input vectors** will most likely use **feed forward Fully Connected Networks**
+      * With **with input variables** that has **known topological structure** will most likely use **feed forward Convolutional Networks**
+      * With **input or output** that are **sequences**, **trees**, or **graphs** should use **gated recurrent networks** such as **LSTMs** or **GRUs**
+    * **Unsupervised learning problems**
+      * should consider **VAEs** or **GANs**
+    * **Image Feature Extractors**
+      * VGG-16, ResNet-101, or Inception-V3
+    * **Object Detection Baseline Models (2D)**
+      * Faster-RCNN, YOLO-9000, RFCNs
+    * **Semantic Segmentation**
+      * Segnet, fully convolutional network
+    * **Optimizers**
+      * ADAM, RMS-Prop. (Both with a decaying learning rate)
+      * Apply batch norm when possible
+    * **Regularization**
+      * **Early stopping** should universally be used
+      * **Dropout** is an easy regularizer to implement
+      * Be careful to **try batch norm first**, since it might remove the necessity to use dropout
+* **The Design Process**
+  * After establishing an end-to-end baseline, train and test on the dataset at hand:
+    * **Always plot** the **training** and **validation errors**
+  * There are **three scenarios** that machine learning practitioners usually face:
+    * The training set error remains high
+    * The training set error decreases, but the validation set error remains high
+    * Both training and validation set errors are low
+* **Design Process Steps:**
+  1. Determine Performance Metrics
+  2. Establish a Working End-to-End System
+  3. Is training Set Error High?
+    a) If Yes, then:
+      * Bigger Model
+      * Train Longer
+      * Redesign the Architecture
+    b) if No, then ask another question
+  4. Is Validation Set Error High?
+    a) If Yes, then:
+      * Gather More Data
+      * Add Regularization
+      * Re-design the architecture
+    b) If No, then proceed
+  5. Debug High Training & Validation Errors
+  6. Is Test-Validation Set Error High?
+    a) If Yes, then:
+      * Gather More Data
+      * Data Synthesis
+      * Re-design the architecture
+    b) if No, then ask another question
+  7. Is Test Set Error High
+    a) If Yes, then:
+      * Get more Test-Validatin Data
+    b) If No, then re-think deign process
+* **High Training Error: Debugging**
+  * **Is the optimizer code running correctly?**
+    * If you implemented the gradient functions yourself, **make sure** the gradient is correct via gradient checks.
+    * **Is** the learning rate **correct**?
+  * **Does the model have high enough capacity?**
+    * **Make sure** the model is able to overfit a small portion of the dataset
+  * **Did you train for a reasonable amount of epochs?**
+  * If all else fails, you need to **rethink your architecture**
+* **High Validation Error: Debugging**
+  * **Do you have enough training data?**
+    * Collect more training data
+    * use dataset augmentation methods
+  * **Are you overfitting?**
+    * Employ regularization strategies
+  * If all else fails, you need to **rethink your architecture**
+* **What If Nothing Helps?**
+  * very pathological case
+  * This case is illustrated as the validation set having a different distribution than the actual test set
+  * This case motivates us to rethink the design process
+* **Hyperparameter Selection: Manual Tuning**
+  * Choosing hyperparameters manually requires following understanding:
+    * what the hyperparameters do
+    * the exact relationship betweenthe hyperparameters, training error, generalization error, and computational resources
+  * The **primary goal** of manual hyperparameter search is to **adjust the effective capacity of the model** to match the complexity of the task
+  * **Effective Capacity** is governed by three factors:
+    * The **representational capacity** of the model
+    * The ability of the learning algorithm to **successfully optimize the cost function**
+    * The degree to which the cost function and the training procedure regularize the model
+  * **Some common hyperparameters and their effect on the effective capacity**
+    * **Number Of Hidden Units**
+      * Increases representational capacity when increased and hence increase effective capacity
+      * Increasing the number of hidden units increases both time and memory required for essentially every operation on the model
+    * **Convolutional Kernel Width**
+      * Increases the number of parameters in the model when increased and hence increase effective capacity
+      * A wider kernel results in a narrower output dimension, reducing model capacity unless you use implicit zero padding to reduce this effect
+      * Wider kernels require more memory for parameter storage and increase runtime, but a narrower output reduces memory cost
+    * **Implicit Padding**
+      * Adding implicit zeros before convolution keeps the representation size large
+      * Increasing the size of the padding increases the effective capacity of the model
+      * Implicit padding increases the size of the input and hence increases the time and memory cost of most operations
+    * **Weight Decay Coefficient**
+      * Decreasing the weight decay coefficient frees the model parameters to become larger hence increasing the effective capacity of the model
+    * **Dropout Rate**
+      * Dropping units less often gives the units more opportunities to conspire with each other to fit the training set
+    * **Learning Rate**
+      * Perhaps the most important hyperparameter
+      * **If you have time to tune only one hyperparameter, do that for the learning rate**
+      * The learning rate controls the effective capacity of the model in a complex way
+      * The **effective capacity is the highest** when the **learning rate is correct**
+* **Hyperparameter Selection: Automatic Tuning**
+  * The ideal learning algorithm just takes a dataset and outputs a function, without requiring hand-tuning of hyperparameters
+  * Manual hyperparameter tuning can work very well when:
+    * the user has a good starting point, such as one determined by others having worked on the same type of application and architecture
+    * or when the user has months or years of experience in exploring hyperparameter values for neural networks applied to similar tasks
+  * **Automatic Hyperparameter Selection** algorithms wrap around the learning algorithm and choose its hyperparameters
+  * Hyperparameter optimization algorithms often have their own hyperparameters, such as the range of values that should be explored for each of the learning algorithm’s hyperparameters. These however are much easier to determinate
+* The current state of deep learning allows us to tackle inference tasks that can be done by humans in less than one second
+* It also allows us to tackle a set of tasks that is very hard for human beings to perform. This set is the set of prediction tasks
+
+
+### Performance Measures
+
+* **Proposal Recall**
+  * Measure of how much of the objects that the proposals extract from the ground truth set
+  * `R = (No. of correctly detected rectangles) / (No. of rectangles in the database)`
+* **Precision**
+  * Measure of how many of the actual positive detection are indeed true objects
+  * `P = (No. of correctly detected rectangles) / (Total number of detected rectangles)` 
+* Average Precision
+* Average Localization Precision
+* Average Orientation Similarity
+* IoU - Intersection of Union
+
+
+### TBD
 * Curriculum Learning
+* unsupervised learning models
+* few shot
+* one shot
+* zero shot learning
+* domain adaptation
+* adversarial examples
+* Generative models
 
 
-## Keywords
+### References
+* https://github.com/vdumoulin/conv_arithmetic
+* https://arxiv.org/pdf/1603.07285.pdf
+
+
+### Keywords
 * i.i.d - [independent and identically distributed](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) 
 
 
@@ -501,6 +708,9 @@ Tags: Deep Learning
 * **Q)** How to define convolution operator mathematically?
 * **Q)** What is a Capsule Network?
   * https://hackernoon.com/what-is-a-capsnet-or-capsule-network-2bfbe48769cc
+* **Q)** how can we determine what minimum performance measure is required?
+
+
 
 ## Notes
 * [Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
