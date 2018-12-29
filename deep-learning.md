@@ -20,6 +20,149 @@ Tags: Deep Learning
       * http://wavelab.uwaterloo.ca/wp-content/uploads/2017/04/
 
 
+
+**The Task T**
+* Machine learning algorithms are usually described in terms of how the algorithm should process an example x ∈ R n .
+* Each entry x j of x is called a feature.
+* Example : Features in an image can be its pixel values.
+
+
+**Common Machine Learning Tasks**
+* Classification: Find f (x) : R n ⇒ {1, ....., k} that maps examples x to one of k classes.
+* Regression: Find f (x) : R n ⇒ R that maps examples to the real line.
+
+
+**The Experience E**
+* classified into two classes: **supervised** and **unsupervised** based on what kind of experience they are allowed to have during the learning process.
+* usually allowed to experience an entire **dataset**
+
+
+**Categorizing Algorithms Based On E**
+* Unsupervised learning algorithms experience a dataset containing many features, then learn useful properties of the structure of this dataset.
+* Supervised learning algorithms experience a dataset containing features, but each example is also associated with a label or target
+
+
+**Dataset Splits**
+We usually split our dataset to three subsets: train, val, test.
+* E is usually experiencing train and val sets.
+* P is usually evaluated on test set.
+
+
+**Performance Measure P**
+* A quantitative measure of performance is required in order to evaluate a machine’s ability to learn
+  * P depends on task T
+  * **P** is usually the **accuracy of the model**
+  *  Another equivalent measure is the **error rate** (also called the expected 0-1 loss)
+* The ability to perform well on new, unseen input data is called **generalization**
+  * we try to **minimize some error measure** called the **training error**. This is **standard optimization**
+  * What differentiates machine learning from standard optimization is that **we care to minimize the generalization error**, the **error evaluated on the test set**
+* **Q) Is minimizing over training set error guaranteed to provide parameters that minimize the test set error?**
+  * Yes
+* The factors that determine how well a machine learning algorithm performs is its ability to:
+  * Make the training error small
+  * Make the gap between training and test error small
+* **Underfitting:** Underfitting occurs when the model is **not able to obtain a sufficiently low error value on the training set**
+* **Overfitting:** Overfitting occurs when the **gap between the training error and test error is too large**
+* **Capacity:** Capacity is a model’s **ability to fit a wide variety of functions**
+  * There is a direct relation between the model’s capacity and whether it will overfit or underfit
+  * Models with **low capacity** may **struggle to fit the training set**
+  * Models with **high capacity** can **overfit by memorizing properties** of the training set that do not serve them well on the test set
+* **Controlling Capacity: The Hypothesis Space**
+  * **Hypothesis Space:** the **set of functions that the learning algorithm is allowed to select** as being the solution
+  * Increase the model’s capacity by **expanding the hypothesis space**
+* **Controlling The Capacity: Regularization**
+  * **Regularization** is **any modification we make to a learning algorithm** that is **intended to reduce its generalization error but not its training error**
+  * Regularization can be used as a way to **give preference to one solution in our hypothesis space** (more general than restricting the space itself)
+
+
+**Hyperparameters and Validation Sets**
+* **Hyperparameters** are **any variables** that **affect the behavior** of the learning algorithm, **but are not adapted by the algorithm itself**
+* **test-train-val split**
+  * train set: **learning is performed**
+  * val set: **choice of hyperparameters** is done by evaluation
+* **Construction of a train-val-test split**
+  * Split the data set to **train-test** at a **1 : 1 ratio**
+  * Then, split the train set to **train-val** at a **4 : 1 ratio**
+* **Q) What happens when the same test set has been used repeatedly to evaluate performance of different algorithms over many years?**
+
+
+**Estimators, Bias and Variance**
+* **Point estimation** is an attempt to **provide the single ”best” prediction θ̂ of some quantity of interest θ**. This quantity might be a scalar, vector, matrix, or even a function.
+* **Bias measures** the **expected deviation** of the estimate from the true value of the function or parameter
+* The **variance Var(θ̂)** of an estimator provides a **measure of how we would expect the estimate we compute from data to vary** as we independently resample the dataset from the underlying data generating process
+* **Bias-Variance Trade Off**
+  * **Q) How to choose between two estimators, one with large bias and the other with large variance?**
+  * **MSE: Mean-Square Error** of the estimates, incorporates both bias and variance components
+  * The relationship between bias and variance is tightly linked to the machine learning concepts of capacity, underfitting and overfitting
+
+
+**Consistency**
+* Consistency is a desirable property of estimators
+* It insures that as the number of data points in our data set increase, our point estimate converges to the true value of θ
+* convergence here is in probability
+* Consistency of an estimator ensures that the bias will diminish as our training data set grows
+* It is better to choose consistent estimators with large bias over estimators with small bias and large variance. **Q) Why?**
+
+
+**Maximum likelihood (ML) Estimation**
+* **Maximum likelihood (ML)** is a principle used to derive estimators
+* Maximum likelihood can be viewed as a minimization of the dissimilarity between p̂ data and p model . **Q) How?**
+* Maximum likelihood can be shown to be the best estimator, asymptotically in terms of its rate of convergence as m → ∞
+* The estimator derived by ML is consistent. However, certain conditions are required for consistency to hold:
+  * The true distribution p data must lie within the model family p model (.; θ). Otherwise, no estimator can recover p data even with infinite training examples
+  * There needs to exist a unique θ. Otherwise, ML will recover p data but will not be able to determine the true value of θ used in the data generation process
+* Under these conditions, you are guaranteed to improve the performance of your estimator with more training data
+
+
+**Optimization**
+* Optimization refers to the task of either minimizing or maximizing some function f (x) by altering the value of x
+* f(x) is called an **objective function**. In context of machine learning, it is also called the **loss**, **cost**, or **error** function
+* **Gradient Based Optimization**
+  * Using The Derivative For Optimization
+  * The derivative of a function specifies **how to scale a small change in input in order to obtain the corresponding change in output**
+  * The derivative is useful for optimization **because it allows knowledge of how to change x to improve f(x)**
+  * minimum, maximum, saddle point
+  * Global vs Local Optimal Points
+* **Gradient Descent**
+  * Gradient descent converges when all the elements in the gradient are almost equal to zero
+* **Stochastic Gradient Descent - SGD**
+  * Nearly all of deep learning is powered by one optimization algorithm: SGD
+  * Motivation behind SGD: The cost function used by a machine learning algorithm often decomposes as a sum over training examples of some per-example loss function
+  * SGD relies on the fact that the gradient is an expectation, hence can be approximated with a small set of samples
+
+
+**Challanges that Motivates Deep Learning**
+* The mechanisms used to achieve generalization in traditional machine learning are insufficient to learn complicated functions in high-dimensional spaces
+* The challenge of generalizing to new examples becomes exponentially more difficult when working with high-dimensional data
+* **The Curse Of Dimensionality**
+  * Many machine learning problems become exceedingly difficult when the number of dimensions in the data is high
+  * This is because the number of distinct configurations of a set of variables increase exponentially as the number of variables increase
+* **Local Constancy And Smoothness Regularization**
+  * In order to generalize well, machine learning algorithms need to be guided by prior beliefs about what kind of function they should learn
+  * most widely used priors is the **smoothness** or **local constancy** prior
+  * A function is said to have local constancy if it **does not change much within a small region of space**,Example: K nearest neighbors
+* **manifold learning**
+  * A manifold is a connected region in space. Mathematically, it is a set of points, associated with a neighborhood around each points
+  * From any point, the surface of the manifold appears as a euclidean space
+  * Example: We observe the world as a 2-D plane, whereas in fact it is a spherical manifold in 3-D space
+  * Manifold Learning: Most of R n consists of invalid input. Interesting input occurs only along a collection of manifolds embedded in R n
+  * Conclusion: probability mass is highly concentrated
+  * Probability distributions in natural data (images, text strings, and sound) is highly concentrated
+  * Examples encountered in natural data are connected to each other by other examples, with each example being surrounded by similar data
+
+
+
+**Concepts**
+* prior probability distribution p(θ)
+* posterior distribution
+* High entropy distributions
+* uniform and Gaussian distributions
+* Bayes rule, Bayesian Statistics, Bayesian Linear Regression
+* Maximum a posteriori estimation (MAP)
+
+
+
+**Deep Learning**
 * **Feedforward:** Information flows from the input x through some intermediate steps, all the way to the output y. There is no Feedback connections.
 * **Neural Networks:** **Neural** because these models are loosely inspired by neuroscience, **Networks** because these models can be represented as a composition of many functions
 * **Different Layers**
@@ -693,6 +836,15 @@ Tags: Deep Learning
 
 
 ## Questions
+* **Q)** Is minimizing over training set error guaranteed to provide parameters that minimize the test set error?
+* **Q)** What happens when the same test set has been used repeatedly to evaluate performance of different algorithms over many years?
+* **Q)** How to choose between two estimators, one with large bias and the other with large variance?
+* **Q)** Why it is better to choose consistent estimators with large bias over estimators with small bias and large variance?
+* **Q)** How Maximum likelihood can be viewed as a minimization of the dissimilarity between p̂ data and p model?
+* **Q)** How to determine that the performance of estimator would increase with more training data?
+* **Q)** What is the computational cost for computing the stochastic gradient descent?
+* **Q)** How does exponential increase in the distinc configurations of a set of variables affect ML algorithms?
+* **Q)** Is there a way to represent a complex function that has many more regions to be distinguished than the number of training examples?
 * **Q)** Why is it called softmax?
 * **Q)** How to make convolution with maxout activation?
   * https://stackoverflow.com/questions/45009051/how-to-make-convolution-with-maxout-activation
@@ -715,6 +867,10 @@ Tags: Deep Learning
 ## Notes
 * [Deep Learning Frameworks, Toolchain, Libraries](deep-learning-frameworks.md)
 * [Datasets and Data Creation for Deep Learning](deep-learning-datasets-and-creation.md)
+
+## Debugging Neural Networks
+* https://www.quora.com/The-convolutional-neural-network-Im-trying-to-train-is-settling-at-a-particular-training-loss-value-and-a-training-accuracy-just-after-a-few-epochs-What-can-be-the-possible-reasons
+
 
 
 ## FAQs - Technical Questions

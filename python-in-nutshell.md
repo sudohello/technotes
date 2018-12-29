@@ -483,9 +483,11 @@ The third way arrays can be created is using the NumPy arange function, which is
 * **What are the difference between Python Module vs Class? When to use them?**
   * https://softwareengineering.stackexchange.com/questions/329348/classes-vs-modules-in-python
   * You can create multiple instances of a class, but you cannot create instances of a module. You could compare modules to static classes or singletons.
-* **How to Dynamicall load module, class?**
+* **How to Dynamicaly load module, class?**
   * https://stackoverflow.com/questions/8790003/dynamically-import-a-method-in-a-file-from-a-string
   * https://docs.python.org/3.5/library/importlib.html
+* **how-do-i-list-all-files-of-a-directory?**
+  * https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
 * **How to get different type of Paths?**
   ```python
   import os
@@ -601,6 +603,17 @@ The third way arrays can be created is using the NumPy arange function, which is
   b = a[:]
   b.insert(2, 'a') # [1, 2, 'a', 4]
   ```
+* **How to convert list to string?**
+  * https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
+  * https://stackoverflow.com/questions/12453580/concatenate-item-in-list-to-strings
+  ```python
+  list1 = ['1', '2', '3']
+  str1 = ''.join(list1)
+  #
+  ## Or if the list is of integers, convert the elements before joining them.
+  list1 = [1, 2, 3]
+  str1 = ''.join(str(e) for e in list1)
+  ```
 * **How to Convert List to Dicitionary?**
   * https://stackoverflow.com/questions/4576115/convert-a-list-to-a-dictionary-in-python
   ```python
@@ -707,6 +720,8 @@ The third way arrays can be created is using the NumPy arange function, which is
   for line in f:
     print(line)
   ```
+* **How to write huge files?**
+  * https://stackoverflow.com/questions/16669428/process-very-large-20gb-text-file-line-by-line
 * **How to check and create directories?**
   * https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
   * https://docs.python.org/3/library/os.html#os.makedirs
@@ -1078,7 +1093,7 @@ we can see that once the iterator is exhausted, accessing it raises an exception
 	- A dict is created when the generator expression contains “pairs” of the form key:value.
   ```python
   (i for i in num) # generator is created
-  [i for in num] # list is created
+  [i for i in num] # list is created
   #
   {i for i in range(3)} # set is created: set([0, 1, 2])
   #

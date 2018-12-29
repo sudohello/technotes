@@ -113,3 +113,8 @@ https://edwardshu.com/
 https://mattketmo.github.io/darkroomjs/
 http://www.jsiso.com/
 http://camanjs.com/examples/
+
+
+
+ http://textuploader.com/
+ http://postimg.org/
