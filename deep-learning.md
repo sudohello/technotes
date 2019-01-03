@@ -46,6 +46,35 @@ Tags: Deep Learning
 We usually split our dataset to three subsets: train, val, test.
 * E is usually experiencing train and val sets.
 * P is usually evaluated on test set.
+* https://cs230-stanford.github.io/train-dev-test-split.html
+* https://cs230-stanford.github.io/
+* https://www.coursera.org/learn/machine-learning-projects
+* https://www.coursera.org/lecture/machine-learning-projects/train-dev-test-distributions-78P8f
+* https://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set
+* https://stackoverflow.com/questions/38250710/how-to-split-data-into-3-sets-train-validation-and-test
+* https://stats.stackexchange.com/questions/9357/why-only-three-partitions-training-validation-test/9364#9364
+* **train**
+  * The training set is used to fit the models
+* **dev / train-dev/ val / cross-validation** -> all are same
+  * the validation set is used to estimate prediction error for model selection
+  * The validation set is used for model selection
+  * estimate model properties:
+    * mean error for numeric predictors
+    * classification errors for classifiers
+    * recall and precision for IR-models etc.
+* **test**
+  * the test set is used for assessment of the generalization error of the final chosen model
+  * estimate the accuracy of the selected approach
+  * the test set for final model (the model which was selected by selection process) prediction error
+  * Ideally, the test set should be kept in a “vault,” and be brought out only at the end of the data analysis
+* Different Splits Strategies
+  * case-1
+    * Training set (60% of the original data set)
+    * Cross-Validation set (20% of the original data set
+    * Test set (20% of the original data set)
+
+* https://web.stanford.edu/~hastie/ElemStatLearn/
+* https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12.pdf
 
 
 **Performance Measure P**

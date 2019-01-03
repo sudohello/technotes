@@ -394,6 +394,11 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **How to copy file in Python?**
+  * https://www.techbeamers.com/python-copy-file/
+  * `shutil` - Utility functions for copying and archiving files and directory trees.
+* **How to check if path is valid or not?**
+  * https://stackoverflow.com/questions/9532499/check-whether-a-path-is-valid-in-python-without-creating-a-file-at-the-paths-ta
 * **What is a “callable” in Python?**
   * https://stackoverflow.com/questions/111234/what-is-a-callable-in-python
   * https://docs.python.org/3/library/typing.html#callable
