@@ -394,6 +394,11 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's
+* **How to iterate-over-a-class-in-python?**
+  * https://stackoverflow.com/questions/10814535/can-i-iterate-over-a-class-in-python
+  * If you want to iterate over the class, you have to define a metaclass which supports iteration
+* **how-to-iterate-through-a-modules-functions?**
+  * https://stackoverflow.com/questions/21885814/how-to-iterate-through-a-modules-functions
 * **What is a “callable” in Python?**
   * https://stackoverflow.com/questions/111234/what-is-a-callable-in-python
   * https://docs.python.org/3/library/typing.html#callable
@@ -425,6 +430,8 @@ The third way arrays can be created is using the NumPy arange function, which is
     - you can pass it as a function parameter
   * **Creating classes dynamically**
     * Since classes are objects, you can create them on the fly, like any object.
+  * **Constructors: default and parameterized**
+    * https://beginnersbook.com/2018/03/python-constructors-default-and-parameterized/
 * **How to switch between gunicorn python version at execution time? - not yet found**
   * https://stackoverflow.com/questions/14566570/how-to-use-flask-script-and-gunicorn - probable solution
 * **How to check-if-a-given-key-already-exists-in-a-dictionary**
@@ -588,10 +595,24 @@ The third way arrays can be created is using the NumPy arange function, which is
   ";".join(y)
   #
   ```
+* **How to concatenate text files in python?**
+  * https://stackoverflow.com/questions/13613336/python-concatenate-text-files
+  * https://stackoverflow.com/questions/30835090/attributeerror-fileinput-instance-has-no-attribute-exit
+  * https://stackoverflow.com/questions/1523378/elegant-way-to-skip-first-line-when-using-python-fileinput-module
+* **How to search sub-folders using `glob.glob` module in python?**
+  * https://stackoverflow.com/questions/14798220/how-can-i-search-sub-folders-using-glob-glob-module-in-python
 * **How to detect empty generators?**
   * no simple way
   * https://bytes.com/topic/python/answers/44490-empty-lists-vs-empty-generators
   * create a flag; loop and change the flag, break; check the flag
+* **How to delete non-empty directory?**
+  * https://stackoverflow.com/questions/1557351/python-delete-non-empty-dir
+  * https://stackoverflow.com/questions/52614688/will-shutil-rmtree-check-for-the-root-directory
+  * **WARNING:** `shutil.rmtree` doesn't have any special logic in it. If you have permissions to / (e.g., the program is run by root), you will indeed wipe your installation
+  ```python
+  import shutil
+  shutil.rmtree('path/to/dir')
+  ```
 * **How to delete Files?**
   ```python
   os.path.exists(fileName) and os.remove(fileName)
@@ -703,7 +724,7 @@ The third way arrays can be created is using the NumPy arange function, which is
   * Process your rows as you produce them. If you need to filter the data first, use a generator function:
   ```python
   import csv
-
+fremo
   def getstuff(filename):
     with open(filename, "rb") as f:
       datareader= csv.reader(f)
