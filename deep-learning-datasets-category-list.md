@@ -1,10 +1,10 @@
 ---
-Title: Datasets and Data Creation for Training Machines
+Title: Listing Category Hierarchy for Computer Vision Datasets for AI"
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
 Date: 04th-Jan-2019
 Last updated: 04th-Jan-2019
-Tags: Listing Categories for Computer Vision Datasets for AI
+Tags: Listing Category Hierarchy for Computer Vision Datasets for AI"
 ---
 
 
@@ -13,7 +13,7 @@ Tags: Listing Categories for Computer Vision Datasets for AI
 {:toc}
 
 
-# Listing Categories for Computer Vision Datasets for AI
+# Listing Category Hierarchy for Computer Vision Datasets for AI"
 
 ## **Task:**
 
