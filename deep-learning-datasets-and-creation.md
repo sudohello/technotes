@@ -415,12 +415,12 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * **Detailed Overview**: [Cityscape](cityscape-dataset.md)
   - https://www.cityscapes-dataset.com/
   - https://www.cityscapes-dataset.com/benchmarks/
-* **[Mapillary Vista Dataset](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
+* **[Mapillary Vista Dataset: MVD](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
   - **MVD**: Mapillary Vista Dataset
   - **Detailed Overview**: [Mapillary](mapillary-dataset.md)
   - https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html
   - https://www.mapillary.com/dataset/vistas
-* **[Synthia Dataset](http://synthia-dataset.com/download-2/)**
+* **[Synthia Dataset](http://synthia-dataset.net/download-2/)**
   - http://synthia-dataset.net/ 
 * **[Udacity Dataset](https://github.com/udacity/self-driving-car/tree/master/datasets)**
   - https://github.com/udacity/self-driving-car/tree/master/datasets
@@ -542,3 +542,7 @@ After working hard to collect your images and annotating all the objects, you ha
 
 ## Creating and Veryfing Dataset
 * https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884
+
+## Annotatino Service Provides for AI
+* [playment.io](https://playment.io/image-annotation/)
+

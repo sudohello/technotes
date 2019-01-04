@@ -65,8 +65,10 @@ Tags: Ms COCO Dataset Overview
 **talks**
 * https://places-coco2017.github.io/
 
-**Other References, Blogs**
-* https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/
+**Labels in Coco Dataset**
+* [what-object-categories-labels-are-in-coco-dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
+
+
 
 * **Performance**
 The performance of the algorithms will be evaluated on:
