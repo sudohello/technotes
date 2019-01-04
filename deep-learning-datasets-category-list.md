@@ -2,9 +2,9 @@
 Title: Datasets and Data Creation for Training Machines
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
-Date: 24th-Jul-2018
-Last updated: 22nd-Oct-2018
-Tags: Datasets and Data Creation for Training Machines
+Date: 04th-Jan-2019
+Last updated: 04th-Jan-2019
+Tags: Listing Categories for Computer Vision Datasets for AI
 ---
 
 
@@ -13,20 +13,24 @@ Tags: Datasets and Data Creation for Training Machines
 {:toc}
 
 
-# Computer Vision Datasets for AI
+# Listing Categories for Computer Vision Datasets for AI
 
 ## **Task:**
-* Document the object hierarchy (along with the id, categlory label etc) in an excel sheet
+
+* Document the object hierarchy (along with the id, categlory label etc) in an excel sheet for following types of datasets:
+  * Common Objects
+  * Self-Driving-Car
+  * Scene understanding
 * Note: individual worksheet/excel sheet per dataset
+* List of different datasets are given below
 
 
-### Common Objects
+**Common Objects**
 * **[MS COCO](http://cocodataset.org/#home)**
 * [what-object-categories-labels-are-in-coco-dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
 
 
-### **Self-Driving-Car Datasets Semantic Segmentation**
-
+**Self-Driving-Car Datasets Semantic Segmentation**
 * **[CamVid Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)**
 * **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
 * **[DUS Dataset](http://www.6d-vision.com/scene-labeling)**
@@ -38,7 +42,7 @@ Tags: Datasets and Data Creation for Training Machines
 * **[FCAV](https://fcav.engin.umich.edu/sim-dataset)**
 
 
-### Scene understanding Datasets
+**Scene understanding Datasets**
 * **[MIT Places Dataset](http://places.csail.mit.edu/)**
 * **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
 
