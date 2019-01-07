@@ -394,6 +394,18 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
+* **What is the fastest-way-to-check-if-a-value-exist-in-a-list?**
+  * https://stackoverflow.com/questions/7571635/fastest-way-to-check-if-a-value-exist-in-a-list
+* **What are the types of arguments in Python?**
+  * https://medium.com/@boxed/keyword-argument-confusion-in-python-59105c5a1159
+  * positional argument and keyword argument
+  ```python
+  bar(1)         # one positional argument
+  bar(1, 2)      # two positional arguments
+  bar(a=1)       # one keyword argument
+  bar(a=1, b=2)  # two keyword arguments
+  bar(1, d=2)    # one positional and one keyword argument
+  ```
 * **How to copy file in Python?**
   * https://www.techbeamers.com/python-copy-file/
   * `shutil` - Utility functions for copying and archiving files and directory trees.
