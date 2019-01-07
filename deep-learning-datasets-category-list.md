@@ -1,10 +1,10 @@
 ---
-Title: Listing Category Hierarchy for Computer Vision Datasets for AI"
+Title: Listing Category Hierarchy for Computer Vision Datasets for AI
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
 Date: 04th-Jan-2019
-Last updated: 04th-Jan-2019
-Tags: Listing Category Hierarchy for Computer Vision Datasets for AI"
+Last updated: 07th-Jan-2019
+Tags: Listing Category Hierarchy for Computer Vision Datasets for AI
 ---
 
 
@@ -13,7 +13,7 @@ Tags: Listing Category Hierarchy for Computer Vision Datasets for AI"
 {:toc}
 
 
-# Listing Category Hierarchy for Computer Vision Datasets for AI"
+# Listing Category Hierarchy for Computer Vision Datasets for AI
 
 ## **Task:**
 
@@ -31,25 +31,22 @@ Tags: Listing Category Hierarchy for Computer Vision Datasets for AI"
 
 
 **Self-Driving-Car Datasets Semantic Segmentation**
-* **[CamVid Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)**
-* **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
-* **[DUS Dataset](http://www.6d-vision.com/scene-labeling)**
 * **[CityScapes Dataset](https://www.cityscapes-dataset.com/)**
 * **[Mapillary Vista Dataset: MVD](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
-* **[Synthia Dataset](http://synthia-dataset.net/download-2/)**
-* **[Udacity Dataset](https://github.com/udacity/self-driving-car/tree/master/datasets)**
 * **[ApolloScape](http://apolloscape.auto/index.html)**
-* **[FCAV](https://fcav.engin.umich.edu/sim-dataset)**
-
+* **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
+* **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
 
 **Scene understanding Datasets**
-* **[MIT Places Dataset](http://places.csail.mit.edu/)**
 * **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
 
 
 ## References
 
-* [self-driving-car-datasets-semantic-segmentation](https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/)
+- [self-driving-car-datasets-semantic-segmentation](https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/)
+- [the-worlds-largest-driving-dataset](https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632)
+- [semantic-segmentation datasets list](https://github.com/mrgloom/awesome-semantic-segmentation#datasets)
+
 
 
 **Datasets Detailed Review / Overview**
