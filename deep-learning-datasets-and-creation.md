@@ -400,6 +400,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 ### **Self-Driving-Car Datasets Semantic Segmentation**
 - https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/
+- https://autonomous-driving.org/2018/07/15/semantic-segmentation-datasets-for-urban-driving-scenes/
+
+
 * **[CamVid Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)**
   - **CamVid**: Cambridge Video
   - http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/
@@ -433,6 +436,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   - https://fcav.engin.umich.edu/sim-dataset
   - https://github.com/umautobots/driving-in-the-matrix
   - https://github.com/umautobots/GTAVisionExport
+* **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
+  * https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632
+  * https://bdd-data.berkeley.edu/wad-2018.html
 
 
 ### Scene understanding Datasets
@@ -444,7 +450,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * http://groups.csail.mit.edu/vision/datasets/ADE20K/
   * pixel-wise annotated image dataset for scene parsing. Scene parsing network are also proposed to detect and segment visual concepts from any input images.
   * https://gluon-cv.mxnet.io/build/examples_datasets/ade20k.html
-
+* [semantic-segmentation datasets list](https://github.com/mrgloom/awesome-semantic-segmentation#datasets)
 
 ### 3D Datasets
 - **[Matterport Dataset] (https://niessner.github.io/Matterport/)**
