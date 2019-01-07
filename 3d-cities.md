@@ -82,7 +82,9 @@ Check out our 3D mapping platform, it's free to use and its a true ready build 3
     > 3D Visualization over map, mapboxgl, deckgl
     * http://uber.github.io/deck.gl/#/documentation/overview/introduction
     * http://uber.github.io/deck.gl/#/
+  * https://medium.com/vis-gl/start-scripting-with-deck-gl-c9036d7a6011
 
+  
 
 ## Data format for 3D City
 
