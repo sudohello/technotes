@@ -440,6 +440,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 * **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
   * https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632
   * https://bdd-data.berkeley.edu/wad-2018.html
+* **[IDD - Indian Driving Dataset](http://idd.insaan.iiit.ac.in/)**
+  * https://ai.intel.com/iiit-hyderabad-and-intel-release-worlds-first-dataset-for-driving-in-india/
 
 
 ### Scene understanding Datasets
@@ -454,7 +456,7 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 
 ### 3D Datasets
-- **[Matterport Dataset] (https://niessner.github.io/Matterport/)**
+- **[Matterport Dataset](https://niessner.github.io/Matterport/)**
   - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
   - https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
   - https://niessner.github.io/Matterport/
@@ -463,6 +465,9 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 - Yobi3D
 - ShapeNet - Semantic annotation knowledge bases
   * https://drive.google.com/file/d/1Z8gt4HdPujBNFABYrthhau9VZW10WWYe/view
+- [OpenSurfaces](http://opensurfaces.cs.cornell.edu/)
+  * http://opensurfaces.cs.cornell.edu/
+
 
 ### Face Datasets
 * https://github.com/jian667/face-dataset

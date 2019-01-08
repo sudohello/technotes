@@ -36,7 +36,6 @@ ___________________________________________________
 
 ## 3D Map Libraries
 * [3d-map-library-roundup](https://blog.webkid.io/3d-map-library-roundup/)
-* [OSM Simple_3D_buildings](http://wiki.openstreetmap.org/wiki/Simple_3D_buildings)
 * http://wiki.openstreetmap.org/wiki/Frameworks
 
 **Summary of different JS libraries:**
@@ -93,6 +92,7 @@ Check out our 3D mapping platform, it's free to use and its a true ready build 3
 	* [3d-geospatial-open-standards-v0 ( most concise notes on 3D Geospatial standards)](https://justobjects.nl/3d-geospatial-open-standards-v0/)
 	* [From_point_cloud_to_web_3D_through_CityGML](https://www.researchgate.net/publication/235635196_From_point_cloud_to_web_3D_through_CityGML)
 
+
 ### GeoJson
 
 ### TopoJSON
@@ -110,8 +110,21 @@ TopoJSON is an extension of GeoJSON that encodes topology.
 
 ## Details on 3D Map Libraries
 
-### OSM buildings
+### OSM Buildings, OSM 3D/4D Buildings
 * http://wiki.openstreetmap.org/wiki/Simple_3D_buildings
+  * https://wiki.openstreetmap.org/wiki/Simple_3D_buildings
+  * http://wiki.map.f4-group.com/render
+  * http://www.worldweatheronline.com/
+* [OSM Simple_3D_buildings](http://wiki.openstreetmap.org/wiki/Simple_3D_buildings)
+* [OSM-4D/3D building](https://wiki.openstreetmap.org/wiki/OSM-4D/3D_building#Dimensioning)
+* [building:levels](https://wiki.openstreetmap.org/wiki/Key:building:levels)
+* https://wiki.openstreetmap.org/wiki/3D_development
+* https://wiki.openstreetmap.org/wiki/Glosm
+* https://osmbuildings.org/blog/2018-03-21_3d_model_repository/
+* https://3dmr.eu/
+* https://osmbuildings.org/blog/2018-02-28_level_of_detail/
+* https://gitlab.com/n42k/3dmr
+
 
 
 ### Tangram
@@ -177,6 +190,13 @@ https://122e4e-mapbox.global.ssl.fastly.net/mapbox-gl-js/example/3d-extrusion-fl
 * http://wiki.map.f4-group.com/render
 * http://demo.f4map.com/#lat=42.1405936&lon=-0.4082753&zoom=18&camera.theta=64.244&camera.phi=-35.982
 * [Domlur Flyover, Bangalore](http://demo.f4map.com/#lat=12.9604400&lon=77.6414259&zoom=17)
+* https://demo.f4map.com/cacheForever/06032840157ab014fa99bf51193b0172a4b09b8b/jscolor/jscolor.js
+* http://jscolor.com
+* https://github.com/One-com/one-color
+* https://demo.f4map.com/cacheForever/e24f7b70a5053af765ff9cf16d9e182634a623a0/public.js
+* https://core.f4map.com/cacheForever/36cea44ded565c07385df0a97291ac03953badba/api.js
+* https://forum.openstreetmap.org/viewtopic.php?pid=340012
+
 
 ### WebGL for 3D Terrain
 * **Large scale Terrain:** - very interesting
@@ -979,18 +999,8 @@ https://api.mapbox.com/fonts/v1/mapbox/DIN%20Offc%20Pro%20Medium,Arial%20Unicode
 https://blender.stackexchange.com/questions/62619/how-to-import-3d-buildings-from-openstreetmap-to-blender
 
 ## Forums
-https://github.com/iTowns/itowns/issues/183
-https://github.com/Oslandia/building-server
-
-
-## OSM 3D
-https://wiki.openstreetmap.org/wiki/3D_development
-https://wiki.openstreetmap.org/wiki/Glosm
-
-https://osmbuildings.org/blog/2018-03-21_3d_model_repository/
-https://3dmr.eu/
-https://osmbuildings.org/blog/2018-02-28_level_of_detail/
-https://gitlab.com/n42k/3dmr
+* https://github.com/iTowns/itowns/issues/183
+* https://github.com/Oslandia/building-server
 
 ## Showcase and Similar Examples, References
 https://github.com/adius/CityViz
@@ -1028,8 +1038,8 @@ http://apprize.info/html5/3d/8.html
 http://apprize.info/html5/3d/index.html
 
 **3D Sample Data**
-https://github.com/assimp/assimp/tree/master/test/models
-https://stackoverflow.com/questions/1028848/sample-collada-files-for-development-of-an-importer
+* https://github.com/assimp/assimp/tree/master/test/models
+* https://stackoverflow.com/questions/1028848/sample-collada-files-for-development-of-an-importer
 
 ## 3D Outdoors to Indoor
 http://3dcampus.arcgis.com/EsriCampusViewer2017/
@@ -1058,8 +1068,9 @@ http://www.qgistutorials.com/en/docs/working_with_terrain.html
 - https://www.scribd.com/document/122736351/Intro-DTM
 
 ## 3D Cities / 3D GIS
-http://spotscale.com/
-https://www.3dgeosolutions.nl/
+* http://spotscale.com/
+* https://www.3dgeosolutions.nl/
+
 
 ## Standards and Specifications
 OGC_City_Geography_Markup_Language_CityGML_Encoding_Standard.pdf
@@ -1206,3 +1217,13 @@ The concept of an object in ISO 19107 is defined by three parts strongly linked.
 * NURBS: Non-Uniform Rational B-Spline.
 * ISO: International Standards Organization, non-governmental organization representing a network of national institutes of 158 countries, according to the principle of one member per country.
 * OGC: Non-profit organization created to address the problem of interoperability between systems that process geospatial data
+
+
+## **Algos**
+**polygon to centre line - skeleton algo**
+* https://en.wikipedia.org/wiki/Straight_skeleton
+* http://postgis.net/docs/manual-dev/ST_StraightSkeleton.html
+* https://www.udcus.com/blog/2017/06/28/creating-centerlines-postgis-and-arcgis
+* https://gis.stackexchange.com/questions/114541/extracting-centerline-of-a-complex-polygon-in-postgis-python/203928
+* https://gis.stackexchange.com/questions/290805/is-it-possible-to-convert-polygon-to-centerline-linestring
+* https://lists.osgeo.org/pipermail/postgis-users/2008-January/018215.html

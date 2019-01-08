@@ -444,7 +444,11 @@ A digital elevation model (DEM) is a digital model or 3D representation of a ter
 			- Along a transmission line, DSMs can see where and how much vegetation is encroaching
 		* Aviation
 			- DSMs can determine runway obstructions in the approach zone
-	- 
+
+
+**Digital Elevation Data Download**
+* http://www.viewfinderpanoramas.org/dem3.html
+
 
 #### TIN - triangulated irregular network
 	- https://en.wikipedia.org/wiki/Triangulated_irregular_network
