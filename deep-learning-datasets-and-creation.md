@@ -12,9 +12,135 @@ Tags: Datasets and Data Creation for Training Machines
 {:toc}
 
 
-## Types of Image Annotations and Applications
-* Semantic Segmentation
-* This is especially the case for pixel-wise prediction tasks such as semantic segmentation, used in applications such as autonomous driving, robotics, and image search.
+## Types of Annotations and Applications for Computer Vision in AI
+
+
+**Different Annotations by [playment.io](https://playment.io) for AI provided as commercial Services**
+
+* [Image Annotation](https://playment.io/image-annotation/)
+  * **Bounding Boxes**
+  * **Cuboids**
+      * Three dimensional bounding of vehicles, pedestrians, cyclists & obstacles on the road
+  * **Points and Lines**
+      * higher precision
+  * **Polygons**
+      * pixel perfect polygonal annotations
+  * **Semantic Segmentation**
+      * semantic segmentations with single pixel accuracy
+  * **Object Recognition**
+      * recognize all the objects in an image
+* [Bounding Box Annotation](https://playment.io/bounding-box-annotation-tool)
+  * **Quantification**
+    * **Time per annotation**: Lowest
+    * **Cost per annotation**: Least Expensive
+    * **Shape perception**: Absent
+    * **Spatial perception**: Present
+  * **USE CASES**
+      * **a) Object localization for Self-driving cars**
+          * Extensively used to train autonomous driving perception models for pedestrians, traffic signs, lane obstacles, etc
+      * **b) Object Detection for e-commerce**
+          * Used to train visual search machine learning models for recognition of various fashion accessories and furniture
+      * **c) Damage detection for Insurance**
+          * Identification of car damage, roof damage or safety parameters from live world images to train machine learning models that detect the degree of damage for insurance claims
+      * **d) Drone and Robot training**
+          * Labelled images for training smart surveillance drones and robots to identify a variety of objects
+* [Semantic Segmentation](https://playment.io/semantic-segmentation-tool)
+  * **Quantification**
+    * **Time per annotation**: Highest
+    * **Cost per annotation**: Most Expensive
+    * **Shape perception**: Present
+    * **Spatial perception**: Absent
+  * **USE CASES**
+      * **a) Instance segmentation for feature detection / Panoptic segmentation**
+          * Used for training perception models in non-environmental objects of interest
+          * Used to individually segment objects of the same class by assigning instance unique IDs to each object
+      * **b) Full pixel semantic segmentation**
+          * High utility in autonomous vehicles and safety surveillance cameras where information of every pixel is critical and may influence the accuracy of the perception model
+          * used in applications such as autonomous driving, robotics, and image search
+* [3D Cuboids Annotation](https://playment.io/3d-cuboids-annotation-tool)
+  * **Quantification**
+    * **Time per annotation**: High
+    * **Cost per annotation**: Expensive
+    * **Shape perception**: Absent
+    * **Spatial perception**: Present
+  * **USE CASES**
+      * **a) Camera based perception in autonomous vehicles**
+          * Used to train computer vision models for spatial cognition from 2D images or videos. Relative distance of each mobile object from the ego car and vanishing point can be measured
+      * **b) In-doors spatial distribution of objects**
+          * Used to build 3D simulated worlds from 2D information captured by cameras
+* [Line Annotation](https://playment.io/line-annotation-tool)
+  * **Quantification**
+    * **Time per annotation**: High
+    * **Cost per annotation**: Expensive
+    * **Shape perception**: Present
+    * **Spatial perception**: Absent
+  * **USE CASES**
+      * **a) Lane detection for self-driving cars**
+          * Well-defined different kinds of lanes for ego car, bicycle, opposite direction traffic, divergence etc
+* [Landmark Annotation](https://playment.io/landmark-annotation-tool)
+  * **Quantification**
+    * **Time per annotation**: High
+    * **Cost per annotation**: Expensive
+    * **Shape perception**: Absent
+    * **Spatial perception**: Present
+  * **USE CASES**
+      * **a)Point annotation for satellite imagery**
+          * Used to detect and count minute objects like houses or trees in a area, cars in parking lots, etc
+      * **b) Landmarking for pose-point annotations**
+          * Detect poses of sports players for sports analytics, facial features for face recognition, prediction of pedestrians motion for autonomous vehicles
+* [Polygonal Segmentation](https://playment.io/polygonal-segmentation-tool)
+  * **Quantification**
+    * **Time per annotation**: Moderate
+    * **Cost per annotation**: Expensive
+    * **Shape perception**: Present
+    * **Spatial perception**: Absent
+  * **USE CASES**
+      * **a) Object localization from satellite and drone images**
+          * Used to best approximate the shape of objects captured from distant cameras
+      * **b) Detection of irregular shapes**
+          * Good for detection models for logos, street sign boards, facial and pose features in sports analytics, etc
+      * **c) Coarse Semantic Segmentation**
+          * Coarse segmentation for weak supervision of your models to improve your model accuracy
+* [Video Annotation](https://playment.io/video-annotation-tool)
+  * **Quantification**
+    * **Time per annotation**: Low
+    * **Cost per annotation**: Least Expensive
+    * **Shape perception**: Absent
+    * **Spatial perception**: Absent
+  * **USE CASES**
+      * **a) Object tracking for Self-driving cars**
+         * Extensively used to train autonomous driving prediction models for vehicles, pedestrians, cyclists, lanes, etc
+* [3d Point Cloud](https://playment.io/3D-point-cloud)
+  * **Quantification**
+    * **Time per annotation**: Unknown
+    * **Cost per annotation**: Unknown
+    * **Shape perception**: Unknown
+    * **Spatial perception**: Unknown
+  * **USE CASES**
+      - **a) 3D box annotation for object detection**
+          * Get 3D coordinates, yaw, heading and tracklets of objects accurate up to 1cm with 3D boxes
+      - **b) 3D Segmentation**
+          * Leverage this data to understand how objects are moving in the environment
+      - **c) Polyline annotation for lane tracking**
+          * Polyline annotation in 3D point cloud data is used to provide guided navigation path and edge case delimiters during the navigation for such situations
+
+
+## **Differentiate Different Types of Computer Vision based Datasets used in AI**
+
+**Self-driving Car (Autonomy) vs Urban Scene**
+  
+| Self-driving Car (Autonomy)                                 | Urban Scene                                           |
+|:------------------------------------------------------------|:------------------------------------------------------|
+| * Contains images only from the driver's perspective        | contains from walking, and non-road scene perspective |
+| * Outdoor images only                                       | Outdoor images only                                   |
+| * contains sequential camera frames                         | not a pre-condition                                   |
+| * can be aumgented with other sequential camera sensor data | cannot be agumented with sequential sensor data       |
+
+
+
+## Annotatino Service Provides for AI
+* [playment.io](https://playment.io/image-annotation/)
+  * [API for AI Annotations](https://docs.playment.io/reference#welcome)
 
 
 ## Datasets and Data Creation for Training Machines
@@ -560,7 +686,4 @@ After working hard to collect your images and annotating all the objects, you ha
 
 ## Creating and Veryfing Dataset
 * https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884
-
-## Annotatino Service Provides for AI
-* [playment.io](https://playment.io/image-annotation/)
 
