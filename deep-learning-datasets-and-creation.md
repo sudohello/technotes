@@ -58,6 +58,9 @@ Tags: Datasets and Data Creation for Training Machines
   git clone https://github.com/davisking/dlib.git
   cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   ```
+* **[scalabel](https://www.scalabel.ai/)**
+  * `git clone https://github.com/ucbdrive/scalabel.git`
+  * https://github.com/ucbdrive/scalabel
 * **ImageSegmentation**
   * https://github.com/AKSHAYUBHAT/ImageSegmentation
   * https://www.eraseimage.com/
@@ -223,6 +226,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 3. [ApolloScape](apolloscape-dataset.md)
 4. [MS COCO](mscoco-dataset.md)
 5. [ade20k](ade20k-dataset.md)
+6. [IDD - Indian Driving Dataset](idd-dataset.md)
+7. [BDD](bdd-dataset.md)
 
 
 ### **Extensive List of Datasets**
@@ -437,11 +442,12 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   - https://fcav.engin.umich.edu/sim-dataset
   - https://github.com/umautobots/driving-in-the-matrix
   - https://github.com/umautobots/GTAVisionExport
-* **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
+* **[BDD 100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
   * https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632
   * https://bdd-data.berkeley.edu/wad-2018.html
+  * https://deepdrive.berkeley.edu/
 * **[IDD - Indian Driving Dataset](http://idd.insaan.iiit.ac.in/)**
-  * https://ai.intel.com/iiit-hyderabad-and-intel-release-worlds-first-dataset-for-driving-in-india/
+
 
 
 ### Scene understanding Datasets

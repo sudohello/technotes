@@ -394,6 +394,28 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
+* **How to print-the-function-name-as-a-string-in-python-from-inside-that-function?**
+  * https://stackoverflow.com/questions/1540177/how-to-print-the-function-name-as-a-string-in-python-from-inside-that-function
+  ```python
+  import sys
+
+  ## option 1
+  def applejuice(q):
+      func_name = sys._getframe().f_code.co_name
+      print func_name
+
+  ## option 2
+  print applejuice.__name__
+
+  ## option 3
+  import traceback
+
+  def applejuice(q):
+     stack = traceback.extract_stack()
+     (filename, line, procname, text) = stack[-1]
+     print procname
+  ```
+  * https://docs.python.org/3/library/traceback.html
 * **What is the fastest-way-to-check-if-a-value-exist-in-a-list?**
   * https://stackoverflow.com/questions/7571635/fastest-way-to-check-if-a-value-exist-in-a-list
 * **What are the types of arguments in Python?**
