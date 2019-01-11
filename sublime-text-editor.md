@@ -105,6 +105,11 @@ convert to snake
 | -- | --  | --  |
 
 
+* sample that works:
+
+|x|y|
+|:--|:--|
+|adas|ada|
 
 
 

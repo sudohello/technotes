@@ -51,6 +51,7 @@ Tags: Listing Category Hierarchy for Computer Vision Datasets for AI
 
 **Datasets Detailed Review / Overview**
 1. [Cityscape](cityscape-dataset.md)
+  * https://www.cityscapes-dataset.com/dataset-overview/
 2. [Mapillary](mapillary-dataset.md)
 3. [ApolloScape](apolloscape-dataset.md)
 4. [MS COCO](mscoco-dataset.md)
@@ -59,3 +60,9 @@ Tags: Listing Category Hierarchy for Computer Vision Datasets for AI
 
 ## **Annotatino Service Provides for AI**
 * [playment.io](https://playment.io/image-annotation/)
+
+
+## Labelling Policy
+
+Labeling Policy
+Labeled foreground objects must never have holes, i.e. if there is some background visible ‘through’ some foreground object, it is considered to be part of the foreground. This also applies to regions that are highly mixed with two or more classes: they are labeled with the foreground class. Examples: tree leaves in front of house or sky (everything tree), transparent car windows (everything car).

@@ -11,6 +11,19 @@ Tags: Autonomous Vechile
 {:toc}
 
 
+## Market Research
+* https://emerj.com/ai-adoption-timelines/self-driving-car-timeline-themselves-top-11-automakers/
+* https://emerj.com/wp-content/uploads/2018/10/autonomous.jpg
+* https://emerj.com/ai-sector-overviews/machine-vision-for-self-driving-cars-current-applications/
+
+
+
+### Mobile Eye
+* https://www.zdnet.com/article/intels-mobileye-inks-deal-to-supply-millions-of-autonomous-vehicles/
+* https://www.zdnet.com/article/ces-2018-mobileye-to-kick-off-15-autonomous-driving-projects-in-2018/
+* https://www.zdnet.com/article/ces-2019-intels-mobileye-signs-deal-with-uk-mapping-agency/
+* https://www.ecommercedailynews.com/baidu-announces-its-partnering-with-mobileye-on-its-project-apollo-autonomous-driving-project-which-now-has-over-115-partners-kyle-wiggers-venturebeat/
+
 ## Autonomous Vechile
 
 ## Lectures, Courses
@@ -168,3 +181,37 @@ https://triangraphics.de/?q=en/produkte/Trian3d-Builder
 ## OpenDrive Editors, 3D Roads, Simulators
 * http://www.transportationtechnologyventures.com/simwiki/index.php?title=Modeling - Best Resource of 3d road construction
 * https://www.slideshare.net/yuhuang/visualization-and-simulation-for-adas-and-autonomous-driving
+
+
+
+
+http://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/b515_India.pdf
+
+https://groups.google.com/forum/#!topic/openxc/FrZA8-pDs6A
+https://docs.google.com/spreadsheets/d/1aqWTyXr4O9Fnjt_ZvojrrKbXVxQZ8Ms7isXg39QUh70/edit#gid=0
+https://www.facebook.com/CANbusx000?fref=ts
+
+http://pinoutguide.com/CarElectronics/ford_obd_2_pinout.shtml
+
+http://pinoutguide.com/CarElectronics/car_obd2_pinout.shtml
+
+https://diagramfusebox.com/p-631229-ecosport-2017
+
+https://www.obdsoftware.net/software/fordenhancedparameters
+
+
+
+https://ioactive.com/pdfs/IOActive_Adventures_in_Automotive_Networks_and_Control_Units.pdf
+http://illmatics.com/car_hacking.pdf
+
+
+http://opengarages.org/handbook/
+
+
+https://news.voyage.auto/an-introduction-to-the-can-bus-how-to-programmatically-control-a-car-f1b18be4f377
+
+
+https://github.com/HubertD/cangaroo
+
+
+https://towardsdatascience.com/data-science-project-flow-for-startups-282a93d4508d

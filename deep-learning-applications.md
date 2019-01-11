@@ -53,3 +53,6 @@ Tags: Deep Learning Applications
 Cognata - Deep Learning Autonomous Driving Simulator
 * https://www.youtube.com/watch?v=C8-4b2Zqg5k
 * https://www.youtube.com/watch?v=9Xjutukz8vU
+
+## News and Updates on AI and Applications
+* https://emerj.com/ai-sector-overviews/everyday-examples-of-ai/

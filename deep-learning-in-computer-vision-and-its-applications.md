@@ -98,6 +98,7 @@ Tags: Computer Vision ML, DL Applications
 * [Photogrammetry](photogrammetry.md)
 * [visualSfM](visualSfM.md)
 * [SLAM](slam.md)
+  * http://www.robots.ox.ac.uk/~vgg/blog/mapping-environments-with-deep-networks.html
 * [Image based Navigation](image-based-navigation.md)
 
 ### **Machine Learning**

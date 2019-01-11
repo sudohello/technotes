@@ -131,3 +131,28 @@ Example - Displays the problem we are trying to solve.
 **comet**
 https://en.wikipedia.org/wiki/Comet_(programming)
 Comet is a web application model in which a long-held HTTPS request allows a web server to push data to a browser, without the browser explicitly requesting it.[1][2] Comet is an umbrella term, encompassing multiple techniques for achieving this interaction. All these methods rely on features included by default in browsers, such as JavaScript, rather than on non-default plugins. The Comet approach differs from the original model of the web, in which a browser requests a complete web page at a time.[3]
+
+## Programming languages
+* 
+
+https://www.zdnet.com/article/python-now-a-top-3-programming-language-as-julias-rise-speeds-up/
+
+https://www.zdnet.com/article/programming-language-of-the-year-python-is-standout-in-latest-rankings/
+
+
+
+Additionally, support for Python 2.7 end in Jan 2020
+
+https://python3statement.org/
+
+
+
+https://www.wired.co.uk/article/ces-2019-highlights-news
+https://www.nvidia.com/en-us/geforce/graphics-cards/rtx-2080/
+
+https://www.ces.tech/
+
+https://code.nsa.gov/
+
+https://www.reddit.com/r/ReverseEngineering/comments/ace2m3/come_get_your_free_nsa_reverse_engineering_tool/ed7vbld/?context=2
+https://www.bleepingcomputer.com/news/security/nsa-releasing-the-ghidra-reverse-engineering-tool-at-rsaconference/
