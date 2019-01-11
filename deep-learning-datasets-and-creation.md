@@ -573,6 +573,25 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * https://bdd-data.berkeley.edu/wad-2018.html
   * https://deepdrive.berkeley.edu/
 * **[IDD - Indian Driving Dataset](http://idd.insaan.iiit.ac.in/)**
+* TBD
+  * https://robotcar-dataset.robots.ox.ac.uk/downloads/
+  * http://cvgl.stanford.edu/projects/objectnet3d
+  * https://comma.ai/
+  * https://medium.com/@comma_ai/a-panda-and-a-cabana-how-to-get-started-car-hacking-with-comma-ai-b5e46fae8646
+  * https://github.com/commaai/opendbc
+  * https://github.com/commaai
+  * https://devblogs.nvidia.com/deep-learning-self-driving-cars/
+  * https://hackernoon.com/mit-6-s094-deep-learning-for-self-driving-cars-2018-lecture-2-notes-e283b9ec10a0
+  * https://medium.com/@mslavescu/introduction-to-obd-ii-and-can-bus-for-self-driving-cars-6b9f9a2a8775
+  * https://www.slideshare.net/jwiegelmann/machine-learning-for-selfdriving-cars
+  * https://medium.com/@maxdeutsch/how-to-build-a-self-driving-car-in-one-month-d52df48f5b07
+  * https://medium.com/@subodh.malgonde/building-an-actual-self-driving-car-53f67ca41566
+  * https://news.voyage.auto/an-introduction-to-the-can-bus-how-to-programmatically-control-a-car-f1b18be4f377
+  * https://www.csselectronics.com/screen/page/simple-intro-to-can-bus/language/en
+  * https://www.csselectronics.com/screen/page/reverse-engineering-can-bus-messages-with-wireshark
+
+  
+
 
 
 
