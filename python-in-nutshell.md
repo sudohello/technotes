@@ -387,13 +387,17 @@ The third way arrays can be created is using the NumPy arange function, which is
 * http://www.physics.nyu.edu/pine/pymanual/html/chap3/chap3_arrays.html
 
 
-## Careful TIps
+## Careful Tips
 * Note though, that as per **[PEP8](https://www.python.org/dev/peps/pep-0008/)** a single underscore is considered a “weak "internal use" indicator” with its own behavior. Careful when making use of functions that start with ` _!`
 
 ## PEP8
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
+* **Argument Parser COokbook**
+  * https://mkaz.blog/code/python-argparse-cookbook/ 
+* **How to import module when module name has a '-' dash or hyphen in it?**
+  * https://code.i-harness.com/en/q/7f6c85
 * **How to print-the-function-name-as-a-string-in-python-from-inside-that-function?**
   * https://stackoverflow.com/questions/1540177/how-to-print-the-function-name-as-a-string-in-python-from-inside-that-function
   ```python

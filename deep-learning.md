@@ -2427,3 +2427,8 @@ Once the analytic gradient is computed with backpropagation, the gradients are u
 * OpenCV format ( height x width x channels[BGR] )
 * Mean is an array of three elements obtained by the average of R, G, B pixels of all images
 
+
+## TBD
+* http://www.senseforth.ai/
+* https://online.stanford.edu/
+* https://online.stanford.edu/courses

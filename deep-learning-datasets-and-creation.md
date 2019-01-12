@@ -125,19 +125,6 @@ Tags: Datasets and Data Creation for Training Machines
           * Polyline annotation in 3D point cloud data is used to provide guided navigation path and edge case delimiters during the navigation for such situations
 
 
-## **Differentiate Different Types of Computer Vision based Datasets used in AI**
-
-**Self-driving Car (Autonomy) vs Urban Scene**
-  
-| Self-driving Car (Autonomy)                                 | Urban Scene                                           |
-|:------------------------------------------------------------|:------------------------------------------------------|
-| * Contains images only from the driver's perspective        | contains from walking, and non-road scene perspective |
-| * Outdoor images only                                       | Outdoor images only                                   |
-| * contains sequential camera frames                         | not a pre-condition                                   |
-| * can be aumgented with other sequential camera sensor data | cannot be agumented with sequential sensor data       |
-
-
-
 ## Annotatino Service Provides for AI
 * [playment.io](https://playment.io/image-annotation/)
   * [API for AI Annotations](https://docs.playment.io/reference#welcome)
@@ -156,6 +143,10 @@ Tags: Datasets and Data Creation for Training Machines
     - http://www.robots.ox.ac.uk/~vgg/software/via/
     - http://www.robots.ox.ac.uk/~vgg/software/via/via-1.0.6.html
     - http://www.robots.ox.ac.uk/~vgg/blog/vgg-image-annotator.html
+  ```bash
+  git clone https://github.com/ox-vgg/via.git
+  git checkout via-2.0.5
+  ```
   * VGG VIA tool saves the annotations in a JSON file, and each mask is a set of polygon points
   * No documentation for the format, but it’s pretty easy to figure out by looking at the generated JSON
 * **labelImg**
@@ -529,10 +520,57 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
       - running number for the views where the traffic sign is annotated. There is no temporal order of the images
 
 
-### **Self-Driving-Car Datasets Semantic Segmentation**
+### **Self Driving Car (Autonomous, Autonomy) Datasets Semantic Segmentation**
 - [self-driving-car-datasets-semantic-segmentation](https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/)
 - [the-worlds-largest-driving-dataset](https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632)
 - [semantic-segmentation datasets list](https://github.com/mrgloom/awesome-semantic-segmentation#datasets)
+
+
+**Differentiate Different Types of Computer Vision based Datasets used in AI**
+
+**Self-driving Car (Autonomy) vs Urban Scene**
+  
+| Self-driving Car (Autonomy)                                 | Urban Scene                                           |
+|:------------------------------------------------------------|:------------------------------------------------------|
+| * Contains images only from the driver's perspective        | contains from walking, and non-road scene perspective |
+| * Outdoor images only                                       | Outdoor images only                                   |
+| * contains sequential camera frames                         | not a pre-condition                                   |
+| * can be aumgented with other sequential camera sensor data | cannot be agumented with sequential sensor data       |
+
+
+**Mostly, autonomous navigation focus on:-**
+* structured driving environments
+* well-delineated infrastructure such as lanes
+* small number of well-defined categories for traffic participants
+* low variation in object or background appearance 
+* strict adherence to traffic rules
+
+
+**Dataset Comparison**
+* [semantic-segmentation-datasets-for-urban-driving-scenes](https://autonomous-driving.org/2018/07/15/semantic-segmentation-datasets-for-urban-driving-scenes/)
+
+
+| Dataset Name     | Year | Labeled Images for Training | Classes | Multiple Cities | Environment                                           | Usage                                    | Location                                                         | Details                                                                                                         | Details |    |    |    |    |    |    |
+|:-----------------|:-----|:----------------------------|:--------|:----------------|:------------------------------------------------------|:-----------------------------------------|:-----------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:--------|:---|:---|:---|:---|:---|:---|
+| KITTI            |      | 200                         | 34      | No              | Daylight                                              | * semantic segmentation                  | * Karlsruhe in Germany in rural areas and on highways            |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * 2D and 3D object detection             |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * object tracking                        |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * road/lane detection                    |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * scene flow                             |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * depth evaluation                       |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * optical flow                           |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * semantic instance level segmentation   |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+| Cityscapes       | 2016 | 3478                        | 34      | Yes             | Daylight                                              | * semantic understanding of urban scenes | * 50 cities of Germany and neighboring countries                 | 5k fine annotated and 20k weakly annotated images                                                               |         |    |    |    |    |    |    |
+| Mapillary Vistas | 2017 | 20k                         | 66      | Yes             | Daylight, rain, snow, fog, haze, dawn, dusk and night |                                          | * North and South America, Europe, Africa, and Asia              | similar to the Cityscapes dataset; added a new tricycle class which covers all kinds of three-wheeled vehicles. |         |    |    |    |    |    |    |
+| ApolloScape      | 2018 | 147k                        | 36      | No              | Daylight, snow, rain, foggy                           |                                          |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+| BDD100K          |      | 8000                        | 19      | Yes             | Daylight, rain, snow, fog, haze, dawn, dusk and night | * object detection                       | * different areas of US. Infrastructure and highway traffic sign | * 800 times larger than ApolloScape dataset                                                                     |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * Lane detection                         |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * drivable area                          |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * semantic instance segmentation         |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+|                  |      |                             |         |                 |                                                       | * self drivingcar dataset (biggest)      |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+| IDD              | 2018 |                             | 30      | No              | Daylight                                              |                                          |                                                                  |                                                                                                                 |         |    |    |    |    |    |    |
+
+
 
 
 * **[CamVid Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)**
@@ -573,7 +611,6 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
   * https://bdd-data.berkeley.edu/wad-2018.html
   * https://deepdrive.berkeley.edu/
 * **[IDD - Indian Driving Dataset](http://idd.insaan.iiit.ac.in/)**
-
 
 
 ### Scene understanding Datasets
