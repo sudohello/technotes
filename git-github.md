@@ -16,6 +16,11 @@ Tags: Github
 * https://git-lfs.github.com/
 An open source Git extension for versioning large files
 Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
+* https://dzone.com/articles/git-lfs-why-and-how-to-use
+
+* why and when Git LFS should be used and how to use it
+  * when you have large files in your repository and/or a lot of binaries, then it is advisable to use Git LFS
+  * Git LFS uses pointers instead of the actual files when the files or file types are marked as LFS files. When a Git LFS file is pulled to your local repository, the file is sent through a filter which will replace the pointer with the actual file. The actual files are located on the remote server and the pulled actual files are located in a cache in your local repository. This means that your local repository will be limited in size, but the remote repository of course will contain all the actual files and differences.
 
 ## Version Control Management of GIS Data
 * http://geogig.org/
@@ -37,13 +42,6 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
 
 * CI: Continious Integration
 * CD: Continious Deveopment
-
-**How I Setup Jekyll on GitHub Pages**
-* https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
-
-* https://chrisyeh96.github.io/2017/08/05/setting-up-jekyll-on-github-pages.html
-
-* https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf
 
 **Best guide is github help itself**
 * https://pages.github.com/
@@ -129,6 +127,19 @@ git push -u origin master
 
 ## FAQs
 
+**How to pull-push from multiple remote locations?**
+  * https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations
+  ```bash
+  git remote add <name> <userName>@<IP-or-hostname>:<abs_path_of_remote_path>
+  git remote -v
+  ## `master` is the branch name on remote url
+  git pull <name> master
+  ```
+
+**How I Setup Jekyll on GitHub Pages**
+  * https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
+  * https://chrisyeh96.github.io/2017/08/05/setting-up-jekyll-on-github-pages.html
+  * https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf
 * **how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer**
   * https://stackoverflow.com/questions/255202/how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer
   * https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/

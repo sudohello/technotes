@@ -599,29 +599,5 @@ Improve generalization, and
 Speed up training.
 
 
-# Artifical Life
-https://en.wikipedia.org/wiki/Artificial_life
-
-## Zero Player Games
-- https://en.wikipedia.org/wiki/Zero-player_game
-- https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-- https://jakevdp.github.io/blog/2013/08/07/conways-game-of-life/
-A zero-player game or no-player game is a game that has no sentient players.
-
-In computer games, the term refers to programs that use artificial intelligence rather than human players.
-
-In addition, some fighting and real-time strategy games can be put into zero-player mode where one AI plays against another AI.
-
-
-
-**How to prevent tensorflow from allocating the totality of a GPU memory?**
-* https://stackoverflow.com/questions/34199233/how-to-prevent-tensorflow-from-allocating-the-totality-of-a-gpu-memory
-* You can set the fraction of GPU memory to be allocated when you construct a tf.Session by passing a tf.GPUOptions as part of the optional config argument:
-  ```python
-  # Assume that you have 12GB of GPU memory and want to allocate ~4GB:
-  gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-
-  sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-  ```
-* The per_process_gpu_memory_fraction acts as a hard upper bound on the amount of GPU memory that will be used by the process on each GPU on the same machine. Currently, this fraction is applied uniformly to all of the GPUs on the same machine; there is no way to set this on a per-GPU basis.
-
+## Tensorboard
+* [tensorboard-integration-5fh168wqvi](https://www.codementor.io/blog/tensorboard-integration-5fh168wqvi)

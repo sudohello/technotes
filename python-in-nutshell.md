@@ -394,7 +394,25 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
-* **Argument Parser COokbook**
+* **How to check in Python if a given variable is a Module?**
+  * https://docs.python.org/2/tutorial/modules.html
+  ```python
+  from importlib import import_module
+  import inspect
+  mod = import_module('module_name')
+  print(inspect.ismodule(mod))
+  ```
+* **How to access yaml values using dot notation in Python?**
+  ```python
+  def yaml_load(fileName):
+    import yaml
+    from easydict import EasyDict as edict
+    fc = None
+    with open(fileName, 'r') as f:
+      fc = edict(yaml.load(f))
+    return fc
+  ```
+* **How to parse command line arguments using ArgumentParser in Python?**
   * https://mkaz.blog/code/python-argparse-cookbook/ 
 * **How to import module when module name has a '-' dash or hyphen in it?**
   * https://code.i-harness.com/en/q/7f6c85
