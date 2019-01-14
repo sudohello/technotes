@@ -394,6 +394,17 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
+* **Whats the way to call a function dynamically in Python?**
+  * https://stackoverflow.com/questions/4018953/whats-the-way-to-call-a-function-dynamically-in-python
+* **Can you do prototyping of string functions like in JavaScript?**
+  * https://stackoverflow.com/questions/15483230/in-python-can-you-do-prototyping-of-string-functions-like-in-javascript
+  * Python has a **class-based object system**, **not a prototype-based system like JavaScript**
+  * That kind of **"duck typing"** is central to the Python way of doing things. If your code has no reason to care about the actual type of an object, you shouldn't go out of your way to care about it.
+* **Can I add custom methods/attributes to built-in Python types?**
+  * https://stackoverflow.com/questions/4698493/can-i-add-custom-methods-attributes-to-built-in-python-types
+  * You can't directly add the method to the original type. However, you can subclass the type then substitute it in the built-in/global namespace, which achieves most of the effect desired. Unfortunately, objects created by literal syntax will continue to be of the vanilla type and won't have your new methods/attributes
+* **How and when, when not to use `eval` and `exec` in Python?**
+  * https://stackoverflow.com/questions/1087255/use-of-eval-in-python
 * **How to check in Python if a given variable is a Module?**
   * https://docs.python.org/2/tutorial/modules.html
   ```python
@@ -416,7 +427,7 @@ The third way arrays can be created is using the NumPy arange function, which is
   * https://mkaz.blog/code/python-argparse-cookbook/ 
 * **How to import module when module name has a '-' dash or hyphen in it?**
   * https://code.i-harness.com/en/q/7f6c85
-* **How to print-the-function-name-as-a-string-in-python-from-inside-that-function?**
+* **How to print the function name as a string in python from inside that function?**
   * https://stackoverflow.com/questions/1540177/how-to-print-the-function-name-as-a-string-in-python-from-inside-that-function
   ```python
   import sys
@@ -458,7 +469,7 @@ The third way arrays can be created is using the NumPy arange function, which is
 * **How to iterate-over-a-class-in-python?**
   * https://stackoverflow.com/questions/10814535/can-i-iterate-over-a-class-in-python
   * If you want to iterate over the class, you have to define a metaclass which supports iteration
-* **how-to-iterate-through-a-modules-functions?**
+* **How to iterate through a modules functions?**
   * https://stackoverflow.com/questions/21885814/how-to-iterate-through-a-modules-functions
 * **What is a “callable” in Python?**
   * https://stackoverflow.com/questions/111234/what-is-a-callable-in-python
@@ -480,7 +491,7 @@ The third way arrays can be created is using the NumPy arange function, which is
   * A **metaclass** is the class of a class. Like a class defines how an instance of the class behaves, a metaclass defines how a class behaves. A class is an instance of a metaclass
   * A metaclass is most commonly used as a class-factory
   * However, metaclasses actually define the type of a class, not just a factory for it, so you can do much more with them
-  *  You can, for instance, define normal methods on the metaclass. These metaclass-methods are like classmethods, in that they can be called on the class without an instance, but they are also not like classmethods in that they cannot be called on an instance of the class
+  *  You can, for instance, define normal mdynamicethods on the metaclass. These metaclass-methods are like classmethods, in that they can be called on the class without an instance, but they are also not like classmethods in that they cannot be called on an instance of the class
 * **What are classes in Python?**
   * Classes are objects too
   * object (the class) is itself capable of creating objects (the instances), and this is why it's a class.

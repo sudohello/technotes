@@ -68,218 +68,58 @@ Git Large File Storage (LFS) replaces large files such as audio samples, videos,
   - http://tom.preston-werner.com/
 
 ## hubbots and chatops
-- https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
+*  https://blog.github.com/2015-01-06-how-github-uses-github-to-document-github/
 
 ## Webhooks
-- https://developer.github.com/webhooks/
+*  https://developer.github.com/webhooks/
 
 ## Git, GitHub, bitbucket, gitbook
 
 ## Git
-https://try.github.io/levels/1/challenges/1
-https://php.earth/docs/interop/git
-https://git-scm.com/doc
-https://git-scm.com/
-https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control
+* https://try.github.io/levels/1/challenges/1
+* https://php.earth/docs/interop/git
+* https://git-scm.com/doc
+* https://git-scm.com/
+* https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control
 
 **Basic Concetps**
-https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone
+* https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone
 
-**Git Ignore Templates**
-https://github.com/github/gitignore
-
-**difference-between-git-and-cvs**
-https://stackoverflow.com/questions/802573/difference-between-git-and-cvs
 
 ### Git Installation on Ubuntu
-- https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04
+* https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04
+
 
 ## Setup your new Code Repo
-- https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad
-- https://gist.github.com/c0ldlimit/4089101
+* https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad
+* https://gist.github.com/c0ldlimit/4089101
+
 
 **Help Articles from GitHUB**
-- https://help.github.com/articles/creating-a-new-repository/
-- https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+* https://help.github.com/articles/creating-a-new-repository/
+* https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
 1. Using your terminal/command line, get inside the folder where your project files are kept: cd /path/to/my/codebase.
 2. Check if git is already initialized: git status
 3. Initialize git repository (git init)
 4. Create a remote, empty folder/repository on Github
 5. Connect your local project folder to your empty folder/repository on Github - copy the github repo URL
-
-```bash
-#
-# Create a new repository on the command line
-#
-touch README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin [copied web url of github repo]
-git push -u origin master
-#
-# Push an existing repository from the command line
-#
-git remote add origin [copied web url of github repo]
-git push -u origin master
-```
-
-## FAQs
-
-**How to pull-push from multiple remote locations?**
-  * https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations
   ```bash
-  git remote add <name> <userName>@<IP-or-hostname>:<abs_path_of_remote_path>
-  git remote -v
-  ## `master` is the branch name on remote url
-  git pull <name> master
+  #
+  # Create a new repository on the command line
+  #
+  touch README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git remote add origin [copied web url of github repo]
+  git push -u origin master
+  #
+  # Push an existing repository from the command line
+  #
+  git remote add origin [copied web url of github repo]
+  git push -u origin master
   ```
-
-**How I Setup Jekyll on GitHub Pages**
-  * https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
-  * https://chrisyeh96.github.io/2017/08/05/setting-up-jekyll-on-github-pages.html
-  * https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf
-* **how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer**
-  * https://stackoverflow.com/questions/255202/how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer
-  * https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
-  * can use `git difftool` instead of `git diff` in all newer versions of git.
-  ```bash
-  git difftool --tool-help
-  ```
-  * first time: `git difftool`
-  ```
-  This message is displayed because 'diff.tool' is not configured.
-  See 'git difftool --tool-help' or 'git help config' for more details.
-  'git difftool' will now attempt to use one of the following tools:
-  meld opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare emerge vimdiff
-  ```
-* **what-is-the-difference-between-pull-and-clone-in-git**
-* https://stackoverflow.com/questions/3620633/what-is-the-difference-between-pull-and-clone-in-git
-
-```bash
-sudo apt-get install git-core
-```
-
-**Sparse Checkout**
--  git 1.7.0 (Feb. 2012)
-* http://schacon.github.io/git/git-read-tree.html#_sparse_checkout
-* https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository#13738951
-
-"sparse clone" and "sparse fetch"  are not supported
-
-The steps to do a sparse clone are as follows:
-```bash
-mkdir <repo>
-cd <repo>
-git init
-git remote add -f origin <url>
-```
-This creates an empty repository with your remote, and fetches all objects but doesn't check them out. Then do:
-```bash
-git config core.sparseCheckout true
-```
-Now you need to define which files/folders you want to actually check out.
-```bash
-echo "some/dir/" >> .git/info/sparse-checkout
-echo "another/sub/tree" >> .git/info/sparse-checkout
-```
-update your empty repo with the state from the remote:
-```bash
-git pull origin master
-```
-
-## Git Commands
-
-### Plugins/External Utils
-**diff tools**
-- https://www.slant.co/topics/1324/~diff-tools-for-git#6
-- https://github.com/so-fancy/diff-so-fancy
-
-
-## Tricks
-- https://stackoverflow.com/questions/1947430/git-remove-directory
-- https://stackoverflow.com/questions/6313126/how-to-remove-a-directory-from-git-repository
-**use this to leave the local copy alone but remove from version control**
-```bash
-git rm -r -f --cached DirectoryName
-git rm -r --cached myFolder
-```
-**Why are there 2 ways to unstage a file in git**
-* `git rm --cached <filePath>` does not unstage a file, it actually stages the removal of the file(s) from the repo (assuming it was already committed before) but leaves the file in your working tree (leaving you with an untracked file).
-* `git reset -- <filePath>` will unstage any staged changes for the given file(s).
-* That said, if you used `git rm --cached` on a new file that is staged, it would basically look like you had just unstaged it since it had never been committed before
-
-## Git Ignore Setup/Templates
-- https://www.atlassian.com/git/tutorials/saving-changes/gitignore
-
-* Global Git ignore rules
-```bash
-# create and confic git ignore file
-touch ~/.gitignore
-git config --global core.excludesFile ~/.gitignore
-# Debugging .gitignore files
-git check-ignore -v debug.log
-```
-* The best practice would be to place the .gitignore file in the root directory. This means one .gitignore file for one entire repo. This makes managing the ignored files more effectively. 
-```bash
-# in the project root directory
-touch .gitignore
-#ls -1d .git*
-.git
-.gitignore
-# more help
-git help gitignore
-# or
-man gitignore
-#
-!/*.csv
-!/*.json
-!/*.geojson
-!/*.xlsx
-!/*.xls
-#
-# Ignore everything inside data/ directory
-/data/**
-# Except for subdirectories(won't be commited anyway if there is no commited file inside)
-!/data/**/
-# And except for *.foo files
-!*.*
-```
-- http://kbroman.org/github_tutorial/pages/init.html
-- https://wpism.com/publish-local-project-github-command-line/
-- https://gist.github.com/wlbr/1685405
-```bash
-sudo groupadd git
-sudo delgroup git
-sudo adduser git
-sudo deluser git
-#
-git clone git@maze:/home/bhaskar/public_html/3Dmap/mapboxgl/smartcity
-```
-
-## Git multiple remote repository
-- https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations/12795747#12795747
-```bash
-#
-git remote -v
-#
-git remote add alt <remoteURL>
-#git remote add alt https://github.com/mangalbhaskar/linuxscript-2.git
-git remote -v
-#
-git push alt
-#
-git config -e
-git config -help
-#
-git remote remove alt
-git remote -help
-#
-git remote set-url origin --push --add https://github.com/mangalbhaskar/linuxscript-2.git
-git remote set-url origin --push --delete https://github.com/mangalbhaskar/linuxscript-2.git
-#
-```
 
 ## Rebase / Rebasing
 - “I want to base my changes on what everybody has already done.”
@@ -303,11 +143,104 @@ git rebase --help
 - delete the patch branch
 6. make a release with the release tag
 
-## FAQs
-* **what-is-the-difference-between-git-pull-and-git-fetch**
+
+## FAQ's : Git
+* **Why are there 2 ways to unstage a file  in git**
+  * `git rm --cached <filePath>` does not unstage a file, it actually stages the removal of the file(s) from the repo (assuming it was already committed before) but leaves the file in your working tree (leaving you with an untracked file).
+  * `git reset -- <filePath>` will unstage any staged changes for the given file(s).
+  * That said, if you used `git rm --cached` on a new file that is staged, it would basically look like you had just unstaged it since it had never been committed before
+* **How to diff changed files versus previous versions after a pull?**
+  * https://stackoverflow.com/questions/2428270/git-how-to-diff-changed-files-versus-previous-versions-after-a-pull
+  ```bash
+  git diff HEAD@{1} <fileName>
+  ## to use external difftool
+  git difftool HEAD@{1} <fileName>
+  ```
+* **How to `pull`, `push` from multiple remote locations from multiple remote git repository**
+  * https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations/12795747#12795747
+  ```bash
+  #
+  git remote -v
+  #
+  git remote add alt <remoteURL>
+  #git remote add alt https://github.com/mangalbhaskar/linuxscript-2.git
+  git remote -v
+  #
+  git push alt
+  #
+  git config -e
+  git config -help
+  #
+  git remote remove alt
+  git remote -help
+  #
+  git remote set-url origin --push --add https://github.com/mangalbhaskar/linuxscript-2.git
+  git remote set-url origin --push --delete https://github.com/mangalbhaskar/linuxscript-2.git
+  #
+  ```
+* **How to pull-push from multiple remote locations?**
+  * https://stackoverflow.com/questions/849308/pull-push-from-multiple-remote-locations
+  ```bash
+  git remote add <name> <userName>@<IP-or-hostname>:<abs_path_of_remote_path>
+  git remote -v
+  ## `master` is the branch name on remote url
+  git pull <name> master
+  ```
+* **How I setup `Jekyll` on GitHub Pages?**
+  * https://opensource.com/business/15/7/continuous-integration-and-continuous-delivery-documentation
+  * https://chrisyeh96.github.io/2017/08/05/setting-up-jekyll-on-github-pages.html
+  * https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf
+* **What are the different `difftool` available that can be integrated with git?**
+  * https://www.slant.co/topics/1324/~diff-tools-for-git#6
+  * https://github.com/so-fancy/diff-so-fancy
+* **How do I view `git diff` output with my preferred diff tool viewer?**
+  * https://stackoverflow.com/questions/255202/how-do-i-view-git-diff-output-with-my-preferred-diff-tool-viewer
+  * https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+  * can use `git difftool` instead of `git diff` in all newer versions of git.
+  ```bash
+  git difftool --tool-help
+  ```
+  * first time: `git difftool`
+  ```
+  This message is displayed because 'diff.tool' is not configured.
+  See 'git difftool --tool-help' or 'git help config' for more details.
+  'git difftool' will now attempt to use one of the following tools:
+  meld opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare emerge vimdiff
+  ```
+* **What is the difference between `pull` and `clone` in git**
+  * https://stackoverflow.com/questions/3620633/what-is-the-difference-between-pull-and-clone-in-git
+  ```bash
+  sudo apt-get install git-core
+  ```
+* **What is Sparse Checkout?**
+  *  git 1.7.0 (Feb. 2012)
+  * http://schacon.github.io/git/git-read-tree.html#_sparse_checkout
+  * https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository#13738951
+  * "sparse clone" and "sparse fetch"  are not supported
+  * The steps to do a sparse clone are as follows:
+  ```bash
+  mkdir <repo>
+  cd <repo>
+  git init
+  git remote add -f origin <url>
+  ```
+  * This creates an empty repository with your remote, and fetches all objects but doesn't check them out. Then do:
+  ```bash
+  git config core.sparseCheckout true
+  ```
+  * Now you need to define which files/folders you want to actually check out.
+  ```bash
+  echo "some/dir/" >> .git/info/sparse-checkout
+  echo "another/sub/tree" >> .git/info/sparse-checkout
+  ```
+  * update your empty repo with the state from the remote:
+  ```bash
+  git pull origin master
+  ```
+* **What is the difference between `git pull` and `git fetch`?**
   - https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
   - The take away is to keep in mind that there are often at least three copies of a project on your workstation. One copy is your own repository with your own commit history. The second copy is your working copy where you are editing and building. The third copy is your local "cached" copy of a remote repository.
-* **what does git recursive and no-recursive options and what they do?**
+* **What does git recursive and no-recursive options and what they do?**
   - `--recursive` and `--no-recursive`
   - https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules
     - With `version 2.13` of Git and later, `--recursive` has been deprecated and `--recurse-submodules` should be used instead
@@ -319,6 +252,64 @@ git rebase --help
   - https://git-scm.com/docs/git-submodule
   - **Submodules**, like subtrees, aim to reuse code from another repo somewhere inside your own repo’s tree. The goal is usually to benefit from central maintenance of the reused code across a number of container repos, without having to resort to clumsy, unreliable copy-pasting.
 
+* **What is `.gitigonore` and general git ignore rules/templates?**
+  * https://github.com/github/gitignore
+* **How to do setup `.gitignore`?**
+  * https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+  * Global Git ignore rules
+  ```bash
+  # create and confic git ignore file
+  touch ~/.gitignore
+  git config --global core.excludesFile ~/.gitignore
+  # Debugging .gitignore files
+  git check-ignore -v debug.log
+  ```
+  * The best practice would be to place the .gitignore file in the root directory. This means one .gitignore file for one entire repo. This makes managing the ignored files more effectively. 
+  ```bash
+  # in the project root directory
+  touch .gitignore
+  #ls -1d .git*
+  .git
+  .gitignore
+  # more help
+  git help gitignore
+  # or
+  man gitignore
+  #
+  !/*.csv
+  !/*.json
+  !/*.geojson
+  !/*.xlsx
+  !/*.xls
+  #
+  # Ignore everything inside data/ directory
+  /data/**
+  # Except for subdirectories(won't be commited anyway if there is no commited file inside)
+  !/data/**/
+  # And except for *.foo files
+  !*.*
+  ```
+  * http://kbroman.org/github_tutorial/pages/init.html
+  * https://wpism.com/publish-local-project-github-command-line/
+  * https://gist.github.com/wlbr/1685405
+  ```bash
+  sudo groupadd git
+  sudo delgroup git
+  sudo adduser git
+  sudo deluser git
+  #
+  git clone git@maze:/home/bhaskar/public_html/3Dmap/mapboxgl/smartcity
+  ```
+* **What are the differences between `git` and `cvs`?**
+  * https://stackoverflow.com/questions/802573/difference-between-git-and-cvs
+* **How to remove a directory from git repository?**
+  * https://stackoverflow.com/questions/1947430/git-remove-directory
+  * https://stackoverflow.com/questions/6313126/how-to-remove-a-directory-from-git-repository
+  * **use this to leave the local copy alone but remove from version control**
+  ```bash
+  git rm -r -f --cached DirectoryName
+  git rm -r --cached myFolder
+  ```
 
 ## Cloning between two or more machines
 * References
