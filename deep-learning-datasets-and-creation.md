@@ -125,19 +125,45 @@ Tags: Datasets and Data Creation for Training Machines
           * Polyline annotation in 3D point cloud data is used to provide guided navigation path and edge case delimiters during the navigation for such situations
 
 
-## Annotatino Service Provides for AI
-* [playment.io](https://playment.io/image-annotation/)
-  * [API for AI Annotations](https://docs.playment.io/reference#welcome)
-
-
 ## Datasets and Data Creation for Training Machines
 
 
 ## Creation for Training Machines
 
 
-## Image Labeling / Annotation Tools
-* **VGG VIA**
+## Annotatino Service Provides for AI
+* [playment.io](https://playment.io/image-annotation/)
+  * [API for AI Annotations](https://docs.playment.io/reference#welcome)
+
+
+## AI Annotation Tools
+
+**Summary**
+
+| S.No. | AI Annotation Apps                  | Tech Stack                           | Website                                                                                                   | Online Demo                              | Source Code                                                     |
+|-------|-------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------|-----------------------------------------------------------------|
+| 1     | via                                 | js                                   |                                                                                                           |                                          | https://github.com/ox-vgg/via.git                               |
+| 2     | scalabel                            | js, nodejs, python – loclhost server | https://www.scalabel.ai                                                                                   |                                          | https://github.com/ucbdrive/scalabel.git                        |
+| 3     | AutoNUE (based on cityscapeScripts) | python                               |                                                                                                           |                                          | https://github.com/AutoNUE/public-code                          |
+| 4     | labelImg                            | python                               |                                                                                                           |                                          | https://github.com/tzutalin/labelImg                            |
+| 5     | cityscapeScripts                    |                                      |                                                                                                           |                                          | https://github.com/mcordts/cityscapesScripts/                   |
+| 6     | LabelMe                             |                                      |                                                                                                           | http://labelme.csail.mit.edu/Release3.0/ | https://github.com/CSAILVision/LabelMeAnnotationTool            |
+| 7     | LabelBox                            | cloud based tool                     |                                                                                                           |                                          | https://github.com/Labelbox/Labelbox                            |
+| 8     | RectLabel                           |                                      | https://rectlabel.com/                                                                                    |                                          | https://github.com/ryouchinsa/Rectlabel-support                 |
+| 9     | VoTT                                | nodejs, python-2.7                   |                                                                                                           |                                          | https://github.com/Microsoft/VoTT/blob/master/README.md         |
+| 10    | imgLab                              | c++                                  |                                                                                                           |                                          | https://github.com/davisking/dlib/tree/master/tools/imgla       |
+| 11    | COCO UI                             | js, python – localhost server        |                                                                                                           |                                          | https://github.com/tylin/coco-ui                                |
+| 12    | LIBLABEL                            | MATLAB                               |                                                                                                           |                                          | http://www.cvlibs.net/software/liblabel/                        |
+| 13    | CVAT                                | python                               |                                                                                                           |                                          | https://github.com/opencv/cvat                                  |
+| 14    | Anno-Mage                           | python                               | http://www.virajmavani.me/saiat/                                                                          |                                          | https://github.com/virajmavani/semi-auto-image-annotation-tool/ |
+| 15    | Sloth                               | python                               | https://cvhci.anthropomatik.kit.edu/~baeuml/projects/a-universal-labeling-tool-for-computer-vision-sloth/ | https://sloth.readthedocs.io/en/latest/  | https://github.com/cvhciKIT/sloth                               |
+| 16    | LabelID                             | nodejs, mongoDB                      | https://sweppner.github.io/labeld/                                                                        |                                          | https://github.com/sweppner/labeld                              |
+| 17    | ALPS Label                          | wordpress plugin                     | https://alpslabel.wordpress.com/                                                                          |                                          | https://alpslabel.wordpress.com/2017/01/26/alt/                 |
+| 18    | imgAnnotation                       |                                      |                                                                                                           |                                          | https://github.com/alexklaeser/imgAnnotation                    |
+
+
+
+* **VGG VIA** - recomended
   * https://github.com/ox-vgg/via - simple, intutive, best
     - http://www.robots.ox.ac.uk/~vgg/blog/author/abhishek-dutta.html
     - http://www.robots.ox.ac.uk/~vgg/software/via/
@@ -152,17 +178,12 @@ Tags: Datasets and Data Creation for Training Machines
 * **labelImg**
   * https://github.com/tzutalin/labelImg
     - `git clone https://github.com/tzutalin/labelImg.git`
-* **commacoloring**
-  * https://github.com/commaai/commacoloring
-  * https://commacoloring.herokuapp.com/
-  * based on `js-segment-annotator`
-* **js-segment-annotator**
-  * https://github.com/kyamagu/js-segment-annotator
-  * http://kyamagu.github.io/js-segment-annotator/?view=index
 * **LabelBox**
   * https://github.com/Labelbox/Labelbox/blob/master/LICENSE
   * https://www.labelbox.com/
   * https://github.com/Labelbox/Labelbox/tree/master/custom-interfaces/classification
+* **[RectLabel](https://rectlabel.com/)**
+  * https://rectlabel.com/ 
 * **VoTT**
   * https://github.com/Microsoft/VoTT/blob/master/README.md
 * **LabelMe**
@@ -175,15 +196,40 @@ Tags: Datasets and Data Creation for Training Machines
   git clone https://github.com/davisking/dlib.git
   cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 ..
   ```
-* **[scalabel](https://www.scalabel.ai/)**
+* **[scalabel](https://www.scalabel.ai/)** - 2D,3D, Images, Videos, Point Clouds
   * `git clone https://github.com/ucbdrive/scalabel.git`
   * https://github.com/ucbdrive/scalabel
+* **[CVAT](https://github.com/opencv/cvat)**
+  * https://github.com/opencv/cvat
+* **[SLOTH](https://github.com/cvhciKIT/sloth)**
+  * https://cvhci.anthropomatik.kit.edu/~baeuml/projects/a-universal-labeling-tool-for-computer-vision-sloth/ 
+  * https://github.com/cvhciKIT/sloth
+  * https://sloth.readthedocs.io/en/latest/
+* **[LIBLABEL](http://www.cvlibs.net/software/liblabel/)**
+  * Lightweight Semantic/Instance Annotation Tool
+  * MATLAB
+* **[LabelID](https://github.com/sweppner/labeld)**
+  * https://sweppner.github.io/labeld/
+* **[ALPS Label](https://alpslabel.wordpress.com/)**
+  *  https://alpslabel.wordpress.com/2017/01/26/alt/
+* **[CoCo UI](https://github.com/tylin/coco-ui)**
+  * https://github.com/tylin/coco-ui
+  * The tool used to annotate the COCO dataset.
+* **[imgAnnotation](https://github.com/alexklaeser/imgAnnotation)**
+  * https://github.com/alexklaeser/imgAnnotation
+
+
+## **Image Process Tools/Apps**
 * **ImageSegmentation**
   * https://github.com/AKSHAYUBHAT/ImageSegmentation
   * https://www.eraseimage.com/
-* **CoCo UI**
-  * https://github.com/tylin/coco-ui
-  * The tool used to annotate the COCO dataset.
+* **commacoloring**
+  * https://github.com/commaai/commacoloring
+  * https://commacoloring.herokuapp.com/
+  * based on `js-segment-annotator`
+* **js-segment-annotator**
+  * https://github.com/kyamagu/js-segment-annotator
+  * http://kyamagu.github.io/js-segment-annotator/?view=index
 * **Color Extractor**
   * **ColorThief - get dominant color in an image**
     * https://www.abeautifulsite.net/how-to-get-the-dominant-colors-of-an-image-with-javascript
@@ -191,21 +237,50 @@ Tags: Datasets and Data Creation for Training Machines
     * [javascript] - https://github.com/lokesh/color-thief
     * [PHP] - https://github.com/ksubileau/color-thief-php
   * https://ourcodeworld.com/articles/read/403/top-5-best-image-color-extraction-javascript-and-jquery-plugins
+
+
+**Summary**
+
+| S.No. | Image Processing Apps                         | Tech Stack                    |  | Online Demo                                               | Source Code                                      |
+|-------|-----------------------------------------------|-------------------------------|--|-----------------------------------------------------------|--------------------------------------------------|
+| 1     | JS Segment Annotator                          | js                            |  | http://kyamagu.github.io/js-segment-annotator/?view=index | https://github.com/kyamagu/js-segment-annotator  |
+| 2     | commacoloring (based on JS Segment Annotator) | js, python – localhost server |  | https://commacoloring.herokuapp.com/                      | https://github.com/commaai/commacoloring         |
+| 3     | Color Thief JS                                | js                            |  | https://lokeshdhakar.com/projects/color-thief/            | https://github.com/lokesh/color-thief            |
+| 4     | Color Thief PHP                               | php                           |  |                                                           | https://github.com/ksubileau/color-thief-php     |
+| 5     | ImageSegmentation                             | js, FabricJS                  |  | https://www.eraseimage.com/                               | https://github.com/AKSHAYUBHAT/ImageSegmentation |
+
+
+
+## **Vector Editing Tools/Apps**
+
+
+**Summary**
+
+| S.No. | Vector Editing Apps |
+|-------|---------------------|
+| 1     | Vector Editor       |
+
+
 * **Vector Editors**
   * http://teselagen.github.io/openVectorEditor/#/Editor
-* **Listing of Tools**
-  * https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
-  * https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
-  * http://sloth.readthedocs.io/en/latest/
-  * https://github.com/yuyu2172/image-labelling-tool
-  * https://blog.playment.io/training-data-for-computer-vision/
-  * https://alpslabel.wordpress.com/
-  * https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
-  * https://oclavi.com/
-  * https://playment.io/image-annotation/
-  * https://blog.playment.io/training-data-for-computer-vision/
-* https://www.deepvideoanalytics.com/
 
+
+
+**Credit: [Excelsheet Data to Markdown table](https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/)**
+
+## **Listing of Tools**
+* https://en.wikipedia.org/wiki/List_of_manual_image_annotation_tools
+* https://www.researchgate.net/post/Can_anyone_suggest_an_image_labeling_tool_for_object_detection
+* http://sloth.readthedocs.io/en/latest/
+* https://github.com/yuyu2172/image-labelling-tool
+* https://blog.playment.io/training-data-for-computer-vision/
+* https://alpslabel.wordpress.com/
+* https://www.quora.com/What-is-the-best-image-labeling-tool-for-object-detection
+* https://oclavi.com/
+* https://playment.io/image-annotation/
+* https://blog.playment.io/training-data-for-computer-vision/
+* https://www.deepvideoanalytics.com/
+* https://prodi.gy/
 
 ## Amazon Mechanical Turk - MTurk
 - https://www.mturk.com/
@@ -339,10 +414,10 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 ### **Datasets Detailed Review / Overview**
 
 1. [Cityscape](cityscape-dataset.md)
-2. [Mapillary](mapillary-dataset.md)
+2. [MVD - Mapillary](mapillary-dataset.md)
 3. [ApolloScape](apolloscape-dataset.md)
-4. [MS COCO](mscoco-dataset.md)
-5. [ade20k](ade20k-dataset.md)
+4. [MS COCO - things, stuff, panoptic](mscoco-dataset.md)
+5. [ADE20K](ade20k-dataset.md)
 6. [IDD - Indian Driving Dataset](idd-dataset.md)
 7. [BDD](bdd-dataset.md)
 

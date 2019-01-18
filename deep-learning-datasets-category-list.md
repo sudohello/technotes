@@ -1,10 +1,10 @@
 ---
-Title: Listing Category Hierarchy for Computer Vision Datasets for AI
+Title: Listing Category Hierarchy, Annotation Tools for AI
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
 Date: 04th-Jan-2019
 Last updated: 07th-Jan-2019
-Tags: Listing Category Hierarchy for Computer Vision Datasets for AI
+Tags: Listing Category Hierarchy, Annotation Tools for AI
 ---
 
 
@@ -13,49 +13,64 @@ Tags: Listing Category Hierarchy for Computer Vision Datasets for AI
 {:toc}
 
 
-# Listing Category Hierarchy for Computer Vision Datasets for AI
+# Listing Category Hierarchy, Annotation Tools for AI
 
-## **Task:**
+## **Tasks**
 
-* Document the object hierarchy (along with the id, categlory label etc) in an excel sheet for following types of datasets:
-  * Common Objects
-  * Self-Driving-Car
-  * Scene understanding
-* Note: individual worksheet/excel sheet per dataset
-* List of different datasets are given below
-
-
-**Common Objects**
-* **[MS COCO](http://cocodataset.org/#home)**
-* [what-object-categories-labels-are-in-coco-dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
-
-
-**Self-Driving-Car Datasets Semantic Segmentation**
-* **[CityScapes Dataset](https://www.cityscapes-dataset.com/)**
-* **[Mapillary Vista Dataset: MVD](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
-* **[ApolloScape](http://apolloscape.auto/index.html)**
-* **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
-* **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
-
-**Scene understanding Datasets**
-* **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
+1. **Documentation of Category Hierarchy for publically available Computer Vision Datasets for AI**  - completed
+  * Document the object hierarchy (along with the id, categlory label etc) in an excel sheet for following types of datasets:
+    * Common Objects
+    * Self-Driving-Car
+    * Scene understanding
+  * Note: individual worksheet/excel sheet per dataset
+  * List of different datasets are given below
+2. **Documentation Of AI Annotation Tools**
+3. **Comparision And Mapping Of Category Hierary - Internal & External**
 
 
 ## References
 
-- [self-driving-car-datasets-semantic-segmentation](https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/)
-- [the-worlds-largest-driving-dataset](https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632)
-- [semantic-segmentation datasets list](https://github.com/mrgloom/awesome-semantic-segmentation#datasets)
+* [Deep Learning Datasets And Creation](deep-learning-datasets-and-creation.md)
+* [Self Driving Car Datasets Semantic Segmentation](https://blog.playment.io/self-driving-car-datasets-semantic-segmentation/)
+* [Worlds Largest Driving Dataset](https://blog.getnexar.com/introducing-bdd100k-the-worlds-largest-driving-dataset-b4e157bf2632)
+* [Semantic Segmentation Datasets List](https://github.com/mrgloom/awesome-semantic-segmentation#datasets)
+
+
+## **Self-driving Car (Autonomy) vs Urban Scene Difference Criteria**
+  
+| Self-driving Car (Autonomy)                                 | Urban Scene                                           |
+|:------------------------------------------------------------|:------------------------------------------------------|
+| * Contains images only from the driver's perspective        | contains from walking, and non-road scene perspective |
+| * Outdoor images only                                       | Outdoor images only                                   |
+| * contains sequential camera frames                         | not a pre-condition                                   |
+| * can be aumgented with other sequential camera sensor data | cannot be agumented with sequential sensor data       |
 
 
 
-**Datasets Detailed Review / Overview**
-1. [Cityscape](cityscape-dataset.md)
-  * https://www.cityscapes-dataset.com/dataset-overview/
-2. [Mapillary](mapillary-dataset.md)
+## **Datasets of Interest (DoI)**
+
+### **Common Objects**
+1. [MS COCO - things, stuff, panoptic](mscoco-dataset.md)
+  * **[MS COCO](http://cocodataset.org/#home)**
+  * [what-object-categories-labels-are-in-coco-dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
+
+### **Self-Driving-Car Datasets Semantic Segmentation**
 3. [ApolloScape](apolloscape-dataset.md)
-4. [MS COCO](mscoco-dataset.md)
-5. [ade20k](ade20k-dataset.md)
+  * **[ApolloScape](http://apolloscape.auto/index.html)**
+7. [BDD](bdd-dataset.md)
+  * **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
+6. [IDD - Indian Driving Dataset](idd-dataset.md)
+5. [KITTI](http://www.cvlibs.net/datasets/kitti/)
+  * **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
+
+### **Scene understanding Datasets**
+1. [Cityscape](cityscape-dataset.md)
+  * **[CityScapes Dataset](https://www.cityscapes-dataset.com/)**
+  * https://www.cityscapes-dataset.com/dataset-overview/
+2. [MVD - Mapillary](mapillary-dataset.md)
+  * **[Mapillary Vista Dataset: MVD](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
+3. [ADE20K](ade20k-dataset.md)
+  * **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
 
 
 ## **Annotatino Service Provides for AI**
