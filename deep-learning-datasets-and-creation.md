@@ -3,7 +3,7 @@ Title: Datasets and Data Creation for Training Machines
 Decription: Datasets and Data Creation for Training Machines
 Author: Bhaskar Mangal
 Date: 24th-Jul-2018
-Last updated: 22nd-Oct-2018
+Last updated: 18th-Jan-2019
 Tags: Datasets and Data Creation for Training Machines
 ---
 
