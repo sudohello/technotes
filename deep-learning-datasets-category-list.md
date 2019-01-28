@@ -13,20 +13,17 @@ Tags: Listing Category Hierarchy, Annotation Tools for AI
 {:toc}
 
 
-# Listing Category Hierarchy, Annotation Tools for AI
+## Listing Category Hierarchy, Annotation Tools for AI
 
-## **Tasks**
-
-1. **Documentation of Category Hierarchy for publically available Computer Vision Datasets for AI**  - completed
+1. **Documentation of Category Hierarchy for publically available Computer Vision Datasets for AI**
   * Document the object hierarchy (along with the id, categlory label etc) in an excel sheet for following types of datasets:
     * Common Objects
     * Self-Driving-Car
     * Scene understanding
-  * Note: individual worksheet/excel sheet per dataset
-  * List of different datasets are given below
 2. **Documentation Of AI Annotation Tools**
-3. **Comparision And Mapping Of Category Hierary - Internal & External**
-
+3. **Category Challange**
+  * Internal task to come up with the category labels from our own datasets
+4. **Comparision And Mapping Of Category Hierarchy - Internal & External**
 
 ## References
 
@@ -55,21 +52,21 @@ Tags: Listing Category Hierarchy, Annotation Tools for AI
   * [what-object-categories-labels-are-in-coco-dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
 
 ### **Self-Driving-Car Datasets Semantic Segmentation**
-3. [ApolloScape](apolloscape-dataset.md)
+2. [ApolloScape](apolloscape-dataset.md)
   * **[ApolloScape](http://apolloscape.auto/index.html)**
-7. [BDD](bdd-dataset.md)
+3. [BDD](bdd-dataset.md)
   * **[BDD100K - Berkeley DeepDrive](https://bdd-data.berkeley.edu/)**
-6. [IDD - Indian Driving Dataset](idd-dataset.md)
+4. [IDD - Indian Driving Dataset](idd-dataset.md)
 5. [KITTI](http://www.cvlibs.net/datasets/kitti/)
   * **[KITTI Dataset](http://www.cvlibs.net/datasets/kitti/)**
 
 ### **Scene understanding Datasets**
-1. [Cityscape](cityscape-dataset.md)
+6. [Cityscape](cityscape-dataset.md)
   * **[CityScapes Dataset](https://www.cityscapes-dataset.com/)**
   * https://www.cityscapes-dataset.com/dataset-overview/
-2. [MVD - Mapillary](mapillary-dataset.md)
+7. [MVD - Mapillary](mapillary-dataset.md)
   * **[Mapillary Vista Dataset: MVD](https://blog.mapillary.com/product/2017/05/03/mapillary-vistas-dataset.html)**
-3. [ADE20K](ade20k-dataset.md)
+8. [ADE20K](ade20k-dataset.md)
   * **[ADE20K Dataset](http://groups.csail.mit.edu/vision/datasets/ADE20K/)**
 
 

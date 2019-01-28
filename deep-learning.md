@@ -2463,3 +2463,31 @@ Your CPU supports instructions that this TensorFlow binary was not compiled to u
 * https://online.stanford.edu/
 * https://online.stanford.edu/courses
 
+
+
+## Deep RL - Deep Reinforcement Learning
+
+* https://www.youtube.com/watch?v=zR11FLZ-O9M
+
+always - human input at sometime what's good ro bad
+it's all supervised by loss function
+
+* Supervised learning
+  - teach by example
+* Reinforcement learning
+  - teach by experience i.e. reward and punshiment
+  - provide experience by - simulation and/or very contrained RL situations
+  - Open challanges:two options:
+    1. real world observation + one-shot trail & error
+    2. Realistic simulation + transfer learning
+  - mystery, genetic coding hardcoed
+  - ability from observation, filter all the junk
+  - immitation learning
+  - observes other to walk
+
+
+  - combining
+    - Open challange: image recognition + audio recoginition + actiity/video recognition
+    - learning of one activity transfer to another similar activity
+
+
