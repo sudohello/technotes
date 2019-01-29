@@ -8,7 +8,7 @@ A picture can tell a story of different things, and the story teller can narrate
 
 The tactical item in front of an AI Engineer is to find out on what task of computer vision, the person has to ask the team to annotate for **'learning by example'** methodology, confusingly referred as 'supervised training'.
 
-And this was the exact problem in front of me when I need to create the annotation workflow for using AI in High Definitio (HD) Map creation.
+And this was the exact problem in front of me when I need to create the annotation workflow for using AI in High Definition (HD) Map creation.
 
 
 [TOC]
@@ -21,9 +21,9 @@ That's the motivation, when one can tell many things about and from a single str
 
 In other words, asking the specific questions on the kind of business problem in HD Map creation AI can be used to solve, and what problems to be taken first, what kind of investment is needed and what MoV (Measured Organisation Value) it would bring on the table i.e. faster, cheaper, efficient or growth; last but not the least are these efforts and invements are sustainiable in future when skilled resource hiring, retention and secluded nature of work poses high risks to justify such huge investment from the company's perspective.
 
-So, it started with the identification of potential applications of Artifical Intellegience in GIS for HD Map creation by looking at the working examples, reserches. Usecases emerged for instance extracting 3D geometries like road edges, lane markings; providing clipped and segmented images that can be coorelated with the gis point map objects like traffic sign, pole, signage etc.; extract text and symbols from the road imageries; building footprint, road, pois, green cover extractions from satellite and/or drone images; semantic image search from lakhs of images, rooftop shape detection and extraction and so on.
+So, it started with the identification of potential applications of Artifical Intellegience in GIS for HD Map creation by looking at the working examples, researches. Usecases emerged for instance extracting 3D geometries like road edges, lane markings; providing clipped and segmented images that can be coorelated with the gis point map objects like traffic sign, pole, signage etc.; extract text and symbols from the road imageries; building footprint, road, pois, green cover extractions from satellite and/or drone images; semantic image search from lakhs of images, rooftop shape detection and extraction and so on.
 
-And, we'd all the raw materials, satellite images, images (mono and stereo), video routes and point cloud data (PCD) generated from traditional SfM techniques, 3D annotations on PCD as point, line for geographics features, sensor data (IMU, CAN, GPS) collected and processed from our custom rig; handcrafted 3D building models at LoD-2.3 and LoD-5 and all of this data is georeferenced. Finally, myself to tickle the AI neurons with single machine with 8 GB 1080 Nvidia, 32 GB Ram, 2TB HDD having lakhs of driving image sequences. The quest for me was to find out, how to use Deep Learning techniques to get something meaningful out of these gigs of street images (to start with) that can be used for creation of High Definition Maps for self-driving cars.
+And, we'd all the raw materials, satellite images, street image sequences (mono and stereo), video routes and point cloud data (PCD) generated from traditional SfM techniques, 3D annotations on PCD as point, line for geographics features, sensor data (IMU, CAN, GPS) collected and processed from our custom rig; handcrafted 3D building models at LoD-2.3 and LoD-5 and all of this data is georeferenced. Finally, myself to tickle the AI neurons with single machine with 8 GB 1080 Nvidia, 32 GB Ram, 2TB HDD having lakhs of driving image sequences. The quest for me was to find out, how to use Deep Learning techniques to get something meaningful out of these gigs of street images (to start with) that can be used for creation of High Definition Maps for self-driving cars.
 
 With the few months of effort able to get some grasp of solving computer vision tasks such as classification, detection and segmentation using deep learning techniques. I explored different architectures and zeroed on to Mask RCNN, then, state of art for instance segmentation focused on accuracy rather than response time. Also explored and experimented with annotation tools & process, commercial vision APIs & annotation services, cloud infrastructure, technology stack & deep learning frameworks - both open source & proprietry and different popular datasets for urban scene undertanding, selfdriving car dataset (only images) and common objects; of course basis of ML and DL. Deep Learning techniques for detection and segmentation were kind of reached some SotA (State of the Art) benchmarks that seems good enough for us to adapt and they have also shown huge potential on SLAM, SfM, single and setero image to 3D, depth maps; also, shown good results directly on computer vision tasks on 3D datasets; and many of these were experimented in house to come to arrive to an understanding and certain conclusions for a creating a sustaining AI programme in GIS.
 
@@ -124,6 +124,7 @@ In nutshell, listed Category Hierarchy, Annotation Tools, Annotaiton Storage for
 
 
 ### Analysis on Datasets of Interest (DoI)
+
 Approach:
 * normalization of labels for comparission
   - singular and plural form are considered as same e.g. vechile in cityscape and vechiles in idd are considered as same
@@ -134,7 +135,9 @@ Approach:
 * kitti, cityscape, idd, mapillary, apolloscape, coco_stuff, coco_things were compared at L0 and labels are put into consequtive columns in excel sheet
 * each label is manually alphabatically sorted in the excel sheet, such that only the common label across all columns (i.e. datasets) remain in the same line
 * L0 frequency distribution:
-| Total # of Labels | Letter | Label Name       |
+
+
+| Frequency 		    | Letter | Label Name       |
 |:------------------|:-------|:-----------------|
 | 2                 | a      | animal           |
 |                   | b      | building         |
@@ -147,10 +150,13 @@ Approach:
 |                   | v      | vehicle          |
 |                   |        | void             |
 | 5                 | s      | sky              |
+
 * After comparing at L0 level, the last leaf node of category hierarchy from each datasets were compared i.e. Ln
 * created a new criteria for L0 level such that when compared L0 and Ln across datasets, if Ln from any of the dataset is matching to the L0 of at least one dataset, it's considered as L0 in the new heirarchy levels
 * L0 Label is assigned a 'starting alphapet letter' to indicate it's considered as the L0 label in the new heirarchy
 * L0 and Ln compare and new heirarchy pattern evolved:
+
+
 | L0 Label   | L0+n Label         | Frequency |
 |:-----------|:-------------------|:----------|
 | a          | animal             | 3         |
@@ -222,7 +228,7 @@ Following conclusions were drawn:-
 2. Workflow needs to be Iterative process to be able to consume annotations on a daily basis rather than wait for a week or months to get them to the AI training desk. And, such process should be scriptable rather than manual management.
 3. Quantificaion from the begining of the workflow: task allocation, productivity of annotator, quality of annotations by each annotator, quality specifications and benchmarks for the annotations needs to be evolved.
 4. Quick visualization and stats on the annotations per image per release etc should be done once using scripts. Manual process is time consuming and error prone and not sustainable over months. This is essential from the understanding of dataset mix and creating splits for AI training on a continous basis. 
-5. Trade off between quality of expected prediction and usability in HD Map creation from AI machine output w.r.t. input annotations in terms annotation quality, time and cost needs to be understand. This is essential in terms of MoVs understanding and to measure the success of AI programme.
+5. Trade off between quality of expected prediction and usability in HD Map creation from AI machine output w.r.t. input annotations in terms annotation quality, time and cost needs to be understood. This is essential in terms of MoVs, setting the right expectations, and to measure the success of AI programme.
 
 
 ## New Labeling Scheme, Annotation process and Workflow
@@ -233,7 +239,7 @@ Based on this analysis I was able to come up with the new genric heirarchy for a
 - Optimal label name has to be selected i.e.
 	- less ambigious in nature
 	- not too generic and not too specific
-- providing additional attribution at the annotation level and at the image level provides the oppotunity for cover complex scenarios without re-labelling  
+- providing additional attribution at the annotation level and at the image level provides the oppotunity for cover complex scenarios without re-labelling 
 	- For instance, classification of a type of object should not be the part of the label name rather as the annotation attribute, ex: label is person but the same can be classified as pedistrian, rider, cyclist in additional attribution property Truncated, Marking are some of the identified annotation attributes
 - Additional annotation attributes can provide an opportunity to create dynamic labelling scheme to create unquie labels for AI datasets if rquired
 - Annotation_Quality, Collection_Type, Behaviour_Or_Activity, Position  Velocity, Acceleration, Orientation, Material, Text, Usability, Occulusion, 
@@ -256,3 +262,6 @@ Based on this analysis I was able to come up with the new genric heirarchy for a
 * these jobs assigned as annotation_tasks to each annotators
 * release management and directories were sorted out
 
+
+## HDM - High Definition Map Dataset
+Over the time this dataset what we would probably be released as **High Definition Map** dataset
