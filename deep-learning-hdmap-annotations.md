@@ -209,7 +209,7 @@ Approach:
 | v          | void               | 4         |
 |            | vegetation         | 5         |
 | w          | water              | 2         |
-| wall       | 5                  |           |
+|            | wall               | 5         |
 
 
 ### Conclusions
@@ -265,3 +265,37 @@ Based on this analysis I was able to come up with the new genric heirarchy for a
 
 ## HDM - High Definition Map Dataset
 Over the time this dataset what we would probably be released as **High Definition Map** dataset
+
+### HDM Category Hierarchy
+
+* Three level category hierarchy
+* singular form
+* First letter is in capital
+* separated by underscore
+* Each L1 has label at L2 same as the L1 label to provide a fallback in case of ambiguity
+* Void is ultimate fallback case
+* Unlabeled is the last resort when cannot be put under void either
+* this category hierarchy tree provides the conceptual framework to cover 100% pixels for complete Urban scene segmentation
+* out of these HDM category were further shortlisted
+
+
+**L0 and L1**
+
+|             |        |                |         |         |         |              |         |          |              |
+|:------------|:-------|:---------------|:--------|:--------|:--------|:-------------|:--------|:---------|:-------------|
+| Living      |        |                |         |         |         |              |         |          |              |
+|             | Human  | Animal         | Reptile | Rodent  | Bird    |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Non_Living  |        |                |         |         |         |              |         |          |              |
+|             | Object | Structure      | Place   | Surface | Road    | Road_Marking | Vehicle | Building | Construction |
+|             |        |                |         |         |         |              |         |          |              |
+| Hand_Signal |        |                |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Nature      |        |                |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+|             | Sky    | Water          | Earth   | Fire    | Terrain | Vegetation   | Snow    |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Void        |        |                |         |         |         |              |         |          |              |
+|             | Void   | Loose_Material |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Unlabeled   |        |                |         |         |         |              |         |          |              |
