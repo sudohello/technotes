@@ -1,3 +1,144 @@
+---
+Title: HDM (High Definition Map) Dataset Category Hierarchy
+Decription: HDM (High Definition Map) Dataset Category Hierarchy
+Author: Bhaskar Mangal
+Date: 29th-Jan-2019
+Last updated: 29th-Jan-2019
+
+---
+
+
+[TOC]
+
+## HDM (High Definition Map) Dataset Category Hierarchy
+> Conceptual Framework
+
+
+* Three level category hierarchy
+* singular form
+* First letter is in capital
+* separated by underscore
+* Each L1 has label at L2 same as the L1 label to provide a fallback in case of ambiguity
+* Void is ultimate fallback case
+* Unlabeled is the last resort when cannot be put under void either
+* this category hierarchy tree provides the conceptual framework to cover 100% pixels for complete Urban scene segmentation and self-driving car
+* out of these HDM category were further shortlisted
+* Actual Label vs classification label - Actual label names should not communicate classification type for examples:
+  * actual label would be 'person' and it can be further classified as based on certain attribution as rider, motocyclist, pedistrian, hawker
+  * likewise: traffic_sign (different types), pole (electric, high_tension, telephone) and booth (phone, traffic_police, dairy, pan_shop, tent_shop, coconut)
+* Annotation attributions would further provide an option to classify labelled object and provide other metadata too
+  * Annotation_Quality, Collection_Type, Behaviour/Activities, Position, Velocity, Acceleration, Orientation, Material, Text, Usability, Occulusion, Truncated Marking
+* Image File attributions provides other type of metadata
+  * Scene_Type, Weather_Condition, View_Point, Image_Quality
+
+
+**L0,L1: hierarchy for HDM Dataset**
+
+|             |        |                |         |         |         |              |         |          |              |
+|:------------|:-------|:---------------|:--------|:--------|:--------|:-------------|:--------|:---------|:-------------|
+| Living      |        |                |         |         |         |              |         |          |              |
+|             | Human  | Animal         | Reptile | Rodent  | Bird    |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Non_Living  |        |                |         |         |         |              |         |          |              |
+|             | Object | Structure      | Place   | Surface | Road    | Road_Marking | Vehicle | Building | Construction |
+|             |        |                |         |         |         |              |         |          |              |
+| Hand_Signal |        |                |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Nature      |        |                |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+|             | Sky    | Water          | Earth   | Fire    | Terrain | Vegetation   | Snow    |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Void        |        |                |         |         |         |              |         |          |              |
+|             | Void   | Loose_Material |         |         |         |              |         |          |              |
+|             |        |                |         |         |         |              |         |          |              |
+| Unlabeled   |        |                |         |         |         |              |         |          |              |
+
+
+
+**L0,L1,L2: complete hierarchy for HDM Dataset**
+* the numbers indicates the frequency of occurance in the DoI (Datasets of Interest) which were analyzed and compared at L0 and Ln levels.
+
+
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|---|-----------------|---|-----------------------|---|------------------------|---|------------------|---|--------------|---|---------------|---|---------------------------------|---|-----------------------------|---|------------------------|---|-----------------------| 
+|   | **Living**      |   | **Human**             |   | **Animal**             |   | **Reptile**      |   | **Rodent**   |   | **Bird**      |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 | 3 | human                 | 3 | animal                 |   | reptile          |   | rodent       |   | bird          |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | pedestrian            |   | cow                    |   | snake            |   | rat          |   | pigeon        |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 | 5 | rider                 |   | dog                    |   |                  |   | squirrel     |   | crow          |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | motorcyclist          |   | cat                    |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 | 5 | person                |   | goat                   |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | hawker                |   | sheep                  |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | traffic_police_person |   | horse                  |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | cyclist               |   | camel                  |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   | **Non_Living**  |   | **Object**            |   | **Structure**          |   | **Place**        |   | **Surface**  |   | **Road**      |   | **Road_Marking**                |   | **Vehicle**                 |   | **Building**           |   | **Construction**          | 
+|   |                 | 3 | object                |   | structure              |   | place            |   | surface      | 6 | road          |   | road_marking                    | 5 | vehicle                     | 6 | building               | 3 | contruction           | 
+|   |                 | 2 | banner                | 4 | bridge                 |   | parking_lot      | 4 | flat         |   | road_pile     |   | yellow_line                     | 6 | bicycle_or_cycle            |   | theater                |   | construction_material | 
+|   |                 | 2 | bench                 | 4 | guard_rail             |   | auto_stand       | 3 | ground       |   | road_obstacle |   | white_line:continious:right     | 6 | car                         |   | parlour                |   | construction_site     | 
+|   |                 | 4 | billboard             | 3 | rail_track             | 4 | parking          |   | parking      |   |               |   | white_line:continious:left      | 4 | caravan                     |   | spa                    |   |                       | 
+|   |                 | 5 | pole                  | 5 | sidewalk               |   | playfield        |   | hump         |   |               |   | white_line:broken:right         | 2 | ego_vehcile                 |   | medical_store          |   |                       | 
+|   |                 | 2 | street_light          | 4 | tunnel                 |   | garbage_dumpyard |   | pothole      |   |               |   | white_line:broken:left          | 6 | motorcycle_or_bike          |   | bank                   |   |                       | 
+|   |                 |   | roadside_spot_light   | 4 | wall                   |   |                  |   | speed_braker |   |               |   | white_line:broken:lane_marking  |   | train                       |   | hotel                  |   |                       | 
+|   |                 | 2 | traffic_sign_frame    | 2 | curb_cut               |   |                  |   | manhole      |   |               |   | white_line:continious:stop_line |   | truck                       |   | fruit_stall            |   |                       | 
+|   |                 | 6 | traffic_light         |   | curb                   |   |                  |   |              |   |               |   | road_marker                     | 2 | trailer                     |   | convention_hall        |   |                       | 
+|   |                 | 4 | traffic_sign          |   | platform               |   |                  |   |              |   |               |   | zebra_crossing                  |   | van                         |   | cricket_stadium        |   |                       | 
+|   |                 | 2 | traffic_cone          |   | bus_stop_platform      |   |                  |   |              |   |               |   |                                 |   | jeep                        |   | temple                 |   |                       | 
+|   |                 |   | traffic_pole          |   | metro_station_platform |   |                  |   |              |   |               |   |                                 |   | cement_truck                |   | art_gallery            |   |                       | 
+|   |                 |   | flyover_pillar        |   | skywalk_platform       |   |                  |   |              |   |               |   |                                 |   | auto_rikshaw                |   | school                 |   |                       | 
+|   |                 |   | wire                  |   | flyover_playform       |   |                  |   |              |   |               |   |                                 |   | tractor                     |   | college                |   |                       | 
+|   |                 | 2 | garbage_can           |   | compound               |   |                  |   |              |   |               |   |                                 |   | ego_vehicle                 |   | park                   |   |                       | 
+|   |                 |   | building_name_board   |   | height_restriction     |   |                  |   |              |   |               |   |                                 |   | invalid_carriage            |   | public_toilet          |   |                       | 
+|   |                 |   | tower                 |   | junction               |   |                  |   |              |   |               |   |                                 |   | motorcycle_rig              |   | atm                    |   |                       | 
+|   |                 |   | vehicle_number_plate  |   | round_about            |   |                  |   |              |   |               |   |                                 |   | sidecar                     |   | electric_power_station |   |                       | 
+|   |                 |   | barrigade             |   | divider                |   |                  |   |              |   |               |   |                                 |   | hawker_cart                 |   | metro_station          |   |                       | 
+|   |                 |   | reflector             |   | ramp                   |   |                  |   |              |   |               |   |                                 |   | tanga                       |   | polic_station          |   |                       | 
+|   |                 |   | drainage_cap          |   | overpass               |   |                  |   |              |   |               |   |                                 |   | bullock_cart                |   | milk_dairy             |   |                       | 
+|   |                 |   | transformer           |   | underpass              |   |                  |   |              |   |               |   |                                 |   | camel_cart                  |   |                        |   |                       | 
+|   |                 |   |                       |   | footpath               |   |                  |   |              |   |               |   |                                 |   | pulled_rikshaw              |   |                        |   |                       | 
+|   |                 |   | signage               |   | tollgate               |   |                  |   |              |   |               |   |                                 |   | ambulance                   |   |                        |   |                       | 
+|   |                 |   | solar_panel           |   | petrol_bunk            |   |                  |   |              |   |               |   |                                 |   | tempo_traveller_or_mini_bus |   |                        |   |                       | 
+|   |                 |   |                       |   | bus_bay                |   |                  |   |              |   |               |   |                                 |   | goods_van                   |   |                        |   |                       | 
+|   |                 |   | cctv_camera           |   | auto_stand             |   |                  |   |              |   |               |   |                                 |   | traffic_police_jeep         |   |                        |   |                       | 
+|   |                 |   |                       |   | gate                   |   |                  |   |              |   |               |   |                                 |   | luggage_auto                |   |                        |   |                       | 
+|   |                 |   | roadside_junction_box | 6 | fence                  |   |                  |   |              |   |               |   |                                 |   | lorry                       |   |                        |   |                       | 
+|   |                 |   | booth                 |   | grill                  |   |                  |   |              |   |               |   |                                 |   | petrol_carrier              |   |                        |   |                       | 
+|   |                 |   | tent                  |   | statue                 |   |                  |   |              |   |               |   |                                 |   | fire_brigade                |   |                        |   |                       | 
+|   |                 |   | speed_sensor          |   | support                |   |                  |   |              |   |               |   |                                 |   | jcb                         |   |                        |   |                       | 
+|   |                 |   | umbrella              |   | pavement               |   |                  |   |              |   |               |   |                                 |   | road_tanker                 |   |                        |   |                       | 
+|   |                 |   | airplane              |   | railing                |   |                  |   |              |   |               |   |                                 |   | petrol_tanker               |   |                        |   |                       | 
+|   |                 |   | luggage               |   | roof                   |   |                  |   |              |   |               |   |                                 |   | water_tanker                |   |                        |   |                       | 
+|   |                 |   | accessory             |   | clock_tower            |   |                  |   |              |   |               |   |                                 |   | lorry_tiffer                |   |                        |   |                       | 
+|   |                 |   | net                   |   |                        |   |                  |   |              |   |               |   |                                 |   | volvo_bus                   |   |                        |   |                       | 
+|   |                 |   | kite                  |   |                        |   |                  |   |              |   |               |   |                                 |   | cycle_rikshaw               |   |                        |   |                       | 
+|   |                 |   | garbage_pile          |   |                        |   |                  |   |              |   |               |   |                                 |   | tvs_luna_mopet              |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   | garbage_trolley             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   | garbage_truck               |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   | **Hand_Signal** |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+| 4 | **Nature**      |   | **Sky**               |   | **Water**              |   | **Earth**        |   | **Fire**     |   | **Terrain**   |   | **Vegetation**                  |   | **Snow**                        |   |                        |   |                       | 
+|   |                 | 6 | sky                   | 2 | water                  |   | stone            |   | fire         | 3 | terrain       | 5 | vegetation                      |   |                             |   |                        |   |                       | 
+|   |                 |   | cloud                 |   | river                  |   | rock             |   |              | 2 | mountain      |   | grass                           |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   | sea                    |   | soil             |   |              |   | desert        |   | plant                           |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   | mud              |   |              |   | hill          |   | flower                          |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   | stone            |   |              |   |               |   | leaf                            |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   | debris           |   |              |   |               |   | dry_leaf                        |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   | gravel           |   |              |   |               |   | potted_plant                    |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   | sand             |   |              |   |               | 2 | tree                            |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   | tree_leaf_branch                |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   | tree_trunk                      |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   | branch                          |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   | moss                            |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   | **Void**        |   | **Void**              |   | **Loose_Material**     |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 | 4 | void                  |   | loose_material         |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | fog                   |   | garbage                |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | smoke                 |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   | dust                  |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+|   |                 |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+| 3 | **Unlabeled**   |   |                       |   |                        |   |                  |   |              |   |               |   |                                 |   |                             |   |                        |   |                       | 
+
+
 
 # A picture is worth a thousand words - So Tell The Story Right!
 > Introduction to Computer Vision AI in HD Map creation
@@ -9,10 +150,6 @@ A picture can tell a story of different things, and the story teller can narrate
 The tactical item in front of an AI Engineer is to find out on what task of computer vision, the person has to ask the team to annotate for **'learning by example'** methodology, confusingly referred as 'supervised training'.
 
 And this was the exact problem in front of me when I need to create the annotation workflow for using AI in High Definition (HD) Map creation.
-
-
-[TOC]
-
 
 
 ## “All I Got To Do Is Tell The Story Right”!
@@ -261,41 +398,3 @@ Based on this analysis I was able to come up with the new genric heirarchy for a
     * traffic_sign, pole and booth
 * these jobs assigned as annotation_tasks to each annotators
 * release management and directories were sorted out
-
-
-## HDM - High Definition Map Dataset
-Over the time this dataset what we would probably be released as **High Definition Map** dataset
-
-### HDM Category Hierarchy
-
-* Three level category hierarchy
-* singular form
-* First letter is in capital
-* separated by underscore
-* Each L1 has label at L2 same as the L1 label to provide a fallback in case of ambiguity
-* Void is ultimate fallback case
-* Unlabeled is the last resort when cannot be put under void either
-* this category hierarchy tree provides the conceptual framework to cover 100% pixels for complete Urban scene segmentation
-* out of these HDM category were further shortlisted
-
-
-**L0 and L1**
-
-|             |        |                |         |         |         |              |         |          |              |
-|:------------|:-------|:---------------|:--------|:--------|:--------|:-------------|:--------|:---------|:-------------|
-| Living      |        |                |         |         |         |              |         |          |              |
-|             | Human  | Animal         | Reptile | Rodent  | Bird    |              |         |          |              |
-|             |        |                |         |         |         |              |         |          |              |
-| Non_Living  |        |                |         |         |         |              |         |          |              |
-|             | Object | Structure      | Place   | Surface | Road    | Road_Marking | Vehicle | Building | Construction |
-|             |        |                |         |         |         |              |         |          |              |
-| Hand_Signal |        |                |         |         |         |              |         |          |              |
-|             |        |                |         |         |         |              |         |          |              |
-| Nature      |        |                |         |         |         |              |         |          |              |
-|             |        |                |         |         |         |              |         |          |              |
-|             | Sky    | Water          | Earth   | Fire    | Terrain | Vegetation   | Snow    |          |              |
-|             |        |                |         |         |         |              |         |          |              |
-| Void        |        |                |         |         |         |              |         |          |              |
-|             | Void   | Loose_Material |         |         |         |              |         |          |              |
-|             |        |                |         |         |         |              |         |          |              |
-| Unlabeled   |        |                |         |         |         |              |         |          |              |
