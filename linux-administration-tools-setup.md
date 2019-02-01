@@ -248,6 +248,11 @@ sudo umount /media/<mountPoint>
 - check `mount.local.sh` under linuxscripts for example
 * https://wiki.samba.org/index.php/Mounting_samba_shares_from_a_unix_client
 
+* **Mount with Read Write Permission**
+* https://unix.stackexchange.com/questions/68079/mount-cifs-network-drive-write-permissions-and-chown
+
+
+
 **Mount Points in mtab and fstab**
 - https://askubuntu.com/questions/607149/change-permissions-to-a-specific-user-in-ubuntu-12-04
 ```bash
