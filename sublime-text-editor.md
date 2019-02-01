@@ -125,3 +125,6 @@ https://github.com/SublimeText-Markdown/MarkdownEditing/issues/485
 
 ## Console
 * https://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html
+
+
+https://stackoverflow.com/questions/41489818/in-sublime-text-3-is-there-a-shortcut-to-remove-blank-lines-in-a-selected-text?rq=1

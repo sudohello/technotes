@@ -394,6 +394,79 @@ The third way arrays can be created is using the NumPy arange function, which is
 * https://www.python.org/dev/peps/pep-0008/
 
 ## FAQ's : Python
+* **How to convert `list` to `tuple` in python?** 
+  * https://stackoverflow.com/questions/12836128/convert-list-to-tuple-in-python
+  * Don't use `tuple`, `list` or other special names as a variable name
+  ```python
+  x = [1,2,3]
+  tuple(x)
+  ```
+* **What is "Tuple Unpacking"?**
+  * tuple-unpacking-in-for-loops
+  * https://stackoverflow.com/questions/10867882/tuple-unpacking-in-for-loops 
+  * The simplest is in assignment
+  ```python
+  x = (1,2)
+  a,b = x
+  ```
+  * In a for loop it works similarly. If each element of the iterable is a tuple, then you can specify two variables and each element in the loop will be unpacked to the two.
+  ```python
+  x = [(1,2), (3,4), (5,6)]
+  for item in x:
+    print "A tuple", item
+
+  for a, b in x:
+    print "First", a, "then", b
+  ```
+  * The enumerate function creates an iterable of tuples, so it can be used this way.
+  ```python
+  x = [i for i in enumerate(['a','b','c'])]
+  print(x) ## [(0, 'a'), (1, 'b'), (2, 'c')]
+  ```
+* **How can I iterate over only the first variable of a tuple?**
+  * https://stackoverflow.com/a/3074516
+  * In **Python 3.1** you can use an asterisk in front of an identifier on the left side of a tuple assignment and it will suck up whatever is left over. This construct will handle a variable number of tuple items.
+  ```python
+  temp=[(1,2,3),('a','b','c')]
+  for i,*_ in temp:
+    print(i,_)
+  
+  print('-----')
+  for i,j,*_ in temp:
+    print(i,_)
+
+  print('-----')
+  for i,j,k in temp:
+    print(i,j,k)
+  
+  print('-----')
+  for t in temp:
+    print(t)
+  ```
+  * Note: `_` using uderscore is a mere convention to highlight it the variable we are not interested
+* **How to use `defaultdict` and what are the practical use cases?**
+  * https://www.accelebrate.com/blog/using-defaultdict-python/
+  * `defaultdict` type automates and simplifies creating dictionary containing collections (lists, dicts, etc.)
+  * A defaultdict works exactly like a normal dict, but it is initialized with a function (“default factory”) that takes no arguments and provides the default value for a nonexistent key.
+  * A defaultdict will **never raise** a `KeyError`. Any key that does not exist gets the value returned by the default factory.
+  * Example: build a dictionary where the keys are the state abbreviations and the values are lists of all cities for that state. To build this dictionary of lists, we use a defaultdict with a default factory of list. A new list is created for each new key.
+  ```python
+  city_list = [('TX','Austin'), ('TX','Houston'), ('NY','Albany'), ('NY', 'Syracuse'), ('NY', 'Buffalo'), ('NY', 'Rochester'), ('TX', 'Dallas'), ('CA','Sacramento'), ('CA', 'Palo Alto'), ('GA', 'Atlanta')]
+  ```
+* **How to trim spaces, strip quotes from `end and begining` of string in Python?**
+  * https://stackoverflow.com/questions/40950791/remove-quotes-from-string-in-python
+  ```python
+  s = '"lazy fox climbs   "'
+  ## strip from the begnining and end
+  x = s.strip('\"').strip()
+  print(x)
+  ## replace anywhere in the string
+  x.replace(' ',"_")
+  ```
+* **How to convert csv to json tree structure for d3 tree visualization?**
+  * https://stackoverflow.com/questions/43757965/convert-csv-to-json-tree-structure
+  * https://docs.python.org/2/library/collections.html#collections.defaultdict
+  * https://docs.python.org/2/library/collections.html#module-collections
 * **Whats the way to call a function dynamically in Python?**
   * https://stackoverflow.com/questions/4018953/whats-the-way-to-call-a-function-dynamically-in-python
 * **Can you do prototyping of string functions like in JavaScript?**

@@ -381,5 +381,21 @@ Happy math,
 
 -Kalid
 
+### Tylor Series
+https://betterexplained.com/articles/taylor-series/
+
+
+
 ## **Maths notation**
 * https://math.stackexchange.com/questions/853643/how-to-convert-1e11-into-number
+
+
+
+## Physics
+
+What's the time derivative of acceleration referred as?
+
+In physics, jerk is the rate of change of acceleration; that is, the time derivative of acceleration, and as such the second derivative of velocity, or the third time derivative of position. 
+
+https://en.wikipedia.org/wiki/Jerk_%28physics%29
+
