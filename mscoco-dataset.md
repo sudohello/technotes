@@ -339,3 +339,70 @@ CATEGORIES = [
 * Single objects are encoded using a list of points along their contours, while crowds are encoded using column-major RLE (Run Length Encoding).
 * RLE is a compression method that works by replaces repeating values by the number of times they repeat. For example `0 0 1 1 1 0 1`  would become `2 3 1 1`. Column-major just means that instead of reading a binary mask array left-to-right along rows, we read them up-to-down along columns.
 * The tolerance option in pycococreatortools.create_annotation_info() changes how precise contours will be recorded for individual objects. The higher the number, the lower the quality of annotation, but it also means a lower file size. `2` is usually a good value to start with.
+
+
+## annotations
+* things - pycocotools
+  * createIndex: 
+  * dict_keys(['info', 'licenses', 'images', 'type', 'annotations', 'categories'])
+  * `dataset['info']`
+    * {'description': 'COCO 2014 Dataset', 'url': 'http://cocodataset.org', 'version': '1.0', 'year': 2014, 'contributor': 'COCO Consortium', 'date_created': '2017/09/01'}
+  * `dataset['licenses']`
+    ```json
+    [
+      {
+        "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+        "id": 1,
+        "name": "Attribution-NonCommercial-ShareAlike License"
+      },
+      {
+        "url": "http://creativecommons.org/licenses/by-nc/2.0/",
+        "id": 2,
+        "name": "Attribution-NonCommercial License"
+      },
+      {
+        "url": "http://creativecommons.org/licenses/by-nc-nd/2.0/",
+        "id": 3,
+        "name": "Attribution-NonCommercial-NoDerivs License"
+      },
+      {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      {
+        "url": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "id": 5,
+        "name": "Attribution-ShareAlike License"
+      },
+      {
+        "url": "http://creativecommons.org/licenses/by-nd/2.0/",
+        "id": 6,
+        "name": "Attribution-NoDerivs License"
+      },
+      {
+        "url": "http://flickr.com/commons/usage/",
+        "id": 7,
+        "name": "No known copyright restrictions"
+      },
+      {
+        "url": "http://www.usa.gov/copyright.shtml",
+        "id": 8,
+        "name": "United States Government Work"
+      }
+    ]
+    ```
+  * `dataset['annotations'][0].keys()`
+    * dict_keys(['segmentation', 'area', 'iscrowd', 'image_id', 'bbox', 'category_id', 'id'])
+    * iterate through all annotations
+    * create **image_to_annotation map** i.e. image_id maps to annotation hash
+    * create **annotation_map** i.e. annotation_id maps to annotation hash
+  * `dataset['images'][0].keys()`
+    * dict_keys(['license', 'url', 'file_name', 'height', 'width', 'date_captured', 'id'])
+    * create **image_map** i.e. image_id maps to image hash
+  * `dataset['categories'][0].keys()`
+    * dict_keys(['supercategory', 'id', 'name'])
+    * create **category_map** i.e. category_id to category hash
+  * `dataset['annotations'][0].keys()` and `dataset['categories'][0].keys()`
+    * iterate over annotations
+    * create **category_to_image_map** i.e. annotation['category_id'] maps to annotation['image_id']

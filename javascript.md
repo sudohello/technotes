@@ -212,3 +212,18 @@ http://www.discovermeteor.com/blog/understanding-javascript-map/
 ## TBD
 - FileReader
 - Worker
+
+
+## FAQ's Javascript
+* **Why does .toString(16) convert rgb, decimal, or other inputs into a hexidecimal?**
+	* https://stackoverflow.com/questions/39651531/why-does-tostring16-convert-rgb-decimal-or-other-inputs-into-a-hexidecimal 
+* **What 1E7 means?**
+	* `10^7` i.e. `10` to the power of `7` 
+* **How to generate UUID in single line of code?**
+	* using timetoken and random number generator
+	```javascript
+	var createUUID = function() {
+    return"uuid-"+((new Date).getTime().toString(16)+Math.floor(1E7*Math.random()).toString(16));
+  };
+  createUUID()
+  ``` 

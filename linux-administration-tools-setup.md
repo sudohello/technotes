@@ -1214,3 +1214,10 @@ https://www.switchup.org/rankings/best-coding-bootcamps
 **How to correct the “host key verification failed” error**
 * https://www.thegeekdiary.com/how-to-fix-the-error-host-key-verification-failed/
  ssh-keygen -R [hostname|IP address]
+
+
+## FAQ's
+
+* **what-is-the-maximum-number-of-files-a-file-system-can-contain?**
+  * https://superuser.com/questions/16207/how-many-files-can-a-windows-folder-contain
+  * https://serverfault.com/questions/104986/what-is-the-maximum-number-of-files-a-file-system-can-contain 

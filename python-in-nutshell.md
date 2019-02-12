@@ -393,7 +393,127 @@ The third way arrays can be created is using the NumPy arange function, which is
 ## PEP8
 * https://www.python.org/dev/peps/pep-0008/
 
+## ERROR's : Python
+* https://stackoverflow.com/questions/12984426/python-pil-ioerror-image-file-truncated-with-big-images
+
+
 ## FAQ's : Python
+* **How to check for empty dictionary object?**
+  * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
+  ```python
+  x = {}
+  if x != {}:
+    print('Non Empty')
+  ``` 
+* **What are the different modes for files?**
+  * https://stackoverflow.com/questions/16208206/confused-by-python-file-mode-w
+* **How to merge csv files in python?**
+  * https://stackoverflow.com/questions/2512386/how-to-merge-200-csv-files-in-python
+  ```python
+  import pandas as pd
+  combined_csv = pd.concat( [ pd.read_csv(f) for f in filenames ] )
+  #
+  ## export it to a single csv file:
+  combined_csv.to_csv( "combined_csv.csv", index=False )
+  ```
+* **How to merge list in python?**
+  ```python
+  one = [1,2,3]
+  two = [4,5,6]
+  merged = one + two
+  ```
+* **How to merge json files?**
+  ```python
+  def merge_json(f1,f2):
+    k = list(f1.keys()) + list(f2.keys())
+    v = list(f1.values()) + list(f2.values())
+    merged = dict(zip(k,v))
+    print("merged: {}".format(merged))
+    return merged
+  ```
+* **How to use `zip` function in python?**
+  * https://pythonprogramming.net/zip-intermediate-python-tutorial/ 
+* **How to recursive-sub-folder-search-and-return-files-in-a-list-python?**
+  * https://stackoverflow.com/questions/18394147/recursive-sub-folder-search-and-return-files-in-a-list-python 
+  ```python
+  import os
+  import glob
+  result = [y for x in os.walk(PATH) for y in glob.glob(os.path.join(x[0], '*.txt'))]
+  ```
+* This is equivalent to:
+```python
+import os
+import glob
+result = []
+for x in os.walk(PATH):
+  for y in glob.glob(os.path.join(x[0], '*.txt')):
+    result.append(y)
+```
+* **How to generate UUID is a Universally Unique IDentifier or GUID, i.e., Globally Unique IDentifier?**
+  * https://docs.python.org/2/library/uuid.html#uuid.uuid4
+  * https://stackoverflow.com/questions/23983079/using-pythons-uuid-to-generate-unique-ids-should-i-still-check-for-duplicates
+  * https://softwareengineering.stackexchange.com/questions/130261/uuid-collisions
+  * http://en.wikipedia.org/wiki/Universally_unique_identifier#Random_UUID_probability_of_duplicates
+  * https://pynative.com/python-uuid-module-to-generate-universally-unique-identifiers/ 
+  * Python UUID module supports the following versions of UUIDs.
+    * **UUID1** – Generate uuid using a **Host MAC address**, **sequence number** and **the current time**. This version uses the of IEEE 802 MAC addresses.
+    * **UUID3** and **UUID5** uses **cryptographic hashing** and **application-provided text strings** to generate uuid. UUID 3 uses MD5 hashing, and UUID 5 uses SHA-1 hashing.
+    * **UUID4** uses **pseudo-random number generators** to generate uuid.
+  * uuid4() generates a random UUID. The chance of a collision is small. When UUIDs require to generate on separate machines, or you want to generate a secure UUIDs use UUID4().
+  * https://stackoverflow.com/questions/703035/when-are-you-truly-forced-to-use-uuid-as-part-of-the-design/786541#786541 
+* **How to convert the following javascript snippet to equivalent python code?**
+  * javascript UUID:
+  ```javascript
+  var createUUID = function() {
+    return"uuid-"+((new Date).getTime().toString(16)+Math.floor(1E7*Math.random()).toString(16));
+  };
+  
+  createUUID()
+  ```
+  * python UUID:
+  ```python
+  import time, math, random
+  def createUUID():
+    return 'uuid-'+str(format(int(time.time()),'02x') + format(math.floor(1e7*random.random()),'02x'))
+  
+  createUUID()
+  ```
+* **What are the mathematical functions in python?**
+  * https://docs.python.org/2/library/math.html
+  * https://www.geeksforgeeks.org/floor-ceil-function-python/
+  * math.floor: largest integer not greater than x 
+  * math.ceil: Smallest integer not less than x
+* **How to generate random numbers in python? or What are pseudorandom number generator?**
+  * https://machinelearningmastery.com/how-to-generate-random-numbers-in-python/
+* **How to convert decimal to hex?**
+  * https://stackoverflow.com/questions/14678132/python-hexadecimal
+  * https://docs.python.org/2/library/functions.html#format
+  * https://docs.python.org/2/library/string.html#formatspec
+  ```python
+  format(int(time.time()),'02x')
+  ```
+* **How to get time in Python equivalent to Javascript?**
+  * https://stackoverflow.com/questions/24829726/python-function-to-return-javascript-date-gettime
+  * https://stackoverflow.com/questions/39651531/why-does-tostring16-convert-rgb-decimal-or-other-inputs-into-a-hexidecimal
+* **How to convert string to dictionary?**
+  * https://www.tutorialspoint.com/How-to-convert-a-string-to-dictionary-in-Python
+  ```python
+  import json
+  x = dict(json.loads("{}"))
+  type(x)
+  ```
+* **How to convert json to csv?**
+  * https://stackoverflow.com/questions/1871524/how-can-i-convert-json-to-csv
+  ```python
+  df = pandas.read_json()
+  df.to_csv()
+  ```
+* **How to iterated list of dictionary?**
+  * https://stackoverflow.com/questions/35864007/python-3-5-iterate-through-a-list-of-dictionaries
+  ```python
+  dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
+  print(*[val for dic in dataList for val in dic.values()], sep='\n')
+  ``` 
 * **How to convert `list` to `tuple` in python?** 
   * https://stackoverflow.com/questions/12836128/convert-list-to-tuple-in-python
   * Don't use `tuple`, `list` or other special names as a variable name
@@ -1811,7 +1931,10 @@ python -m cProfile -o demo.prof demo.py
 * **How to generate random numbers or shuffle numpy array?**
   * https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.shuffle.html
   * https://pythonhealthcare.org/2018/04/18/74-using-numpy-to-generate-random-numbers-or-shuffle-arrays/
-
+  ```python
+  np.random.seed(T) ## provides consistent shuffle given that 'T' is same between two different executino of the programme
+  np.random.shuffle(filenames)
+  ```
 
 ## Matplotlib
 - 2D plotting package
@@ -2273,6 +2396,9 @@ sudo pip install -U numexpr
 - non paired case is the **Mann–Whitney U test**: `scipy.stats.mannwhitneyu()`
 - non parametric statistics to test the difference between a variable in two groups
 
+### FAQ's Pandas
+* ValueError: Mixing dicts with non-Series may lead to ambiguous ordering
+
 
 ## Statsmodel
 **Given two set of observations, x and y, we want to test the hypothesis that y is a linear function of x**
@@ -2676,6 +2802,20 @@ np.arange(3, 6) # array([3, 4, 5])
 * SimpleHTTPServer
 * gunicorn
 * tornado
+
+### SimpleHTTPServer
+* http://2ality.com/2014/06/simple-http-server.html
+* https://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/
+* To start a HTTP server on port 8000 (which is the default port), simple type:
+```bash
+## Python < 3
+python -m SimpleHTTPServer
+python -m SimpleHTTPServer <port>
+#
+## Python >= 3
+python -m http.server
+python -m http.server <port>
+```
 
 ### gunicorn
 * https://cloud.google.com/appengine/docs/flexible/python/runtime

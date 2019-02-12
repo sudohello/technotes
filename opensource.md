@@ -53,6 +53,9 @@ CNCF is an open source software foundation dedicated to making cloud native comp
 * https://github.com/github/choosealicense.com
 * https://developer.github.com/v3/licenses/
 
+* https://choosealicense.com/licenses/bsd-2-clause/
+
+
 ## Open Source Business Models
 
 ### Open Core

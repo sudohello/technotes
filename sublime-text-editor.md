@@ -1,3 +1,4 @@
+
 ---
 title: Sublime Text Editor
 ---
@@ -12,6 +13,7 @@ title: Sublime Text Editor
 - Markdown Table Editing
 - Atom
 - Console
+- Must Have Plugins
 
 <!-- /MarkdownTOC -->
 * TOC
@@ -37,6 +39,8 @@ title: Sublime Text Editor
 * https://askubuntu.com/questions/984060/export-ps1-for-customizing-shell-prompt
 
 ## Key Bindings
+* shortcuts
+  - http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_win.html
 * Preferences -> Key Bindings
 ```bash
 [
@@ -127,4 +131,18 @@ https://github.com/SublimeText-Markdown/MarkdownEditing/issues/485
 * https://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html
 
 
-https://stackoverflow.com/questions/41489818/in-sublime-text-3-is-there-a-shortcut-to-remove-blank-lines-in-a-selected-text?rq=1
+https://stackoverflow.com/questio
+ns/41489818/in-sublime-text-3-is-there-a-shortcut-to-remove-blank-lines-in-a-selected-text?rq=1
+
+
+## Must Have Plugins
+* [Origami](https://github.com/SublimeText/Origami)
+  - https://stackoverflow.com/questions/23957730/sublime-editor-split-screen-put-same-file-on-both-windows
+  - Origami is a new way of thinking about panes in Sublime Text 2 and 3: you tell Sublime Text where you want a new pane, and it makes one for you. It works seamlessly alongside the built-in layout commands.
+  - no modifiers: travel to an adjacent pane
+  - shift: carry the current file to the destination
+  - alt (option): clone the current file to the destination
+  - command: create an adjacent pane
+  - command+shift: destroy an adjacent pane
+
+* [Chain](https://packagecontrol.io/packages/Chain%20of%20Command)
