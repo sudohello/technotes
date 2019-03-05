@@ -1,19 +1,23 @@
 ---
-Title: Udacity - AI/ML/DL Problem statements
-Decription: 3D City
+Title: AI Problem Statements in GIS
+Decription: AI Problem Statements in GIS
 Author: Bhaskar Mangal
 Date: 
-Tags: Udacity - AI/ML/DL Problem statements
+Last Updated: 05th-Mar-2019
+Tags: AI Problem Statements in GIS
 ---
+
 
 **Table of Contents**
 * TOC
+
 {:toc}
 
 
-## Problem Statements
+## AI Problem Statements in GIS
 
 Over the past several years, machine learning and deep learning has shown remarkable success on some of the world’s most difficult computer science challenges, from image classification and captioning to translation to model visualization techniques
+
 
 ### [Content-based image retrieval (CBIR) systems - Image search Engine](https://www.pyimagesearch.com/2014/12/01/complete-guide-building-image-search-engine-python-opencv/)
 
@@ -63,11 +67,13 @@ OCR (optical character recognition) is the recognition of printed or written tex
 
 OCR enables you to convert different types of documents, such as scanned paper documents, PDF files or images captured by a digital camera into editable and searchable data.
 
-[Dropbox case study](https://blogs.dropbox.com/tech/2017/04/creating-a-modern-ocr-pipeline-using-computer-vision-and-deep-learning)
-[OCR examples](https://www.pyimagesearch.com/category/optical-character-recognition-ocr/)
+* [Dropbox case study](https://blogs.dropbox.com/tech/2017/04/creating-a-modern-ocr-pipeline-using-computer-vision-and-deep-learning)
+* [OCR examples](https://www.pyimagesearch.com/category/optical-character-recognition-ocr/)
+
 
 #### a. Text Boards/Bill Board detections
 Detection of Text Boards/Bill Board detections from the terristrial scanned image dataset.
+
 
 #### b. Text Extraction from Bill boards
 Identification of the texts from the Bill boards from the terristrial scanned image dataset and convert them into editable, searchable text and also georeference them.
@@ -77,6 +83,7 @@ Identification of the texts from the Bill boards from the terristrial scanned im
 Computer analysis of the human voice, especially for the purposes of interpreting words and phrases or identifying an individual voice.
 
 In speech recognition as in many other complex services, neural networks are rapidly replacing previous technologies
+
 
 ### [Voice transcription](https://research.googleblog.com/2015/08/the-neural-networks-behind-google-voice.html)
 Voice transcription using Long Short-term Memory Recurrent Neural Networks (LSTM RNNs)—yet another place neural networks are improving useful services. In Voice transcription, there’s more to speech recognition than recognizing individual sounds in the audio: sequences of sounds need to match existing words, and sequences of words should make sense in the language. This is called “language modeling.” Language models are typically trained over very large corpora of text, often orders of magnitude larger than the acoustic data.
@@ -90,3 +97,59 @@ Urban scene are the images captured from in the hustle-bustle of the city. This 
 - face recognition
 - hand signals and gesture recognition
 - Road segmentation
+
+
+## Phase-2
+
+### Problems with "Computer Vision AI in GIS" - Predictive & Generative AI
+
+
+#### A) Geometry Extraction
+
+1. Given video stream or image sequences or street image, GPS and IMU data.
+  - Extract road geometries like edges of the road, marking polygons etc with the depth and respective latitude, longitude, altitude, yaw, pitch and roll  parameters.
+  - Use end-to-end AI pipeline.
+  - Provide the extracted data in opendrive format.
+  - Inspirations:
+    * https://five.ai/
+2. Given the high resolution aerial and/or satellite images, detect and extract geometries using AI for following:
+  - Building foot prints and respective rooftop along with their shapes
+  - Detect and extract road centerline and/or edges as a geometry
+  - Vehicle detection (polygon)
+  - Green cover
+  - Inspirations:
+    * https://modelrendering.wordpress.com/2011/12/23/photogrammetry-and-3d-city-modeling/
+
+#### B) Road Quality
+3. Given video stream or image sequences or street image, GPS and IMU data.
+  * Construct the qualitative model which can predict the quality of the Indian Roads for every 1 meter physical distance.
+  * Use AI to detect road defects which should be used as the inputs to the qualitative model from the images.
+  * Inspirations:
+    * https://www.roadbotics.com/
+    * https://deepsystems.ai/solutions/road-defects-detection
+
+My Opinion:
+Problems are traditionally solved using old school computer vision techniques photogrammetry, SfM (Structure for Motion) but we need to use end-to-end AI instead.
+
+Some architectures on 3D AI:
+* https://github.com/mangalbhaskar/3D-Machine-Learning
+
+
+#### 4) Given video stream or image sequences
+Remove all the moving detected
+Re-generate and fill the missing patches in images using generative AI 
+
+#### 6) Given video stream or image sequences or street image, GPS and IMU data.
+create photo navigation
+
+#### 7) SfM to end-to-end AI
+
+#### 8) Chat-bots AI for Map assistance
+
+
+## Companies
+
+* [cnlsoftware](https://www.cnlsoftware.com/)
+* [Geoscape](https://www.geoscape.com.au/)
+Geoscape’s coverage of the Australian continent is nearing completion with yesterday's Release 5 taking the dataset to 12.3 million building features – a 40% increase since the last release.
+* [roadbotics](https://roadbotics.com)
