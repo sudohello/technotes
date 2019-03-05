@@ -3,7 +3,7 @@ Title: Linux Administration, Tools setup
 Decription: nitty gritty of Linux
 Author: Bhaskar Mangal
 Date: 20th-Jan-2017
-Updated: 09th-Dec-2018
+Updated: 25th-Feb-2019
 Tags: Linux, Administration, Tools, Softwares
 ---
 
@@ -451,6 +451,12 @@ convert input.pdf[2-3] next2output.pdf
 convert -density 300 RentalAgreement-2016-17.jpg RentalAgreement-2016-17.pdf
 ```
 
+* Convert Images to PDF
+```bash
+sudo apt install graphicsmagick
+gm convert *.jpg medical-bills.pdf
+```
+
 * **Remove password from PDF**
 https://askubuntu.com/questions/828720/how-to-remove-the-password-from-a-pdf
 ```bash
@@ -746,6 +752,7 @@ sudo apt install xserver-xorg-core-hwe-16.04 apt apt-utils dpkg libapparmor1 lib
 * nohup - run a command immune to hangups, with output to a non-tty
 	- `nohup ./script.sh &`
 	- Keep program running after leaving SSH session
+  - https://linuxhint.com/nohup_command_linux/ 
 * split - Split long file in files with same number of lines
 	- `split -l LINES -d file.txt output_prefix`
 * timeout - Run a command for a limited time

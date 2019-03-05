@@ -3,6 +3,7 @@ Title: Software Engineering
 Decription: Software Engineering
 Author: Bhaskar Mangal
 Date: 
+Last Updated: 05th-Mar-2019
 Tags: Software Engineering
 ---
 
@@ -25,6 +26,148 @@ Negative, or inverse, requirements state what the system will not do. Here's an 
 
 
 Negative, or inverse, requirements state what the system will not do. Try to rephrase negative requirements into a positive sense.
+
+## SDLC
+
+* Market Research
+
+Team:
+* Client (Business)
+* Business Analyst
+* Project Manager -> costing
+* Architect -> module lead -> Programming Team
+* Quality Lead -> Testing Team
+
+
+1. SRS - Software Requirement Specification
+2. System Design
+3. HLD - High Level Design
+4. LLD - Low Level Design
+
+
+* Unit Testing
+* Integration Testing
+* System Testing
+* Performance Testing
+* UAT - User Acceptance Testing
+* Maintenance
+
+Track:
+* Documents
+* Code
+* Test Cases and metrics: Number of defects, Impact of defects
+
+
+Methodology
+* Iterative: Build-1,2,3 at the same time
+  - D&D (Design & Development) -> testing -> Implementation
+* Spiral: iterative: Prototype: 1,2,3...n
+  - planning -> risk analysis -> design (verification and testing) -> evaluation (construction and implementation)
+* Waterfall
+  - requirement -> plan -> design -> development -> testing -> UAT -> deployment
+  - scope is fixed => tell how much it cost and time it takes
+  - it like a burger with different layers on top of each other
+* Agile
+  - time and cost is fixed => tell how much scope can be delivered
+  - its like a bakery cake with different slices (pastries) combined to create one cake
+  - sprint (each slice) 
+    + Analysis -> Design -> Development -> Testing -> UAT
+  - Requirement Gathering & Understanding -> continuous => create user stories -> tagged in product catalog
+  - Prioritization
+  - Definitions - like what is the story and the definition of done.
+  - Estimate - at the beginning sprint
+  - Delivery - at the end of sprint
+  - http://agilemanifesto.org/
+  - there are different agile frameworks with respective Values, Principles
+  - 4 Values
+    + Individual & interactions
+    + Working software - over comprehensive documentation
+    + Customer collaboration - over contract negotiation
+    + Responding to change - over following a plan
+  - 12 Principles
+  - Frameworks:
+    + **Scrum**, kanban
+    + SAFe, DAD, LeSS, Spotify
+  - **Scrum**
+    + Scrum Values
+      * courage (work through conflicts to do right things), commitment (individual commitment of delivery), focus (goals and work on their commitment), respect (work with good intent), openness (transparent about work and challanges)
+    * On-going Activity -> prioritization, Grooming
+    * Groomed & Prioritized (PBI - Product backlog Items)
+    * DOR, DOD -> Definition
+    * ---
+    * Scrum Time Box Activity 
+    * Capacity Planning -> Sprint Planning
+                            *  -> Sprint Backlog
+                              *  -> Sprint Execution <--> Daily Scrum
+                              *  -> Retrospective
+                            *  -> Sprint Goal -> Sprint Review -> Potentially shippable product increment
+  - **Agile/Scrum**
+    - Requirement [ Product backlog, sprint backlog]
+    - Team/People
+      + product owner [ like Business Analyst]
+      + scrum master
+      + dev team
+    - Process [ Scrum / Kanban... Artifacts ceremonies Definitions]
+    - Tools [ Jira / Rally. TFS/ Version]
+    - Engineering Practice [ Crystal, TDD- test driven development]
+  - **Scrum Insights**
+    + **Events**
+      * Capacity & Sprint Planning
+      * Daily scrum call
+      * Sprint review
+      * Sprint retrospective
+      * Backlog refinement/grooming
+      * priotization
+    + **Key areas of scrum**
+      * Estimation
+      * Requirement
+      * Visual/Scrum Boards
+    + **Roles & responsibility**
+      * Product owner
+      * scrum master
+      * dev team
+    + **Artifacts of Scrum**
+      * Product/sprint balance
+      * Burn down chart
+      * DOR, DOD
+    + **Scrum Reporting**
+      * Grooming updates
+      * sprint planning summary
+      * mid week progress summary
+      * sprint closure summary
+      * Retrospective action item
+    + **Scrum Metrics**
+      * velocity trends
+      * commitment reliability
+      * capacity
+      * scope
+      * defect leakage
+      * backlog health
+
+
+
+Extra:
+* Startup Dilemma
+
+**How to decide:**
+* **Nature of Business**
+  - service, product, software oriented or hardware oriented
+* **Time, Budget, Size, Skills**
+  - Team size, team skills, budget, time to deliver
+* **Nature of Development**
+  - PoC, service, product, App management
+* Time, Cost and Scope (3 sides of a triangle)
+
+
+
+* Program/Project Management
+* Interaction between different teams - who is responsible?
+* [Gantt_chart](https://en.wikipedia.org/wiki/Gantt_chart)
+
+
+* Agile Development
+  * AI Program
+
 
 ## Agile Development
 https://pm.stackexchange.com/questions/15467/srs-for-an-agile-project
@@ -133,26 +276,5 @@ https://en.wikipedia.org/wiki/Comet_(programming)
 Comet is a web application model in which a long-held HTTPS request allows a web server to push data to a browser, without the browser explicitly requesting it.[1][2] Comet is an umbrella term, encompassing multiple techniques for achieving this interaction. All these methods rely on features included by default in browsers, such as JavaScript, rather than on non-default plugins. The Comet approach differs from the original model of the web, in which a browser requests a complete web page at a time.[3]
 
 ## Programming languages
-* 
-
-https://www.zdnet.com/article/python-now-a-top-3-programming-language-as-julias-rise-speeds-up/
-
-https://www.zdnet.com/article/programming-language-of-the-year-python-is-standout-in-latest-rankings/
-
-
-
-Additionally, support for Python 2.7 end in Jan 2020
-
-https://python3statement.org/
-
-
-
-https://www.wired.co.uk/article/ces-2019-highlights-news
-https://www.nvidia.com/en-us/geforce/graphics-cards/rtx-2080/
-
-https://www.ces.tech/
-
-https://code.nsa.gov/
-
-https://www.reddit.com/r/ReverseEngineering/comments/ace2m3/come_get_your_free_nsa_reverse_engineering_tool/ed7vbld/?context=2
-https://www.bleepingcomputer.com/news/security/nsa-releasing-the-ghidra-reverse-engineering-tool-at-rsaconference/
+* https://www.zdnet.com/article/python-now-a-top-3-programming-language-as-julias-rise-speeds-up/
+* https://www.zdnet.com/article/programming-language-of-the-year-python-is-standout-in-latest-rankings/
