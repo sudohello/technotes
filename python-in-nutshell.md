@@ -13,6 +13,9 @@ Tags: Python In Nutshell
 
 
 ## Python In Nutshell
+* https://python3statement.org/
+* **Support for Python 2.7 end in Jan 2020**
+
 
 ## Basics
 * http://www.astro.ufl.edu/~warner/prog/python.html

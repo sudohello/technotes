@@ -444,3 +444,12 @@ sudo apt install p7zip-full p7zip-rar
 ## to archive
 7za files.7z *
 ```
+
+## Extras
+* https://www.wired.co.uk/article/ces-2019-highlights-news
+* https://www.nvidia.com/en-us/geforce/graphics-cards/rtx-2080/
+* https://www.ces.tech/
+* https://code.nsa.gov/
+* https://www.reddit.com/r/ReverseEngineering/comments/ace2m3/come_get_your_free_nsa_reverse_engineering_tool/ed7vbld/?context=2
+* https://www.bleepingcomputer.com/news/security/nsa-releasing-the-ghidra-reverse-engineering-tool-at-rsaconference/
+

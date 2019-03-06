@@ -48,3 +48,7 @@ https://designhammer.com/blog/reusable-vuejs-components-part-1-introduction
 
 ## Resources
 https://github.com/vuejs/awesome-vue
+
+
+## [Nuxt.js](https://nuxtjs.org/)
+Nuxt.js is a free and open source web application framework based on Vue.js, Node.js, Express.js, Webpack and Babel.js. The framework is advertised as "meta-framework for universal applications". 

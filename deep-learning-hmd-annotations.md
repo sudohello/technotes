@@ -1,16 +1,19 @@
---
-Title: HDM (High Definition Map) Dataset Category Hierarchy
-Description: HDM (High Definition Map) Dataset Category Hierarchy
+---
+Title: HMD (HD Map Database) Category Hierarchy
+Description: HMD (HD Map Database) Category Hierarchy
 Author: Bhaskar Mangal
 Date: 29th-Jan-2019
-Last updated: 29th-Jan-2019
-
+Last updated: 05th-Mar-2019
+Tags: HMD (HD Map Database) Category Hierarchy
 ---
 
+**Table of Contents**
+* TOC
+{:toc}
 
 [TOC]
 
-## HDM (High Definition Map) Dataset Category Hierarchy
+## HMD (HD Map Database) Category Hierarchy
 > Conceptual Framework
 
 
@@ -22,7 +25,7 @@ Last updated: 29th-Jan-2019
 * Void is ultimate fallback case
 * Unlabeled is the last resort when cannot be put under void either
 * this category hierarchy tree provides the conceptual framework to cover 100% pixels for complete Urban scene segmentation and self-driving car
-* out of these HDM category were further shortlisted
+* out of these HMD category were further shortlisted
 * Actual Label vs classification label - Actual label names should not communicate classification type for examples:
   * actual label would be 'person' and it can be further classified as based on certain attribution as rider, motorcyclist, pedestrian, hawker
   * likewise: traffic_sign (different types), pole (electric, high_tension, telephone) and booth (phone, traffic_police, dairy, pan_shop, tent_shop, coconut)
@@ -32,7 +35,7 @@ Last updated: 29th-Jan-2019
   * Scene_Type, Weather_Condition, View_Point, Image_Quality
 
 
-**L0,L1: hierarchy for HDM Dataset**
+**L0,L1: hierarchy for HMD Dataset**
 
 |             |        |                |         |         |         |              |         |          |              |
 |:------------|:-------|:---------------|:--------|:--------|:--------|:-------------|:--------|:---------|:-------------|
@@ -55,7 +58,7 @@ Last updated: 29th-Jan-2019
 
 
 
-**L0,L1,L2: complete hierarchy for HDM Dataset**
+**L0,L1,L2: complete hierarchy for HMD Dataset**
 * the numbers indicates the frequency of occurrence in the DoI (Datasets of Interest) which were analyzed and compared at L0 and Ln levels.
 
 
@@ -398,3 +401,35 @@ Based on this analysis I was able to come up with the new generic hierarchy for 
     * traffic_sign, pole and booth
 * these jobs assigned as annotation_tasks to each annotators
 * release management and directories were sorted out
+
+
+## Keywords
+
+
+* CoD - Comparison of datasets
+* DoI - Datasets of Interest
+* KIW - Key Indicators on Workflow
+
+
+* HMD - HD Map Database, HD Map Dataset
+* AIDS - AI Datasets
+* AIL - Annotations, Images, Labels
+* PDB - Prediction Database
+* ePDB - execption Prediction Database
+
+
+* APA - AI Predictive Attributes
+* MAL - MMI AI Language
+
+
+* AICATS - AI Categories
+* annon - annotation
+* train/tr - training
+* val/vl - validation
+* test/tt - testing
+* p - predicted
+* gt - ground truth
+
+
+* MoV - Measured Organization Value
+* SotA - State of the Art

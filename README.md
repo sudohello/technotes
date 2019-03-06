@@ -3,7 +3,7 @@ Title: Technotes README
 Decription: Technotes README
 Author: Bhaskar Mangal
 Date: 
-Last updated: 28th-Oct-2018
+Last updated: 06th-Mar-2019
 Tags: Technotes README
 ---
 
@@ -46,21 +46,28 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 
 ### **Deep Learning**
 * [AI Programme Overview](ppts-pdfs/AI-programme-slides.pdf)
-* [Deep Learning](deep-learning.md)
+* [Deep Learning Infrastructure](deep-learning-infrastructure.md)
 * [Deep Learning Hardware](deep-learning-hardware.md)
 * [Deep Learning Frameworks](deep-learning-frameworks.md)
 * [Deep Learning Architectures](deep-learning-architectures.md)
-* [Deep Learning Datasets and Creation](deep-learning-datasets-and-creation.md)
+* [Deep Learning](deep-learning.md)
 * [Deep Learning Applications](deep-learning-applications.md)
 * [Deep Learning in Computer Vision and its Applications](deep-learning-in-computer-vision-and-its-applications.md)
+* [Deep Learning SfM](deep-learning-sfm.md)
+* [Deep Learning Study Material](deep-learning-study-material.md)
+* [Deep Learning Datasets and Creation](deep-learning-datasets-and-creation.md)
+* [Deep Learning Datasets Category Listlt](deep-learning-datasets-category-list.md)
+* [Deep Learning Mask-rcnn](deep-learning-maskrcnn.md)
+* [Deep Learning HMD Annotations](deep-learning-hmd-annotations.md)
+* [Deep Learning Performance Metrics](deep-learning-performance-metrics.md)
 * [Deep Learning Traffic Sign Detection Classification](deep-learning-traffic-sign-detection-classification.md)
-	* tsr - traffic sign recognition
-	* tsd - traffic sign detection
-	* spd - sign post detection
-* [Deep Learning NLP](deep-learning-nlp.md)
+  * tsr - traffic sign recognition
+  * tsd - traffic sign detection
+  * spd - sign post detection
 * [CBIR - Content Based Image Retrival](cbir.ml.md)
 * [Deep Learning Commercial Solutions](deep-learning-commercial-solutions.md)
-
+* [Deep Learning NLP](deep-learning-nlp.md)
+* [Deep Learning Voice Speech Audio](deep-learning-voice-speech-audio.md)
 
 
 ### **Mathematics, Statistics and Statistical Learning**
