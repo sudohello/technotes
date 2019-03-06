@@ -26,6 +26,24 @@ Tags: Deep Learning Performance Metrics
 ## Metrics
 * https://www.pyimagesearch.com/2018/05/14/a-gentle-guide-to-deep-learning-object-detection/
 * https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173
+* https://stackoverflow.com/questions/36274638/map-metric-in-object-detection-and-computer-vision
+* [PASCAL VOC 2007, Sec 4.2 Evaluation of Results](http://homepages.inf.ed.ac.uk/ckiw/postscript/ijcv_voc09.pdf)
+  * Evaluation of results on multi-class datasets
+  * (i) for the classification task, images contain instances of multiple classes, so a “forced choice” paradigm such as that adopted by Caltech 256 (Griffin et al 2007) – “which one of m classes does this image contain?” – cannot be used; 
+  * (ii) the prior distribution over classes is significantly nonuniform so a simple accuracy measure (percentage of correctly classified examples) is not appropriate.
+  * In the absence of information about the cost or risk of misclassifications, it is necessary to evaluate the trade-off between different types of classification error
+  * (iii) evaluation measures need to be algorithmindependent
+  * for classification “is there a car in the image?”, and for detection “where are the cars in the image (if any)?”
+  * A separate “score” is computed for each of the classes. 
+  * For the classification task, participants submitted results in the form of a confidence level for each image and for each class, with larger values indicating greater confidence that the image contains the object of interest. 
+  * For the detection task, participants submitted a bounding box for each detection, with a confidence level for each bounding box.
+  * The provision of a confidence level allows results to be ranked such that the trade-off between false positives and false negatives can be evaluated, without defining arbitrary costs on each type of classification error.
+  * For a given task and class, the precision/recall curve is computed from a method’s ranked output. Recall is defined as the proportion of all positive examples ranked above a given rank. Precision is the proportion of all examples above that rank which are from the positive class. The AP summarises the shape of the precision/recall curve, and is defined as the mean precision at a set of eleven equally spaced recall levels [0,0.1,...,1]:
+  * The precision at each recall level r is interpolated by taking the maximum precision measured for a method for which the corresponding recall exceeds r
+  * The intention in interpolating the precision/recall curve in this way is to reduce the impact of the “wiggles” in the precision/recall curve, caused by small variations in the ranking of examples
+  * It should be noted that to obtain a high score, a method must have precision at all levels of recall – this penalises methods which retrieve only a subset of examples with high precision (e.g. side views of cars).
+  * The use of precision/recall and AP replaced the “area under curve” (AUC) measure of the ROC curve used in VOC2006 for the classification task
+  * This change was made to improve the sensitivity of the metric (in VOC2006 many methods were achieving greater than 95% AUC), to improve interpretability (especially for image retrieval applications), to give increased visibility to performance at low recall, and to unify the evaluation of the two main competitions.
 
 
 ## Precision 

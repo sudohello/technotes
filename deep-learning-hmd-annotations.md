@@ -427,3 +427,9 @@ Based on this analysis I was able to come up with the new generic hierarchy for 
 * train/tr - training
 * val/vl - validation
 * test/tt - testing
+* p - predicted
+* gt - ground truth
+
+
+* MoV - Measured Organization Value
+* SotA - State of the Art
