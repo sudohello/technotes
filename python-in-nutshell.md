@@ -2397,7 +2397,31 @@ sudo pip install -U numexpr
 - non parametric statistics to test the difference between a variable in two groups
 
 ### FAQ's Pandas
-* ValueError: Mixing dicts with non-Series may lead to ambiguous ordering
+* **How to find maximum value of a column and return the corresponding row values using Pandas?**
+  * https://stackoverflow.com/questions/15741759/find-maximum-value-of-a-column-and-return-the-corresponding-row-values-using-pan
+  ```python
+  # Assuming df has a unique index, this gives the row with the maximum value
+  import pandas as pd
+  df.loc[df['Value'].idxmax()]
+  ```
+  * https://stackoverflow.com/questions/20033111/python-pandas-add-column-for-row-wise-max-value-of-selected-columns
+* **How to sort (pandas dataframe) and print highest n values?**
+  * https://stackoverflow.com/questions/16958499/sort-pandas-dataframe-and-print-highest-n-values
+  * solution 1:
+  ```python
+  df[['Bytes', 'Client Ip']].sort_values('Bytes', ascending=False).nlargest(10, 'Bytes')
+  #
+  df.sort_values('annotation_per_label', ascending=False)
+  x=df.sort_values('annotation_per_label', ascending=False).nlargest(10,'annotation_per_label')
+  x['annotation_per_label']
+  ```
+  * **Note:** sort is deprecated - use sort_values instead
+  * solution 2:
+  ```python
+  df['Bytes'] = df['Bytes'].astype('int')
+  print df.sort('Bytes', ascending=False).head(10)[['Bytes', 'Client-IP']]
+  ```
+* **ValueError: Mixing dicts with non-Series may lead to ambiguous ordering**
 
 
 ## Statsmodel
