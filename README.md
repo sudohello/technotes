@@ -54,26 +54,18 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 * [Deep Learning Applications](deep-learning-applications.md)
 * [Deep Learning in Computer Vision and its Applications](deep-learning-in-computer-vision-and-its-applications.md)
 * [Deep Learning SfM](deep-learning-sfm.md)
-
-
 * [Deep Learning Study Material](deep-learning-study-material.md)
-
-
 * [Deep Learning Datasets and Creation](deep-learning-datasets-and-creation.md)
 * [Deep Learning Datasets Category Listlt](deep-learning-datasets-category-list.md)
 * [Deep Learning Mask-rcnn](deep-learning-maskrcnn.md)
 * [Deep Learning HMD Annotations](deep-learning-hmd-annotations.md)
 * [Deep Learning Performance Metrics](deep-learning-performance-metrics.md)
-
-
 * [Deep Learning Traffic Sign Detection Classification](deep-learning-traffic-sign-detection-classification.md)
   * tsr - traffic sign recognition
   * tsd - traffic sign detection
   * spd - sign post detection
 * [CBIR - Content Based Image Retrival](cbir.ml.md)
 * [Deep Learning Commercial Solutions](deep-learning-commercial-solutions.md)
-
-
 * [Deep Learning NLP](deep-learning-nlp.md)
 * [Deep Learning Voice Speech Audio](deep-learning-voice-speech-audio.md)
 
