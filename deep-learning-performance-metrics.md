@@ -21,12 +21,22 @@ Tags: Deep Learning Performance Metrics
 * TP - True Positive; TN - True Negative
 * FP - False Positive; FN - False Negative
 * F1 Score
+* AUC - Area Under Curve
+* AP - average precision
+* ROC curve - Receiver Operating Characteristic curve
 
 
 ## Metrics
 * https://www.pyimagesearch.com/2018/05/14/a-gentle-guide-to-deep-learning-object-detection/
 * https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173
 * https://stackoverflow.com/questions/36274638/map-metric-in-object-detection-and-computer-vision
+* https://github.com/rafaelpadilla/Object-Detection-Metrics
+* http://dcs.gla.ac.uk/~ronanc/papers/cumminsAIRS11_2.pdf
+* https://arxiv.org/pdf/1310.5103.pdf
+* https://sanchom.wordpress.com/tag/average-precision/ -> Best Reference on Performance metrics and Average Precision
+
+
+
 * [PASCAL VOC 2007, Sec 4.2 Evaluation of Results](http://homepages.inf.ed.ac.uk/ckiw/postscript/ijcv_voc09.pdf)
   * Evaluation of results on multi-class datasets
   * (i) for the classification task, images contain instances of multiple classes, so a “forced choice” paradigm such as that adopted by Caltech 256 (Griffin et al 2007) – “which one of m classes does this image contain?” – cannot be used; 
@@ -44,7 +54,13 @@ Tags: Deep Learning Performance Metrics
   * It should be noted that to obtain a high score, a method must have precision at all levels of recall – this penalises methods which retrieve only a subset of examples with high precision (e.g. side views of cars).
   * The use of precision/recall and AP replaced the “area under curve” (AUC) measure of the ROC curve used in VOC2006 for the classification task
   * This change was made to improve the sensitivity of the metric (in VOC2006 many methods were achieving greater than 95% AUC), to improve interpretability (especially for image retrieval applications), to give increased visibility to performance at low recall, and to unify the evaluation of the two main competitions.
+  * Detections output by a method were assigned to ground truth objects satisfying the overlap criterion in order ranked by the (decreasing) confidence output
+  * Multiple detections of the same object in an image were considered false detections e.g. 5 detections of a single object counted as 1 correct detection and 4 false detections – it was the responsibility of the participant’s system to filter multiple detections from its output
 
+- Multiple label Classification evaluation
+- Bounding box evaluation
+- Evaluation of the segmentation taster
+  + A common measure used to evaluate segmentation methods is the percentage of pixels correctly labelled.
 
 ## Precision 
 * Precision measures how accurate is your predictions
@@ -76,10 +92,11 @@ Tags: Deep Learning Performance Metrics
 
 
 ## AP - Average Precision
-
+* https://sanchom.wordpress.com/tag/average-precision/
+* https://stackoverflow.com/questions/36274638/map-metric-in-object-detection-and-computer-vision
+* https://stats.stackexchange.com/questions/157012/area-under-precision-recall-curve-auc-of-pr-curve-and-average-precision-ap
 
 ## mAP - mean Average Precision
-* https://stackoverflow.com/questions/36274638/map-metric-in-object-detection-and-computer-vision
 * mAP is the metric to measure the accuracy of object detectors
 * It is the average of the maximum precisions at different recall values
 

@@ -56,7 +56,7 @@ Technotes repo contains markdown (.md) files on different technical items and ma
 * [Deep Learning SfM](deep-learning-sfm.md)
 * [Deep Learning Study Material](deep-learning-study-material.md)
 * [Deep Learning Datasets and Creation](deep-learning-datasets-and-creation.md)
-* [Deep Learning Datasets Category Listlt](deep-learning-datasets-category-list.md)
+* [Deep Learning Datasets Category List](deep-learning-datasets-category-list.md)
 * [Deep Learning Mask-rcnn](deep-learning-maskrcnn.md)
 * [Deep Learning HMD Annotations](deep-learning-hmd-annotations.md)
 * [Deep Learning Performance Metrics](deep-learning-performance-metrics.md)

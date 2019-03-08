@@ -1066,6 +1066,21 @@ sudo apt install psensor
 #
 ```
 
+## System Resource Monitoring
+```bash
+sudo apt install htop atop dstat
+```
+* htop
+* atop
+* dstat
+  * `dstat -ta --top-cpu`
+  * `dstat -tcmndylp --top-cpu`
+
+
+cat /proc/loadavg
+cat /proc/meminfo
+
+
 
 ## Hardware Info Utilities
 * http://hardinfo.org/
