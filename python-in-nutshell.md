@@ -516,6 +516,11 @@ for x in os.walk(PATH):
   ```python
   dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
   print(*[val for dic in dataList for val in dic.values()], sep='\n')
+
+  ## https://stackoverflow.com/questions/9152431/iterating-over-list-of-dictionaries  
+  my_list = [{'age': 0, 'name': 'A'}, {'age': 1, 'name': 'B'}, {'age': 2, 'name': 'C'}, {'age': 3, 'name': 'D'}, {'age': 4, 'name': 'E'}, {'age': 5, 'name': 'F'}]
+  ages = [li['age'] for li in my_list]
+  ##output: [0, 1, 2, 3, 4, 5]
   ``` 
 * **How to convert `list` to `tuple` in python?** 
   * https://stackoverflow.com/questions/12836128/convert-list-to-tuple-in-python

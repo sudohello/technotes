@@ -51,3 +51,8 @@ https://github.com/jayrambhia/Install-OpenCV
 https://docs.opencv.org/trunk/df/d0a/tutorial_js_intro.html
 
 OpenCV.js leverages Emscripten to compile OpenCV functions into asm.js or WebAssembly targets, and provides a JavaScript APIs for web application to access them.
+
+## Video with OpenCV
+
+### writing-to-video-with-opencv
+* https://www.pyimagesearch.com/2016/02/22/writing-to-video-with-opencv/
