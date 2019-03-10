@@ -38,3 +38,7 @@ Tags: Deep Learning Study Material
 * https://github.com/janishar
 * http://deeplearning.csail.mit.edu/cvpr2017_tutorial_kaiminghe.pdf
 * http://deeplearning.csail.mit.edu/
+
+
+## Researchers
+* http://cseweb.ucsd.edu/~mkchandraker/
