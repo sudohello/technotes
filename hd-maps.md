@@ -591,3 +591,23 @@ observation
   - u-turns, reverse, narrow roads, kaccha roads, water lodging
   - natural and man made disasters and calimities impact - floods, thrunderstorm impact: road blockages, dangerous electric cabels, fire, typoons
   - Drone networks, sky corridors 
+
+
+## Business Applications
+
+### Job sites
+**JCB Loadall**
+- Move any material...Quicker. Safer. Higher.
+
+Saves:
+* Cost of operation
+  - Mechanisation of manual jobs.
+  - High productivity
+  - Quicker & convenient process
+* Cost of space
+  - Better
+  - Better heaping, heaping, efficient Efficient stacking.
+  - Optimised Optimized space Space utilisation
+* Capital investment
+  - Unmatched versatility with range of attachments.
+  - Reduced machines multiple machines.

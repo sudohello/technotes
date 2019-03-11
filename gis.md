@@ -781,3 +781,178 @@ https://gisgeography.com/gis-formats/
 
 
 https://matsim.org/gallery/
+
+
+## GDAL
+- Geospatial Data Abstraction Library
+- fast, free, flexible
+- supports vast number of data format
+- powerful python binding
+- documentation and indepth of information is scary
+
+First Steps
+
+gdalinfor
+gdal_trasnflate
+creation options
+
+gdalwearp
+warp options
+VRTS
+
+datums & geoids
+
+gdal_merrge.py
+target extents
+re-ordering and combining bands
+scaling data
+matching images
+
+
+
+Installating GDAl
+
+All:Cond
+conda.io
+
+OSX: KyngChaos
+
+
+* GeoTIFF
+* **gdalinfo** - First command
+```bash
+/home/bhaskar/Documents/ai-ml-dl-gaze/satimg
+gdalinfo 200_zoom_21.tif -mm
+Driver: GTiff/GeoTIFF
+Files: 200_zoom_21.tif
+Size is 18176, 15104
+Coordinate System is:
+GEOGCS["GCS_WGS_1984",
+    DATUM["D_WGS_1984",
+        SPHEROID["WGS_1984",6378137,298.257223563]],
+    PRIMEM["Greenwich",0],
+    UNIT["degree",0.0174532925199433]]
+Origin = (77.588539123535199,12.985839843750000)
+Pixel Size = (0.000001341104507,-0.000001341104507)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  COMPRESSION=LZW
+  INTERLEAVE=PIXEL
+Corner Coordinates:
+Upper Left  (  77.5885391,  12.9858398) ( 77d35'18.74"E, 12d59' 9.02"N)
+Lower Left  (  77.5885391,  12.9655838) ( 77d35'18.74"E, 12d57'56.10"N)
+Upper Right (  77.6129150,  12.9858398) ( 77d36'46.49"E, 12d59' 9.02"N)
+Lower Right (  77.6129150,  12.9655838) ( 77d36'46.49"E, 12d57'56.10"N)
+Center      (  77.6007271,  12.9757118) ( 77d36' 2.62"E, 12d58'32.56"N)
+Band 1 Block=18176x1 Type=Byte, ColorInterp=Red
+
+    Computed Min/Max=0.000,255.000
+Band 2 Block=18176x1 Type=Byte, ColorInterp=Green
+    Computed Min/Max=0.000,255.000
+Band 3 Block=18176x1 Type=Byte, ColorInterp=Blue
+    Computed Min/Max=0.000,255.000
+```
+* **gdal_translate**
+	```bash
+	gdal_translate -of JPEG -co QUALITY=90 -outsize 1920 0 -r bilinear 200_zoom_21.tif 200_zoom_21.jpg
+	```
+* **gdalwarp** - Chane map projections
+	* each problem as specific type of projection, gdal is a tool to work with different projections
+	```bash
+	gdalwarp -t_srs '*proj=moll +lon_0=0 +x=0 +y_0=0 
+	-r lanczos
+	-dstalpha -wo SOURCE_EXTRA=1000
+	-co
+	```
+	* `-t_srs`
+	* spatialreference.org
+	* proj4 - convenient reliable format
+* **gdal_translate**
+	* `gdal_translate -of VRT -projwin`
+* Geodys and Map projections
+	- East India company history
+		+ detailed study on Indian maps
+		+ mountain heights mapping
+	- Ellipsoid/Sphereoid
+	- Geoid
+		+ appr shape of easth, equivalent by mean sea level
+	- Datum
+		+ best to stay in the same datum
+		+ WGS 84 (Global)
+		+ incorporate local changes
+	- area, angle, distance and projection
+		+ no map can do all of them perfectly
+		+ compromise between problem in hnd
+		+ **projectionwizarg.org**
+		+ EPSG:4326
+* By default, `gdal` Default to projection of the destination
+* `gdal_merge.py`
+	- evolved as example, inconsistent
+	- `gdal_merge.py -o <tif_file_input>``
+* Satellite Data with GDAL
+	- Earth isn't static
+	- extremly useful to convert satellite data to maps
+	- re-order the color channels
+	```bash
+	-scale min max => use gdalinfo
+	gdal_translate 1.tif 1-rgb.tif -b 3 -b 2 -b 1 -co COMPRESS=DEFELATE -scale <min> <max> PHOTOMETRIC=RGB
+	```
+	* gdal_merge.py
+	```
+	- separate
+	```
+	* gdaltindex *.shp *.tiff
+	* landsat image data
+	`gdalwarp -cutline *.shp crop_to_cutline *.tiff -tr 5 5*`
+* **Tiff viewers**
+	- qgis
+* Other commands:
+	* `gdalinfo --version`
+	* `gdalinfo -mm -stat`
+	* `gdaldem`
+	* `ogr2ogr`
+	* `gdal_rasterize`
+	* `gdal_pansharpen.py`
+	* `gdal_calc`
+	* `gdal2tile.py`
+	* `gdal_translate -oformat`
+	* `gdalinfo`
+	* `gdalwarp`
+	* `gdal_rasterize`
+	* `gdal_polygonize`
+	* `gdal_pansharpen`	
+	* `gdal_rasterize`
+	* `gdalcompare` - compare two imagesl
++ Tiling
+	* all about doing styling
+	* raster and vector tiling
++ Read/Write raster and vector geospatial formats
+* Dataset
+*	Raster Band - 
+*	Raster Size
+*	Georefrencing tasnform
+*	Coordinate syste
+*	metadata
+*	color table
+*	Band raster size and metadata
+*	Data formats over 155
+*	GeoTill
+* virtual raster?? - compress and merge of multiple tif into single raster
+
+Potential problems: 
+* AI
+	-	Can AI differentiate terristrial to Aerial
+* Point Clounds
+	- Point Cloud to DEM and to map tiles for digitizing the road edges
+
+### Python bindings of GDAL
+* gdal.Open
+* gdal.GetDriverByName("VRT") ## ENVI
+* gdal.TranslateOptions
+* gdal.Translate
+* Explaining the GDALDataclass
+* rasterio, rasterstats,scipy.ndimage, scikit-image, Pillow
+
+**Presenter**
+@github/augustinh22

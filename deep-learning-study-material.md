@@ -38,3 +38,21 @@ Tags: Deep Learning Study Material
 * https://github.com/janishar
 * http://deeplearning.csail.mit.edu/cvpr2017_tutorial_kaiminghe.pdf
 * http://deeplearning.csail.mit.edu/
+
+* http://www.senseforth.ai/
+* https://online.stanford.edu/
+* https://online.stanford.edu/courses
+
+## JD for AI Hire
+* https://www.youtube.com/watch?v=l2YPIGKnRFk
+
+https://github.com/mangalbhaskar/technotes#pre-requisite-software-stack-python-stack
+https://github.com/mangalbhaskar/technotes#deep-learning
+https://github.com/mangalbhaskar/technotes/blob/master/deep-learning-maskrcnn.md
+
+CBVR - Content Based Video Rretrival
+
+## TBD - maskrcnn errors
+    al/Mask_RCNN/mrcnn/model.py:2463: RuntimeWarning: divide by zero encountered in divide
+801   boxes = np.divide(boxes - shift, scale)
+                                                 

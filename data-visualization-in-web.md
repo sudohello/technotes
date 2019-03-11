@@ -162,3 +162,9 @@ https://courses.cs.washington.edu/courses/cse512/16sp/
 ## Data Sources
 * india-water-quality-data
 https://www.kaggle.com/venkatramakrishnan/india-water-quality-data
+
+
+## Conferences
+* http://www.openvisconf.com/#about
+
+
