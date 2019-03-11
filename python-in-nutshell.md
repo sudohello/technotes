@@ -401,6 +401,15 @@ The third way arrays can be created is using the NumPy arange function, which is
 
 
 ## FAQ's : Python
+* **How to copy a dictionary and only edit the copy?**
+  * https://stackoverflow.com/questions/2465921/how-to-copy-a-dictionary-and-only-edit-the-copy#2465932
+  * **Python never implicitly copies objects.**
+  * When you set `dict2 = dict1`, you are making them refer to the same exact dict object, so when you mutate it, all references to it keep referring to the object in its current state
+  * to copy the dict (which is rare), you have to do so explicitly with:
+  ```python
+  dict2 = dict(dict1)
+  dict2 = dict1.copy()
+  ```
 * **How to check for empty dictionary object?**
   * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
   ```python
