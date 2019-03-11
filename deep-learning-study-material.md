@@ -56,3 +56,6 @@ CBVR - Content Based Video Rretrival
     al/Mask_RCNN/mrcnn/model.py:2463: RuntimeWarning: divide by zero encountered in divide
 801   boxes = np.divide(boxes - shift, scale)
                                                  
+
+## Researchers
+* http://cseweb.ucsd.edu/~mkchandraker/

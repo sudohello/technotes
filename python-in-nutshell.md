@@ -1355,6 +1355,9 @@ __main__:1: ParserWarning: Falling back to the 'python' engine because the 'c' e
   * https://airbrake.io/blog/python-exception-handling/python-keyerror
   * is raised when accessing an invalid key within a dict
   * Python raises a KeyError whenever a dict() object is requested (using the format a = adict[key]) and the key is not in the dictionary.
+* TypeError
+  * TypeError: got multiple values for argument
+  * https://stackoverflow.com/questions/18950054/class-method-generates-typeerror-got-multiple-values-for-keyword-argument
 
 
 **Object-oriented programming (OOP)**
