@@ -280,12 +280,67 @@ Comet is a web application model in which a long-held HTTPS request allows a web
 * https://www.zdnet.com/article/programming-language-of-the-year-python-is-standout-in-latest-rankings/
 
 
+## Software, Process Maturity Level Models
 
-## Maturity Level
-* Capability Maturity Model
+* CMM
+* CMMI
+
+
+### CMM - Capability Maturity Model
+
 * https://en.wikipedia.org/wiki/Capability_Maturity_Model
-* Capability Maturity Model Integration
+* Methodology used to develope and refine and organizations software develompent process
+* **5 Levels:**
+  1.Initial 
+  2.Repeatable
+  3.Defined
+  4.Managed
+  5.Optimized
+
+#### Levels of CMM
+
+* **Level-1: Initial**
+  * Estimate curve, process diagram
+* **Level-2: Repeatable**
+  * reptable phases
+    + requirements
+    + project planning
+    + project tracking, oversight
+    + subcontracts management
+    + quality assurance
+    + configuration management
+* **Level-3: Defined**
+  * Level-2
+  * traning
+  * Integrated software management
+  * Software product engineering
+  * inter group coordination
+  * peer review
+  * Estimate curve
+  * process diagram
+* **Level-4: Managed**
+  * Level-3
+  * quantitative process management (data gathering)
+  * quality management (data driven)
+  * estimate curve
+  * process diagram
+* **Level-5: Optimized**
+  * defect prevention
+  * change management
+  * technology change management
+
+
+### CMMI - Capability Maturity Model Integration
+
 * https://en.wikipedia.org/wiki/Capability_Maturity_Model_Integration
 * https://www.reference.com/technology/difference-between-cmm-cmmi-66443dcbf73fd1d1
 * https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=12187
+* behaviors that lead to improved performance
+* process improvement model
 
+
+### Concepts
+
+* **ISO vs CMM/CMMI**
+  * ISO - hardware, product quality
+* **CMM vs CMMI**
