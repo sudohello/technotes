@@ -35,15 +35,26 @@ Deep 6-DOF Tracking
 Mathieu Garon, Jean-François Lalonde
 https://arxiv.org/abs/1703.09771
 
-### SfM-Net
-* https://arxiv.org/find/cs/1/au:+Vijayanarasimhan_S/0/1/0/all/0/1
-
-### SLAM
-* http://wp.doc.ic.ac.uk/thefutureofslam/programme/
-
 ### Computer Vision Recap
 * https://www.cc.gatech.edu/~hays/compvision/
 * https://www.cc.gatech.edu/~hays/compvision/proj6/
 
 
 
+### SfM-Net
+* https://arxiv.org/find/cs/1/au:+Vijayanarasimhan_S/0/1/0/all/0/1
+
+### SLAM
+* http://wp.doc.ic.ac.uk/thefutureofslam/programme/
+* https://www.quora.com/Has-someone-tried-to-incorporate-deep-learning-and-SLAM
+
+## Commercial
+* http://www.create4d.com
+
+## Research Paper Hubs
+* https://kilthub.cmu.edu
+
+
+
+## TBD
+* https://medium.com/datadriveninvestor/5-fundamental-ai-principles-993528a7d9ed
