@@ -3,7 +3,7 @@ title: Python In Nutshell
 Decription: Python In Nutshell
 Author: Bhaskar Mangal
 Date: 
-Last Updated: 26th-Dec-2018
+Last Updated: 08th-Mar-2019
 Tags: Python In Nutshell
 ---
 
@@ -401,13 +401,43 @@ The third way arrays can be created is using the NumPy arange function, which is
 
 
 ## FAQ's : Python
+* **How to implement Ramer–Douglas–Peucker algorithm (RDP) in python?**
+  * https://gist.github.com/msbarry/9152218
+  * https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm
+  * https://www.karthaus.nl/rdp/
+* **How to get the file size / image size in bytes?**
+  * https://stackoverflow.com/questions/11904083/how-to-get-image-size-bytes-using-pil
+  ```python
+  ## If you already have the image on the filesystem:
+  import os
+  os.path.getsize('path_to_file.jpg')
+  #
+  ## OR
+  os.stat(f).st_size
+  ```
 * **How to check for empty dictionary object?**
   * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
   ```python
   x = {}
   if x != {}:
     print('Non Empty')
-  ``` 
+  ```
+  * In memory images:
+  ```python
+  from io import BytesIO
+  img_file = BytesIO()
+  image.save(img_file, 'png')
+  image_file_size = img_file.tell()
+  ##
+  ## OR
+  import StringIO
+  output = StringIO.StringIO()
+  image_output.save(output, 'PNG') #a format needs to be provided
+  contents = output.getvalue()
+  output.close()
+
+  image_filesize = len(contents)
+  ```
 * **What are the different modes for files?**
   * https://stackoverflow.com/questions/16208206/confused-by-python-file-mode-w
 * **How to merge csv files in python?**
