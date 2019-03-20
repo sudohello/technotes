@@ -406,3 +406,12 @@ CATEGORIES = [
   * `dataset['annotations'][0].keys()` and `dataset['categories'][0].keys()`
     * iterate over annotations
     * create **category_to_image_map** i.e. annotation['category_id'] maps to annotation['image_id']
+
+  * Crowd types are stored with a flad iscrowd; and dynamically negatiave class ID is used
+   # Is it a crowd? If so, use a negative class ID.
+                if annotation['iscrowd']:
+                    # Use negative class ID for crowds
+                    class_id *= -1
+## Misc
+* https://github.com/adiprasad/unsup-hard-negative-mining-mscoco
+
