@@ -3,6 +3,7 @@ Title: Javascript
 Decription: Javascript
 Author: Bhaskar Mangal
 Date: 
+Last Updated: 08th-Mar-2019
 Tags: Javascript
 ---
 
@@ -227,3 +228,7 @@ http://www.discovermeteor.com/blog/understanding-javascript-map/
   };
   createUUID()
   ``` 
+* **How to implement Ramer–Douglas–Peucker algorithm (RDP) in Javascript?**
+  * https://gist.github.com/msbarry/9152218
+  * https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm
+  * https://www.karthaus.nl/rdp/

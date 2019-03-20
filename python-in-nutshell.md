@@ -401,6 +401,27 @@ The third way arrays can be created is using the NumPy arange function, which is
 
 
 ## FAQ's : Python
+
+**How to Return None if Dictionary key is not available?**
+  * https://stackoverflow.com/questions/6130768/return-none-if-dictionary-key-is-not-available
+  ```python
+  item['key'] if 'key' in item else None
+  ```
+**How to Putting a simple if-then-else statement on one line?**
+  * https://stackoverflow.com/questions/2802726/putting-a-simple-if-then-else-statement-on-one-line
+  ```python
+  'Yes' if fruit == 'Apple' else 'No'
+  ```
+* **Python equivalent of ActionScript's apply()/call() methods?**
+  * https://stackoverflow.com/questions/7642226/python-equivalent-of-actionscripts-apply-call-methods
+  ```python
+  def takes_any_args(*args, **kwargs):
+      pass
+  #
+  some_function(*args, **kwargs)
+  ```
+* **python-is-it-okay-to-pass-self-to-an-external-function?**
+  * https://stackoverflow.com/questions/16084623/python-is-it-okay-to-pass-self-to-an-external-function
 * **How to implement Ramer–Douglas–Peucker algorithm (RDP) in python?**
   * https://gist.github.com/msbarry/9152218
   * https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm
@@ -414,6 +435,7 @@ The third way arrays can be created is using the NumPy arange function, which is
   #
   ## OR
   os.stat(f).st_size
+  ```
 * **How to Empty set literal?**
   * https://stackoverflow.com/questions/6130374/empty-set-literal
   * there's no literal syntax for the empty set
@@ -424,8 +446,7 @@ The third way arrays can be created is using the NumPy arange function, which is
   y=() #empty tuple
   z={} #empty dict
   ```
-* **How to find the index of an item given a list containing it in Python
-Ask Question?**
+* **How to find the index of an item given a list containing it in Python?**
   * https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python
   * http://docs.python.org/2/tutorial/datastructures.html#more-on-lists
   ```python

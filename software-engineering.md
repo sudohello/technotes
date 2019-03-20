@@ -249,10 +249,14 @@ https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0
 ## System Primer
 * https://github.com/donnemartin/system-design-primer
 
+
 ## Terms
+
+
 **heisenbug**
 * https://en.wikipedia.org/wiki/Heisenbug
 In computer programming jargon, a heisenbug is a software bug that seems to disappear or alter its behavior when one attempts to study it.[1] The term is a pun on the name of Werner Heisenberg, the physicist who first asserted the observer effect of quantum mechanics, which states that the act of observing a system inevitably alters its state. In electronics the traditional term is probe effect, where attaching a test probe to a device changes its behavior.
+
 
 **Monkey Patch/Patching**
 * https://en.wikipedia.org/wiki/Monkey_patch
@@ -261,8 +265,10 @@ A monkey patch is a way for a program to extend or modify supporting system soft
 No, it's not like any of those things. It's simply the dynamic replacement of attributes at runtime.
 For instance, consider a class that has a method get_data. This method does an external lookup (on a database or web API, for example), and various other methods in the class call it. However, in a unit test, you don't want to depend on the external data source - so you dynamically replace the get_data method with a stub that returns some fixed data.
 
+
 **cooperative multitasking approach or simple multitasking**
 https://en.wikipedia.org/wiki/Computer_multitasking#Cooperative_multitasking.2Ftime-sharing
+
 
 **sscce - Short, Self Contained, Correct (Compilable), Example**
 http://sscce.org/
@@ -271,9 +277,15 @@ Self Contained - Ensure everything is included, ready to go.
 Correct - Copy, paste, (compile,) see is the aim.
 Example - Displays the problem we are trying to solve.
 
+
 **comet**
 https://en.wikipedia.org/wiki/Comet_(programming)
 Comet is a web application model in which a long-held HTTPS request allows a web server to push data to a browser, without the browser explicitly requesting it.[1][2] Comet is an umbrella term, encompassing multiple techniques for achieving this interaction. All these methods rely on features included by default in browsers, such as JavaScript, rather than on non-default plugins. The Comet approach differs from the original model of the web, in which a browser requests a complete web page at a time.[3]
+
+
+**Duck Typing**
+* https://en.wikipedia.org/wiki/Duck_typing
+
 
 ## Programming languages
 * https://www.zdnet.com/article/python-now-a-top-3-programming-language-as-julias-rise-speeds-up/
