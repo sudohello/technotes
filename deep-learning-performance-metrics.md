@@ -33,8 +33,9 @@ Tags: Deep Learning Performance Metrics
 * https://github.com/rafaelpadilla/Object-Detection-Metrics
 * http://dcs.gla.ac.uk/~ronanc/papers/cumminsAIRS11_2.pdf
 * https://arxiv.org/pdf/1310.5103.pdf
-* https://sanchom.wordpress.com/tag/average-precision/ -> Best Reference on Performance metrics and Average Precision
 
+* https://sanchom.wordpress.com/tag/average-precision/ -> Best Reference on Performance metrics and Average Precision
+* https://stats.stackexchange.com/questions/157012/area-under-precision-recall-curve-auc-of-pr-curve-and-average-precision-ap
 
 
 * [PASCAL VOC 2007, Sec 4.2 Evaluation of Results](http://homepages.inf.ed.ac.uk/ckiw/postscript/ijcv_voc09.pdf)
@@ -124,3 +125,8 @@ If you want to compute recall along with precision, you’ll also need the groun
 * http://shubhagrawal.in/2016/08/01/creating-launcher-for-any-executable-file-linux/
 * http://home.bharathh.info/
 
+### PPTs
+* http://deeplearning.csail.mit.edu/presentation_tutorial_interpretability_slide.pdf
+* http://deeplearning.csail.mit.edu/xg_tutorial.pdf
+* http://deeplearning.csail.mit.edu/instance_ross.pdf
+* http://sunw.csail.mit.edu

@@ -2458,10 +2458,6 @@ In addition, some fighting and real-time strategy games can be put into zero-pla
 Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 
 
-## TBD
-* http://www.senseforth.ai/
-* https://online.stanford.edu/
-* https://online.stanford.edu/courses
 
 
 
@@ -2491,3 +2487,10 @@ it's all supervised by loss function
     - learning of one activity transfer to another similar activity
 
 
+## AI in Videos
+* http://deeplearning.csail.mit.edu/xg_tutorial.pdf
+
+## Keywords
+* Multi-context Suppression (MCS)
+* Motion Guided Propagation (MGP)
+* non-maximum suppression (NMS)

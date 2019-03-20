@@ -414,6 +414,41 @@ The third way arrays can be created is using the NumPy arange function, which is
   #
   ## OR
   os.stat(f).st_size
+* **How to Empty set literal?**
+  * https://stackoverflow.com/questions/6130374/empty-set-literal
+  * there's no literal syntax for the empty set
+  * You have to write `set()`
+  ```python
+  ## Empty Literals
+  x=[] #empty list
+  y=() #empty tuple
+  z={} #empty dict
+  ```
+* **How to find the index of an item given a list containing it in Python
+Ask Question?**
+  * https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python
+  * http://docs.python.org/2/tutorial/datastructures.html#more-on-lists
+  ```python
+  ["foo", "bar", "baz"].index("bar")
+  ##
+  [i for i, j in enumerate(['foo', 'bar', 'baz']) if j == 'bar']
+  #
+  ## This is more efficient for larger lists than using enumerate():
+  from itertools import izip as zip, count # izip for maximum efficiency
+  [i for i, j in zip(count(), ['foo', 'bar', 'baz']) if j == 'bar']
+  ```
+  * **Caveats follow**
+    - Linear time-complexity in list length
+    - Only returns the index of the first match to its argument
+    - Throws if element not present in list
+* **How to copy a dictionary and only edit the copy?**
+  * https://stackoverflow.com/questions/2465921/how-to-copy-a-dictionary-and-only-edit-the-copy#2465932
+  * **Python never implicitly copies objects.**
+  * When you set `dict2 = dict1`, you are making them refer to the same exact dict object, so when you mutate it, all references to it keep referring to the object in its current state
+  * to copy the dict (which is rare), you have to do so explicitly with:
+  ```python
+  dict2 = dict(dict1)
+  dict2 = dict1.copy()
   ```
 * **How to check for empty dictionary object?**
   * https://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
@@ -1385,6 +1420,9 @@ __main__:1: ParserWarning: Falling back to the 'python' engine because the 'c' e
   * https://airbrake.io/blog/python-exception-handling/python-keyerror
   * is raised when accessing an invalid key within a dict
   * Python raises a KeyError whenever a dict() object is requested (using the format a = adict[key]) and the key is not in the dictionary.
+* TypeError
+  * TypeError: got multiple values for argument
+  * https://stackoverflow.com/questions/18950054/class-method-generates-typeerror-got-multiple-values-for-keyword-argument
 
 
 **Object-oriented programming (OOP)**

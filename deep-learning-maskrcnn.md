@@ -148,9 +148,16 @@ sudo pip3 install pycocotools imgaug IPython[all]
 * https://github.com/abhiyerasi
 
 
-## Mask-rcnn-webcam
-* https://github.com/benjamintanweihao/mask-rcnn-webcam
+## Mask-rcnn ROS
+* https://github.com/OTL/mask_rcnn_ros
 
+
+## Mask-rcnn Webcam
+* https://github.com/benjamintanweihao/mask-rcnn-webcam
+* https://github.com/SrikanthVelpuri/Mask_RCNN
+
+## Mask-rcnn on SUN RGB-D Dataset
+* https://github.com/aegorfk/Mask_RCNN-for-SUN-RGB-D
 
 ## Snagging Parking Spaces With Mask-r-cnn
 * https://medium.com/@ageitgey/snagging-parking-spaces-with-mask-r-cnn-and-python-955f2231c400
