@@ -14,7 +14,7 @@ Never before, computer vision field seemed so lucrative then today and this is t
 
 **Taking the pragmatic approach to learn Computer Vision AI, the talk focuses on the following topics:**
 
-* **Introduction - 3D HD Maps Technology VidTeq-MapmyIndia**
+* **Introduction - 3D HD Map Technology VidTeq-MapmyIndia**
     + [Digital Map Twin](http://dmt.vidteq.com)
     + [3D HD Maps by MapmyIndia](https://www.mapmyindia.com/hd-maps/)
 * **AI Job Details**
@@ -36,3 +36,71 @@ Never before, computer vision field seemed so lucrative then today and this is t
 * **Demo**
     + [Static Map specific Object Detection](https://www.youtube.com/watch?v=l2YPIGKnRFk)
     + [Drivable Area Detection for Self Driving Car](https://www.youtube.com/watch?v=OJPxgALx5eA)
+
+
+
+====================
+
+## /home/bhaskar/Documents/bmangal/personal/seminars/drafts
+
+
+
+
+
+
+
+
+
+https://www.cloudfactory.com/ai
+
+https://www.cloudfactory.com/machine-learning
+
+https://www.inf.uni-hamburg.de/en/inst/ab/cv.html
+
+http://slideplayer.com/slide/6239635/
+
+http://www.stat.ucla.edu/~sczhu/research_blog.html
+
+http://vcla.stat.ucla.edu/demo.html
+
+https://newatlas.com/synthia-dataset-self-driving-cars/43895/#p410233
+
+https://modelzoo.co/blog/self-driving-car-datasets
+
+https://navoshta.com/kitti-lidar/
+
+
+
+====================
+
+ppt preparations
+
+"What is real? How do you define real?"
+
+"This is your last chance. After this, there is no turning back. You take the blue pill—the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill—you stay in Wonderland and I show you how deep the rabbit-hole goes."
+
+"I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it."
+
+"If real is what you can feel, smell, taste and see, then real is simply electrical signals interpreted by your brain."
+
+
+
+What is real? How do you define real?
+
+If you're talking about what you can hear, what you can smell, taste and feel then real is simply electrical signals interpreted by your brain.
+
+- Morpheus
+
+from The Matrix (1999) by Larry and Andy WachowskiRating
+
+
+https://yourfreetemplates.com/artificial-intelligence-powerpoint-templates/
+
+https://www.free-powerpoint-templates-design.com/artificial-intelligence-high-technology-powerpoint-templates/
+
+https://www.free-powerpoint-templates-design.com/terms-of-use/
+
+
+https://www.tri-ad.global
+
+https://www.free-powerpoint-templates-design.com/?s=robotics
