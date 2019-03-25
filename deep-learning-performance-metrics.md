@@ -130,3 +130,62 @@ If you want to compute recall along with precision, you’ll also need the groun
 * http://deeplearning.csail.mit.edu/xg_tutorial.pdf
 * http://deeplearning.csail.mit.edu/instance_ross.pdf
 * http://sunw.csail.mit.edu
+
+
+## Graphs
+* How do I plot Precision-Recall graphs for Content-Based Image Retrieval?
+https://stackoverflow.com/questions/25799107/how-do-i-plot-precision-recall-graphs-for-content-based-image-retrieval-in-matla#25811041
+
+* https://stackoverflow.com/questions/31407844/is-it-possible-that-precision-recall-curve-or-a-roc-curve-is-a-horizontal-line
+
+Yes, you can. If you perfectly separate the data into two piles, then you go vertically from zero to 1 true-positive-rate without any false positives (the vertical line) as your threshold passes over your pile of true positives, then from 0 to 1 false-positive-rate as your threshold passes over your pile of true negatives.
+
+If you can get the same ROC curve from a test set, you are golden. If you can get the same ROC curve evaluated on 5 different k-fold cross validation test sets, you are platinum.
+
+
+
+Take the time and think about what the plots actually tell you. You basically performed perfect predictions on the test set. Is this normal? No. Often problems tackled with machine learning techniques are much harder. Perfect predictions are usually not possible. Or did I make some mistakes in my code? In your code? Probably not. In your testing? Maybe. We don't know. I would suggest trying a cross validation instead. Maybe your problem is very easy to learn. Maybe your test set is problematic. A cross validation will show that.
+
+
+
+
+https://stackoverflow.com/questions/28200786/how-to-plot-scikit-learn-classification-report
+
+
+using seaborn heatmap
+
+ ['precision', 'recall', 'f1-score', 'support']
+
+visualizing the confusion matrix
+classification report
+
+
+https://stackoverflow.com/questions/30746460/how-to-interpret-scikits-learn-confusion-matrix-and-classification-report
+
+Classification report must be straightforward - a report of P/R/F-Measure for each element in your test data.
+In Multiclass problems, it is not a good idea to read Precision/Recall and F-Measure over the whole data any imbalance would make you feel you've reached better results. That's where such reports help.
+
+
+Coming to confusion matrix, it is much detailed representation of what's going on with your labels. So there were 71 points in the first class (label 0). Out of these, your model was successful in identifying 54 of those correctly in label 0, but 17 were marked as label 4. Similarly look at second row. There were 43 points in class 1, but 36 of them were marked correctly. Your classifier predicted 1 in class 3 and 6 in class 4.
+
+
+Actual class on y-axis, Predicted class on x-axis
+An ideal classifiers with 100% accuracy would produce a pure diagonal matrix which would have all the points predicted in their correct class.
+
+F Measure is harmonic mean of Precision and Recall. Be sure you read details about these. 
+https://en.wikipedia.org/wiki/Precision_and_recall
+
+
+Confusion Matrix tells us about the distribution of our predicted values across all the actual outcomes.Accuracy_scores, Recall(sensitivity), Precision, Specificity and other similar metrics are subsets of Confusion Matrix. F1 scores are the harmonic means of precision and recall. Support columns in Classification_report tell us about the actual counts of each class in test data.
+
+https://github.com/cocodataset/cocoapi/issues/56
+
+
+
+https://classeval.wordpress.com/introduction/basic-evaluation-measures/
+https://stackoverflow.com/questions/39033880/plot-confusion-matrix-sklearn-with-multiple-labels#39034386
+
+
+https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/
+
+https://bbabenko.github.io/prs/

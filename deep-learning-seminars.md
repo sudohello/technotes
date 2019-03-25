@@ -39,12 +39,30 @@ Never before, computer vision field seemed so lucrative then today and this is t
 
 
 
-====================
-
 ## /home/bhaskar/Documents/bmangal/personal/seminars/drafts
 
 
-====================
+
+
+
+
+https://www.cloudfactory.com/ai
+
+https://www.cloudfactory.com/machine-learning
+
+https://www.inf.uni-hamburg.de/en/inst/ab/cv.html
+
+http://slideplayer.com/slide/6239635/
+
+http://www.stat.ucla.edu/~sczhu/research_blog.html
+
+http://vcla.stat.ucla.edu/demo.html
+
+https://newatlas.com/synthia-dataset-self-driving-cars/43895/#p410233
+
+https://modelzoo.co/blog/self-driving-car-datasets
+
+https://navoshta.com/kitti-lidar/
 
 ppt preparations
 

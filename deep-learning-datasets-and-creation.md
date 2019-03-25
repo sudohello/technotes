@@ -613,12 +613,12 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 **Self-driving Car (Autonomy) vs Urban Scene**
   
-| Self-driving Car (Autonomy)                                 | Urban Scene                                           |
-|:------------------------------------------------------------|:------------------------------------------------------|
-| * Contains images only from the driver's perspective        | contains from walking, and non-road scene perspective |
-| * Outdoor images only                                       | Outdoor images only                                   |
-| * contains sequential camera frames                         | not a pre-condition                                   |
-| * can be aumgented with other sequential camera sensor data | cannot be agumented with sequential sensor data       |
+| Self-driving Car (Autonomy)                                 | Urban Scene                                                  |
+|:------------------------------------------------------------|:-------------------------------------------------------------|
+| * Contains images only from the driver's perspective        | Contains images from walking, and non-road scene perspective |
+| * Outdoor images only                                       | Outdoor images only                                          |
+| * Contains sequential camera frames                         | Not a pre-condition                                          |
+| * Can be aumgented with other sequential camera sensor data | Cannot be agumented with sequential sensor data              |
 
 
 **Mostly, autonomous navigation focus on:-**
