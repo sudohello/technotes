@@ -21,3 +21,7 @@ Tags: Libre Office
 ## Formulas
 
 Go To -> Data-> Filter -> Advanced Filter -> Select Column Range -> Click on options -> Check " No Duplicates"
+
+
+## Impress - ppt
+* https://www.ryananddebi.com/2018/11/05/libreoffice-impress-templates-and-object-styles/
