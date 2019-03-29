@@ -2021,8 +2021,107 @@ python -m cProfile -o demo.prof demo.py
 ### **Tutorials**
 * https://www.w3resource.com/python-exercises/numpy/python-numpy-exercise-39.php
 
+### N-D Array
+* [A Gentle Introduction to N-Dimensional Arrays in Python with NumPy](https://machinelearningmastery.com/gentle-introduction-n-dimensional-arrays-python-numpy/)
+* Arrays are the main data structure used in machine learning.
+* In Python, arrays from the NumPy library, called N-dimensional arrays or the ndarray, are used as the primary data structure for representing data.
+* Learning Objectives:
+  - What the ndarray is and how to create and inspect an array in Python.
+  - Key functions for creating new empty arrays and arrays with default values.
+  - How to combine existing arrays to create new arrays.
+
+* https://stackoverflow.com/questions/28010860/slicing-3d-numpy-arrays
+```python
+B=np.arange(2*3*4).reshape((2,3,4))
+
+## You can also think of B as containing four 2x3 arrays by iterating over the last index first:
+
+for i in range(4):
+    print(B[:,:,i])
+
+## but you could just as easily think of B as three 2x4 arrays:
+
+for i in range(3):
+    print(B[:,i,:])
+
+# Since the dimension of B is 2X3X4, It means you have two matrices of size 3X4 as far as repr of B is concerned
+
+print(B[:,:,1])
+## Now in B[:,:,1] we are passing : , : and 1. First : indicates that we are selecting both the 3X4 matrices. The second : indicates that we are selecting all the rows from both the 3X4 matrices. The third parameter 1 indicates that we are selecting only the second column values of all the rows from both the 3X4 matrices. Hence we get
+# NumPy arrays are completely flexible this way. But as far as the repr of B is concerned, what you see corresponds to two (3x4) arrays since B iterates over the left-most axis first.
+```
+
 
 ### FAQ's : Numpy
+* **What are Universal functions (ufunc)?**
+  * https://docs.scipy.org/doc/numpy/reference/ufuncs.html
+  * A universal function (or ufunc for short) is a function that operates on ndarrays in an element-by-element fashion, supporting array broadcasting, type casting, and several other standard features. That is, a ufunc is a “vectorized” wrapper for a function that takes a fixed number of specific inputs and produces a fixed number of specific outputs.
+* **What is the difference between numpy max vs amax vs maximum?**
+  * https://stackoverflow.com/questions/33569668/numpy-max-vs-amax-vs-maximum
+  * `np.max` is just an alias for `np.amax`. This function only works on a single input array and finds the value of maximum element in that entire array (returning a scalar). Alternatively, it takes an axis argument and will find the maximum value along an axis of the input array (returning a new array)
+  ```python
+  a = np.array([[0, 1, 6],
+                  [2, 4, 1]])
+  np.max(a)
+  ## 6
+  np.max(a, axis=0) # max of each column
+  ## array([2, 4, 6])
+  ```
+  * The default behaviour of np.maximum is to take two arrays and compute their element-wise maximum.
+  * Here, 'compatible' means that one array can be broadcast to the other. For example:
+  ```python
+  b = np.array([3, 6, 1])
+  c = np.array([4, 2, 9])
+  np.maximum(b, c)
+  ## array([4, 6, 9])
+  ```
+  * But np.maximum is also a universal function which means that it has other features and methods which come in useful when working with multidimensional arrays. For example you can compute the cumulative maximum over an array (or a particular axis of the array). This is not possible with np.max.
+  ```python
+  d = np.array([2, 0, 3, -4, -2, 7, 9])
+  np.maximum.accumulate(d)
+  ## array([2, 2, 3, 3, 3, 7, 9])
+  ```
+  * You can make np.maximum imitate np.max to a certain extent when using np.maximum.reduce:
+  ```python
+  np.maximum.reduce(d)
+  ## 9
+  np.max(d)
+  ## 9
+  ```
+  * Basic testing suggests the two approaches are comparable in performance; and they should be, as np.max() actually calls np.maximum.reduce to do the computation.
+  * For completeness, in Numpy there are four maximum related functions. They fall into two different categories:
+    - `np.amax/np.max`, `np.nanmax`: for single array order statistics
+    - `np.max` propagates NaNs while `np.nanmax` ignores NaNs.
+    ```python
+    np.max.__name__
+    ## 'amax'
+    np.max is np.amax
+    ## True
+    np.max([np.nan, 3.14, -1])
+    ## nan
+    np.nanmax([np.nan, 3.14, -1])
+    ## 3.14
+    ```
+    - `np.maximum`, `np.fmax`: for element-wise comparison of two arrays
+    - NaNs propagator `np.maximum` and its NaNs ignorant counterpart `np.fmax`
+    - Both functions require two arrays as the first two positional args to compare with:
+    ```python
+    # x1 and x2 must be the same shape or can be broadcast
+    np.maximum(x1, x2, /, ...);
+    np.fmax(x1, x2, /, ...)
+    ```
+    - np.maximum propagates NaNs while np.fmax ignores NaNs.
+    ```python
+    np.maximum([np.nan, 3.14, 0], [np.NINF, np.nan, 2.72])
+    ## array([ nan,  nan, 2.72])
+    np.fmax([np.nan, 3.14, 0], [np.NINF, np.nan, 2.72])
+    ## array([-inf, 3.14, 2.72])
+    ```
+    - The element-wise functions are [np.ufunc(Universal Function)](https://docs.scipy.org/doc/numpy/reference/ufuncs.html), which means they have some special properties that normal Numpy function don't have.
+    - And finally, the same rules apply to the four minimum related functions:
+    - `np.amin/np.min`, `np.nanmin`;
+    - `np.minimum`, `np.fmin`.
+
 * **How to use a function elementwise on numpy array?**
   * https://stackoverflow.com/questions/44587746/length-of-each-string-in-a-numpy-array
 * **How to generate random numbers or shuffle numpy array?**

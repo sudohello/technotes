@@ -137,6 +137,7 @@ Tags: Datasets and Data Creation for Training Machines
 
 
 ## AI Annotation Tools
+* https://www.altexsoft.com/blog/datascience/how-to-organize-data-labeling-for-machine-learning-approaches-and-tools/
 
 **Summary**
 
@@ -222,6 +223,30 @@ Tags: Datasets and Data Creation for Training Machines
   * v1.0.0 - 5 Oct 2017 
   * v1.3.2 - Feb 2019
   * Qt >= 5.x; CMake >= 2.8.x; OpenCV >= 2.4.x 
+* **[CVAT](https://github.com/opencv/cvat)**
+  - https://www.intel.ai/introducing-cvat/
+  - https://github.com/opencv/cvat
+* **[vatic](http://carlvondrick.com/vatic/)**
+  * http://carlvondrick.com/vatic/
+* **[supervising-ui](https://github.com/USCDataScience/supervising-ui)**
+  - https://github.com/USCDataScience/supervising-ui
+* **[annotorious](https://github.com/annotorious/annotorious)**
+  - https://github.com/annotorious/annotorious
+
+
+## Text Labelling
+* **[bella](https://github.com/dennybritz/bella)**
+  - https://github.com/dennybritz/bella
+
+
+## Audio Labelling
+* **[praat](http://www.fon.hum.uva.nl/praat/)**
+  - http://www.fon.hum.uva.nl/praat/
+* **[Speechalyzer](https://github.com/felixbur/Speechalyzer)**
+  - https://github.com/felixbur/Speechalyzer
+* **[EchoML](https://github.com/ritazh/EchoML)**
+  - https://github.com/ritazh/EchoML
+
 
 ## **Image Process Tools/Apps**
 * **ImageSegmentation**
@@ -934,3 +959,29 @@ and has no available annotated held out set.
   - The current state of the art for instance segmentation on Cityscapes is MaskRCNN
   - Average Precision (AP) measures calculated as described for the MS-COCO [40] instance segmentation task
   - we calculate the AP across images and across IoU thresholds of detected lanes pixels assigned to embedding cluster centroids) and ground truth lanes. True and false positives are counted in the following way: (1) A detection is a true positive when it overlaps a ground truth instance with an IoU above some threshold and (2) a detection is a false positive when it does not sufficiently overlap any ground truth instance
+
+
+## Commercial Options
+* https://prodi.gy/docs/
+  - https://prodi.gy/features/computer-vision
+* https://medium.com/@bridgedai/computer-vision-image-annotation-524a8532b1cf
+* https://www.bridgedai.com/
+* https://scale.ai/computer-vision/image-annotation
+* https://devblogs.nvidia.com/annotation-transfer-learning-clara-train/
+* https://venturebeat.com/2018/10/22/googles-fluid-annotation-uses-ai-to-speed-up-image-dataset-annotation/
+* https://microwork.io/
+* https://en.wikipedia.org/wiki/Automatic_image_annotation
+* https://medium.com/swlh/suite-of-annotation-tools-for-computer-vision-f2a6bb47a6a9
+* https://supervise.ly/
+  - https://supervise.ly/product - interesting
+* https://towardsdatascience.com/how-to-collect-your-deep-learning-dataset-2e0eefc0ba24
+* https://sleep.ai
+* https://mighty.ai/
+
+
+
+## TBD
+* https://hackernoon.com/rare-datasets-for-computer-vision-every-machine-learning-expert-must-work-with-2ddaf52ad862
+* https://blog.playment.io/training-data-for-computer-vision/
+* The snowball effect
+  * So now you’ve collected an initial dataset. You training your network on it and put it into your product. It performs well enough to serve your needs, but it’s not quite as accurate as you’d like it to ideally be. Well now that you have a baseline network running, you can use that network to collect even more data! This network will perform better on your task than the general pre-trained one since you’ve fine-tuned it for your specific problem. Thus you can use it to collect more and more data even faster to make your network even better; a beautiful snowball effect!

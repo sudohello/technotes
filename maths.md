@@ -77,7 +77,29 @@ More formally, linear programming is a technique for the optimization of a linea
 
 
 ## Vector Algebra and Vector Calculus
-http://farside.ph.utexas.edu/teaching/336k/Newtonhtml/node148.html
+* http://farside.ph.utexas.edu/teaching/336k/Newtonhtml/node148.html
+
+## Vector FAQ's
+* **What does the dot product of two vectors represent?**
+	* https://math.stackexchange.com/questions/805954/what-does-the-dot-product-of-two-vectors-represent
+	* https://math.stackexchange.com/questions/3016794/visualizing-the-area-described-by-the-dot-product
+	* dot product of two vectors is an area
+	* **The dot product tells you what amount of one vector goes in the direction of another**. For instance, if you pulled a box 10 meters at an inclined angle, there is a horizontal component and a vertical component to your force vector. So the dot product in this case would give you the amount of force going in the direction of the displacement, or in the direction that the box moved. This is important because work is defined to be force multiplied by displacement, but the force here is defined to be the force in the direction of the displacement.
+	* http://youtu.be/KDHuWxy53uM
+
+### Computer Vision Algebra, Image Arithmetic, Arithmetic Operations on Images
+* http://users.umiacs.umd.edu/~ramani/cmsc828d/lecture4.pdf
+* https://docs.opencv.org/trunk/d0/d86/tutorial_py_image_arithmetics.html
+* https://stackoverflow.com/questions/44865023/circular-masking-an-image-in-python-using-numpy-arrays
+
+
+**TODO: read this in particular regarding textures**
+* Law's texture masks
+	* https://courses.cs.washington.edu/courses/cse455/09wi/Lects/lect12.pdf
+	* Gaussin gives a center-weighted local average
+	* Gradient respinds to tow or col step edge
+	* LOG detects spots
+	* Gabor detects ripples
 
 ## Vector Calculus
 http://web.mit.edu/wwmath/vectorc/index.html

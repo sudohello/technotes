@@ -509,3 +509,6 @@ Misc
   git branch --set-upstream-to=origin/master
   git status
   ```
+
+## Invite Collaborators to GitHub Repository
+* https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository

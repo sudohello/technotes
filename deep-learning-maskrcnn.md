@@ -13,6 +13,18 @@ Tags: Instance Segmentation with Mask-rcnn
 {:toc}
 
 
+## bibtex
+
+@misc{matterport_maskrcnn_2017,
+  title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
+  author={Waleed Abdulla},
+  year={2017},
+  publisher={Github},
+  journal={GitHub repository},
+  howpublished={\url{https://github.com/matterport/Mask_RCNN}},
+}
+
+
 ## Object Detectors
 * https://medium.com/@jonathan_hui/design-choices-lessons-learned-and-trends-for-object-detections-4f48b59ec5ff
 
@@ -659,3 +671,5 @@ Hint: If you want to see a list of allocated tensors when OOM happens, add repor
    [[Node: mul_262/_5269 = _Recv[client_terminated=false, recv_device="/job:localhost/replica:0/task:0/device:CPU:0", send_device="/job:localhost/replica:0/task:0/device:GPU:0", send_device_incarnation=1, tensor_name="edge_21888_mul_262", tensor_type=DT_FLOAT, _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
 Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
 ```
+* https://github.com/matterport/Mask_RCNN/pull/1024
+
