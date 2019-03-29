@@ -232,7 +232,8 @@ Tags: Datasets and Data Creation for Training Machines
   - https://github.com/USCDataScience/supervising-ui
 * **[annotorious](https://github.com/annotorious/annotorious)**
   - https://github.com/annotorious/annotorious
-
+* **[annotation_tools](https://github.com/visipedia/annotation_tools)**
+  - https://github.com/visipedia/annotation_tools
 
 ## Text Labelling
 * **[bella](https://github.com/dennybritz/bella)**
@@ -752,6 +753,8 @@ MTurk aims to make accessing human intelligence simple, scalable, and cost-effec
 
 
 ### 3D Datasets
+- [nyc3d](http://nyc3d.cs.cornell.edu/)
+  + http://nyc3d.cs.cornell.edu/
 - **[Matterport Dataset](https://niessner.github.io/Matterport/)**
   - https://hackernoon.com/announcing-the-matterport3d-research-dataset-815cae932939
   - https://matterport.com/blog/2017/09/20/announcing-matterport3d-research-dataset/
@@ -964,6 +967,7 @@ and has no available annotated held out set.
 ## Commercial Options
 * https://prodi.gy/docs/
   - https://prodi.gy/features/computer-vision
+  - https://prodi.gy/docs/cookbook
 * https://medium.com/@bridgedai/computer-vision-image-annotation-524a8532b1cf
 * https://www.bridgedai.com/
 * https://scale.ai/computer-vision/image-annotation
@@ -979,9 +983,60 @@ and has no available annotated held out set.
 * https://mighty.ai/
 
 
+## Moving AI Annotations to Database
+* https://h.readthedocs.io/en/latest/arch/adr-001/
+* https://github.com/hypothesis/client
+* https://hypothes.is/api/
+* https://github.com/postgres-ai
+* https://towardsdatascience.com/leveraging-python-with-large-databases-pandas-postgresql-5073825167e0
+  * Data Scientist often start with SQL queries that would extract 1% of data needed to a csv file, before moving to Python Pandas for data analysis.
+  * https://github.com/romogo17/pgcv
+* http://deepdive.stanford.edu/using-greenplum
+* https://www.sciencedirect.com/science/article/pii/S1532046416301526
+* Our data demonstrate that both MongoDB, a document-oriented NoSQL database, and PostgreSQL, 
+* Our findings demonstrate that the implementation of document-oriented databases may greatly reduce infrastructure costs for storing genomic data, as less performant hardware would be expected to achieve the same level of database performance. The findings, coupled with the ability to use dynamic schema, make document-oriented databases particularly well-suited for the management of large genomic data sets. While relational databases still serve an important role in the management of many data types, novel technologies should be evaluated during the design of new data management systems. Future reports on implementation experience will help define the full scope and capability of document-oriented databases.
+* https://www.sciencedirect.com/topics/computer-science/big-data
+
+
+* https://dzone.com/articles/postgresql-vs-hadoop
+* So one of the clients I do work with is moving a large database from PostgreSQL to Hadoop. The reasons are sound — volume and velocity are major issues for them, and PostgreSQL is not going away in their data center and in their industry there is a lot more Hadoop usage and tooling than there is PostgreSQL tooling for life science analytics (Hadoop is likely to replace both PostgreSQL and, hopefully, a massive amount of data on NFS)
+* Big data problems tend to fall into three categories; namely, managing ever-increasing volumes of data, managing an increasing velocity of data, and dealing with a greater variety of data structure
+* Moreover, these solutions are hardly without their own significant costs
+* So the first point worth noting is that big data solutions are specialist solutions, while relational database solutions for OLTP and analytics are generalist solutions.
+* One of the key things to note is that Hadoop is built to solve all three problems simultaneously. This means that you effectively buy into a lot of other costs if you are trying to solve only one of the problems with it.
+* The single largest cost comes from the solutions to the variety of data issues. PostgreSQL and other relational data solutions provide very good guarantees on the data because they enforce a lack of variety. You force a schema on write and if that is violated, you throw an error. Hadoop enforces a schema on read, and so you can store data and then try to read it, and get a lot of null answers back because the data didn't fit your expectations. Ouch. But that's very helpful when trying to make sense of a lot of non-structured data.
+* Premature optimization is the root of all evil and big data solutions have their place. However don't use them just because they are cool or new, or resume-building.  They are specialist tools and overuse creates more problems than underuse. 
+* https://www.oreilly.com/ideas/using-computer-vision-to-understand-big-visual-data
+* computer vision to understand big visual data.
+* https://sundog-education.com/selfdriving/
+* https://content.pivotal.io/blog/large-scale-video-analytics-on-hadoop
+* https://www.thefreelibrary.com/Automatic+image+annotation+and+image+retrieval+in+social+networks...-a0498996755
+
+
+**MongoDB**
+* https://mc.ai/working-with-large-scale-object-detection-datasets-in-computer-vision/ - interesting - going ahead with it
+* https://gitlab.com/calledbymountains/cvdatasetmanagement
+
+
 
 ## TBD
+* https://pythonawesome.com/a-web-based-tool-which-helps-to-annotate-video-and-images-for-computer/
 * https://hackernoon.com/rare-datasets-for-computer-vision-every-machine-learning-expert-must-work-with-2ddaf52ad862
 * https://blog.playment.io/training-data-for-computer-vision/
 * The snowball effect
   * So now you’ve collected an initial dataset. You training your network on it and put it into your product. It performs well enough to serve your needs, but it’s not quite as accurate as you’d like it to ideally be. Well now that you have a baseline network running, you can use that network to collect even more data! This network will perform better on your task than the general pre-trained one since you’ve fine-tuned it for your specific problem. Thus you can use it to collect more and more data even faster to make your network even better; a beautiful snowball effect!
++ https://mighty.ai/blog/training-data-for-computer-vision-algorithms-your-options-for-collecting-or-creating-annotated-datasets/
++ http://fiji.sc/
+  * https://en.wikipedia.org/wiki/Fiji_(software)
+  * Fiji - an Open Source platform for biological image analysis
++ imageJ
+  * https://imagej.net/Welcome
+  * ImageJ is an open source image processing program designed for scientific multidimensional images.
+  * ImageJ is highly extensible, with thousands of plugins and scripts for performing a wide variety of tasks, and a large user community.
+  * https://imagej.net/imageJ
++ https://www.researchgate.net/publication/5636349_POSTGRESQL-IE_An_image-handling_extension_for_postgreSQL
++ https://aitouch.in/application-development-and-maintenance/
++ https://aitouch.in/application-development-and-maintenance/
++ https://aitouch.in/ai-data-annotation/
++ https://pgxn.org/dist/pg_image/
++ https://openmv.io/

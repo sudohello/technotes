@@ -3536,3 +3536,14 @@ f.close()
 ### **DevOps: python gunicorn, docker and kubernetes**
 * [how-is-python-scaling-with-gunicorn-and-kubernetes](https://stackoverflow.com/questions/52458393/how-is-python-scaling-with-gunicorn-and-kubernetes)
 
+## List of Python frameworks, libraries, software and resources.
+* https://awesome-python.com/
+
+
+## Python with PostgreSQL
+* https://www.fullstackpython.com/postgresql.html
+
+
+## Python with MangoDB
+* https://www.geeksforgeeks.org/mongodb-and-python/
+  - PyMongo
