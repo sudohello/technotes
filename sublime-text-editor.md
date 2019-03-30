@@ -116,7 +116,7 @@ convert to snake
 |adas|ada|
 
 
-
+* MarkdownTableFormatter - `ctrl+shift+alt+k`
 
 https://github.com/SublimeText-Markdown/MarkdownEditing/issues/205
 
