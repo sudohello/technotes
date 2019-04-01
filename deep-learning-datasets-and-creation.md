@@ -853,21 +853,24 @@ After working hard to collect your images and annotating all the objects, you ha
 * https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884
 
 
-## Road Analysis
-video dataset for:
-road segmentation
-ego lane segmentation
-lane instance segmentation
+## Road and Lane detection & segmentation for self-driving cars
 
-(1) noticing that driving the car is itself a form of annotation and that cars mostly travel along lanes
-(2) propagating manual label adjustments from a single view to all images of the sequence
-(3) accepting non-labelled parts in ambiguous situations
+### What
+* Different kinds of lanes
+  * for ego car, bicycle, opposite direction traffic, divergence etc
+* Detection & Segmentation
+  * road segmentation
+  * ego lane segmentation
+  * lane instance segmentation
 
-Previous lane detection work has focused on detecting the components of lane boundaries, and then applying clustering to identify the boundary as a whole
 
-More recent methods use CNN based segmentation [2,4], and RNNs [11] for detecting lane boundaries.
+### Why
+* Lane marking detection is critical for vision-based vehicle localization and trajectory planing
 
-However, visible lane boundaries can be interrupted by occlusion or worn markings, and by themselves are not associated with a specific lane instance.
+
+### Challanges
+* visible lane boundaries can be interrupted by occlusion or worn markings
+* and by themselves are not associated with a specific lane instance.
 
 
 ### Datasets
@@ -878,25 +881,118 @@ However, visible lane boundaries can be interrupted by occlusion or worn marking
 * Yotta
 * Caltech Lanes
 * CamVid
+* NYU Depth V2
+* DUS
+* Udacity
+* [MIT Scene Parsing](http://sceneparsing.csail.mit.edu)
 * [FiveAI -Brook_Roberts_A_Dataset_for_ECCV_2018_paper - best](https://five.ai/)
   - https://five.ai/datasets
-* NYU Depth V2
-* OpenSurfaces
-* [MIT Scene Parsing](http://sceneparsing.csail.mit.edu)
-
-
+* FCAV
+* MVD
+* Apolloscape
+* BDD100k
+* synthia
+* Oxford RobotCar Dataset
+ 
 ### Lane and Drivable Area Datasets
 * A Dataset for Lane Instance Segmentation in Urban Environments
-```
-Dataset, Total_Images, Total_Classes, Additional_Attributes, Description
-Caltech Lanes Dataset, 1224,,
-Road Marking Dataset, 1443, 11,,
-VPGNe, 20000, 17,,during three weeks of driving in Seoul
-KITTI-ROAD
-BDD, , 8,2,
-```
+| Dataset               | Total_Images | Total_Classes | Additional_Attributes | Description                            |
+|:----------------------|:-------------|:--------------|:----------------------|:---------------------------------------|
+| Caltech Lanes Dataset | 1224         |               |                       |                                        |
+| Road Marking Dataset  | 1443         | 11            |                       |                                        |
+| VPGNe                 | 20000        | 17            |                       | during three weeks of driving in Seoul |
+| KITTI-ROAD            |              |               |                       |                                        |
+| BDD                   |              |               | 8                     | 2                                      |
+
+
+### Apolloscape - annotation specification
+
+
+| Lane_Type           | Color           | Use                 |              |
+|:--------------------|:----------------|:--------------------|:-------------|
+| solid               | white           | dividing            |              |
+| solid               | yellow          | dividing            |              |
+| double solid        | white           | dividing            | no_pass      |
+| double solid        | yellow          | dividing            | no_pass      |
+| solid_and_broken    | white           | dividing            | one_way_pass |
+| solid_and_broken    | yellow          | dividing            | one_way_pass |
+| :--------------     | :-------        | :--------           | :---         |
+| broken              | white           | guiding             |              |
+| broken              | yellow          | guiding             |              |
+| double_broken       | white           | guiding             |              |
+| double_broken       | yellow          | guiding             |              |
+| :--------------     | :-------        | :---------          | :---         |
+| double_broken       | white           | stop                |              |
+| double solid        | white           | stop                |              |
+| :--------------     | :-------        | :---------          | :---         |
+| solid               | white           | chevron             |              |
+| solid               | yellow          | chevron             |              |
+| :--------------     | :-------        | :---------          | :---         |
+| solid               | white           | parking             |              |
+| :--------------     | :-------        | :---------          | :---         |
+| crosswalk           | white           | parallel            |              |
+| crosswalk           | white           | zebra               |              |
+| :--------------     | :-------        | :---------          | :---         |
+| arrow               | white           | right_turn          |              |
+| arrow               | white           | left_turn           |              |
+| arrow               | white           | thru_and_right_turn |              |
+| arrow               | white           | thru_and_left_turn  |              |
+| arrow               | white           | thru                |              |
+| arrow               | white           | u_thru              |              |
+| arrow               | white           | left_and_right_turn |              |
+| :--------------     | :-------        | :---------          | :---         |
+| symbol              | white           | restricted          |              |
+| :--------------     | :-------        | :---------          | :---         |
+| bump                | na              | speed_reduction     |              |
+| :--------------     | :-------        | :---------          | :---         |
+| visible_old_marking | white_or_yellow | na                  |              |
+| :--------------     | :-------        | :---------          | :---         |
+| void                | void            | other_unlabeled     |              |
+
+
+
+### BDD100k - annotation specification
+* **Lane Category**
+  - road_curb
+  - double_white
+  - double_yellow
+  - double_other
+  - single_white
+  - single_yellow
+  - single_other
+  - cross_walk
+* **Lane_Direction**
+  - parallel
+  - vertical
+* **Additional_Lane_Attributes**
+  - Continuity
+    + full
+    + dashed
+  - Drivable_Area
+    + drivable
+    + alternative
+  - Lane_Labeling_Policy
+    + red_lanes – vertical
+    + blue_lanes – parallel
+    + Parallel lanes can also be along the current driving direction
+    + Not all marking edges are lanes for vehicles to follow, such as pedestrian crossing
+
+
+### fiveai - semi-automation lane annotation
+  - Previous lane detection work has focused on detecting the components of lane boundaries, and then applying clustering to identify the boundary as a whole
+  - More recent methods use CNN based segmentation and RNNs for detecting lane boundaries
+  - Semi-automation Annotation of Lanes
+    1. noticing that driving the car is itself a form of annotation and that cars mostly travel along lanes
+    2. propagating manual label adjustments from a single view to all images of the sequence
+    3. accepting non-labelled parts in ambiguous situations
+
+
+## Road Quality Analysis
+* TODO
+
 
 ## Commercial Options
+* https://playment.io/line-annotation-tool - Road/Lane
 * https://prodi.gy/docs/
   - https://prodi.gy/features/computer-vision
   - https://prodi.gy/docs/cookbook
