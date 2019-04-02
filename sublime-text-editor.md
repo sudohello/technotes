@@ -34,6 +34,9 @@ title: Sublime Text Editor
 * Compare Side-By-Side
 * BackgroundColorEdit
 * [TerminalView](https://packagecontrol.io/packages/TerminalView)
+* Origami
+* Chain of Commands
+* Compare side-by-side
 
 **PS1**
 * https://askubuntu.com/questions/984060/export-ps1-for-customizing-shell-prompt
@@ -89,7 +92,7 @@ https://stackoverflow.com/questions/21289157/set-encoding-of-file-to-utf8-with-b
   ,{ "keys": ["ctrl+k", "ctrl+s"], "command": "convert_to_snake"}
   ,{ "keys": ["ctrl+k", "ctrl+c"], "command": "convert_to_camel"}
   ,{ "keys": ["ctrl+k", "ctrl+p"], "command": "convert_to_pascal"}
-  ,{ "keys": ["ctrl+alt+shift+k"], "command": "markdown_table_format", "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.markdown"} ]
+  ,{ "keys": ["ctrl+alt+shift+k"], "command": "markdown_table_format", "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.markdown"} ] }
 ]
 ```
 * https://stackoverflow.com/questions/53898644/sublime-text-snippet-convert-camelcase-to-snake-case

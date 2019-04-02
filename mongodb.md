@@ -45,6 +45,7 @@ Tags: MongoDB
 ```bash
 ## Launch the mongo shell
 mongo
+version()
 ## List all available databases
 show dbs
 ## switch to the admin database, then create the root user
@@ -162,6 +163,14 @@ https://github.com/google/leveldb
 https://beginnersbook.com/2017/09/mongodb-create-database/
 
 
+## pymongo
+* https://api.mongodb.com/python/current/tutorial.html
+```python
+from pymongo import MongoClient
+client = MongoClient()
+db = client.primer
+coll = db.dataset
+```
   
 
 ## FAQ's MongoDB

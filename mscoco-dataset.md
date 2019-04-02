@@ -12,6 +12,12 @@ Tags: Ms COCO Dataset Overview
 {:toc}
 
 
+## Generate MS COCO style dataset
+* https://stackoverflow.com/questions/45545187/create-ms-coco-style-dataset
+* https://patrickwasp.com/create-your-own-coco-style-dataset/
+* https://github.com/jsbroks/imantics
+* https://patrickwasp.com/create-your-own-coco-style-dataset/
+
 ## [Ms COCO Dataset](http://cocodataset.org/#home) Overview
 * http://cocodataset.org/#home
 * Back in 2014 Microsoft created a dataset called COCO (Common Objects in COntext) to help advance research in object recognition and scene understanding.
